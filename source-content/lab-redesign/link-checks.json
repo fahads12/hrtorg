@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://store.hrt.org/collections/adrenals-testing",
+    "status": 200,
+    "final": "https://store.hrt.org/collections/adrenals-testing",
+    "bytes": 177675
+  },
+  {
+    "url": "https://store.hrt.org/collections/cardiometabolic-testing",
+    "status": 200,
+    "final": "https://store.hrt.org/collections/cardiometabolic-testing",
+    "bytes": 163801
+  },
+  {
+    "url": "https://store.hrt.org/collections/combination-profiles",
+    "status": 200,
+    "final": "https://store.hrt.org/collections/combination-profiles",
+    "bytes": 210621
+  },
+  {
+    "url": "https://store.hrt.org/collections/fertility",
+    "status": 200,
+    "final": "https://store.hrt.org/collections/fertility",
+    "bytes": 150212
+  },
+  {
+    "url": "https://store.hrt.org/collections/tests",
+    "status": 200,
+    "final": "https://store.hrt.org/collections/tests",
+    "bytes": 218077
+  },
+  {
+    "url": "https://store.hrt.org/collections/thyroid-testing",
+    "status": 200,
+    "final": "https://store.hrt.org/collections/thyroid-testing",
+    "bytes": 212611
+  },
+  {
+    "url": "https://store.hrt.org/collections/weight-management-testing",
+    "status": 200,
+    "final": "https://store.hrt.org/collections/weight-management-testing",
+    "bytes": 141246
+  },
+  {
+    "url": "https://store.hrt.org/products/optimal-adrenal-health-complete-easy-convenient-at-home-test-kit-saliva",
+    "status": 200,
+    "final": "https://store.hrt.org/products/optimal-adrenal-health-complete-easy-convenient-at-home-test-kit-saliva",
+    "bytes": 320921
+  },
+  {
+    "url": "https://store.hrt.org/products/optimal-hormone-health-fundamental-5-easy-convenient-at-home-test-kit-saliva",
+    "status": 200,
+    "final": "https://store.hrt.org/products/optimal-hormone-health-fundamental-5-easy-convenient-at-home-test-kit-saliva",
+    "bytes": 252810
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid",
+    "status": 200,
+    "final": "https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid",
+    "bytes": 301101
+  }
+]

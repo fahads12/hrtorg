@@ -1,0 +1,17 @@
+﻿const fs=require('fs'),assert=require('node:assert/strict'),{chromium}=require('playwright');
+const output='scraps/prelaunch/forms-info';
+const base=process.env.AUDIT_BASE_URL||'http://localhost:8011';
+(async()=>{const browser=await chromium.launch({channel:'chrome',headless:true});const report={liveMessages:0,tests:[]};
+for(const width of [1440,768,390]){
+ const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'});
+ await context.route('**/*',r=>!['GET','HEAD'].includes(r.request().method())?r.abort():r.continue());
+ // Replace only the OS mailto handoff: no email app is opened and no mail is sent.
+ await context.route('**/site-interactions.js*',r=>r.fulfill({contentType:'application/javascript',body:fs.readFileSync('site-interactions.js','utf8').replace("location.href='mailto:","window.__auditDraft='mailto:")}));
+ const page=await context.newPage();await page.goto(base+'/Contact.html',{waitUntil:'networkidle'});const button=page.getByRole('button',{name:/Open email draft/});await button.click();assert.equal(await page.locator('input[name=name]').evaluate(e=>e.validity.valueMissing),true);
+ await page.locator('input[name=name]').fill('Local audit');await page.locator('input[name=email]').fill('invalid');await page.locator('textarea').fill('Test preparation only');await button.click();assert.equal(await page.locator('input[name=email]').evaluate(e=>e.validity.typeMismatch),true);assert.equal(await page.evaluate(()=>window.__auditDraft),undefined);
+ await page.locator('input[name=email]').fill('audit@example.invalid');await button.click();const destination=await page.evaluate(()=>window.__auditDraft);assert.ok(destination.startsWith('mailto:info@hrt.org?'));assert.ok(destination.includes('subject=HRT.org%20enquiry'));assert.equal(new URL(page.url()).search,'');assert.equal(await page.evaluate(()=>localStorage.length+sessionStorage.length),0);await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:output+'/Contact-after-'+width+'.png',fullPage:true});report.tests.push({width,state:'validation and encoded mail draft boundary',passed:true,liveHandoff:false});await context.close();
+}
+for(const mode of ['no-js','script-failed']){const context=await browser.newContext({viewport:{width:390,height:1000},javaScriptEnabled:mode!=='no-js'});await context.route('**/*',r=>!['GET','HEAD'].includes(r.request().method())?r.abort():r.continue());if(mode==='script-failed')await context.route('**/site-interactions.js*',r=>r.abort());const page=await context.newPage();await page.goto(base+'/Contact.html');await page.locator('input[name=name]').fill('Local audit');await page.locator('input[name=email]').fill('audit@example.invalid');await page.locator('textarea').fill('Test preparation only');assert.equal(await page.getByRole('button',{name:/Open email draft/}).isDisabled(),true);await page.locator('input[name=email]').press('Enter');await page.waitForTimeout(100);assert.equal(new URL(page.url()).search,'');if(mode==='no-js')assert.equal(await page.locator('.email-draft-fallback').isVisible(),true);await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:output+'/Contact-'+mode+'.png',fullPage:true});report.tests.push({state:mode,passed:true,urlContainsFormData:false});await context.close();}
+fs.writeFileSync(output+'/contact-verification.json',JSON.stringify(report,null,2));await browser.close();console.log(JSON.stringify(report,null,2));})().catch(e=>{console.error(e);process.exitCode=1});
+
+

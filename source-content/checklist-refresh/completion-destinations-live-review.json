@@ -1,0 +1,180 @@
+{
+  "checkedAt": "2026-10-11T20:50:06.614Z",
+  "requests": "GET only; no forms submitted",
+  "records": [
+    {
+      "id": "women",
+      "url": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "id": "men",
+      "url": "https://hrt.org/checklist/hormone-symptom-checklist-men",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/hormone-symptom-checklist-men",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "id": "pms",
+      "url": "https://hrt.org/checklist/pms-assessment",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/pms-assessment",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "id": "thyroid",
+      "url": "https://hrt.org/checklist/thyroid-assessment",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/thyroid-assessment",
+      "activeScriptSame": true,
+      "redirectLines": [
+        "var redirectUrl = (data&&data.landingPageUrl)||('https://www.hrt.org/score-total?type=th&score='+computeLocalScore());",
+        "setTimeout(function(){ window.location.href=redirectUrl; },1200);",
+        "window.location.href='https://www.hrt.org/score-total?type=th&score='+computeLocalScore();"
+      ]
+    },
+    {
+      "id": "adrenal",
+      "url": "https://hrt.org/checklist/adrenal-fatigue",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/adrenal-fatigue",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "id": "osteoporosis",
+      "url": "https://hrt.org/checklist/osteoporosis-assessment",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/osteoporosis-assessment",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "id": "andropause",
+      "url": "https://hrt.org/checklist/andropause-assessment",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/andropause-assessment",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "id": "menopause",
+      "url": "https://hrt.org/checklist/menopause-assessment",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/menopause-assessment",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "id": "perimenopause",
+      "url": "https://hrt.org/checklist/perimenopause-assessment",
+      "status": 200,
+      "finalUrl": "https://hrt.org/checklist/perimenopause-assessment",
+      "activeScriptSame": true,
+      "redirectLines": []
+    },
+    {
+      "scoreType": "th",
+      "url": "https://www.hrt.org/score-total?type=th&score=10",
+      "status": 200,
+      "finalUrl": "https://hrt.org/score-total?type=th&score=10",
+      "title": "Score Total",
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "queryScriptLines": [
+        "const urlParams = new URLSearchParams(window.location.search);",
+        "const score = parseInt(urlParams.get('score'));"
+      ]
+    },
+    {
+      "scoreType": "an",
+      "url": "https://www.hrt.org/score-total?type=an&score=10",
+      "status": 200,
+      "finalUrl": "https://hrt.org/score-total?type=an&score=10",
+      "title": "Score Total",
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "queryScriptLines": [
+        "const urlParams = new URLSearchParams(window.location.search);",
+        "const score = parseInt(urlParams.get('score'));"
+      ]
+    },
+    {
+      "scoreType": "pms",
+      "url": "https://www.hrt.org/score-total?type=pms&score=10",
+      "status": 200,
+      "finalUrl": "https://hrt.org/score-total?type=pms&score=10",
+      "title": "Score Total",
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "queryScriptLines": [
+        "const urlParams = new URLSearchParams(window.location.search);",
+        "const score = parseInt(urlParams.get('score'));"
+      ]
+    },
+    {
+      "scoreType": "ad",
+      "url": "https://www.hrt.org/score-total?type=ad&score=10",
+      "status": 200,
+      "finalUrl": "https://hrt.org/score-total?type=ad&score=10",
+      "title": "Score Total",
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "queryScriptLines": [
+        "const urlParams = new URLSearchParams(window.location.search);",
+        "const score = parseInt(urlParams.get('score'));"
+      ]
+    },
+    {
+      "scoreType": "os",
+      "url": "https://www.hrt.org/score-total?type=os&score=10",
+      "status": 200,
+      "finalUrl": "https://hrt.org/score-total?type=os&score=10",
+      "title": "Score Total",
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "queryScriptLines": [
+        "const urlParams = new URLSearchParams(window.location.search);",
+        "const score = parseInt(urlParams.get('score'));"
+      ]
+    },
+    {
+      "scoreType": "me",
+      "url": "https://www.hrt.org/score-total?type=me&score=10",
+      "status": 200,
+      "finalUrl": "https://hrt.org/score-total?type=me&score=10",
+      "title": "Score Total",
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "queryScriptLines": [
+        "const urlParams = new URLSearchParams(window.location.search);",
+        "const score = parseInt(urlParams.get('score'));"
+      ]
+    },
+    {
+      "scoreType": "pm",
+      "url": "https://www.hrt.org/score-total?type=pm&score=10",
+      "status": 200,
+      "finalUrl": "https://hrt.org/score-total?type=pm&score=10",
+      "title": "Score Total",
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "queryScriptLines": [
+        "const urlParams = new URLSearchParams(window.location.search);",
+        "const score = parseInt(urlParams.get('score'));"
+      ]
+    }
+  ]
+}

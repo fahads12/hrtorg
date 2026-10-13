@@ -1,0 +1,116 @@
+[
+  {
+    "i": 0,
+    "attrs": " src=\"https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js\" type=\"text/javascript\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 1,
+    "attrs": " type=\"text/javascript\"",
+    "length": 353,
+    "text": "WebFont.load({  google: {    families: [\"PT Sans:400,400italic,700,700italic\",\"Oswald:200,300,400,500,600,700\",\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Figtree:300,400,500,600,700\",\"Hanken Grotesk:300,400,500,600,700\",\"Poppins:300,400,500,600,700\"]  }});"
+  },
+  {
+    "i": 2,
+    "attrs": " type=\"text/javascript\"",
+    "length": 181,
+    "text": "!function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document);"
+  },
+  {
+    "i": 3,
+    "attrs": "",
+    "length": 162,
+    "text": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push.apply(w[g],Array.isArray(i)?i:[i]);})(window,['G-BGF3C4Z1L0'],'google_tags_first_party');"
+  },
+  {
+    "i": 4,
+    "attrs": " async=\"\" src=\"/g0lnomhfn3mgNjMyYTMzZGRhN2Y5ZWFiNzQzNjg5N2Nj/sUlBnpUcDCwWo7vapidoVcGgCQQ\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 5,
+    "attrs": " type=\"text/javascript\"",
+    "length": 223,
+    "text": "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('set', 'developer_id.dYWYxNW', true);gtag('js', new Date());gtag('config', 'G-BGF3C4Z1L0');"
+  },
+  {
+    "i": 6,
+    "attrs": " src=\"https://www.google.com/recaptcha/api.js\" type=\"text/javascript\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 7,
+    "attrs": "",
+    "length": 342,
+    "text": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-KFFRTR6T');"
+  },
+  {
+    "i": 8,
+    "attrs": " type=\"text/javascript\"",
+    "length": 335,
+    "text": "window.__WEBFLOW_CURRENCY_SETTINGS = {\"currencyCode\":\"USD\",\"symbol\":\"$\",\"decimal\":\".\",\"fractionDigits\":2,\"group\":\",\",\"template\":\"{{wf {\\\"path\\\":\\\"symbol\\\",\\\"type\\\":\\\"PlainText\\\"} }} {{wf {\\\"path\\\":\\\"amount\\\",\\\"type\\\":\\\"CommercePrice\\\"} }} {{wf {\\\"path\\\":\\\"currencyCode\\\",\\\"type\\\":\\\"PlainText\\\"} }}\",\"hideDecimalForWholeNumbers\":false};"
+  },
+  {
+    "i": 9,
+    "attrs": " type=\"text/x-wf-template\" id=\"wf-template-cbe6d2c6-5b07-be7b-e254-da77ad9bb026\"",
+    "length": 5587,
+    "text": "%3Cdiv%20class%3D%22w-commerce-commercecartitem%20cart-item%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2Fplugins%2FBasic%2Fassets%2Fplaceholder.60f9b1840c.svg%22%20data-wf-bindings%3D%22%255B%257B%2522src%2522%253A%257B%2522type%2522%253A%2522ImageRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_main_image_4dr%2522%257D%257D%255D%22%20alt%3D%22%22%20class%3D%22w-commerce-commercecartitemimage%20w-dyn-bind-empty%22%2F%3E%3Cdiv%20class%3D%22w-commerce-commercecartiteminfo%22%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_name_%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartproductname%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%3EThis%20is%20some%20text%20inside%20of%20a%20div%20block.%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fx-wf-template%22%20id%3D%22wf-template-cbe6d2c6-5b07-be7b-e254-da77ad9bb02e%22%3E%253Cli%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522PlainText%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D.name%252522%25257D%25257D%25255D%2522%253E%253C%252Fspan%253E%253Cspan%253E%253A%2520%253C%252Fspan%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522CommercePropValues%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D%252522%25257D%25257D%25255D%2522%253E%253C%252Fspan%253E%253C%252Fli%253E%3C%2Fscript%3E%3Cul%20data-wf-bindings%3D%22%255B%257B%2522optionSets%2522%253A%257B%2522type%2522%253A%2522CommercePropTable%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D%2522%257D%257D%252C%257B%2522optionValues%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_sku_values_3dr%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartoptionlist%22%20data-wf-collection%3D%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%22%20data-wf-template-id%3D%22wf-template-cbe6d2c6-5b07-be7b-e254-da77ad9bb02e%22%3E%3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3Ca%20href%3D%22%23%22%20role%3D%22%22%20data-wf-bindings%3D%22%255B%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20class%3D%22w-inline-block%22%20data-wf-cart-action%3D%22remove-item%22%20data-commerce-sku-id%3D%22%22%20aria-label%3D%22Remove%20item%20from%20cart%22%3E%3Cdiv%3ERemove%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cinput%20data-wf-bindings%3D%22%255B%257B%2522value%2522%253A%257B%2522type%2522%253A%2522Number%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522numberPrecision%2522%252C%2522params%2522%253A%255B%25220%2522%252C%2522numberPrecision%2522%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.count%2522%257D%257D%252C%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartquantity%20cart-quantity-input-2%22%20required%3D%22%22%20pattern%3D%22%5E%5B0-9%5D%2B%24%22%20inputMode%3D%22numeric%22%20type%3D%22number%22%20name%3D%22quantity%22%20autoComplete%3D%22off%22%20data-wf-cart-action%3D%22update-item-quantity%22%20data-commerce-sku-id%3D%22%22%20value%3D%221%22%2F%3E%3C%2Fdiv%3E"
+  },
+  {
+    "i": 10,
+    "attrs": " type=\"text/x-wf-template\" id=\"wf-template-cbe6d2c6-5b07-be7b-e254-da77ad9bb02e\"",
+    "length": 804,
+    "text": "%3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%3E%3C%2Fspan%3E%3C%2Fli%3E"
+  },
+  {
+    "i": 11,
+    "attrs": "",
+    "length": 11394,
+    "text": "\n(function () {\n  var WEBHOOK_URL = 'https://vmi3206755.contaboserver.net/webhook/thyroid-typeform-submit';\n\n  var QUESTIONS = [\n    { name: 'q1_thinking_slow',        text: 'Is your thinking slow?' },\n    { name: 'q10_weight_difficulty',   text: 'Are you having difficulty losing weight, even when eating less / exercising more?' },\n    { name: 'q13_excessive_sleep',     text: 'How often do you need a lot of sleep?' },\n    { name: 'q18_slow_movements',      text: 'Do you notice your movements are slow?' },\n    { name: 'q24_morning_fatigue',     text: 'Do you have low energy first thing in the morning, even after good sleep?' },\n    { name: 'q11_miss_meal',           text: 'Do you feel unwell if you miss a meal?' },\n    { name: 'q15_not_sweating',        text: 'Do you experience not sweating much, even when exercising?' },\n    { name: 'q22_feeling_cold',        text: 'Do you feel cold more than most other people?' },\n    { name: 'q27_cold_extremities',    text: 'Are your hands and feet often cold?' },\n    { name: 'q3_bags_under_eyes',      text: 'Do you have bags under the eyes?' },\n    { name: 'q6_yellowing',            text: 'Do you notice the yellowing of palms of your hands and/or soles of feet?' },\n    { name: 'q9_bloated_face',         text: 'Does your face look bloated?' },\n    { name: 'q19_thinning_eyebrows',   text: 'Are your eyebrows thinning?' },\n    { name: 'q23_dry_skin_hair',       text: 'How often do you have dry skin or hair and/or experience hair loss?' },\n    { name: 'q26_puffy_eyelids',       text: 'Are your eyelids swollen and puffy?' },\n    { name: 'q2_joint_stiffness',      text: 'Do you experience joint stiffness and pain, which sometimes gets better after movement?' },\n    { name: 'q4_dizziness',            text: 'Do you experience dizziness or poor sense of balance?' },\n    { name: 'q17_headaches',           text: 'How often do you have headaches (often worse in morning)?' },\n    { name: 'q5_nasal_congestion',     text: 'Do you suffer from nasal congestion?' },\n    { name: 'q8_bowel_issues',         text: 'Do you experience difficulties with your bowel movements, or how often do they occur less than daily?' },\n    { name: 'q16_frequent_infections', text: 'Do you suffer from frequent infections?' },\n    { name: 'q7_depression',           text: 'How often do you feel depressed?' },\n    { name: 'q12_memory_issues',       text: 'Do you notice your memory is not as good as it used to be?' },\n    { name: 'q14_pms',                 text: 'How often do you suffer from PMS?' },\n    { name: 'q20_concentration',       text: 'Do you have trouble concentrating?' },\n    { name: 'q25_moody_irritable',     text: 'How often do you feel moody or irritable?' },\n    { name: 'q21_low_sex_drive',       text: 'Do you experience a low sex drive?' }\n  ];\n\n  var SCALE_OPTIONS = [\n    { letter: 'A', text: 'Never' },\n    { letter: 'B', text: 'Occasionally' },\n    { letter: 'C', text: 'Frequently' },\n    { letter: 'D', text: 'Constantly' }\n  ];\n\n  var MAILING_OPTIONS = [\n    { letter: 'A', text: 'Yes, add me to your mailing list' },\n    { letter: 'B', text: 'No, just send me the results' }\n  ];\n\n  var currentQIdx = 0, currentScreen = 'intro';\n  var answers = QUESTIONS.map(function(){ return null; });\n  var userName = '', userEmail = '', mailingChoice = '', isSubmitting = false;\n\n  function $(id){ return document.getElementById(id); }\n\n  function escapeHtml(s){\n    return String(s).replace(/[&<>\"']/g, function(c){\n      return({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'})[c];\n    });\n  }\n\n  function computeLocalScore(){\n    var map = { never:0, occasionally:1, frequently:2, constantly:3 }, total = 0;\n    for(var i=0;i<QUESTIONS.length;i++){\n      var v = answers[i]; if(!v) continue;\n      var k = String(v).trim().toLowerCase(); if(k in map) total += map[k];\n    }\n    return total;\n  }\n\n  function showScreen(name){\n    document.querySelectorAll('.tq-screen').forEach(function(s){ s.classList.remove('active'); });\n    var t = $('tq-'+name); if(t) t.classList.add('active');\n    currentScreen = name;\n    var showNav = ['question','name','email','mailing'].indexOf(name) > -1;\n    $('tq-bottomNav').style.display = showNav ? 'flex' : 'none';\n    $('tq-progress').style.display  = showNav ? 'block' : 'none';\n    $('tq-navUp').disabled   = (name==='question' && currentQIdx===0);\n    $('tq-navDown').disabled = (name==='mailing');\n    updateProgress();\n  }\n\n  function updateProgress(){\n    var TOTAL = QUESTIONS.length + 3, step = 0;\n    if(currentScreen==='question') step = currentQIdx;\n    else if(currentScreen==='name')    step = QUESTIONS.length;\n    else if(currentScreen==='email')   step = QUESTIONS.length+1;\n    else if(currentScreen==='mailing') step = QUESTIONS.length+2;\n    else if(currentScreen==='submitting'||currentScreen==='complete') step = TOTAL;\n    $('tq-progressFill').style.width = ((step/TOTAL)*100)+'%';\n  }\n\n  function renderQuestion(idx){\n    $('tq-qNum').textContent  = String(idx+1);\n    $('tq-qText').textContent = QUESTIONS[idx].text;\n    var c = $('tq-qOptions'); c.innerHTML = '';\n    SCALE_OPTIONS.forEach(function(opt){\n      var d = document.createElement('div');\n      d.className = 'tq-option'; if(answers[idx]===opt.text) d.classList.add('selected');\n      d.dataset.text = opt.text;\n      d.innerHTML = '<span class=\"tq-opt-letter\">'+opt.letter+'</span>'+\n        '<span class=\"tq-opt-text\">'+opt.text+'</span>'+\n        '<svg class=\"tq-check\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg>';\n      d.addEventListener('click', function(){ selectOption(idx, opt.text); });\n      c.appendChild(d);\n    });\n  }\n\n  function selectOption(idx, text){\n    answers[idx] = text;\n    $('tq-qOptions').querySelectorAll('.tq-option').forEach(function(el){\n      el.classList.toggle('selected', el.dataset.text===text);\n    });\n    setTimeout(function(){ if(currentScreen==='question'&&answers[idx]===text) handleNext(); }, 350);\n  }\n\n  function renderMailing(){\n    var c = $('tq-mailingOptions'); c.innerHTML = '';\n    MAILING_OPTIONS.forEach(function(opt){\n      var d = document.createElement('div');\n      d.className = 'tq-option'; if(mailingChoice===opt.text) d.classList.add('selected');\n      d.dataset.text = opt.text;\n      d.innerHTML = '<span class=\"tq-opt-letter\">'+opt.letter+'</span>'+\n        '<span class=\"tq-opt-text\">'+opt.text+'</span>'+\n        '<svg class=\"tq-check\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg>';\n      d.addEventListener('click', function(){\n        mailingChoice = opt.text;\n        c.querySelectorAll('.tq-option').forEach(function(el){\n          el.classList.toggle('selected', el.dataset.text===opt.text);\n        });\n      });\n      c.appendChild(d);\n    });\n  }\n\n  function handleNext(){\n    if(isSubmitting) return;\n    if(currentScreen==='question'){\n      if(!answers[currentQIdx]) return;\n      if(currentQIdx < QUESTIONS.length-1){ currentQIdx++; renderQuestion(currentQIdx); showScreen('question'); }\n      else { showScreen('name'); setTimeout(function(){ $('tq-nameInput').focus(); },100); }\n    } else if(currentScreen==='name'){\n      var v = $('tq-nameInput').value.trim();\n      if(!v){ $('tq-nameInput').classList.add('tq-err'); $('tq-nameErr').classList.add('show'); return; }\n      $('tq-nameInput').classList.remove('tq-err'); $('tq-nameErr').classList.remove('show');\n      userName = v; showScreen('email'); setTimeout(function(){ $('tq-emailInput').focus(); },100);\n    } else if(currentScreen==='email'){\n      var ev = $('tq-emailInput').value.trim();\n      if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(ev)){ $('tq-emailInput').classList.add('tq-err'); $('tq-emailErr').classList.add('show'); return; }\n      $('tq-emailInput').classList.remove('tq-err'); $('tq-emailErr').classList.remove('show');\n      userEmail = ev; renderMailing(); showScreen('mailing');\n    } else if(currentScreen==='mailing'){\n      submitAssessment();\n    }\n  }\n\n  function handleBack(){\n    if(currentScreen==='question'&&currentQIdx>0){ currentQIdx--; renderQuestion(currentQIdx); showScreen('question'); }\n    else if(currentScreen==='name'){ currentQIdx=QUESTIONS.length-1; renderQuestion(currentQIdx); showScreen('question'); }\n    else if(currentScreen==='email'){ showScreen('name'); setTimeout(function(){ $('tq-nameInput').focus(); },100); }\n    else if(currentScreen==='mailing'){ showScreen('email'); setTimeout(function(){ $('tq-emailInput').focus(); },100); }\n  }\n\n  $('tq-startBtn').addEventListener('click', function(){ currentQIdx=0; renderQuestion(0); showScreen('question'); });\n  $('tq-qOk').addEventListener('click', handleNext);\n  $('tq-navDown').addEventListener('click', handleNext);\n  $('tq-navUp').addEventListener('click', handleBack);\n  $('tq-nameOk').addEventListener('click', handleNext);\n  $('tq-emailOk').addEventListener('click', handleNext);\n  $('tq-mailingOk').addEventListener('click', handleNext);\n  $('tq-nameInput').addEventListener('keydown',  function(e){ if(e.key==='Enter'){e.preventDefault();handleNext();} });\n  $('tq-emailInput').addEventListener('keydown', function(e){ if(e.key==='Enter'){e.preventDefault();handleNext();} });\n\n  document.addEventListener('keydown', function(e){\n    if(e.key==='Enter'&&currentScreen==='question'){\n      var tag=(document.activeElement&&document.activeElement.tagName)||'';\n      if(tag!=='INPUT'&&tag!=='TEXTAREA'){e.preventDefault();if(answers[currentQIdx])handleNext();}\n    }\n  });\n  document.addEventListener('keydown', function(e){\n    if(currentScreen!=='question') return;\n    var tag=(document.activeElement&&document.activeElement.tagName)||'';\n    if(tag==='INPUT'||tag==='TEXTAREA') return;\n    var map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};\n    var idx=map[e.key.toLowerCase()];\n    if(typeof idx==='number'){e.preventDefault();selectOption(currentQIdx,SCALE_OPTIONS[idx].text);}\n  });\n\n  async function submitAssessment(){\n    if(isSubmitting||!mailingChoice) return;\n    isSubmitting=true; showScreen('submitting');\n    var payload={first_name:userName,email:userEmail,mailing_list:mailingChoice};\n    QUESTIONS.forEach(function(q,i){payload[q.name]=answers[i]||'Never';});\n    try{\n      var res = await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});\n      var data = await res.json().catch(function(){return{};});\n      var redirectUrl = (data&&data.landingPageUrl)||('https://www.hrt.org/score-total?type=th&score='+computeLocalScore());\n      var shownTotal = (data&&typeof data.totalScore!=='undefined')?data.totalScore:computeLocalScore();\n      var r=$('tq-completeResults');\n      r.innerHTML='<div><strong>Your Assessment Score:</strong><span class=\"tq-score-big\">'+escapeHtml(String(shownTotal))+'</span></div>';\n      r.style.display='block';\n      var lnk=$('tq-viewLink'); lnk.href=redirectUrl; lnk.style.display='inline-block';\n      showScreen('complete');\n      setTimeout(function(){ window.location.href=redirectUrl; },1200);\n    } catch(err){\n      window.location.href='https://www.hrt.org/score-total?type=th&score='+computeLocalScore();\n    } finally { isSubmitting=false; }\n  }\n\n  updateProgress();\n})();\n"
+  },
+  {
+    "i": 12,
+    "attrs": " src=\"https://static.legitscript.com/seals/8512436.js\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 13,
+    "attrs": " src=\"https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=632a33dda7f9eab7436897cc\" type=\"text/javascript\" integrity=\"sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=\" crossorigin=\"anonymous\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 14,
+    "attrs": " src=\"https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/js/webflow.schunk.26493d4beaa9dff2.js\" type=\"text/javascript\" integrity=\"sha384-00RzfHT1pV1Vbeam5KTsFn7V14pGegf3mvRJYvr9Me0egeFnkI9qm91CNKycSc+Y\" crossorigin=\"anonymous\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 15,
+    "attrs": " src=\"https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/js/webflow.schunk.44b90803fb90dc6e.js\" type=\"text/javascript\" integrity=\"sha384-J2q9yBJx9S6PaSwB5Y+Vqz4PGgQUJzlSWVusgt+BduhL2mhWZuZ/lT8iLT8IHx20\" crossorigin=\"anonymous\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 16,
+    "attrs": " src=\"https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/js/webflow.76ac0b45.630a77138fc277bf.js\" type=\"text/javascript\" integrity=\"sha384-pw6JG3I+WYp2azZatWjDN7AC9WAr/hlEu6kexXghUCM261vlJtVzBjZzKjYFkKB8\" crossorigin=\"anonymous\"",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 17,
+    "attrs": " src=\"//code.tidio.co/wxfoidevnrzsvpmrqfgjptxbyplbwj03.js\" async",
+    "length": 0,
+    "text": ""
+  },
+  {
+    "i": 18,
+    "attrs": " src=\"https://embed.typeform.com/embed.js\"",
+    "length": 0,
+    "text": ""
+  }
+]

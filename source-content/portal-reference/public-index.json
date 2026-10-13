@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-12T08:44:45.261Z",
+  "url": "https://portal.hrt.org",
+  "finalURL": "https://portal.hrt.org/",
+  "status": 200,
+  "title": "HRT Portal",
+  "bytes": 2036,
+  "scripts": [
+    "https://portal.hrt.org/static/js/main.e6953d36.js"
+  ],
+  "styles": [
+    "https://portal.hrt.org/static/css/main.979fe127.css"
+  ],
+  "links": [],
+  "forms": []
+}

@@ -1,0 +1,9 @@
+{
+  "tool": "built-in image generation",
+  "prompt": "Identity-preserving restoration of this actual portrait of Dr. Clarence Lee Jr. Enhance resolution and remove compression and jagged edges while strictly retaining the same person's facial features, apparent age, skin tone, smile, haircut, facial hair, gaze, pose, grey blazer and white patterned shirt. Preserve natural skin texture, no beautification or altered face, no new clothing, badges, credentials, lettering or logos. Preserve transparent background and original waist-up composition. Highest available resolution, clean professional photograph, no invented environment. This is restoration of the supplied photograph, not a new person.",
+  "source": "uploads/source/10d5d243dc17a25f.webp",
+  "nativeSize": [
+    1486,
+    1059
+  ]
+}

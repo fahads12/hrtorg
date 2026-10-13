@@ -1,0 +1,236 @@
+{
+  "name": "Perimenopause Typeform Assessment",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "perimenopause-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -832,
+        16
+      ],
+      "id": "c30df9c6-399f-4991-9b9f-96352146563d",
+      "name": "Webhook (Perimenopause Submit)",
+      "webhookId": "perimenopause-typeform-2026-05"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n//  Perimenopause Self-Assessment — Score Calculator\n//  Based on the Q004 blueprint symptom checklist.\n//\n//  Each of the 20 questions is YES / NO:\n//    Yes = 1 point, No = 0 points. Max score = 20.\n//\n//  Scoring tiers — mirroring the Make.com blueprint switch:\n//    score = 0        → Result 1 (No symptoms)\n//    score 1–14       → Result 2 (Mild–Moderate symptoms)\n//    score 15–20      → Result 3 (Significant symptoms)\n// ============================================================\n\nconst data = $input.first().json.body || $input.first().json;\n\nconst fields = [\n  'q1_water_retention',\n  'q2_facial_hair',\n  'q3_breast_tenderness',\n  'q4_pain',\n  'q5_vaginal_dryness',\n  'q6_fatigue',\n  'q7_concentration',\n  'q8_urinary_incontinence',\n  'q9_irritability',\n  'q10_anxiety',\n  'q11_mood_swings',\n  'q12_depression',\n  'q13_acne',\n  'q14_low_libido',\n  'q15_hot_flashes',\n  'q16_sleep_disturbance',\n  'q17_heart_disease_risk',\n  'q18_osteoporosis_risk',\n  'q19_weight_gain',\n  'q20_irregular_periods'\n];\n\nlet totalScore = 0;\nconst scores = {};\nconst warnings = [];\n\nfor (const field of fields) {\n  const raw = data[field];\n  const isYes = raw && String(raw).trim().toLowerCase() === 'yes';\n  const score = isYes ? 1 : 0;\n  scores[field] = { raw, score };\n  totalScore += score;\n  if (raw === undefined || raw === null || raw === '') {\n    warnings.push(field + ' is missing');\n  }\n}\n\n// Three-tier result — matching Q004 Make.com switch logic exactly\nlet resultNum, resultLabel, resultContent;\nif (totalScore === 0) {\n  resultNum = 1;\n  resultLabel = 'No Symptoms Reported';\n  resultContent = 'You have not reported any perimenopause symptoms at this time. This is reassuring, though symptoms can emerge gradually. Consider establishing a hormone baseline with a panel test so you have a reference point for the future.';\n} else if (totalScore >= 1 && totalScore <= 14) {\n  resultNum = 2;\n  resultLabel = 'Mild to Moderate Symptoms';\n  resultContent = 'You are experiencing some symptoms that may be linked to perimenopause. Fluctuating oestrogen and progesterone levels are the most likely cause. A hormone evaluation would help clarify whether hormone replacement therapy or other treatments could benefit you.';\n} else {\n  resultNum = 3;\n  resultLabel = 'Significant Symptoms';\n  resultContent = 'Your score indicates a high number of symptoms strongly associated with perimenopause. The wide range of symptoms you are experiencing — hot flashes, sleep disruption, mood changes, vaginal dryness, and more — are well-documented effects of declining oestrogen. We strongly recommend a comprehensive hormone panel and a consultation with one of our specialists.';\n}\n\nreturn [{ json: {\n  patientName:    data.first_name   || '',\n  patientEmail:   data.email        || '',\n  mailingList:    data.mailing_list || '',\n  totalScore,\n  resultNum,\n  resultLabel,\n  resultContent,\n  _debug_scores:   scores,\n  _debug_warnings: warnings\n}}];\n"
+      },
+      "id": "9eba5659-5e40-4ac5-a202-3261470654b1",
+      "name": "Calculate Scores",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -592,
+        16
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "v1",
+              "leftValue": "={{ $json.patientEmail }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "589d120c-cbd4-47d6-a305-3dc88414e303",
+      "name": "Has Valid Email?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -352,
+        16
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\n// Escape only the dynamic name used in the HTML greeting.\nfunction escapePatientName(value) {\n  return String(value)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&#39;');\n}\nconst greeting = d.patientName ? ('Dear ' + escapePatientName(d.patientName)) : 'Hi there';\nconst year = new Date().getFullYear();\n\n// Result-specific intro text\nconst introMap = {\n  1: `Perimenopause is the transitional phase leading up to menopause, during which hormone levels — particularly oestrogen and progesterone — begin to fluctuate. Symptoms can begin up to 10 years before your last period, often in your late 30s or early 40s.<br/><br/>Based on your responses, you are not currently reporting symptoms associated with perimenopause. This is reassuring. However, establishing a hormone baseline now is a smart and proactive step — it gives you and your clinician a clear reference point for any future changes.<br/><br/>We recommend a female hormone panel as part of your routine health checks, alongside maintaining bone density, cardiovascular health, and hormonal wellness through regular exercise, a nutrient-rich diet, and good sleep hygiene.`,\n  2: `Perimenopause is the transitional phase leading up to menopause, during which oestrogen and progesterone levels begin to fluctuate — sometimes dramatically. This can trigger a wide range of physical and emotional symptoms, many of which can be mistaken for stress, thyroid issues, or simply 'getting older'.<br/><br/>Based on your responses, you are experiencing a number of symptoms that may be linked to perimenopause. A hormone panel will help confirm whether fluctuating hormones are the cause, and your clinician can discuss a range of evidence-based options to relieve your symptoms — from bioidentical hormone replacement therapy (BHRT) to targeted supplements and lifestyle adjustments.<br/><br/>The sooner you act, the easier it is to manage your symptoms and protect your long-term bone and cardiovascular health.`,\n  3: `Perimenopause is the transitional phase leading up to menopause, during which oestrogen and progesterone levels decline significantly. Your responses indicate a high number of symptoms that are strongly associated with this hormonal transition.<br/><br/>The symptoms you are experiencing — which may include hot flashes, sleep disruption, mood disturbance, vaginal dryness, memory changes, and physical discomfort — are real, measurable, and highly treatable. You do not have to simply 'put up with' how you are feeling.<br/><br/>Bioidentical hormone replacement therapy (BHRT) is a well-researched, effective option that has helped millions of women reclaim their quality of life during perimenopause. We strongly encourage you to get a comprehensive hormone panel and speak with one of our specialists — who understand what you are going through and can tailor a treatment plan specifically for you.`\n};\n\nconst introText = introMap[d.resultNum] || introMap[2];\n\n// Lab tests — same for all tiers but tier 3 gets extra emphasis\nconst labTests = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTBloodSpotTestKit-9_1024x1024_2x_3025b07b-9b81-4d8f-85a4-2c9aff366530_1024x1024@2x.jpg?v=1571716034',\n    title: 'Female Hormone Panel — At Home Test Kit',\n    desc: 'Measures FSH, LH, oestradiol, and progesterone from a simple blood spot collected at home. Ideal for identifying perimenopause and monitoring BHRT.',\n    price: '$179.00',\n    url: 'https://store.hrt.org/products/female-hormone-panel-at-home-test-kit'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTLabBloodUrineMultiTestKit_1024x1024@2x.jpg?v=1571716011',\n    title: 'Comprehensive Female Hormone Profile (Blood Spot)',\n    desc: 'A full hormonal picture: oestradiol, progesterone, testosterone, DHEA-S, cortisol, and thyroid. Clinician-reviewed results included.',\n    price: '$269.00',\n    url: 'https://store.hrt.org/products/comprehensive-female-hormone-profile-blood-spot'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/Thyroid_Health_Essentials_1024x1024_upclose_1024x1024@2x.png?v=1579640010',\n    title: 'Elite Female Hormone Panel (Blood Spot/Urine)',\n    desc: 'Our most comprehensive perimenopause profile. Includes oestrogen metabolites, adrenal hormones, bone markers, and nutritional cofactors.',\n    price: '$299.00',\n    url: 'https://store.hrt.org/products/elite-female-hormone-panel'\n  }\n];\n\nconst products = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Micronized_DHEA_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'DHEA (25mg) — Natural Hormone Support Supplement',\n    desc: 'A precursor hormone that declines with age. Micronised DHEA supports oestrogen and testosterone production, energy levels, and healthy ageing in women.',\n    url: 'https://store.hrt.org/products/dhea-25mg-natural-supplement-to-help-maintain-optimal-dhea-levels'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_BioDIM_Complex_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'BioDIM I3C Complex — Natural Hormone Balance Support',\n    desc: 'Physician-formulated to support healthy oestrogen metabolism and balance oestrogen-to-progesterone ratios — key factors during the perimenopause transition.',\n    url: 'https://store.hrt.org/products/biodim-i3c-complex-natural-hormone-balance-cellular-health-support-supplement'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Thyroid_Support_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'Women\\'s Hormone Support — Natural Supplement',\n    desc: 'A natural blend of magnesium, B6, black cohosh, and evening primrose oil — nutrients clinically linked to relief from common perimenopause symptoms.',\n    url: 'https://store.hrt.org/products/womens-hormone-support-natural-supplement'\n  }\n];\n\nconst relatedContent = [\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555c39ac19e2479bac2063_Andropause%E2%80%94Symptoms-Testing-and-Treatment.jpeg',\n    title: 'Perimenopause — Symptoms, Testing and Treatment',\n    url: 'https://www.hrt.org/perimenopause-symptoms-testing-treatment/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555be813ceda6560a19756_Thyroid-Disease%E2%80%94The-Symptoms-Cures-and-Causes.jpeg',\n    title: 'Hormone Replacement Therapy — What to Expect',\n    url: 'https://www.hrt.org/hormone-replacement-therapy/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555b7f12c18d7342ac77ba_Thyroid-Cancer%E2%80%94Signs-Risk-Types-and-Treatments.jpg',\n    title: 'Bioidentical HRT vs Synthetic HRT',\n    url: 'https://www.hrt.org/bioidentical-hrt-vs-synthetic-hrt/'\n  }\n];\n\nfunction labRow(t) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${t.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${t.title}\" border=\"0\" class=\"w183\" src=\"${t.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${t.title}</div><div style=\"color:#000;text-decoration:none;font-weight:300;font-size:13px\">${t.desc}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">${t.price}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction productRow(p) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${p.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${p.title}\" border=\"0\" class=\"w183\" src=\"${p.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${p.title}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">${p.desc}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction blogCol(b) {\n  return `<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;\" class=\"force-col-th\"><a href=\"${b.url}\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" style=\"font-size:0;padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"${b.title}\" border=\"0\" class=\"w159\" height=\"106\" src=\"${b.img}\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr><tr><td style=\"padding-bottom:5px;line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;text-transform:uppercase;\">${b.title}</div></td></tr><tr><td style=\"line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">HRT.org Blog</div></td></tr></table></td></tr></table></a></th>`;\n}\n\nconst ctaBlock = `<tr><td bgcolor=\"#b5547a\" class=\"t_block\" align=\"center\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr><th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div align=\"center\" style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;text-decoration:none;\">Free Consultation</div></th><th width=\"20\" valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:10px;height:10px;\"> </div></th><th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\" align=\"center\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr><td bgcolor=\"#e8a0bc\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\" align=\"center\"><a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a></td></tr></table></th></tr></table></td></tr>`;\n\nconst html = `<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;\"/>\n<title></title>\n<link href=\"https://fonts.googleapis.com/css?family='Open Sans':400,300,700&display=swap\" rel=\"stylesheet\"/>\n<style type=\"text/css\">\n#outlook a{padding:0}body{width:100%!important;margin:0;padding:0;background-color:#fff}\ntable{mso-table-lspace:0;mso-table-rspace:0}img{border:0;line-height:100%;outline:0;text-decoration:none;height:auto;-ms-interpolation-mode:bicubic}\n.a_block{display:block;text-decoration:none}.t_shadow_block{padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px}\n.t_block{padding:30px 20px}.blog_box{padding:10px 5px}\n@media screen and (max-width:480px){table[class=columns]{width:100%!important}th[class=force-col-th]{display:block;width:100%!important}img[class=imagescale]{max-width:100%!important;width:100%!important;height:auto!important}img[class=w183]{max-width:120px!important;width:100%!important;height:auto!important}img[class=w159]{max-width:300px!important;width:100%!important;height:auto!important}}\n</style></head>\n<body>\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" bgcolor=\"#FFFFFF\" valign=\"top\">\n<table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns\">\n\n<tr><td style=\"padding:20px;text-align:center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"font-family:'Montserrat Black',sans-serif;font-size:32px;text-decoration:none;color:#000000;\">HRT.org</a></td></tr>\n\n<tr><td><img alt=\"\" border=\"0\" class=\"imagescale\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_p1bc9c6.jpg\" style=\"width:600px;max-width:600px;height:auto;\" width=\"600\"></td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td style=\"padding:35px 20px 0;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000\">Your Assessment Results</div></td></tr>\n<tr><td style=\"padding-bottom:10px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;\">Assessment Score: <b>${d.totalScore}</b> &nbsp;|&nbsp; ${d.resultLabel}</div></td></tr>\n<tr><td style=\"padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.6\">${d.resultContent}</div></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#b5547a\" style=\"padding:30px 20px;\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr>\n<td bgcolor=\"#e8a0bc\" style=\"padding:10px 20px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">BOOK A FREE CONSULTATION</a>\n</td></tr></table></td></tr>\n\n<tr><td bgcolor=\"#ffffff\" style=\"padding:35px 20px;\">\n<div align=\"left\" style=\"color:#4e525e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.7\">${greeting},<br/><br/>${introText}<br/><br/>Feel free to reach out to one of our healthcare specialists for a private consultation, or contact us with any questions or concerns about your health.<br/><br/>We look forward to supporting you.<br/><br/>Sincerely,<br/><b>The HRT.org Team</b></div>\n</td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Suggested Lab Tests</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Easy &amp; Convenient Test Kits</div></td></tr>\n</table></td></tr>\n${labTests.map(labRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Popular Related Products</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Check out some of our best products</div></td></tr>\n</table></td></tr>\n${products.map(productRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td>\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding:35px 20px 10px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000;\">Related Content</div></td></tr>\n<tr><td style=\"padding:0 20px 30px;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n${relatedContent.map((b, i) => blogCol(b) + (i < relatedContent.length - 1 ? '<th width=\"15\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:20px;height:20px;\"> </div></th>' : '')).join('')}\n</tr></table></td></tr>\n<tr><td align=\"center\" style=\"padding-bottom:20px;\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"text-decoration:none;\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td bgcolor=\"#b5547a\" style=\"padding:10px 20px;\"><div align=\"center\" style=\"color:#ffffff;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">VIEW ALL</div></td></tr></table></a></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1d1d1d\" style=\"padding:30px 0;border-bottom:#ffffff solid 10px;\" align=\"center\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"padding:20px 20px 0;color:#8e8e8e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">\n<a href=\"tel:888-574-5524\" style=\"color:#8e8e8e;text-decoration:none;\">Call Us Toll Free: 888-574-5524</a><br/>\n<a href=\"https://www.hrt.org\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">hrt.org</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Contact Support</a> | <a href=\"https://www.hrt.org/terms-and-conditions/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Terms &amp; Conditions</a> | <a href=\"https://www.hrt.org/privacy-policy/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Privacy Policy</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;border-top:#313131 solid 1px;\"><div align=\"center\" style=\"color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">© HRT.org ${year}</div></td></tr>\n</table></td></tr>\n\n</table></td></tr></table>\n</body></html>`;\n\nreturn [{ json: { ...d, htmlEmailBody: html, emailSubject: 'Perimenopause Self-Assessment - Results | HRT.org' } }];\n"
+      },
+      "id": "3ba57ca4-6cb2-4d94-ae56-f78c4696f227",
+      "name": "Build HTML Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -112,
+        -64
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.patientEmail }}",
+        "subject": "={{ $json.emailSubject }}",
+        "message": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        }
+      },
+      "id": "2b9315eb-8e26-4a93-921d-789e17f122a5",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        128,
+        -64
+      ],
+      "webhookId": "55c2d525-bc94-4fd5-ab67-f634403712dd",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "W8RSrjkrLCD0dLx9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: true,\n  accepted: true,\n  emailSent: true,\n  totalScore: $('Calculate Scores').first().json.totalScore,\n  resultNum: $('Calculate Scores').first().json.resultNum,\n  resultLabel: $('Calculate Scores').first().json.resultLabel,\n  resultContent: $('Calculate Scores').first().json.resultContent,\n  message: 'Your perimenopause assessment is complete. A copy has been sent to your email.'\n} }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "id": "fa22495a-0490-4b8b-9960-d96d40e89cb3",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        368,
+        -64
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "6cc35d7f-7103-47a0-bacd-265823bf33ba",
+      "name": "Respond - Invalid Email",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -112,
+        176
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook (Perimenopause Submit)": {
+      "main": [
+        [
+          {
+            "node": "Calculate Scores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Scores": {
+      "main": [
+        [
+          {
+            "node": "Has Valid Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Valid Email?": {
+      "main": [
+        [
+          {
+            "node": "Build HTML Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Invalid Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build HTML Email": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "id": "ovtqulkrhjgO37g4",
+  "tags": []
+}

@@ -1,0 +1,704 @@
+{
+  "schemaVersion": 1,
+  "assessments": {
+    "women": {
+      "id": "women",
+      "slug": "hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "originalUrl": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "title": "Hormone Symptom Checklist for Women",
+      "intro": {
+        "screenId": "landing",
+        "paragraphs": [
+          "Female Hormone Imbalance Test",
+          "Many women needlessly suffer with uncomfortable symptoms associated with hormonal balance, or a hormone-related medical condition.",
+          "Complete the checklist by selecting factors/symptoms that are present and/or persist over time. We will calculate your score and provide action steps that may be right for you."
+        ],
+        "buttonText": "Start the Checklist",
+        "originalImage": {
+          "src": "https://res.cloudinary.com/dramtwcat/image/upload/v1783272349/iStock-994101864_giit8m.jpg",
+          "alt": "Woman experiencing hormone symptoms"
+        }
+      },
+      "screenOrder": [
+        "q1intro",
+        "q1a",
+        "q1b",
+        "q1c",
+        "q2",
+        "email",
+        "name",
+        "mailing"
+      ],
+      "screens": [
+        {
+          "id": "q1intro",
+          "type": "introduction",
+          "heading": "Physical Factors or Symptoms",
+          "number": "1",
+          "hint": "",
+          "buttonText": "Continue"
+        },
+        {
+          "id": "q1a",
+          "type": "checkbox-group",
+          "heading": "Select any that are present and/or persist over time:",
+          "number": "a",
+          "hint": "You can select multiple symptoms",
+          "buttonText": "OK",
+          "category": "cat2",
+          "label": "Reproductive & Hormonal",
+          "options": [
+            "Acne",
+            "Brittle nails",
+            "Dry skin",
+            "Thinning hair",
+            "Increased body/facial hair",
+            "Inability to lose weight",
+            "Weight gain",
+            "Waist size over 35 inches",
+            "Heavy menses",
+            "Menstrual irregularities",
+            "Vaginal dryness",
+            "Fibrocystic breasts",
+            "Cystic ovaries",
+            "Uterine fibroids"
+          ],
+          "required": false
+        },
+        {
+          "id": "q1b",
+          "type": "checkbox-group",
+          "heading": "Select any that are present and/or persist over time:",
+          "number": "b",
+          "hint": "You can select multiple symptoms",
+          "buttonText": "OK",
+          "category": "cat3",
+          "label": "Metabolic & Physical",
+          "options": [
+            "Bone loss",
+            "Hot flashes",
+            "Headaches",
+            "Aches and pains",
+            "Infertility",
+            "Constipation",
+            "Urinary incontinence",
+            "Night sweats",
+            "Heart palpitations",
+            "Low physical activity",
+            "Morning fatigue",
+            "Evening fatigue",
+            "Fatigue",
+            "Cold hands and feet"
+          ],
+          "required": false
+        },
+        {
+          "id": "q1c",
+          "type": "checkbox-group",
+          "heading": "Select any that are present and/or persist over time:",
+          "number": "c",
+          "hint": "You can select multiple symptoms",
+          "buttonText": "OK",
+          "category": "cat4",
+          "label": "Cardiovascular",
+          "options": [
+            "Chronic health problems",
+            "Susceptibility to infections",
+            "Allergies",
+            "Autoimmune diseases",
+            "Low blood sugar",
+            "High blood sugar",
+            "Diabetes/prediabetes or family history of diabetes",
+            "Elevated cholesterol",
+            "High blood pressure",
+            "Heart disease or family history of heart disease",
+            "Elevated triglycerides",
+            "History of steroid usage",
+            "History of smoking"
+          ],
+          "required": false
+        },
+        {
+          "id": "q2",
+          "type": "checkbox-group",
+          "heading": "Psychological Factors or Symptoms",
+          "number": "2",
+          "hint": "You can select multiple symptoms",
+          "buttonText": "OK",
+          "category": "cat1",
+          "label": "Psychological",
+          "options": [
+            "Mood swings (PMS)",
+            "Foggy thinking",
+            "Depressed mood",
+            "Irritability",
+            "Low libido/decreased sexual function",
+            "Food cravings",
+            "Sugar cravings",
+            "Sleep disturbances",
+            "Anxiety",
+            "Feeling cold all the time"
+          ],
+          "required": false
+        },
+        {
+          "id": "email",
+          "type": "text-input",
+          "heading": "We'll calculate your results in a second - which email address can we send them to?*",
+          "number": "3",
+          "hint": "",
+          "buttonText": "OK",
+          "input": {
+            "type": "email",
+            "placeholder": "name@example.com",
+            "autocomplete": "email",
+            "validationMessage": "Please enter a valid email address"
+          },
+          "required": true
+        },
+        {
+          "id": "name",
+          "type": "text-input",
+          "heading": "What's your first name?*",
+          "number": "4",
+          "hint": "",
+          "buttonText": "OK",
+          "input": {
+            "type": "text",
+            "placeholder": "Type your answer here...",
+            "autocomplete": "given-name",
+            "validationMessage": "Please enter your first name"
+          },
+          "required": true
+        },
+        {
+          "id": "mailing",
+          "type": "radio-group",
+          "heading": "Would you like to be notified of new assessments and our posts about health-related topics?",
+          "number": "5",
+          "hint": "",
+          "buttonText": "Submit",
+          "options": [
+            {
+              "letter": "A",
+              "text": "Yes, add me to your mailing list!"
+            },
+            {
+              "letter": "B",
+              "text": "No, just send me the results"
+            }
+          ],
+          "required": true,
+          "default": null
+        }
+      ],
+      "scoring": {
+        "method": "Count selected unique options per category, then apply source determineResult.",
+        "categoryOrder": [
+          "cat1",
+          "cat2",
+          "cat3",
+          "cat4"
+        ],
+        "categoryLabels": [
+          "Psychological",
+          "Reproductive & Hormonal",
+          "Metabolic & Physical",
+          "Cardiovascular"
+        ],
+        "maxima": [
+          10,
+          14,
+          14,
+          13
+        ],
+        "sourceFunction": "function determineResult(cat1, cat2, cat3, cat4) {\n    if (cat1 > 0 && cat2 > 0 && cat3 > 0 && cat4 > 0) return 5;\n    if (cat1 + cat2 > cat3 + cat4) return cat1 > cat2 ? 1 : 2;\n    return cat3 > cat4 ? 3 : 4;\n  }",
+        "results": {
+          "1": {
+            "label": "Category 1 — Psychological Dominant",
+            "verdict": "Your symptoms are primarily psychological — things like mood swings, foggy thinking, and anxiety. These are common early signs of hormonal imbalance in women.",
+            "body": "Psychological symptoms such as mood swings, irritability, foggy thinking, and low libido are frequently linked to fluctuating estrogen and progesterone levels, along with disrupted cortisol patterns. These shifts affect neurotransmitter activity and can significantly impact mood, focus, and energy well before more obvious physical symptoms appear. A hormone panel covering estrogen, progesterone, and cortisol can help clarify what is driving these symptoms.",
+            "steps": [
+              {
+                "title": "Get a full hormone panel",
+                "body": "Estrogen, progesterone, and cortisol levels will show whether hormonal imbalance is contributing to your psychological symptoms."
+              },
+              {
+                "title": "Prioritize sleep and stress management",
+                "body": "Poor sleep and chronic stress both disrupt hormone production and worsen mood-related symptoms."
+              },
+              {
+                "title": "Speak to a specialist",
+                "body": "A personalized consultation can help you understand whether hormone therapy is appropriate for you."
+              }
+            ]
+          },
+          "2": {
+            "label": "Category 2 — Reproductive & Hormonal Dominant",
+            "verdict": "Your symptoms are primarily reproductive and hormonal — this pattern is classically associated with estrogen and androgen imbalance in women.",
+            "body": "Symptoms like menstrual irregularities, heavy menses, acne, and increased body/facial hair are among the most recognized signs of a reproductive hormone imbalance, such as excess androgens or estrogen dominance. These symptoms often develop gradually and are frequently dismissed, when in fact they are treatable with the right diagnosis and care.",
+            "steps": [
+              {
+                "title": "Test your reproductive hormone levels",
+                "body": "A panel covering estrogen, testosterone, and androgens is the standard first step in diagnosing a reproductive hormone imbalance."
+              },
+              {
+                "title": "Ask about a pelvic ultrasound",
+                "body": "If symptoms like cystic ovaries or fibroids are present, imaging can help identify underlying structural causes."
+              },
+              {
+                "title": "Book a free consultation",
+                "body": "Our specialists can walk you through treatment options based on your specific hormone pattern."
+              }
+            ]
+          },
+          "3": {
+            "label": "Category 3 — Metabolic & Physical Dominant",
+            "verdict": "Your symptoms point to metabolic and physical changes — fatigue, weight gain, and low activity are common when hormone and thyroid function decline together.",
+            "body": "Metabolic symptoms such as persistent fatigue, difficulty losing weight, and hot flashes often reflect a combination of declining hormone levels and slowing metabolism. Left unaddressed, this pattern can progress and make daily life increasingly difficult, making early evaluation valuable.",
+            "steps": [
+              {
+                "title": "Check hormone and thyroid levels together",
+                "body": "Hormonal imbalance and thyroid dysfunction often overlap and worsen each other — both should be tested."
+              },
+              {
+                "title": "Get a metabolic panel",
+                "body": "Fasting glucose, HbA1c, and a lipid panel will show whether metabolic markers need attention."
+              },
+              {
+                "title": "Combine movement with treatment",
+                "body": "Regular physical activity helps manage weight and energy, and works well alongside any hormone therapy you pursue."
+              }
+            ]
+          },
+          "4": {
+            "label": "Category 4 — Cardiovascular & Chronic Disease Risk Dominant",
+            "verdict": "Your symptoms point mainly toward cardiovascular and chronic disease risk factors, which are closely linked to hormonal health in women.",
+            "body": "Elevated cholesterol, blood pressure, blood sugar, or a personal/family history of heart disease and diabetes are all connected to hormone levels — hormonal decline is associated with increased cardiovascular risk, and treating it appropriately (alongside standard care) is an important part of a complete picture.",
+            "steps": [
+              {
+                "title": "Get a cardiometabolic workup",
+                "body": "Lipid panel, blood pressure, fasting glucose/HbA1c, and a hormone panel should all be assessed together."
+              },
+              {
+                "title": "Talk to your doctor about your family history",
+                "body": "Family history of heart disease or diabetes changes how aggressively these risk factors should be managed."
+              },
+              {
+                "title": "Ask about hormone-related cardiovascular risk",
+                "body": "Our specialists can help you understand how hormone levels interact with your cardiovascular risk profile."
+              }
+            ]
+          },
+          "5": {
+            "label": "Category 5 — Multiple Systems Affected",
+            "verdict": "You are experiencing symptoms across all four areas — psychological, reproductive, metabolic, and cardiovascular. This broad pattern is common with significant hormonal imbalance and deserves a comprehensive evaluation.",
+            "body": "When symptoms span psychological, reproductive, metabolic, and cardiovascular categories simultaneously, it usually indicates that hormonal decline has been affecting your body for some time across multiple systems. This is a common pattern seen in women with clinically significant hormone imbalance, and it typically responds well to a structured, comprehensive treatment plan.",
+            "steps": [
+              {
+                "title": "Get a comprehensive hormone & metabolic panel",
+                "body": "Estrogen, progesterone, androgens, thyroid, lipids, blood sugar, and cortisol together will give a complete picture of what is driving your symptoms."
+              },
+              {
+                "title": "Speak with a specialist as soon as possible",
+                "body": "With symptoms across every category, a personalized treatment plan — rather than addressing symptoms individually — will likely be most effective."
+              },
+              {
+                "title": "Start with lifestyle foundations",
+                "body": "Sleep, movement, and nutrition support any hormone therapy you and your specialist decide to pursue."
+              }
+            ]
+          }
+        },
+        "zeroSelectionSourceResult": 4
+      },
+      "resultsScreen": {
+        "title": "Your Assessment Results",
+        "subtitle": "Hormone Symptom Checklist for Women — HRT.org",
+        "sectionHeadings": [
+          "What does this mean?",
+          "Recommended next steps"
+        ],
+        "originalSuccessCopy": "A copy of these results has been sent to",
+        "actions": [
+          {
+            "label": "Book a Free Consultation",
+            "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+          },
+          {
+            "label": "Retake Assessment",
+            "href": null
+          }
+        ]
+      },
+      "originalIntegration": {
+        "transport": "POST JSON",
+        "webhookUrl": "https://vmi3206755.contaboserver.net/webhook/hormone-women-typeform-submit",
+        "payload": {
+          "first_name": "Trimmed first name",
+          "email": "Trimmed validated email",
+          "mailing_list": "Exact selected mailing-choice text",
+          "cat1": "Psychological selected count",
+          "cat2": "Reproductive & hormonal selected count",
+          "cat3": "Metabolic & physical selected count",
+          "cat4": "Cardiovascular & chronic disease selected count"
+        },
+        "noRawAnswersSent": true,
+        "sourceDeliveryBehavior": "Starts fetch without awaiting success, shows local result immediately, and claims email was sent even if fetch fails. Do not reproduce that unverified delivery claim.",
+        "enabledLocally": false,
+        "dependency": "User-provided n8n workflow export and confirmed destination/response contract before enabling live delivery."
+      }
+    },
+    "men": {
+      "id": "men",
+      "slug": "hormone-symptom-checklist-men",
+      "originalUrl": "https://hrt.org/checklist/hormone-symptom-checklist-men",
+      "title": "Hormone Symptom Checklist for Men",
+      "intro": {
+        "screenId": "intro",
+        "paragraphs": [
+          "Low testosterone and hormonal imbalance affect millions of men and often go undiagnosed for years.",
+          "Select any symptoms that apply to you, and we'll show you which areas of your health may need attention — plus what you can do about it."
+        ],
+        "buttonText": "Start",
+        "originalImage": {
+          "src": "https://res.cloudinary.com/dramtwcat/image/upload/v1783272803/what-did-i-last-night_wzzpj1.jpg",
+          "alt": "Man experiencing hormone symptoms"
+        }
+      },
+      "screenOrder": [
+        "q1",
+        "q2intro",
+        "q2a",
+        "q2b",
+        "q2c",
+        "email",
+        "name",
+        "mailing"
+      ],
+      "screens": [
+        {
+          "id": "q1",
+          "type": "checkbox-group",
+          "heading": "Psychological Factors or Symptoms",
+          "number": "1",
+          "hint": "Choose as many as you like",
+          "buttonText": "OK",
+          "category": "cat1",
+          "label": "Psychological",
+          "options": [
+            "Feeling burned out",
+            "Irritable",
+            "Apathy",
+            "Depression",
+            "Anxiety",
+            "Stress",
+            "Sugar cravings",
+            "Insomnia",
+            "Sleep disturbances",
+            "Hot flashes",
+            "Lack of motivation",
+            "Foggy thinking",
+            "Decreased mental sharpness",
+            "Decreased libido"
+          ],
+          "required": false
+        },
+        {
+          "id": "q2intro",
+          "type": "introduction",
+          "heading": "Physical Factors or Symptoms",
+          "number": "2",
+          "hint": "",
+          "buttonText": "Continue"
+        },
+        {
+          "id": "q2a",
+          "type": "checkbox-group",
+          "heading": "Select any that are present and/or persist over time:",
+          "number": "2a",
+          "hint": "Choose as many as you like",
+          "buttonText": "OK",
+          "category": "cat2",
+          "label": "Sexual & Urinary",
+          "options": [
+            "Decreased erections",
+            "Erectile dysfunction",
+            "Decreased urine flow",
+            "Increased urinary urge",
+            "Constipation",
+            "Prostate problems",
+            "Infertility problems",
+            "Feeling cold",
+            "Night sweats",
+            "Decreased stamina",
+            "Morning fatigue",
+            "Evening fatigue",
+            "Fatigue"
+          ],
+          "required": false
+        },
+        {
+          "id": "q2b",
+          "type": "checkbox-group",
+          "heading": "Select any that are present and/or persist over time:",
+          "number": "2b",
+          "hint": "Choose as many as you like",
+          "buttonText": "OK",
+          "category": "cat3",
+          "label": "Metabolic & Physical",
+          "options": [
+            "Low physical activity",
+            "Inability to lose weight",
+            "Decreased muscle mass",
+            "Weight gain",
+            "Weight gain (waist specifically)",
+            "Waist size greater than 40 inches",
+            "Oily skin",
+            "Dry skin",
+            "Brittle nails",
+            "Aches and pains",
+            "Headaches",
+            "Bone loss",
+            "Fibromyalgia"
+          ],
+          "required": false
+        },
+        {
+          "id": "q2c",
+          "type": "checkbox-group",
+          "heading": "Select any that are present and/or persist over time:",
+          "number": "2c",
+          "hint": "Choose as many as you like",
+          "buttonText": "OK",
+          "category": "cat4",
+          "label": "Cardiovascular",
+          "options": [
+            "Allergies",
+            "Autoimmune disease",
+            "Susceptibility to infections",
+            "Chronic health problems",
+            "History of smoking",
+            "Elevated cholesterol",
+            "High blood pressure",
+            "Elevated triglycerides",
+            "Heart palpitations",
+            "Heart disease",
+            "Family history of heart disease",
+            "Low blood sugar",
+            "High blood sugar",
+            "Diabetes",
+            "Family history of diabetes"
+          ],
+          "required": false
+        },
+        {
+          "id": "email",
+          "type": "text-input",
+          "heading": "We'll calculate your results in a second - which email address can we send them to?*",
+          "number": "3",
+          "hint": "",
+          "buttonText": "OK",
+          "input": {
+            "type": "email",
+            "placeholder": "name@example.com",
+            "autocomplete": "email",
+            "validationMessage": "Please enter a valid email address"
+          },
+          "required": true
+        },
+        {
+          "id": "name",
+          "type": "text-input",
+          "heading": "What's your first name?*",
+          "number": "4",
+          "hint": "",
+          "buttonText": "OK",
+          "input": {
+            "type": "text",
+            "placeholder": "Type your first name here...",
+            "autocomplete": "given-name",
+            "validationMessage": "Please enter your first name"
+          },
+          "required": true
+        },
+        {
+          "id": "mailing",
+          "type": "radio-group",
+          "heading": "Would you like to be notified of new assessments and our posts about health-related topics?",
+          "number": "5",
+          "hint": "",
+          "buttonText": "Submit",
+          "options": [
+            {
+              "letter": "A",
+              "text": "Yes, add me to your mailing list!"
+            },
+            {
+              "letter": "B",
+              "text": "No, just send me the results"
+            }
+          ],
+          "required": true,
+          "default": null
+        }
+      ],
+      "scoring": {
+        "method": "Count selected unique options per category, then apply source determineResult.",
+        "categoryOrder": [
+          "cat1",
+          "cat2",
+          "cat3",
+          "cat4"
+        ],
+        "categoryLabels": [
+          "Psychological",
+          "Sexual & Urinary",
+          "Metabolic & Physical",
+          "Cardiovascular"
+        ],
+        "maxima": [
+          14,
+          13,
+          13,
+          15
+        ],
+        "sourceFunction": "function determineResult(cat1, cat2, cat3, cat4) {\n    if (cat1 > 0 && cat2 > 0 && cat3 > 0 && cat4 > 0) return 5;\n    if (cat1 + cat2 > cat3 + cat4) return cat1 > cat2 ? 1 : 2;\n    return cat3 > cat4 ? 3 : 4;\n  }",
+        "results": {
+          "1": {
+            "label": "Category 1 — Psychological Dominant",
+            "verdict": "Your symptoms are primarily psychological and cognitive — things like mood changes, low motivation, and mental fog. These are common early signs of hormonal imbalance in men.",
+            "body": "Psychological symptoms such as irritability, apathy, brain fog, and low libido are frequently linked to declining testosterone and disrupted cortisol patterns. These changes affect neurotransmitter activity and can significantly impact mood, focus, and drive well before more obvious physical symptoms appear. A hormone panel that includes total and free testosterone, along with cortisol, can clarify what is driving these symptoms.",
+            "steps": [
+              {
+                "title": "Get a full hormone panel",
+                "body": "Total & free testosterone, SHBG, and cortisol will show whether hormonal imbalance is contributing to your psychological symptoms."
+              },
+              {
+                "title": "Prioritize sleep and stress management",
+                "body": "Poor sleep and chronic stress both suppress testosterone production and worsen mood-related symptoms."
+              },
+              {
+                "title": "Speak to a specialist",
+                "body": "A personalized consultation can help you understand whether hormone optimization therapy is appropriate for you."
+              }
+            ]
+          },
+          "2": {
+            "label": "Category 2 — Sexual & Urinary Dominant",
+            "verdict": "Your symptoms are primarily sexual and urinary in nature — this pattern is classically associated with low testosterone (Low-T) in men.",
+            "body": "Symptoms like decreased erections, erectile dysfunction, reduced stamina, and urinary changes are among the most recognized signs of testosterone deficiency. These symptoms often develop gradually and are frequently dismissed as a normal part of aging, when in fact they are treatable with the right diagnosis and care.",
+            "steps": [
+              {
+                "title": "Test your testosterone levels",
+                "body": "A morning blood draw for total and free testosterone is the standard first step in diagnosing Low-T."
+              },
+              {
+                "title": "Rule out prostate issues",
+                "body": "A PSA test and prostate exam help rule out other causes of urinary symptoms before starting any treatment."
+              },
+              {
+                "title": "Book a free consultation",
+                "body": "Our specialists can walk you through treatment options, including testosterone replacement therapy (TRT), if appropriate."
+              }
+            ]
+          },
+          "3": {
+            "label": "Category 3 — Metabolic & Physical Dominant",
+            "verdict": "Your symptoms point to metabolic and physical changes — weight gain, muscle loss, and low activity are common when testosterone and thyroid function decline together.",
+            "body": "Metabolic symptoms such as increasing waist size, difficulty losing weight, and decreased muscle mass often reflect a combination of declining testosterone and slowing metabolism. Left unaddressed, this pattern can progress toward metabolic syndrome, making early evaluation valuable.",
+            "steps": [
+              {
+                "title": "Check testosterone and thyroid together",
+                "body": "Low testosterone and thyroid dysfunction often overlap and worsen each other — both should be tested."
+              },
+              {
+                "title": "Get a metabolic panel",
+                "body": "Fasting glucose, HbA1c, and a lipid panel will show whether metabolic syndrome markers are present."
+              },
+              {
+                "title": "Combine strength training with treatment",
+                "body": "Resistance training helps preserve muscle mass and works synergistically with any hormone therapy you pursue."
+              }
+            ]
+          },
+          "4": {
+            "label": "Category 4 — Cardiovascular & Chronic Disease Risk Dominant",
+            "verdict": "Your symptoms point mainly toward cardiovascular and chronic disease risk factors, which are closely linked to hormonal health in men.",
+            "body": "Elevated cholesterol, blood pressure, blood sugar, or a personal/family history of heart disease and diabetes are all connected to testosterone levels — low testosterone is associated with increased cardiovascular risk, and treating it appropriately (alongside standard cardiac care) is an important part of a complete picture.",
+            "steps": [
+              {
+                "title": "Get a cardiometabolic workup",
+                "body": "Lipid panel, blood pressure, fasting glucose/HbA1c, and testosterone should all be assessed together."
+              },
+              {
+                "title": "Talk to your doctor about your family history",
+                "body": "Family history of heart disease or diabetes changes how aggressively these risk factors should be managed."
+              },
+              {
+                "title": "Ask about hormone-related cardiovascular risk",
+                "body": "Our specialists can help you understand how hormone levels interact with your cardiovascular risk profile."
+              }
+            ]
+          },
+          "5": {
+            "label": "Category 5 — Multiple Systems Affected",
+            "verdict": "You are experiencing symptoms across all four areas — psychological, sexual, metabolic, and cardiovascular. This broad pattern is common with significant hormonal imbalance and deserves a comprehensive evaluation.",
+            "body": "When symptoms span psychological, sexual, metabolic, and cardiovascular categories simultaneously, it usually indicates that hormonal decline has been affecting your body for some time across multiple systems. This is the most common pattern seen in men with clinically significant Low Testosterone or broader endocrine imbalance, and it typically responds well to a structured, comprehensive treatment plan.",
+            "steps": [
+              {
+                "title": "Get a comprehensive hormone & metabolic panel",
+                "body": "Testosterone, SHBG, thyroid, lipids, blood sugar, and cortisol together will give a complete picture of what is driving your symptoms."
+              },
+              {
+                "title": "Speak with a specialist as soon as possible",
+                "body": "With symptoms across every category, a personalized treatment plan — rather than addressing symptoms individually — will likely be most effective."
+              },
+              {
+                "title": "Start with lifestyle foundations",
+                "body": "Sleep, strength training, and nutrition support any hormone therapy you and your specialist decide to pursue."
+              }
+            ]
+          }
+        },
+        "zeroSelectionSourceResult": 4
+      },
+      "resultsScreen": {
+        "title": "Your Assessment Results",
+        "subtitle": "Hormone Symptom Checklist for Men — HRT.org",
+        "sectionHeadings": [
+          "What does this mean?",
+          "Recommended next steps"
+        ],
+        "originalSuccessCopy": "A copy of these results has been sent to",
+        "actions": [
+          {
+            "label": "Book a Free Consultation",
+            "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+          },
+          {
+            "label": "Retake Assessment",
+            "href": null
+          }
+        ]
+      },
+      "originalIntegration": {
+        "transport": "POST JSON",
+        "webhookUrl": "https://vmi3206755.contaboserver.net/webhook/hormone-men-typeform-submit",
+        "payload": {
+          "first_name": "Trimmed first name",
+          "email": "Trimmed validated email",
+          "mailing_list": "Exact selected mailing-choice text",
+          "cat1": "Psychological selected count",
+          "cat2": "Sexual & urinary / energy selected count",
+          "cat3": "Metabolic & physical selected count",
+          "cat4": "Cardiovascular & chronic disease selected count"
+        },
+        "noRawAnswersSent": true,
+        "sourceDeliveryBehavior": "Starts fetch without awaiting success, shows local result immediately, and claims email was sent even if fetch fails. Do not reproduce that unverified delivery claim.",
+        "enabledLocally": false,
+        "dependency": "User-provided n8n workflow export and confirmed destination/response contract before enabling live delivery."
+      }
+    }
+  }
+}

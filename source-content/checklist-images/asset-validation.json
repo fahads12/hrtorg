@@ -1,0 +1,269 @@
+{
+  "checkedAt": "2026-10-12",
+  "method": "Manifest validation, browser image decoding, SHA-256 distinctness and original-copy comparison; visual alt-text review of all nine 480px derivatives.",
+  "scope": "Asset integrity and visual relevance only; not a clinical accuracy assessment.",
+  "summary": {
+    "checklists": 9,
+    "originals": 9,
+    "responsiveImages": 18,
+    "uniqueFiles": 27,
+    "originalBytes": 19354472,
+    "webpBytes": 756218,
+    "issues": 0
+  },
+  "issues": [],
+  "images": [
+    {
+      "id": "women",
+      "alt": "A woman discusses notes about her symptoms with a healthcare professional.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/women.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2158671,
+          "sha256": "fcff154b1d0fec0d5ffd9695754ae87c15aff96765bafdfa298e46dc0834ccd4"
+        },
+        {
+          "path": "uploads/checklists/women-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 22028,
+          "sha256": "6f75beab177ac698551dea543966dd200d58d9f9be29953d5c1b345932317f5d"
+        },
+        {
+          "path": "uploads/checklists/women-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 58536,
+          "sha256": "e7935baa14b6cc16fff06aebfc8b8390a4792c7ec883918637d351e82c3e485f"
+        }
+      ]
+    },
+    {
+      "id": "men",
+      "alt": "A man discusses his symptoms with a healthcare professional during a consultation.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/men.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2042692,
+          "sha256": "af2b8bb9f81e5a4fa23fa09924aebab2680d7b81dd5ff701dfee1a6a42ba67a6"
+        },
+        {
+          "path": "uploads/checklists/men-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 19524,
+          "sha256": "cec2ebef30f4780f1ca4843fcdf6d98571e1118a1351984f6cca26011d444856"
+        },
+        {
+          "path": "uploads/checklists/men-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 50504,
+          "sha256": "6e70cd85b64abbf5db7c15fd2e6c0e474c8b7c880eb6e1c5dede9d6968d7e7cb"
+        }
+      ]
+    },
+    {
+      "id": "pms",
+      "alt": "A woman records cycle symptoms in a notebook beside a calendar.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/pms.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2095616,
+          "sha256": "4ce7f29be0f5c38641ab6ed0e4df7be75b3ec7463fd60808cbc36323a7813bc6"
+        },
+        {
+          "path": "uploads/checklists/pms-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 23718,
+          "sha256": "dfee1e84ab79684c651bc1ddfad7986e1aed9e9e20242c5545e6433e98229493"
+        },
+        {
+          "path": "uploads/checklists/pms-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 61240,
+          "sha256": "dd6a312f512561aec0f033f63f3fb67dac8e461f8fd336f3860532b48eeccab4"
+        }
+      ]
+    },
+    {
+      "id": "thyroid",
+      "alt": "A clinician gently examines an adult patient's neck during a thyroid consultation.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/thyroid.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2144107,
+          "sha256": "db3d457b1fbf1f21cf4cccd6e0e89e7555c7ac16258b0fde41828e4eee4a80fe"
+        },
+        {
+          "path": "uploads/checklists/thyroid-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18190,
+          "sha256": "0e41b1fce2798fe0a5f4747ac4197759d42ec58e8c70fce9cb22b20af3a3694a"
+        },
+        {
+          "path": "uploads/checklists/thyroid-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 47694,
+          "sha256": "b82544e4707bcafaaaa5fef7e6f5872145a7af8ee45cc07ebe8a7ed239770a13"
+        }
+      ]
+    },
+    {
+      "id": "adrenal",
+      "alt": "A man reflects on sleep and stress while making notes in a journal at home.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/adrenal.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2086272,
+          "sha256": "d84a985cace50f0ac06c31d5a065040be8f5ae8d351806d5d3274d022227acd7"
+        },
+        {
+          "path": "uploads/checklists/adrenal-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 24314,
+          "sha256": "537c7d9843f0614158ac46de780bc20b1573d49629e29f6c77817c9801a6bc48"
+        },
+        {
+          "path": "uploads/checklists/adrenal-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 63122,
+          "sha256": "c143d771e9ecb865de786f66b23794c62f58342bda02b7d0e3c892838dc2568e"
+        }
+      ]
+    },
+    {
+      "id": "osteoporosis",
+      "alt": "A healthcare professional uses a spinal model to discuss bone health with an adult woman.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/osteoporosis.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2212033,
+          "sha256": "155a947f78880eb10b1d40d0ec628d16bf7ce47f46f9db43ce6ffbe3ae00ce61"
+        },
+        {
+          "path": "uploads/checklists/osteoporosis-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 22924,
+          "sha256": "1c18b7618c367912842c038f7ec8f23bde99d4688b9e26f44876c7dba3d1b9d8"
+        },
+        {
+          "path": "uploads/checklists/osteoporosis-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 64208,
+          "sha256": "9487cb294a71640107f5df96f3338dba41d7c3e46002a5627dc223c1d7ee17e2"
+        }
+      ]
+    },
+    {
+      "id": "andropause",
+      "alt": "A mature man writes down questions about sleep and energy before a healthcare conversation.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/andropause.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2116066,
+          "sha256": "171f63fc6c171117df33f43c7f888f75eb28cdff804f69f747468ded5134f1c6"
+        },
+        {
+          "path": "uploads/checklists/andropause-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 24138,
+          "sha256": "0097357388f642d2517382fe99eddb313d30d8e0671a13be29dff63a2ed4a631"
+        },
+        {
+          "path": "uploads/checklists/andropause-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 66538,
+          "sha256": "72f273d0a7ca657b27a414bd6ba374731b4a2eeaf6872f192dcf339ae3b9a11a"
+        }
+      ]
+    },
+    {
+      "id": "menopause",
+      "alt": "A mature woman and a healthcare professional have a thoughtful conversation about midlife care.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/menopause.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2320979,
+          "sha256": "6cf7a28d0c1402d075703e2e9f765a1b50ee325386f9d4849d03ed1a96eea0bd"
+        },
+        {
+          "path": "uploads/checklists/menopause-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 25032,
+          "sha256": "e3c535331653047efeb4ca159923e5fca2cab29649dc93c07849e10d21f3886a"
+        },
+        {
+          "path": "uploads/checklists/menopause-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 71770,
+          "sha256": "b0e420d683a622aa9e20195fafd9f9ece0d47c95099f7467a89b269dae41db90"
+        }
+      ]
+    },
+    {
+      "id": "perimenopause",
+      "alt": "A woman records symptoms and questions in a notebook beside a calendar at home.",
+      "mode": "built-in",
+      "files": [
+        {
+          "path": "source-content/checklist-images/generated/perimenopause.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2178036,
+          "sha256": "4f90a12a3c4f59d812f03c1cf146bea894afa7a966ca6a7540ec85273aed7475"
+        },
+        {
+          "path": "uploads/checklists/perimenopause-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 25600,
+          "sha256": "ae05aa6372968715dcbd1e74e5c1cc03b84798c78b600ab2413fae1a87d72788"
+        },
+        {
+          "path": "uploads/checklists/perimenopause-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 67138,
+          "sha256": "ad5e98dcd7fc8dafd519cb614a54ec3371bda244efe633f06acdb38b9e879444"
+        }
+      ]
+    }
+  ]
+}

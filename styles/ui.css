@@ -1,0 +1,72 @@
+/* No Preflight: preserve the established static site's typography and layout.
+   build-glow-menu.cjs scopes the generated utilities to .hrt-ui. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "../components";
+@source "../client";
+
+@theme inline {
+  --color-background: var(--ui-background);
+  --color-foreground: var(--ui-foreground);
+  --color-muted-foreground: var(--ui-muted-foreground);
+  --color-border: var(--ui-border);
+}
+
+.hrt-ui {
+  --ui-background: #ffffff;
+  --ui-foreground: #102f50;
+  --ui-muted-foreground: #465a70;
+  --ui-border: #cbd9e5;
+  color: var(--ui-foreground);
+  font: inherit;
+  min-width: 0;
+}
+.hrt-ui [data-theme="dark"] {
+  --ui-background: #102f50;
+  --ui-foreground: #f5f8fc;
+  --ui-muted-foreground: #c1d1df;
+  --ui-border: #7193ad;
+}
+.hrt-ui .glow-menu { isolation: isolate; border-style: solid; }
+.hrt-ui .glow-menu-link { text-decoration: none; white-space: nowrap; }
+.hrt-ui .glow-menu-link:focus-visible { outline: 2px solid #2587a2; outline-offset: 2px; }
+.hrt-ui .glow-menu-icon { display: inline-flex; flex-shrink: 0; }
+.hrt-ui .glow-menu-icon svg { display: block; }
+.hrt-ui .glow-menu-back { position: absolute; }
+
+/* The component stays reusable; compact sizing is specific to the HRT header. */
+#hrt-glow-navigation { flex-shrink: 0; }
+#hrt-glow-navigation .glow-menu {
+  padding: 4px;
+  border: 1px solid #dce5ef;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fffffffa, #f6f9fcbb);
+  box-shadow: 0 3px 14px #14355305;
+}
+#hrt-glow-navigation .glow-menu-list { gap: 2px; }
+#hrt-glow-navigation .glow-menu-face {
+  min-height: 44px;
+  padding: 10px 8px;
+  gap: 5px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  border-radius: 11px;
+}
+#hrt-glow-navigation .glow-menu-icon svg { width: 15px; height: 15px; }
+#hrt-glow-navigation .glow-menu-link[aria-current="page"] { background: #eaf2f8; }
+html[data-care-theme="women"] #hrt-glow-navigation .glow-menu-link[aria-current="page"] { background: #f4eaf1; color: #844269; }
+html[data-care-theme="men"] #hrt-glow-navigation .glow-menu-link[aria-current="page"] { background: #eaf2f8; color: #153b5c; }
+#site-navigation[data-glow-ready] { gap: 12px; }
+
+@media (max-width: 1000px) {
+  #hrt-glow-navigation { width: 100%; margin: 5px 0 12px; }
+  #hrt-glow-navigation .glow-menu { padding: 8px; }
+  #hrt-glow-navigation .glow-menu-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  #hrt-glow-navigation .glow-menu-face { min-height: 48px; font-size: 13px; padding: 12px 10px; gap: 8px; }
+  #hrt-glow-navigation .glow-menu-icon svg { width: 17px; height: 17px; }
+  #site-navigation[data-glow-ready] { gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hrt-ui .glow-menu * { transition-duration: 0s !important; }
+}

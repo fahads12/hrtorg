@@ -1,0 +1,475 @@
+[
+  {
+    "key": "checklist/erectile-dysfunction-ed-symptom-checklist",
+    "route": "checklist/erectile-dysfunction-ed-symptom-checklist/index.html",
+    "source": "https://hrt.org/checklist/erectile-dysfunction-ed-symptom-checklist",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/erectile-dysfunction-ed-symptom-checklist",
+    "bytes": 42777,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__erectile-dysfunction-ed-symptom-checklist.alias.html",
+    "embeds": [
+      "<div data-tf-widget=\"JZXYRv\" data-tf-iframe-props=\"title=Q008 Erectile Dysfunction\" data-tf-medium=\"snippet\" style=\"width:100%;height:400px;\">"
+    ],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/andropause-symptoms-test-assessment",
+    "route": "checklist/andropause-symptoms-test-assessment/index.html",
+    "source": "https://hrt.org/checklist/andropause-symptoms-test-assessment",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/andropause-symptoms-test-assessment",
+    "bytes": 41252,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment",
+      "https://www.hrt.org/andropause-assessment/#"
+    ],
+    "file": "checklist__andropause-symptoms-test-assessment.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/adrenal-fatigue-stress-test",
+    "route": "checklist/adrenal-fatigue-stress-test/index.html",
+    "source": "https://hrt.org/checklist/adrenal-fatigue-stress-test",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/adrenal-fatigue-stress-test",
+    "bytes": 51268,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__adrenal-fatigue-stress-test.alias.html",
+    "embeds": [
+      "<div data-tf-widget=\"zB1vM1\" data-tf-iframe-props=\"title=Q008 Adrenal Fatigue Stress Assessment\" data-tf-medium=\"snippet\" style=\"width:100%;height:400px;\">"
+    ],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/general-nutritional-nutrient-deficiency-symptom-checklist",
+    "route": "checklist/general-nutritional-nutrient-deficiency-symptom-checklist/index.html",
+    "source": "https://hrt.org/checklist/general-nutritional-nutrient-deficiency-symptom-checklist",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/general-nutritional-nutrient-deficiency-symptom-checklist",
+    "bytes": 41713,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__general-nutritional-nutrient-deficiency-symptom-checklist.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/hormone-imbalance",
+    "route": "checklist/hormone-imbalance/index.html",
+    "source": "https://hrt.org/checklist/hormone-imbalance",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/hormone-imbalance",
+    "bytes": 58629,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__hormone-imbalance.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/hormone-symptom-checklist",
+    "route": "checklist/hormone-symptom-checklist/index.html",
+    "source": "https://hrt.org/checklist/hormone-symptom-checklist",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/hormone-symptom-checklist",
+    "bytes": 58933,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment",
+      "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "https://hrt.org/checklist/hormone-symptom-checklist-men"
+    ],
+    "file": "checklist__hormone-symptom-checklist.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/new-patient-health-supplement-required-intake-information",
+    "route": "checklist/new-patient-health-supplement-required-intake-information/index.html",
+    "source": "https://hrt.org/checklist/new-patient-health-supplement-required-intake-information",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/new-patient-health-supplement-required-intake-information",
+    "bytes": 38024,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__new-patient-health-supplement-required-intake-information.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/main-assessment-page",
+    "route": "checklist/main-assessment-page/index.html",
+    "source": "https://hrt.org/checklist/main-assessment-page",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/main-assessment-page",
+    "bytes": 40525,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment",
+      "https://www.hrt.org/andropause-assessment/",
+      "https://www.hrt.org/thyroid-assessment/",
+      "https://www.hrt.org/osteoporosis-assessment/",
+      "https://www.hrt.org/pms-symptom-self-assessment/",
+      "https://www.hrt.org/perimenopause-symptom-self-assessment/",
+      "https://www.hrt.org/menopause-symptoms-self-assessment/"
+    ],
+    "file": "checklist__main-assessment-page.alias.html",
+    "embeds": [],
+    "assessmentLinks": [
+      "https://www.hrt.org/pms-symptom-self-assessment/",
+      "https://www.hrt.org/perimenopause-symptom-self-assessment/",
+      "https://www.hrt.org/menopause-symptoms-self-assessment/"
+    ]
+  },
+  {
+    "key": "checklist/low-testosterone-low-t-quiz-free-evaluation",
+    "route": "checklist/low-testosterone-low-t-quiz-free-evaluation/index.html",
+    "source": "https://hrt.org/checklist/low-testosterone-low-t-quiz-free-evaluation",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/low-testosterone-low-t-quiz-free-evaluation",
+    "bytes": 42281,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__low-testosterone-low-t-quiz-free-evaluation.alias.html",
+    "embeds": [
+      "<div data-tf-widget=\"EdKIn3\" data-tf-iframe-props=\"title=Q009 Hormone Symptom Checklist Men\" data-tf-medium=\"snippet\" style=\"width:100%;height:400px;\">"
+    ],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/premenstrual-syndrome-pms-self-assessment",
+    "route": "checklist/premenstrual-syndrome-pms-self-assessment/index.html",
+    "source": "https://hrt.org/checklist/premenstrual-syndrome-pms-self-assessment",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/premenstrual-syndrome-pms-self-assessment",
+    "bytes": 42716,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__premenstrual-syndrome-pms-self-assessment.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/perimenopause-symptom-self-assessment",
+    "route": "checklist/perimenopause-symptom-self-assessment/index.html",
+    "source": "https://hrt.org/checklist/perimenopause-symptom-self-assessment",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/perimenopause-symptom-self-assessment",
+    "bytes": 44632,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment",
+      "https://www.hrt.org/perimenopause-symptom-self-assessment/#"
+    ],
+    "file": "checklist__perimenopause-symptom-self-assessment.alias.html",
+    "embeds": [
+      "<div data-tf-widget=\"QJekHe\" data-tf-iframe-props=\"title=Q004 Perimenopause Symptom Self-Assessment\" data-tf-medium=\"snippet\" style=\"width:100%;height:400px;\">"
+    ],
+    "assessmentLinks": [
+      "https://www.hrt.org/perimenopause-symptom-self-assessment/#"
+    ]
+  },
+  {
+    "key": "checklist/osteoporosis-signs-symptoms-assessment-free-self-check-evaluation",
+    "route": "checklist/osteoporosis-signs-symptoms-assessment-free-self-check-evaluation/index.html",
+    "source": "https://hrt.org/checklist/osteoporosis-signs-symptoms-assessment-free-self-check-evaluation",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/osteoporosis-signs-symptoms-assessment-free-self-check-evaluation",
+    "bytes": 42839,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment",
+      "https://www.hrt.org/osteoporosis-assessment/#"
+    ],
+    "file": "checklist__osteoporosis-signs-symptoms-assessment-free-self-check-evaluation.alias.html",
+    "embeds": [
+      "<div data-tf-widget=\"BTPdq5\" data-tf-iframe-props=\"title=Q007 Osteoporosis Self-Assessment\" data-tf-medium=\"snippet\" style=\"width:100%;height:400px;\">"
+    ],
+    "assessmentLinks": []
+  },
+  {
+    "key": "hormone-symptom-checklist-women",
+    "route": "hormone-symptom-checklist-women/index.html",
+    "source": "https://hrt.org/hormone-symptom-checklist-women",
+    "status": 200,
+    "finalUrl": "https://hrt.org/hormone-symptom-checklist-women",
+    "bytes": 43285,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "hormone-symptom-checklist-women.alias.html",
+    "embeds": [
+      "<div data-tf-widget=\"WvKHXC\" data-tf-iframe-props=\"title=Q006 Hormone Symptom Checklist Women\" data-tf-medium=\"snippet\" data-tf-hidden=\"q=xxxxx\" style=\"width:100%;height:800px;\">"
+    ],
+    "assessmentLinks": []
+  },
+  {
+    "key": "menopause-quiz",
+    "route": "menopause-quiz/index.html",
+    "source": "https://hrt.org/menopause-quiz",
+    "status": 200,
+    "finalUrl": "https://hrt.org/menopause-quiz",
+    "bytes": 7544,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [],
+    "file": "menopause-quiz.alias.html",
+    "embeds": [
+      "<div data-tf-live=\"01J603B89E1NKEQCH6HBCRJKEF\">"
+    ],
+    "assessmentLinks": []
+  },
+  {
+    "key": "checklist/weight-loss",
+    "route": "checklist/weight-loss/index.html",
+    "source": "https://hrt.org/checklist/weight-loss",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/weight-loss",
+    "bytes": 38450,
+    "largeScripts": [],
+    "typeforms": [
+      "//embed.typeform.com/next/embed.js",
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "checklist__weight-loss.alias.html",
+    "embeds": [
+      "<div data-tf-live=\"01J35Z7M3QEK02NQKTXJZMFAJJ\">"
+    ],
+    "assessmentLinks": []
+  },
+  {
+    "key": "symptom-checklist-for-men",
+    "route": "symptom-checklist-for-men/index.html",
+    "source": "https://hrt.org/symptom-checklist-for-men",
+    "status": 200,
+    "finalUrl": "https://hrt.org/symptom-checklist-for-men",
+    "bytes": 50550,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "symptom-checklist-for-men.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  },
+  {
+    "key": "symptom-checklist-for-women",
+    "route": "symptom-checklist-for-women/index.html",
+    "source": "https://hrt.org/symptom-checklist-for-women",
+    "status": 200,
+    "finalUrl": "https://hrt.org/symptom-checklist-for-women",
+    "bytes": 50558,
+    "largeScripts": [],
+    "typeforms": [
+      "https://embed.typeform.com/embed.js"
+    ],
+    "checklistLinks": [
+      "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "/checklist/hormone-symptom-checklist-men",
+      "/checklist/pms-assessment",
+      "/checklist/thyroid-assessment",
+      "/checklist/adrenal-fatigue",
+      "/checklist/osteoporosis-assessment",
+      "/checklist/andropause-assessment",
+      "/checklist/menopause-assessment",
+      "/checklist/perimenopause-assessment"
+    ],
+    "file": "symptom-checklist-for-women.alias.html",
+    "embeds": [],
+    "assessmentLinks": []
+  }
+]

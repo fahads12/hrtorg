@@ -1,0 +1,778 @@
+{
+  "retrievedAt": "2026-10-11T23:13:45.765Z",
+  "selector": ".blog-grid a[href]",
+  "categories": [
+    {
+      "key": "blog-categories/advice",
+      "articles": [],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/advice",
+          "file": "source-content/category-pages/advice--1.html",
+          "status": 200,
+          "count": 0
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/conditions",
+      "articles": [
+        "health/metabolic-syndrome-symptoms-risk-factors-diagnosis-treatment",
+        "health/thyroid-disorders-testing-treatment",
+        "health/the-frightening-truth-about-iodine-deficiency-disorders-linked-to-low-levels",
+        "health/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms",
+        "health/post-menopause-what-to-expect-after-the-change",
+        "health/thyroid-cancer-signs-risk-types-treatments",
+        "health/answers-for-adrenal-insufficiency-and-addisons-disease-what-you-dont-know-can-hurt-you",
+        "health/hyperthyroidism",
+        "health/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures",
+        "health/help-for-hashimotos-disease-causes-complications-and-treatment",
+        "health/menstrual-irregularity-and-menopause-whats-normal-whats-not",
+        "health/perimenopause-navigating-the-many-symptoms-of-pre-menopause",
+        "health/hypogonadism-in-men-the-many-causes-and-effects-new-treatment-and-natural-therapies",
+        "health/menopause-in-midlife-strange-symptoms-amazing-facts-whats-really-happening-in-the-female-body",
+        "health/is-gynecomastia-more-harmful-to-men-than-we-know-impact-excess-breast-tissue-males",
+        "health/hypothyroidism-self-check-treatment",
+        "health/endometriosis-explained-understanding-signs-symptoms-treatment-options-new-therapies-pregnancy-outcomes",
+        "health/fighting-for-fertility-know-the-causes-tests-signs-and-treatments",
+        "health/chronic-pain-conditions-causes-treatment",
+        "health/the-dangers-of-diabetes-different-types-how-its-diagnosed-whos-at-risk",
+        "health/quick-relief-urinary-tract-infection-uti-causes-treatment-natural-antibiotic",
+        "health/heart-disease-explained-many-risk-factors-causes-treatment",
+        "health/thyroid-disease-symptoms-cures-causes",
+        "health/functioning-with-fibroids-common-symptoms-risk-factors-and-natural-support-for-women",
+        "health/polycystic-ovarian-syndrome-explained-pcos-the-many-causes-symptoms-and-treatments",
+        "health/adrenal-fatigue-how-stress-affects-hormone-levels",
+        "health/high-cholesterol-and-heart-disease-causes-risks-and-treatment",
+        "health/prostate-cancer-symptoms-causes-treatment-prevention",
+        "health/breast-cancer-basics-symptoms-risks-stages-treatments",
+        "health/what-is-graves-disease-causes-symptoms-diagnosis-treatment",
+        "health/help-for-high-blood-pressure-hypertension-stopping-silent-killer-within"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/conditions",
+          "file": "source-content/category-pages/conditions--1.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/conditions?aaa3ca3f_page=2",
+          "file": "source-content/category-pages/conditions--2.html",
+          "status": 200,
+          "count": 6
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/genetic-testing",
+      "articles": [
+        "health/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health",
+        "health/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease",
+        "health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention",
+        "health/genetic-testing-test-dna-for-genetic-mutations-telomeres-genes-proteins-risk"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/genetic-testing",
+          "file": "source-content/category-pages/genetic-testing--1.html",
+          "status": 200,
+          "count": 4
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/health-testing",
+      "articles": [
+        "health/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing",
+        "health/thyroid-testing-thyroid-function-test",
+        "health/testosterone-testing-test-your-testosterone-levels",
+        "health/estrogen-testing-measure-levels-of-estrone-estradiol-and-estriol",
+        "health/neurotransmitter-testing-tools-for-optimal-mental-health-and-wellness",
+        "health/heavy-toxic-metals-testing-the-hidden-risks-among-us",
+        "health/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health",
+        "health/progesterone-testing-test-your-progesterone-levels",
+        "health/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease",
+        "health/insulin-testing-test-your-insulin-levels",
+        "health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention",
+        "health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels",
+        "health/genetic-testing-test-dna-for-genetic-mutations-telomeres-genes-proteins-risk",
+        "health/cortisol-testing-test-your-cortisol-levels-blood-urine-saliva",
+        "health/micronutrient-testing-test-levels-vitamins-antioxidants-minerals-amino-acids"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/health-testing",
+          "file": "source-content/category-pages/health-testing--1.html",
+          "status": 200,
+          "count": 15
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/heart-health",
+      "articles": [
+        "health/testosterone-universal-hormone-function-deficiency-treatment",
+        "health/heart-attack-symptoms-women-signs-diagnosis-treatment-differ-men",
+        "health/ecg-and-ekg-encyclopedia",
+        "health/cardiometabolic-testing-cardiovascular-disease-metabolic-risk-pre-diabetes-and-vascular-inflammation",
+        "health/heart-attack-help-causes-symptoms-signs-treatment-every-minute-counts",
+        "health/heart-health-your-life-depends-on-it",
+        "health/heart-rate-monitor-types-trackers-technology-professional-personal",
+        "health/pacs-premature-atrial-contractions",
+        "health/undiagnosed-chest-pain-determining-the-cause",
+        "health/help-heart-attack-symptoms-men-risks-common-conditions-mimic-serious-warning-signs",
+        "health/heart-failure-types-symptoms-causes-treatments",
+        "health/heart-surgery-explained-procedures-and-surgeries-for-heart-conditions-diseases",
+        "health/essential-omega-3-omega-6-fatty-acids-why-most-of-us-dont-get-enough",
+        "health/heart-disease-explained-many-risk-factors-causes-treatment",
+        "health/gambling-with-cardiovascular-risk-picking-the-winners-and-losers",
+        "health/eating-heart-healthy-for-life-choosing-right-foods-to-support-a-cardiac-diet",
+        "health/coronary-heart-disease-and-the-benefits-of-regular-exercise",
+        "health/how-heart-pacemakers-work-and-cardiac-pacing-information",
+        "health/high-cholesterol-and-heart-disease-causes-risks-and-treatment"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/heart-health",
+          "file": "source-content/category-pages/heart-health--1.html",
+          "status": 200,
+          "count": 19
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/hormones",
+      "articles": [
+        "health/mastering-stress-management-how-a-diurnal-cortisol-test-can-help",
+        "health/hormonal-imbalance-in-men-whats-really-happening",
+        "health/your-bodys-need-for-estrogen-then-and-now",
+        "health/why-bioidentical-hormone-replacement-therapy-over-synthetic-hormone-replacement-therapy",
+        "health/what-are-hormones-why-they-get-depleted",
+        "health/testosterone-universal-hormone-function-deficiency-treatment",
+        "health/thyroid-disorders-testing-treatment",
+        "health/progesterone-bioidentical-hrt-the-facts",
+        "health/female-hormone-imbalance-what-hypothyroidism-oxytocin-menopause-and-libido-may-have-in-common",
+        "health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do",
+        "health/estrogen-bioidenticals-what-women-need-to-know",
+        "health/ipamorelin-effect-harnessing-power-growth-hormone-naturally",
+        "health/progesterone-therapy",
+        "health/estrogen-and-skin-aging",
+        "health/hot-flashes-menopause-causes-treatment-faqs",
+        "health/three-paths-growth-hormone-wellness-genotropin-norditropin-nutropin",
+        "health/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms",
+        "health/post-menopause-what-to-expect-after-the-change",
+        "health/fighting-diabetes-obesity-metabolic-syndrome-and-osteoporosis-why-testosterone-is-important",
+        "health/hair-loss-and-hormones-causes-effects-and-treatment-in-menopause-and-andropause",
+        "health/what-is-hcg-uses-weight-loss-benefits-side-effects",
+        "health/metabolism-and-thyroid-hormone-replacement",
+        "health/hyperthyroidism",
+        "health/hope-for-low-libido-in-women-sexual-health-menopause",
+        "health/bioidentical-hormone-replacement-therapy-bhrt-cost-facts-faqs-finding-answers",
+        "health/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures",
+        "health/hrt-hormone-replacement-therapy-for-men",
+        "health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health",
+        "health/when-anxiety-strikes-whos-at-risk-hows-it-treated",
+        "health/menstrual-irregularity-and-menopause-whats-normal-whats-not",
+        "health/individualized-hormone-therapy-balanced-approach-treatment",
+        "health/estriol-anti-aging-uses-treatment-side-effects",
+        "health/perimenopause-navigating-the-many-symptoms-of-pre-menopause",
+        "health/sermorelin-for-anti-aging-powerful-benefits-advantages-natural-support",
+        "health/hypogonadism-in-men-the-many-causes-and-effects-new-treatment-and-natural-therapies",
+        "health/your-health-and-hormones",
+        "health/menopause-in-midlife-strange-symptoms-amazing-facts-whats-really-happening-in-the-female-body",
+        "health/womens-health-and-hormones-the-delicate-balance",
+        "health/menopause-and-its-functions-a-case-for-hormone-replacement-therapy",
+        "health/is-gynecomastia-more-harmful-to-men-than-we-know-impact-excess-breast-tissue-males",
+        "health/brain-fog-your-brain-on-hormones-when-you-just-cant-think",
+        "health/raw-power-growth-hormone-releasing-peptide-6-ghrp-6-know",
+        "health/hypothyroidism-self-check-treatment",
+        "health/progesterone-testing-test-your-progesterone-levels",
+        "health/dhea-and-aging-finding-the-right-balance",
+        "health/endometriosis-explained-understanding-signs-symptoms-treatment-options-new-therapies-pregnancy-outcomes",
+        "health/migraines-prevention-and-pain-management",
+        "health/managing-muscle-loss-for-life-causes-types-treatment",
+        "health/need-growth-hormone-gh-deficiency-benefits-treatment",
+        "health/fighting-for-fertility-know-the-causes-tests-signs-and-treatments",
+        "health/insulin-testing-test-your-insulin-levels",
+        "health/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults",
+        "health/menopause-weight-gain-symptoms-of-hormonal-imbalance",
+        "health/hormone-testing-methods-saliva-blood-and-fsh",
+        "health/what-is-progesterone-its-many-forms-and-functions",
+        "health/what-is-an-endocrinologist",
+        "health/birth-control-types-side-effects-effectiveness-15-options-pregnancy-prevention",
+        "health/night-sweats-not-just-women",
+        "health/melatonin-natural-relief-for-sleeplessness",
+        "health/compounding-pharmacy-customized-medication-men-women-natural-choice",
+        "health/black-cohosh-natural-treatment-menopause-relief",
+        "health/phytoestrogens-natural-hormone-defense",
+        "health/testosterone-levels-women-testing-therapy",
+        "health/human-growth-hormone-hgh-its-uses-and-abuses-what-you-need-to-know",
+        "health/thyroid-disease-symptoms-cures-causes",
+        "health/hormones-and-aging",
+        "health/top-10-mood-and-hormonal-support-vitamins-and-health-supplements",
+        "health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels",
+        "health/hormonal-balancing-how-to-balance-hormones-naturally",
+        "health/injectable-hgh-supplements-safety-law",
+        "health/are-night-sweats-keeping-you-up-get-relief-in-menopause",
+        "health/vaginal-dryness-affects-intimacy-surviving-post-menopause",
+        "health/sleeplessness-perimenopause-possible-causes-solutions",
+        "health/cortisol-testing-test-your-cortisol-levels-blood-urine-saliva",
+        "health/adrenal-fatigue-how-stress-affects-hormone-levels",
+        "health/bioidentical-hormones-know-the-side-effects",
+        "health/hormone-therapy-for-breast-cancer-treatment",
+        "health/mood-swings-menopause-getting-off-hormonal-roller-coaster",
+        "health/premenstrual-syndrome-pms-causes-symptoms-relief",
+        "health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help",
+        "health/hgh-natural-production-and-synthetic-use",
+        "health/the-role-of-hormone-therapy-in-prostate-cancer-who-gets-it-how-it-works-side-effects",
+        "health/how-cortisol-regulates-many-functions-of-the-body"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/hormones",
+          "file": "source-content/category-pages/hormones--1.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/hormones?aaa3ca3f_page=2",
+          "file": "source-content/category-pages/hormones--2.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/hormones?aaa3ca3f_page=3",
+          "file": "source-content/category-pages/hormones--3.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/hormones?aaa3ca3f_page=4",
+          "file": "source-content/category-pages/hormones--4.html",
+          "status": 200,
+          "count": 8
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/mens-health",
+      "articles": [
+        "health/mastering-stress-management-how-a-diurnal-cortisol-test-can-help",
+        "health/hormonal-imbalance-in-men-whats-really-happening",
+        "health/why-bioidentical-hormone-replacement-therapy-over-synthetic-hormone-replacement-therapy",
+        "health/what-are-hormones-why-they-get-depleted",
+        "health/metabolic-syndrome-symptoms-risk-factors-diagnosis-treatment",
+        "health/testosterone-universal-hormone-function-deficiency-treatment",
+        "health/thyroid-disorders-testing-treatment",
+        "health/progesterone-bioidentical-hrt-the-facts",
+        "health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do",
+        "health/vitamin-b-complex-injections-using-lipo-b-vitamins-weight-loss",
+        "health/viagra-cialis-levitra-effective-treatment-erectile-dysfunction",
+        "health/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing",
+        "health/mindfulness-practicing-mindful-awareness-exercises-techniques-meditation",
+        "health/ipamorelin-effect-harnessing-power-growth-hormone-naturally",
+        "health/the-frightening-truth-about-iodine-deficiency-disorders-linked-to-low-levels",
+        "health/estrogen-and-skin-aging",
+        "health/unlocking-the-mystery-of-memory-loss-the-mind-you-may-be-missing",
+        "health/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms",
+        "health/fighting-diabetes-obesity-metabolic-syndrome-and-osteoporosis-why-testosterone-is-important",
+        "health/the-causes-and-treatment-of-erectile-dysfunction-ed-restoring-healthy-sex-again",
+        "health/hair-loss-and-hormones-causes-effects-and-treatment-in-menopause-and-andropause",
+        "health/what-is-hcg-uses-weight-loss-benefits-side-effects",
+        "health/thyroid-cancer-signs-risk-types-treatments",
+        "health/answers-for-adrenal-insufficiency-and-addisons-disease-what-you-dont-know-can-hurt-you",
+        "health/metabolism-and-thyroid-hormone-replacement",
+        "health/hyperthyroidism",
+        "health/testosterone-testing-test-your-testosterone-levels",
+        "health/bioidentical-hormone-replacement-therapy-bhrt-cost-facts-faqs-finding-answers",
+        "health/estrogen-testing-measure-levels-of-estrone-estradiol-and-estriol",
+        "health/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures",
+        "health/hrt-hormone-replacement-therapy-for-men",
+        "health/neurotransmitter-testing-tools-for-optimal-mental-health-and-wellness",
+        "health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health",
+        "health/help-for-hashimotos-disease-causes-complications-and-treatment",
+        "health/when-anxiety-strikes-whos-at-risk-hows-it-treated",
+        "health/individualized-hormone-therapy-balanced-approach-treatment",
+        "health/sermorelin-for-anti-aging-powerful-benefits-advantages-natural-support",
+        "health/10-important-reasons-need-turmeric-and-curcumin",
+        "health/heavy-toxic-metals-testing-the-hidden-risks-among-us",
+        "health/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health",
+        "health/hypogonadism-in-men-the-many-causes-and-effects-new-treatment-and-natural-therapies",
+        "health/weight-loss-and-management-program-for-life-support-for-sustained-success",
+        "health/your-health-and-hormones",
+        "health/why-detox-may-be-beneficial-eliminating-impurities-that-make-us-sick",
+        "health/is-gynecomastia-more-harmful-to-men-than-we-know-impact-excess-breast-tissue-males",
+        "health/brain-fog-your-brain-on-hormones-when-you-just-cant-think",
+        "health/understanding-depression-learn-types-treatment-signs-and-causes",
+        "health/raw-power-growth-hormone-releasing-peptide-6-ghrp-6-know",
+        "health/hypothyroidism-self-check-treatment",
+        "health/heart-attack-help-causes-symptoms-signs-treatment-every-minute-counts",
+        "health/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease",
+        "health/heart-health-your-life-depends-on-it",
+        "health/is-iv-therapy-right-for-you-treating-conditions-intravenously",
+        "health/pathways-pain-management-types-treatments-products-natural-help",
+        "health/dhea-and-aging-finding-the-right-balance",
+        "health/migraines-prevention-and-pain-management",
+        "health/heart-rate-monitor-types-trackers-technology-professional-personal",
+        "health/managing-muscle-loss-for-life-causes-types-treatment",
+        "health/need-growth-hormone-gh-deficiency-benefits-treatment",
+        "health/fighting-for-fertility-know-the-causes-tests-signs-and-treatments",
+        "health/thirsting-for-the-fountain-of-youth-myth-and-reality",
+        "health/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults",
+        "health/chronic-pain-conditions-causes-treatment",
+        "health/hormone-testing-methods-saliva-blood-and-fsh",
+        "health/the-dangers-of-diabetes-different-types-how-its-diagnosed-whos-at-risk",
+        "health/birth-control-types-side-effects-effectiveness-15-options-pregnancy-prevention",
+        "health/night-sweats-not-just-women",
+        "health/melatonin-natural-relief-for-sleeplessness",
+        "health/compounding-pharmacy-customized-medication-men-women-natural-choice",
+        "health/quick-relief-urinary-tract-infection-uti-causes-treatment-natural-antibiotic",
+        "health/help-heart-attack-symptoms-men-risks-common-conditions-mimic-serious-warning-signs",
+        "health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention",
+        "health/heart-failure-types-symptoms-causes-treatments",
+        "health/essential-omega-3-omega-6-fatty-acids-why-most-of-us-dont-get-enough",
+        "health/heart-disease-explained-many-risk-factors-causes-treatment",
+        "health/phytoestrogens-natural-hormone-defense",
+        "health/thyroid-disease-symptoms-cures-causes",
+        "health/hormones-and-aging",
+        "health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels",
+        "health/hormonal-balancing-how-to-balance-hormones-naturally",
+        "health/injectable-hgh-supplements-safety-law",
+        "health/wellness",
+        "health/eating-heart-healthy-for-life-choosing-right-foods-to-support-a-cardiac-diet",
+        "health/genetic-testing-test-dna-for-genetic-mutations-telomeres-genes-proteins-risk",
+        "health/moving-forward-with-functional-medicine-future-healthcare-now",
+        "health/fasting-for-blood-test-work-why-it-can-be-dangerous-when-its-not-required",
+        "health/p-shot-for-stamina-sensation-and-sexual-performance-treating-erectile-dysfunction-with-plasma",
+        "health/adrenal-fatigue-how-stress-affects-hormone-levels",
+        "health/high-cholesterol-and-heart-disease-causes-risks-and-treatment",
+        "health/prostate-cancer-symptoms-causes-treatment-prevention",
+        "health/what-is-graves-disease-causes-symptoms-diagnosis-treatment",
+        "health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help",
+        "health/the-role-of-hormone-therapy-in-prostate-cancer-who-gets-it-how-it-works-side-effects",
+        "health/micronutrient-testing-test-levels-vitamins-antioxidants-minerals-amino-acids",
+        "health/5-popular-hair-loss-myths-debunked-what-you-should-be-doing-for-thicker-healthier-hair",
+        "health/help-for-high-blood-pressure-hypertension-stopping-silent-killer-within",
+        "health/incontinence-in-women-and-men-symptoms-causes-types-treatment"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/mens-health",
+          "file": "source-content/category-pages/mens-health--1.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/mens-health?aaa3ca3f_page=2",
+          "file": "source-content/category-pages/mens-health--2.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/mens-health?aaa3ca3f_page=3",
+          "file": "source-content/category-pages/mens-health--3.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/mens-health?aaa3ca3f_page=4",
+          "file": "source-content/category-pages/mens-health--4.html",
+          "status": 200,
+          "count": 22
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/mental-health",
+      "articles": [
+        "health/mindfulness-practicing-mindful-awareness-exercises-techniques-meditation",
+        "health/understanding-depression-learn-types-treatment-signs-and-causes"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/mental-health",
+          "file": "source-content/category-pages/mental-health--1.html",
+          "status": 200,
+          "count": 2
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/news",
+      "articles": [
+        "health/virtual-floodgates-open-for-telehealth-services-is-coronavirus-changing-the-way-we-do-healthcare",
+        "health/lost-productivity-obesity-related-absenteeism-costs-highest-10-u-s-states-says-study"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/news",
+          "file": "source-content/category-pages/news--1.html",
+          "status": 200,
+          "count": 2
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/nutrition",
+      "articles": [
+        "health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do",
+        "health/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing",
+        "health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health",
+        "health/10-important-reasons-need-turmeric-and-curcumin",
+        "health/low-carb-weight-loss-diet-free-daily-diet-plan",
+        "health/why-detox-may-be-beneficial-eliminating-impurities-that-make-us-sick",
+        "health/brain-fog-your-brain-on-hormones-when-you-just-cant-think",
+        "health/what-vitamins-or-health-supplements-should-i-take-nutritional-deficiencies-the-warning-signs-tests-treatment",
+        "health/is-iv-therapy-right-for-you-treating-conditions-intravenously",
+        "health/managing-muscle-loss-for-life-causes-types-treatment",
+        "health/magnesium-rich-foods-benefits-deficiency-supplements",
+        "health/the-healing-power-of-cbd-and-cbd-oil-how-cannabinoids-help",
+        "health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help",
+        "health/micronutrient-testing-test-levels-vitamins-antioxidants-minerals-amino-acids"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/nutrition",
+          "file": "source-content/category-pages/nutrition--1.html",
+          "status": 200,
+          "count": 14
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/product",
+      "articles": [],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/product",
+          "file": "source-content/category-pages/product--1.html",
+          "status": 200,
+          "count": 0
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/product-reviews",
+      "articles": [
+        "health/metagenics"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/product-reviews",
+          "file": "source-content/category-pages/product-reviews--1.html",
+          "status": 200,
+          "count": 1
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/question-and-answer",
+      "articles": [
+        "health/pacs-premature-atrial-contractions"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/question-and-answer",
+          "file": "source-content/category-pages/question-and-answer--1.html",
+          "status": 200,
+          "count": 1
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/symptoms",
+      "articles": [
+        "health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do",
+        "health/hot-flashes-menopause-causes-treatment-faqs",
+        "health/unlocking-the-mystery-of-memory-loss-the-mind-you-may-be-missing",
+        "health/hair-loss-and-hormones-causes-effects-and-treatment-in-menopause-and-andropause",
+        "health/hope-for-low-libido-in-women-sexual-health-menopause",
+        "health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health",
+        "health/when-anxiety-strikes-whos-at-risk-hows-it-treated",
+        "health/brain-fog-your-brain-on-hormones-when-you-just-cant-think",
+        "health/understanding-depression-learn-types-treatment-signs-and-causes",
+        "health/migraines-prevention-and-pain-management",
+        "health/managing-muscle-loss-for-life-causes-types-treatment",
+        "health/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults",
+        "health/menopause-weight-gain-symptoms-of-hormonal-imbalance",
+        "health/night-sweats-not-just-women",
+        "health/are-night-sweats-keeping-you-up-get-relief-in-menopause",
+        "health/vaginal-dryness-affects-intimacy-surviving-post-menopause",
+        "health/sleeplessness-perimenopause-possible-causes-solutions",
+        "health/mood-swings-menopause-getting-off-hormonal-roller-coaster",
+        "health/premenstrual-syndrome-pms-causes-symptoms-relief",
+        "health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help",
+        "health/beating-the-bloat-stomach-bloating-and-good-gastrointestinal-health",
+        "health/incontinence-in-women-and-men-symptoms-causes-types-treatment"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/symptoms",
+          "file": "source-content/category-pages/symptoms--1.html",
+          "status": 200,
+          "count": 22
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/thyroid-health",
+      "articles": [
+        "health/thyroid-disorders-testing-treatment",
+        "health/thyroid-testing-thyroid-function-test",
+        "health/thyroid-cancer-signs-risk-types-treatments",
+        "health/metabolism-and-thyroid-hormone-replacement",
+        "health/hyperthyroidism",
+        "health/help-for-hashimotos-disease-causes-complications-and-treatment",
+        "health/hypothyroidism-self-check-treatment",
+        "health/thyroid-disease-symptoms-cures-causes",
+        "health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels",
+        "health/what-is-graves-disease-causes-symptoms-diagnosis-treatment"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/thyroid-health",
+          "file": "source-content/category-pages/thyroid-health--1.html",
+          "status": 200,
+          "count": 10
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/trusted-brands",
+      "articles": [
+        "health/omron-wireless-blood-pressure-monitors-upper-arm-wrist-technology",
+        "health/garmin-fitness-sports-wearables-trackers",
+        "health/polar-leading-heart-rate-fitness-monitor-tracking-watches-wearables-reviews",
+        "health/fitbit-heart-rate-fitness-activity-trackers",
+        "health/thorne-research",
+        "health/orthomolecular-evidence-based-therapeutic-nutritional-vitamins-health-supplements",
+        "health/medmind-medication-pill-tracking-reminders-alerts",
+        "health/pure-encapsulations-best-products-reviewed-tested"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/trusted-brands",
+          "file": "source-content/category-pages/trusted-brands--1.html",
+          "status": 200,
+          "count": 8
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/uncategorized",
+      "articles": [
+        "health/l-theanine-for-anxiety-sleep-and-focus-benefits-uses-and-side-effects",
+        "health/what-are-some-adverse-health-effects-for-a-male-having-very-high-levels-of-free-testosterone",
+        "health/medical-device-supplies-and-equipment",
+        "health/vitamin-d-and-the-covid-connection",
+        "health/blood-pressure-statin-and-cholesterol-drugs-items-to-consider",
+        "health/estrogen-dominance-signs-symptoms-tests-and-treatment",
+        "health/what-are-some-ways-to-optimize-my-natural-gh-and-testosterone-levels",
+        "health/blood-clots-that-can-kill",
+        "health/who-or-what-is-responsible-for-the-decline-of-testosterone-levels-in-men",
+        "health/zinc-for-testosterone-how-much-we-need-how-to-get-it",
+        "health/coronavirus-covid-19-the-cough-that-kills-answers-to-your-most-frequently-asked-questions",
+        "health/shockwave-therapy-new-hope-for-erectile-dysfunction",
+        "health/what-are-some-methods-for-preventing-pregnancy"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/uncategorized",
+          "file": "source-content/category-pages/uncategorized--1.html",
+          "status": 200,
+          "count": 13
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    },
+    {
+      "key": "blog-categories/womens-health",
+      "articles": [
+        "health/mastering-stress-management-how-a-diurnal-cortisol-test-can-help",
+        "health/your-bodys-need-for-estrogen-then-and-now",
+        "health/what-are-hormones-why-they-get-depleted",
+        "health/metabolic-syndrome-symptoms-risk-factors-diagnosis-treatment",
+        "health/testosterone-universal-hormone-function-deficiency-treatment",
+        "health/thyroid-disorders-testing-treatment",
+        "health/progesterone-bioidentical-hrt-the-facts",
+        "health/female-hormone-imbalance-what-hypothyroidism-oxytocin-menopause-and-libido-may-have-in-common",
+        "health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do",
+        "health/vitamin-b-complex-injections-using-lipo-b-vitamins-weight-loss",
+        "health/estrogen-bioidenticals-what-women-need-to-know",
+        "health/prenatal-vitamins-facts-what-you-really-need-healthy-pregnancy",
+        "health/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing",
+        "health/mindfulness-practicing-mindful-awareness-exercises-techniques-meditation",
+        "health/ipamorelin-effect-harnessing-power-growth-hormone-naturally",
+        "health/the-frightening-truth-about-iodine-deficiency-disorders-linked-to-low-levels",
+        "health/progesterone-therapy",
+        "health/estrogen-and-skin-aging",
+        "health/hot-flashes-menopause-causes-treatment-faqs",
+        "health/top-10-best-prenatal-vitamins-reviewed",
+        "health/unlocking-the-mystery-of-memory-loss-the-mind-you-may-be-missing",
+        "health/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms",
+        "health/post-menopause-what-to-expect-after-the-change",
+        "health/hair-loss-and-hormones-causes-effects-and-treatment-in-menopause-and-andropause",
+        "health/what-is-hcg-uses-weight-loss-benefits-side-effects",
+        "health/thyroid-cancer-signs-risk-types-treatments",
+        "health/answers-for-adrenal-insufficiency-and-addisons-disease-what-you-dont-know-can-hurt-you",
+        "health/metabolism-and-thyroid-hormone-replacement",
+        "health/hyperthyroidism",
+        "health/hope-for-low-libido-in-women-sexual-health-menopause",
+        "health/testosterone-testing-test-your-testosterone-levels",
+        "health/bioidentical-hormone-replacement-therapy-bhrt-cost-facts-faqs-finding-answers",
+        "health/estrogen-testing-measure-levels-of-estrone-estradiol-and-estriol",
+        "health/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures",
+        "health/neurotransmitter-testing-tools-for-optimal-mental-health-and-wellness",
+        "health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health",
+        "health/heart-attack-symptoms-women-signs-diagnosis-treatment-differ-men",
+        "health/help-for-hashimotos-disease-causes-complications-and-treatment",
+        "health/when-anxiety-strikes-whos-at-risk-hows-it-treated",
+        "health/menstrual-irregularity-and-menopause-whats-normal-whats-not",
+        "health/individualized-hormone-therapy-balanced-approach-treatment",
+        "health/estriol-anti-aging-uses-treatment-side-effects",
+        "health/perimenopause-navigating-the-many-symptoms-of-pre-menopause",
+        "health/sermorelin-for-anti-aging-powerful-benefits-advantages-natural-support",
+        "health/10-important-reasons-need-turmeric-and-curcumin",
+        "health/heavy-toxic-metals-testing-the-hidden-risks-among-us",
+        "health/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health",
+        "health/weight-loss-and-management-program-for-life-support-for-sustained-success",
+        "health/your-health-and-hormones",
+        "health/menopause-in-midlife-strange-symptoms-amazing-facts-whats-really-happening-in-the-female-body",
+        "health/womens-health-and-hormones-the-delicate-balance",
+        "health/why-detox-may-be-beneficial-eliminating-impurities-that-make-us-sick",
+        "health/menopause-and-its-functions-a-case-for-hormone-replacement-therapy",
+        "health/brain-fog-your-brain-on-hormones-when-you-just-cant-think",
+        "health/understanding-depression-learn-types-treatment-signs-and-causes",
+        "health/raw-power-growth-hormone-releasing-peptide-6-ghrp-6-know",
+        "health/hypothyroidism-self-check-treatment",
+        "health/heart-attack-help-causes-symptoms-signs-treatment-every-minute-counts",
+        "health/progesterone-testing-test-your-progesterone-levels",
+        "health/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease",
+        "health/heart-health-your-life-depends-on-it",
+        "health/is-iv-therapy-right-for-you-treating-conditions-intravenously",
+        "health/pathways-pain-management-types-treatments-products-natural-help",
+        "health/dhea-and-aging-finding-the-right-balance",
+        "health/endometriosis-explained-understanding-signs-symptoms-treatment-options-new-therapies-pregnancy-outcomes",
+        "health/migraines-prevention-and-pain-management",
+        "health/heart-rate-monitor-types-trackers-technology-professional-personal",
+        "health/managing-muscle-loss-for-life-causes-types-treatment",
+        "health/need-growth-hormone-gh-deficiency-benefits-treatment",
+        "health/fighting-for-fertility-know-the-causes-tests-signs-and-treatments",
+        "health/thirsting-for-the-fountain-of-youth-myth-and-reality",
+        "health/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults",
+        "health/menopause-weight-gain-symptoms-of-hormonal-imbalance",
+        "health/chronic-pain-conditions-causes-treatment",
+        "health/hormone-testing-methods-saliva-blood-and-fsh",
+        "health/what-is-progesterone-its-many-forms-and-functions",
+        "health/the-dangers-of-diabetes-different-types-how-its-diagnosed-whos-at-risk",
+        "health/birth-control-types-side-effects-effectiveness-15-options-pregnancy-prevention",
+        "health/melatonin-natural-relief-for-sleeplessness",
+        "health/compounding-pharmacy-customized-medication-men-women-natural-choice",
+        "health/quick-relief-urinary-tract-infection-uti-causes-treatment-natural-antibiotic",
+        "health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention",
+        "health/heart-failure-types-symptoms-causes-treatments",
+        "health/essential-omega-3-omega-6-fatty-acids-why-most-of-us-dont-get-enough",
+        "health/heart-disease-explained-many-risk-factors-causes-treatment",
+        "health/phytoestrogens-natural-hormone-defense",
+        "health/testosterone-levels-women-testing-therapy",
+        "health/thyroid-disease-symptoms-cures-causes",
+        "health/hormones-and-aging",
+        "health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels",
+        "health/hormonal-balancing-how-to-balance-hormones-naturally",
+        "health/injectable-hgh-supplements-safety-law",
+        "health/wellness",
+        "health/eating-heart-healthy-for-life-choosing-right-foods-to-support-a-cardiac-diet",
+        "health/are-night-sweats-keeping-you-up-get-relief-in-menopause",
+        "health/functioning-with-fibroids-common-symptoms-risk-factors-and-natural-support-for-women",
+        "health/vaginal-dryness-affects-intimacy-surviving-post-menopause",
+        "health/sleeplessness-perimenopause-possible-causes-solutions",
+        "health/polycystic-ovarian-syndrome-explained-pcos-the-many-causes-symptoms-and-treatments",
+        "health/genetic-testing-test-dna-for-genetic-mutations-telomeres-genes-proteins-risk",
+        "health/moving-forward-with-functional-medicine-future-healthcare-now",
+        "health/fasting-for-blood-test-work-why-it-can-be-dangerous-when-its-not-required",
+        "health/adrenal-fatigue-how-stress-affects-hormone-levels",
+        "health/high-cholesterol-and-heart-disease-causes-risks-and-treatment",
+        "health/breast-cancer-basics-symptoms-risks-stages-treatments",
+        "health/what-is-graves-disease-causes-symptoms-diagnosis-treatment",
+        "health/hormone-therapy-for-breast-cancer-treatment",
+        "health/mood-swings-menopause-getting-off-hormonal-roller-coaster",
+        "health/premenstrual-syndrome-pms-causes-symptoms-relief",
+        "health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help",
+        "health/micronutrient-testing-test-levels-vitamins-antioxidants-minerals-amino-acids",
+        "health/5-popular-hair-loss-myths-debunked-what-you-should-be-doing-for-thicker-healthier-hair",
+        "health/beating-the-bloat-stomach-bloating-and-good-gastrointestinal-health",
+        "health/help-for-high-blood-pressure-hypertension-stopping-silent-killer-within",
+        "health/self-care-for-symptom-relief-of-pms",
+        "health/incontinence-in-women-and-men-symptoms-causes-types-treatment"
+      ],
+      "sources": [
+        {
+          "url": "https://www.hrt.org/blog-categories/womens-health",
+          "file": "source-content/category-pages/womens-health--1.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/womens-health?aaa3ca3f_page=2",
+          "file": "source-content/category-pages/womens-health--2.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/womens-health?aaa3ca3f_page=3",
+          "file": "source-content/category-pages/womens-health--3.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/womens-health?aaa3ca3f_page=4",
+          "file": "source-content/category-pages/womens-health--4.html",
+          "status": 200,
+          "count": 25
+        },
+        {
+          "url": "https://www.hrt.org/blog-categories/womens-health?aaa3ca3f_page=5",
+          "file": "source-content/category-pages/womens-health--5.html",
+          "status": 200,
+          "count": 16
+        }
+      ],
+      "archivedFirstPageMatches": true,
+      "missingLocal": []
+    }
+  ]
+}

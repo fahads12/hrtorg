@@ -1,0 +1,129 @@
+Heart Rate Monitor Types, Trackers, and Technology—Both Professional and Personal
+Use this announcement bar to draw your user’s attention to important updates and deals.
+Men
+Hormone Replacement Therapy
+Anti Aging Peptides
+Weight Loss and Management
+Sexual Health
+Erectile dysfunction
+Sexual Health
+Hair Loss
+Women
+Menopause
+Hormone Replacement Therapy for Women
+Anti Aging Peptide Therapy for Women
+Weight Loss, Management and Maintenance for Women
+Women’s Sexual Health and Treatments
+Hair Loss & Hair Growth Treatment & Care for Women
+Education
+Symptoms
+Conditions
+Hormones
+Men
+Women
+Testing
+Symptom Check
+Female Hormone Imbalance Test
+Male Hormone Imbalance Test
+PMS Self-Assessment Test
+Thyroid Assesment Test
+Adrenal Fatigue Assessment Test
+Osteoporosis Assessment Test
+Andropause Assessment Test
+Menopause Assessment Test
+Perimenopause Assessment Test
+Shop
+Get Started
+info@hrt.org
+0
+Your Cart
+This is some text inside of a div block.
+:
+Remove
+Subtotal
+Pay with browser.
+Continue to Checkout
+There are not items in your cart.
+‍
+Visit Shop
+Product is not available in this quantity.
+Heart Rate Monitor Types, Trackers, and Technology—Both Professional and Personal
+Medically Reviewed by
+Broad Needs For Heart Monitor
+Babies, athletes, astronauts, and heart patients all rely on one piece of equipment to collect and record vital information about the health of the heart and respiratory system; the heart monitor—albeit for different reasons. The human heart, that pumps roughly 5 quarts of blood every 60 seconds, (or approximately 1800 gallons daily) beats 60-100 times per minute, in order to supply the brain, heart, organs and tissues with oxygen and blood to properly function. During periods of activity, this number increases as muscles and various organs create greater demand. In fact, as the heart beats more quickly, athletes may pump as many as 8 gallons of blood a minute during intense exercise or activity.[1][5] Sometimes however, the heart beats irregularly. This can be for a number of reasons including stress, medications, stimulants, heart problems, or genetics. Proper diagnosis and treatment protocols often rely on data collected from a heart monitor.
+Infant Heart Rate Monitor, Vital For Resuscitation
+Currently, approximately 10 percent of babies born in the United States will need some type of respiratory assistance, immediately following delivery. Complications arising from underdeveloped lungs, or premature birth may hamper a baby’s ability to breath properly, warranting the need for resuscitation in some cases. An infant heart monitor provides viable, critical information to physicians and other healthcare personnel that will help determine emergency medical needs and a further course for treatment.
+At this time, most medical facilities rely on heart monitors that utilize “pulse oximetry” to record a baby’s heart rate and blood oxygenation levels. These require a 2-3 minute waiting period however, to initially collect data and establish a baseline reading for the patient. In emergency situations, where every second counts, the need for instantaneous heart monitoring is critical.
+New Heart Rate Monitor, Quicker Response
+Recently, UC San Diego Medical Center has developed a new heart rate monitor, able to accurately capture an infant’s heart rate, directly following birth. The functional prototype is automatic, and easy to implement, offering neonatologists immediate feedback, necessary to properly treat infants with respiratory difficulties and heart abnormalities.[7]
+Holter Heart Monitor, Recording Rhythms
+Heart monitors differ in the types of information they collect, and the feedback they provide.
+Some individuals are outfitted with a special heart monitor called a “Holter Monitor” in order to capture and record the various rhythms of the heart over a continuous period. Much like a portable EKG, Holter monitoring may be done to determine:
+Whether specific medicines are working
+Why symptoms including dizziness, faintness, a skipping heart, or a racing heart persist
+Whether the heart is receiving the correct amount of oxygen to meet its demands
+The heart monitor is generally worn for 24-48 hours and records heart rhythms throughout the day and night, during an individual’s regular activities. This portable device may indicate or reflect changes in an individual’s medical situation that are heart related. After collecting the data, physicians then use the recorded information to identify specific medical problems and determine the best course of action.[6]
+Heart Rate Tracker For Individuals
+With the advent of new technologies, the heart rate monitor has made way for the portable heart rate tracker. In the last decade, heart rate trackers have become widely available for commercial use, as millions of individuals exercise, or go about their daily tasks while wearing small fitness tracking devices that measure distance, speed, steps, calories burned, and of course, heart rate.
+One recent Stanford University study compared several consumer heart rate trackers for accuracy in areas of energy expenditure, step count, and heart rate. Devices surveyed included the Apple Watch, Basis Peak, Fitbit Surge, Microsoft Band, Mio Alpha 2, PulseOn and the Samsung Gear S2. While devices were most inefficient for monitoring calories burned (factors such as skin tone and body mass index affected some measurements) all fell within a 5 percent range of accuracy for heart rate, when compared to professional medical equipment.[3]
+This makes portable monitoring possible, and heart patients and athletes in training, who share information with physicians, can be confident that information regarding heart rate is accurate.
+Heart Rate Monitor Watch, Gauging Exercise
+To meet the body’s great demand for blood and oxygen while exercising, the heart beats more rapidly as it pumps. Athletes and active individual’s often monitor their heart rate in order to assess exercise intensity. This is done by determining a specific “target heart rate zone”. The Target heart-rate zone refers to the number of beats per minute (bpm) while performing aerobic exercise. To determine this, first the “Maximal Heart Rate”, (which is the number 220 minus an individual’s age) is found. The target “normal” range then falls somewhere between 50 and 80 percent of the maximal heart rate. For example, if maximal heart rate is180 bpm. The range would be 90-144bpm.
+When first beginning an exercise program most healthy individuals start at the lower end of the range to properly gauge exercise intensity. Heart rate can be monitored through a heart rate tracker or heart rate monitor watch, or measured manually, directly after exercise by isolating the pulse and counting the number of beats in a 10 second period. This number is then multiplied by six, in order to determine the number of beats per minute. The radial pulse rate may be taken at the base of the thumb of either the left or right hand. The carotid pulse can be taken from the carotid artery at the side of the neck.
+Heart Rate Monitor Watch, Combined Technology
+Wireless technology allows for small wearable monitoring devices, commercially available for active individuals. New fitness innovations are developed all the time, and personal wearable devices can now help record calorie intake, examine activity patterns, and monitor the heart. These fitness trackers utilize special MotionX technology with 3D accelerometers that identify movement. Combined with pedometers and heart rate monitoring, they work to track and monitor a variety of functions. Some new heart rate monitor watches even interact with gym equipment, and also let users know when they’re, “in the zone” during workouts, and when it’s time to cool down and recover.[4]
+Through the development of smartphones, smart watches, and portable trackers that can be worn, users and physicians are provided with continuous feedback that can greatly impact individual health, as well as the healthcare system.
+Heart Rate Monitor For Astronauts—Answers For Arrhythmia
+NASA utilizes a very special heart monitor, designed to detect small changes in the heart rhythms of astronauts while in space. The advanced EKG amplifies subtle differences in rhythm that can be used to help identify patterns in patients at risk for cardiac arrhythmias.[2]
+Because the heart “floats” in the chest under conditions of zero gravity or weightlessness, astronauts experience heart arrhythmias while in space. About 70-80% of patients with cardiac arrhythmias experience these same patterns [of irregular heartbeats] as well. According to the National Heart, Lung and Blood Institute an arrhythmia can affect blood flow through the body, causing the heart to fail to pump correct amounts to the brain, heart, or other vital organs causing permanent damage.[8]
+With the use of NASA’s Embedded Web Technology, a small EKG can capture the astronaut’s heart rhythms while in space and relay the information back to flight surgeons on the ground. NASA hopes to use this technology to test how “long term” spaceflight, that occurs for several months, can affect the heart of astronauts.
+Heart Rate Monitor Beyond Space
+Beyond use for astronauts in flight, NASA’S new technology offers an important breakthrough in the medical field, as physicians may soon have the ability to monitor diabetic patients, those with pulmonary difficulties, wounds, or other specific conditions remotely.
+The applications for heart monitors are many, and will continue to impact healthcare and personal fitness in a big way, as technology evolves. Self-monitoring of diet, exercise and activity levels through wearable tracking devices is one more important way to work towards greater health and wellness.
+References
+1″Chapter 4: Blood Vessels and Aging: The Rest of the Journey.” National Institute on Aging. U.S. Department of Health and Human Services, 13 July 2011. Web. 24 June 2017.
+2Dunbar, Brian. “Keeping the Beat: NASA Collaborates on Heart Monitor for Astronauts.” NASA. NASA, n.d. Web. 24 June 2017.
+3Dusheck, Jennie. “Fitness trackers accurately measure heart rate but not calories burned.” News Center. N.p., 24 May 1970. Web. 24 June 2017.
+4El-Amrawy, Fatema, and Mohamed Ismail Nounou. “Are Currently Available Wearable Devices for Activity Tracking and Heart Rate Monitoring Accurate, Precise, and Medically Beneficial?” Healthcare Informatics Research. Korean Society of Medical Informatics, Oct. 2015. Web. 24 June 2017.
+5″Heart arrhythmia.” Mayo Clinic. Mayo Foundation for Medical Education and Research, 23 Feb. 2016. Web. 24 June 2017.
+“Holter monitor (24h).” MedlinePlus Medical Encyclopedia. N.p., n.d. Web. 24 June 2017.
+6″Holter monitor (24h).” MedlinePlus Medical Encyclopedia. N.p., n.d. Web. 24 June 2017.
+7University of California, San Diego Office of Innovation and Commercialization. “Newborn Heart Rate Monitoring Device.” Newborn Heart Rate Monitoring Device – Available technology for licensing from the University of California, San Diego. N.p., n.d. Web. 24 June 2017.
+8″What Is an Arrhythmia?” National Heart Lung and Blood Institute. U.S. Department of Health and Human Services, 01 July 2011. Web. 24 June 2017.
+Newsletter
+Get thoughtful, spam-free articles direct to your inbox every week.
+Thank you! Your submission has been received!
+Oops! Something went wrong while submitting the form.
+Continue reading
+Mastering Stress Management: How a Diurnal Cortisol Test Can Help
+Hormonal Imbalance in Men—What’s Really Happening?
+Your Body’s Need For Estrogen—Then and Now
+Back to Blog
+Related products
+No items found.
+pages
+Contact Us
+Join Our Network
+Terms and Conditions
+Privacy Policy
+Disclaimer
+Providers
+Pharmacy Info
+Health Information Privacy Policy
+TREATMENTS
+Anti Aging Peptides
+Hormone Replacement Therapy
+Hair Loss
+Weight Loss
+Sexual Health
+Social
+@hrt_org
+@hrt_health
+Youtube
+@hrthealth
+contact
+info@hrt.org
+888 574 5524
+© HRT, All Rights Reserved
+Telehealth services currently available in Florida and California
+Partner Sites: <a href="https://medmind.com" target="_blank">MedMind</a>

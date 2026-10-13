@@ -1,0 +1,88 @@
+Downloaded 2026-10-12 from the Google Fonts CSS API.
+[
+  {
+    "file": "geist-normal-cyrillic-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwRGFWfOw.woff2",
+    "bytes": 7420
+  },
+  {
+    "file": "geist-normal-cyrillic.woff2",
+    "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwYGFWfOw.woff2",
+    "bytes": 15084
+  },
+  {
+    "file": "geist-normal-vietnamese.woff2",
+    "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwTGFWfOw.woff2",
+    "bytes": 8004
+  },
+  {
+    "file": "geist-normal-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwSGFWfOw.woff2",
+    "bytes": 16512
+  },
+  {
+    "file": "geist-normal-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFU.woff2",
+    "bytes": 29400
+  },
+  {
+    "file": "geist-mono-normal-cyrillic-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrodmgPn.woff2",
+    "bytes": 6176
+  },
+  {
+    "file": "geist-mono-normal-cyrillic.woff2",
+    "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrMdmgPn.woff2",
+    "bytes": 12940
+  },
+  {
+    "file": "geist-mono-normal-symbols2.woff2",
+    "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFg08vz7ehw.woff2",
+    "bytes": 5812
+  },
+  {
+    "file": "geist-mono-normal-vietnamese.woff2",
+    "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrgdmgPn.woff2",
+    "bytes": 7696
+  },
+  {
+    "file": "geist-mono-normal-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrkdmgPn.woff2",
+    "bytes": 14696
+  },
+  {
+    "file": "geist-mono-normal-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrcdmg.woff2",
+    "bytes": 23128
+  },
+  {
+    "file": "newsreader-italic-vietnamese.woff2",
+    "source": "https://fonts.gstatic.com/s/newsreader/v26/cY9CfjOCX1hbuyalUrK439vCgYhCFpY.woff2",
+    "bytes": 27904
+  },
+  {
+    "file": "newsreader-italic-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/newsreader/v26/cY9CfjOCX1hbuyalUrK439vCgIhCFpY.woff2",
+    "bytes": 95540
+  },
+  {
+    "file": "newsreader-italic-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/newsreader/v26/cY9CfjOCX1hbuyalUrK439vCjohC.woff2",
+    "bytes": 146872
+  },
+  {
+    "file": "newsreader-normal-vietnamese.woff2",
+    "source": "https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK439HyjJBG.woff2",
+    "bytes": 27248
+  },
+  {
+    "file": "newsreader-normal-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK439DyjJBG.woff2",
+    "bytes": 86608
+  },
+  {
+    "file": "newsreader-normal-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK4397yjA.woff2",
+    "bytes": 132000
+  }
+]

@@ -1,0 +1,360 @@
+/* Audience (For Women / For Men) page styles */
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-care-theme]::view-transition-old(root),
+  html[data-care-theme]::view-transition-new(root) {
+    animation-duration: 320ms;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.aud-hero {
+  padding: 96px 0 72px;
+  background: var(--gradient-hero);
+  position: relative; overflow: hidden;
+  transition: background .6s ease;
+}
+.aud-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 88% 30%, var(--primary-tint), transparent 45%),
+    radial-gradient(circle at 8% 80%, rgba(46,139,135,0.08), transparent 55%);
+  pointer-events: none;
+}
+.aud-hero .wrap { position: relative; }
+.aud-hero-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 64px; align-items: end;
+}
+.aud-hero h1 {
+  font-size: clamp(56px, 7.5vw, 124px);
+  line-height: 0.94; letter-spacing: -0.04em;
+}
+.aud-hero h1 .accent {
+  font-family: "Newsreader", serif; font-style: italic;
+  font-weight: 400; color: var(--primary);
+}
+.aud-hero .lead {
+  font-size: 19px; max-width: 520px;
+  margin: 28px 0 0; color: var(--ink-2);
+}
+.aud-hero-ctas {
+  margin-top: 36px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.aud-hero-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 18px; padding: 32px;
+  box-shadow: 0 36px 72px -36px rgba(14,27,44,0.22);
+}
+.aud-hero-card .head {
+  font-family: "Geist Mono", monospace; font-size: 11px;
+  letter-spacing: 0.12em; color: var(--ink-3);
+  text-transform: uppercase; margin-bottom: 18px;
+}
+.aud-hero-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.aud-hero-card li {
+  display: flex; gap: 12px; align-items: center;
+  padding: 12px 14px; border: 1px solid var(--line-2);
+  border-radius: 12px;
+  font-size: 14px; color: var(--ink-2);
+}
+.aud-hero-card li .ic { color: var(--primary); flex-shrink: 0; }
+.aud-hero-card li .pct {
+  margin-left: auto; font-family: "Newsreader", serif;
+  font-style: italic; font-weight: 400; font-size: 17px; color: var(--ink);
+}
+
+/* Switch */
+.aud-switch {
+  display: inline-flex; align-items: center;
+  background: rgba(14,27,44,0.05);
+  border-radius: 999px; padding: 4px;
+  margin-bottom: 28px;
+}
+.aud-switch button {
+  padding: 8px 18px; border-radius: 999px;
+  font-size: 13px; color: var(--ink-3);
+  text-decoration: none; transition: all .2s ease;
+  cursor: pointer;
+}
+.aud-switch button {border:0;background:transparent;font-family:inherit;}
+.aud-switch button.active { background: var(--primary); color: #fff; }
+.aud-switch button:not(.active):hover { color: var(--ink); }
+
+/* Section header used throughout */
+.aud-sec-head {
+  max-width: 760px; margin: 0 0 56px;
+}
+.aud-sec-head h2 {
+  font-size: clamp(36px, 4.4vw, 60px); line-height: 1.0;
+  letter-spacing: -0.028em;
+}
+.aud-sec-head h2 .accent {
+  font-family: "Newsreader", serif; font-style: italic;
+  font-weight: 400; color: var(--primary);
+}
+.aud-sec-head p {
+  font-size: 16px; color: var(--ink-2);
+  margin-top: 18px; max-width: 60ch; line-height: 1.55;
+}
+
+/* Symptoms checklist — interactive */
+.aud-symptoms { padding: 96px 0; }
+.aud-symptoms-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 56px; align-items: start;
+}
+.aud-checklist {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 18px; padding: 14px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.aud-check-item {
+  display: flex; gap: 14px; align-items: center;
+  padding: 16px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.aud-check-item:hover { background: var(--bg-2); }
+.aud-check-item .box {
+  width: 22px; height: 22px; border-radius: 6px;
+  border: 1.5px solid var(--ink-3);
+  display: grid; place-items: center; flex-shrink: 0;
+  transition: all .2s ease;
+  color: transparent;
+}
+.aud-check-item.on .box {
+  background: var(--primary); border-color: var(--primary); color: #fff;
+}
+.aud-check-item .label {
+  font-size: 15px; color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.aud-check-item .meta {
+  margin-left: auto; font-family: "Geist Mono", monospace;
+  font-size: 10.5px; letter-spacing: 0.1em; color: var(--ink-3);
+  text-align: right; line-height: 1.3;
+}
+
+.aud-check-result {
+  background: var(--bg-2); border-radius: 16px;
+  padding: 32px; position: sticky; top: 100px;
+}
+.aud-check-result .count-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 20px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.aud-check-result .num {
+  font-family: "Newsreader", serif; font-style: italic; font-weight: 300;
+  font-size: 64px; color: var(--primary); line-height: 1;
+  letter-spacing: -0.03em;
+}
+.aud-check-result .num-sub {
+  font-size: 13px; color: var(--ink-3); text-align: right;
+  max-width: 22ch;
+}
+.aud-check-result h4 {
+  font-size: 18px; margin-bottom: 12px; letter-spacing: -0.015em;
+}
+.aud-check-result p {
+  font-size: 14px; color: var(--ink-2); line-height: 1.55; margin-bottom: 20px;
+}
+.aud-check-result .recs {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.aud-check-result .rec {
+  display: flex; gap: 12px; align-items: center;
+  padding: 12px 14px; background: #fff;
+  border: 1px solid var(--line); border-radius: 10px;
+  text-decoration: none; color: inherit;
+  transition: all .2s ease;
+}
+.aud-check-result .rec:hover { border-color: var(--primary); transform: translateX(2px); }
+.aud-check-result .rec .ic-wrap {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--primary-tint); color: var(--primary);
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.aud-check-result .rec .name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.aud-check-result .rec .sub { font-size: 12px; color: var(--ink-3); }
+.aud-check-result .rec .arr { margin-left: auto; color: var(--ink-3); }
+
+/* Life-stage timeline */
+.aud-stages {
+  padding: 96px 0;
+  background: var(--bg-2);
+}
+.aud-stage-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.aud-stage {
+  padding: 32px 24px 32px 0; border-right: 1px solid var(--line);
+  position: relative;
+}
+.aud-stage:last-child { border-right: 0; padding-right: 0; }
+.aud-stage:not(:first-child) { padding-left: 32px; }
+.aud-stage .age {
+  font-family: "Geist Mono", monospace; font-size: 11px;
+  color: var(--ink-3); letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+.aud-stage h3 {
+  font-size: 22px; letter-spacing: -0.02em; line-height: 1.1;
+  margin-bottom: 12px;
+}
+.aud-stage h3 .accent {
+  font-family: "Newsreader", serif; font-style: italic;
+  font-weight: 400; color: var(--primary); display: block;
+}
+.aud-stage p { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; margin-bottom: 16px; }
+.aud-stage .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.aud-stage .tag-mini {
+  font-size: 11px; padding: 4px 10px;
+  background: #fff; color: var(--ink-2);
+  border: 1px solid var(--line); border-radius: 999px;
+}
+
+/* Treatments band */
+.aud-tx { padding: 96px 0; }
+.aud-tx-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.aud-tx-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 16px; padding: 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  text-decoration: none; color: inherit;
+  transition: all .25s ease;
+}
+.aud-tx-card:hover { border-color: var(--ink); transform: translateY(-3px); box-shadow: 0 28px 56px -32px rgba(14,27,44,0.22); }
+.aud-tx-card .ic-wrap {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--primary-tint); color: var(--primary);
+  display: grid; place-items: center;
+}
+.aud-tx-card h3 { font-size: 20px; letter-spacing: -0.018em; }
+.aud-tx-card p { font-size: 14px; color: var(--ink-3); line-height: 1.55; }
+.aud-tx-card .row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line-2);
+  font-family: "Geist Mono", monospace; font-size: 11px;
+  color: var(--ink-3); letter-spacing: 0.1em;
+}
+.aud-tx-card .row .price { color: var(--ink); font-family: "Newsreader", serif; font-style: italic; font-size: 17px; letter-spacing: -0.02em; }
+
+/* Provider quote */
+.aud-quote {
+  padding: 96px 0;
+  background: var(--ink); color: #fff;
+}
+.aud-quote-inner {
+  display: grid; grid-template-columns: 240px 1fr;
+  gap: 56px; align-items: center; max-width: 1080px; margin: 0 auto;
+}
+.aud-quote-portrait {
+  aspect-ratio: 1; border-radius: 50%; overflow: hidden;
+  background: linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 100%);
+  position: relative;
+}
+.aud-quote-portrait::after {
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 10px, transparent 10px 22px);
+}
+.aud-quote-portrait .tag {
+  position: absolute; bottom: 14px; left: 14px;
+  font-family: "Geist Mono", monospace; font-size: 9px;
+  background: rgba(255,255,255,0.85); padding: 4px 8px;
+  border-radius: 4px; color: var(--ink-2); letter-spacing: 0.08em;
+}
+.aud-quote q {
+  font-family: "Newsreader", serif; font-weight: 300;
+  font-size: clamp(28px, 3.2vw, 44px); line-height: 1.18;
+  letter-spacing: -0.018em; quotes: none;
+}
+.aud-quote .attr {
+  margin-top: 28px;
+  font-size: 13px; color: rgba(255,255,255,0.6);
+  letter-spacing: -0.01em;
+}
+.aud-quote .attr .name { color: #fff; font-weight: 500; }
+
+/* Library cross-link */
+.aud-library { padding: 96px 0; }
+.aud-library-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.aud-lib-card {
+  background: #fff; border: 1px solid var(--line); border-radius: 14px;
+  padding: 28px; display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; color: inherit;
+  transition: all .25s ease;
+}
+.aud-lib-card:hover { border-color: var(--ink-3); transform: translateY(-2px); }
+.aud-lib-card .tag {
+  font-family: "Geist Mono", monospace; font-size: 10px;
+  color: var(--primary); letter-spacing: 0.12em;
+}
+.aud-lib-card h4 {
+  font-size: 18px; line-height: 1.25; letter-spacing: -0.018em;
+  text-wrap: pretty;
+}
+.aud-lib-card .meta {
+  margin-top: auto; padding-top: 14px;
+  border-top: 1px solid var(--line-2);
+  font-size: 12px; color: var(--ink-3);
+  display: flex; justify-content: space-between;
+}
+
+@media (max-width: 960px) {
+  .aud-hero-grid, .aud-symptoms-grid, .aud-quote-inner { grid-template-columns: 1fr; gap: 32px; }
+  .aud-stage-grid { grid-template-columns: 1fr 1fr; }
+  .aud-stage { border-right: 0; border-bottom: 1px solid var(--line); padding: 24px 0 !important; }
+  .aud-tx-grid, .aud-library-grid { grid-template-columns: 1fr; }
+}
+/* Restore full audience layouts with accessible controls and original provider images. */
+button.aud-check-item{width:100%;border:0;background:transparent;text-align:left;font:inherit}
+.aud-provider-copy{font:400 clamp(25px,3vw,40px)/1.25 Newsreader,Georgia,serif;margin:20px 0;color:#fff}
+.aud-quote .text-link{color:#bce6ef}.aud-quote .eyebrow{color:#bce6ef}
+.aud-quote-portrait img{width:100%;height:100%;object-fit:cover;background:#eef4f8}
+.aud-quote-portrait::after{display:none}.aud-stage-link{font-size:12px;color:var(--primary);display:inline-block;margin-top:16px}
+.aud-quote-portrait{width:240px;max-width:100%}
+@media(max-width:700px){.aud-hero h1{font-size:48px}.aud-hero{padding:45px 0}.aud-quote-portrait{max-width:220px}.aud-hero-card .pct:empty{display:none}.aud-hero-card li{gap:10px}.aud-hero-card .head{padding:20px}.aud-check-item .meta:empty{display:none}}
+@media(prefers-reduced-motion:reduce){.audience *{transition:none!important;animation:none!important}}
+
+/* Balanced editorial hero and consistent care cards. */
+.aud-hero{padding:56px 0 64px}.aud-hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}.aud-hero h1{font-size:clamp(48px,5.1vw,78px);line-height:1.02;letter-spacing:-.035em;text-wrap:balance}.aud-hero .lead{font-size:17px;line-height:1.7;max-width:56ch}.aud-hero-media{min-width:0}.aud-care-portrait{width:100%;height:340px;object-fit:cover;object-position:65% 25%;display:block;border-radius:18px 18px 0 0}.aud-hero-card{border-radius:0 0 18px 18px;padding:24px;box-shadow:0 16px 40px -30px #12304f55}.aud-hero-card .head{padding:0;margin-bottom:14px}.aud-hero-card ul{display:grid;grid-template-columns:1fr 1fr;gap:10px}.aud-hero-card li{font-size:12px;padding:10px;line-height:1.5}.aud-hero-card .pct:empty{display:none}.aud-switch button{min-height:44px}.aud-check-item{min-height:48px}.aud-check-result{position:sticky;top:115px}.aud-check-item:focus-visible,.aud-switch button:focus-visible{outline:3px solid #3e839c;outline-offset:3px}.aud-stage-grid{gap:24px}.aud-stage{min-width:0;display:flex;flex-direction:column;padding:0 24px 0 0}.aud-stage p{line-height:1.7}.aud-stage-link{margin-top:auto;padding-top:20px}.aud-stage .tags:empty{display:none}.aud-tx-card{padding:26px}.aud-tx-card p{line-height:1.7}.aud-tx-card .price:empty{display:none}.aud-tx-card .row{justify-content:flex-end}.aud-tx-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.aud-tx-card{grid-column:span 2}.aud-tx-card:nth-last-child(-n+2){grid-column:span 3}.aud-quote-portrait img{object-fit:contain;object-position:center bottom}.aud-quote-portrait{border-radius:18px;background:#edf3f7}.aud-lib-card{overflow:hidden;padding:0 24px 24px}.aud-library-image{width:calc(100% + 48px);max-width:none;margin:0 -24px 10px;height:180px;object-fit:cover}.aud-lib-card>.tag:first-child{padding-top:24px}.aud-lib-card h4{font-size:20px;line-height:1.4}.aud-sec-head{margin-bottom:36px}
+@media(max-width:960px){.aud-hero-grid{grid-template-columns:1fr;gap:32px}.aud-hero h1{max-width:16ch;font-size:clamp(46px,7vw,72px)}.aud-care-portrait{height:360px;object-position:center 25%}.aud-check-result{position:static}.aud-stage-grid{gap:28px}.aud-stage{padding:20px 0!important}.aud-tx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.aud-tx-card,.aud-tx-card:nth-last-child(-n+2){grid-column:auto}.aud-tx-card:last-child{grid-column:1/-1}.aud-library-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.aud-lib-card{padding:0 18px 18px}.aud-library-image{width:calc(100% + 36px);margin:0 -18px 8px;height:150px}}
+@media(max-width:600px){.aud-hero{padding:32px 0 44px}.aud-hero h1{font-size:46px}.aud-hero .lead{font-size:16px;margin-top:22px}.aud-hero-ctas{gap:10px;margin-top:24px}.aud-hero-ctas .btn{flex:1 1 100%;justify-content:center}.aud-care-portrait{height:260px}.aud-hero-card{padding:18px}.aud-hero-card ul{grid-template-columns:1fr}.aud-hero-card .head{padding:0}.aud-hero-card li{font-size:13px}.aud-symptoms,.aud-stages,.aud-tx,.aud-library,.aud-quote{padding:52px 0}.aud-sec-head h2{font-size:36px;line-height:1.08}.aud-stage-grid,.aud-tx-grid,.aud-library-grid{grid-template-columns:1fr}.aud-stage{padding:0 0 24px!important}.aud-checklist{padding:8px}.aud-check-item{padding:13px 10px;gap:10px}.aud-check-item .label{font-size:14px;line-height:1.5}.aud-quote-inner{gap:24px}.aud-quote-portrait{width:180px;max-width:100%}.aud-provider-copy{font-size:29px;line-height:1.25}.aud-library-image{height:190px}.aud-lib-card{min-width:0}.aud-tx-card:last-child{grid-column:auto}}
+
+.audience[data-gender="women"] .aud-hero h1 .accent,.audience[data-gender="women"] .aud-sec-head h2 .accent{color:#8e456f}.audience[data-gender="women"] .aud-switch button.active{background:#8e456f}
+
+/* Centered audience selector with a sliding active pill and gentle halo. */
+.audience .aud-switch{--switch-color:#0b294a;--switch-glow:#327fa440;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;position:relative;isolation:isolate;width:292px;max-width:100%;padding:6px;margin:0 auto 42px;border:1px solid #dfe6ec;background:#ffffffd9;box-shadow:0 6px 24px #17394e08;overflow:visible}
+.audience[data-gender="women"] .aud-switch{--switch-color:#8e456f;--switch-glow:#ac648c45}
+.audience .aud-switch::before{content:"";position:absolute;inset:-3px;border-radius:inherit;box-shadow:0 0 24px 4px var(--switch-glow);opacity:.35;z-index:-1;pointer-events:none;animation:audience-halo 4s ease-in-out 3}
+.audience .aud-switch::after{content:"";position:absolute;top:6px;bottom:6px;left:6px;width:calc(50% - 8px);border-radius:999px;background:var(--switch-color);box-shadow:0 4px 12px var(--switch-glow);z-index:0;pointer-events:none;transition:transform .35s cubic-bezier(.2,.7,.3,1),background .3s}
+.audience .aud-switch:has(button:last-child.active)::after{transform:translateX(calc(100% + 4px))}
+.audience .aud-switch button{position:relative;z-index:1;min-width:0;min-height:46px;padding:10px 14px;font-size:14px;font-weight:500;line-height:1.4;color:#64768a;background:transparent;border:0}
+.audience .aud-switch button.active{background:transparent;color:#fff}.audience .aud-switch button:focus-visible{outline:3px solid #2387a2;outline-offset:4px}
+.audience .aud-switch:hover::before,.audience .aud-switch:focus-within::before{opacity:.8}
+.audience[data-gender="women"] .aud-care-portrait{object-position:center 20%}
+@keyframes audience-halo{0%,100%{opacity:.3}50%{opacity:.8}}
+@media(max-width:600px){.audience .aud-switch{width:280px;margin-bottom:32px}.audience .aud-switch button{min-height:44px}}
+@media(prefers-reduced-motion:reduce){.audience .aud-switch::before{animation:none;opacity:.3}.audience .aud-switch::after{transition:none}}
+
+/* Reuse the homepage treatment photographs on both audience pages. */
+.audience .aud-tx-card{padding:0;gap:0;overflow:hidden}
+.aud-treatment-image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;flex-shrink:0;background:#eef3f7}
+.aud-treatment-body{display:flex;flex-direction:column;gap:14px;padding:26px;flex:1;min-width:0}
+.aud-treatment-body .row{margin-top:auto;padding-top:18px}
+@media(max-width:600px){.aud-treatment-body{padding:22px}.aud-treatment-body .row{min-height:44px}}
+
+/* Audience-specific library summaries retain equal, readable card layouts. */
+.aud-lib-card .aud-library-summary{font-size:14px;line-height:1.7;color:var(--ink-2);margin:0 0 22px}
+.aud-lib-card .meta{margin-top:auto;color:var(--primary);font-weight:500}
+.aud-lib-card .meta::after{content:'\2192';margin-left:auto}
+.aud-library-image{object-position:center 25%}

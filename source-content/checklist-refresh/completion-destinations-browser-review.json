@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-10-11T20:50:56.907Z",
+  "records": [
+    {
+      "id": "women",
+      "url": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test?cat1=2&cat2=0&cat3=0&cat4=0",
+      "activeScreen": [
+        {
+          "id": "screen-landing",
+          "text": "Hormone Symptom Checklist for Women\n\nFemale Hormone Imbalance Test\n\nMany women needlessly suffer with uncomfortable symptoms associated with hormonal balance, or a hormone-related medical condition.\n\nComplete the checklist by selecting factors/symptoms that are present and/or persist over time. We will calculate your score and provide action steps "
+        }
+      ],
+      "h1": [
+        "Check Hormonal Imbalance in Women with Our Online Quiz",
+        "Hormone Symptom Checklist for Women",
+        "Your Assessment Results"
+      ],
+      "resultVisible": false,
+      "scoreText": [],
+      "blockedWrites": [
+        {
+          "method": "POST",
+          "host": "hrt.org"
+        },
+        {
+          "method": "POST",
+          "host": "www.google-analytics.com"
+        },
+        {
+          "method": "POST",
+          "host": "hrt.org"
+        },
+        {
+          "method": "POST",
+          "host": "www.google-analytics.com"
+        },
+        {
+          "method": "POST",
+          "host": "www.google.com"
+        }
+      ]
+    },
+    {
+      "id": "men",
+      "url": "https://hrt.org/checklist/hormone-symptom-checklist-men?cat1=2&cat2=0&cat3=0&cat4=0",
+      "activeScreen": [
+        {
+          "id": "screen-intro",
+          "text": "Hormone Symptom Checklist for Men\n\nLow testosterone and hormonal imbalance affect millions of men and often go undiagnosed for years.\n\nSelect any symptoms that apply to you, and we'll show you which areas of your health may need attention — plus what you can do about it.\n\nStart"
+        }
+      ],
+      "h1": [
+        "Check hormonal imbalance in men with our online test",
+        "Hormone Symptom Checklist for Men",
+        "Your Assessment Results"
+      ],
+      "resultVisible": false,
+      "scoreText": [],
+      "blockedWrites": [
+        {
+          "method": "POST",
+          "host": "hrt.org"
+        },
+        {
+          "method": "POST",
+          "host": "hrt.org"
+        },
+        {
+          "method": "POST",
+          "host": "www.google-analytics.com"
+        },
+        {
+          "method": "POST",
+          "host": "www.google-analytics.com"
+        },
+        {
+          "method": "POST",
+          "host": "www.google.com"
+        }
+      ]
+    },
+    {
+      "id": "andropause",
+      "url": "https://hrt.org/score-total?type=an&score=10",
+      "activeScreen": [],
+      "h1": [
+        "Thyroid Assessment Results"
+      ],
+      "resultVisible": false,
+      "scoreText": [
+        "10"
+      ],
+      "blockedWrites": [
+        {
+          "method": "POST",
+          "host": "hrt.org"
+        },
+        {
+          "method": "POST",
+          "host": "hrt.org"
+        },
+        {
+          "method": "POST",
+          "host": "www.google-analytics.com"
+        },
+        {
+          "method": "POST",
+          "host": "www.google-analytics.com"
+        },
+        {
+          "method": "POST",
+          "host": "www.google.com"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1004 @@
+[
+  {
+    "url": "https://store.hrt.org/",
+    "status": 200,
+    "file": "__.html",
+    "finalUrl": "https://store.hrt.org/"
+  },
+  {
+    "url": "https://store.hrt.org/policies/privacy-policy",
+    "status": 200,
+    "file": "__policies__privacy-policy.html",
+    "finalUrl": "https://store.hrt.org/policies/privacy-policy"
+  },
+  {
+    "url": "https://store.hrt.org/policies/refund-policy",
+    "status": 200,
+    "file": "__policies__refund-policy.html",
+    "finalUrl": "https://store.hrt.org/policies/refund-policy"
+  },
+  {
+    "url": "https://store.hrt.org/policies/terms-of-service",
+    "status": 200,
+    "file": "__policies__terms-of-service.html",
+    "finalUrl": "https://store.hrt.org/policies/terms-of-service"
+  },
+  {
+    "url": "https://store.hrt.org/policies/shipping-policy",
+    "status": 200,
+    "file": "__policies__shipping-policy.html",
+    "finalUrl": "https://store.hrt.org/policies/shipping-policy"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-lcms-hormones-5-with-4-point-cortisol",
+    "status": 200,
+    "file": "__products__saliva-lcms-hormones-5-with-4-point-cortisol.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-lcms-hormones-5-with-4-point-cortisol"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-lcms-hormones-5",
+    "status": 200,
+    "file": "__products__saliva-lcms-hormones-5.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-lcms-hormones-5"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-lcms-hormones-3",
+    "status": 200,
+    "file": "__products__saliva-lcms-hormones-3.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-lcms-hormones-3"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-adrenal-stress",
+    "status": 200,
+    "file": "__products__saliva-adrenal-stress.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-adrenal-stress"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-4-point-cortisol-1",
+    "status": 200,
+    "file": "__products__saliva-4-point-cortisol-1.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-4-point-cortisol-1"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-with-shbg-thyroids-and-cardiometabolic",
+    "status": 200,
+    "file": "__products__saliva-4-point-cortisol-blood-spot-lcms-hormones-7-with-shbg-thyroids-and-cardiometabolic.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-with-shbg-thyroids-and-cardiometabolic"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-w-shbg-cardiometabolic",
+    "status": 200,
+    "file": "__products__saliva-4-point-cortisol-blood-spot-lcms-hormones-7-w-shbg-cardiometabolic.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-w-shbg-cardiometabolic"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-w-shbg-thyroids",
+    "status": 200,
+    "file": "__products__saliva-4-point-cortisol-blood-spot-lcms-hormones-7-w-shbg-thyroids.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-w-shbg-thyroids"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-with-shbg",
+    "status": 200,
+    "file": "__products__saliva-4-point-cortisol-blood-spot-lcms-hormones-7-with-shbg.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-lcms-hormones-7-with-shbg"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-thyroids-and-cardiometabolic",
+    "status": 200,
+    "file": "__products__saliva-4-point-cortisol-blood-spot-thyroids-and-cardiometabolic.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-4-point-cortisol-blood-spot-thyroids-and-cardiometabolic"
+  },
+  {
+    "url": "https://store.hrt.org/products/saliva-lcms-hormones-7-with-4-point-cortisol",
+    "status": 200,
+    "file": "__products__saliva-lcms-hormones-7-with-4-point-cortisol.html",
+    "finalUrl": "https://store.hrt.org/products/saliva-lcms-hormones-7-with-4-point-cortisol"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-health-diagnostic-test",
+    "status": 200,
+    "file": "__products__comprehensive-health-diagnostic-test.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-health-diagnostic-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-complete-plus-blood-work",
+    "status": 200,
+    "file": "__products__female-complete-plus-blood-work.html",
+    "finalUrl": "https://store.hrt.org/products/female-complete-plus-blood-work"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-initial-blood-work",
+    "status": 200,
+    "file": "__products__female-initial-blood-work.html",
+    "finalUrl": "https://store.hrt.org/products/female-initial-blood-work"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-complete-blood-work",
+    "status": 200,
+    "file": "__products__female-complete-blood-work.html",
+    "finalUrl": "https://store.hrt.org/products/female-complete-blood-work"
+  },
+  {
+    "url": "https://store.hrt.org/products/micronutrient-test-panel",
+    "status": 200,
+    "file": "__products__micronutrient-test-panel.html",
+    "finalUrl": "https://store.hrt.org/products/micronutrient-test-panel"
+  },
+  {
+    "url": "https://store.hrt.org/products/gi-map-test-gi-microbal-assay",
+    "status": 200,
+    "file": "__products__gi-map-test-gi-microbal-assay.html",
+    "finalUrl": "https://store.hrt.org/products/gi-map-test-gi-microbal-assay"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-comprehensive-blood-work-lab-test",
+    "status": 200,
+    "file": "__products__female-comprehensive-blood-work-lab-test.html",
+    "finalUrl": "https://store.hrt.org/products/female-comprehensive-blood-work-lab-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/stress-hormone-at-home-saliva-test-kit-diurnal-4-point-cortisol-dhea-optimal-adrenals-anxiety-stress-fatigue",
+    "status": 200,
+    "file": "__products__stress-hormone-at-home-saliva-test-kit-diurnal-4-point-cortisol-dhea-optimal-adrenals-anxiety-stress-fatigue.html",
+    "finalUrl": "https://store.hrt.org/products/stress-hormone-at-home-saliva-test-kit-diurnal-4-point-cortisol-dhea-optimal-adrenals-anxiety-stress-fatigue"
+  },
+  {
+    "url": "https://store.hrt.org/products/male-comprehensive-hormone-at-home-test-kit-optimal-male",
+    "status": 200,
+    "file": "__products__male-comprehensive-hormone-at-home-test-kit-optimal-male.html",
+    "finalUrl": "https://store.hrt.org/products/male-comprehensive-hormone-at-home-test-kit-optimal-male"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-comprehensive-hormone-at-home-test-kit-saliva-blood-spot-optimal-female",
+    "status": 200,
+    "file": "__products__female-comprehensive-hormone-at-home-test-kit-saliva-blood-spot-optimal-female.html",
+    "finalUrl": "https://store.hrt.org/products/female-comprehensive-hormone-at-home-test-kit-saliva-blood-spot-optimal-female"
+  },
+  {
+    "url": "https://store.hrt.org/products/at-home-female-fertility-test-saliva-blood-spot-hormone-test-kit",
+    "status": 200,
+    "file": "__products__at-home-female-fertility-test-saliva-blood-spot-hormone-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/at-home-female-fertility-test-saliva-blood-spot-hormone-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/at-home-vitamin-d-lab-test-kit-vitamin-d-25-oh-total-d2-d3-blood-spot",
+    "status": 200,
+    "file": "__products__at-home-vitamin-d-lab-test-kit-vitamin-d-25-oh-total-d2-d3-blood-spot.html",
+    "finalUrl": "https://store.hrt.org/products/at-home-vitamin-d-lab-test-kit-vitamin-d-25-oh-total-d2-d3-blood-spot"
+  },
+  {
+    "url": "https://store.hrt.org/products/optimal-hormone-health-essential-3-at-home-clia-certified-lab-test-kit",
+    "status": 200,
+    "file": "__products__optimal-hormone-health-essential-3-at-home-clia-certified-lab-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/optimal-hormone-health-essential-3-at-home-clia-certified-lab-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/estrogen-dominance-test",
+    "status": 200,
+    "file": "__products__estrogen-dominance-test.html",
+    "finalUrl": "https://store.hrt.org/products/estrogen-dominance-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/metabolism-test-kit",
+    "status": 200,
+    "file": "__products__metabolism-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/metabolism-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/wellness-metrics-hormones-stress-metabolism-at-home-test-kit",
+    "status": 200,
+    "file": "__products__wellness-metrics-hormones-stress-metabolism-at-home-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/wellness-metrics-hormones-stress-metabolism-at-home-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/essential-diabetes-blood-panel",
+    "status": 200,
+    "file": "__products__essential-diabetes-blood-panel.html",
+    "finalUrl": "https://store.hrt.org/products/essential-diabetes-blood-panel"
+  },
+  {
+    "url": "https://store.hrt.org/products/complete-diabetes-blood-panel",
+    "status": 200,
+    "file": "__products__complete-diabetes-blood-panel.html",
+    "finalUrl": "https://store.hrt.org/products/complete-diabetes-blood-panel"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-diabetes-blood-panel",
+    "status": 200,
+    "file": "__products__comprehensive-diabetes-blood-panel.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-diabetes-blood-panel"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-comprehensive-blood-work-panel",
+    "status": 200,
+    "file": "__products__thyroid-comprehensive-blood-work-panel.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-comprehensive-blood-work-panel"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-essential-blood-work-panel",
+    "status": 200,
+    "file": "__products__thyroid-essential-blood-work-panel.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-essential-blood-work-panel"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-plus-expanded-thyroid-panel",
+    "status": 200,
+    "file": "__products__thyroid-plus-expanded-thyroid-panel.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-plus-expanded-thyroid-panel"
+  },
+  {
+    "url": "https://store.hrt.org/products/menopause-test-at-home-menopause-test-kit",
+    "status": 200,
+    "file": "__products__menopause-test-at-home-menopause-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/menopause-test-at-home-menopause-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/heart-health-test-at-home-heart-health-cardiometabolic-test-kit-comprehensive-optimal-heart",
+    "status": 200,
+    "file": "__products__heart-health-test-at-home-heart-health-cardiometabolic-test-kit-comprehensive-optimal-heart.html",
+    "finalUrl": "https://store.hrt.org/products/heart-health-test-at-home-heart-health-cardiometabolic-test-kit-comprehensive-optimal-heart"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid",
+    "status": 200,
+    "file": "__products__thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid"
+  },
+  {
+    "url": "https://store.hrt.org/products/berberine-complex-supplement-supports-blood-sugar-balance-glucose-metabolism-normal-blood-pressure-cholesterol-levels-weight-management-insulin-support-for-diabetes-cardiovascular-gastrointestinal-wellness",
+    "status": 200,
+    "file": "__products__berberine-complex-supplement-supports-blood-sugar-balance-glucose-metabolism-normal-blood-pressure-cholesterol-levels-weight-management-insulin-support-for-diabetes-cardiovascular-gastrointestinal-wellness.html",
+    "finalUrl": "https://store.hrt.org/products/berberine-complex-supplement-supports-blood-sugar-balance-glucose-metabolism-normal-blood-pressure-cholesterol-levels-weight-management-insulin-support-for-diabetes-cardiovascular-gastrointestinal-wellness"
+  },
+  {
+    "url": "https://store.hrt.org/products/sex-hormone-binding-globulin-shbg-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__sex-hormone-binding-globulin-shbg-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/sex-hormone-binding-globulin-shbg-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/insulin-in-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__insulin-in-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/insulin-in-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroglobulin-tgbn-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__thyroglobulin-tgbn-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/thyroglobulin-tgbn-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/prostate-specific-antigen-psa-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__prostate-specific-antigen-psa-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/prostate-specific-antigen-psa-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/luteinizing-hormone-lh-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__luteinizing-hormone-lh-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/luteinizing-hormone-lh-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/follicle-stimulating-hormone-fsh-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__follicle-stimulating-hormone-fsh-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/follicle-stimulating-hormone-fsh-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/testosterone-t-total-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__testosterone-t-total-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/testosterone-t-total-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/progesterone-pg-total-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__progesterone-pg-total-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/progesterone-pg-total-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/estradiol-e2-total-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__estradiol-e2-total-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/estradiol-e2-total-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/dhea-s-ds-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__dhea-s-ds-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/dhea-s-ds-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/cortisol-c-blood-spot-test",
+    "status": 200,
+    "file": "__products__cortisol-c-blood-spot-test.html",
+    "finalUrl": "https://store.hrt.org/products/cortisol-c-blood-spot-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/testosterone-t-saliva-test",
+    "status": 200,
+    "file": "__products__testosterone-t-saliva-test.html",
+    "finalUrl": "https://store.hrt.org/products/testosterone-t-saliva-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/progesterone-pg-saliva-test",
+    "status": 200,
+    "file": "__products__progesterone-pg-saliva-test.html",
+    "finalUrl": "https://store.hrt.org/products/progesterone-pg-saliva-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/estriol-e3-saliva-test",
+    "status": 200,
+    "file": "__products__estriol-e3-saliva-test.html",
+    "finalUrl": "https://store.hrt.org/products/estriol-e3-saliva-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/estrone-e1-saliva-test",
+    "status": 200,
+    "file": "__products__estrone-e1-saliva-test.html",
+    "finalUrl": "https://store.hrt.org/products/estrone-e1-saliva-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/estradiol-e2-saliva-test",
+    "status": 200,
+    "file": "__products__estradiol-e2-saliva-test.html",
+    "finalUrl": "https://store.hrt.org/products/estradiol-e2-saliva-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/dhea-s-ds-saliva-test",
+    "status": 200,
+    "file": "__products__dhea-s-ds-saliva-test.html",
+    "finalUrl": "https://store.hrt.org/products/dhea-s-ds-saliva-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/cortisol-c-saliva-test",
+    "status": 200,
+    "file": "__products__cortisol-c-saliva-test.html",
+    "finalUrl": "https://store.hrt.org/products/cortisol-c-saliva-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/hemoglobin-hgb-a1c-blood-test-1",
+    "status": 200,
+    "file": "__products__hemoglobin-hgb-a1c-blood-test-1.html",
+    "finalUrl": "https://store.hrt.org/products/hemoglobin-hgb-a1c-blood-test-1"
+  },
+  {
+    "url": "https://store.hrt.org/products/garmin-vector-s-pedal-based-power-meter-with-2s-upgrade-kit",
+    "status": 200,
+    "file": "__products__garmin-vector-s-pedal-based-power-meter-with-2s-upgrade-kit.html",
+    "finalUrl": "https://store.hrt.org/products/garmin-vector-s-pedal-based-power-meter-with-2s-upgrade-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/garmin-vector-15-18mm-thick-44mm-wide-with-upgrade-kit",
+    "status": 200,
+    "file": "__products__garmin-vector-15-18mm-thick-44mm-wide-with-upgrade-kit.html",
+    "finalUrl": "https://store.hrt.org/products/garmin-vector-15-18mm-thick-44mm-wide-with-upgrade-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/garmin-rechargeable-nimh-battery-kit",
+    "status": 200,
+    "file": "__products__garmin-rechargeable-nimh-battery-kit.html",
+    "finalUrl": "https://store.hrt.org/products/garmin-rechargeable-nimh-battery-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/omron-104-manual-blood-pressure-kit",
+    "status": 200,
+    "file": "__products__omron-104-manual-blood-pressure-kit.html",
+    "finalUrl": "https://store.hrt.org/products/omron-104-manual-blood-pressure-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/lifesource-ua101-manual-aneroid-bp-kit-attached-stethoscope",
+    "status": 200,
+    "file": "__products__lifesource-ua101-manual-aneroid-bp-kit-attached-stethoscope.html",
+    "finalUrl": "https://store.hrt.org/products/lifesource-ua101-manual-aneroid-bp-kit-attached-stethoscope"
+  },
+  {
+    "url": "https://store.hrt.org/products/garmin-mount-base-kit-for-virbxand-xe-sold-separately",
+    "status": 200,
+    "file": "__products__garmin-mount-base-kit-for-virbxand-xe-sold-separately.html",
+    "finalUrl": "https://store.hrt.org/products/garmin-mount-base-kit-for-virbxand-xe-sold-separately"
+  },
+  {
+    "url": "https://store.hrt.org/products/garmin-pivoting-mount-base-kit-for-virbxand-xe-sold-separately",
+    "status": 200,
+    "file": "__products__garmin-pivoting-mount-base-kit-for-virbxand-xe-sold-separately.html",
+    "finalUrl": "https://store.hrt.org/products/garmin-pivoting-mount-base-kit-for-virbxand-xe-sold-separately"
+  },
+  {
+    "url": "https://store.hrt.org/products/total-t4-t4-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__total-t4-t4-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/total-t4-t4-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/iodine-panel-i-crtn-urine-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__iodine-panel-i-crtn-urine-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/iodine-panel-i-crtn-urine-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/elements-profile-i-br-se-as-hg-cd-crtn-dried-urine-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__elements-profile-i-br-se-as-hg-cd-crtn-dried-urine-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/elements-profile-i-br-se-as-hg-cd-crtn-dried-urine-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/candida-antibodies-iga-igg-igm-elisa-blood-test",
+    "status": 200,
+    "file": "__products__candida-antibodies-iga-igg-igm-elisa-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/candida-antibodies-iga-igg-igm-elisa-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/cyclic-citrullinated-peptide-ccp-blood-test-antibodies-iga-igg-elisa",
+    "status": 200,
+    "file": "__products__cyclic-citrullinated-peptide-ccp-blood-test-antibodies-iga-igg-elisa.html",
+    "finalUrl": "https://store.hrt.org/products/cyclic-citrullinated-peptide-ccp-blood-test-antibodies-iga-igg-elisa"
+  },
+  {
+    "url": "https://store.hrt.org/products/lyme-disease-igg-igm-western-blot-blood-test",
+    "status": 200,
+    "file": "__products__lyme-disease-igg-igm-western-blot-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/lyme-disease-igg-igm-western-blot-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/antimyeloperoxidase-mpo-antibodies-blood-test",
+    "status": 200,
+    "file": "__products__antimyeloperoxidase-mpo-antibodies-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/antimyeloperoxidase-mpo-antibodies-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/anti-dsdna-double-stranded-antibodies-blood-test",
+    "status": 200,
+    "file": "__products__anti-dsdna-double-stranded-antibodies-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/anti-dsdna-double-stranded-antibodies-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/immunoglobulin-a-quantitative-serum-blood-test",
+    "status": 200,
+    "file": "__products__immunoglobulin-a-quantitative-serum-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/immunoglobulin-a-quantitative-serum-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/antinuclear-antibodies-ana-direct-blood-test",
+    "status": 200,
+    "file": "__products__antinuclear-antibodies-ana-direct-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/antinuclear-antibodies-ana-direct-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/sedimentation-rate-modified-westergren-blood-test",
+    "status": 200,
+    "file": "__products__sedimentation-rate-modified-westergren-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/sedimentation-rate-modified-westergren-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/nmr-lipoprofile-blood-test",
+    "status": 200,
+    "file": "__products__nmr-lipoprofile-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/nmr-lipoprofile-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/homocysteine-blood-test-plasma",
+    "status": 200,
+    "file": "__products__homocysteine-blood-test-plasma.html",
+    "finalUrl": "https://store.hrt.org/products/homocysteine-blood-test-plasma"
+  },
+  {
+    "url": "https://store.hrt.org/products/c-reactive-protein-crp-blood-test-quantitative",
+    "status": 200,
+    "file": "__products__c-reactive-protein-crp-blood-test-quantitative.html",
+    "finalUrl": "https://store.hrt.org/products/c-reactive-protein-crp-blood-test-quantitative"
+  },
+  {
+    "url": "https://store.hrt.org/products/c-reactive-protein-crp-blood-test-high-sensitivity-cardiac-risk-assessment",
+    "status": 200,
+    "file": "__products__c-reactive-protein-crp-blood-test-high-sensitivity-cardiac-risk-assessment.html",
+    "finalUrl": "https://store.hrt.org/products/c-reactive-protein-crp-blood-test-high-sensitivity-cardiac-risk-assessment"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-peroxidase-tpo-antibodies-blood-test",
+    "status": 200,
+    "file": "__products__thyroid-peroxidase-tpo-antibodies-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-peroxidase-tpo-antibodies-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/prolactin-serum-blood-test",
+    "status": 200,
+    "file": "__products__prolactin-serum-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/prolactin-serum-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/tri-iodothyronine-t3-free-serum-blood-test",
+    "status": 200,
+    "file": "__products__tri-iodothyronine-t3-free-serum-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/tri-iodothyronine-t3-free-serum-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/folate-folic-acid-serum-test",
+    "status": 200,
+    "file": "__products__folate-folic-acid-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/folate-folic-acid-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/vitamin-b12-and-folates-test",
+    "status": 200,
+    "file": "__products__vitamin-b12-and-folates-test.html",
+    "finalUrl": "https://store.hrt.org/products/vitamin-b12-and-folates-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/vitamin-b12-blood-test",
+    "status": 200,
+    "file": "__products__vitamin-b12-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/vitamin-b12-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/vitamin-d-125-di-oh-dihydroxy-calcitrol-blood-test",
+    "status": 200,
+    "file": "__products__vitamin-d-125-di-oh-dihydroxy-calcitrol-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/vitamin-d-125-di-oh-dihydroxy-calcitrol-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/vitamin-d-25-hydroxy-blood-test",
+    "status": 200,
+    "file": "__products__vitamin-d-25-hydroxy-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/vitamin-d-25-hydroxy-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/insulin-like-growth-factor-binding-protein-3-igfbp-3-blood-test",
+    "status": 200,
+    "file": "__products__insulin-like-growth-factor-binding-protein-3-igfbp-3-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/insulin-like-growth-factor-binding-protein-3-igfbp-3-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/hemoglobin-hgb-a1c-blood-test",
+    "status": 200,
+    "file": "__products__hemoglobin-hgb-a1c-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/hemoglobin-hgb-a1c-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/estrone-e1-serum-test",
+    "status": 200,
+    "file": "__products__estrone-e1-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/estrone-e1-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/dhea-s-dehydroepiandrosterone-sulfate-blood-test",
+    "status": 200,
+    "file": "__products__dhea-s-dehydroepiandrosterone-sulfate-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/dhea-s-dehydroepiandrosterone-sulfate-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-profile-with-tsh-baseline-blood-test",
+    "status": 200,
+    "file": "__products__thyroid-profile-with-tsh-baseline-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-profile-with-tsh-baseline-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/cortisol-blood-test",
+    "status": 200,
+    "file": "__products__cortisol-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/cortisol-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/estradiol-e2-blood-test",
+    "status": 200,
+    "file": "__products__estradiol-e2-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/estradiol-e2-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/complete-blood-count-cbc-with-differential-blood-test",
+    "status": 200,
+    "file": "__products__complete-blood-count-cbc-with-differential-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/complete-blood-count-cbc-with-differential-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/prostate-specific-antigen-psa-serum-test",
+    "status": 200,
+    "file": "__products__prostate-specific-antigen-psa-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/prostate-specific-antigen-psa-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/igf-1-blood-test-insulin-like-growth-factor-1",
+    "status": 200,
+    "file": "__products__igf-1-blood-test-insulin-like-growth-factor-1.html",
+    "finalUrl": "https://store.hrt.org/products/igf-1-blood-test-insulin-like-growth-factor-1"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-metabolic-panel-cmp-14-blood-test",
+    "status": 200,
+    "file": "__products__comprehensive-metabolic-panel-cmp-14-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-metabolic-panel-cmp-14-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/iron-serum-test",
+    "status": 200,
+    "file": "__products__iron-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/iron-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/follicle-stimulating-hormone-fsh-and-luteinizing-hormone-lh-blood-test",
+    "status": 200,
+    "file": "__products__follicle-stimulating-hormone-fsh-and-luteinizing-hormone-lh-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/follicle-stimulating-hormone-fsh-and-luteinizing-hormone-lh-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/luteinizing-hormone-lh-serum-test",
+    "status": 200,
+    "file": "__products__luteinizing-hormone-lh-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/luteinizing-hormone-lh-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/follicle-stimulating-hormone-fsh-serum-test",
+    "status": 200,
+    "file": "__products__follicle-stimulating-hormone-fsh-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/follicle-stimulating-hormone-fsh-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/estradiol-e2-sensitive-lc-ms-serum-blood-test",
+    "status": 200,
+    "file": "__products__estradiol-e2-sensitive-lc-ms-serum-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/estradiol-e2-sensitive-lc-ms-serum-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/testosterone-free-direct-with-total-testosterone-serum-test",
+    "status": 200,
+    "file": "__products__testosterone-free-direct-with-total-testosterone-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/testosterone-free-direct-with-total-testosterone-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/estrogens-total-blood-test-estrone-serum-test",
+    "status": 200,
+    "file": "__products__estrogens-total-blood-test-estrone-serum-test.html",
+    "finalUrl": "https://store.hrt.org/products/estrogens-total-blood-test-estrone-serum-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/dihydrotestosterone-dht-blood-test",
+    "status": 200,
+    "file": "__products__dihydrotestosterone-dht-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/dihydrotestosterone-dht-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/pregnenolone-mass-spectrometry-blood-test",
+    "status": 200,
+    "file": "__products__pregnenolone-mass-spectrometry-blood-test.html",
+    "finalUrl": "https://store.hrt.org/products/pregnenolone-mass-spectrometry-blood-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/male-complete-plus-blood-work",
+    "status": 200,
+    "file": "__products__male-complete-plus-blood-work.html",
+    "finalUrl": "https://store.hrt.org/products/male-complete-plus-blood-work"
+  },
+  {
+    "url": "https://store.hrt.org/products/male-complete-blood-work",
+    "status": 200,
+    "file": "__products__male-complete-blood-work.html",
+    "finalUrl": "https://store.hrt.org/products/male-complete-blood-work"
+  },
+  {
+    "url": "https://store.hrt.org/products/male-initial-blood-work-labs",
+    "status": 200,
+    "file": "__products__male-initial-blood-work-labs.html",
+    "finalUrl": "https://store.hrt.org/products/male-initial-blood-work-labs"
+  },
+  {
+    "url": "https://store.hrt.org/products/testralin-60-tablets-metagenics",
+    "status": 200,
+    "file": "__products__testralin-60-tablets-metagenics.html",
+    "finalUrl": "https://store.hrt.org/products/testralin-60-tablets-metagenics"
+  },
+  {
+    "url": "https://store.hrt.org/products/iodine-panel-iodine-i-dried-urine-test",
+    "status": 200,
+    "file": "__products__iodine-panel-iodine-i-dried-urine-test.html",
+    "finalUrl": "https://store.hrt.org/products/iodine-panel-iodine-i-dried-urine-test"
+  },
+  {
+    "url": "https://store.hrt.org/products/menstrual-cycle-mapping",
+    "status": 200,
+    "file": "__products__menstrual-cycle-mapping.html",
+    "finalUrl": "https://store.hrt.org/products/menstrual-cycle-mapping"
+  },
+  {
+    "url": "https://store.hrt.org/products/testoquench-for-women-capsule-douglas-laboratories",
+    "status": 200,
+    "file": "__products__testoquench-for-women-capsule-douglas-laboratories.html",
+    "finalUrl": "https://store.hrt.org/products/testoquench-for-women-capsule-douglas-laboratories"
+  },
+  {
+    "url": "https://store.hrt.org/products/testoquench-for-men-capsule-douglas-laboratories",
+    "status": 200,
+    "file": "__products__testoquench-for-men-capsule-douglas-laboratories.html",
+    "finalUrl": "https://store.hrt.org/products/testoquench-for-men-capsule-douglas-laboratories"
+  },
+  {
+    "url": "https://store.hrt.org/products/testogain-capsule-douglas-laboratories",
+    "status": 200,
+    "file": "__products__testogain-capsule-douglas-laboratories.html",
+    "finalUrl": "https://store.hrt.org/products/testogain-capsule-douglas-laboratories"
+  },
+  {
+    "url": "https://store.hrt.org/products/metabolic-rejuvenation-revised-kit",
+    "status": 200,
+    "file": "__products__metabolic-rejuvenation-revised-kit.html",
+    "finalUrl": "https://store.hrt.org/products/metabolic-rejuvenation-revised-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/intestamine-360-grams-powder-douglas-laboratories",
+    "status": 200,
+    "file": "__products__intestamine-360-grams-powder-douglas-laboratories.html",
+    "finalUrl": "https://store.hrt.org/products/intestamine-360-grams-powder-douglas-laboratories"
+  },
+  {
+    "url": "https://store.hrt.org/products/testoquench-for-women-hormone-specific-formulation-120-veg-caps-douglas-labs",
+    "status": 200,
+    "file": "__products__testoquench-for-women-hormone-specific-formulation-120-veg-caps-douglas-labs.html",
+    "finalUrl": "https://store.hrt.org/products/testoquench-for-women-hormone-specific-formulation-120-veg-caps-douglas-labs"
+  },
+  {
+    "url": "https://store.hrt.org/products/testoquench-for-men-hormone-specific-formulation-120-veg-caps-douglas-labs",
+    "status": 200,
+    "file": "__products__testoquench-for-men-hormone-specific-formulation-120-veg-caps-douglas-labs.html",
+    "finalUrl": "https://store.hrt.org/products/testoquench-for-men-hormone-specific-formulation-120-veg-caps-douglas-labs"
+  },
+  {
+    "url": "https://store.hrt.org/products/testogain-hormone-specific-formulation-120-veg-caps-douglas-labs",
+    "status": 200,
+    "file": "__products__testogain-hormone-specific-formulation-120-veg-caps-douglas-labs.html",
+    "finalUrl": "https://store.hrt.org/products/testogain-hormone-specific-formulation-120-veg-caps-douglas-labs"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-male-profile-i-saliva-blood-multi-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__comprehensive-male-profile-i-saliva-blood-multi-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-male-profile-i-saliva-blood-multi-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/core-restore-7-day-kit-vanilla-ortho-molecular-products",
+    "status": 200,
+    "file": "__products__core-restore-7-day-kit-vanilla-ortho-molecular-products.html",
+    "finalUrl": "https://store.hrt.org/products/core-restore-7-day-kit-vanilla-ortho-molecular-products"
+  },
+  {
+    "url": "https://store.hrt.org/products/core-restore-7-day-kit-chocolate-ortho-molecular-products",
+    "status": 200,
+    "file": "__products__core-restore-7-day-kit-chocolate-ortho-molecular-products.html",
+    "finalUrl": "https://store.hrt.org/products/core-restore-7-day-kit-chocolate-ortho-molecular-products"
+  },
+  {
+    "url": "https://store.hrt.org/products/core-restore-14-day-kit-vanilla-ortho-molecular-products",
+    "status": 200,
+    "file": "__products__core-restore-14-day-kit-vanilla-ortho-molecular-products.html",
+    "finalUrl": "https://store.hrt.org/products/core-restore-14-day-kit-vanilla-ortho-molecular-products"
+  },
+  {
+    "url": "https://store.hrt.org/products/core-restore-14-day-kit-chocolate-ortho-molecular-products",
+    "status": 200,
+    "file": "__products__core-restore-14-day-kit-chocolate-ortho-molecular-products.html",
+    "finalUrl": "https://store.hrt.org/products/core-restore-14-day-kit-chocolate-ortho-molecular-products"
+  },
+  {
+    "url": "https://store.hrt.org/products/intestin-ol-90-soft-gel-capsules-ortho-molecular-products",
+    "status": 200,
+    "file": "__products__intestin-ol-90-soft-gel-capsules-ortho-molecular-products.html",
+    "finalUrl": "https://store.hrt.org/products/intestin-ol-90-soft-gel-capsules-ortho-molecular-products"
+  },
+  {
+    "url": "https://store.hrt.org/products/free-thyroxine-ft4-blood-spot-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__free-thyroxine-ft4-blood-spot-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/free-thyroxine-ft4-blood-spot-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/free-triiodothyronine-ft3-blood-spot-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__free-triiodothyronine-ft3-blood-spot-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/free-triiodothyronine-ft3-blood-spot-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-stimulating-hormone-tsh-blood-spot-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__thyroid-stimulating-hormone-tsh-blood-spot-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-stimulating-hormone-tsh-blood-spot-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/thyroid-peroxidase-antibody-tpoab-blood-spot-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__thyroid-peroxidase-antibody-tpoab-blood-spot-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/thyroid-peroxidase-antibody-tpoab-blood-spot-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-elements-profile-blood-urine-multi-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__comprehensive-elements-profile-blood-urine-multi-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-elements-profile-blood-urine-multi-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/triglycerides-tg-blood-spot-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__triglycerides-tg-blood-spot-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/triglycerides-tg-blood-spot-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/high-sensitivity-c-reactive-protein-hs-crp-blood-spot-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__high-sensitivity-c-reactive-protein-hs-crp-blood-spot-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/high-sensitivity-c-reactive-protein-hs-crp-blood-spot-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/hemoglobin-a1c-hba1c-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__hemoglobin-a1c-hba1c-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/hemoglobin-a1c-hba1c-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/hormone-trio-blood-e2-pg-t-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__hormone-trio-blood-e2-pg-t-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/hormone-trio-blood-e2-pg-t-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/diurnal-cortisol-c1-c2-c3-c4-saliva-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__diurnal-cortisol-c1-c2-c3-c4-saliva-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/diurnal-cortisol-c1-c2-c3-c4-saliva-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/hormone-trio-saliva-e2-pg-t-test-kit",
+    "status": 200,
+    "file": "__products__hormone-trio-saliva-e2-pg-t-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/hormone-trio-saliva-e2-pg-t-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/skin-vitality-profile-test-zrtlab",
+    "status": 200,
+    "file": "__products__skin-vitality-profile-test-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/skin-vitality-profile-test-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/sleep-balance-profile-melatonin-free-cortisol-creatinine-test-zrtlab",
+    "status": 200,
+    "file": "__products__sleep-balance-profile-melatonin-free-cortisol-creatinine-test-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/sleep-balance-profile-melatonin-free-cortisol-creatinine-test-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/weight-management-profile-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__weight-management-profile-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/weight-management-profile-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/fertility-profile-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__fertility-profile-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/fertility-profile-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/urinary-free-cortisols-urine-metabolites-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__urinary-free-cortisols-urine-metabolites-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/urinary-free-cortisols-urine-metabolites-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/estrogen-metabolites-plus-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__estrogen-metabolites-plus-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/estrogen-metabolites-plus-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/complete-urine-metabolites-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__complete-urine-metabolites-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/complete-urine-metabolites-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-thyroid-profile-blood-urine-multi-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__comprehensive-thyroid-profile-blood-urine-multi-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-thyroid-profile-blood-urine-multi-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-male-profile-ii-saliva-blood-multi-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__comprehensive-male-profile-ii-saliva-blood-multi-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-male-profile-ii-saliva-blood-multi-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-female-profile-ii-saliva-blood-multi-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__comprehensive-female-profile-ii-saliva-blood-multi-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-female-profile-ii-saliva-blood-multi-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/comprehensive-female-profile-i-saliva-blood-multi-test-kit-zrtlab",
+    "status": 200,
+    "file": "__products__comprehensive-female-profile-i-saliva-blood-multi-test-kit-zrtlab.html",
+    "finalUrl": "https://store.hrt.org/products/comprehensive-female-profile-i-saliva-blood-multi-test-kit-zrtlab"
+  },
+  {
+    "url": "https://store.hrt.org/products/vitamin-d-25-oh-total-d2-d3-blood-spot-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__vitamin-d-25-oh-total-d2-d3-blood-spot-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/vitamin-d-25-oh-total-d2-d3-blood-spot-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/male-blood-profile-ii-e2-t-psa-shbg-ds-c-tsh-ft3-ft4-tpoab-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__male-blood-profile-ii-e2-t-psa-shbg-ds-c-tsh-ft3-ft4-tpoab-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/male-blood-profile-ii-e2-t-psa-shbg-ds-c-tsh-ft3-ft4-tpoab-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/male-blood-profile-i-e2-t-psa-shbg-ds-c-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__male-blood-profile-i-e2-t-psa-shbg-ds-c-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/male-blood-profile-i-e2-t-psa-shbg-ds-c-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-blood-profile-ii-e2-pg-t-shbg-ds-c-tsh-ft3-ft4-tpoab-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__female-blood-profile-ii-e2-pg-t-shbg-ds-c-tsh-ft3-ft4-tpoab-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/female-blood-profile-ii-e2-pg-t-shbg-ds-c-tsh-ft3-ft4-tpoab-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-blood-profile-i-e2-pg-t-shbg-ds-c-blood-spot-test-kit",
+    "status": 200,
+    "file": "__products__female-blood-profile-i-e2-pg-t-shbg-ds-c-blood-spot-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/female-blood-profile-i-e2-pg-t-shbg-ds-c-blood-spot-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/essential-thyroid-profile-tsh-ft3-ft4-tpoab-blood-spot-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__essential-thyroid-profile-tsh-ft3-ft4-tpoab-blood-spot-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/essential-thyroid-profile-tsh-ft3-ft4-tpoab-blood-spot-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/cardiometabolic-profile-in-hscrp-hba1c-tg-ch-hdl-ldl-vldl-blood-spot-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__cardiometabolic-profile-in-hscrp-hba1c-tg-ch-hdl-ldl-vldl-blood-spot-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/cardiometabolic-profile-in-hscrp-hba1c-tg-ch-hdl-ldl-vldl-blood-spot-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/adrenal-stress-profile-ds-cx4-saliva-test-kit-zrt-lab",
+    "status": 200,
+    "file": "__products__adrenal-stress-profile-ds-cx4-saliva-test-kit-zrt-lab.html",
+    "finalUrl": "https://store.hrt.org/products/adrenal-stress-profile-ds-cx4-saliva-test-kit-zrt-lab"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-male-saliva-profile-iii-e2-pg-t-ds-cx4-saliva-test-kit",
+    "status": 200,
+    "file": "__products__female-male-saliva-profile-iii-e2-pg-t-ds-cx4-saliva-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/female-male-saliva-profile-iii-e2-pg-t-ds-cx4-saliva-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-male-saliva-profile-ii-e2-pg-t-ds-cx2-saliva-test-kit",
+    "status": 200,
+    "file": "__products__female-male-saliva-profile-ii-e2-pg-t-ds-cx2-saliva-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/female-male-saliva-profile-ii-e2-pg-t-ds-cx2-saliva-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/female-male-saliva-profile-i-e2-pg-t-ds-c-saliva-test-kit",
+    "status": 200,
+    "file": "__products__female-male-saliva-profile-i-e2-pg-t-ds-c-saliva-test-kit.html",
+    "finalUrl": "https://store.hrt.org/products/female-male-saliva-profile-i-e2-pg-t-ds-c-saliva-test-kit"
+  },
+  {
+    "url": "https://store.hrt.org/products/optimal-hormone-health-fundamental-5-easy-convenient-at-home-test-kit-saliva",
+    "status": 200,
+    "file": "__products__optimal-hormone-health-fundamental-5-easy-convenient-at-home-test-kit-saliva.html",
+    "finalUrl": "https://store.hrt.org/products/optimal-hormone-health-fundamental-5-easy-convenient-at-home-test-kit-saliva"
+  },
+  {
+    "url": "https://store.hrt.org/products/optimal-adrenal-health-complete-easy-convenient-at-home-test-kit-saliva",
+    "status": 200,
+    "file": "__products__optimal-adrenal-health-complete-easy-convenient-at-home-test-kit-saliva.html",
+    "finalUrl": "https://store.hrt.org/products/optimal-adrenal-health-complete-easy-convenient-at-home-test-kit-saliva"
+  },
+  {
+    "url": "https://store.hrt.org/products/optimal-hormone-health-comprehensive-easy-convenient-at-home-test-kit-saliva",
+    "status": 200,
+    "file": "__products__optimal-hormone-health-comprehensive-easy-convenient-at-home-test-kit-saliva.html",
+    "finalUrl": "https://store.hrt.org/products/optimal-hormone-health-comprehensive-easy-convenient-at-home-test-kit-saliva"
+  }
+]

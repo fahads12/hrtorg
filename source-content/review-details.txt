@@ -1,0 +1,152 @@
+﻿
+PAGE hrt-products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid FINAL https://hrt.org/hrt-products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid
+BLOCKS [('div', ['navbar-2', 'w-nav'], 23), ('div', ['main-container'], 0), ('div', ['section', 'no-bottom-padding'], 2728), ('div', ['section', 'bg-pastel-1'], 663), ('div', ['section-small', 'no-top-padding', 'bg-pastel-1', 'logos'], 12), ('div', ['section'], 163), ('div', ['section', 'no-top-padding'], 1893), ('noscript', None, 0)]
+RICH [(['rich-text-block-2', 'w-richtext'], 1649), (['rich-text-block-2', 'w-richtext'], 565), (['rich-text-block-2', 'w-richtext'], 403)]
+IMAGES [('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a3d1d69701e23b12a1f3e_HRT-org.png'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1636689816_icon-search.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea6c1f68984f_icon-menu.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eaa9ed6897ea/633cbdd149e31857c3cac0b0_Thyroid_Health_Essentials_1024x1024_upclose_1024x1024%402x.webp'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1b0a689817_icons8-star%201.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1b0a689817_icons8-star%201.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1b0a689817_icons8-star%201.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1b0a689817_icons8-star%201.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea2f29689819_icons8-star-half%201.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1b0a689817_icons8-star%201.svg')]
+ACTIONS [('', '/'), ('Get Started', 'https://portal.hrt.org/app/symptoms-tracker'), ('info@hrt.org', 'mailto:info@hrt.org?subject=website'), ('Start Now', 'https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid'), ('Buy Estrogen Cream for Women Online 99.00', '/hrt-products/estrogen'), ('Buy Sermorelin Injections Online 249.00', '/hrt-products/sermorelin'), ('Buy NAD+ Nasal Spray (Nicotinamide Adenine Dinucleotide) 199.00', '/hrt-products/nad-nasal-spray'), ('Visit Shop', '/drafts/shop'), ('info@hrt.org', 'mailto:info@hrt.org')]
+EMBEDS [{'src': 'https://www.googletagmanager.com/ns.html?id=GTM-KFFRTR6T', 'height': '0', 'width': '0', 'style': 'display:none;visibility:hidden'}] FORMS [{'action': '', 'method': '', 'name': '', 'fields': [{'name': 'quantity', 'type': 'number', 'label': ''}]}, {'action': '/search', 'method': '', 'name': '', 'fields': [{'name': 'query', 'type': 'search', 'label': 'Type keywords'}, {'name': '', 'type': 'submit', 'label': ''}]}]
+Thyroid Test - At Home Thyroid Test Kit - Essentials - Optimal Thyroid | HRT
+Get Started
+info@hrt.org
+Thyroid Test - At Home Thyroid Test Kit - Essentials - Optimal Thyroid
+$
+174.99
+$
+190.00
+$
+/Month
+Check your Thyroid at home with our Essentials Optimal Thyroid Kit
+Discover the state of your thyroid health with the Essentials Optimal Thyroid Test Kit, a comprehensive at-home test designed to provide you with crucial insights into your thyroid function. This user-friendly kit allows you to conveniently collect a sample at home and send it off for analysis, offering a straightforward approach to understanding your thyroid health. The thyroid gland plays a vital role in regulating your metabolism, energy levels, and overall hormonal balance. Whether you're experiencing symptoms of thyroid imbalance such as fatigue, weight changes, or mood swings, or you simply wish to proactively manage your health, our test kit is an essential tool in your wellness journey.
+Key Features of our Home Thyroid test Kit
+Comprehensive Testing:
+Measures key thyroid hormones, including Thyroid Stimulating Hormone (TSH), Free Thyroxine (T4), and Free Triiodothyronine (T3), providing a full picture of your thyroid health.
+Easy and Convenient:
+Collect your sample from the comfort of your home using the materials provided in the kit, then mail it back to our lab with the prepaid shipping label.
+Expert Analysis:
+Your sample will be analyzed by certified laboratories, ensuring accurate and reliable results.
+Personalized Report:
+Receive a detailed report of your thyroid hormone levels, complete with interpretations that help you understand your thyroid function.
+Telehealth Support:
+Access to a telehealth consultation with a healthcare professional to discuss your results and next steps, ensuring you have the guidance you need to act on your thyroid health.
+‍
+Buy Now
+Start Now
+How to check your thyroid at home with our Thyroid Test Kit
+Using the Essentials Optimal Thyroid Kit at home is simple and convenient. First, collect your sample using the materials provided in the kit. Once your sample is ready, send it back to the lab with the prepaid shipping label. The lab will analyze key thyroid hormones, including TSH, T4, and T3, and provide you with a detailed report. Following your results, you’ll have access to a telehealth consultation with a healthcare professional to discuss your thyroid health and determine the best next steps.
+‍
+Additional information related to our At Home Thyroid Test Kit
+The Essentials Optimal Thyroid Test Kit measures key thyroid hormones, including Thyroid Stimulating Hormone (TSH), Free Thyroxine (T4), and Free Triiodothyronine (T3). These hormones are crucial for understanding your thyroid function, as they play a significant role in regulating metabolism, energy levels, and overall hormonal balance.
+‍
+‍
+Customers have good things to say.
+“HRT.org has been amazing for my hormone replacement therapy. The consultations are convenient, and the doctors are very thorough. I've seen a significant improvement in my symptoms and feel very supported. Highly recommend.”
+Jennifer
+“The weight loss program has been transformative. The tailored plan, including semaglutide injections, helped me lose 20 pounds. The remote monitoring and regular check-ins have kept me motivated”
+Mark
+“Their modern approach and responsive customer service have made managing my health simple and effective.”
+Sarah
+“The platform is user-friendly, making appointments and tracking treatment easy.”
+Alex
+Featured on:
+Also consider
+Buy Estrogen Cream for Women Online
+99.00
+Buy Sermorelin Injections Online
+249.00
+Buy NAD+ Nasal Spray (Nicotinamide Adenine Dinucleotide)
+199.00
+Visit Shop
+Common questions
+Feel free to reach out via
+info@hrt.org
+for further questions.
+What happens when your thyroid is off balance?
+When your thyroid is off balance, it can disrupt metabolism and affect energy levels, weight, mood, and overall health. An underactive thyroid (hypothyroidism) can cause fatigue, weight gain, and depression, while an overactive thyroid (hyperthyroidism) may lead to weight loss, anxiety, and rapid heart rate. Proper diagnosis and treatment are essential for restoring balance.
+How do I use the thyroid test kit at home?
+Using the thyroid test kit at home is simple and convenient. Follow the detailed instructions included in your kit to collect a small blood sample, typically through a finger prick. Once you've collected your sample, place it in the provided return packaging and mail it back to our lab using the prepaid shipping label. Ensure your sample is properly sealed and packaged to prevent any damage or contamination during transit.
+How will I receive my test results, and what will they tell me?
+You will receive your test results electronically through our secure platform. The results will include detailed readings of your TSH, Free T4, and Free T3 levels, along with an interpretation of what these levels mean. This comprehensive report will help you understand your thyroid function and identify any imbalances that may require further attention or lifestyle adjustments.
+What should I do if my test results indicate a thyroid imbalance?
+If your test results suggest a thyroid imbalance, it's important to follow up with a healthcare professional. You will have access to a telehealth consultation with one of our healthcare providers, who can discuss your results, answer any questions, and provide guidance on the next steps. This may include recommendations for lifestyle changes, further diagnostic testing, or referral to a specialist if necessary.
+
+PAGE legal/pharmacy-information FINAL https://hrt.org/legal/pharmacy-information
+BLOCKS [('div', ['page-wrapper'], 133), ('noscript', None, 0)]
+RICH [(['text-rich-text', 'w-richtext'], 90)]
+IMAGES [('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a3d1d69701e23b12a1f3e_HRT-org.png'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1636689816_icon-search.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea6c1f68984f_icon-menu.svg')]
+ACTIONS [('', '/'), ('Get Started', 'https://portal.hrt.org/app/symptoms-tracker'), ('info@hrt.org', 'mailto:info@hrt.org?subject=website'), ('(833) 466-3979', 'tel:1-833-466-3979'), ('support@honeybeehealth.com', 'https://support.honeybeehealth.com/hc/en-us/requests/new')]
+EMBEDS [{'src': 'https://www.googletagmanager.com/ns.html?id=GTM-KFFRTR6T', 'height': '0', 'width': '0', 'style': 'display:none;visibility:hidden'}] FORMS [{'action': '', 'method': '', 'name': '', 'fields': [{'name': 'quantity', 'type': 'number', 'label': ''}]}]
+Pharmacy Information
+Get Started
+info@hrt.org
+Pharmacy Information
+Honeybee Health
+3515 Helms Ave
+Culver City, CA 90232
+(833) 466-3979
+support@honeybeehealth.com
+
+PAGE providers/dr-clarence-lee-jr FINAL https://hrt.org/providers/dr-clarence-lee-jr
+BLOCKS [('div', ['navbar-2', 'w-nav'], 23), ('div', ['section'], 1343), ('noscript', None, 0)]
+RICH [(['w-richtext'], 1302)]
+IMAGES [('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a3d1d69701e23b12a1f3e_HRT-org.png'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1636689816_icon-search.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea6c1f68984f_icon-menu.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eaa9ed6897ea/64f482e45f940d47fb675210_1e041984843663808e45165b6f8bac94-removebg-preview.png')]
+ACTIONS [('', '/'), ('Get Started', 'https://portal.hrt.org/app/symptoms-tracker'), ('info@hrt.org', 'mailto:info@hrt.org?subject=website'), ('Back to providers', '/providers'), ('', '/providers/dr-clarence-lee-jr')]
+EMBEDS [{'src': 'https://www.googletagmanager.com/ns.html?id=GTM-KFFRTR6T', 'height': '0', 'width': '0', 'style': 'display:none;visibility:hidden'}] FORMS [{'action': '', 'method': '', 'name': '', 'fields': [{'name': 'quantity', 'type': 'number', 'label': ''}]}]
+HRT.org
+Get Started
+info@hrt.org
+Back to providers
+Dr. Clarence Lee Jr.
+MD
+A former student-athlete, Dr. Lee holds a degree in Biology (B.S.) from University of the Incarnate Word, and degrees in Medicine (M.D.) and Business (M.B.A.) from Drexel University. Also a decorated war veteran, Dr. Lee served in the United States Air Force for 10 years with several assignments, his last being a flight surgeon flying the T-38 and U-2 airframes in one the most elite squadrons in the USAF.Dr. Lee is the author of the inspirational memoir Well, My Mom Says… as well as his latest book PERSIST. He is a columnist for several publications, and his work has been featured in Live Happy Magazine, Black Fitness Today and Essence Magazine, to name a few. He regularly appears as an on-air TV health expert and has been featured in segments on ABC, CBS and FOX television stations.A 2022 member of the Forbes Business Council, Dr. Lee was recently named Top 40 under 40 by the Sacramento Business Journal and Drexel University. He has been highlighted as one of the top healthcare entrepreneurs to know by Becker’s Hospital Review, one of the top Black entrepreneurs to follow by Yahoo! Finance, and is also a recipient of the Black Enterprise Modern Man award.Dr. Lee is a devoted husband and father. He lives in Southern California and loves spending time with his wife and six children.
+
+PAGE providers/jessica-kikla FINAL https://hrt.org/providers/jessica-kikla
+BLOCKS [('div', ['navbar-2', 'w-nav'], 23), ('div', ['section'], 980), ('noscript', None, 0)]
+RICH [(['w-richtext'], 899)]
+IMAGES [('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a3d1d69701e23b12a1f3e_HRT-org.png'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea1636689816_icon-search.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eab7436897cc/632a33dda7f9ea6c1f68984f_icon-menu.svg'), ('', 'https://cdn.prod.website-files.com/632a33dda7f9eaa9ed6897ea/64f47a75c9a2047edbb6b769_download-removebg-preview.png')]
+ACTIONS [('', '/'), ('Get Started', 'https://portal.hrt.org/app/symptoms-tracker'), ('info@hrt.org', 'mailto:info@hrt.org?subject=website'), ('Back to providers', '/providers'), ('', '/providers/jessica-kikla')]
+EMBEDS [{'src': 'https://www.googletagmanager.com/ns.html?id=GTM-KFFRTR6T', 'height': '0', 'width': '0', 'style': 'display:none;visibility:hidden'}] FORMS [{'action': '', 'method': '', 'name': '', 'fields': [{'name': 'quantity', 'type': 'number', 'label': ''}]}]
+HRT.org
+Get Started
+info@hrt.org
+Back to providers
+Jessica Kikla ARNP, Nurse Practitioner
+ARNP, Nurse Practitioner
+Jessica is a Dual Certified Adult & Gerontological Nurse Practitioner specializing in Anti-Aging and Hormone Replacement Therapy.
+She received her Bachelor of Science in Nursing from the University of Florida and soon after moved to Maryland to work at the World-Renowned Shock Trauma Hospital in Baltimore. Here she worked in emergent situations and provided vital care to the critically sick and severely injured. During this time, she completed her Master’s Degree at the University of Maryland, graduating in 2012.
+Prior to coming to this practice, she was a Lead Instructor in Shock wave therapy for ED, teaching other physicians proper protocols and techniques. She is also a certified instructor in PRP. She has extensive knowledge in Hormone Optimization and received Peptide Certification through the American Academy of Anti-Aging Medicine in 2018.
+‍
+Phone: 561-246-3751
+Email: jessica@hrt.org
+‍
+
+PAGE join-our-network FINAL https://hrt.org/join-our-network
+BLOCKS [('div', ['section'], 514), ('noscript', None, 0)]
+RICH []
+IMAGES []
+ACTIONS []
+EMBEDS [{'src': 'https://www.googletagmanager.com/ns.html?id=GTM-KFFRTR6T', 'height': '0', 'width': '0', 'style': 'display:none;visibility:hidden'}] FORMS [{'action': '', 'method': '', 'name': '', 'fields': [{'name': 'quantity', 'type': 'number', 'label': ''}]}, {'action': '', 'method': 'get', 'name': 'Join Our Network Form', 'fields': [{'name': 'First-Name', 'type': 'text', 'label': ''}, {'name': 'Phone', 'type': 'tel', 'label': ''}, {'name': 'Title-Credentials', 'type': 'text', 'label': ''}, {'name': 'Speciality', 'type': 'select', 'label': ''}, {'name': 'Last-Name', 'type': 'text', 'label': ''}, {'name': 'Email-Address', 'type': 'email', 'label': ''}, {'name': 'Education', 'type': 'text', 'label': ''}, {'name': 'Company-Name', 'type': 'text', 'label': ''}, {'name': 'Street-Address', 'type': 'text', 'label': ''}, {'name': 'Address-Line-2', 'type': 'text', 'label': ''}, {'name': 'City', 'type': 'text', 'label': ''}, {'name': 'State-Province-Region', 'type': 'text', 'label': ''}, {'name': 'ZIP-Postal-Code', 'type': 'text', 'label': ''}, {'name': 'Country', 'type': 'text', 'label': ''}, {'name': '', 'type': 'submit', 'label': ''}]}, {'action': '/search', 'method': '', 'name': '', 'fields': [{'name': 'query', 'type': 'search', 'label': 'Type keywords'}, {'name': '', 'type': 'submit', 'label': ''}]}]
+Join Our Network
+Join Our Network
+We have a growing national user base looking for local providers they can rely on for help with their medical issues. Please fill out the form below to become a listed provider on hrt.org.
+First Name
+Phone
+Title/Credentials
+Speciality
+Family
+Internal
+General
+OBGYN
+Other
+Last Name
+Email Address
+Education
+Company Name
+Office Address
+Street Address
+Address Line 2
+City
+State / Province / Region
+ZIP / Postal Code
+Country
+Thank you! Your submission has been received!
+Oops! Something went wrong while submitting the form.

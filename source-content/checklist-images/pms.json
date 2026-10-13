@@ -1,0 +1,22 @@
+{
+  "id": "pms",
+  "alt": "A woman records cycle symptoms in a notebook beside a calendar.",
+  "source": "C:\\Users\\Fahad\\.codex\\generated_images\\01a12cac-c085-7a63-b4de-dc368e21fbc2\\exec-3be4c565-6cf3-419d-b6eb-950a8f3bea02.png",
+  "prompt": "Use case: photorealistic-natural. Asset: original landscape 3:2 editorial healthcare photograph for a PMS symptom checklist on a premium health website. A fully clothed adult woman in her early thirties with warm brown skin and natural curly hair sits at a tidy oak table in a softly sunlit home. A thoughtful candid three-quarter view shows her using a pen to record cycle-related symptoms in an open notebook beside a small monthly paper calendar with its marks indistinct and unreadable. She looks at her notes, calm and focused, not smiling toward camera and not distressed. A restrained muted plum cardigan, warm ivory interior, subtle navy notebook, natural skin and fabric texture, soft daylight, sophisticated restrained color grading. Keep woman, hands, notebook and calendar central enough for a 4:3 center crop. Realistic hands, pen grip, anatomy and objects; paper content blurred, no readable text, no text overlays, logos, watermarks, branded packaging, medication, medical claims, diagnostic results, nudity or explicit content. These are illustrative models, not actual clinical staff or patients.",
+  "mode": "built-in",
+  "width": 1536,
+  "height": 1024,
+  "original": "source-content/checklist-images/generated/pms.png",
+  "files": [
+    {
+      "path": "uploads/checklists/pms-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/pms-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

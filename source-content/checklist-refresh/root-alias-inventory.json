@@ -1,0 +1,58 @@
+[
+  {
+    "key": "hormone-symptom-checklist-men",
+    "status": 200,
+    "finalUrl": "https://hrt.org/hormone-symptom-checklist-men",
+    "bytes": 40207,
+    "title": "Men&#x27;s Hormone Assessment Copy",
+    "embeds": [
+      "<div data-tf-widget=\"EdKIn3\" data-tf-iframe-props=\"title=Q009 Hormone Symptom Checklist Men\" data-tf-medium=\"snippet\" style=\"width:100%;height:400px;\">"
+    ],
+    "file": "hormone-symptom-checklist-men.root-alias.html"
+  },
+  {
+    "key": "thyroid-assessment",
+    "status": 200,
+    "finalUrl": "https://hrt.org/thyroid-assessment",
+    "bytes": 67425,
+    "title": "Thyroid Assessment",
+    "embeds": [],
+    "file": "thyroid-assessment.root-alias.html"
+  },
+  {
+    "key": "pms-symptom-self-assessment",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/premenstrual-syndrome-pms-self-assessment",
+    "bytes": 42716,
+    "title": "Premenstrual Syndrome (PMS) Quiz Online – PMS Signs Self Assessment | HRT",
+    "embeds": [],
+    "file": "pms-symptom-self-assessment.root-alias.html"
+  },
+  {
+    "key": "perimenopause-symptom-self-assessment",
+    "status": 404,
+    "finalUrl": "https://hrt.org/perimenopause-symptom-self-assessment",
+    "bytes": 5323,
+    "title": "Not Found",
+    "embeds": [],
+    "file": "perimenopause-symptom-self-assessment.root-alias.html"
+  },
+  {
+    "key": "menopause-symptoms-self-assessment",
+    "status": 404,
+    "finalUrl": "https://hrt.org/menopause-symptoms-self-assessment",
+    "bytes": 5323,
+    "title": "Not Found",
+    "embeds": [],
+    "file": "menopause-symptoms-self-assessment.root-alias.html"
+  },
+  {
+    "key": "symptom-checklist",
+    "status": 200,
+    "finalUrl": "https://hrt.org/checklist/hormone-symptom-checklist",
+    "bytes": 58933,
+    "title": "Hormone Symptom Checklist Quiz – How to Check Hormone Levels at Home | HRT",
+    "embeds": [],
+    "file": "symptom-checklist.root-alias.html"
+  }
+]

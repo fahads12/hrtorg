@@ -1,0 +1,32 @@
+{
+  "tool": "Built-in image_gen",
+  "purpose": "Illustrative lifestyle photographs for Lab Testing steps 3, 4, 5; no actual patients or product packaging.",
+  "prompts": [
+    "Use case: photorealistic-natural. Create one premium editorial photograph for step 3, preparing for an at-home laboratory sample collection, on HRT.org. Landscape 5:4 composition. A fully clothed middle-aged woman in a pale blue shirt sits at a clean light oak table in a bright calm home, carefully reading an unbranded folded instruction leaflet before collection; a single clean empty capped saliva collection tube lies neatly on the table. Natural hands, realistic skin, soft daylight, ivory and muted navy palette, understated medical professionalism. Mid shot with her face and hands and materials legible. This is preparation, NOT a procedure. No blood, urine, visible saliva, needles, punctures, nudity, bodily exposure, mouth collection, medical readings, kit packaging, logos, watermark, AI label, or readable text. No invented branded products. One cohesive photograph, not collage.",
+    "Use case: photorealistic-natural. Create one premium editorial photograph for step 4, returning an at-home laboratory sample by mail, for HRT.org. Landscape 5:4. Close editorial view of a fully clothed middle-aged adult in a navy long-sleeved shirt at a clean light oak home table, hands carefully sealing a plain small white padded return mailer, with a blank unbranded shipping-label area. Focus on hands and mailer, face not needed. Soft natural window daylight, ivory and muted navy with pale blue background, realistic anatomy and textures, calm reassuring atmosphere, polished photography. The sample is completely enclosed and invisible. No blood, bodily fluids, needles, nudity, exposed skin beyond hands, open medical containers, invented kit packaging or branding, logos, readable text, addresses, tracking codes, watermark, or AI label. No collage.",
+    "Use case: photorealistic-natural. Create one premium editorial photograph for step 5, reviewing at-home lab results, for HRT.org. Landscape 5:4 composition. A fully clothed middle-aged man in a navy knit shirt sits at a light oak desk in a calm bright home, thoughtfully reviewing information on a laptop and writing a question in a paper notebook for his healthcare provider. Three-quarter side view showing his face, natural hands, laptop, notebook; the laptop screen is turned away from the viewer so no patient information or result values are visible. Soft daylight, warm ivory, pale blue and muted navy palette, reassuring but not exaggerated happy outcome, high-quality realistic editorial photography. No medical diagnosis graphics, charts, readable text, logos, watermark, AI label, nudity, blood, needles or bodily fluids. Single photograph, no collage."
+  ],
+  "files": [
+    {
+      "master": "source-content/lab-redesign/generated/collection-preparation.png",
+      "web": [
+        "uploads/lab/collection-preparation-640.webp",
+        "uploads/lab/collection-preparation-1200.webp"
+      ]
+    },
+    {
+      "master": "source-content/lab-redesign/generated/sample-return.png",
+      "web": [
+        "uploads/lab/sample-return-640.webp",
+        "uploads/lab/sample-return-1200.webp"
+      ]
+    },
+    {
+      "master": "source-content/lab-redesign/generated/results-review.png",
+      "web": [
+        "uploads/lab/results-review-640.webp",
+        "uploads/lab/results-review-1200.webp"
+      ]
+    }
+  ]
+}

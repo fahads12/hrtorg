@@ -1,0 +1,592 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "dist",
+  "cleanUrls": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "base-uri 'self'; object-src 'none'; frame-ancestors 'none'"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/Shop.html",
+      "destination": "https://store.hrt.org/",
+      "permanent": false
+    },
+    {
+      "source": "/blog-categories/%20heart-health/:path*",
+      "destination": "/blog-categories/heart-health/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/5-popular-hair-loss-myths-debunked-what-you-should-be-doing-for-thicker-healthier-hair",
+      "destination": "/health/5-popular-hair-loss-myths-debunked-what-you-should-be-doing-for-thicker-healthier-hair/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/About.html",
+      "permanent": true
+    },
+    {
+      "source": "/adrenal-fatigue-how-stress-affects-hormone-levels",
+      "destination": "/health/adrenal-fatigue-how-stress-affects-hormone-levels/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease",
+      "destination": "/health/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/are-night-sweats-keeping-you-up-get-relief-in-menopause",
+      "destination": "/health/are-night-sweats-keeping-you-up-get-relief-in-menopause/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/bioidentical-hormone-replacement-therapy-bhrt-cost-facts-faqs-finding-answers",
+      "destination": "/health/bioidentical-hormone-replacement-therapy-bhrt-cost-facts-faqs-finding-answers/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/black-cohosh-natural-treatment-menopause-relief",
+      "destination": "/health/black-cohosh-natural-treatment-menopause-relief/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/brain-fog-your-brain-on-hormones-when-you-just-cant-think",
+      "destination": "/health/brain-fog-your-brain-on-hormones-when-you-just-cant-think/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/breast-cancer-basics-symptoms-risks-stages-treatments",
+      "destination": "/health/breast-cancer-basics-symptoms-risks-stages-treatments/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/category/heart-health",
+      "destination": "/blog-categories/heart-health/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/category/hormones-and-hormonal-health",
+      "destination": "/blog-categories/hormones/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/category/mens-health",
+      "destination": "/blog-categories/mens-health/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/category/womens-health",
+      "destination": "/blog-categories/womens-health/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms",
+      "destination": "/health/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/chronic-pain-conditions-causes-treatment",
+      "destination": "/health/chronic-pain-conditions-causes-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/compounding-pharmacy-customized-medication-men-women-natural-choice",
+      "destination": "/health/compounding-pharmacy-customized-medication-men-women-natural-choice/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/conditions",
+      "destination": "/Resources.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/Contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us-free-confidential-consultation",
+      "destination": "/Contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/coronary-heart-disease-and-the-benefits-of-regular-exercise",
+      "destination": "/health/coronary-heart-disease-and-the-benefits-of-regular-exercise/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures",
+      "destination": "/health/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/essential-omega-3-omega-6-fatty-acids-why-most-of-us-dont-get-enough",
+      "destination": "/health/essential-omega-3-omega-6-fatty-acids-why-most-of-us-dont-get-enough/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/estriol-anti-aging-uses-treatment-side-effects",
+      "destination": "/health/estriol-anti-aging-uses-treatment-side-effects/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/estrogen-bioidenticals-what-women-need-to-know",
+      "destination": "/health/estrogen-bioidenticals-what-women-need-to-know/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do",
+      "destination": "/health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/female-hormone-imbalance-what-hypothyroidism-oxytocin-menopause-and-libido-may-have-in-common",
+      "destination": "/health/female-hormone-imbalance-what-hypothyroidism-oxytocin-menopause-and-libido-may-have-in-common/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/fighting-diabetes-obesity-metabolic-syndrome-and-osteoporosis-why-testosterone-is-important",
+      "destination": "/health/fighting-diabetes-obesity-metabolic-syndrome-and-osteoporosis-why-testosterone-is-important/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/fighting-for-fertility-know-the-causes-tests-signs-and-treatments",
+      "destination": "/health/fighting-for-fertility-know-the-causes-tests-signs-and-treatments/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/heart-attack-help-causes-symptoms-signs-treatment-every-minute-counts",
+      "destination": "/health/heart-attack-help-causes-symptoms-signs-treatment-every-minute-counts/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/heart-disease-explained-many-risk-factors-causes-treatment",
+      "destination": "/health/heart-disease-explained-many-risk-factors-causes-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/heart-failure-types-symptoms-causes-treatments",
+      "destination": "/health/heart-failure-types-symptoms-causes-treatments/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/help-for-high-blood-pressure-hypertension-stopping-silent-killer-within",
+      "destination": "/health/help-for-high-blood-pressure-hypertension-stopping-silent-killer-within/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hgh-natural-production-and-synthetic-use",
+      "destination": "/health/hgh-natural-production-and-synthetic-use/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/high-cholesterol-and-heart-disease-causes-risks-and-treatment",
+      "destination": "/health/high-cholesterol-and-heart-disease-causes-risks-and-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hope-for-low-libido-in-women-sexual-health-menopause",
+      "destination": "/health/hope-for-low-libido-in-women-sexual-health-menopause/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hormonal-imbalance-in-men-whats-really-happening",
+      "destination": "/health/hormonal-imbalance-in-men-whats-really-happening/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels",
+      "destination": "/health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hormone-testing-methods-saliva-blood-and-fsh",
+      "destination": "/health/hormone-testing-methods-saliva-blood-and-fsh/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hot-flashes-menopause-causes-treatment-faqs",
+      "destination": "/health/hot-flashes-menopause-causes-treatment-faqs/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/how-cortisol-regulates-many-functions-of-the-body",
+      "destination": "/health/how-cortisol-regulates-many-functions-of-the-body/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/human-growth-hormone-hgh-its-uses-and-abuses-what-you-need-to-know",
+      "destination": "/health/human-growth-hormone-hgh-its-uses-and-abuses-what-you-need-to-know/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hyperthyroidism",
+      "destination": "/health/hyperthyroidism/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/hypothyroidism-self-check-treatment",
+      "destination": "/health/hypothyroidism-self-check-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults",
+      "destination": "/health/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/incontinence-in-women-and-men-symptoms-causes-types-treatment",
+      "destination": "/health/incontinence-in-women-and-men-symptoms-causes-types-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/individualized-hormone-therapy-balanced-approach-treatment",
+      "destination": "/health/individualized-hormone-therapy-balanced-approach-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/injectable-hgh-supplements-safety-law",
+      "destination": "/health/injectable-hgh-supplements-safety-law/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/is-gynecomastia-more-harmful-to-men-than-we-know-impact-excess-breast-tissue-males",
+      "destination": "/health/is-gynecomastia-more-harmful-to-men-than-we-know-impact-excess-breast-tissue-males/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/join-our-network",
+      "destination": "/Join%20Our%20Network.html",
+      "permanent": true
+    },
+    {
+      "source": "/lab-testing",
+      "destination": "/Lab%20Testing.html",
+      "permanent": true
+    },
+    {
+      "source": "/low-testosterone-low-t-quiz-free-evaluation",
+      "destination": "/checklist/low-testosterone-low-t-quiz-free-evaluation/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/managing-muscle-loss-for-life-causes-types-treatment",
+      "destination": "/health/managing-muscle-loss-for-life-causes-types-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/menopause-and-its-functions-a-case-for-hormone-replacement-therapy",
+      "destination": "/health/menopause-and-its-functions-a-case-for-hormone-replacement-therapy/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/menopause-in-midlife-strange-symptoms-amazing-facts-whats-really-happening-in-the-female-body",
+      "destination": "/health/menopause-in-midlife-strange-symptoms-amazing-facts-whats-really-happening-in-the-female-body/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/menopause-weight-gain-symptoms-of-hormonal-imbalance",
+      "destination": "/health/menopause-weight-gain-symptoms-of-hormonal-imbalance/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/menstrual-irregularity-and-menopause-whats-normal-whats-not",
+      "destination": "/health/menstrual-irregularity-and-menopause-whats-normal-whats-not/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/metabolism-and-thyroid-hormone-replacement",
+      "destination": "/health/metabolism-and-thyroid-hormone-replacement/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/mindfulness-practicing-mindful-awareness-exercises-techniques-meditation",
+      "destination": "/health/mindfulness-practicing-mindful-awareness-exercises-techniques-meditation/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health",
+      "destination": "/health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/mood-swings-menopause-getting-off-hormonal-roller-coaster",
+      "destination": "/health/mood-swings-menopause-getting-off-hormonal-roller-coaster/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health",
+      "destination": "/health/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/need-growth-hormone-gh-deficiency-benefits-treatment",
+      "destination": "/health/need-growth-hormone-gh-deficiency-benefits-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/night-sweats-not-just-women",
+      "destination": "/health/night-sweats-not-just-women/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing",
+      "destination": "/health/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/osteoporosis-protecting-bone-health",
+      "destination": "/health/osteoporosis-protecting-bone-health/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/perimenopause-navigating-the-many-symptoms-of-pre-menopause",
+      "destination": "/health/perimenopause-navigating-the-many-symptoms-of-pre-menopause/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/phytoestrogens-natural-hormone-defense",
+      "destination": "/health/phytoestrogens-natural-hormone-defense/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/pms-symptom-self-assessment",
+      "destination": "/checklist/premenstrual-syndrome-pms-self-assessment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/polycystic-ovarian-syndrome-explained-pcos-the-many-causes-symptoms-and-treatments",
+      "destination": "/health/polycystic-ovarian-syndrome-explained-pcos-the-many-causes-symptoms-and-treatments/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/post-menopause-what-to-expect-after-the-change",
+      "destination": "/health/post-menopause-what-to-expect-after-the-change/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/prenatal-vitamins-facts-what-you-really-need-healthy-pregnancy",
+      "destination": "/health/prenatal-vitamins-facts-what-you-really-need-healthy-pregnancy/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/Privacy%20Policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/progesterone-bioidentical-hrt-the-facts",
+      "destination": "/health/progesterone-bioidentical-hrt-the-facts/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/progesterone-therapy",
+      "destination": "/health/progesterone-therapy/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/prostate-cancer-symptoms-causes-treatment-prevention",
+      "destination": "/health/prostate-cancer-symptoms-causes-treatment-prevention/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/providers",
+      "destination": "/Providers.html",
+      "permanent": true
+    },
+    {
+      "source": "/quick-relief-urinary-tract-infection-uti-causes-treatment-natural-antibiotic",
+      "destination": "/health/quick-relief-urinary-tract-infection-uti-causes-treatment-natural-antibiotic/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/raw-power-growth-hormone-releasing-peptide-6-ghrp-6-know",
+      "destination": "/health/raw-power-growth-hormone-releasing-peptide-6-ghrp-6-know/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/return-policy",
+      "destination": "/Return%20Policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/search",
+      "destination": "/Resources.html",
+      "permanent": true
+    },
+    {
+      "source": "/sleeplessness-perimenopause-possible-causes-solutions",
+      "destination": "/health/sleeplessness-perimenopause-possible-causes-solutions/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/symptom-checklist",
+      "destination": "/checklist/hormone-symptom-checklist/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/symptoms",
+      "destination": "/Resources.html",
+      "permanent": true
+    },
+    {
+      "source": "/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention",
+      "destination": "/health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/Terms%20and%20Conditions.html",
+      "permanent": true
+    },
+    {
+      "source": "/testosterone-levels-women-testing-therapy",
+      "destination": "/health/testosterone-levels-women-testing-therapy/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/testosterone-universal-hormone-function-deficiency-treatment",
+      "destination": "/health/testosterone-universal-hormone-function-deficiency-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/the-causes-and-treatment-of-erectile-dysfunction-ed-restoring-healthy-sex-again",
+      "destination": "/health/the-causes-and-treatment-of-erectile-dysfunction-ed-restoring-healthy-sex-again/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/the-dangers-of-diabetes-different-types-how-its-diagnosed-whos-at-risk",
+      "destination": "/health/the-dangers-of-diabetes-different-types-how-its-diagnosed-whos-at-risk/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help",
+      "destination": "/health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/the-frightening-truth-about-iodine-deficiency-disorders-linked-to-low-levels",
+      "destination": "/health/the-frightening-truth-about-iodine-deficiency-disorders-linked-to-low-levels/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/three-paths-growth-hormone-wellness-genotropin-norditropin-nutropin",
+      "destination": "/health/three-paths-growth-hormone-wellness-genotropin-norditropin-nutropin/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/thyroid-disease-symptoms-cures-causes",
+      "destination": "/health/thyroid-disease-symptoms-cures-causes/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/thyroid-disorders-testing-treatment",
+      "destination": "/health/thyroid-disorders-testing-treatment/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/top-10-best-prenatal-vitamins-reviewed",
+      "destination": "/health/top-10-best-prenatal-vitamins-reviewed/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-depression-learn-types-treatment-signs-and-causes",
+      "destination": "/health/understanding-depression-learn-types-treatment-signs-and-causes/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/undiagnosed-chest-pain-determining-the-cause",
+      "destination": "/health/undiagnosed-chest-pain-determining-the-cause/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/unlocking-the-mystery-of-memory-loss-the-mind-you-may-be-missing",
+      "destination": "/health/unlocking-the-mystery-of-memory-loss-the-mind-you-may-be-missing/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/vaginal-dryness-affects-intimacy-surviving-post-menopause",
+      "destination": "/health/vaginal-dryness-affects-intimacy-surviving-post-menopause/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/viagra-cialis-levitra-effective-treatment-erectile-dysfunction",
+      "destination": "/health/viagra-cialis-levitra-effective-treatment-erectile-dysfunction/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/vitamin-b-complex-injections-using-lipo-b-vitamins-weight-loss",
+      "destination": "/health/vitamin-b-complex-injections-using-lipo-b-vitamins-weight-loss/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/what-are-hormones-why-they-get-depleted",
+      "destination": "/health/what-are-hormones-why-they-get-depleted/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-an-endocrinologist",
+      "destination": "/health/what-is-an-endocrinologist/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-hcg-uses-weight-loss-benefits-side-effects",
+      "destination": "/health/what-is-hcg-uses-weight-loss-benefits-side-effects/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-progesterone-its-many-forms-and-functions",
+      "destination": "/health/what-is-progesterone-its-many-forms-and-functions/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/when-anxiety-strikes-whos-at-risk-hows-it-treated",
+      "destination": "/health/when-anxiety-strikes-whos-at-risk-hows-it-treated/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/why-bioidentical-hormone-replacement-therapy-over-synthetic-hormone-replacement-therapy",
+      "destination": "/health/why-bioidentical-hormone-replacement-therapy-over-synthetic-hormone-replacement-therapy/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/women/menopause",
+      "destination": "/menopause/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/womens-health-and-hormones-the-delicate-balance",
+      "destination": "/health/womens-health-and-hormones-the-delicate-balance/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/your-bodys-need-for-estrogen-then-and-now",
+      "destination": "/health/your-bodys-need-for-estrogen-then-and-now/index.html",
+      "permanent": true
+    }
+  ]
+}

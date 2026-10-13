@@ -1,0 +1,503 @@
+{
+  "scope": "Read-only static inspection of supplied workflow exports and offline execution of scoring code; no webhook requests, email sends, imports, or activation performed.",
+  "reviewedAt": "2026-10-12",
+  "workflows": [
+    {
+      "assessment": "women",
+      "sourceFile": "Hormone Checklist Women Typeform Assessment.json",
+      "activeInExport": true,
+      "webhook": {
+        "method": "POST",
+        "path": "hormone-women-typeform-submit",
+        "responseMode": "responseNode",
+        "authentication": "No authentication parameter or credential configured on webhook node",
+        "options": {},
+        "productionHost": "Not specified in export; active flag does not verify live deployment"
+      },
+      "acceptedInput": {
+        "root": "root.body || root",
+        "precedence": [
+          "native form_response.calculated.score",
+          "flat score or S packed number",
+          "flat cat1, cat2, cat3, cat4",
+          "raw psychological_symptoms/psych_symptoms/q1 and physical_symptoms/q2"
+        ],
+        "flatContact": {
+          "email": [
+            "email",
+            "patientEmail"
+          ],
+          "name": [
+            "first_name",
+            "firstName",
+            "name"
+          ],
+          "optIn": [
+            "mailing_list",
+            "mailingList",
+            "newsletter"
+          ]
+        },
+        "nativeContact": "Exact configured Typeform field ids, with email-type fallback, first text answer name fallback and first choice opt-in fallback. Both exports use identical field ids; current live Typeform ids unverified.",
+        "flatScores": "Number coercion; missing categories default zero. No finite-number, integer, nonnegative, or maximum bounds validation.",
+        "packedScore": "cat4*1000000 + cat3*10000 + cat2*100 + cat1; decode last eight left-padded digits in 2-digit groups. Any flat score or S takes priority over category fields.",
+        "rawSymptomMapping": "All defined psychological labels map to zero; physical labels absent. Raw selections do not yield usable scores and populate debug warnings."
+      },
+      "resultRule": "All four counts > 0 => 5; otherwise if cat1+cat2 > cat3+cat4 choose cat1>cat2 ? 1 : 2; otherwise choose cat3>cat4 ? 3 : 4. Zero therefore produces result 4.",
+      "frontend": {
+        "categoryLabels": [
+          "Category 1 — Psychological Dominant",
+          "Category 2 — Reproductive & Hormonal Dominant",
+          "Category 3 — Metabolic & Physical Dominant",
+          "Category 4 — Cardiovascular & Chronic Disease Risk Dominant",
+          "Category 5 — Multiple Systems Affected"
+        ],
+        "groupOptionCounts": [
+          10,
+          14,
+          14,
+          13
+        ],
+        "payload": {
+          "first_name": "Offline audit",
+          "email": "audit@example.invalid",
+          "mailing_list": "No, just send me the results",
+          "cat1": 0,
+          "cat2": 0,
+          "cat3": 0,
+          "cat4": 0
+        },
+        "compatibility": "Local counts payload selects supported flat category branch and avoids unfinished raw-symptom map. Category count math matches for all valid nonzero combinations; zeros differ."
+      },
+      "responses": {
+        "success": {
+          "status": "responseCode absent; n8n default",
+          "bodyExpression": "={{ {\n  success: true,\n  result: $('Build HTML Email').first().json.result,\n  categoryScores: {\n    cat1: $('Build HTML Email').first().json.cat1,\n    cat2: $('Build HTML Email').first().json.cat2,\n    cat3: $('Build HTML Email').first().json.cat3,\n    cat4: $('Build HTML Email').first().json.cat4\n  },\n  redirectUrl: $('Build HTML Email').first().json.redirectUrl,\n  landingPageUrl: $('Build HTML Email').first().json.landingPageUrl,\n  message: 'Your hormone assessment is complete. A copy has been sent to your email.'\n} }}",
+          "headers": [
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "value": "POST, OPTIONS"
+            },
+            {
+              "name": "Access-Control-Allow-Headers",
+              "value": "Content-Type"
+            }
+          ]
+        },
+        "invalidEmail": {
+          "status": 400,
+          "bodyExpression": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+          "headers": [
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        "emailValidation": "Only checks that trimmed patientEmail contains @",
+        "preflight": "No explicit OPTIONS webhook/node configuration in export. Response CORS headers alone do not prove browser preflight works for deployed host."
+      },
+      "email": {
+        "transport": "Gmail",
+        "credentialTypes": [
+          "gmailOAuth2"
+        ],
+        "recipientExpression": "={{ $json.patientEmail }}",
+        "subjectExpression": "={{ $json.emailSubject }}",
+        "senderDisplayName": "HRT.org Info",
+        "branches": "Every input containing @ proceeds to one Gmail send regardless of mailingList value.",
+        "contentMeaning": {
+          "1": "Basic Hormone Imbalance",
+          "2": "Possible Adrenal Hormone Imbalance",
+          "3": "Possible Thyroid Hormone Imbalance",
+          "4": "Increased risk for Cardiometabolic conditions",
+          "5": "Hormone imbalance affecting one or more major health areas"
+        },
+        "zero": "Result 4 selects cardiometabolic-risk wording even with no symptoms.",
+        "mailingConsent": "Captured and preserved but never evaluated or used to subscribe. Result email includes related products/tests without opt-in-specific suppression.",
+        "nameEscaping": "Patient name is title-cased but interpolated into HTML without HTML escaping."
+      },
+      "crm": "No CRM, mailing-list provider, database, Set, or consent routing node in either export.",
+      "failureAndDuplicates": {
+        "successTiming": "Respond - Success runs only after Gmail node completes.",
+        "customErrorHandling": "No error workflow setting, retryOnFail, continueOnFail, onError, deduplication, or persistence configured in exported nodes/settings.",
+        "failureResponse": "Send/build failure has no explicit controlled JSON response branch. Actual HTTP failure/default depends on n8n runtime.",
+        "duplicateBehavior": "Each valid request can send another result email. No idempotency key, token dedupe, or email/date dedupe exists; client retry after uncertain delivery can duplicate email.",
+        "extraMenNode": null
+      },
+      "integrationImplications": [
+        "Keep sending cat1..cat4 counts. Do not send the frontend total score as flat score: workflow interprets score as packed digits.",
+        "Reconcile all-zero handling before sending patient emails.",
+        "Confirm category clinical meanings and score mapping with source owner: local display names and workflow email interpretation differ for categories 1 through 3.",
+        "Do not claim CRM registration or mailing-list enrollment from these exports; neither is implemented.",
+        "Treat consent for newsletter separately from the requested assessment email.",
+        "Require meaningful delivery-failure response, deployed CORS verification, and duplicate-send protection before browser integration."
+      ],
+      "offlineVerification": {
+        "validCategoryCombinations": 34650,
+        "mismatches": [
+          {
+            "counts": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0
+            },
+            "localCategory": null,
+            "workflowResult": 4
+          }
+        ],
+        "fixtures": [
+          {
+            "name": "zero",
+            "input": {
+              "email": "audit@example.invalid",
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0
+            },
+            "output": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": []
+            }
+          },
+          {
+            "name": "packed score takes precedence",
+            "input": {
+              "score": 1,
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 9
+            },
+            "output": {
+              "cat1": 1,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 1,
+              "warnings": []
+            }
+          },
+          {
+            "name": "raw symptoms have no configured categories",
+            "input": {
+              "email": "audit@example.invalid",
+              "psychological_symptoms": [
+                "Mood swings (PMS)"
+              ],
+              "physical_symptoms": [
+                "Acne"
+              ]
+            },
+            "output": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": [
+                "Unmapped symptom: mood swings (pms)",
+                "Unmapped symptom: acne"
+              ]
+            }
+          },
+          {
+            "name": "non-numeric packed score silently becomes zero",
+            "input": {
+              "score": "invalid"
+            },
+            "output": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": []
+            }
+          },
+          {
+            "name": "negative category accepted",
+            "input": {
+              "cat1": -1,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0
+            },
+            "output": {
+              "cat1": -1,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "assessment": "men",
+      "sourceFile": "Hormone Checklist Men Typeform Assessment.json",
+      "activeInExport": true,
+      "webhook": {
+        "method": "POST",
+        "path": "hormone-men-typeform-submit",
+        "responseMode": "responseNode",
+        "authentication": "No authentication parameter or credential configured on webhook node",
+        "options": {},
+        "productionHost": "Not specified in export; active flag does not verify live deployment"
+      },
+      "acceptedInput": {
+        "root": "root.body || root",
+        "precedence": [
+          "native form_response.calculated.score",
+          "flat score or S packed number",
+          "flat cat1, cat2, cat3, cat4",
+          "raw psychological_symptoms/psych_symptoms/q1 and physical_symptoms/q2"
+        ],
+        "flatContact": {
+          "email": [
+            "email",
+            "patientEmail"
+          ],
+          "name": [
+            "first_name",
+            "firstName",
+            "name"
+          ],
+          "optIn": [
+            "mailing_list",
+            "mailingList",
+            "newsletter"
+          ]
+        },
+        "nativeContact": "Exact configured Typeform field ids, with email-type fallback, first text answer name fallback and first choice opt-in fallback. Both exports use identical field ids; current live Typeform ids unverified.",
+        "flatScores": "Number coercion; missing categories default zero. No finite-number, integer, nonnegative, or maximum bounds validation.",
+        "packedScore": "cat4*1000000 + cat3*10000 + cat2*100 + cat1; decode last eight left-padded digits in 2-digit groups. Any flat score or S takes priority over category fields.",
+        "rawSymptomMapping": "All defined psychological labels map to zero; physical labels absent. Raw selections do not yield usable scores and populate debug warnings."
+      },
+      "resultRule": "All four counts > 0 => 5; otherwise if cat1+cat2 > cat3+cat4 choose cat1>cat2 ? 1 : 2; otherwise choose cat3>cat4 ? 3 : 4. Zero therefore produces result 4.",
+      "frontend": {
+        "categoryLabels": [
+          "Category 1 — Psychological Dominant",
+          "Category 2 — Sexual & Urinary Dominant",
+          "Category 3 — Metabolic & Physical Dominant",
+          "Category 4 — Cardiovascular & Chronic Disease Risk Dominant",
+          "Category 5 — Multiple Systems Affected"
+        ],
+        "groupOptionCounts": [
+          14,
+          13,
+          13,
+          15
+        ],
+        "payload": {
+          "first_name": "Offline audit",
+          "email": "audit@example.invalid",
+          "mailing_list": "No, just send me the results",
+          "cat1": 0,
+          "cat2": 0,
+          "cat3": 0,
+          "cat4": 0
+        },
+        "compatibility": "Local counts payload selects supported flat category branch and avoids unfinished raw-symptom map. Category count math matches for all valid nonzero combinations; zeros differ."
+      },
+      "responses": {
+        "success": {
+          "status": "responseCode absent; n8n default",
+          "bodyExpression": "={{ {\n  success: true,\n  result: $('Build HTML Email').first().json.result,\n  categoryScores: {\n    cat1: $('Build HTML Email').first().json.cat1,\n    cat2: $('Build HTML Email').first().json.cat2,\n    cat3: $('Build HTML Email').first().json.cat3,\n    cat4: $('Build HTML Email').first().json.cat4\n  },\n  redirectUrl: $('Build HTML Email').first().json.redirectUrl,\n  landingPageUrl: $('Build HTML Email').first().json.landingPageUrl,\n  message: 'Your hormone assessment is complete. A copy has been sent to your email.'\n} }}",
+          "headers": [
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "value": "POST, OPTIONS"
+            },
+            {
+              "name": "Access-Control-Allow-Headers",
+              "value": "Content-Type"
+            }
+          ]
+        },
+        "invalidEmail": {
+          "status": 400,
+          "bodyExpression": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+          "headers": [
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        "emailValidation": "Only checks that trimmed patientEmail contains @",
+        "preflight": "No explicit OPTIONS webhook/node configuration in export. Response CORS headers alone do not prove browser preflight works for deployed host."
+      },
+      "email": {
+        "transport": "Gmail",
+        "credentialTypes": [
+          "gmailOAuth2"
+        ],
+        "recipientExpression": "={{ $json.patientEmail }}",
+        "subjectExpression": "={{ $json.emailSubject }}",
+        "senderDisplayName": "HRT.org Info",
+        "branches": "Every input containing @ proceeds to one Gmail send regardless of mailingList value.",
+        "contentMeaning": {
+          "1": "Basic Hormone Imbalance",
+          "2": "Possible Adrenal Hormone Imbalance",
+          "3": "Possible Thyroid Hormone Imbalance",
+          "4": "Increased risk for Cardiometabolic conditions",
+          "5": "Hormone imbalance affecting one or more major health areas"
+        },
+        "zero": "Result 4 selects cardiometabolic-risk wording even with no symptoms.",
+        "mailingConsent": "Captured and preserved but never evaluated or used to subscribe. Result email includes related products/tests without opt-in-specific suppression.",
+        "nameEscaping": "Patient name is title-cased but interpolated into HTML without HTML escaping."
+      },
+      "crm": "No CRM, mailing-list provider, database, Set, or consent routing node in either export.",
+      "failureAndDuplicates": {
+        "successTiming": "Respond - Success runs only after Gmail node completes.",
+        "customErrorHandling": "No error workflow setting, retryOnFail, continueOnFail, onError, deduplication, or persistence configured in exported nodes/settings.",
+        "failureResponse": "Send/build failure has no explicit controlled JSON response branch. Actual HTTP failure/default depends on n8n runtime.",
+        "duplicateBehavior": "Each valid request can send another result email. No idempotency key, token dedupe, or email/date dedupe exists; client retry after uncertain delivery can duplicate email.",
+        "extraMenNode": {
+          "name": "Send an Email",
+          "type": "SMTP emailSend",
+          "credentialTypes": [
+            "smtp"
+          ],
+          "parameters": {
+            "options": {}
+          },
+          "connection": "Same output of Gmail Send Email as Respond - Success",
+          "implication": "Incomplete connected SMTP node: no explicit sender/recipient/subject/body. May fail execution, possibly after successful Gmail/send response depending branch order. Resolve before enabling; runtime behavior was not tested."
+        }
+      },
+      "integrationImplications": [
+        "Keep sending cat1..cat4 counts. Do not send the frontend total score as flat score: workflow interprets score as packed digits.",
+        "Reconcile all-zero handling before sending patient emails.",
+        "Confirm category clinical meanings and score mapping with source owner: local display names and workflow email interpretation differ for categories 1 through 3.",
+        "Do not claim CRM registration or mailing-list enrollment from these exports; neither is implemented.",
+        "Treat consent for newsletter separately from the requested assessment email.",
+        "Require meaningful delivery-failure response, deployed CORS verification, and duplicate-send protection before browser integration."
+      ],
+      "offlineVerification": {
+        "validCategoryCombinations": 47040,
+        "mismatches": [
+          {
+            "counts": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0
+            },
+            "localCategory": null,
+            "workflowResult": 4
+          }
+        ],
+        "fixtures": [
+          {
+            "name": "zero",
+            "input": {
+              "email": "audit@example.invalid",
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0
+            },
+            "output": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": []
+            }
+          },
+          {
+            "name": "packed score takes precedence",
+            "input": {
+              "score": 1,
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 9
+            },
+            "output": {
+              "cat1": 1,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 1,
+              "warnings": []
+            }
+          },
+          {
+            "name": "raw symptoms have no configured categories",
+            "input": {
+              "email": "audit@example.invalid",
+              "psychological_symptoms": [
+                "Feeling burned out"
+              ],
+              "physical_symptoms": [
+                "Decreased erections"
+              ]
+            },
+            "output": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": [
+                "Unmapped symptom: feeling burned out",
+                "Unmapped symptom: decreased erections"
+              ]
+            }
+          },
+          {
+            "name": "non-numeric packed score silently becomes zero",
+            "input": {
+              "score": "invalid"
+            },
+            "output": {
+              "cat1": 0,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": []
+            }
+          },
+          {
+            "name": "negative category accepted",
+            "input": {
+              "cat1": -1,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0
+            },
+            "output": {
+              "cat1": -1,
+              "cat2": 0,
+              "cat3": 0,
+              "cat4": 0,
+              "result": 4,
+              "warnings": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

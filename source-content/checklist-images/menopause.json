@@ -1,0 +1,22 @@
+{
+  "id": "menopause",
+  "prompt": "Use case: photorealistic-natural. Asset: original 3:2 landscape editorial photograph for a menopause symptom assessment. Quiet, naturally lit modern clinic with warm neutral walls. A fully clothed woman about 59 with a silver bob and soft teal knit cardigan sits in a comfortable chair in a candid side-angle conversation with an attentive Black female clinician around 40 wearing navy scrubs. Both face one another, thoughtful collaborative body language. The mature woman holds a closed plum notebook on her lap; clinician is listening with hands naturally resting on her own knee. A small white desk fan on a distant side table subtly suggests temperature comfort without distress or dramatic illness. Three-quarter environmental composition, different from two people behind a desk, both faces centered safely within the 3:2 frame. Realistic faces, age-appropriate skin texture, anatomically correct hands, soft diffused afternoon daylight, restrained navy, teal, plum and warm white color grading. No medical procedures, text, writing, logos, invented credentials, packaging, screens, diagrams, before-and-after claims, watermarks or nudity. Illustrative adults, not identified as actual staff or patients.",
+  "mode": "built-in",
+  "alt": "A mature woman and a healthcare professional have a thoughtful conversation about midlife care.",
+  "width": 1536,
+  "height": 1024,
+  "source": "source-content/checklist-images/generated/menopause.png",
+  "generatedSource": "C:/Users/Fahad/.codex/generated_images/01a12cac-3734-7961-9566-f626d697c5f2/exec-6a08c2a7-7e61-4dd6-a110-988e179856f0.png",
+  "files": [
+    {
+      "path": "uploads/checklists/menopause-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/menopause-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

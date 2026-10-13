@@ -1,0 +1,214 @@
+[
+  {
+    "path": ").concat(a,",
+    "offset": 2408415
+  },
+  {
+    "path": ".concat(a,",
+    "offset": 2408613
+  },
+  {
+    "path": "/",
+    "offset": 2475889
+  },
+  {
+    "path": "*",
+    "offset": 12581196
+  },
+  {
+    "path": "/",
+    "offset": 12581248
+  },
+  {
+    "path": "/register",
+    "offset": 12581300
+  },
+  {
+    "path": "/terms-and-conditions",
+    "offset": 12581360
+  },
+  {
+    "path": "/privacy-policy",
+    "offset": 12581432
+  },
+  {
+    "path": "/consent",
+    "offset": 12581498
+  },
+  {
+    "path": "/recover-password",
+    "offset": 12581557
+  },
+  {
+    "path": "/new-password/:token",
+    "offset": 12581625
+  },
+  {
+    "path": "/verify/account/:token",
+    "offset": 12581696
+  },
+  {
+    "path": "/add-user-password/:token",
+    "offset": 12581769
+  },
+  {
+    "path": "/app",
+    "offset": 12581846
+  },
+  {
+    "path": "home",
+    "offset": 12581909
+  },
+  {
+    "path": "symptoms-tracker",
+    "offset": 12581964
+  },
+  {
+    "path": "lab-results",
+    "offset": 12582031
+  },
+  {
+    "path": "tracker-history",
+    "offset": 12582093
+  },
+  {
+    "path": "user-kit-orders",
+    "offset": 12582159
+  },
+  {
+    "path": "user-kit-checkout/:orderId",
+    "offset": 12582225
+  },
+  {
+    "path": "medical-history",
+    "offset": 12582302
+  },
+  {
+    "path": "report/:kitId",
+    "offset": 12582368
+  },
+  {
+    "path": "change-password",
+    "offset": 12582432
+  },
+  {
+    "path": "my-orders",
+    "offset": 12582498
+  },
+  {
+    "path": "appointment-scheduling",
+    "offset": 12582558
+  },
+  {
+    "path": "available-slots",
+    "offset": 12582631
+  },
+  {
+    "path": "booking-page",
+    "offset": 12582697
+  },
+  {
+    "path": "confirm-booking",
+    "offset": 12582760
+  },
+  {
+    "path": "lab-tests",
+    "offset": 12582826
+  },
+  {
+    "path": "add-new-test",
+    "offset": 12582886
+  },
+  {
+    "path": "edit-test/:id",
+    "offset": 12582949
+  },
+  {
+    "path": "test-details/:id",
+    "offset": 12583013
+  },
+  {
+    "path": "patient-report/:kitId",
+    "offset": 12583080
+  },
+  {
+    "path": "dashboard",
+    "offset": 12583152
+  },
+  {
+    "path": "patient-profiles",
+    "offset": 12583212
+  },
+  {
+    "path": "patient-details/:id",
+    "offset": 12583279
+  },
+  {
+    "path": "catalogs",
+    "offset": 12583349
+  },
+  {
+    "path": "catalogs/add",
+    "offset": 12583408
+  },
+  {
+    "path": "catelogs/edit",
+    "offset": 12583471
+  },
+  {
+    "path": "list-plans/:productId",
+    "offset": 12583535
+  },
+  {
+    "path": "checkout",
+    "offset": 12583607
+  },
+  {
+    "path": "confirmation",
+    "offset": 12583666
+  },
+  {
+    "path": "patient-order",
+    "offset": 12583729
+  },
+  {
+    "path": "view-order/:id",
+    "offset": 12583793
+  },
+  {
+    "path": "view-my-order/:id",
+    "offset": 12583858
+  },
+  {
+    "path": "admins-list",
+    "offset": 12583926
+  },
+  {
+    "path": "scheduled-meetings",
+    "offset": 12583988
+  },
+  {
+    "path": "patient-lab-tests",
+    "offset": 12584057
+  },
+  {
+    "path": "patient-test-details/:id",
+    "offset": 12584125
+  },
+  {
+    "path": "kit-orders",
+    "offset": 12584200
+  },
+  {
+    "path": "kit-cart",
+    "offset": 12584261
+  },
+  {
+    "path": "order-kit",
+    "offset": 12584320
+  },
+  {
+    "path": "kit-checkout",
+    "offset": 12584380
+  }
+]

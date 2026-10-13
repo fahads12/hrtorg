@@ -1,0 +1,194 @@
+[
+  {
+    "route": "*",
+    "component": "Q3"
+  },
+  {
+    "route": "/",
+    "component": "IT"
+  },
+  {
+    "route": "/register",
+    "component": "VT"
+  },
+  {
+    "route": "/terms-and-conditions",
+    "component": "ha"
+  },
+  {
+    "route": "/privacy-policy",
+    "component": "Sa"
+  },
+  {
+    "route": "/consent",
+    "component": "ha"
+  },
+  {
+    "route": "/recover-password",
+    "component": "OT"
+  },
+  {
+    "route": "/new-password/:token",
+    "component": "kT"
+  },
+  {
+    "route": "/verify/account/:token",
+    "component": "Ou"
+  },
+  {
+    "route": "/add-user-password/:token",
+    "component": "U4"
+  },
+  {
+    "route": "/app",
+    "component": "ua"
+  },
+  {
+    "route": "home",
+    "component": "n4"
+  },
+  {
+    "route": "symptoms-tracker",
+    "component": "d4"
+  },
+  {
+    "route": "lab-results",
+    "component": "hY"
+  },
+  {
+    "route": "tracker-history",
+    "component": "c4"
+  },
+  {
+    "route": "user-kit-orders",
+    "component": "T4"
+  },
+  {
+    "route": "user-kit-checkout/:orderId",
+    "component": "v4"
+  },
+  {
+    "route": "medical-history",
+    "component": "BT"
+  },
+  {
+    "route": "report/:kitId",
+    "component": "__"
+  },
+  {
+    "route": "change-password",
+    "component": "ku"
+  },
+  {
+    "route": "my-orders",
+    "component": "i3"
+  },
+  {
+    "route": "available-slots",
+    "component": "e4"
+  },
+  {
+    "route": "booking-page",
+    "component": "r4"
+  },
+  {
+    "route": "confirm-booking",
+    "component": "A4"
+  },
+  {
+    "route": "lab-tests",
+    "component": "m4"
+  },
+  {
+    "route": "add-new-test",
+    "component": "R4"
+  },
+  {
+    "route": "edit-test/:id",
+    "component": "M4"
+  },
+  {
+    "route": "test-details/:id",
+    "component": "p4"
+  },
+  {
+    "route": "patient-report/:kitId",
+    "component": "k4"
+  },
+  {
+    "route": "dashboard",
+    "component": "EY"
+  },
+  {
+    "route": "patient-profiles",
+    "component": "W1"
+  },
+  {
+    "route": "patient-details/:id",
+    "component": "J1"
+  },
+  {
+    "route": "catalogs",
+    "component": "_1"
+  },
+  {
+    "route": "catalogs/add",
+    "component": "Y1"
+  },
+  {
+    "route": "catelogs/edit",
+    "component": "r3"
+  },
+  {
+    "route": "list-plans/:productId",
+    "component": "e2"
+  },
+  {
+    "route": "confirmation",
+    "component": "a3"
+  },
+  {
+    "route": "patient-order",
+    "component": "o3"
+  },
+  {
+    "route": "view-order/:id",
+    "component": "_3"
+  },
+  {
+    "route": "view-my-order/:id",
+    "component": "Y3"
+  },
+  {
+    "route": "admins-list",
+    "component": "q3"
+  },
+  {
+    "route": "scheduled-meetings",
+    "component": "S4"
+  },
+  {
+    "route": "patient-lab-tests",
+    "component": "y4"
+  },
+  {
+    "route": "patient-test-details/:id",
+    "component": "P4"
+  },
+  {
+    "route": "kit-orders",
+    "component": "N4"
+  },
+  {
+    "route": "kit-cart",
+    "component": "b4"
+  },
+  {
+    "route": "order-kit",
+    "component": "B4"
+  },
+  {
+    "route": "kit-checkout",
+    "component": "E4"
+  }
+]

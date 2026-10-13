@@ -1,0 +1,16 @@
+{
+  "reviewedAt": "2026-10-12",
+  "source": "Official n8n repository, master branch inspected through web browsing",
+  "nodeVersionMapping": "https://github.com/n8n-io/n8n/blob/master/packages/nodes-base/nodes/Google/Gmail/Gmail.node.ts",
+  "implementation": "https://github.com/n8n-io/n8n/blob/master/packages/nodes-base/nodes/Google/Gmail/v2/GmailV2.node.ts",
+  "observations": [
+    "Gmail.node.ts maps typeVersion 2.2 to GmailV2.",
+    "For resource message and operation send, GmailV2 sets responseData to the Gmail API response.",
+    "The shared return path wraps responseData using returnJsonArray and attaches paired-item metadata using constructExecutionMetaData.",
+    "That path does not merge the incoming item JSON into the output. Paired-item linkage is not preservation of its JSON fields.",
+    "The seven specialty exports read scoring fields from current $json immediately after Send Email, so those fields are absent under the inspected official implementation.",
+    "The two hormone exports already reference Build HTML Email explicitly in success responses and avoid this specific problem."
+  ],
+  "recommendedRepair": "Read result fields explicitly from Calculate Scores or Build HTML Email, or merge assessment data with the Gmail response before Respond - Success.",
+  "limitation": "The deployed n8n server version and live output were not inspected. No Gmail API operation or workflow execution was performed."
+}

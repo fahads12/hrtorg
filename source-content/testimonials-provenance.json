@@ -1,0 +1,52 @@
+{
+  "verifiedAt": "2026-10-11",
+  "sourceType": "Public HRT Shopify-store Yotpo review widget",
+  "quotesPreservedVerbatim": true,
+  "reviews": [
+    {
+      "reviewId": 621057906,
+      "name": "Christina S.",
+      "quote": "Excellent service, very promptly delivered. After testing, I was very pleased with the detailed results/explanation that I received. Highly recommend.",
+      "publishedAt": "2024-09-11T22:47:26",
+      "product": "Comprehensive Thyroid Profile-Blood+Urine Multi Test Kit ZRT Lab",
+      "source": "https://store.hrt.org/pages/hrt-org-customer-reviews-and-ratings",
+      "widgetPage": 3
+    },
+    {
+      "reviewId": 824762682,
+      "name": "Wayne S.",
+      "quote": "Easy to take, submit and quick response of test results.",
+      "publishedAt": "2026-03-30T12:51:30",
+      "product": "Female/Male Saliva Profile III E2, Pg, T, DS, Cx4-Saliva Test Kit",
+      "source": "https://store.hrt.org/pages/hrt-org-customer-reviews-and-ratings",
+      "widgetPage": 1
+    },
+    {
+      "reviewId": 674125257,
+      "name": "Andrea C.",
+      "quote": "Everything was easy to follow and results arrived quickly!",
+      "publishedAt": "2025-01-28T23:57:11",
+      "product": "Diurnal Cortisol (CX4) - At Home Saliva Test Kit",
+      "source": "https://store.hrt.org/pages/hrt-org-customer-reviews-and-ratings",
+      "widgetPage": 3
+    },
+    {
+      "reviewId": 542282960,
+      "name": "Michael B.",
+      "quote": "Simple to use. Test time and results were prompt",
+      "publishedAt": "2024-02-07T14:57:20",
+      "product": "Diurnal Cortisol (CX4) - At Home Saliva Test Kit",
+      "source": "https://store.hrt.org/pages/hrt-org-customer-reviews-and-ratings",
+      "widgetPage": 4
+    },
+    {
+      "reviewId": 861383695,
+      "name": "Barbara S.",
+      "quote": "Instructions were easy to follow",
+      "publishedAt": "2026-06-24T18:01:12",
+      "product": "Hormone Trio - Estradiol (E2), Progesterone (Pg), Testosterone (T) - Saliva Test Kit",
+      "source": "https://store.hrt.org/pages/hrt-org-customer-reviews-and-ratings",
+      "widgetPage": 1
+    }
+  ]
+}

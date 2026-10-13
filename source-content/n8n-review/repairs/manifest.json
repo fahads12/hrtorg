@@ -1,0 +1,230 @@
+{
+  "purpose": "Inactive technical repair copies for manual review only; not imported or activated.",
+  "verification": "Offline only. No provider calls or network requests were made.",
+  "workflows": [
+    {
+      "assessment": "adrenal",
+      "sourceFile": "Adrenal Fatigue & Stress Typeform Assessment.json",
+      "sourceSha256": "a5389824952ea0c8014c4574e9654d58cddf20f0a19191a81b2a25f787f59bc2",
+      "outputFile": "adrenal.inactive.json",
+      "outputSha256": "ee44239b396c00cd245b92e67059a90c4497909d9a1a7e4767fa46e917434431",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Read success assessment fields from Calculate Scores, retaining existing field names and values.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    },
+    {
+      "assessment": "andropause",
+      "sourceFile": "Andropause Typeform Assessment.json",
+      "sourceSha256": "e4d0cd2e04030d34de849821ee3745be9258595fcd715bc0ea5a5796afdecb56",
+      "outputFile": "andropause.inactive.json",
+      "outputSha256": "5025f06e53cf1cfc12b236a256e5929cfa04a3b4b30a8a0ab0d19e9e3e5a501b",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Read success assessment fields from Calculate Scores, retaining existing field names and values.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    },
+    {
+      "assessment": "men",
+      "sourceFile": "Hormone Checklist Men Typeform Assessment.json",
+      "sourceSha256": "e1a9eb0a2030e6a98daf9d65dfd4f50d03ef48d6372e44cb65edee85681ca62e",
+      "outputFile": "men.inactive.json",
+      "outputSha256": "a9949e18193b3aee15262649f8b305b59ab637a18fe01d516862e3adaac364f7",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved.",
+        "Removed the incomplete extra SMTP Send an Email node and its edge from Gmail."
+      ]
+    },
+    {
+      "assessment": "women",
+      "sourceFile": "Hormone Checklist Women Typeform Assessment.json",
+      "sourceSha256": "927a0d52736fdd2dab39a08df4f1ee832b46e6f7e8bbc42eaf1973f3b586924d",
+      "outputFile": "women.inactive.json",
+      "outputSha256": "9173314ae43e8f5a312d687c580f37401ff7fda3ae761ad5ac36c50146fd4846",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    },
+    {
+      "assessment": "menopause",
+      "sourceFile": "Menopause Typeform Assessment.json",
+      "sourceSha256": "89277a98f445445abdf4e7ac02f088e0a7859d354c4c88ffdf9ab433aa987fca",
+      "outputFile": "menopause.inactive.json",
+      "outputSha256": "fa264bc4cad732c30841caba67166ac7832ff43f0e1c1b4dfa93afea38693947",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Read success assessment fields from Calculate Scores, retaining existing field names and values.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    },
+    {
+      "assessment": "osteoporosis",
+      "sourceFile": "Osteoporosis Typeform Assessment.json",
+      "sourceSha256": "787cda329896b2496b5f5c40f39c3dbc9f58b3cedfb2443219e0a639f03f700d",
+      "outputFile": "osteoporosis.inactive.json",
+      "outputSha256": "b7ffb11e66b2322de1c0b590c320ec8fa961ad3214b1060154bd5d9471dc49a1",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Read success assessment fields from Calculate Scores, retaining existing field names and values.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    },
+    {
+      "assessment": "perimenopause",
+      "sourceFile": "Perimenopause Typeform Assessment.json",
+      "sourceSha256": "545e00a81d668b404cabff6a23d57bbc4e77bf7f596510b6bf9376dd7d7322fc",
+      "outputFile": "perimenopause.inactive.json",
+      "outputSha256": "e94f401cee185d7334719b9d420813185d79f1a2813abbfe66a18b9120efa7bd",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Read success assessment fields from Calculate Scores, retaining existing field names and values.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    },
+    {
+      "assessment": "pms",
+      "sourceFile": "PMS Typeform Assessment.json",
+      "sourceSha256": "b2c2074bb2e522b5ba8e2ae2857290ec5b06082b761890ce69be37a265f413f8",
+      "outputFile": "pms.inactive.json",
+      "outputSha256": "15ec73b5c671c5346213075b0a9fbf7cdcfa9690f5892abbf27584ffb0bb611c",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Read success assessment fields from Calculate Scores, retaining existing field names and values.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    },
+    {
+      "assessment": "thyroid",
+      "sourceFile": "Thyroid Typeform Assessment.json",
+      "sourceSha256": "c886599c59fd94485f51a17c9447dd792c5d032e4abeedbb06e8386865d5069c",
+      "outputFile": "thyroid.inactive.json",
+      "outputSha256": "e635203a8c0df4b270ceaa2d8a3e4cbfaba14c1a850d40a681b97a44eca140a2",
+      "active": false,
+      "workflowIdentityRetained": true,
+      "retainedCredentialReferencesUnchanged": true,
+      "checks": [
+        "Score node unchanged",
+        "Clinical template text unchanged",
+        "Original files unchanged",
+        "Success follows Gmail only",
+        "Response fields survive Gmail-shaped input",
+        "Normal and empty names render identically",
+        "HTML-sensitive name characters escaped"
+      ],
+      "changes": [
+        "Set active:false; removed pinData, meta (including instanceId), and versionId.",
+        "Read success assessment fields from Calculate Scores, retaining existing field names and values.",
+        "Added accepted:true and emailSent:true only to the existing post-Gmail success response.",
+        "HTML-escaped dynamic patientName in the greeting; existing name capitalization and clinical content preserved."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "before": 0.15001640804462987,
+      "after": 1
+    },
+    {
+      "width": 390,
+      "before": 0.16564830157415078,
+      "after": 1
+    },
+    {
+      "width": 768,
+      "before": 0.1691184394870137,
+      "after": 1
+    },
+    {
+      "width": 1440,
+      "before": 0.16817544994072636,
+      "after": 1
+    }
+  ],
+  "reducedMotion": true,
+  "errors": []
+}

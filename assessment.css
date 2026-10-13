@@ -1,0 +1,171 @@
+﻿/* Scoped styles for the locally hosted symptom assessments. */
+.checklist-page { --checklist-ink:#123552; --checklist-muted:#536b80; --checklist-line:#d7e3ed; --checklist-accent:#287d91; background:linear-gradient(180deg,#f3f8fb 0,#fff 570px); color:var(--checklist-ink); padding:56px 0 80px; }
+.checklist-page *, .checklist-page *::before, .checklist-page *::after { box-sizing:border-box; }
+.checklist-page [hidden] { display:none !important; }
+.checklist-page .checklist-shell { max-width:1160px; width:calc(100% - 64px); margin-inline:auto; }
+.checklist-page .checklist-heading { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:40px; align-items:center; max-width:none; margin-bottom:34px; }
+.checklist-page .checklist-heading-copy { min-width:0; }
+.checklist-page .checklist-visual { margin:0; overflow:hidden; border:1px solid var(--checklist-line); border-radius:22px; aspect-ratio:3/2; background:#e7eef2; }
+.checklist-page .checklist-visual img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+.checklist-page .checklist-heading h1 { font-size:clamp(34px,4.3vw,58px); line-height:1.09; letter-spacing:-.035em; margin:12px 0 18px; text-wrap:balance; }
+.checklist-page .checklist-heading-copy > p { max-width:70ch; line-height:1.7; font-size:16px; color:var(--checklist-muted); margin:0; }
+.checklist-page .checklist-heading .eyebrow { color:#437084; }
+.checklist-page .checklist-workspace { display:grid; grid-template-columns:240px minmax(0,1fr); gap:28px; align-items:start; }
+.checklist-page .checklist-aside { border:1px solid var(--checklist-line); border-radius:20px; padding:26px 22px; background:#f1f7fa; }
+.checklist-page .checklist-aside h2 { font-size:21px; line-height:1.3; margin:0 0 12px; }
+.checklist-page .checklist-aside h3 { font-size:17px; line-height:1.4; margin:22px 0 8px; }
+.checklist-page .checklist-aside p { font-size:14px; color:var(--checklist-muted); line-height:1.7; margin:0 0 16px; }
+.checklist-page .checklist-aside ul,.checklist-page .checklist-aside ol { padding-left:20px; margin:14px 0; }
+.checklist-page .checklist-aside li { font-size:14px; line-height:1.65; margin:8px 0; }
+.checklist-page .checklist-aside a { display:inline-flex; align-items:center; min-height:44px; font-size:14px; font-weight:600; text-underline-offset:4px; }
+.checklist-page .checklist-panel { min-width:0; padding:32px; border:1px solid var(--checklist-line); border-radius:24px; background:#fff; box-shadow:0 15px 45px -30px #153d5b45; scroll-margin-top:24px; }
+.checklist-page .checklist-progress { margin-bottom:28px; }
+.checklist-page #checklist-progress-text { display:block; font-size:12px; line-height:1.5; letter-spacing:.055em; color:var(--checklist-muted); margin-bottom:10px; }
+.checklist-page progress { display:block; width:100%; height:5px; border:0; border-radius:20px; overflow:hidden; background:#e8f0f5; color:var(--checklist-accent); accent-color:var(--checklist-accent); }
+.checklist-page progress::-webkit-progress-bar { background:#e8f0f5; border-radius:20px; }
+.checklist-page progress::-webkit-progress-value { background:var(--checklist-accent); border-radius:20px; transition:width .25s ease; }
+.checklist-page progress::-moz-progress-bar { background:var(--checklist-accent); border-radius:20px; }
+.checklist-page #hormone-assessment { margin:0; }
+.checklist-page #assessment-screen { min-height:255px; padding-top:24px; }
+.checklist-page .assessment-kicker { display:block; font-size:11px; font-weight:600; letter-spacing:.14em; line-height:1.6; text-transform:uppercase; color:#36758a; margin-bottom:12px; }
+.checklist-page .assessment-title { margin:0 0 20px; font-size:clamp(25px,2.7vw,36px); line-height:1.2; letter-spacing:-.025em; text-wrap:balance; overflow-wrap:break-word; }
+.checklist-page .assessment-title:focus { outline:none; }
+.checklist-page .assessment-description { color:var(--checklist-muted); font-size:16px; line-height:1.75; margin:0 0 18px; }
+.checklist-page .assessment-hint { font-size:14px; line-height:1.65; color:var(--checklist-muted); margin:0 0 20px; }
+.checklist-page .assessment-privacy { font-size:13px; line-height:1.65; color:#536b80; margin:20px 0 0; }
+.checklist-page .assessment-note { border:1px solid #dbe7ed; background:#f4f8fa; padding:18px 20px; border-radius:14px; margin:24px 0 20px; }
+.checklist-page .assessment-note strong { display:block; font-size:15px; line-height:1.5; margin-bottom:6px; }
+.checklist-page .assessment-note p { font-size:14px; line-height:1.7; margin:0; color:var(--checklist-muted); }
+.checklist-page .assessment-fieldset { min-width:0; margin:0; padding:0; border:0; }
+.checklist-page .assessment-options { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; margin:8px 0 18px; }
+.checklist-page .assessment-options-multiple { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.checklist-page .assessment-option { display:flex; gap:12px; align-items:center; min-height:54px; border:1px solid var(--checklist-line); border-radius:12px; padding:14px 16px; cursor:pointer; font-size:15px; line-height:1.45; transition:border-color .18s ease,background .18s ease,box-shadow .18s ease; }
+.checklist-page .assessment-option:has(input:checked) { border-color:#438ca0; background:#edf6f8; box-shadow:inset 0 0 0 1px #438ca0; }
+.checklist-page .assessment-option input { flex:0 0 19px; width:19px; height:19px; padding:0; margin:0; accent-color:var(--checklist-accent); }
+.checklist-page .assessment-option-text { min-width:0; overflow-wrap:break-word; }
+.checklist-page .assessment-input-label { display:block; font-size:14px; font-weight:600; margin:26px 0 10px; }
+.checklist-page .assessment-text-input { display:block; width:100%; padding:14px 16px; min-height:54px; font:inherit; font-size:18px; line-height:1.5; color:var(--checklist-ink); background:#fff; border:1px solid #adc4d4; border-radius:12px; }
+.checklist-page .assessment-text-input::placeholder { color:#6d7f8f; opacity:1; }
+.checklist-page .assessment-text-input[aria-invalid=true] { border-color:#a63649; }
+.checklist-page #assessment-error { color:#932c3d; background:#fff3f4; border:1px solid #eec5ce; border-radius:10px; padding:12px 15px; font-size:14px; line-height:1.5; margin-top:18px; }
+.checklist-page .checklist-actions,.checklist-page .assessment-navigation,.checklist-page .assessment-controls,.checklist-page .checklist-controls,.checklist-page .checklist-navigation { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:26px; padding-top:22px; border-top:1px solid #e4ecf2; }
+.checklist-page #assessment-back { margin-right:12px; }
+.checklist-page .checklist-actions button { gap:10px; }
+.checklist-page .checklist-actions button svg { flex-shrink:0; transition:transform .2s ease; }
+.checklist-page #assessment-next { margin-left:auto; }
+.checklist-page .btn,.checklist-page button { min-height:46px; }
+.checklist-page #assessment-next { margin-top:22px; }
+.checklist-page .checklist-actions #assessment-next,.checklist-page .assessment-navigation #assessment-next,.checklist-page .assessment-controls #assessment-next,.checklist-page .checklist-controls #assessment-next,.checklist-page .checklist-navigation #assessment-next { margin-top:0; }
+.checklist-page button:disabled { cursor:wait; opacity:.65; }
+.checklist-page :is(a,button,input,summary):focus-visible { outline:3px solid #3b91aa; outline-offset:4px; }
+.checklist-page .assessment-option:focus-within { outline:2px solid #3b91aa; outline-offset:3px; }
+.checklist-page .assessment-option input:focus-visible { outline:none; }
+.checklist-page #assessment-results { padding:24px 0 0; }
+.checklist-page #assessment-results:focus { outline:none; }
+.checklist-page .assessment-result-overview { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; align-items:center; border:1px solid var(--checklist-line); border-radius:20px; background:linear-gradient(145deg,#f0f7fa,#fcfdfd); padding:28px 24px; margin:28px 0 24px; }
+.checklist-page .assessment-gauge { min-width:0; max-width:300px; width:100%; justify-self:center; text-align:center; }
+.checklist-page .assessment-gauge svg { display:block; width:100%; height:auto; overflow:visible; }
+.checklist-page .assessment-gauge-track { stroke:#dce8ed; }
+.checklist-page .assessment-gauge-progress { stroke:var(--checklist-accent); stroke-dashoffset:var(--gauge-offset); animation:assessment-gauge-fill 1.15s cubic-bezier(.22,.7,.25,1) both; }
+.checklist-page .assessment-gauge-tick { stroke:#90aab9; stroke-width:1.3; }
+.checklist-page .assessment-gauge-needle { fill:var(--checklist-ink); transform-box:view-box; transform-origin:140px 146px; transform:rotate(var(--gauge-angle)); animation:assessment-gauge-sweep 1.15s cubic-bezier(.22,.7,.25,1) both; }
+.checklist-page .assessment-gauge-pivot { fill:var(--checklist-ink); stroke:#fff; stroke-width:3; }
+.checklist-page .assessment-gauge-pin { fill:#fff; }
+.checklist-page .assessment-gauge-scale { fill:var(--checklist-muted); font-family:inherit; font-size:12px; }
+.checklist-page .assessment-gauge .assessment-score-value { margin:-2px 0 6px; white-space:nowrap; line-height:1.2; font-variant-numeric:tabular-nums; }
+.checklist-page .assessment-score-value strong { font-size:52px; font-weight:500; line-height:1.1; letter-spacing:-.045em; color:var(--checklist-ink); }
+.checklist-page .assessment-score-value span { font-size:20px; color:var(--checklist-muted); }
+.checklist-page .assessment-gauge-caption { font-size:12px; line-height:1.5; color:var(--checklist-muted); margin:0; }
+.checklist-page .assessment-interpretation { min-width:0; }
+.checklist-page .assessment-interpretation .assessment-kicker { font-size:10px; margin-bottom:10px; }
+.checklist-page .assessment-interpretation .assessment-description { font-size:14px; line-height:1.7; margin:0; }
+.checklist-page .assessment-result-label { font-size:21px; line-height:1.45; margin:0 0 14px; }
+.checklist-page .assessment-counts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:24px 0; }
+.checklist-page .assessment-counts > div { padding:14px; border:1px solid var(--checklist-line); border-radius:12px; }
+.checklist-page .assessment-counts dt { font-size:13px; line-height:1.5; color:var(--checklist-muted); }
+.checklist-page .assessment-counts dd { margin:6px 0 0; font-size:16px; font-weight:600; }
+.checklist-page .assessment-count-track { display:block; height:4px; background:#e5edf1; border-radius:5px; overflow:hidden; margin-top:14px; }
+.checklist-page .assessment-count-track > span { display:block; width:var(--count-fill); height:100%; background:var(--checklist-accent); border-radius:5px; animation:assessment-count-fill .9s ease both; }
+.checklist-page .assessment-review { border:1px solid var(--checklist-line); border-radius:14px; margin:24px 0; overflow:hidden; }
+.checklist-page .assessment-review summary { cursor:pointer; min-height:52px; padding:16px 20px; font-size:15px; font-weight:600; }
+.checklist-page .assessment-review dl { margin:0; padding:0 20px 16px; }
+.checklist-page .assessment-review dl > div { border-top:1px solid #e5edf2; padding:15px 0; }
+.checklist-page .assessment-review dt { font-size:14px; line-height:1.6; font-weight:600; }
+.checklist-page .assessment-review dd { margin:6px 0 0; font-size:14px; line-height:1.7; color:var(--checklist-muted); }
+.checklist-page .assessment-result-actions,.checklist-page .assessment-edit-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:24px; }
+.checklist-page .assessment-result-actions .btn { text-align:center; white-space:normal; }
+.checklist-page .assessment-edit-actions { padding-top:20px; border-top:1px solid #e4ecf2; }
+.checklist-page .assessment-edit-actions button { font-size:13px; }
+.checklist-page .assessment-delivery button { margin-top:14px; }
+.checklist-page .assessment-delivery { display:grid; grid-template-columns:28px minmax(0,1fr); align-items:start; gap:14px; }
+.checklist-page .assessment-delivery-icon { margin-top:2px; color:var(--checklist-accent); }
+.checklist-page .assessment-delivery[data-status="email-sent"] { background:#eef8f5; border-color:#c9e3dc; }
+.checklist-page .assessment-delivery[data-status="failed"],.checklist-page .assessment-delivery[data-status="unconfirmed"] { background:#fdf7f1; border-color:#e7d7c7; }
+.checklist-page .assessment-delivery[data-status="failed"] .assessment-delivery-icon,.checklist-page .assessment-delivery[data-status="unconfirmed"] .assessment-delivery-icon { color:#90613c; }
+.checklist-page .assessment-delivery .assessment-delivery-recipient { margin-top:10px; font-weight:500; color:var(--checklist-ink); overflow-wrap:anywhere; }
+.checklist-page .assessment-delivery-copy { min-width:0; }
+.checklist-page .assessment-delivery-copy .btn { max-width:100%; white-space:normal; }
+.checklist-page .checklist-education { margin-top:42px; border:1px solid var(--checklist-line); border-radius:18px; padding:0 28px; background:#fff; }
+.checklist-page .checklist-education > summary { min-height:64px; padding:20px 0; font-weight:600; cursor:pointer; font-size:17px; }
+.checklist-page .checklist-education .source-prose { max-width:780px; padding:10px 0 24px; }
+.checklist-page .checklist-education .source-prose :is(h2,h3) { line-height:1.3; margin:30px 0 15px; }
+.checklist-page .checklist-education .source-prose h2 { font-size:28px; }
+.checklist-page .checklist-education .source-prose h3 { font-size:22px; }
+.checklist-page .checklist-education .source-prose p,.checklist-page .checklist-education .source-prose li { font-size:16px; line-height:1.8; }
+.checklist-page .assessment-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.checklist-page .assessment-enter { animation:checklist-reveal .23s ease both; }
+@keyframes checklist-reveal { from { opacity:.35; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+@keyframes assessment-gauge-sweep { from { transform:rotate(0deg); } to { transform:rotate(var(--gauge-angle)); } }
+@keyframes assessment-gauge-fill { from { stroke-dashoffset:100; } to { stroke-dashoffset:var(--gauge-offset); } }
+@keyframes assessment-count-fill { from { width:0; } to { width:var(--count-fill); } }
+@media(hover:hover) {
+  .checklist-page .assessment-option:hover { background:#f5fafc; border-color:#7da9bc; }
+  .checklist-page #assessment-next:hover svg { transform:translateX(3px); }
+  .checklist-page #assessment-back:hover svg { transform:translateX(-3px); }
+}
+@media(max-width:900px) {
+  .checklist-page .checklist-heading { grid-template-columns:minmax(0,1fr) 240px; gap:24px; }
+  .checklist-page .checklist-workspace { grid-template-columns:minmax(0,1fr); gap:18px; }
+  .checklist-page .checklist-aside { padding:20px 24px; }
+  .checklist-page .checklist-aside > p { margin-bottom:8px; }
+  .checklist-page .checklist-aside > :last-child { margin-bottom:0; }
+}
+@media(max-width:650px) {
+  .checklist-page { padding:34px 0 48px; }
+  .checklist-page .checklist-shell { width:calc(100% - 32px); }
+  .checklist-page .checklist-heading { grid-template-columns:minmax(0,1fr); gap:22px; margin-bottom:22px; }
+  .checklist-page .checklist-visual { max-height:230px; border-radius:18px; }
+  .checklist-page .checklist-heading h1 { font-size:34px; }
+  .checklist-page .checklist-heading-copy > p { font-size:15px; }
+  .checklist-page .checklist-aside { padding:18px; border-radius:16px; }
+  .checklist-page .checklist-aside h2 { font-size:18px; }
+  .checklist-page .checklist-panel { padding:22px 18px; border-radius:18px; scroll-margin-top:16px; }
+  .checklist-page #assessment-screen { min-height:220px; padding-top:22px; }
+  .checklist-page .assessment-title { font-size:27px; }
+  .checklist-page .assessment-options-multiple { grid-template-columns:minmax(0,1fr); }
+  .checklist-page .assessment-option { min-height:52px; font-size:15px; padding:13px; }
+  .checklist-page .assessment-description { font-size:15px; }
+  .checklist-page .assessment-note { padding:16px; }
+  .checklist-page .assessment-counts { grid-template-columns:minmax(0,1fr); }
+  .checklist-page .assessment-result-overview { grid-template-columns:minmax(0,1fr); padding:22px 18px; gap:24px; border-radius:16px; }
+  .checklist-page .assessment-gauge { max-width:280px; }
+  .checklist-page .assessment-interpretation { border-top:1px solid var(--checklist-line); padding-top:22px; }
+  .checklist-page .assessment-delivery { grid-template-columns:24px minmax(0,1fr); gap:10px; }
+  .checklist-page .assessment-result-actions { align-items:stretch; flex-direction:column; }
+  .checklist-page .assessment-result-actions .btn { justify-content:center; width:100%; }
+  .checklist-page .assessment-edit-actions { gap:8px; }
+  .checklist-page .assessment-edit-actions .btn { padding-inline:13px; }
+  .checklist-page .checklist-education { padding:0 18px; margin-top:26px; }
+  .checklist-page .checklist-education > summary { font-size:16px; }
+  .checklist-page .assessment-score-value strong { font-size:48px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .checklist-page .assessment-enter { animation:none; }
+  .checklist-page .assessment-gauge-needle,.checklist-page .assessment-gauge-progress,.checklist-page .assessment-count-track > span { animation:none; }
+  .checklist-page .assessment-option,.checklist-page progress::-webkit-progress-value,.checklist-page .checklist-actions button svg { transition:none; }
+  .checklist-page .checklist-actions button svg { transform:none !important; }
+}
+
+.checklist-page .checklist-back { display:inline-flex; align-items:center; min-height:44px; font-size:14px; font-weight:600; margin-bottom:22px; text-underline-offset:4px; color:var(--checklist-ink); }
+.checklist-page .checklist-aside .checklist-local-note { font-size:12px; line-height:1.65; margin:20px 0 0; }
+.checklist-page .checklist-disclaimer { margin:26px 0 0; font-size:13px; line-height:1.7; color:var(--checklist-muted); max-width:86ch; }

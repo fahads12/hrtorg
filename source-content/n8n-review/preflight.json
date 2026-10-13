@@ -1,0 +1,124 @@
+{
+  "checkedAt": "2026-10-11T20:19:13.345Z",
+  "client": "curl.exe",
+  "method": "OPTIONS",
+  "requestOrigin": "http://localhost:8000",
+  "requestedMethod": "POST",
+  "requestedHeaders": [
+    "content-type"
+  ],
+  "requestBody": false,
+  "assessmentSubmissions": 0,
+  "initialTransportAttempt": "Node fetch failed to obtain HTTP responses; system curl subsequently used successfully.",
+  "limitations": "Preflight only. Does not establish webhook registration, runtime activation, POST success, Gmail sending, final inbox delivery, or access from the final deployment origin.",
+  "results": [
+    {
+      "id": "hormone-women",
+      "url": "https://vmi3206755.contaboserver.net/webhook/hormone-women-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "hormone-men",
+      "url": "https://vmi3206755.contaboserver.net/webhook/hormone-men-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "pms",
+      "url": "https://vmi3206755.contaboserver.net/webhook/pms-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "thyroid",
+      "url": "https://vmi3206755.contaboserver.net/webhook/thyroid-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "adrenal",
+      "url": "https://vmi3206755.contaboserver.net/webhook/adrenal-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "osteoporosis",
+      "url": "https://vmi3206755.contaboserver.net/webhook/osteoporosis-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "andropause",
+      "url": "https://vmi3206755.contaboserver.net/webhook/andropause-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "menopause",
+      "url": "https://vmi3206755.contaboserver.net/webhook/menopause-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    },
+    {
+      "id": "perimenopause",
+      "url": "https://vmi3206755.contaboserver.net/webhook/perimenopause-typeform-submit",
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type",
+        "access-control-allow-methods": "OPTIONS, POST",
+        "access-control-allow-origin": "http://localhost:8000",
+        "access-control-max-age": "300"
+      },
+      "passes": true
+    }
+  ]
+}

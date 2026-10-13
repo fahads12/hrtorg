@@ -1,0 +1,21 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": [
+    [
+      "women-care",
+      "Create one premium editorial photograph for a hormone-health website women's care page. A fictional woman around 52, natural unretouched skin, shoulder-length dark brown hair with subtle grey, wearing a soft muted plum knit sweater, sitting relaxed beside a bright window in an elegant neutral home with a plant in soft background. Thoughtful comfortable expression, looking slightly past camera; not an endorsement, not a patient testimonial. Horizontal landscape 3:2 composition, waist-up portrait, entire head visible with generous breathing room above and around head; subject toward right half, calm pale ivory negative space on left. Soft natural daylight, realistic skin texture, restrained navy/ivory/plum palette. High-end candid lifestyle photography, no beauty retouching, no medical outcomes, no clinician or medication, no packaging. Absolutely no text, lettering, watermark, logo, or AI label."
+    ],
+    [
+      "men-care",
+      "Create one premium editorial photograph for a hormone-health website men's care page. Fictional man around 53, short salt-and-pepper hair, natural skin, wearing navy casual overshirt over white tee, sitting relaxed on pale stone steps next to a light modern home and soft greenery. Calm reflective friendly expression, believable average build, not muscular fitness advertising. Horizontal landscape 3:2 composition, waist-up portrait, entire head visible with generous margin, subject toward right half, uncluttered pale background left. Soft morning daylight, muted navy sage ivory palette, refined realistic lifestyle photography. Not a testimonial, not before/after, no implied treatment results. No doctor, medication or product packaging. Absolutely no text, lettering, watermark, logo, or AI label."
+    ],
+    [
+      "telehealth-care",
+      "Create a realistic premium editorial photograph for a hormone-health website explaining telehealth. Over-the-shoulder view of a fictional middle-aged woman at a light oak desk in a calm sunlit home, having a video conversation on an open laptop with a fictional adult female healthcare professional in simple blue scrubs. Laptop screen shows only natural video portrait with NO UI, no legible text or logos, anatomically correct hands relaxed near laptop, closed plain notebook and water glass. Do not imply specific doctor affiliation or patient identity. Landscape 3:2, eye-level, generous margins around subjects and laptop, pale ivory room, navy and muted plum accents, natural documentary style, warm reassuring but medically professional. No prescription, no diagnosis, no medication, no test-kit packaging. Absolutely no text, lettering, watermark, logo or AI label."
+    ],
+    [
+      "lab-care",
+      "Create one realistic premium editorial laboratory photograph for a hormone-health education and testing website. Close view of gloved laboratory hands carefully using a micropipette over an unbranded clear multiwell laboratory plate on a pristine bench, with a real-looking microscope softly out of focus behind. Correct pipette handling, fingers plausible, pipette tip positioned over one well, no exaggerated glowing science or molecular graphics. Landscape 3:2 composition with generous breathing room around instruments, soft natural clinical lighting, restrained pale blue, navy and white palette, authentic professional diagnostic laboratory atmosphere. Generic science editorial, NOT an actual HRT.org facility, not a test kit contents image. No blood, no patient, no readable labels, no logos or packaging. Absolutely no text, watermark or AI label."
+    ]
+  ]
+}

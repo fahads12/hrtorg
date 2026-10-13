@@ -1,0 +1,236 @@
+{
+  "name": "Thyroid Typeform Assessment",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "thyroid-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        5136,
+        2832
+      ],
+      "id": "62862ebb-19d5-4ae4-8b6a-4af85b1b30ba",
+      "name": "Webhook (Thyroid Submit)",
+      "webhookId": "thyroid-typeform-2026-04"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n//  Thyroid Assessment — Score Calculator\n//  Scoring tiers + logic preserved EXACTLY from the original\n//  multi-page form workflow. Only the data-source changed:\n//  the Typeform-style frontend posts ONE flat body so we read\n//  every q* answer from $input.first().json.body.\n// ============================================================\n\nconst data = $input.first().json.body || $input.first().json;\n\n// Score mapping\nconst scoreMap = {\n  'never': 0,\n  'occasionally': 1,\n  'frequently': 2,\n  'constantly': 3\n};\n\nfunction getScore(value) {\n  if (value === undefined || value === null || value === '') return 0;\n  const raw = Array.isArray(value) ? value[0] : value;\n  if (raw === undefined || raw === null || raw === '') return 0;\n  if (typeof raw === 'number') {\n    if (raw >= 0 && raw <= 3) return raw;\n    return 0;\n  }\n  const cleaned = String(raw).trim().toLowerCase();\n  if (cleaned in scoreMap) return scoreMap[cleaned];\n  if (cleaned.includes('constantly'))   return 3;\n  if (cleaned.includes('frequently'))   return 2;\n  if (cleaned.includes('occasionally')) return 1;\n  if (cleaned.includes('never'))        return 0;\n  const num = Number(cleaned);\n  if (!isNaN(num) && num >= 0 && num <= 3) return Math.round(num);\n  return 0;\n}\n\n// All 27 question field names (exact same list as the source workflow)\nconst fields = [\n  'q1_thinking_slow', 'q2_joint_stiffness', 'q3_bags_under_eyes',\n  'q4_dizziness', 'q5_nasal_congestion', 'q6_yellowing',\n  'q7_depression', 'q8_bowel_issues', 'q9_bloated_face',\n  'q10_weight_difficulty', 'q11_miss_meal', 'q12_memory_issues',\n  'q13_excessive_sleep', 'q14_pms', 'q15_not_sweating',\n  'q16_frequent_infections', 'q17_headaches', 'q18_slow_movements',\n  'q19_thinning_eyebrows', 'q20_concentration', 'q21_low_sex_drive',\n  'q22_feeling_cold', 'q23_dry_skin_hair', 'q24_morning_fatigue',\n  'q25_moody_irritable', 'q26_puffy_eyelids', 'q27_cold_extremities'\n];\n\nconst scores = {};\nlet totalScore = 0;\nconst warnings = [];\n\nfor (const field of fields) {\n  const rawValue = data[field];\n  const score = getScore(rawValue);\n  scores[field] = { raw: rawValue, type: typeof rawValue, score: score };\n  totalScore += score;\n  if (rawValue === undefined || rawValue === null || rawValue === '') {\n    warnings.push(field + ' is missing');\n  }\n}\n\n// Client's exact scoring tiers — preserved verbatim\nlet resultNum, resultLabel, resultContent;\nif (totalScore <= 9) {\n  resultNum = 1;\n  resultLabel = 'Unlikely';\n  resultContent = 'Low thyroid function is unlikely.';\n} else if (totalScore <= 22) {\n  resultNum = 2;\n  resultLabel = 'Possible';\n  resultContent = 'Low thyroid function is possible. You may consider using the Broda Barnes basal metabolic temperature test to learn more. If you are concerned, consider discussing your symptoms with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.';\n} else if (totalScore <= 39) {\n  resultNum = 3;\n  resultLabel = 'Likely';\n  resultContent = 'Low thyroid function is likely. Consider discussing your symptoms and concerns with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.';\n} else {\n  resultNum = 4;\n  resultLabel = 'Very Likely';\n  resultContent = 'Low thyroid function is very likely. Consult your healthcare provider. A blood test to measure your thyroid hormone levels is recommended.';\n}\n\nconst landingPageUrl = 'https://www.hrt.org/score-total?type=th&score=' + totalScore;\n\nreturn [{ json: {\n  patientName:  data.first_name   || '',\n  patientEmail: data.email        || '',\n  mailingList:  data.mailing_list || '',\n  totalScore,\n  resultNum,\n  resultLabel,\n  resultContent,\n  landingPageUrl,\n  _debug_scores: scores,\n  _debug_warnings: warnings\n}}];\n"
+      },
+      "id": "67b2c48e-1559-4bd3-aabd-1e03b189c67c",
+      "name": "Calculate Scores",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5376,
+        2832
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "v1",
+              "leftValue": "={{ $json.patientEmail }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "caf10fa1-f672-4fbe-809c-35b5c94d20fe",
+      "name": "Has Valid Email?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5616,
+        2832
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\n// Escape only the dynamic name used in the HTML greeting.\nfunction escapePatientName(value) {\n  return String(value)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&#39;');\n}\nconst greeting = d.patientName ? ('Dear ' + escapePatientName(d.patientName)) : 'Hi there';\nconst year = new Date().getFullYear();\n\nconst introText = `Every day 200 million men and women around the globe suffer with thyroid issues that negatively impact their quality of life. Another 27 million people don't even know they have a condition. Many suffer with fatigue, dry skin, memory loss, and joint aches, just like you.<br/><br/>While hormone replacement with prescription medication may be required to treat an underactive thyroid, a diet rich in iodine that includes navy beans, eggs, seafood, and potatoes may help support thyroid health as well. Boosting protein and eating fruits and vegetables such as blueberries, cherries, squash, and peas, provides important nutrients including antioxidants, zinc, and selenium. These elements may help regulate thyroid hormone activity and support a healthy immune system overall.<br/><br/>Please take a moment to consider thyroid testing through our home based, private, secure testing program, or from one of our participating partner labs.`;\n\nconst html = `<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n<meta name=\"format-detection\" content=\"telephone=no\"/>\n<meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;\"/>\n<meta http-equiv=\"x-ua-compatible\" content=\"IE=9; IE=8; IE=7; IE=EDGE\"/>\n<title></title>\n<!--[if mso]><style>* {font-family:sans-serif !important;}</style><![endif]-->\n<!--[if !mso]><!--><link href=\"https://fonts.googleapis.com/css?family='Open Sans':100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap\" rel=\"stylesheet\"/><!--<![endif]-->\n<style type=\"text/css\">\n#outlook a{padding:0}body{width:100%!important}.ReadMsgBody{width:100%}a{word-wrap:break-word}.ExternalClass{width:100%}.ExternalClass,.ExternalClass div,.ExternalClass font,.ExternalClass p,.ExternalClass span,.ExternalClass td{line-height:100%}a,blockquote,body,li,p,table,td{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;mso-line-height-rule:exactly}body{margin:0;padding:0;height:100%!important;width:100%!important}.a_block{display:block;text-decoration:none;}.t_shadow_block{padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;}.t_block{padding-left:20px;padding-right:20px;padding-bottom:30px;padding-top:30px;}.blog_box{padding-top:10px;padding-bottom:10px;padding-left:5px;padding-right:5px;}table{mso-table-lspace:0;mso-table-rspace:0}img{border:0;line-height:100%;outline:0;text-decoration:none;-ms-interpolation-mode:bicubic;height:auto}\n@media screen and (max-width:480px){table[class=columns]{width:100%!important}th[class=force-col-th]{display:block;width:100%!important}img[class=imagescale]{max-width:100%!important;width:100%!important;height:auto!important}img[class=w183]{max-width:120px!important;width:100%!important;height:auto!important}img[class=w159]{max-width:300px!important;width:100%!important;height:auto!important}}\n</style></head>\n<body style=\"-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#fff;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" bgcolor=\"#FFFFFF\" valign=\"top\">\n<table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns\">\n\n<tr><td style=\"padding:20px;text-align:center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"font-family:'Montserrat Black',sans-serif;font-size:32px;text-decoration:none;color:#000000;\">HRT.org</a></td></tr>\n\n<tr><td><img alt=\"\" border=\"0\" class=\"imagescale\" height=\"12\" src=\"https://cdn.prod.website-files.com/632a33dda7f9eaa9ed6897ea/63555c3912c18d245aac811e_Thyroid-Disorders%E2%80%94Testing-and-Treatment-p-2000.jpeg\" style=\"width:678px;max-width:678px;height:auto;\" width=\"600\">\n</td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td style=\"padding-left:20px;padding-right:20px;padding-top:35px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000\">Your Assessment Results</div></td></tr>\n<tr><td style=\"line-height:125%;padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Assessment Score: <b>${d.totalScore}</b></div></td></tr>\n<tr><td style=\"line-height:125%;padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.6\">${d.resultContent}</div></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1b83d5\" style=\"padding-top:30px;padding-bottom:30px;padding-left:20px;padding-right:20px;\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n<th width=\"20\" valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:10px;height:10px;\"></div></th>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>\n<td bgcolor=\"#feb92c\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\" align=\"center\">\n<a href=\"${d.landingPageUrl}\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">VIEW RESULTS ONLINE</a>\n</td></tr></table></th></tr></table></td></tr>\n\n<tr><td bgcolor=\"#ffffff\" style=\"padding-left:20px;padding-right:20px;padding-top:35px;padding-bottom:35px;\">\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td style=\"line-height:1.6;\">\n<div align=\"left\" style=\"color:#4e525e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">${greeting},<br/><br/>${introText}<br/><br/>Feel free to reach out to one of our healthcare specialists for a private consultation or contact us with any questions or concerns you have concerning your health.<br/><br/>We hope you feel better soon, and look forward to hearing from you.<br/><br/>Sincerely,<br/><b>The HRT.org Team</b></div>\n</td></tr></tbody></table></td></tr>\n\n<tr><td bgcolor=\"#f8f8f8\" style=\"padding-bottom:35px;\"><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Suggested Lab Tests</div></td></tr>\n<tr><td style=\"line-height:125%\"><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Easy & Convenient Test Kits</div></td></tr>\n</table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"At Home Thyroid Test Kit - Essentials\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/Thyroid_Health_Essentials_1024x1024_upclose_1024x1024@2x.png?v=1579640010\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">At Home Thyroid Test Kit - Essentials - Optimal Thyroid</div>\n<div style=\"color:#000;text-decoration:none;font-weight:300;font-size:13px\">The Optimal Health Thyroid Essentials test is an easy to use at home blood spot test kits that analyzes the main biomarkers that affect optimal thyroid function.</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">$190.00</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/elite-thyroid-profile-blood-spot-tsh-ft3-ft4-tpo-t4-tgbn?_pos=2&_sid=bdc6f1021&_ss=r\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"Elite Thyroid Profile (Blood Spot)\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTBloodSpotTestKit-9_1024x1024_2x_3025b07b-9b81-4d8f-85a4-2c9aff366530_1024x1024@2x.jpg?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">Elite Thyroid Profile (Blood Spot)</div>\n<div style=\"color:#000;text-decoration:none;font-weight:300;font-size:13px\">Elite Thyroid Profile provides an assessment of thyroid health, including screening for hypo or hyperthyroidism, determining Free T4 and Free T3 levels, testing for autoimmune thyroid disease, and monitoring thyroid replacement dosages.</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">$289.00</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/comprehensive-thyroid-profile-blood-urine-multi-test-kit-zrt-lab?_pos=7&_sid=bdc6f1021&_ss=r\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"Comprehensive Thyroid Profile (Blood Spot/Urine)\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTLabBloodUrineMultiTestKit_1024x1024@2x.jpg?v=1571716011\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">Comprehensive Thyroid Profile (Blood Spot/Urine)</div>\n<div style=\"color:#000;text-decoration:none;font-weight:300;font-size:13px\">Comprehensive Thyroid Profile allows doctors to see if an individual has too little, or too much, iodine and selenium, and/or exposure to the iodine/selenium antagonists bromine, arsenic, and mercury.</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">$319.00</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1b83d5\" class=\"t_block\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div align=\"center\" style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;text-decoration:none;\">Free Consultation</div></th>\n<th width=\"20\" valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:10px;height:10px;\"> </div></th>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>\n<td bgcolor=\"#feb92c\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a>\n</td></tr></table></th></tr></table></td></tr>\n\n<tr><td bgcolor=\"#f8f8f8\" style=\"padding-bottom:35px;\"><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Popular Related Products</div></td></tr>\n<tr><td style=\"line-height:125%\"><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Check out some of our best products</div></td></tr>\n</table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/thyroid-support-natural-supplement-for-optimal-thyroid-function-health\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"Thyroid Support\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Thyroid_Support_transparent_1024x1024@2x.png?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">Thyroid Support - Natural Supplement for Optimal Thyroid Function & Health</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Packed with B vitamins necessary for healthy cellular activity, energy production and the creation of thyroid hormones. Natural formula containing selenium - an important mineral that reduces inflammation and offers potent antioxidant protection.</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/biodim-i3c-complex-natural-hormone-balance-cellular-health-support-supplement\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"BioDIM I3C Complex\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_BioDIM_Complex_transparent_1024x1024@2x.png?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">BioDIM I3C Complex - Natural Hormone Balance & Cellular Health Support Supplement</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">BioDim Complex is a state of the art formula for both men and women. This powerful physician-formulated complex works to effectively balance hormone levels while supporting optimal cellular health and wellness.</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/dhea-25mg-natural-supplement-to-help-maintain-optimal-dhea-levels\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"DHEA (25mg)\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Micronized_DHEA_transparent_1024x1024@2x.png?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">DHEA (25mg) - Natural Supplement To Help Maintain Optimal DHEA Levels</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Supplementing your diet with micronized DHEA in a gluten-free vegetarian formula may support healthy aging and mitigate many of its negative effects. Formulated and processed without artificial chemicals, ingredients, binders or fillers.</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1b83d5\" class=\"t_block\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div align=\"center\" style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;text-decoration:none;\">Free Consultation</div></th>\n<th width=\"20\" valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:10px;height:10px;\"> </div></th>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>\n<td bgcolor=\"#feb92c\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a>\n</td></tr></table></th></tr></table></td></tr>\n\n<tr><td bgcolor=\"#f8f8f8\" style=\"padding-bottom:35px;\"><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000;\">Related Content</div></td></tr>\n<tr><td style=\"line-height:125%\"><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Read related content from our blog</div></td></tr>\n</table></td></tr>\n<tr><td style=\"padding:0 20px 30px 20px;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n\n<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;\" class=\"force-col-th\">\n<a href=\"https://www.hrt.org/thyroid-disorders-testing-treatment/\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"font-size:0;padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"Thyroid disorders—testing and treatment\" border=\"0\" class=\"w159\" height=\"106\" src=\"https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555c3912c18d245aac811e_Thyroid-Disorders%E2%80%94Testing-and-Treatment.jpeg\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr>\n<tr><td style=\"padding-bottom:5px;line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;text-transform:uppercase;\">Thyroid disorders—testing and treatment</div></td></tr>\n<tr><td style=\"line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">23 May 2019</div></td></tr>\n</table></td></tr></table></a></th>\n\n<th width=\"15\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:20px;height:20px;\"><img height=\"5\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_1p57de91.png\" style=\"max-height:5px\" width=\"20\" alt=\"\"></div></th>\n\n<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;\" class=\"force-col-th\">\n<a href=\"https://www.hrt.org/thyroid-disease-symptoms-cures-causes/\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"font-size:0;padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"Thyroid disease—the symptoms, cures and causes\" border=\"0\" class=\"w159\" height=\"106\" src=\"https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555be813ceda6560a19756_Thyroid-Disease%E2%80%94The-Symptoms-Cures-and-Causes.jpeg\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr>\n<tr><td style=\"padding-bottom:5px;line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;text-transform:uppercase;\">Thyroid disease—the symptoms, cures and causes</div></td></tr>\n<tr><td style=\"line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">22 May 2019</div></td></tr>\n</table></td></tr></table></a></th>\n\n<th width=\"15\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:20px;height:20px;\"><img height=\"5\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_1p57de91.png\" style=\"max-height:5px\" width=\"20\" alt=\"\"></div></th>\n\n<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;\" class=\"force-col-th\">\n<a href=\"https://www.hrt.org/thyroid-cancer-signs-risk-types-treatments/\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"font-size:0;padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"Thyroid cancer—signs, risks, types and treatments\" border=\"0\" class=\"w159\" height=\"106\" src=\"https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555b7f12c18d7342ac77ba_Thyroid-Cancer%E2%80%94Signs-Risk-Types-and-Treatments.jpg\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr>\n<tr><td style=\"padding-bottom:5px;line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;text-transform:uppercase;\">Thyroid cancer—signs, risks, types and treatments</div></td></tr>\n<tr><td style=\"line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">22 May 2019</div></td></tr>\n</table></td></tr></table></a></th>\n\n</tr></table></td></tr>\n<tr><td align=\"center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"text-decoration:none;display:block\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr><td bgcolor=\"#1b83d5\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\"><div align=\"center\" style=\"color:#ffffff;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">VIEW ALL</div></td></tr></table></a></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1d1d1d\" style=\"padding-bottom:30px;padding-top:30px;border-bottom:#ffffff solid 10px;\" align=\"center\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"padding:20px 20px 0px 20px;color:#8e8e8e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\"><div align=\"center\"><span style=\"color:#8e8e8e;text-decoration:none;\"><a href=\"tel:888-574-5524\" style=\"color:#8e8e8e;text-decoration:none;\">Call Us Toll Free: 888-574-5524</a><br/><a href=\"https://www.hrt.org\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">hrt.org</a></span></div></td></tr>\n<tr><td align=\"center\" style=\"padding:20px;color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\"><div align=\"center\"><a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;white-space:nowrap;\">Contact Support</a> | <a href=\"https://www.hrt.org/terms-and-conditions/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;white-space:nowrap;\">Terms &amp; Conditions</a> | <a href=\"https://www.hrt.org/privacy-policy/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;white-space:nowrap;\">Privacy Policy</a></div></td></tr>\n<tr><td align=\"center\" style=\"padding:20px;line-height:125%;border-top:#313131 solid 1px;\"><div align=\"center\" style=\"color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">© HRT.org ${year}</div></td></tr>\n</table></td></tr>\n\n<tr class=\"gmail-fix\"><td><table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"600\" style=\"width:600px;\" class=\"columns\"><tr><td height=\"1\" style=\"line-height:1px;min-width:600px;\"><img src=\"https://cdn.creativeautomation.io/ss/2019/09/66e151c6-6fdf-4a21-b209-6a8a0cec4cfc.png\" alt=\"\" width=\"600\" height=\"1\" border=\"0\" class=\"imagescale\" style=\"display:block;max-height:1px;min-height:1px;min-width:600px;width:600px;\"></td></tr></table></td></tr>\n\n</table></td></tr></table>\n</body></html>`;\n\nreturn [{ json: { ...d, htmlEmailBody: html, emailSubject: 'Thyroid Assessment - Results | HRT.org' } }];\n"
+      },
+      "id": "f0207bc9-a3fa-4d41-b9a8-bcf6cda0934c",
+      "name": "Build HTML Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5856,
+        2752
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.patientEmail }}",
+        "subject": "={{ $json.emailSubject }}",
+        "message": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        }
+      },
+      "id": "1511c55a-bcec-43ec-b8d9-68ded5a536ae",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        6096,
+        2752
+      ],
+      "webhookId": "gmail-thyroid-typeform-001",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "W8RSrjkrLCD0dLx9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: true,\n  accepted: true,\n  emailSent: true,\n  totalScore: $('Calculate Scores').first().json.totalScore,\n  resultLabel: $('Calculate Scores').first().json.resultLabel,\n  resultContent: $('Calculate Scores').first().json.resultContent,\n  landingPageUrl: $('Calculate Scores').first().json.landingPageUrl,\n  message: 'Your thyroid assessment is complete. A copy has been sent to your email.'\n} }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "id": "1d2bf354-6ef3-42e1-9a69-77cd7b46ca05",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        6336,
+        2752
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "63fde318-37e5-4775-82e4-782dd49f9095",
+      "name": "Respond - Invalid Email",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        5856,
+        2992
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook (Thyroid Submit)": {
+      "main": [
+        [
+          {
+            "node": "Calculate Scores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Scores": {
+      "main": [
+        [
+          {
+            "node": "Has Valid Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Valid Email?": {
+      "main": [
+        [
+          {
+            "node": "Build HTML Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Invalid Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build HTML Email": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "id": "zs4TjRPn0LP8nf77",
+  "tags": []
+}

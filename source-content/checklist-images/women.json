@@ -1,0 +1,22 @@
+{
+  "id": "women",
+  "prompt": "Use case: photorealistic-natural. Asset: original landscape 3:2 editorial healthcare photograph for a women's hormone symptom checklist webpage. A fully clothed woman around age 46 with shoulder-length dark hair in a muted plum blouse sits across a light oak desk from an attentive adult female healthcare professional in an understated pale blue clinical tunic. The patient is explaining her symptom notebook, and both look thoughtfully at the open notebook between them. Show hands resting naturally and anatomically correctly, no exaggerated smiles or distressed poses. Calm contemporary consultation room, warm white walls, daylight from a side window, soft natural skin texture. Medium two-person composition, both faces and the notebook kept in the central safe area for landscape crops, eye-level three-quarter view. Restrained navy, plum and warm neutral palette, premium realistic editorial photography. This is illustrative care, no claim these are real HRT staff or patients. No readable writing, screen UI, text, logos, badges, product packaging, watermarks, naked skin beyond face and hands, diagnostic charts or results.",
+  "mode": "built-in",
+  "alt": "A woman discusses notes about her symptoms with a healthcare professional.",
+  "width": 1536,
+  "height": 1024,
+  "source": "source-content/checklist-images/generated/women.png",
+  "generatedSource": "C:/Users/Fahad/.codex/generated_images/01a12cac-3734-7961-9566-f626d697c5f2/exec-58b3e57d-18b4-4140-a777-a092536327a6.png",
+  "files": [
+    {
+      "path": "uploads/checklists/women-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/women-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

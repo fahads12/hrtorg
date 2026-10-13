@@ -1,0 +1,341 @@
+{
+  "reviewedOn": "2026-10-12",
+  "retrieval": "Current public page HTML fetched by checklist_source_inventory; sources are saved alongside this file.",
+  "liveSubmissions": 0,
+  "assessments": {
+    "women": {
+      "url": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "savedHtml": "hormone-symptom-checklist-for-women-female-hormone-imbalance-test.html",
+      "savedScript": "hormone-symptom-checklist-for-women-female-hormone-imbalance-test.assessment.js",
+      "htmlSha256": "b860250751c9c6c1d1dc3821899b5901658093f8424bd5b8ce4e2c6eff9a0b76",
+      "scriptSha256": "5912f56806ae4d185e09184c162a08f52ef97e90d0712f0d661d01f6e7c5c33e",
+      "totalOptions": 51,
+      "scoreMapping": [
+        {
+          "screen": "q1a",
+          "category": "cat2",
+          "options": 14
+        },
+        {
+          "screen": "q1b",
+          "category": "cat3",
+          "options": 14
+        },
+        {
+          "screen": "q1c",
+          "category": "cat4",
+          "options": 13
+        },
+        {
+          "screen": "q2",
+          "category": "cat1",
+          "options": 10
+        }
+      ],
+      "archiveComparison": {
+        "arraysIdentical": true,
+        "mailingOptionsIdentical": true,
+        "screenOrderIdentical": true,
+        "resultDefinitionsIdentical": true,
+        "scoringFunctionIdenticalAfterLineEndingNormalization": true,
+        "rawScriptIdentical": false,
+        "scriptIdenticalAfterLineEndingNormalization": true,
+        "archivedScoreMismatches": 0
+      },
+      "exhaustiveScoreCheck": {
+        "scoreRanges": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            14
+          ],
+          [
+            0,
+            14
+          ],
+          [
+            0,
+            13
+          ]
+        ],
+        "combinationsChecked": 34650,
+        "resultDistribution": {
+          "1": 1130,
+          "2": 2765,
+          "3": 2723,
+          "4": 2552,
+          "5": 25480
+        },
+        "allResultsInRange": true,
+        "cases": [
+          {
+            "scores": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "result": 4
+          },
+          {
+            "scores": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "result": 1
+          },
+          {
+            "scores": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "result": 2
+          },
+          {
+            "scores": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "result": 3
+          },
+          {
+            "scores": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "result": 4
+          },
+          {
+            "scores": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "result": 5
+          },
+          {
+            "scores": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "result": 2
+          },
+          {
+            "scores": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "result": 4
+          },
+          {
+            "scores": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "result": 3
+          },
+          {
+            "scores": [
+              10,
+              14,
+              14,
+              13
+            ],
+            "result": 5
+          }
+        ]
+      },
+      "concerns": [
+        "All-zero answer counts return Category 4 (Cardiovascular & Chronic Disease Risk Dominant). This is an original logic anomaly, not a medically valid result for selecting no symptoms. Root should preserve evidence and explicitly handle a no-selection result pending workflow approval.",
+        "The source labels result 5 whenever every category has at least one selection, regardless of relative severity. The source counts symptoms only; it does not weight severity or duration.",
+        "Ties select the latter side: equal category-pair sums choose cat3/cat4; within the first pair equal cat1/cat2 chooses 2, within the second pair equal cat3/cat4 chooses 4.",
+        "The source result advice is educational source copy, not a verified diagnosis. Free-consultation destination/offer and n8n result-delivery wording require alignment with available local care flow."
+      ]
+    },
+    "men": {
+      "url": "https://hrt.org/checklist/hormone-symptom-checklist-men",
+      "savedHtml": "hormone-symptom-checklist-men.html",
+      "savedScript": "hormone-symptom-checklist-men.assessment.js",
+      "htmlSha256": "f63f8d99705ff07275c7664da0382edce80c597927b5d431994325b8fd7b1471",
+      "scriptSha256": "a2e2a0b7869afdc0d8f28211df1e5bb772e7d4f944d6df19236f58de3d1e0139",
+      "totalOptions": 55,
+      "scoreMapping": [
+        {
+          "screen": "q1",
+          "category": "cat1",
+          "options": 14
+        },
+        {
+          "screen": "q2a",
+          "category": "cat2",
+          "options": 13
+        },
+        {
+          "screen": "q2b",
+          "category": "cat3",
+          "options": 13
+        },
+        {
+          "screen": "q2c",
+          "category": "cat4",
+          "options": 15
+        }
+      ],
+      "archiveComparison": {
+        "arraysIdentical": true,
+        "mailingOptionsIdentical": true,
+        "screenOrderIdentical": true,
+        "resultDefinitionsIdentical": true,
+        "scoringFunctionIdenticalAfterLineEndingNormalization": true,
+        "rawScriptIdentical": false,
+        "scriptIdenticalAfterLineEndingNormalization": true,
+        "archivedScoreMismatches": 0
+      },
+      "exhaustiveScoreCheck": {
+        "scoreRanges": [
+          [
+            0,
+            14
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            0,
+            15
+          ]
+        ],
+        "combinationsChecked": 47040,
+        "resultDistribution": {
+          "1": 2786,
+          "2": 2584,
+          "3": 2457,
+          "4": 3723,
+          "5": 35490
+        },
+        "allResultsInRange": true,
+        "cases": [
+          {
+            "scores": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "result": 4
+          },
+          {
+            "scores": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "result": 1
+          },
+          {
+            "scores": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "result": 2
+          },
+          {
+            "scores": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "result": 3
+          },
+          {
+            "scores": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "result": 4
+          },
+          {
+            "scores": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "result": 5
+          },
+          {
+            "scores": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "result": 2
+          },
+          {
+            "scores": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "result": 4
+          },
+          {
+            "scores": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "result": 3
+          },
+          {
+            "scores": [
+              14,
+              13,
+              13,
+              15
+            ],
+            "result": 5
+          }
+        ]
+      },
+      "concerns": [
+        "All-zero answer counts return Category 4 (Cardiovascular & Chronic Disease Risk Dominant). This is an original logic anomaly, not a medically valid result for selecting no symptoms. Root should preserve evidence and explicitly handle a no-selection result pending workflow approval.",
+        "The source labels result 5 whenever every category has at least one selection, regardless of relative severity. The source counts symptoms only; it does not weight severity or duration.",
+        "Ties select the latter side: equal category-pair sums choose cat3/cat4; within the first pair equal cat1/cat2 chooses 2, within the second pair equal cat3/cat4 chooses 4.",
+        "The source result advice is educational source copy, not a verified diagnosis. Free-consultation destination/offer and n8n result-delivery wording require alignment with available local care flow."
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+/* global React */
+/* ============================================================
+   CONSULTATION FLOW — DATA
+   Goals, symptoms, conditions, lifestyle, providers, US states.
+   Icons reuse the shared `Icons` set from components.jsx.
+   ============================================================ */
+
+const GI = (d, sw = 1.5) => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round">{d}</svg>
+);
+
+/* Treatment goals — the "what brings you in" choice */
+const GOALS = [
+  {
+    key: "hrt", name: "Hormone Therapy", eyebrow: "Most common",
+    desc: { women: "Perimenopause, menopause & hormone balance", men: "Testosterone, energy, drive & focus" },
+    icon: GI(<><circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="9" strokeDasharray="2 3.6" /></>),
+  },
+  {
+    key: "weight", name: "Weight Management", eyebrow: "GLP-1",
+    desc: { women: "GLP-1 therapy with hormone-aware care", men: "GLP-1 therapy & metabolic health" },
+    icon: GI(<><rect x="3.5" y="3.5" width="17" height="17" rx="3" /><path d="M9 8.5l3-2 3 2" /><line x1="12" y1="6.5" x2="12" y2="13" /></>),
+  },
+  {
+    key: "sexual", name: "Sexual Health", eyebrow: "Discreet",
+    desc: { women: "Libido, arousal & intimacy", men: "ED, libido & performance" },
+    icon: GI(<path d="M12 20.5s-6.5-4.2-6.5-9.2A3.7 3.7 0 0 1 12 8.5a3.7 3.7 0 0 1 6.5 2.8c0 5-6.5 9.2-6.5 9.2z" />),
+  },
+  {
+    key: "hair", name: "Hair Loss", eyebrow: "Proven",
+    desc: { women: "Thinning, shedding & density", men: "Receding, crown & pattern loss" },
+    icon: GI(<><path d="M6 13c0-6 3-9 6-9s6 3 6 9" /><path d="M5 21c1-5 3-7.5 7-7.5S18 16 19 21" /></>),
+  },
+  {
+    key: "peptides", name: "Peptide Therapy", eyebrow: "Longevity",
+    desc: { women: "Recovery, skin, sleep & cellular health", men: "Recovery, body comp & longevity" },
+    icon: GI(<path d="M6 3c0 6 12 6 12 12s-12 6-12 12 M18 3c0 6-12 6-12 12s12 6 12 12" />),
+  },
+];
+
+/* Symptoms by goal + gender — short selectable labels */
+const SYMPTOMS = {
+  hrt: {
+    women: ["Hot flashes / night sweats", "Trouble sleeping", "Low energy & fatigue", "Mood swings / irritability", "Brain fog", "Low libido", "Weight changes", "Irregular cycles", "Joint aches", "Vaginal dryness"],
+    men: ["Low energy & fatigue", "Low libido", "Difficulty building muscle", "Trouble sleeping", "Brain fog / focus", "Low motivation", "Weight gain", "Reduced morning function", "Mood changes", "Slower recovery"],
+  },
+  weight: {
+    women: ["Weight won't budge", "Constant hunger", "Cravings & snacking", "Energy crashes", "Belly weight", "Family history", "Yo-yo dieting", "Insulin concerns"],
+    men: ["Belly / visceral fat", "Constant hunger", "Energy crashes", "Plateaued despite effort", "Family history", "Pre-diabetic markers", "Low motivation", "Snacking at night"],
+  },
+  sexual: {
+    women: ["Low desire", "Painful intimacy", "Trouble with arousal", "Reduced sensitivity", "Dryness", "Confidence concerns"],
+    men: ["Erectile concerns", "Low libido", "Performance anxiety", "Reduced morning function", "Trouble maintaining", "Confidence concerns"],
+  },
+  hair: {
+    women: ["Thinning at the part", "Less density overall", "Postpartum shedding", "Thinner ponytail", "Receding temples", "More hair in the brush"],
+    men: ["Receding hairline", "Crown thinning", "Overall shedding", "Visible scalp", "Family history", "Slower regrowth"],
+  },
+  peptides: {
+    women: ["Slow recovery", "Skin & collagen loss", "Disrupted sleep", "Joint discomfort", "Low energy", "Stubborn body fat"],
+    men: ["Slow recovery", "Joint / old injuries", "Stubborn body fat", "Disrupted sleep", "Plateaued training", "Low energy"],
+  },
+};
+
+/* Medical history checklist — flagged items trigger a soft provider-review note */
+const CONDITIONS = [
+  { label: "High blood pressure" },
+  { label: "Heart disease", flag: true },
+  { label: "Blood clots / clotting disorder", flag: true },
+  { label: "Diabetes or pre-diabetes" },
+  { label: "Thyroid condition" },
+  { label: "History of cancer", flag: true },
+  { label: "Liver or kidney disease", flag: true },
+  { label: "Migraines" },
+  { label: "Depression or anxiety" },
+  { label: "None of the above", exclusive: true },
+];
+
+/* Lifestyle quick questions */
+const LIFESTYLE = [
+  { key: "sleep", q: "How's your sleep?", options: ["Great", "Okay", "Poor", "Very poor"] },
+  { key: "activity", q: "How active are you?", options: ["Daily", "A few times a week", "Rarely", "Never"] },
+  { key: "alcohol", q: "Alcohol per week?", options: ["None", "1–3 drinks", "4–7 drinks", "8+ drinks"] },
+  { key: "tobacco", q: "Do you use tobacco or nicotine?", options: ["No", "Occasionally", "Daily"] },
+];
+
+/* "What does success look like" — goal-aware */
+const SUCCESS = {
+  hrt: { women: ["Sleep through the night", "Steady energy", "Balanced mood", "Sharper focus", "Restored libido", "Feel like myself again"], men: ["More energy & drive", "Build muscle / strength", "Restored libido", "Sharper focus", "Better sleep", "Feel younger"] },
+  weight: { women: ["Lose weight sustainably", "Control cravings", "More energy", "Better lab markers", "Keep it off", "Confidence"], men: ["Lose body fat", "Control appetite", "Better lab markers", "More energy", "Keep it off", "Performance"] },
+  sexual: { women: ["Restore desire", "Comfortable intimacy", "Confidence", "Better arousal"], men: ["Reliable performance", "Restore libido", "Confidence", "Consistency"] },
+  hair: { women: ["Stop the shedding", "Regrow density", "Protect what I have", "Confidence"], men: ["Stop the loss", "Regrow hair", "Protect the hairline", "Confidence"] },
+  peptides: { women: ["Recover faster", "Better skin", "Deeper sleep", "Age well", "More energy"], men: ["Recover faster", "Body composition", "Deeper sleep", "Longevity", "More energy"] },
+};
+
+/* Providers — matched by gender (display only) */
+const PROVIDERS = {
+  women: { initials: "RL", name: "Dr. Rachel Lin, MD", spec: "Hormone & Longevity Medicine", states: "Licensed in 50 states", line: "Board-certified · 11 yrs in women's hormone health" },
+  men: { initials: "MR", name: "Dr. Marcus Reed, DO", spec: "Men's Health & Endocrinology", states: "Licensed in 50 states", line: "Board-certified · 9 yrs in TRT & metabolic care" },
+};
+
+/* Plan preview shown on the recommendation — by goal */
+const PLAN_PREVIEW = {
+  hrt: { name: "Personalized Hormone Plan", from: "$149", per: "/mo", includes: ["Provider visits & messaging", "Compounded prescription", "At-home lab kit", "Discreet delivery"] },
+  weight: { name: "GLP-1 Weight Program", from: "$249", per: "/mo", includes: ["GLP-1 prescription", "1:1 coaching", "Metabolic labs", "Body-comp tracking"] },
+  sexual: { name: "Sexual Health Plan", from: "$29", per: "/mo", includes: ["Provider-prescribed treatment", "Discreet delivery", "Provider check-ins", "Cancel anytime"] },
+  hair: { name: "Hair Restoration Plan", from: "$29", per: "/mo", includes: ["Topical + oral options", "Custom-compounded formula", "Photo tracking", "Quarterly check-ins"] },
+  peptides: { name: "Peptide Protocol", from: "$189", per: "/mo", includes: ["Provider-guided protocol", "Personalized dosing", "Quarterly labs", "Cycling guidance"] },
+};
+
+const US_STATES = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
+
+Object.assign(window, { GOALS, SYMPTOMS, CONDITIONS, LIFESTYLE, SUCCESS, PROVIDERS, PLAN_PREVIEW, US_STATES });

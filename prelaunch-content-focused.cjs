@@ -1,0 +1,30 @@
+const fs=require('fs'),assert=require('node:assert/strict'),{chromium}=require('playwright');
+const {CANONICAL_ROUTES}=require('./localize-checklist-links.cjs');
+const root='scraps/prelaunch-2026-10-12/content',out=root+(process.env.AUDIT_OUTPUT_SUFFIX||'/focused');fs.mkdirSync(out,{recursive:true});
+const base=process.env.AUDIT_BASE_URL||'http://localhost:8012';
+const previous=JSON.parse(fs.readFileSync('scraps/prelaunch/forms-info/report.json','utf8'));
+const normalize=s=>s.replace(/\s+/g,' ').trim();
+(async()=>{
+ const browser=await chromium.launch({channel:'chrome',headless:true});const report={base,browser:browser.version(),interactions:[],fallbacks:[],policyPreservation:[],liveWrites:0};
+ for(const width of [1440,768,390]){
+  const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'});await context.route('**/*',r=>['GET','HEAD'].includes(r.request().method())?r.continue():r.abort());const page=await context.newPage();
+  await page.goto(base+'/FAQ.html');const summaries=page.locator('main details summary');assert.equal(await summaries.count(),12);for(let i=0;i<12;i++){await summaries.nth(i).focus();await page.keyboard.press('Enter');assert.equal(await summaries.nth(i).evaluate(e=>e.parentElement.open),true);await page.keyboard.press('Space');assert.equal(await summaries.nth(i).evaluate(e=>e.parentElement.open),false)}
+  await summaries.first().click();await summaries.first().scrollIntoViewIfNeeded();await page.screenshot({path:out+'/FAQ-open-'+width+'.png'});report.interactions.push({width,check:'12 FAQ disclosures with Enter/Space',passed:true});
+  for(const slug of ['jessica-kikla','dr-clarence-lee-jr','medical-team']){await page.goto(base+'/Providers.html');await page.locator('main a[href*="providers/'+slug+'"]').first().click();assert.ok(page.url().includes('/providers/'+slug+'/'));await page.locator('.provider-back').click();assert.ok(page.url().endsWith('/Providers.html'))}report.interactions.push({width,check:'All three directory/profile/back paths',passed:true});
+  await page.goto(base+'/Join%20Our%20Network.html');const network=await page.locator('.source-cta a').getAttribute('href');assert.equal(network,'mailto:info@hrt.org?subject=Provider%20network%20enquiry');report.interactions.push({width,check:'Provider network enquiry mailto destination',passed:true,liveHandoff:false});
+  await page.goto(base+'/glp-1/ozempic-vs-wegovy/index.html');const guide=page.getByRole('link',{name:'Prepare for a consultation',exact:true});assert.equal(await guide.count(),1);await guide.scrollIntoViewIfNeeded();await page.screenshot({path:out+'/glp-guide-'+width+'.png'});await guide.click();assert.ok(page.url().includes('/Consultation.html'));report.interactions.push({width,check:'Corrected GLP-1 preparation CTA',passed:true});
+  for(const route of ['Privacy Policy.html','legal/privacy-policy/index.html']){await page.goto(base+'/'+route);const p=page.locator('main p').filter({hasText:'information below:'});assert.equal(await p.locator('a').getAttribute('href'),'mailto:info@hrt.org');assert.equal(await page.locator('main').innerText().then(t=>t.includes('minfo@hrt.org')),false);await p.scrollIntoViewIfNeeded();await page.screenshot({path:out+'/'+route.replace(/[^a-z0-9]/gi,'_')+'-'+width+'.png'})}
+  if(width===1440){for(const row of previous.filter(r=>r.width===1440&&(r.route.startsWith('legal/')||['Privacy Policy.html','Return Policy.html','Terms and Conditions.html'].includes(r.route)))){await page.goto(base+'/'+row.route);const current=normalize(await page.locator('main').innerText());const expected=normalize(row.text.replace('information below.minfo@hrt.org','information below: info@hrt.org'));assert.equal(current,expected,row.route+' policy has no unapproved text changes');report.policyPreservation.push({route:row.route,preservedApartFromContactTypo:current===expected})}}
+  await context.close();
+ }
+ for(const [id,route] of Object.entries(CANONICAL_ROUTES))for(const mode of ['no-js','assessment-script-failed','core-script-failed']){
+  const context=await browser.newContext({viewport:{width:390,height:1000},javaScriptEnabled:mode!=='no-js',reducedMotion:'reduce'});await context.route('**/*',r=>['GET','HEAD'].includes(r.request().method())?r.continue():r.abort());
+  if(mode==='assessment-script-failed')await context.route('**/assessment.js*',r=>r.abort());
+  if(mode==='core-script-failed')await context.route('**/checklist-core.js*',r=>r.abort());
+  const page=await context.newPage();await page.goto(base+'/'+route,{waitUntil:'networkidle'});assert.equal(await page.locator('#assessment-next').isDisabled(),true);assert.equal(await page.locator('#assessment-screen').innerText().then(t=>t.includes('has not loaded')),true);assert.ok((await page.locator('#assessment-screen a').getAttribute('href')).includes('Contact.html'));assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
+  if(id==='pms'){await page.locator('#checklist-panel').scrollIntoViewIfNeeded();await page.screenshot({path:out+'/pms-'+mode+'.png'});}
+  report.fallbacks.push({id,mode,width:390,passed:true});await context.close();
+ }
+ for(const [id,route] of Object.entries(CANONICAL_ROUTES)){const context=await browser.newContext({viewport:{width:390,height:1000}});await context.route('**/*',r=>['GET','HEAD'].includes(r.request().method())?r.continue():r.abort());const page=await context.newPage();await page.goto(base+'/'+route);assert.equal(await page.locator('#assessment-next').isEnabled(),true);await page.locator('#assessment-next').click();assert.ok((await page.locator('#checklist-progress-text').innerText()).includes('Step 1'));report.interactions.push({id,check:'Initialized assessment enables and starts',passed:true});await context.close();}
+ await browser.close();fs.writeFileSync(out+'/report.json',JSON.stringify(report,null,2));console.log(JSON.stringify({interactions:report.interactions.length,fallbacks:report.fallbacks.length,policies:report.policyPreservation.length,liveWrites:0}));
+})().catch(e=>{console.error(e);process.exitCode=1});

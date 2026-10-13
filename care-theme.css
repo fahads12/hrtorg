@@ -1,0 +1,33 @@
+/* Audience palettes cover the complete UI, while preserving the supplied logo and photographs. */
+html[data-care-theme="women"] body{--primary:#8e456f;--primary-2:#69304f;--primary-50:#fcf3f8;--primary-tint:#f7eaf2;--accent:#8e456f;--teal:#8e456f;--bg:#fff;--bg-2:#fcf7fa;--ink:#382a38;--ink-2:#594759;--ink-3:#796579;--line:#e6dae3;--line-2:#eee5eb;--gradient-hero:linear-gradient(125deg,#fff9fc,#f7edf4);--care-deep:#42263b;--care-deep-end:#713f60;--care-light:#fcf7fa;--care-muted:#edd5e4;--care-focus:#a54d81;--care-faint:#f8eef4;background:#fff;color:var(--ink)}
+html[data-care-theme="men"] body{--primary:#123b60;--primary-2:#20567b;--primary-50:#eff6fb;--primary-tint:#e9f2f9;--accent:#24688f;--teal:#23799a;--bg:#fff;--bg-2:#f3f7fb;--ink:#0b294a;--ink-2:#354e67;--ink-3:#576c83;--line:#d6e2ec;--line-2:#e6edf4;--gradient-hero:linear-gradient(125deg,#fafcff,#edf5fb);--care-deep:#0b294a;--care-deep-end:#18496d;--care-light:#f3f7fb;--care-muted:#b8d8ec;--care-focus:#287d9f;--care-faint:#eef5fa;background:#fff;color:var(--ink)}
+html[data-care-theme] .nav{background:#fffffff5;border-bottom-color:var(--line)}
+html[data-care-theme] .nav-link,html[data-care-theme] .source-dropdown summary{color:var(--ink-2)}
+html[data-care-theme] .nav-links>a[aria-current="page"]{background:var(--primary-tint);color:var(--primary);border-radius:7px}
+html[data-care-theme] .btn-primary{background:var(--primary);border-color:var(--primary);color:#fff}
+html[data-care-theme] .btn-teal{background:var(--teal);border-color:var(--teal);color:#fff}
+html[data-care-theme] .btn-ghost{color:var(--primary);border-color:var(--line);background:#ffffff80}
+html[data-care-theme] .aud-hero,html[data-care-theme] .p-hero,html[data-care-theme] .source-hero,html[data-care-theme] .home .home-hero,html[data-care-theme] .hw-hero,html[data-care-theme] .ab-hero,html[data-care-theme] .pr-hero,html[data-care-theme] .tr-hero,html[data-care-theme] .res-hero{background:var(--gradient-hero)}
+html[data-care-theme] .aud-hero h1 .accent,html[data-care-theme] .aud-sec-head h2 .accent,html[data-care-theme] .p-hero h1 .accent{color:var(--primary)}
+html[data-care-theme] .aud-hero-card,html[data-care-theme] .aud-tx-card,html[data-care-theme] .aud-lib-card,html[data-care-theme] .aud-checklist,html[data-care-theme] .source-card,html[data-care-theme] .cat-card,html[data-care-theme] .plan{border-color:var(--line)}
+html[data-care-theme] .aud-check-result,html[data-care-theme] .aud-stages,html[data-care-theme] .care-roadmap,html[data-care-theme] .feat-band,html[data-care-theme] .ab-story,html[data-care-theme] .source-faqs details[open]{background:var(--care-light)}
+html[data-care-theme] .aud-check-item:hover,html[data-care-theme] .aud-tx-card .ic-wrap,html[data-care-theme] .cat-card .ic-wrap,html[data-care-theme] .roadmap-icon{background:var(--primary-tint);color:var(--primary)}
+html[data-care-theme] .aud-check-item.on .box{background:var(--primary);border-color:var(--primary)}
+html[data-care-theme] .aud-check-result .num,html[data-care-theme] .aud-stage-link,html[data-care-theme] .aud-lib-card .tag,html[data-care-theme] .text-link,html[data-care-theme] .source-prose a{color:var(--primary)}
+html[data-care-theme] .aud-quote,html[data-care-theme] .footer,html[data-care-theme] .master,html[data-care-theme] .tr-helper,html[data-care-theme] .hw-included{background:var(--care-deep);color:#fff}
+html[data-care-theme] .mini-cta,html[data-care-theme] .cta-banner{background:linear-gradient(115deg,var(--care-deep),var(--care-deep-end));color:#fff}
+html[data-care-theme] .mini-cta h2,html[data-care-theme] .master h2,html[data-care-theme] .hw-included h2{color:#fff}
+html[data-care-theme] .mini-cta .accent,html[data-care-theme] .master .accent,html[data-care-theme] .aud-quote .eyebrow,html[data-care-theme] .aud-quote .text-link{color:var(--care-muted)}
+html[data-care-theme] .aud-quote-portrait{background:var(--care-light)}
+html[data-care-theme] .footer a,html[data-care-theme] .footer .brand-block p{color:#e6dfe6}
+html[data-care-theme] .source-faqs summary,html[data-care-theme] .roadmap-card h3{color:var(--ink)}
+html[data-care-theme] .roadmap-card,html[data-care-theme] .roadmap-number,html[data-care-theme] .source-faqs details{border-color:var(--line)}
+html[data-care-theme] .care-roadmap-intro h2 em,html[data-care-theme] .hero-assurances svg{color:var(--primary)}
+html[data-care-theme] .care-roadmap-step.is-current .roadmap-number{background:var(--primary);border-color:var(--primary)}
+html[data-care-theme] .care-roadmap-steps::after{background:var(--primary)}
+html[data-care-theme] .aud-switch{--switch-color:var(--primary)}
+html[data-care-theme] a:focus-visible,html[data-care-theme] button:focus-visible,html[data-care-theme] input:focus-visible{outline-color:var(--care-focus)}
+html[data-care-theme] .source-dropdown>div{background:#fff;border-color:var(--line)}
+html[data-care-theme] .source-dropdown a{color:var(--ink)}
+html[data-care-theme] .source-dropdown a:hover{background:var(--primary-tint)}
+@media(prefers-reduced-motion:no-preference){html[data-care-theme] .nav,html[data-care-theme] .aud-quote,html[data-care-theme] .footer,html[data-care-theme] .btn{transition:background-color .3s,color .3s,border-color .3s}}

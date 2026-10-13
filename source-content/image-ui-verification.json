@@ -1,0 +1,25 @@
+{
+  "widths": [
+    320,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "pagesChecked": 40,
+  "issues": [],
+  "resolved": [
+    {
+      "file": "Product.html?p=hair&g=men",
+      "width": 320,
+      "fix": "Single-column cards on small screens",
+      "rechecked": true
+    },
+    {
+      "file": "Pricing.html",
+      "width": 320,
+      "fix": "Single-column cards on small screens",
+      "rechecked": true
+    }
+  ]
+}

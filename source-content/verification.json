@@ -1,0 +1,53 @@
+{
+  "pagesAudited": 297,
+  "routesRendered": 71,
+  "widths": [
+    390,
+    768,
+    1440
+  ],
+  "errors": [],
+  "failures": [],
+  "policyChecks": [
+    {
+      "url": "https://hrt.org/legal/consent-to-telehealth",
+      "exactNormalizedText": true,
+      "sha256": "a4015d22a9f2fae35060c6d5e5dcd8f72ddd266c9dd6c83ff656f06537be083e"
+    },
+    {
+      "url": "https://hrt.org/legal/health-information-privacy-practices",
+      "exactNormalizedText": true,
+      "sha256": "7ba02410212387827d6c62e1fd48ed7d197dbb38af486a77b6cd85d2c2e38ed5"
+    },
+    {
+      "url": "https://hrt.org/legal/informed-consent-regarding-nutritional-and-herbal-supplements",
+      "exactNormalizedText": true,
+      "sha256": "541b47d467cc1901045c83f2832ae4c7237da92b1e7e75bb8a4342ad4b147e5d"
+    },
+    {
+      "url": "https://hrt.org/legal/pharmacy-information",
+      "exactNormalizedText": true,
+      "sha256": "913399247d5554d711c1722b18916746ec430298a353dfb0074cecb43255a55e"
+    },
+    {
+      "url": "https://hrt.org/legal/privacy-policy",
+      "exactNormalizedText": true,
+      "sha256": "173bf0c9555587b9fc878359cd255a38a6b190eb69c4d980f713848817e421f0"
+    },
+    {
+      "url": "https://hrt.org/privacy-policy",
+      "exactNormalizedText": true,
+      "sha256": "42775f6c30528e89f126257ad400cbbe0757695ca733261fb0b3dbe30a0a3a5c"
+    },
+    {
+      "url": "https://hrt.org/return-policy",
+      "exactNormalizedText": true,
+      "sha256": "fa3466eceddc1e34eee720fab96d85a472812bf3b10f455f352628111fd42a31"
+    },
+    {
+      "url": "https://hrt.org/terms-and-conditions",
+      "exactNormalizedText": true,
+      "sha256": "73bdd947f00d044da707e355a930335e65eb64dafe6f644b04bbc12e71db501f"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "name": "Andropause Typeform Assessment",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "andropause-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -720,
+        80
+      ],
+      "id": "06eadefb-9ffd-4f6d-9ec8-190a8ff7821d",
+      "name": "Webhook (Andropause Submit)",
+      "webhookId": "andropause-typeform-2026-04"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n//  Andropause Assessment — Score Calculator\n//  Based on the AMS (Aging Males' Symptoms) questionnaire.\n//  Each of the 10 questions is scored 0–4:\n//    never=0, occasionally=1, frequently=2, constantly=3\n//\n//  Scoring tiers:\n//    <= 7  → Result 1 (Low likelihood — minimal symptoms)\n//    > 7   → Result 2 (Moderate-to-high — symptoms present)\n//\n//  The Typeform-style frontend posts ONE flat JSON body so we\n//  read every q* answer from $input.first().json.body.\n// ============================================================\n\nconst data = $input.first().json.body || $input.first().json;\n\nconst scoreMap = {\n  'never': 0,\n  'occasionally': 1,\n  'frequently': 2,\n  'constantly': 3\n};\n\nfunction getScore(value) {\n  if (value === undefined || value === null || value === '') return 0;\n  const raw = Array.isArray(value) ? value[0] : value;\n  if (raw === undefined || raw === null || raw === '') return 0;\n  if (typeof raw === 'number') {\n    if (raw >= 0 && raw <= 3) return raw;\n    return 0;\n  }\n  const cleaned = String(raw).trim().toLowerCase();\n  if (cleaned in scoreMap) return scoreMap[cleaned];\n  if (cleaned.includes('constantly'))   return 3;\n  if (cleaned.includes('frequently'))   return 2;\n  if (cleaned.includes('occasionally')) return 1;\n  if (cleaned.includes('never'))        return 0;\n  const num = Number(cleaned);\n  if (!isNaN(num) && num >= 0 && num <= 3) return Math.round(num);\n  return 0;\n}\n\n// All 10 andropause question field names\nconst fields = [\n  'q1_falling_asleep',\n  'q2_decreased_enjoyment',\n  'q3_losing_height',\n  'q4_strength_endurance',\n  'q5_sex_drive',\n  'q6_sports_performance',\n  'q7_depressed_grumpy',\n  'q8_lack_of_energy',\n  'q9_work_performance',\n  'q10_erection_difficulty'\n];\n\nconst scores = {};\nlet totalScore = 0;\nconst warnings = [];\n\nfor (const field of fields) {\n  const rawValue = data[field];\n  const score = getScore(rawValue);\n  scores[field] = { raw: rawValue, type: typeof rawValue, score: score };\n  totalScore += score;\n  if (rawValue === undefined || rawValue === null || rawValue === '') {\n    warnings.push(field + ' is missing');\n  }\n}\n\n// Scoring tiers — matched exactly to the original Make.com blueprint logic\n// (score <= 7 → Result 1, score > 7 → Result 2)\nlet resultNum, resultLabel, resultContent;\nif (totalScore <= 7) {\n  resultNum = 1;\n  resultLabel = 'Low Likelihood';\n  resultContent = 'Andropause is unlikely to be significantly impacting your health at this time. Your symptom score is low. However, testosterone levels can decline gradually with age — if you notice changes in energy, mood, or sexual function in the future, consider getting tested.';\n} else {\n  resultNum = 2;\n  resultLabel = 'Symptoms Present';\n  resultContent = 'Your score suggests that andropause may be affecting your quality of life. Many of the symptoms you are experiencing — such as decreased energy, reduced libido, mood changes, and diminished physical performance — can be linked to declining testosterone levels. We strongly recommend a hormone panel to assess your current levels and discuss your options with one of our healthcare specialists.';\n}\n\nconst landingPageUrl = 'https://www.hrt.org/score-total?type=an&score=' + totalScore;\n\nreturn [{ json: {\n  patientName:  data.first_name   || '',\n  patientEmail: data.email        || '',\n  mailingList:  data.mailing_list || '',\n  totalScore,\n  resultNum,\n  resultLabel,\n  resultContent,\n  landingPageUrl,\n  _debug_scores: scores,\n  _debug_warnings: warnings\n}}];\n"
+      },
+      "id": "a5687b6a-b281-44ca-b79b-ea8f9cb2e530",
+      "name": "Calculate Scores",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "v1",
+              "leftValue": "={{ $json.patientEmail }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cf4543ed-3716-4a91-817c-d519bf2e50dd",
+      "name": "Has Valid Email?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -240,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\n// Escape only the dynamic name used in the HTML greeting.\nfunction escapePatientName(value) {\n  return String(value)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&#39;');\n}\nconst greeting = d.patientName ? ('Dear ' + escapePatientName(d.patientName)) : 'Hi there';\nconst year = new Date().getFullYear();\n\nconst introText = `Andropause — sometimes called male menopause — affects millions of men as testosterone levels naturally decline with age. Symptoms such as fatigue, reduced libido, mood changes, decreased muscle mass, and difficulty maintaining erections can significantly impact your quality of life. Yet the majority of men who experience these changes never receive a diagnosis or treatment.<br/><br/>The good news is that low testosterone is measurable and treatable. A simple hormone panel can give you a clear picture of where your levels stand, and personalised hormone replacement therapy may help restore vitality, mental clarity, physical strength, and sexual function.<br/><br/>Diet and lifestyle also play an important role: regular resistance training, adequate sleep, reduced alcohol intake, and foods rich in zinc (oysters, pumpkin seeds, beef) and vitamin D may help support healthy testosterone production.<br/><br/>Please take a moment to consider testosterone testing through our home-based, private, secure testing programme, or from one of our participating partner labs.`;\n\nconst html = `<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n<meta name=\"format-detection\" content=\"telephone=no\"/>\n<meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;\"/>\n<meta http-equiv=\"x-ua-compatible\" content=\"IE=9; IE=8; IE=7; IE=EDGE\"/>\n<title></title>\n<!--[if mso]><style>* {font-family:sans-serif !important;}</style><![endif]-->\n<!--[if !mso]><!--><link href=\"https://fonts.googleapis.com/css?family='Open Sans':100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap\" rel=\"stylesheet\"/><!--<![endif]-->\n<style type=\"text/css\">\n#outlook a{padding:0}body{width:100%!important}.ReadMsgBody{width:100%}a{word-wrap:break-word}.ExternalClass{width:100%}.ExternalClass,.ExternalClass div,.ExternalClass font,.ExternalClass p,.ExternalClass span,.ExternalClass td{line-height:100%}a,blockquote,body,li,p,table,td{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;mso-line-height-rule:exactly}body{margin:0;padding:0;height:100%!important;width:100%!important}.a_block{display:block;text-decoration:none;}.t_shadow_block{padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;}.t_block{padding-left:20px;padding-right:20px;padding-bottom:30px;padding-top:30px;}.blog_box{padding-top:10px;padding-bottom:10px;padding-left:5px;padding-right:5px;}table{mso-table-lspace:0;mso-table-rspace:0}img{border:0;line-height:100%;outline:0;text-decoration:none;-ms-interpolation-mode:bicubic;height:auto}\n@media screen and (max-width:480px){table[class=columns]{width:100%!important}th[class=force-col-th]{display:block;width:100%!important}img[class=imagescale]{max-width:100%!important;width:100%!important;height:auto!important}img[class=w183]{max-width:120px!important;width:100%!important;height:auto!important}img[class=w159]{max-width:300px!important;width:100%!important;height:auto!important}}\n</style></head>\n<body style=\"-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#fff;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" bgcolor=\"#FFFFFF\" valign=\"top\">\n<table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns\">\n\n<tr><td style=\"padding:20px;text-align:center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"font-family:'Montserrat Black',sans-serif;font-size:32px;text-decoration:none;color:#000000;\">HRT.org</a></td></tr>\n\n<tr><td><img alt=\"\" border=\"0\" class=\"imagescale\" height=\"12\" src=\"https://cdn.prod.website-files.com/632a33dda7f9eaa9ed6897ea/63555c39ac19e2479bac2063_Andropause%E2%80%94Symptoms-Testing-and-Treatment.jpeg\" style=\"width:678px;max-width:678px;height:auto;\" width=\"600\">\n</td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td style=\"padding-left:20px;padding-right:20px;padding-top:35px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000\">Your Assessment Results</div></td></tr>\n<tr><td style=\"line-height:125%;padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Assessment Score: <b>${d.totalScore}</b></div></td></tr>\n<tr><td style=\"line-height:125%;padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.6\">${d.resultContent}</div></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1b83d5\" style=\"padding-top:30px;padding-bottom:30px;padding-left:20px;padding-right:20px;\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n<th width=\"20\" valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:10px;height:10px;\"></div></th>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>\n<td bgcolor=\"#feb92c\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\" align=\"center\">\n<a href=\"${d.landingPageUrl}\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">VIEW RESULTS ONLINE</a>\n</td></tr></table></th></tr></table></td></tr>\n\n<tr><td bgcolor=\"#ffffff\" style=\"padding-left:20px;padding-right:20px;padding-top:35px;padding-bottom:35px;\">\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td style=\"line-height:1.6;\">\n<div align=\"left\" style=\"color:#4e525e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">${greeting},<br/><br/>${introText}<br/><br/>Feel free to reach out to one of our healthcare specialists for a private consultation or contact us with any questions or concerns you have concerning your health.<br/><br/>We hope you feel better soon, and look forward to hearing from you.<br/><br/>Sincerely,<br/><b>The HRT.org Team</b></div>\n</td></tr></tbody></table></td></tr>\n\n<tr><td bgcolor=\"#f8f8f8\" style=\"padding-bottom:35px;\"><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Suggested Lab Tests</div></td></tr>\n<tr><td style=\"line-height:125%\"><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Easy &amp; Convenient Test Kits</div></td></tr>\n</table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/male-hormone-panel-testosterone-at-home-test-kit\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"Male Hormone Panel\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTBloodSpotTestKit-9_1024x1024_2x_3025b07b-9b81-4d8f-85a4-2c9aff366530_1024x1024@2x.jpg?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">Male Hormone Panel — At Home Testosterone Test Kit</div>\n<div style=\"color:#000;text-decoration:none;font-weight:300;font-size:13px\">Measures total and free testosterone, DHEA-S, and SHBG from a simple blood spot sample collected at home. Ideal for assessing andropause and monitoring TRT.</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">$189.00</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/comprehensive-male-hormone-profile-blood-spot\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"Comprehensive Male Hormone Profile\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTLabBloodUrineMultiTestKit_1024x1024@2x.jpg?v=1571716011\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">Comprehensive Male Hormone Profile (Blood Spot)</div>\n<div style=\"color:#000;text-decoration:none;font-weight:300;font-size:13px\">A full picture of male hormone health: testosterone (total &amp; free), estradiol, PSA, DHEA-S, SHBG, cortisol, and thyroid (TSH). Clinician-reviewed results included.</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">$289.00</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/elite-male-hormone-panel-blood-urine\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"Elite Male Hormone Panel\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/Thyroid_Health_Essentials_1024x1024_upclose_1024x1024@2x.png?v=1579640010\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">Elite Male Hormone Panel (Blood Spot/Urine)</div>\n<div style=\"color:#000;text-decoration:none;font-weight:300;font-size:13px\">Our most comprehensive andropause profile. Includes testosterone metabolites, oestrogen fractions, adrenal hormones, and nutritional markers linked to testosterone production.</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">$319.00</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1b83d5\" class=\"t_block\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div align=\"center\" style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;text-decoration:none;\">Free Consultation</div></th>\n<th width=\"20\" valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:10px;height:10px;\"> </div></th>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>\n<td bgcolor=\"#feb92c\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a>\n</td></tr></table></th></tr></table></td></tr>\n\n<tr><td bgcolor=\"#f8f8f8\" style=\"padding-bottom:35px;\"><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Popular Related Products</div></td></tr>\n<tr><td style=\"line-height:125%\"><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Check out some of our best products</div></td></tr>\n</table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/dhea-25mg-natural-supplement-to-help-maintain-optimal-dhea-levels\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"DHEA 25mg\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Micronized_DHEA_transparent_1024x1024@2x.png?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">DHEA (25mg) — Natural Supplement to Maintain Optimal Hormone Levels</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">DHEA is a precursor hormone that naturally declines with age. Supplementing with micronised DHEA may help support testosterone production, energy levels, and healthy ageing in men.</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/biodim-i3c-complex-natural-hormone-balance-cellular-health-support-supplement\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"BioDIM I3C Complex\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_BioDIM_Complex_transparent_1024x1024@2x.png?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">BioDIM I3C Complex — Natural Hormone Balance &amp; Cellular Health Support</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">BioDIM Complex is physician-formulated to balance oestrogen-to-testosterone ratios in men, supporting optimal cellular health and hormonal wellness.</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n\n<tr><td style=\"padding:10px 20px\">\n<table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\">\n<a href=\"https://store.hrt.org/products/testosterone-support-natural-supplement\" target=\"_blank\" class=\"a_block\"><table><tr>\n<td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"Testosterone Support\" border=\"0\" class=\"w183\" src=\"https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Thyroid_Support_transparent_1024x1024@2x.png?v=1571716034\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td>\n<td width=\"70%\" style=\"padding-right:15px\">\n<div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-weight:700;font-size:14px\">Testosterone Support — Natural Supplement for Optimal Hormone Function</div>\n<p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:normal;\">A natural formula containing zinc, magnesium, B6, and ashwagandha — nutrients that play a key role in testosterone synthesis and healthy male hormone balance.</p>\n</td></tr></table></a>\n</td></tr></table></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1b83d5\" class=\"t_block\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div align=\"center\" style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;text-decoration:none;\">Free Consultation</div></th>\n<th width=\"20\" valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:10px;height:10px;\"> </div></th>\n<th valign=\"middle\" style=\"vertical-align:middle;font-weight:normal;\" class=\"force-col-th\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>\n<td bgcolor=\"#feb92c\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a>\n</td></tr></table></th></tr></table></td></tr>\n\n<tr><td bgcolor=\"#f8f8f8\" style=\"padding-bottom:35px;\"><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width:100%;\">\n<tr><td style=\"line-height:25px;padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000;\">Related Content</div></td></tr>\n<tr><td style=\"line-height:125%\"><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;font-weight:normal;\">Read related content from our blog</div></td></tr>\n</table></td></tr>\n<tr><td style=\"padding:0 20px 30px 20px;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n\n<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;\" class=\"force-col-th\">\n<a href=\"https://www.hrt.org/andropause-symptoms-testing-treatment/\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"font-size:0;padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"Andropause — Symptoms, Testing and Treatment\" border=\"0\" class=\"w159\" height=\"106\" src=\"https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555c39ac19e2479bac2063_Andropause%E2%80%94Symptoms-Testing-and-Treatment.jpeg\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr>\n<tr><td style=\"padding-bottom:5px;line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;text-transform:uppercase;\">Andropause — symptoms, testing and treatment</div></td></tr>\n<tr><td style=\"line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">HRT.org Blog</div></td></tr>\n</table></td></tr></table></a></th>\n\n<th width=\"15\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:20px;height:20px;\"><img height=\"5\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_1p57de91.png\" style=\"max-height:5px\" width=\"20\" alt=\"\"></div></th>\n\n<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;\" class=\"force-col-th\">\n<a href=\"https://www.hrt.org/low-testosterone-signs-symptoms/\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"font-size:0;padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"Low Testosterone — Signs and Symptoms\" border=\"0\" class=\"w159\" height=\"106\" src=\"https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555be813ceda6560a19756_Thyroid-Disease%E2%80%94The-Symptoms-Cures-and-Causes.jpeg\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr>\n<tr><td style=\"padding-bottom:5px;line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;text-transform:uppercase;\">Low testosterone — signs and symptoms</div></td></tr>\n<tr><td style=\"line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">HRT.org Blog</div></td></tr>\n</table></td></tr></table></a></th>\n\n<th width=\"15\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;\" class=\"force-col-th\"><div style=\"line-height:20px;height:20px;\"><img height=\"5\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_1p57de91.png\" style=\"max-height:5px\" width=\"20\" alt=\"\"></div></th>\n\n<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);-webkit-border-radius:5px;border-radius:5px;\" class=\"force-col-th\">\n<a href=\"https://www.hrt.org/testosterone-replacement-therapy/\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"font-size:0;padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"Testosterone Replacement Therapy\" border=\"0\" class=\"w159\" height=\"106\" src=\"https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555b7f12c18d7342ac77ba_Thyroid-Cancer%E2%80%94Signs-Risk-Types-and-Treatments.jpg\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr>\n<tr><td style=\"padding-bottom:5px;line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;text-transform:uppercase;\">Testosterone replacement therapy</div></td></tr>\n<tr><td style=\"line-height:125%;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">HRT.org Blog</div></td></tr>\n</table></td></tr></table></a></th>\n\n</tr></table></td></tr>\n<tr><td align=\"center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"text-decoration:none;display:block\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr><td bgcolor=\"#1b83d5\" style=\"padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;\"><div align=\"center\" style=\"color:#ffffff;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">VIEW ALL</div></td></tr></table></a></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1d1d1d\" style=\"padding-bottom:30px;padding-top:30px;border-bottom:#ffffff solid 10px;\" align=\"center\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"padding:20px 20px 0px 20px;color:#8e8e8e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\"><div align=\"center\"><span style=\"color:#8e8e8e;text-decoration:none;\"><a href=\"tel:888-574-5524\" style=\"color:#8e8e8e;text-decoration:none;\">Call Us Toll Free: 888-574-5524</a><br/><a href=\"https://www.hrt.org\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">hrt.org</a></span></div></td></tr>\n<tr><td align=\"center\" style=\"padding:20px;color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\"><div align=\"center\"><a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;white-space:nowrap;\">Contact Support</a> | <a href=\"https://www.hrt.org/terms-and-conditions/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;white-space:nowrap;\">Terms &amp; Conditions</a> | <a href=\"https://www.hrt.org/privacy-policy/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;white-space:nowrap;\">Privacy Policy</a></div></td></tr>\n<tr><td align=\"center\" style=\"padding:20px;line-height:125%;border-top:#313131 solid 1px;\"><div align=\"center\" style=\"color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-decoration:none;\">© HRT.org ${year}</div></td></tr>\n</table></td></tr>\n\n<tr class=\"gmail-fix\"><td><table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"600\" style=\"width:600px;\" class=\"columns\"><tr><td height=\"1\" style=\"line-height:1px;min-width:600px;\"><img src=\"https://cdn.creativeautomation.io/ss/2019/09/66e151c6-6fdf-4a21-b209-6a8a0cec4cfc.png\" alt=\"\" width=\"600\" height=\"1\" border=\"0\" class=\"imagescale\" style=\"display:block;max-height:1px;min-height:1px;min-width:600px;width:600px;\"></td></tr></table></td></tr>\n\n</table></td></tr></table>\n</body></html>`;\n\nreturn [{ json: { ...d, htmlEmailBody: html, emailSubject: 'Andropause Assessment - Results | HRT.org' } }];\n"
+      },
+      "id": "dd2cbd58-e592-469a-a5c7-9b04dd63ecf1",
+      "name": "Build HTML Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.patientEmail }}",
+        "subject": "={{ $json.emailSubject }}",
+        "message": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        }
+      },
+      "id": "2466d7d3-bac7-46ee-9fb5-43b7dad82c6d",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        240,
+        0
+      ],
+      "webhookId": "gmail-andropause-typeform-001",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "W8RSrjkrLCD0dLx9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: true,\n  accepted: true,\n  emailSent: true,\n  totalScore: $('Calculate Scores').first().json.totalScore,\n  resultLabel: $('Calculate Scores').first().json.resultLabel,\n  resultContent: $('Calculate Scores').first().json.resultContent,\n  landingPageUrl: $('Calculate Scores').first().json.landingPageUrl,\n  message: 'Your andropause assessment is complete. A copy has been sent to your email.'\n} }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "id": "a7b637fb-54b3-4f69-be23-bad0bd21e3fc",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "73f6c3aa-10cb-44ce-9ae6-3fa40efb9530",
+      "name": "Respond - Invalid Email",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        240
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook (Andropause Submit)": {
+      "main": [
+        [
+          {
+            "node": "Calculate Scores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Scores": {
+      "main": [
+        [
+          {
+            "node": "Has Valid Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Valid Email?": {
+      "main": [
+        [
+          {
+            "node": "Build HTML Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Invalid Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build HTML Email": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "id": "N30o8f90dCV3bCSN",
+  "tags": []
+}

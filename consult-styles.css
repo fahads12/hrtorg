@@ -1,0 +1,356 @@
+/* ============================================================
+   CONSULTATION FLOW — focused intake wizard
+   Extends styles.css (vars, .btn). Theme follows body[data-gender].
+   ============================================================ */
+
+body.consult { overflow: hidden; }
+
+.cz-shell {
+  height: 100vh; height: 100dvh;
+  display: flex; flex-direction: column;
+  background: var(--gradient-hero);
+  position: relative;
+  transition: background .6s ease;
+}
+.cz-shell::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle at 88% 8%, var(--primary-tint), transparent 42%),
+    radial-gradient(circle at 6% 92%, rgba(46,139,135,0.07), transparent 50%);
+}
+
+/* ---------- Top bar ---------- */
+.cz-top {
+  flex-shrink: 0; position: relative; z-index: 5;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  gap: 24px; padding: 20px 32px;
+}
+.cz-top .left { justify-self: start; }
+.cz-top .right { justify-self: end; display: flex; align-items: center; gap: 18px; }
+.cz-save {
+  font-family: "Geist Mono", monospace; font-size: 10.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-3);
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.cz-save .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.cz-save .dot.pulse { animation: czPulse 2.2s ease-in-out infinite; }
+@keyframes czPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+.cz-exit {
+  font-size: 13.5px; color: var(--ink-2); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px;
+  border-radius: 8px; transition: background .2s ease, color .2s ease;
+}
+.cz-exit:hover { background: rgba(14,27,44,0.05); color: var(--ink); }
+
+/* ---------- Progress ---------- */
+.cz-prog { justify-self: center; width: 100%; max-width: 420px; }
+.cz-prog .meta {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 8px;
+}
+.cz-prog .step-name { font-size: 12.5px; font-weight: 500; color: var(--ink); letter-spacing: -0.01em; }
+.cz-prog .step-count { font-family: "Geist Mono", monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--ink-3); }
+
+/* bar */
+.cz-bar { height: 4px; border-radius: 999px; background: rgba(14,27,44,0.1); overflow: hidden; }
+.cz-bar > i { display: block; height: 100%; background: var(--primary); border-radius: 999px; transition: width .5s cubic-bezier(.4,.7,.3,1); }
+
+/* segments */
+.cz-segs { display: flex; gap: 5px; }
+.cz-segs > i { flex: 1; height: 4px; border-radius: 999px; background: rgba(14,27,44,0.1); transition: background .4s ease; }
+.cz-segs > i.done { background: var(--primary); }
+.cz-segs > i.active { background: var(--primary); opacity: 0.5; }
+
+/* dots */
+.cz-dots { display: flex; gap: 10px; justify-content: center; }
+.cz-dots > i { width: 8px; height: 8px; border-radius: 50%; background: rgba(14,27,44,0.14); transition: all .35s ease; }
+.cz-dots > i.done { background: var(--primary); }
+.cz-dots > i.active { background: var(--primary); transform: scale(1.5); }
+
+/* ---------- Main scroll area ---------- */
+.cz-main {
+  flex: 1; min-height: 0; overflow-y: auto; position: relative; z-index: 4;
+  display: block;
+  padding: 8px 32px 40px;
+  scrollbar-width: thin; scrollbar-color: rgba(14,27,44,0.18) transparent;
+}
+.cz-main::-webkit-scrollbar { width: 9px; }
+.cz-main::-webkit-scrollbar-thumb { background: rgba(14,27,44,0.16); border-radius: 6px; border: 2px solid transparent; background-clip: content-box; }
+.cz-center { min-height: 100%; width: 100%; display: flex; flex-direction: column; align-items: stretch; justify-content: center; }
+.cz-step { width: 100%; max-width: 680px; margin: 0 auto; }
+.cz-step.wide { max-width: 980px; }
+
+/* step heading */
+.cz-eyebrow {
+  font-family: "Geist Mono", monospace; font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--primary); font-weight: 500;
+  margin-bottom: 14px; display: block;
+}
+.cz-q { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.08; letter-spacing: -0.03em; color: var(--ink); font-weight: 500; }
+.cz-q .accent { font-family: "Newsreader", serif; font-style: italic; font-weight: 400; color: var(--primary); }
+.cz-help { font-size: 15.5px; color: var(--ink-3); margin-top: 14px; max-width: 540px; line-height: 1.5; }
+.cz-fieldset { margin-top: 32px; }
+
+/* entrance motion — kept visible by default (preview freezes keyframes at frame 0) */
+.cz-anim { opacity: 1; }
+
+/* ---------- Big choice cards (goal / gender) ---------- */
+.cz-choices { display: grid; gap: 12px; }
+.cz-choices.cols-2 { grid-template-columns: 1fr 1fr; }
+.cz-choices.cols-list { grid-template-columns: 1fr; }
+.cz-choice {
+  text-align: left; cursor: pointer; background: rgba(255,255,255,0.7);
+  border: 1.5px solid var(--line); border-radius: 16px;
+  padding: 22px 24px; display: flex; align-items: center; gap: 20px;
+  transition: border-color .2s ease, background .2s ease, transform .15s ease, box-shadow .2s ease;
+  font-family: inherit;
+}
+.cz-choice:hover { border-color: var(--primary-tint); background: #fff; transform: translateY(-2px); box-shadow: 0 16px 36px -22px rgba(14,27,44,0.25); }
+.cz-choice.sel { border-color: var(--primary); background: linear-gradient(180deg, #fff 0%, var(--primary-50) 140%); box-shadow: 0 16px 36px -22px rgba(14,27,44,0.2); }
+.cz-choice .ic {
+  flex-shrink: 0; width: 52px; height: 52px; border-radius: 13px;
+  background: var(--primary-tint); color: var(--primary);
+  display: grid; place-items: center; transition: background .2s ease, color .2s ease;
+}
+.cz-choice.sel .ic { background: var(--primary); color: #fff; }
+.cz-choice .tx { flex: 1; min-width: 0; }
+.cz-choice .nm { font-size: 17px; font-weight: 500; color: var(--ink); letter-spacing: -0.015em; display: flex; align-items: center; gap: 10px; }
+.cz-choice .eb { font-family: "Geist Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); background: var(--primary-tint); padding: 3px 7px; border-radius: 4px; }
+.cz-choice .ds { font-size: 13.5px; color: var(--ink-3); margin-top: 4px; }
+.cz-choice .tick {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--line); display: grid; place-items: center;
+  color: #fff; transition: all .2s ease;
+}
+.cz-choice.sel .tick { background: var(--primary); border-color: var(--primary); }
+
+/* gender split (2 large cards) */
+.cz-gender { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cz-gender .cz-choice { flex-direction: column; align-items: flex-start; gap: 16px; padding: 26px; min-height: 168px; }
+.cz-gender .cz-choice .nm { font-size: 19px; }
+.cz-gender .cz-choice .ds { font-size: 13px; }
+.cz-gender .ic { width: 56px; height: 56px; }
+
+/* ---------- Chips (symptoms / goals) ---------- */
+.cz-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.cz-chip {
+  cursor: pointer; font-family: inherit; font-size: 14.5px;
+  padding: 12px 18px; border-radius: 999px; background: rgba(255,255,255,0.7);
+  border: 1.5px solid var(--line); color: var(--ink-2); letter-spacing: -0.005em;
+  display: inline-flex; align-items: center; gap: 9px;
+  transition: all .18s ease;
+}
+.cz-chip:hover { border-color: var(--primary-tint); background: #fff; color: var(--ink); }
+.cz-chip .mk { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; color: #fff; flex-shrink: 0; transition: all .18s ease; }
+.cz-chip.sel { border-color: var(--primary); background: var(--primary); color: #fff; }
+.cz-chip.sel .mk { background: #fff; border-color: #fff; color: var(--primary); }
+.cz-hint { font-size: 13px; color: var(--ink-3); margin-top: 18px; font-family: "Geist Mono", monospace; letter-spacing: 0.04em; }
+
+/* ---------- Form fields ---------- */
+.cz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cz-field { display: flex; flex-direction: column; gap: 8px; }
+.cz-field.full { grid-column: 1 / -1; }
+.cz-field label { font-size: 13px; font-weight: 500; color: var(--ink); letter-spacing: -0.005em; }
+.cz-field label .opt { color: var(--ink-3); font-weight: 400; }
+.cz-input, .cz-select {
+  height: 52px; padding: 0 16px; border-radius: 11px; font-family: inherit; font-size: 15.5px;
+  background: rgba(255,255,255,0.8); border: 1.5px solid var(--line); color: var(--ink);
+  outline: none; transition: border-color .2s ease, background .2s ease; width: 100%;
+}
+.cz-input::placeholder { color: var(--ink-3); }
+.cz-input:focus, .cz-select:focus { border-color: var(--primary); background: #fff; }
+.cz-select { appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%236B7682' d='M0 0h12L6 8z'/></svg>");
+  background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+textarea.cz-input { height: auto; min-height: 96px; padding: 14px 16px; line-height: 1.5; resize: vertical; }
+.cz-seg-q { margin-bottom: 8px; }
+
+/* segmented control (lifestyle / scale) */
+.cz-seg { display: inline-flex; flex-wrap: wrap; gap: 8px; }
+.cz-seg button {
+  cursor: pointer; font-family: inherit; font-size: 14px; padding: 11px 18px;
+  border-radius: 10px; background: rgba(255,255,255,0.7); border: 1.5px solid var(--line);
+  color: var(--ink-2); transition: all .15s ease;
+}
+.cz-seg button:hover { border-color: var(--primary-tint); color: var(--ink); }
+.cz-seg button.sel { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.cz-row { margin-bottom: 26px; }
+.cz-row > .lab { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 12px; display: block; }
+
+/* scale 1-10 */
+.cz-scale { display: flex; gap: 6px; }
+.cz-scale button {
+  flex: 1; height: 46px; cursor: pointer; font-family: "Geist Mono", monospace; font-size: 13px;
+  border-radius: 9px; background: rgba(255,255,255,0.7); border: 1.5px solid var(--line);
+  color: var(--ink-2); transition: all .12s ease;
+}
+.cz-scale button:hover { border-color: var(--primary); color: var(--ink); }
+.cz-scale button.sel { background: var(--primary); border-color: var(--primary); color: #fff; }
+.cz-scale-ends { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11.5px; color: var(--ink-3); }
+
+/* ---------- Checklist ---------- */
+.cz-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cz-check {
+  cursor: pointer; display: flex; align-items: center; gap: 13px; padding: 15px 17px;
+  border-radius: 12px; background: rgba(255,255,255,0.7); border: 1.5px solid var(--line);
+  font-size: 14.5px; color: var(--ink-2); transition: all .15s ease;
+}
+.cz-check:hover { border-color: var(--primary-tint); color: var(--ink); }
+.cz-check.sel { border-color: var(--primary); background: #fff; color: var(--ink); }
+.cz-check .box { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--line); flex-shrink: 0; display: grid; place-items: center; color: #fff; transition: all .15s ease; }
+.cz-check.sel .box { background: var(--primary); border-color: var(--primary); }
+.cz-check.flagged.sel { border-color: var(--teal); }
+.cz-check.flagged.sel .box { background: var(--teal); border-color: var(--teal); }
+
+/* soft eligibility note */
+.cz-note {
+  margin-top: 20px; display: flex; gap: 14px; align-items: flex-start;
+  padding: 18px 20px; border-radius: 14px;
+  background: rgba(46,139,135,0.08); border: 1px solid rgba(46,139,135,0.25);
+}
+.cz-note .ic { color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+.cz-note .tx { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+.cz-note .tx b { color: var(--ink); font-weight: 600; }
+
+/* ---------- ID upload ---------- */
+.cz-upload {
+  position: relative; border: 1.5px dashed var(--primary-tint); border-radius: 16px;
+  background: rgba(255,255,255,0.6); padding: 40px; text-align: center; cursor: pointer;
+  transition: border-color .2s ease, background .2s ease;
+}
+.cz-upload:hover { border-color: var(--primary); background: #fff; }
+.cz-upload input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.cz-upload .uic { width: 56px; height: 56px; border-radius: 14px; background: var(--primary-tint); color: var(--primary); display: grid; place-items: center; margin: 0 auto 16px; }
+.cz-upload .ut { font-size: 15.5px; font-weight: 500; color: var(--ink); }
+.cz-upload .us { font-size: 13px; color: var(--ink-3); margin-top: 5px; }
+.cz-upload.has { border-style: solid; border-color: var(--teal); background: #fff; }
+.cz-upload .preview { max-height: 180px; border-radius: 10px; margin: 0 auto; display: block; }
+.cz-upload .done-tag { margin-top: 14px; display: inline-flex; align-items: center; gap: 7px; color: var(--teal); font-size: 13.5px; font-weight: 500; }
+
+/* consent rows */
+.cz-consents { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+.cz-consent { display: flex; gap: 13px; align-items: flex-start; cursor: pointer; font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
+.cz-consent .box { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--line); flex-shrink: 0; margin-top: 1px; display: grid; place-items: center; color: #fff; transition: all .15s ease; }
+.cz-consent.sel .box { background: var(--primary); border-color: var(--primary); }
+.cz-consent a { color: var(--primary); }
+
+/* ---------- Footer nav (in flow) ---------- */
+.cz-foot {
+  max-width: 680px; margin: 38px auto 0; width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.cz-step.wide ~ .cz-foot, .cz-foot.wide { max-width: 980px; }
+.cz-back {
+  background: transparent; border: 0; font-family: inherit; font-size: 14.5px; color: var(--ink-2);
+  cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 10px 4px;
+  transition: color .2s ease;
+}
+.cz-back:hover { color: var(--ink); }
+.cz-back svg { transition: transform .2s ease; }
+.cz-back:hover svg { transform: translateX(-3px); }
+.cz-foot .right { display: flex; align-items: center; gap: 18px; }
+.cz-foot .reassure { font-size: 12.5px; color: var(--ink-3); }
+.cz-continue {
+  height: 54px; padding: 0 30px; border-radius: 999px; border: 0; cursor: pointer;
+  background: var(--cta, var(--primary)); color: #fff; font-family: inherit; font-size: 15.5px; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 10px; letter-spacing: -0.005em;
+  transition: background .2s ease, transform .15s ease, opacity .2s ease, box-shadow .2s ease;
+  box-shadow: 0 14px 30px -14px var(--cta, var(--primary));
+}
+.cz-continue:hover:not(:disabled) { transform: translateY(-1px); }
+.cz-continue:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
+.cz-continue svg { transition: transform .2s ease; }
+.cz-continue:hover:not(:disabled) svg { transform: translateX(3px); }
+
+/* ---------- Review / recommendation ---------- */
+.cz-rev-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; margin-top: 36px; align-items: start; }
+.cz-panel { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+.cz-panel h3 { font-size: 12px; font-family: "Geist Mono", monospace; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin-bottom: 20px; }
+.cz-summary { display: flex; flex-direction: column; }
+.cz-summ-row { display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-top: 1px solid var(--line-2); font-size: 14.5px; }
+.cz-summ-row:first-of-type { border-top: 0; }
+.cz-summ-row .k { color: var(--ink-3); }
+.cz-summ-row .v { color: var(--ink); font-weight: 500; text-align: right; max-width: 60%; }
+.cz-summ-row .v .tagline { display: inline-block; }
+.cz-tags { display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; }
+.cz-tags span { font-size: 12px; background: var(--primary-tint); color: var(--primary); padding: 4px 10px; border-radius: 999px; }
+
+.cz-provider { display: flex; gap: 16px; align-items: center; margin-bottom: 18px; }
+.cz-provider .av { width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(160deg, var(--primary), var(--primary-2)); color: #fff; display: grid; place-items: center; font-family: "Newsreader", serif; font-style: italic; font-size: 22px; flex-shrink: 0; }
+.cz-provider .pn { font-size: 16px; font-weight: 500; color: var(--ink); }
+.cz-provider .ps { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+.cz-prov-line { font-size: 13px; color: var(--ink-2); line-height: 1.5; padding-top: 16px; border-top: 1px solid var(--line-2); }
+
+.cz-plan { background: linear-gradient(180deg, #fff 0%, var(--primary-50) 130%); border-color: var(--primary); }
+.cz-plan .price { display: flex; align-items: baseline; gap: 5px; margin-bottom: 6px; }
+.cz-plan .price .amt { font-family: "Newsreader", serif; font-style: italic; font-weight: 300; font-size: 40px; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+.cz-plan .price .per { font-family: "Geist Mono", monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.06em; }
+.cz-plan .pname { font-size: 17px; font-weight: 500; color: var(--ink); letter-spacing: -0.015em; margin-bottom: 18px; }
+.cz-plan ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.cz-plan li { font-size: 13.5px; color: var(--ink-2); display: flex; gap: 10px; align-items: flex-start; }
+.cz-plan li .ck { color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+.cz-plan .note { margin-top: 18px; font-size: 12px; color: var(--ink-3); padding-top: 16px; border-top: 1px solid var(--line-2); }
+
+/* ---------- Confirmation ---------- */
+.cz-done { max-width: 660px; margin: auto; text-align: center; padding: 20px 0; }
+.cz-done .seal {
+  width: 88px; height: 88px; border-radius: 50%; margin: 0 auto 28px;
+  background: linear-gradient(160deg, var(--primary), var(--primary-2)); color: #fff;
+  display: grid; place-items: center; box-shadow: 0 24px 50px -22px var(--primary);
+}
+@keyframes czPop { from { transform: scale(0.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.cz-done h1 { font-size: clamp(32px, 4.4vw, 50px); letter-spacing: -0.035em; line-height: 1.04; }
+.cz-done h1 .accent { font-family: "Newsreader", serif; font-style: italic; font-weight: 400; color: var(--primary); }
+.cz-done .sub { font-size: 16.5px; color: var(--ink-2); margin: 18px auto 0; max-width: 480px; line-height: 1.55; }
+.cz-timeline { margin: 40px auto 0; max-width: 520px; text-align: left; display: flex; flex-direction: column; gap: 4px; }
+.cz-tl-item { display: flex; gap: 18px; align-items: flex-start; padding: 4px 0; }
+.cz-tl-item .marker { display: flex; flex-direction: column; align-items: center; align-self: stretch; }
+.cz-tl-item .ring { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-family: "Geist Mono", monospace; font-size: 12px; }
+.cz-tl-item .ring.now { background: var(--primary); color: #fff; }
+.cz-tl-item .ring.next { background: #fff; border: 1.5px solid var(--line); color: var(--ink-3); }
+.cz-tl-item .stem { width: 1.5px; flex: 1; background: var(--line); margin: 4px 0; min-height: 18px; }
+.cz-tl-item:last-child .stem { display: none; }
+.cz-tl-item .body { padding-bottom: 18px; }
+.cz-tl-item .tt { font-size: 15px; font-weight: 500; color: var(--ink); }
+.cz-tl-item .td { font-size: 13.5px; color: var(--ink-3); margin-top: 3px; line-height: 1.45; }
+.cz-done-actions { margin-top: 38px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 820px) {
+  .cz-top { grid-template-columns: 1fr; gap: 14px; padding: 16px 20px; }
+  .cz-top .left, .cz-top .right { justify-self: center; }
+  .cz-prog { order: 3; max-width: 100%; }
+  .cz-main { padding: 8px 20px 40px; }
+  .cz-grid, .cz-checklist { grid-template-columns: 1fr; }
+  .cz-rev-grid { grid-template-columns: 1fr; }
+  .cz-gender { grid-template-columns: 1fr; }
+  .cz-choices.cols-2 { grid-template-columns: 1fr; }
+  .cz-foot .reassure { display: none; }
+}
+/* Inner-page audit: native page scrolling and aligned preparation controls. */
+.restored .cz-shell{height:auto;min-height:70vh}
+.restored .cz-main{overflow:visible;flex:none;padding:20px 32px 64px}
+.restored .cz-center{max-width:920px;margin:auto;min-height:0;justify-content:flex-start}
+.restored .cz-preparation-note{margin:0 0 30px;border-radius:10px;line-height:1.75}
+.restored .cz-preparation-note a{color:#174e6c;text-underline-offset:3px}
+.restored .cz-center>.cz-anim{max-width:100%;width:100%}
+.restored .cz-center h1{font-size:clamp(32px,4vw,48px);line-height:1.15;max-width:22ch;margin-bottom:20px}
+.restored .cz-sub{font-size:16px;line-height:1.75;margin:16px 0 26px;color:#536b80;max-width:700px}
+.restored .cz-center dl{padding:24px;border:1px solid #d7e3eb;border-radius:12px;background:white;max-width:700px}
+.restored .cz-center dl>div{padding:10px 0;border-bottom:1px solid #e5edf2}
+.restored .cz-center dl>div:last-child{border:0}
+.restored .cz-center dt{margin:0}.restored .cz-center dd{overflow-wrap:anywhere}
+.restored .cz-top{max-width:1200px;width:100%;margin:auto}
+.restored .cz-exit,.restored .cz-back{min-height:44px}
+.restored .cz-field:has(>input[type=checkbox]){display:flex;flex-direction:row;gap:12px;align-items:flex-start;line-height:1.65;margin:20px 0}
+.restored .cz-field>input[type=checkbox]{width:20px;height:20px;flex-shrink:0;margin:3px 0}
+.restored .cz-center>.btn{align-self:flex-start;min-height:48px;white-space:normal;line-height:1.5}
+.restored .cz-choice .nm{flex-wrap:wrap}
+.restored .cz-choice .ds{display:block}
+.restored .cz-input-help{display:block;margin-top:8px;font-size:13px;line-height:1.5;color:#536b80}
+.restored .cz-input[aria-invalid="true"]{border-color:#934663}
+.restored .cz-seg button,.restored .cz-scale button{min-height:44px}
+.restored .cz-anim>p:not(.cz-sub)>a,.restored .cz-center>p:not(.cz-sub):not(.cz-preparation-note)>a{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;color:#174e6c;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:550px){.restored .cz-scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.restored .cz-scale button{width:100%}}
+@media(max-width:820px){.restored .cz-main{padding:20px 20px 48px}.restored .cz-gender .cz-choice{display:grid;grid-template-columns:44px 1fr 24px;min-height:0;padding:20px;gap:14px;align-items:center}.restored .cz-gender .ic{width:44px;height:44px}.restored .cz-gender .tx{min-width:0}.restored .cz-choice .ds{line-height:1.6}.restored .cz-input,.restored .cz-select{font-size:16px}}

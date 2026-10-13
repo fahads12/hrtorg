@@ -1,0 +1,22 @@
+{
+  "id": "perimenopause",
+  "prompt": "Use case: photorealistic-natural. Asset: a new original landscape 3:2 photograph for a perimenopause symptom checklist webpage. A fully clothed South Asian woman around 43, dark shoulder-length hair with natural texture, wearing a soft cream shirt and muted plum cardigan, sits at a small light oak table beside a sunlit home window. She thoughtfully writes a short note about her changing symptoms and questions for an upcoming healthcare conversation in an open notebook. An understated paper calendar with simple blank squares lies nearby, no readable numbers or words. No laptop, no phone screen, no pills. Candid medium three-quarter camera angle from slightly above table level showing her face, writing hand and notebook; central-safe composition with the important subjects away from the frame edges. Peaceful adult preparation rather than distress or a generic smiling portrait. Premium realistic editorial healthcare photography, warm neutral interior, soft daylight, subtle navy and plum accents, believable skin texture and anatomically correct natural hands. All written marks indistinct, no text, logos, watermarks, anatomical diagrams, product packaging, diagnostic values, claims, clinical credentials, nudity or before-and-after transformations. Distinct home setting and person from any consultation scene.",
+  "mode": "built-in",
+  "alt": "A woman records symptoms and questions in a notebook beside a calendar at home.",
+  "width": 1536,
+  "height": 1024,
+  "source": "source-content/checklist-images/generated/perimenopause.png",
+  "generatedSource": "C:/Users/Fahad/.codex/generated_images/01a12cac-3734-7961-9566-f626d697c5f2/exec-3178df8f-46fc-43fc-874d-33ee25190074.png",
+  "files": [
+    {
+      "path": "uploads/checklists/perimenopause-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/perimenopause-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

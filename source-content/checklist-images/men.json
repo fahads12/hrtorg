@@ -1,0 +1,22 @@
+{
+  "id": "men",
+  "prompt": "Use case: photorealistic-natural. Asset type: original editorial photograph for a men's hormone symptom checklist on HRT's healthcare website. Create a landscape 3:2 photograph. In a quiet contemporary consultation room with warm neutral walls, a middle-aged man around 52 in a navy knit shirt sits at a light oak desk speaking thoughtfully with a woman healthcare professional around 45 in understated teal scrubs. She listens attentively while he gestures naturally with one relaxed hand beside an open blank notebook. Both fully clothed, ordinary authentic adult appearances, candid rather than promotional posing. Frame both people at waist-up conversational distance in the central two-thirds, with enough breathing room for a center-safe crop. Soft natural window light, restrained navy and teal accents, warm creamy neutrals, subtle depth of field, realistic skin and hands. Show personalized medical care without portraying any specific actual clinician or patient. No laptop required, no medications, no medical equipment clutter, no logos, no visible credentials, no writing or readable text, no watermark, no before-and-after, no diagnostic values, no explicit content. Premium cohesive editorial healthcare photography.",
+  "mode": "built-in",
+  "alt": "A man discusses his symptoms with a healthcare professional during a consultation.",
+  "width": 1536,
+  "height": 1024,
+  "source": "C:/Users/Fahad/.codex/generated_images/01a12cac-7f4d-7f12-97a5-1c9a99454cf0/exec-8165bcb9-884d-422b-a50e-b0b3c48f4b94.png",
+  "original": "source-content/checklist-images/generated/men.png",
+  "files": [
+    {
+      "path": "uploads/checklists/men-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/men-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

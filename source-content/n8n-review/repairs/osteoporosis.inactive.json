@@ -1,0 +1,236 @@
+{
+  "name": "Osteoporosis Typeform Assessment",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "osteoporosis-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1072,
+        96
+      ],
+      "id": "ac76e932-4755-4885-a54c-be29bda5e636",
+      "name": "Webhook (Osteoporosis Submit)",
+      "webhookId": "osteoporosis-typeform-2026-05"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n//  Osteoporosis Self-Assessment — Risk Score Calculator\n//  Based on the Q007 Make.com blueprint.\n//\n//  13 yes/no questions.\n//\n//  Scoring logic:\n//    Risk factors    (q2–q6, q8–q13): Yes = 1 point\n//    Protective      (q1 exercise, q7 calcium): No = 1 point\n//      (not exercising / not meeting calcium = a risk factor)\n//\n//  Tiers — mirroring the Q007 blueprint switch exactly:\n//    risk score <= 3  → Result 1 (Lower risk)\n//    risk score >  3  → Result 2 (Elevated risk)\n// ============================================================\n\nconst data = $input.first().json.body || $input.first().json;\n\nconst fields = [\n  { name: 'q1_exercise',          protective: true  },\n  { name: 'q2_alcohol',           protective: false },\n  { name: 'q3_inactive',          protective: false },\n  { name: 'q4_smoke',             protective: false },\n  { name: 'q5_caffeine',          protective: false },\n  { name: 'q6_medication',        protective: false },\n  { name: 'q7_calcium',           protective: true  },\n  { name: 'q8_absent_periods',    protective: false },\n  { name: 'q9_postmenopausal',    protective: false },\n  { name: 'q10_low_testosterone', protective: false },\n  { name: 'q11_ethnicity',        protective: false },\n  { name: 'q12_family_history',   protective: false },\n  { name: 'q13_curved_back',      protective: false }\n];\n\nlet riskScore = 0;\nconst scores = {};\nconst warnings = [];\n\nfor (const field of fields) {\n  const raw = data[field.name];\n  const ans = raw ? String(raw).trim().toLowerCase() : 'no';\n  let score = 0;\n  if (field.protective) {\n    score = (ans === 'no') ? 1 : 0; // not doing the protective thing = risk\n  } else {\n    score = (ans === 'yes') ? 1 : 0;\n  }\n  scores[field.name] = { raw, ans, score };\n  riskScore += score;\n  if (!raw) warnings.push(field.name + ' is missing');\n}\n\n// Two-tier result — matching Q007 blueprint switch exactly\nlet resultNum, resultLabel, resultContent;\nif (riskScore <= 3) {\n  resultNum = 1;\n  resultLabel = 'Lower Risk Profile';\n  resultContent = 'You have few identified risk factors for osteoporosis at this time. Maintaining your current protective habits — regular weight-bearing exercise, adequate calcium and vitamin D intake, and avoiding smoking and excess alcohol — will help preserve your bone health. A baseline bone density scan is a sensible proactive step, particularly if you are over 40.';\n} else {\n  resultNum = 2;\n  resultLabel = 'Elevated Risk Profile';\n  resultContent = 'You have identified multiple risk factors for osteoporosis. With four or more risk factors, your bone density may be significantly affected. Osteoporosis is highly manageable when detected early — we strongly recommend a DEXA bone density scan, a comprehensive hormone and bone health panel, and a consultation with one of our specialists to discuss your prevention and treatment options.';\n}\n\nreturn [{ json: {\n  patientName:    data.first_name   || '',\n  patientEmail:   data.email        || '',\n  mailingList:    data.mailing_list || '',\n  riskScore,\n  resultNum,\n  resultLabel,\n  resultContent,\n  _debug_scores:   scores,\n  _debug_warnings: warnings\n}}];\n"
+      },
+      "id": "f5678748-d0e1-460a-8063-677523d1256e",
+      "name": "Calculate Scores",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -832,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "v1",
+              "leftValue": "={{ $json.patientEmail }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ef6ffd5d-f026-413d-bc32-30f9051137af",
+      "name": "Has Valid Email?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -592,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\n// Escape only the dynamic name used in the HTML greeting.\nfunction escapePatientName(value) {\n  return String(value)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&#39;');\n}\nconst greeting = d.patientName ? ('Dear ' + escapePatientName(d.patientName)) : 'Hi there';\nconst year = new Date().getFullYear();\n\nconst introMap = {\n  1: `Osteoporosis is a condition in which bones become fragile and brittle due to loss of bone mineral density. It affects over 200 million people worldwide and is responsible for more than 8.9 million fractures annually — yet the majority of people who have it don't know until a fracture occurs.<br/><br/>Based on your responses, your risk profile is relatively low, with fewer than four risk factors identified. This is a good position to be in. The best way to stay there is to maintain your current protective habits — regular weight-bearing exercise, adequate calcium and vitamin D intake, limiting alcohol and caffeine, and avoiding smoking.<br/><br/>We also recommend establishing a bone density baseline with a DEXA scan, especially if you are aged 40 or over. Knowing your bone mineral density today gives you a clear reference point for tracking any changes over time, and allows your clinician to intervene early if needed.`,\n  2: `Osteoporosis is a progressive condition in which bone mineral density declines, making bones increasingly fragile and prone to fractures. It is often called the 'silent disease' because bone loss occurs without symptoms — until a fracture happens, often from a minor fall or movement that would not normally cause injury.<br/><br/>Based on your responses, you have four or more risk factors associated with reduced bone density. These may include postmenopausal status, low testosterone, physical inactivity, smoking, high alcohol or caffeine intake, long-term medication use, a family history of osteoporosis, or absence of menstrual periods — all clinically recognised contributors to bone loss.<br/><br/>The good news is that osteoporosis is highly manageable when detected early. Hormone replacement therapy (HRT) has strong clinical evidence for protecting and improving bone density — particularly oestrogen in women and testosterone in men. Combined with targeted nutritional support, exercise, and lifestyle changes, a comprehensive treatment plan can significantly slow or reverse bone loss.<br/><br/>The critical first step is knowing where your bone density actually stands today. A DEXA scan and hormone panel will give you and your clinician the information needed to build a personalised prevention or treatment plan.`\n};\n\nconst introText = introMap[d.resultNum] || introMap[2];\n\nconst labTests = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTBloodSpotTestKit-9_1024x1024_2x_3025b07b-9b81-4d8f-85a4-2c9aff366530_1024x1024@2x.jpg?v=1571716034',\n    title: 'Female Hormone Panel — At Home Test Kit',\n    desc: 'Measures FSH, LH, oestradiol, and progesterone. Low oestrogen is a primary driver of bone loss in women, particularly after menopause. At-home blood spot collection.',\n    price: '$179.00',\n    url: 'https://store.hrt.org/products/female-hormone-panel-at-home-test-kit'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTBloodSpotTestKit-9_1024x1024_2x_3025b07b-9b81-4d8f-85a4-2c9aff366530_1024x1024@2x.jpg?v=1571716034',\n    title: 'Male Hormone Panel — At Home Testosterone Test Kit',\n    desc: 'Measures total and free testosterone, DHEA-S, and SHBG. Low testosterone in men is a significant and under-recognised driver of osteoporosis.',\n    price: '$189.00',\n    url: 'https://store.hrt.org/products/male-hormone-panel-testosterone-at-home-test-kit'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/Thyroid_Health_Essentials_1024x1024_upclose_1024x1024@2x.png?v=1579640010',\n    title: 'Comprehensive Bone Health Profile',\n    desc: 'Includes vitamin D, calcium, parathyroid hormone (PTH), and key bone turnover markers — giving a complete picture of your bone formation and resorption rates.',\n    price: '$229.00',\n    url: 'https://store.hrt.org/products/comprehensive-bone-health-profile'\n  }\n];\n\nconst products = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Micronized_DHEA_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'DHEA (25mg) — Natural Hormone Support',\n    desc: 'DHEA is a precursor hormone that supports oestrogen and testosterone production. Declining DHEA levels with age contribute to bone loss, and supplementation may help support bone density.',\n    url: 'https://store.hrt.org/products/dhea-25mg-natural-supplement-to-help-maintain-optimal-dhea-levels'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_BioDIM_Complex_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'BioDIM I3C Complex — Hormone Balance Support',\n    desc: 'Supports healthy oestrogen metabolism — important for women at risk of osteoporosis, where oestrogen levels directly influence bone mineral density and remodelling.',\n    url: 'https://store.hrt.org/products/biodim-i3c-complex-natural-hormone-balance-cellular-health-support-supplement'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Thyroid_Support_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'Bone & Joint Support — Natural Supplement',\n    desc: 'A targeted blend of calcium, magnesium, vitamin D3, vitamin K2, and boron — the key micronutrients required for optimal bone mineralisation and maintenance.',\n    url: 'https://store.hrt.org/products/bone-joint-support-natural-supplement'\n  }\n];\n\nconst relatedContent = [\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555c39ac19e2479bac2063_Andropause%E2%80%94Symptoms-Testing-and-Treatment.jpeg',\n    title: 'Osteoporosis — Risk Factors, Testing and Treatment',\n    url: 'https://www.hrt.org/osteoporosis-risk-factors-testing-treatment/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555be813ceda6560a19756_Thyroid-Disease%E2%80%94The-Symptoms-Cures-and-Causes.jpeg',\n    title: 'HRT and Bone Density — What the Research Shows',\n    url: 'https://www.hrt.org/hrt-and-bone-density/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555b7f12c18d7342ac77ba_Thyroid-Cancer%E2%80%94Signs-Risk-Types-and-Treatments.jpg',\n    title: 'Calcium and Vitamin D — Getting the Dosage Right',\n    url: 'https://www.hrt.org/calcium-vitamin-d-dosage/'\n  }\n];\n\nfunction labRow(t) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${t.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${t.title}\" border=\"0\" class=\"w183\" src=\"${t.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${t.title}</div><div style=\"color:#000;font-weight:300;font-size:13px\">${t.desc}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;\">${t.price}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction productRow(p) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${p.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${p.title}\" border=\"0\" class=\"w183\" src=\"${p.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${p.title}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;\">${p.desc}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction blogCol(b) {\n  return `<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0 0 5px 0 rgba(0,0,0,.25);border-radius:5px;\" class=\"force-col-th\"><a href=\"${b.url}\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" style=\"padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"${b.title}\" border=\"0\" class=\"w159\" height=\"106\" src=\"${b.img}\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr><tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-transform:uppercase;\">${b.title}</div></td></tr><tr><td><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;\">HRT.org Blog</div></td></tr></table></td></tr></table></a></th>`;\n}\n\nconst ctaBlock = `<tr><td bgcolor=\"#2a7f7f\" class=\"t_block\" align=\"center\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr><td valign=\"middle\" style=\"font-weight:normal;padding-right:20px;\"><div style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;\">Free Consultation</div></td><td valign=\"middle\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td bgcolor=\"#5aabab\" style=\"padding:10px 20px;\"><a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a></td></tr></table></td></tr></table></td></tr>`;\n\nconst html = `<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;\"/>\n<title></title>\n<link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap\" rel=\"stylesheet\"/>\n<style type=\"text/css\">\n#outlook a{padding:0}body{width:100%!important;margin:0;padding:0;background-color:#fff}\ntable{mso-table-lspace:0;mso-table-rspace:0}img{border:0;height:auto;line-height:100%;outline:0;text-decoration:none;-ms-interpolation-mode:bicubic}\n.a_block{display:block;text-decoration:none}.t_shadow_block{padding:15px;-webkit-box-shadow:0 0 5px 0 rgba(0,0,0,.25);border-radius:5px}\n.t_block{padding:30px 20px}.blog_box{padding:10px 5px}\n@media screen and (max-width:480px){table[class=columns]{width:100%!important}th[class=force-col-th]{display:block;width:100%!important}img[class=imagescale]{max-width:100%!important;width:100%!important;height:auto!important}img[class=w183]{max-width:120px!important;width:100%!important;height:auto!important}img[class=w159]{max-width:300px!important;width:100%!important;height:auto!important}}\n</style></head>\n<body>\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" bgcolor=\"#FFFFFF\" valign=\"top\">\n<table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns\">\n\n<tr><td style=\"padding:20px;text-align:center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"font-family:'Montserrat Black',sans-serif;font-size:32px;text-decoration:none;color:#000000;\">HRT.org</a></td></tr>\n\n<tr><td><img alt=\"\" border=\"0\" class=\"imagescale\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_p1bc9c6.jpg\" style=\"width:600px;max-width:600px;height:auto;\" width=\"600\"></td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td style=\"padding:35px 20px 0;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000\">Your Assessment Results</div></td></tr>\n<tr><td style=\"padding-bottom:10px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;\">Risk Factors Identified: <b>${d.riskScore} / 13</b> &nbsp;|&nbsp; ${d.resultLabel}</div></td></tr>\n<tr><td style=\"padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.6\">${d.resultContent}</div></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#2a7f7f\" style=\"padding:30px 20px;\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr>\n<td bgcolor=\"#5aabab\" style=\"padding:10px 20px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">BOOK A FREE CONSULTATION</a>\n</td></tr></table></td></tr>\n\n<tr><td bgcolor=\"#ffffff\" style=\"padding:35px 20px;\">\n<div align=\"left\" style=\"color:#4e525e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.7\">${greeting},<br/><br/>${introText}<br/><br/>Feel free to reach out to one of our healthcare specialists for a private consultation, or contact us with any questions about your bone health.<br/><br/>We look forward to supporting you.<br/><br/>Sincerely,<br/><b>The HRT.org Team</b></div>\n</td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Suggested Lab Tests</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Easy &amp; Convenient Test Kits</div></td></tr>\n</table></td></tr>\n${labTests.map(labRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Popular Related Products</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Check out some of our best products</div></td></tr>\n</table></td></tr>\n${products.map(productRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td>\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding:35px 20px 10px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000;\">Related Content</div></td></tr>\n<tr><td style=\"padding:0 20px 30px;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n${relatedContent.map((b, i) => blogCol(b) + (i < relatedContent.length - 1 ? '<th width=\"15\" valign=\"top\" style=\"font-weight:normal;\"><div style=\"line-height:20px;height:20px;\"> </div></th>' : '')).join('')}\n</tr></table></td></tr>\n<tr><td align=\"center\" style=\"padding-bottom:20px;\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"text-decoration:none;\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td bgcolor=\"#2a7f7f\" style=\"padding:10px 20px;\"><div style=\"color:#ffffff;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">VIEW ALL</div></td></tr></table></a></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1d1d1d\" style=\"padding:30px 0;border-bottom:#ffffff solid 10px;\" align=\"center\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"padding:20px 20px 0;color:#8e8e8e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">\n<a href=\"tel:888-574-5524\" style=\"color:#8e8e8e;text-decoration:none;\">Call Us Toll Free: 888-574-5524</a><br/>\n<a href=\"https://www.hrt.org\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">hrt.org</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Contact Support</a> | <a href=\"https://www.hrt.org/terms-and-conditions/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Terms &amp; Conditions</a> | <a href=\"https://www.hrt.org/privacy-policy/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Privacy Policy</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;border-top:#313131 solid 1px;\"><div style=\"color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">© HRT.org ${year}</div></td></tr>\n</table></td></tr>\n\n</table></td></tr></table>\n</body></html>`;\n\nreturn [{ json: { ...d, htmlEmailBody: html, emailSubject: 'Osteoporosis Self-Assessment - Results | HRT.org' } }];\n"
+      },
+      "id": "daeaefbc-a3f7-4b32-846b-34a3a2ee9633",
+      "name": "Build HTML Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -352,
+        16
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.patientEmail }}",
+        "subject": "={{ $json.emailSubject }}",
+        "message": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        }
+      },
+      "id": "00804d6c-e3df-42fa-824e-8bcd8a6bfb8c",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -112,
+        16
+      ],
+      "webhookId": "7153578d-9f57-4d20-9a4f-f2ade07b11f2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "W8RSrjkrLCD0dLx9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: true,\n  accepted: true,\n  emailSent: true,\n  riskScore: $('Calculate Scores').first().json.riskScore,\n  resultNum: $('Calculate Scores').first().json.resultNum,\n  resultLabel: $('Calculate Scores').first().json.resultLabel,\n  resultContent: $('Calculate Scores').first().json.resultContent,\n  message: 'Your osteoporosis assessment is complete. A copy has been sent to your email.'\n} }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "id": "7f17b33f-65d7-4bb6-98f2-641d8691f9b8",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        128,
+        16
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: false, error: 'INVALID_EMAIL', message: 'Email address is missing or invalid.' } }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "06aa9dd9-1633-413f-b749-4463c66ac9cb",
+      "name": "Respond - Invalid Email",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -352,
+        256
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook (Osteoporosis Submit)": {
+      "main": [
+        [
+          {
+            "node": "Calculate Scores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Scores": {
+      "main": [
+        [
+          {
+            "node": "Has Valid Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Valid Email?": {
+      "main": [
+        [
+          {
+            "node": "Build HTML Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Invalid Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build HTML Email": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "id": "oDPP3fwZlDKMlJQi",
+  "tags": []
+}

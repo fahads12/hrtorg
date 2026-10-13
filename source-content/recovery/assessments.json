@@ -1,0 +1,192 @@
+{
+  "women": {
+    "groups": [
+      {
+        "label": "Psychological",
+        "options": [
+          "Mood swings (PMS)",
+          "Foggy thinking",
+          "Depressed mood",
+          "Irritability",
+          "Low libido/decreased sexual function",
+          "Food cravings",
+          "Sugar cravings",
+          "Sleep disturbances",
+          "Anxiety",
+          "Feeling cold all the time"
+        ]
+      },
+      {
+        "label": "Reproductive & hormonal",
+        "options": [
+          "Acne",
+          "Brittle nails",
+          "Dry skin",
+          "Thinning hair",
+          "Increased body/facial hair",
+          "Inability to lose weight",
+          "Weight gain",
+          "Waist size over 35 inches",
+          "Heavy menses",
+          "Menstrual irregularities",
+          "Vaginal dryness",
+          "Fibrocystic breasts",
+          "Cystic ovaries",
+          "Uterine fibroids"
+        ]
+      },
+      {
+        "label": "Metabolic & physical",
+        "options": [
+          "Bone loss",
+          "Hot flashes",
+          "Headaches",
+          "Aches and pains",
+          "Infertility",
+          "Constipation",
+          "Urinary incontinence",
+          "Night sweats",
+          "Heart palpitations",
+          "Low physical activity",
+          "Morning fatigue",
+          "Evening fatigue",
+          "Fatigue",
+          "Cold hands and feet"
+        ]
+      },
+      {
+        "label": "Cardiovascular & chronic disease risk",
+        "options": [
+          "Chronic health problems",
+          "Susceptibility to infections",
+          "Allergies",
+          "Autoimmune diseases",
+          "Low blood sugar",
+          "High blood sugar",
+          "Diabetes/prediabetes or family history of diabetes",
+          "Elevated cholesterol",
+          "High blood pressure",
+          "Heart disease or family history of heart disease",
+          "Elevated triglycerides",
+          "History of steroid usage",
+          "History of smoking"
+        ]
+      }
+    ],
+    "resultLabels": [
+      "Category 1 — Psychological Dominant",
+      "Category 2 — Reproductive & Hormonal Dominant",
+      "Category 3 — Metabolic & Physical Dominant",
+      "Category 4 — Cardiovascular & Chronic Disease Risk Dominant",
+      "Category 5 — Multiple Systems Affected"
+    ],
+    "scoringFunction": "function determineResult(cat1, cat2, cat3, cat4) {\n    if (cat1 > 0 && cat2 > 0 && cat3 > 0 && cat4 > 0) return 5;\n    if (cat1 + cat2 > cat3 + cat4) return cat1 > cat2 ? 1 : 2;\n    return cat3 > cat4 ? 3 : 4;\n  }",
+    "webhook": "https://vmi3206755.contaboserver.net/webhook/hormone-women-typeform-submit",
+    "submissionFields": [
+      "first_name",
+      "email",
+      "mailing_list",
+      "cat1",
+      "cat2",
+      "cat3",
+      "cat4"
+    ]
+  },
+  "men": {
+    "groups": [
+      {
+        "label": "Psychological",
+        "options": [
+          "Feeling burned out",
+          "Irritable",
+          "Apathy",
+          "Depression",
+          "Anxiety",
+          "Stress",
+          "Sugar cravings",
+          "Insomnia",
+          "Sleep disturbances",
+          "Hot flashes",
+          "Lack of motivation",
+          "Foggy thinking",
+          "Decreased mental sharpness",
+          "Decreased libido"
+        ]
+      },
+      {
+        "label": "Sexual, urinary & energy",
+        "options": [
+          "Decreased erections",
+          "Erectile dysfunction",
+          "Decreased urine flow",
+          "Increased urinary urge",
+          "Constipation",
+          "Prostate problems",
+          "Infertility problems",
+          "Feeling cold",
+          "Night sweats",
+          "Decreased stamina",
+          "Morning fatigue",
+          "Evening fatigue",
+          "Fatigue"
+        ]
+      },
+      {
+        "label": "Metabolic & physical",
+        "options": [
+          "Low physical activity",
+          "Inability to lose weight",
+          "Decreased muscle mass",
+          "Weight gain",
+          "Weight gain (waist specifically)",
+          "Waist size greater than 40 inches",
+          "Oily skin",
+          "Dry skin",
+          "Brittle nails",
+          "Aches and pains",
+          "Headaches",
+          "Bone loss",
+          "Fibromyalgia"
+        ]
+      },
+      {
+        "label": "Cardiovascular & chronic disease risk",
+        "options": [
+          "Allergies",
+          "Autoimmune disease",
+          "Susceptibility to infections",
+          "Chronic health problems",
+          "History of smoking",
+          "Elevated cholesterol",
+          "High blood pressure",
+          "Elevated triglycerides",
+          "Heart palpitations",
+          "Heart disease",
+          "Family history of heart disease",
+          "Low blood sugar",
+          "High blood sugar",
+          "Diabetes",
+          "Family history of diabetes"
+        ]
+      }
+    ],
+    "resultLabels": [
+      "Category 1 — Psychological Dominant",
+      "Category 2 — Sexual & Urinary Dominant",
+      "Category 3 — Metabolic & Physical Dominant",
+      "Category 4 — Cardiovascular & Chronic Disease Risk Dominant",
+      "Category 5 — Multiple Systems Affected"
+    ],
+    "scoringFunction": "function determineResult(cat1, cat2, cat3, cat4) {\n    if (cat1 > 0 && cat2 > 0 && cat3 > 0 && cat4 > 0) return 5;\n    if (cat1 + cat2 > cat3 + cat4) return cat1 > cat2 ? 1 : 2;\n    return cat3 > cat4 ? 3 : 4;\n  }",
+    "webhook": "https://vmi3206755.contaboserver.net/webhook/hormone-men-typeform-submit",
+    "submissionFields": [
+      "first_name",
+      "email",
+      "mailing_list",
+      "cat1",
+      "cat2",
+      "cat3",
+      "cat4"
+    ]
+  }
+}

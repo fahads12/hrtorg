@@ -1,0 +1,1839 @@
+{
+  "inaccessible": [
+    {
+      "url": "https://hrt.org/adrenal-fatigue-stress",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/andropause-assessment",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/dhea-and-the-production-of-male-and-female-sex-hormones",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/drafts/shop",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/health-information-privacy-policy",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/hormone-tests",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/hormone-tests/cortisol-blood-test-cortisol-levels",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/hormone-tests/estrogens",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/hormone-tests/progesterone",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/hormone-tests/testosterone",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/informed-consent-regarding-nutritional-herbal-supplements",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/menopause-in-midlife-signup",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/menopause-symptoms-self-assessment",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/old-home",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/osteoporosis-assessment",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/perimenopause-symptom-self-assessment",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/premenstrual-syndrome-pms-causes-symptoms-relief",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/product-category/saliva-testing",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hrt.org/scholarship",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://hrt.org",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/anastrozole-arimidex",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/armour-thyroid",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/b12-mic-methionine-inositol-and-choline-injections",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/cialis",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/clomiphene-clomid",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/dhea-capsules",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/estradiol-cream",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/estradiol-tablet",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/estrogen",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/estrogen-progesterone-cream",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/finasteride-propecia",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/gac-glutamine-arginine-carnitine",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/glutathione-injections",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/liothyronine-cytomel",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/metformin-glucophage",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/minoxidil-rogaine",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/nad-injections",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/nad-nasal-spray",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/np-thyroid",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/optimal-female-balanced-hormone-therapy-for-women",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/optimal-female-hormone-test-kit-consultation",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/optimal-male-balanced-hormone-therapy-for-men",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/optimal-male-hormone-test-kit-hormone-consultation",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/progesterone-capsules",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/progesterone-cream",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/pt-141",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/semaglutide-bioboost-injections",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/semaglutide-injections",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/sermorelin",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/sildenafil-viagra",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/tadalafil",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/testosterone-cream",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/testosterone-cypionate",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/viagra",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/vitamin-b12-cyanocobalamin",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/hrt-products/vitamin-c-injections",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/plans/hot-flash-support",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/plans/sexual-health",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/drafts/anti-aging-peptides",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/drafts/hair-loss-new",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/drafts/home-2",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/drafts/hormone-replacement-therapy",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/drafts/sexual-health",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/drafts/weight-loss",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/template/changelog",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/template/navs-footers",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/template/style-guide",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    },
+    {
+      "url": "https://hrt.org/template/licensing",
+      "reason": "Homepage handled separately; store, draft and template pages not imported."
+    }
+  ],
+  "thin": [
+    "https://hrt.org/contact",
+    "https://hrt.org/glp-1/alcohol",
+    "https://hrt.org/glp-1/benefits-beyond-weight-loss",
+    "https://hrt.org/glp-1/constipation",
+    "https://hrt.org/glp-1/diarrhea",
+    "https://hrt.org/glp-1/dosing-titration",
+    "https://hrt.org/glp-1/eligibility",
+    "https://hrt.org/glp-1/fatigue",
+    "https://hrt.org/glp-1/glp-1-medications-overview",
+    "https://hrt.org/glp-1/hair-loss",
+    "https://hrt.org/glp-1/how-long-to-work",
+    "https://hrt.org/glp-1/insulin-resistance",
+    "https://hrt.org/glp-1/mounjaro-vs-zepbound",
+    "https://hrt.org/glp-1/nausea",
+    "https://hrt.org/glp-1/ozempic-face",
+    "https://hrt.org/glp-1/plateau",
+    "https://hrt.org/glp-1/prediabetes",
+    "https://hrt.org/glp-1/quiz",
+    "https://hrt.org/glp-1/reflux-heartburn",
+    "https://hrt.org/glp-1/rybelsus-vs-ozempic",
+    "https://hrt.org/glp-1/semaglutide-vs-tirzepatide",
+    "https://hrt.org/glp-1/side-effects",
+    "https://hrt.org/glp-1/stopping",
+    "https://hrt.org/glp-1/stopping-2500a",
+    "https://hrt.org/glp-1/strength-training",
+    "https://hrt.org/glp-1/wegovy-vs-zepbound",
+    "https://hrt.org/glp-1/what-to-eat",
+    "https://hrt.org/legal/pharmacy-information",
+    "https://hrt.org/menopause-quiz",
+    "https://hrt.org/providers/medical-team"
+  ],
+  "policyChecks": [
+    {
+      "url": "https://hrt.org/legal/consent-to-telehealth",
+      "exactNormalizedText": true,
+      "sha256": "a4015d22a9f2fae35060c6d5e5dcd8f72ddd266c9dd6c83ff656f06537be083e"
+    },
+    {
+      "url": "https://hrt.org/legal/health-information-privacy-practices",
+      "exactNormalizedText": true,
+      "sha256": "7ba02410212387827d6c62e1fd48ed7d197dbb38af486a77b6cd85d2c2e38ed5"
+    },
+    {
+      "url": "https://hrt.org/legal/informed-consent-regarding-nutritional-and-herbal-supplements",
+      "exactNormalizedText": true,
+      "sha256": "541b47d467cc1901045c83f2832ae4c7237da92b1e7e75bb8a4342ad4b147e5d"
+    },
+    {
+      "url": "https://hrt.org/legal/pharmacy-information",
+      "exactNormalizedText": true,
+      "sha256": "913399247d5554d711c1722b18916746ec430298a353dfb0074cecb43255a55e"
+    },
+    {
+      "url": "https://hrt.org/legal/privacy-policy",
+      "exactNormalizedText": true,
+      "sha256": "173bf0c9555587b9fc878359cd255a38a6b190eb69c4d980f713848817e421f0"
+    },
+    {
+      "url": "https://hrt.org/privacy-policy",
+      "exactNormalizedText": true,
+      "sha256": "42775f6c30528e89f126257ad400cbbe0757695ca733261fb0b3dbe30a0a3a5c"
+    },
+    {
+      "url": "https://hrt.org/return-policy",
+      "exactNormalizedText": true,
+      "sha256": "fa3466eceddc1e34eee720fab96d85a472812bf3b10f455f352628111fd42a31"
+    },
+    {
+      "url": "https://hrt.org/terms-and-conditions",
+      "exactNormalizedText": true,
+      "sha256": "73bdd947f00d044da707e355a930335e65eb64dafe6f644b04bbc12e71db501f"
+    }
+  ],
+  "assetFailures": [],
+  "pages": [
+    {
+      "file": "category/health/index.html",
+      "title": "Health",
+      "source": "https://hrt.org/category/health"
+    },
+    {
+      "file": "checklist/adrenal-fatigue/index.html",
+      "title": "Adrenal Fatigue & Stress Assessment Quiz - Test Online If You Have Adrenal Fatigue",
+      "source": "https://hrt.org/checklist/adrenal-fatigue"
+    },
+    {
+      "file": "checklist/adrenal-fatigue-stress-test/index.html",
+      "title": "Adrenal Fatigue Quiz - Take the Test for Adrenal Fatigue, Burnout & Stress for Answers",
+      "source": "https://hrt.org/checklist/adrenal-fatigue-stress-test"
+    },
+    {
+      "file": "checklist/andropause-assessment/index.html",
+      "title": "Andropause Assessment Quiz - Test Online If You Have Low Testosterone",
+      "source": "https://hrt.org/checklist/andropause-assessment"
+    },
+    {
+      "file": "checklist/andropause-symptoms-test-assessment/index.html",
+      "title": "Andropause Symptoms Test - Do Men Go Through Menopause?",
+      "source": "https://hrt.org/checklist/andropause-symptoms-test-assessment"
+    },
+    {
+      "file": "checklist/erectile-dysfunction-ed-symptom-checklist/index.html",
+      "title": "Erectile Dysfunction Quiz & Online Self-Test – How to Test for ED",
+      "source": "https://hrt.org/checklist/erectile-dysfunction-ed-symptom-checklist"
+    },
+    {
+      "file": "checklist/general-nutritional-nutrient-deficiency-symptom-checklist/index.html",
+      "title": "Nutritional Deficiency Signs and Symptoms Checklist",
+      "source": "https://hrt.org/checklist/general-nutritional-nutrient-deficiency-symptom-checklist"
+    },
+    {
+      "file": "checklist/hormone-imbalance/index.html",
+      "title": "Master Your Health: The Ultimate Hormone Symptom Checklist Explained",
+      "source": "https://hrt.org/checklist/hormone-imbalance"
+    },
+    {
+      "file": "checklist/hormone-symptom-checklist/index.html",
+      "title": "Hormone Symptom Checklist Quiz– How to Check Hormone Levels at Home",
+      "source": "https://hrt.org/checklist/hormone-symptom-checklist"
+    },
+    {
+      "file": "checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test/index.html",
+      "title": "Check Hormonal Imbalance in Women with Our Online Quiz",
+      "source": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test"
+    },
+    {
+      "file": "checklist/hormone-symptom-checklist-men/index.html",
+      "title": "Check hormonal imbalance in men with our online test",
+      "source": "https://hrt.org/checklist/hormone-symptom-checklist-men"
+    },
+    {
+      "file": "checklist/low-testosterone-low-t-quiz-free-evaluation/index.html",
+      "title": "Low Testosterone Quiz - Test Your Testosterone Levels",
+      "source": "https://hrt.org/checklist/low-testosterone-low-t-quiz-free-evaluation"
+    },
+    {
+      "file": "checklist/main-assessment-page/index.html",
+      "title": "SELF ASSESSMENT QUIZZES",
+      "source": "https://hrt.org/checklist/main-assessment-page"
+    },
+    {
+      "file": "checklist/menopause-assessment/index.html",
+      "title": "Menopause Self-Assessment Quiz - Test Online If You Are in Menopause",
+      "source": "https://hrt.org/checklist/menopause-assessment"
+    },
+    {
+      "file": "checklist/new-patient-health-supplement-required-intake-information/index.html",
+      "title": "NEW PATIENT – HEALTH SUPPLEMENT REQUIRED INTAKE INFORMATION",
+      "source": "https://hrt.org/checklist/new-patient-health-supplement-required-intake-information"
+    },
+    {
+      "file": "checklist/osteoporosis-signs-symptoms-assessment-free-self-check-evaluation/index.html",
+      "title": "Bone Quiz - Take Our Test to Check if You're at Risk for Osteoporosis",
+      "source": "https://hrt.org/checklist/osteoporosis-signs-symptoms-assessment-free-self-check-evaluation"
+    },
+    {
+      "file": "checklist/perimenopause-assessment/index.html",
+      "title": "Perimenopause Assessment Quiz - Test Online If You Are in Perimenopause",
+      "source": "https://hrt.org/checklist/perimenopause-assessment"
+    },
+    {
+      "file": "checklist/perimenopause-symptom-self-assessment/index.html",
+      "title": "Perimenopause Online Quiz Free - Test for Perimenopause",
+      "source": "https://hrt.org/checklist/perimenopause-symptom-self-assessment"
+    },
+    {
+      "file": "checklist/pms-assessment/index.html",
+      "title": "PMS Self-Assessment Quiz - Test Online If You Have Premenstrual Syndrome",
+      "source": "https://hrt.org/checklist/pms-assessment"
+    },
+    {
+      "file": "checklist/premenstrual-syndrome-pms-self-assessment/index.html",
+      "title": "Premenstrual Syndrome (PMS) Quiz Online – PMS Signs Self Assessment",
+      "source": "https://hrt.org/checklist/premenstrual-syndrome-pms-self-assessment"
+    },
+    {
+      "file": "checklist/weight-loss/index.html",
+      "title": "Free Weight Loss Quizz - Why am I not losing weight test?",
+      "source": "https://hrt.org/checklist/weight-loss"
+    },
+    {
+      "file": "glp-1/alcohol/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/alcohol"
+    },
+    {
+      "file": "glp-1/benefits-beyond-weight-loss/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/benefits-beyond-weight-loss"
+    },
+    {
+      "file": "glp-1/constipation/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/constipation"
+    },
+    {
+      "file": "glp-1/diarrhea/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/diarrhea"
+    },
+    {
+      "file": "glp-1/dosing-titration/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/dosing-titration"
+    },
+    {
+      "file": "glp-1/eligibility/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/eligibility"
+    },
+    {
+      "file": "glp-1/fatigue/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/fatigue"
+    },
+    {
+      "file": "glp-1/glp-1-medications-overview/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/glp-1-medications-overview"
+    },
+    {
+      "file": "glp-1/hair-loss/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/hair-loss"
+    },
+    {
+      "file": "glp-1/how-long-to-work/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/how-long-to-work"
+    },
+    {
+      "file": "glp-1/insulin-resistance/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/insulin-resistance"
+    },
+    {
+      "file": "glp-1/mounjaro-vs-zepbound/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/mounjaro-vs-zepbound"
+    },
+    {
+      "file": "glp-1/nausea/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/nausea"
+    },
+    {
+      "file": "glp-1/ozempic-face/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/ozempic-face"
+    },
+    {
+      "file": "glp-1/ozempic-vs-wegovy/index.html",
+      "title": "Ozempic vs Wegovy: Same medication, different purpose.",
+      "source": "https://hrt.org/glp-1/ozempic-vs-wegovy"
+    },
+    {
+      "file": "glp-1/plateau/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/plateau"
+    },
+    {
+      "file": "glp-1/prediabetes/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/prediabetes"
+    },
+    {
+      "file": "glp-1/quiz/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/quiz"
+    },
+    {
+      "file": "glp-1/reflux-heartburn/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/reflux-heartburn"
+    },
+    {
+      "file": "glp-1/rybelsus-vs-ozempic/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/rybelsus-vs-ozempic"
+    },
+    {
+      "file": "glp-1/semaglutide-vs-tirzepatide/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/semaglutide-vs-tirzepatide"
+    },
+    {
+      "file": "glp-1/side-effects/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/side-effects"
+    },
+    {
+      "file": "glp-1/stopping/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/stopping"
+    },
+    {
+      "file": "glp-1/stopping-2500a/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/stopping-2500a"
+    },
+    {
+      "file": "glp-1/strength-training/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/strength-training"
+    },
+    {
+      "file": "glp-1/wegovy-vs-zepbound/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/wegovy-vs-zepbound"
+    },
+    {
+      "file": "glp-1/what-to-eat/index.html",
+      "title": "",
+      "source": "https://hrt.org/glp-1/what-to-eat"
+    },
+    {
+      "file": "health/10-important-reasons-need-turmeric-and-curcumin/index.html",
+      "title": "10 Important Reasons You Need Turmeric and Curcumin",
+      "source": "https://hrt.org/health/10-important-reasons-need-turmeric-and-curcumin"
+    },
+    {
+      "file": "health/5-popular-hair-loss-myths-debunked-what-you-should-be-doing-for-thicker-healthier-hair/index.html",
+      "title": "5 Popular Hair Loss Myths Debunked —  What You Should Be Doing For Thicker, Healthier Hair",
+      "source": "https://hrt.org/health/5-popular-hair-loss-myths-debunked-what-you-should-be-doing-for-thicker-healthier-hair"
+    },
+    {
+      "file": "health/adrenal-fatigue-how-stress-affects-hormone-levels/index.html",
+      "title": "Adrenal Fatigue—How Stress Affects Hormone Levels",
+      "source": "https://hrt.org/health/adrenal-fatigue-how-stress-affects-hormone-levels"
+    },
+    {
+      "file": "health/answers-for-adrenal-insufficiency-and-addisons-disease-what-you-dont-know-can-hurt-you/index.html",
+      "title": "Answers for Adrenal Insufficiency and Addison’s Disease, What You Don’t Know Can Hurt You",
+      "source": "https://hrt.org/health/answers-for-adrenal-insufficiency-and-addisons-disease-what-you-dont-know-can-hurt-you"
+    },
+    {
+      "file": "health/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease/index.html",
+      "title": "ApoE Testing For The Apolipoprotein E Genotype, Linked to Alzheimer’s and Cardiovascular Disease",
+      "source": "https://hrt.org/health/apoe-testing-for-the-apolipoprotein-e-genotype-linked-tp-alzheimers-and-cardiovascular-disease"
+    },
+    {
+      "file": "health/are-night-sweats-keeping-you-up-get-relief-in-menopause/index.html",
+      "title": "Are Night Sweats Keeping You Up?— Get Relief in Menopause",
+      "source": "https://hrt.org/health/are-night-sweats-keeping-you-up-get-relief-in-menopause"
+    },
+    {
+      "file": "health/b12-energy-booster-vitamin-b12-injections/index.html",
+      "title": "Vitamin B12 Energy",
+      "source": "https://hrt.org/health/b12-energy-booster-vitamin-b12-injections"
+    },
+    {
+      "file": "health/beating-the-bloat-stomach-bloating-and-good-gastrointestinal-health/index.html",
+      "title": "Beating The Bloat—Stomach Bloating and Good Gastrointestinal Health",
+      "source": "https://hrt.org/health/beating-the-bloat-stomach-bloating-and-good-gastrointestinal-health"
+    },
+    {
+      "file": "health/bioidentical-hormone-replacement-therapy-bhrt-cost-facts-faqs-finding-answers/index.html",
+      "title": "BHRT Cost, Facts and FAQ’s — Finding Answers With Bioidentical Hormone Replacement Therapy",
+      "source": "https://hrt.org/health/bioidentical-hormone-replacement-therapy-bhrt-cost-facts-faqs-finding-answers"
+    },
+    {
+      "file": "health/bioidentical-hormones-know-the-side-effects/index.html",
+      "title": "Bioidentical Hormones—Know The Side Effects",
+      "source": "https://hrt.org/health/bioidentical-hormones-know-the-side-effects"
+    },
+    {
+      "file": "health/birth-control-types-side-effects-effectiveness-15-options-pregnancy-prevention/index.html",
+      "title": "Birth Control Types, Side Effects and Effectiveness—15 Options For Pregnancy Prevention",
+      "source": "https://hrt.org/health/birth-control-types-side-effects-effectiveness-15-options-pregnancy-prevention"
+    },
+    {
+      "file": "health/black-cohosh-natural-treatment-menopause-relief/index.html",
+      "title": "Black Cohosh—Natural Treatment for Menopause Relief",
+      "source": "https://hrt.org/health/black-cohosh-natural-treatment-menopause-relief"
+    },
+    {
+      "file": "health/blood-clots-that-can-kill/index.html",
+      "title": "Blood Clots That Can Kill",
+      "source": "https://hrt.org/health/blood-clots-that-can-kill"
+    },
+    {
+      "file": "health/blood-pressure-statin-and-cholesterol-drugs-items-to-consider/index.html",
+      "title": "Blood Pressure, Statin and Cholesterol Drugs - Items to Consider",
+      "source": "https://hrt.org/health/blood-pressure-statin-and-cholesterol-drugs-items-to-consider"
+    },
+    {
+      "file": "health/brain-fog-your-brain-on-hormones-when-you-just-cant-think/index.html",
+      "title": "Brain Fog—Your Brain on Hormones, When You Just Can’t Think",
+      "source": "https://hrt.org/health/brain-fog-your-brain-on-hormones-when-you-just-cant-think"
+    },
+    {
+      "file": "health/breast-cancer-basics-symptoms-risks-stages-treatments/index.html",
+      "title": "Breast Cancer Basics — The Symptoms, Risks, Stages and Treatments Every Woman Should Know",
+      "source": "https://hrt.org/health/breast-cancer-basics-symptoms-risks-stages-treatments"
+    },
+    {
+      "file": "health/cardiometabolic-testing-cardiovascular-disease-metabolic-risk-pre-diabetes-and-vascular-inflammation/index.html",
+      "title": "CardioMetabolic Testing (Cardiovascular disease, Metabolic risk, Pre-Diabetes, and Vascular Inflammation)",
+      "source": "https://hrt.org/health/cardiometabolic-testing-cardiovascular-disease-metabolic-risk-pre-diabetes-and-vascular-inflammation"
+    },
+    {
+      "file": "health/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms/index.html",
+      "title": "Chronic Fatigue Syndrome Explained—Possible Causes, Diagnosis, and Treatment for Debilitating Symptoms",
+      "source": "https://hrt.org/health/chronic-fatigue-syndrome-explained-possible-causes-diagnosis-treatment-debilitating-symptoms"
+    },
+    {
+      "file": "health/chronic-pain-conditions-causes-treatment/index.html",
+      "title": "Chronic Pain—Conditions, Causes and Treatment",
+      "source": "https://hrt.org/health/chronic-pain-conditions-causes-treatment"
+    },
+    {
+      "file": "health/compounding-pharmacy-customized-medication-men-women-natural-choice/index.html",
+      "title": "Compounding Pharmacy - Customized Medication for Men & Women—The Natural Choice",
+      "source": "https://hrt.org/health/compounding-pharmacy-customized-medication-men-women-natural-choice"
+    },
+    {
+      "file": "health/coronary-heart-disease-and-the-benefits-of-regular-exercise/index.html",
+      "title": "Coronary Heart Disease and the Benefits of Regular Exercise",
+      "source": "https://hrt.org/health/coronary-heart-disease-and-the-benefits-of-regular-exercise"
+    },
+    {
+      "file": "health/coronavirus-covid-19-the-cough-that-kills-answers-to-your-most-frequently-asked-questions/index.html",
+      "title": "Coronavirus (COVID-19), The Cough That Kills—Answers to Your Most Frequently Asked Questions",
+      "source": "https://hrt.org/health/coronavirus-covid-19-the-cough-that-kills-answers-to-your-most-frequently-asked-questions"
+    },
+    {
+      "file": "health/cortisol-testing-test-your-cortisol-levels-blood-urine-saliva/index.html",
+      "title": "Cortisol Testing | Test Your Cortisol Levels (Blood, Urine, Saliva)",
+      "source": "https://hrt.org/health/cortisol-testing-test-your-cortisol-levels-blood-urine-saliva"
+    },
+    {
+      "file": "health/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures/index.html",
+      "title": "Cushing’s Disease vs. Cushing’s Syndrome—The Cortisol Connection, Complications and Cures",
+      "source": "https://hrt.org/health/cushings-disease-vs-cushings-syndrome-the-cortisol-connection-complications-and-cures"
+    },
+    {
+      "file": "health/dhea-and-aging-finding-the-right-balance/index.html",
+      "title": "DHEA and Aging—Finding the Right Balance",
+      "source": "https://hrt.org/health/dhea-and-aging-finding-the-right-balance"
+    },
+    {
+      "file": "health/eating-heart-healthy-for-life-choosing-right-foods-to-support-a-cardiac-diet/index.html",
+      "title": "Eating Heart Healthy For Life—Choosing The Right Foods To Support A Cardiac Diet",
+      "source": "https://hrt.org/health/eating-heart-healthy-for-life-choosing-right-foods-to-support-a-cardiac-diet"
+    },
+    {
+      "file": "health/ecg-and-ekg-encyclopedia/index.html",
+      "title": "ECG and EKG Encyclopedia",
+      "source": "https://hrt.org/health/ecg-and-ekg-encyclopedia"
+    },
+    {
+      "file": "health/endometriosis-explained-understanding-signs-symptoms-treatment-options-new-therapies-pregnancy-outcomes/index.html",
+      "title": "Endometriosis Explained—Understanding Signs, Symptoms, Treatment Options, New Therapies & Pregnancy Outcomes",
+      "source": "https://hrt.org/health/endometriosis-explained-understanding-signs-symptoms-treatment-options-new-therapies-pregnancy-outcomes"
+    },
+    {
+      "file": "health/essential-omega-3-omega-6-fatty-acids-why-most-of-us-dont-get-enough/index.html",
+      "title": "Essential Omega-3 and Omega-6 Fatty Acids—Why Most of Us Don’t Get Enough",
+      "source": "https://hrt.org/health/essential-omega-3-omega-6-fatty-acids-why-most-of-us-dont-get-enough"
+    },
+    {
+      "file": "health/estriol-anti-aging-uses-treatment-side-effects/index.html",
+      "title": "Estriol For Anti-aging—Uses, Treatment, and Side Effects",
+      "source": "https://hrt.org/health/estriol-anti-aging-uses-treatment-side-effects"
+    },
+    {
+      "file": "health/estrogen-and-skin-aging/index.html",
+      "title": "ESTROGEN AND SKIN-AGING",
+      "source": "https://hrt.org/health/estrogen-and-skin-aging"
+    },
+    {
+      "file": "health/estrogen-bioidenticals-what-women-need-to-know/index.html",
+      "title": "Estrogen Biodenticals—What Women Need To Know",
+      "source": "https://hrt.org/health/estrogen-bioidenticals-what-women-need-to-know"
+    },
+    {
+      "file": "health/estrogen-dominance-signs-symptoms-tests-and-treatment/index.html",
+      "title": "Estrogen Dominance—Signs, Symptoms, Tests and Treatment",
+      "source": "https://hrt.org/health/estrogen-dominance-signs-symptoms-tests-and-treatment"
+    },
+    {
+      "file": "health/estrogen-testing-measure-levels-of-estrone-estradiol-and-estriol/index.html",
+      "title": "Estrogen Testing | Measure Levels of Estrone, Estradiol, and Estriol",
+      "source": "https://hrt.org/health/estrogen-testing-measure-levels-of-estrone-estradiol-and-estriol"
+    },
+    {
+      "file": "health/estrogen-types-role-functions-and-imbalance/index.html",
+      "title": "The Hormone Estrogen: Types, Role, Functions, and Imbalance",
+      "source": "https://hrt.org/health/estrogen-types-role-functions-and-imbalance"
+    },
+    {
+      "file": "health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do/index.html",
+      "title": "Facing Fatigue Head On—Why You’re Really Tired, What You Can Do?",
+      "source": "https://hrt.org/health/facing-fatigue-head-on-why-youre-really-tired-what-you-can-do"
+    },
+    {
+      "file": "health/fasting-for-blood-test-work-why-it-can-be-dangerous-when-its-not-required/index.html",
+      "title": "Fasting For Blood Test/Work, Why it Can Be Dangerous, When it’s Not Required",
+      "source": "https://hrt.org/health/fasting-for-blood-test-work-why-it-can-be-dangerous-when-its-not-required"
+    },
+    {
+      "file": "health/female-hormone-imbalance-what-hypothyroidism-oxytocin-menopause-and-libido-may-have-in-common/index.html",
+      "title": "Female Hormone Imbalance—What Hypothyroidism, Oxytocin, Menopause, and Libido May Have in Common",
+      "source": "https://hrt.org/health/female-hormone-imbalance-what-hypothyroidism-oxytocin-menopause-and-libido-may-have-in-common"
+    },
+    {
+      "file": "health/fighting-diabetes-obesity-metabolic-syndrome-and-osteoporosis-why-testosterone-is-important/index.html",
+      "title": "Fighting Diabetes, Obesity and Osteoporosis—Why Testosterone Is Important",
+      "source": "https://hrt.org/health/fighting-diabetes-obesity-metabolic-syndrome-and-osteoporosis-why-testosterone-is-important"
+    },
+    {
+      "file": "health/fighting-for-fertility-know-the-causes-tests-signs-and-treatments/index.html",
+      "title": "Fighting For Fertility—Know the Causes, Tests, Signs, and Treatments of Infertility",
+      "source": "https://hrt.org/health/fighting-for-fertility-know-the-causes-tests-signs-and-treatments"
+    },
+    {
+      "file": "health/fitbit-heart-rate-fitness-activity-trackers/index.html",
+      "title": "Fitbit | Heart Rate, Fitness, Activity Trackers",
+      "source": "https://hrt.org/health/fitbit-heart-rate-fitness-activity-trackers"
+    },
+    {
+      "file": "health/functioning-with-fibroids-common-symptoms-risk-factors-and-natural-support-for-women/index.html",
+      "title": "Functioning with Fibroids—Common Symptoms, Risk Factors, and Natural Support for Women",
+      "source": "https://hrt.org/health/functioning-with-fibroids-common-symptoms-risk-factors-and-natural-support-for-women"
+    },
+    {
+      "file": "health/gambling-with-cardiovascular-risk-picking-the-winners-and-losers/index.html",
+      "title": "Gambling with Cardiovascular Risk: Picking the Winners and Losers",
+      "source": "https://hrt.org/health/gambling-with-cardiovascular-risk-picking-the-winners-and-losers"
+    },
+    {
+      "file": "health/garmin-fitness-sports-wearables-trackers/index.html",
+      "title": "Garmin—Fitness and Sports Wearables—Trackers",
+      "source": "https://hrt.org/health/garmin-fitness-sports-wearables-trackers"
+    },
+    {
+      "file": "health/genetic-testing-test-dna-for-genetic-mutations-telomeres-genes-proteins-risk/index.html",
+      "title": "Genetic Testing: Test DNA for Genetic Mutations, Telomeres, Genes and Proteins for Risk",
+      "source": "https://hrt.org/health/genetic-testing-test-dna-for-genetic-mutations-telomeres-genes-proteins-risk"
+    },
+    {
+      "file": "health/hair-loss-and-hormones-causes-effects-and-treatment-in-menopause-and-andropause/index.html",
+      "title": "Hair Loss and Hormones —Causes, Effects, and Treatment in Menopause and Andropause",
+      "source": "https://hrt.org/health/hair-loss-and-hormones-causes-effects-and-treatment-in-menopause-and-andropause"
+    },
+    {
+      "file": "health/heart-attack-help-causes-symptoms-signs-treatment-every-minute-counts/index.html",
+      "title": "Heart Attack Help, Causes, Symptoms, Signs, and Treatment—Every Minute Counts",
+      "source": "https://hrt.org/health/heart-attack-help-causes-symptoms-signs-treatment-every-minute-counts"
+    },
+    {
+      "file": "health/heart-attack-symptoms-women-signs-diagnosis-treatment-differ-men/index.html",
+      "title": "Heart Attack Symptoms in Women—Why Signs, Diagnosis, and Treatment Differ From Men",
+      "source": "https://hrt.org/health/heart-attack-symptoms-women-signs-diagnosis-treatment-differ-men"
+    },
+    {
+      "file": "health/heart-disease-explained-many-risk-factors-causes-treatment/index.html",
+      "title": "Heart Disease Explained—The Many Risk Factors, Causes, and Treatment",
+      "source": "https://hrt.org/health/heart-disease-explained-many-risk-factors-causes-treatment"
+    },
+    {
+      "file": "health/heart-failure-types-symptoms-causes-treatments/index.html",
+      "title": "Heart Failure—Types, Symptoms, Causes and Treatments",
+      "source": "https://hrt.org/health/heart-failure-types-symptoms-causes-treatments"
+    },
+    {
+      "file": "health/heart-health-your-life-depends-on-it/index.html",
+      "title": "Heart Health—Your Life Depends on It",
+      "source": "https://hrt.org/health/heart-health-your-life-depends-on-it"
+    },
+    {
+      "file": "health/heart-rate-monitor-types-trackers-technology-professional-personal/index.html",
+      "title": "Heart Rate Monitor Types, Trackers, and Technology—Both Professional and Personal",
+      "source": "https://hrt.org/health/heart-rate-monitor-types-trackers-technology-professional-personal"
+    },
+    {
+      "file": "health/heart-surgery-explained-procedures-and-surgeries-for-heart-conditions-diseases/index.html",
+      "title": "Heart Surgery Explained: Procedures and Surgeries for Heart Conditions & Diseases",
+      "source": "https://hrt.org/health/heart-surgery-explained-procedures-and-surgeries-for-heart-conditions-diseases"
+    },
+    {
+      "file": "health/heavy-toxic-metals-testing-the-hidden-risks-among-us/index.html",
+      "title": "Heavy Metal Testing and Heavy Metals Toxicity - The Hidden Risks Among Us",
+      "source": "https://hrt.org/health/heavy-toxic-metals-testing-the-hidden-risks-among-us"
+    },
+    {
+      "file": "health/help-for-hashimotos-disease-causes-complications-and-treatment/index.html",
+      "title": "Help for Hashimoto’s Disease—Causes, Complications, and Treatment",
+      "source": "https://hrt.org/health/help-for-hashimotos-disease-causes-complications-and-treatment"
+    },
+    {
+      "file": "health/help-for-high-blood-pressure-hypertension-stopping-silent-killer-within/index.html",
+      "title": "Help For High Blood Pressure (Hypertension)—Stopping The Silent Killer Within",
+      "source": "https://hrt.org/health/help-for-high-blood-pressure-hypertension-stopping-silent-killer-within"
+    },
+    {
+      "file": "health/help-heart-attack-symptoms-men-risks-common-conditions-mimic-serious-warning-signs/index.html",
+      "title": "Help For Heart Attack Symptoms in Men—The Risks and Common Conditions That Mimic Serious Warning Signs",
+      "source": "https://hrt.org/health/help-heart-attack-symptoms-men-risks-common-conditions-mimic-serious-warning-signs"
+    },
+    {
+      "file": "health/hgh-natural-production-and-synthetic-use/index.html",
+      "title": "HGH — Natural Production and Synthetic Use",
+      "source": "https://hrt.org/health/hgh-natural-production-and-synthetic-use"
+    },
+    {
+      "file": "health/high-cholesterol-and-heart-disease-causes-risks-and-treatment/index.html",
+      "title": "High Cholesterol and Heart Disease—Causes, Risks and Treatment",
+      "source": "https://hrt.org/health/high-cholesterol-and-heart-disease-causes-risks-and-treatment"
+    },
+    {
+      "file": "health/hope-for-low-libido-in-women-sexual-health-menopause/index.html",
+      "title": "Hope For Low Libido in Women—The Fight For Sexual Health in Menopause",
+      "source": "https://hrt.org/health/hope-for-low-libido-in-women-sexual-health-menopause"
+    },
+    {
+      "file": "health/hormonal-balancing-how-to-balance-hormones-naturally/index.html",
+      "title": "Hormonal Balancing - How To Balance Hormones Naturally",
+      "source": "https://hrt.org/health/hormonal-balancing-how-to-balance-hormones-naturally"
+    },
+    {
+      "file": "health/hormonal-imbalance-in-men-whats-really-happening/index.html",
+      "title": "Hormonal Imbalance in Men—What’s Really Happening?",
+      "source": "https://hrt.org/health/hormonal-imbalance-in-men-whats-really-happening"
+    },
+    {
+      "file": "health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels/index.html",
+      "title": "Hormone and Thyroid Testing: Test Sex Hormone, Regulatory Hormone & Thyroid Hormone Levels",
+      "source": "https://hrt.org/health/hormone-and-thyroid-testing-test-sex-hormone-regulatory-hormone-thyroid-hormone-levels"
+    },
+    {
+      "file": "health/hormone-testing-methods-saliva-blood-and-fsh/index.html",
+      "title": "Hormone Testing Methods—Saliva, Blood, and FSH",
+      "source": "https://hrt.org/health/hormone-testing-methods-saliva-blood-and-fsh"
+    },
+    {
+      "file": "health/hormone-therapy-for-breast-cancer-treatment/index.html",
+      "title": "Hormone Therapy for Breast Cancer Treatment—Starving The Cells That Kill",
+      "source": "https://hrt.org/health/hormone-therapy-for-breast-cancer-treatment"
+    },
+    {
+      "file": "health/hormones-and-aging/index.html",
+      "title": "Hormones and Aging",
+      "source": "https://hrt.org/health/hormones-and-aging"
+    },
+    {
+      "file": "health/hot-flashes-menopause-causes-treatment-faqs/index.html",
+      "title": "Hot Flashes in Menopause, Causes, Treatment, and FAQ’s",
+      "source": "https://hrt.org/health/hot-flashes-menopause-causes-treatment-faqs"
+    },
+    {
+      "file": "health/how-cortisol-regulates-many-functions-of-the-body/index.html",
+      "title": "How Cortisol Regulates Many Functions of the Body",
+      "source": "https://hrt.org/health/how-cortisol-regulates-many-functions-of-the-body"
+    },
+    {
+      "file": "health/how-heart-pacemakers-work-and-cardiac-pacing-information/index.html",
+      "title": "Artificially Keeping The Pace—Advances in Cardiac Pacemakers",
+      "source": "https://hrt.org/health/how-heart-pacemakers-work-and-cardiac-pacing-information"
+    },
+    {
+      "file": "health/hrt-hormone-replacement-therapy-for-men/index.html",
+      "title": "HRT—Hormone Replacement Therapy For MEN",
+      "source": "https://hrt.org/health/hrt-hormone-replacement-therapy-for-men"
+    },
+    {
+      "file": "health/human-growth-hormone-hgh-its-uses-and-abuses-what-you-need-to-know/index.html",
+      "title": "Human Growth Hormone (HGH) Its Uses and Abuses What You Need To Know",
+      "source": "https://hrt.org/health/human-growth-hormone-hgh-its-uses-and-abuses-what-you-need-to-know"
+    },
+    {
+      "file": "health/hyperthyroidism/index.html",
+      "title": "Hyperthyroidism—What Your Hormones Could Be Hiding?",
+      "source": "https://hrt.org/health/hyperthyroidism"
+    },
+    {
+      "file": "health/hypogonadism-in-men-the-many-causes-and-effects-new-treatment-and-natural-therapies/index.html",
+      "title": "Hypogonadism in Men—the Many Causes and Effects, New Treatment and Natural Therapies",
+      "source": "https://hrt.org/health/hypogonadism-in-men-the-many-causes-and-effects-new-treatment-and-natural-therapies"
+    },
+    {
+      "file": "health/hypothyroidism-self-check-treatment/index.html",
+      "title": "Hypothyroidism—Self-check and Treatment",
+      "source": "https://hrt.org/health/hypothyroidism-self-check-treatment"
+    },
+    {
+      "file": "health/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults/index.html",
+      "title": "Identifying Irritability—What’s Causing Angry Outbursts in Rational Adults?",
+      "source": "https://hrt.org/health/identifying-irritability-whats-causing-angry-outbursts-in-rational-adults"
+    },
+    {
+      "file": "health/incontinence-in-women-and-men-symptoms-causes-types-treatment/index.html",
+      "title": "Incontinence in Women and Men—Symptoms, Causes, Types & Treatment",
+      "source": "https://hrt.org/health/incontinence-in-women-and-men-symptoms-causes-types-treatment"
+    },
+    {
+      "file": "health/individualized-hormone-therapy-balanced-approach-treatment/index.html",
+      "title": "Individualized Hormone Therapy—A Balanced Approach to Treatment",
+      "source": "https://hrt.org/health/individualized-hormone-therapy-balanced-approach-treatment"
+    },
+    {
+      "file": "health/injectable-hgh-supplements-safety-law/index.html",
+      "title": "Injectable HGH Supplements—Your Safety and The Law",
+      "source": "https://hrt.org/health/injectable-hgh-supplements-safety-law"
+    },
+    {
+      "file": "health/insulin-testing-test-your-insulin-levels/index.html",
+      "title": "Insulin Testing: Test Your Insulin Levels",
+      "source": "https://hrt.org/health/insulin-testing-test-your-insulin-levels"
+    },
+    {
+      "file": "health/ipamorelin-effect-harnessing-power-growth-hormone-naturally/index.html",
+      "title": "The Ipamorelin Effect—Harnessing the Power of Growth Hormone, Naturally",
+      "source": "https://hrt.org/health/ipamorelin-effect-harnessing-power-growth-hormone-naturally"
+    },
+    {
+      "file": "health/is-gynecomastia-more-harmful-to-men-than-we-know-impact-excess-breast-tissue-males/index.html",
+      "title": "Is Gynecomastia More Harmful To Men Than We Know?—The Impact of Excess Breast Tissue on Males",
+      "source": "https://hrt.org/health/is-gynecomastia-more-harmful-to-men-than-we-know-impact-excess-breast-tissue-males"
+    },
+    {
+      "file": "health/is-iv-therapy-right-for-you-treating-conditions-intravenously/index.html",
+      "title": "Is IV Therapy Right For You?—Treating Conditions Intravenously",
+      "source": "https://hrt.org/health/is-iv-therapy-right-for-you-treating-conditions-intravenously"
+    },
+    {
+      "file": "health/l-theanine-for-anxiety-sleep-and-focus-benefits-uses-and-side-effects/index.html",
+      "title": "L-theanine for Anxiety, Sleep, and Focus—Benefits, Uses, and Side Effects",
+      "source": "https://hrt.org/health/l-theanine-for-anxiety-sleep-and-focus-benefits-uses-and-side-effects"
+    },
+    {
+      "file": "health/lipotropic-injections/index.html",
+      "title": "Lipotropic Injections",
+      "source": "https://hrt.org/health/lipotropic-injections"
+    },
+    {
+      "file": "health/lost-productivity-obesity-related-absenteeism-costs-highest-10-u-s-states-says-study/index.html",
+      "title": "Lost Productivity Through Obesity-related Absenteeism,   Costs Highest for 10 U.S. States Says Study",
+      "source": "https://hrt.org/health/lost-productivity-obesity-related-absenteeism-costs-highest-10-u-s-states-says-study"
+    },
+    {
+      "file": "health/low-carb-weight-loss-diet-free-daily-diet-plan/index.html",
+      "title": "Low Carb Weight Loss Diet | Free Daily Low Carb Diet Plan",
+      "source": "https://hrt.org/health/low-carb-weight-loss-diet-free-daily-diet-plan"
+    },
+    {
+      "file": "health/magnesium-rich-foods-benefits-deficiency-supplements/index.html",
+      "title": "Magnesium | Rich Foods, Benefits, Deficiency, Supplements",
+      "source": "https://hrt.org/health/magnesium-rich-foods-benefits-deficiency-supplements"
+    },
+    {
+      "file": "health/managing-muscle-loss-for-life-causes-types-treatment/index.html",
+      "title": "Managing Muscle Loss For Life—Causes, Types & Treatment",
+      "source": "https://hrt.org/health/managing-muscle-loss-for-life-causes-types-treatment"
+    },
+    {
+      "file": "health/mastering-stress-management-how-a-diurnal-cortisol-test-can-help/index.html",
+      "title": "Mastering Stress Management: How a Diurnal Cortisol Test Can Help",
+      "source": "https://hrt.org/health/mastering-stress-management-how-a-diurnal-cortisol-test-can-help"
+    },
+    {
+      "file": "health/medical-device-supplies-and-equipment/index.html",
+      "title": "YOUR MEDICAL DEVICE, SUPPLIES AND EQUIPMENT—WHAT’S COVERED AND CONTROLLED",
+      "source": "https://hrt.org/health/medical-device-supplies-and-equipment"
+    },
+    {
+      "file": "health/medmind-medication-pill-tracking-reminders-alerts/index.html",
+      "title": "MEDMIND | MEDICATION TRACKING, REMINDERS, ALERTS",
+      "source": "https://hrt.org/health/medmind-medication-pill-tracking-reminders-alerts"
+    },
+    {
+      "file": "health/melatonin-natural-relief-for-sleeplessness/index.html",
+      "title": "Melatonin - Natural Relief for Sleeplessness",
+      "source": "https://hrt.org/health/melatonin-natural-relief-for-sleeplessness"
+    },
+    {
+      "file": "health/menopause-and-its-functions-a-case-for-hormone-replacement-therapy/index.html",
+      "title": "Menopause and Its Functions—A Case for Hormone Replacement Therapy?",
+      "source": "https://hrt.org/health/menopause-and-its-functions-a-case-for-hormone-replacement-therapy"
+    },
+    {
+      "file": "health/menopause-in-midlife-strange-symptoms-amazing-facts-whats-really-happening-in-the-female-body/index.html",
+      "title": "Menopause in Midlife—Strange Symptoms, Amazing Facts, What’s Really Happening in The Female Body?",
+      "source": "https://hrt.org/health/menopause-in-midlife-strange-symptoms-amazing-facts-whats-really-happening-in-the-female-body"
+    },
+    {
+      "file": "health/menopause-weight-gain-symptoms-of-hormonal-imbalance/index.html",
+      "title": "Menopause Weight Gain, Symptoms of Hormonal Imbalance",
+      "source": "https://hrt.org/health/menopause-weight-gain-symptoms-of-hormonal-imbalance"
+    },
+    {
+      "file": "health/menstrual-irregularity-and-menopause-whats-normal-whats-not/index.html",
+      "title": "Menstrual Irregularity and Menopause, What’s Normal, What’s Not?",
+      "source": "https://hrt.org/health/menstrual-irregularity-and-menopause-whats-normal-whats-not"
+    },
+    {
+      "file": "health/metabolic-syndrome-symptoms-risk-factors-diagnosis-treatment/index.html",
+      "title": "Metabolic Syndrome - Symptoms, Risk Factors, Diagnosis, Treatment",
+      "source": "https://hrt.org/health/metabolic-syndrome-symptoms-risk-factors-diagnosis-treatment"
+    },
+    {
+      "file": "health/metabolism-and-thyroid-hormone-replacement/index.html",
+      "title": "Metabolism and Thyroid Hormone Replacement",
+      "source": "https://hrt.org/health/metabolism-and-thyroid-hormone-replacement"
+    },
+    {
+      "file": "health/metagenics/index.html",
+      "title": "Metagenics",
+      "source": "https://hrt.org/health/metagenics"
+    },
+    {
+      "file": "health/micronutrient-testing-test-levels-vitamins-antioxidants-minerals-amino-acids/index.html",
+      "title": "MicroNutrient Testing: Test Levels of Vitamins, Antioxidants, Minerals and Amino Acids",
+      "source": "https://hrt.org/health/micronutrient-testing-test-levels-vitamins-antioxidants-minerals-amino-acids"
+    },
+    {
+      "file": "health/migraines-prevention-and-pain-management/index.html",
+      "title": "Migraines—Prevention and Pain Management",
+      "source": "https://hrt.org/health/migraines-prevention-and-pain-management"
+    },
+    {
+      "file": "health/mindfulness-practicing-mindful-awareness-exercises-techniques-meditation/index.html",
+      "title": "Mindfulness - Practicing Mindful Awareness - Exercises, Techniques, Meditation",
+      "source": "https://hrt.org/health/mindfulness-practicing-mindful-awareness-exercises-techniques-meditation"
+    },
+    {
+      "file": "health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health/index.html",
+      "title": "Mood Changes—The Hormones and Nutrients We Need for Balanced Mental Health",
+      "source": "https://hrt.org/health/mood-changes-the-hormones-and-nutrients-we-need-for-balanced-mental-health"
+    },
+    {
+      "file": "health/mood-swings-menopause-getting-off-hormonal-roller-coaster/index.html",
+      "title": "Mood Swings and Menopause—Getting Off The Hormonal Roller Coaster",
+      "source": "https://hrt.org/health/mood-swings-menopause-getting-off-hormonal-roller-coaster"
+    },
+    {
+      "file": "health/moving-forward-with-functional-medicine-future-healthcare-now/index.html",
+      "title": "Moving Forward with Functional Medicine—The Future of Healthcare is Now",
+      "source": "https://hrt.org/health/moving-forward-with-functional-medicine-future-healthcare-now"
+    },
+    {
+      "file": "health/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health/index.html",
+      "title": "MTHFR Testing—Mutations in Methylenetetrahydrofolate Reductase and Heart, Bone, and Brain Health",
+      "source": "https://hrt.org/health/mthfr-testing-mutations-methylenetetrahydrofolate-reductase-heart-bone-brain-health"
+    },
+    {
+      "file": "health/need-growth-hormone-gh-deficiency-benefits-treatment/index.html",
+      "title": "The Need For Growth Hormone (GH) - Deficiency, Benefits, Treatment",
+      "source": "https://hrt.org/health/need-growth-hormone-gh-deficiency-benefits-treatment"
+    },
+    {
+      "file": "health/neurotransmitter-testing-tools-for-optimal-mental-health-and-wellness/index.html",
+      "title": "Neurotransmitter Testing—Tools for Optimal Mental Health and Wellness",
+      "source": "https://hrt.org/health/neurotransmitter-testing-tools-for-optimal-mental-health-and-wellness"
+    },
+    {
+      "file": "health/night-sweats-not-just-women/index.html",
+      "title": "Night Sweats—Not Just For Women",
+      "source": "https://hrt.org/health/night-sweats-not-just-women"
+    },
+    {
+      "file": "health/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing/index.html",
+      "title": "Nutrition Test For Optimal Wellness—Find Out What You’ve Been Missing Through Nutritional Deficiency Testing",
+      "source": "https://hrt.org/health/nutrition-test-for-optimal-wellness-find-out-what-youve-been-missing-through-nutritional-deficiency-testing"
+    },
+    {
+      "file": "health/omron-wireless-blood-pressure-monitors-upper-arm-wrist-technology/index.html",
+      "title": "Omron—Wireless Blood Pressure Monitors—Upper Arm and Wrist Technology",
+      "source": "https://hrt.org/health/omron-wireless-blood-pressure-monitors-upper-arm-wrist-technology"
+    },
+    {
+      "file": "health/orthomolecular-evidence-based-therapeutic-nutritional-vitamins-health-supplements/index.html",
+      "title": "OrthoMolecular | Evidence-Based, Therapeutic Nutritional Vitamins & Health Supplements",
+      "source": "https://hrt.org/health/orthomolecular-evidence-based-therapeutic-nutritional-vitamins-health-supplements"
+    },
+    {
+      "file": "health/p-shot-for-stamina-sensation-and-sexual-performance-treating-erectile-dysfunction-with-plasma/index.html",
+      "title": "P-Shot for Stamina, Sensation, and Sexual Performance—Treating Erectile Dysfunction with Plasma",
+      "source": "https://hrt.org/health/p-shot-for-stamina-sensation-and-sexual-performance-treating-erectile-dysfunction-with-plasma"
+    },
+    {
+      "file": "health/pacs-premature-atrial-contractions/index.html",
+      "title": "PACs - Premature Atrial Contractions",
+      "source": "https://hrt.org/health/pacs-premature-atrial-contractions"
+    },
+    {
+      "file": "health/pathways-pain-management-types-treatments-products-natural-help/index.html",
+      "title": "Pathways Through Pain Management—Types, Treatments, Products and Natural Help",
+      "source": "https://hrt.org/health/pathways-pain-management-types-treatments-products-natural-help"
+    },
+    {
+      "file": "health/perimenopause-navigating-the-many-symptoms-of-pre-menopause/index.html",
+      "title": "Perimenopause—Navigating The Many Symptoms of Pre Menopause",
+      "source": "https://hrt.org/health/perimenopause-navigating-the-many-symptoms-of-pre-menopause"
+    },
+    {
+      "file": "health/phytoestrogens-natural-hormone-defense/index.html",
+      "title": "Phytoestrogens—Natural Hormone Defense",
+      "source": "https://hrt.org/health/phytoestrogens-natural-hormone-defense"
+    },
+    {
+      "file": "health/polar-leading-heart-rate-fitness-monitor-tracking-watches-wearables-reviews/index.html",
+      "title": "Polar | Leading Heart Rate & Fitness Monitor and Tracking Devices | Watches, Wearables",
+      "source": "https://hrt.org/health/polar-leading-heart-rate-fitness-monitor-tracking-watches-wearables-reviews"
+    },
+    {
+      "file": "health/polycystic-ovarian-syndrome-explained-pcos-the-many-causes-symptoms-and-treatments/index.html",
+      "title": "Polycystic Ovarian Syndrome Explained (PCOS)— The Many Causes, Symptoms, and Treatments",
+      "source": "https://hrt.org/health/polycystic-ovarian-syndrome-explained-pcos-the-many-causes-symptoms-and-treatments"
+    },
+    {
+      "file": "health/post-menopause-what-to-expect-after-the-change/index.html",
+      "title": "Post Menopause—What To Expect After The Change",
+      "source": "https://hrt.org/health/post-menopause-what-to-expect-after-the-change"
+    },
+    {
+      "file": "health/premenstrual-syndrome-pms-causes-symptoms-relief/index.html",
+      "title": "PREMENSTRUAL SYNDROME (PMS): CAUSES, SYMPTOMS, RELIEF",
+      "source": "https://hrt.org/health/premenstrual-syndrome-pms-causes-symptoms-relief"
+    },
+    {
+      "file": "health/prenatal-vitamins-facts-what-you-really-need-healthy-pregnancy/index.html",
+      "title": "Prenatal Vitamins, The Facts— What You Really Need For Healthy Pregnancy",
+      "source": "https://hrt.org/health/prenatal-vitamins-facts-what-you-really-need-healthy-pregnancy"
+    },
+    {
+      "file": "health/progesterone-bioidentical-hrt-the-facts/index.html",
+      "title": "Progesterone Bioidentical HRT— The Facts",
+      "source": "https://hrt.org/health/progesterone-bioidentical-hrt-the-facts"
+    },
+    {
+      "file": "health/progesterone-testing-test-your-progesterone-levels/index.html",
+      "title": "Progesterone Testing | Test Your Progesterone Levels",
+      "source": "https://hrt.org/health/progesterone-testing-test-your-progesterone-levels"
+    },
+    {
+      "file": "health/progesterone-therapy/index.html",
+      "title": "Progesterone Therapy",
+      "source": "https://hrt.org/health/progesterone-therapy"
+    },
+    {
+      "file": "health/prostate-cancer-symptoms-causes-treatment-prevention/index.html",
+      "title": "Prostate Cancer, Symptoms, Causes, Treatment, and Prevention",
+      "source": "https://hrt.org/health/prostate-cancer-symptoms-causes-treatment-prevention"
+    },
+    {
+      "file": "health/pure-encapsulations-best-products-reviewed-tested/index.html",
+      "title": "Pure Encapsulations | Best Products Reviewed & Tested",
+      "source": "https://hrt.org/health/pure-encapsulations-best-products-reviewed-tested"
+    },
+    {
+      "file": "health/quick-relief-urinary-tract-infection-uti-causes-treatment-natural-antibiotic/index.html",
+      "title": "Quick Relief From Your Urinary Tract Infection (UTI)—Causes and Treatment, Both Natural and Antibiotic",
+      "source": "https://hrt.org/health/quick-relief-urinary-tract-infection-uti-causes-treatment-natural-antibiotic"
+    },
+    {
+      "file": "health/raw-power-growth-hormone-releasing-peptide-6-ghrp-6-know/index.html",
+      "title": "The Raw Power Of Growth Hormone-Releasing Peptide 6 (GHRP-6)—What We Know",
+      "source": "https://hrt.org/health/raw-power-growth-hormone-releasing-peptide-6-ghrp-6-know"
+    },
+    {
+      "file": "health/self-care-for-symptom-relief-of-pms/index.html",
+      "title": "SELF-CARE FOR SYMPTOM RELIEF OF PMS",
+      "source": "https://hrt.org/health/self-care-for-symptom-relief-of-pms"
+    },
+    {
+      "file": "health/semaglutide-for-weight-loss-outcomes-benefits-and-side-effects/index.html",
+      "title": "Semaglutide for Weight loss | Outcomes, Benefits and Side Effects",
+      "source": "https://hrt.org/health/semaglutide-for-weight-loss-outcomes-benefits-and-side-effects"
+    },
+    {
+      "file": "health/sermorelin-for-anti-aging-powerful-benefits-advantages-natural-support/index.html",
+      "title": "Sermorelin For Anti-Aging?—Powerful Benefits and Advantages of Natural Support",
+      "source": "https://hrt.org/health/sermorelin-for-anti-aging-powerful-benefits-advantages-natural-support"
+    },
+    {
+      "file": "health/shockwave-therapy-new-hope-for-erectile-dysfunction/index.html",
+      "title": "Shockwave Therapy—New Hope for Erectile Dysfunction",
+      "source": "https://hrt.org/health/shockwave-therapy-new-hope-for-erectile-dysfunction"
+    },
+    {
+      "file": "health/sleeplessness-perimenopause-possible-causes-solutions/index.html",
+      "title": "Sleeplessness in Perimenopause—Possible Causes and Solutions",
+      "source": "https://hrt.org/health/sleeplessness-perimenopause-possible-causes-solutions"
+    },
+    {
+      "file": "health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention/index.html",
+      "title": "Telomere Testing: Test Telomeres for Biological Aging and Disease Prevention",
+      "source": "https://hrt.org/health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention"
+    },
+    {
+      "file": "health/testosterone-levels-women-testing-therapy/index.html",
+      "title": "Testosterone Levels in Women—Testing & Therapy",
+      "source": "https://hrt.org/health/testosterone-levels-women-testing-therapy"
+    },
+    {
+      "file": "health/testosterone-testing-test-your-testosterone-levels/index.html",
+      "title": "Testosterone Testing | Test Your Testosterone Levels",
+      "source": "https://hrt.org/health/testosterone-testing-test-your-testosterone-levels"
+    },
+    {
+      "file": "health/testosterone-universal-hormone-function-deficiency-treatment/index.html",
+      "title": "Testosterone—The Universal Hormone Function, Deficiency, and Treatment",
+      "source": "https://hrt.org/health/testosterone-universal-hormone-function-deficiency-treatment"
+    },
+    {
+      "file": "health/the-causes-and-treatment-of-erectile-dysfunction-ed-restoring-healthy-sex-again/index.html",
+      "title": "The Causes And Treatment Of Erectile Dysfunction (ED) - Restoring Healthy Sex Again",
+      "source": "https://hrt.org/health/the-causes-and-treatment-of-erectile-dysfunction-ed-restoring-healthy-sex-again"
+    },
+    {
+      "file": "health/the-dangers-of-diabetes-different-types-how-its-diagnosed-whos-at-risk/index.html",
+      "title": "The Dangers of Diabetes, Different Types, How it’s Diagnosed, Who’s at Risk?",
+      "source": "https://hrt.org/health/the-dangers-of-diabetes-different-types-how-its-diagnosed-whos-at-risk"
+    },
+    {
+      "file": "health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help/index.html",
+      "title": "The Effects of Insomnia—Why We Have Trouble Sleeping, Where to Get Help?",
+      "source": "https://hrt.org/health/the-effects-of-insomnia-why-we-have-trouble-sleeping-where-to-get-help"
+    },
+    {
+      "file": "health/the-facts-on-heart-attacks/index.html",
+      "title": "The Facts on Heart Attacks | Signs, Symptoms, Causes, Prevention",
+      "source": "https://hrt.org/health/the-facts-on-heart-attacks"
+    },
+    {
+      "file": "health/the-frightening-truth-about-iodine-deficiency-disorders-linked-to-low-levels/index.html",
+      "title": "The Frightening Truth About Iodine Deficiency, Disorders Linked to Low Levels",
+      "source": "https://hrt.org/health/the-frightening-truth-about-iodine-deficiency-disorders-linked-to-low-levels"
+    },
+    {
+      "file": "health/the-healing-power-of-cbd-and-cbd-oil-how-cannabinoids-help/index.html",
+      "title": "The Healing Power of CBD and CBD Oil—How Cannabinoids Help",
+      "source": "https://hrt.org/health/the-healing-power-of-cbd-and-cbd-oil-how-cannabinoids-help"
+    },
+    {
+      "file": "health/the-role-of-hormone-therapy-in-prostate-cancer-who-gets-it-how-it-works-side-effects/index.html",
+      "title": "The Role of Hormone Therapy in Prostate Cancer—Who Get’s It, How It Works, and What Are the Side Effects?",
+      "source": "https://hrt.org/health/the-role-of-hormone-therapy-in-prostate-cancer-who-gets-it-how-it-works-side-effects"
+    },
+    {
+      "file": "health/thirsting-for-the-fountain-of-youth-myth-and-reality/index.html",
+      "title": "Thirsting for the Fountain of Youth - Myth and Reality",
+      "source": "https://hrt.org/health/thirsting-for-the-fountain-of-youth-myth-and-reality"
+    },
+    {
+      "file": "health/thorne-research/index.html",
+      "title": "Thorne Research | Pure Ingredients, Trusted Results",
+      "source": "https://hrt.org/health/thorne-research"
+    },
+    {
+      "file": "health/three-paths-growth-hormone-wellness-genotropin-norditropin-nutropin/index.html",
+      "title": "Three Paths To Growth Hormone And Wellness—Genotropin, Norditropin and Nutropin",
+      "source": "https://hrt.org/health/three-paths-growth-hormone-wellness-genotropin-norditropin-nutropin"
+    },
+    {
+      "file": "health/thyroid-cancer-signs-risk-types-treatments/index.html",
+      "title": "Thyroid Cancer—Signs, Risk, Types, and Treatments",
+      "source": "https://hrt.org/health/thyroid-cancer-signs-risk-types-treatments"
+    },
+    {
+      "file": "health/thyroid-disease-symptoms-cures-causes/index.html",
+      "title": "Thyroid Disease—The Symptoms, Cures and Causes",
+      "source": "https://hrt.org/health/thyroid-disease-symptoms-cures-causes"
+    },
+    {
+      "file": "health/thyroid-disorders-testing-treatment/index.html",
+      "title": "Thyroid Disorders—Testing and Treatment",
+      "source": "https://hrt.org/health/thyroid-disorders-testing-treatment"
+    },
+    {
+      "file": "health/thyroid-testing-thyroid-function-test/index.html",
+      "title": "Thyroid Testing | Thyroid Function Test",
+      "source": "https://hrt.org/health/thyroid-testing-thyroid-function-test"
+    },
+    {
+      "file": "health/top-10-best-prenatal-vitamins-reviewed/index.html",
+      "title": "Top 10 Best Prenatal Vitamins Reviewed",
+      "source": "https://hrt.org/health/top-10-best-prenatal-vitamins-reviewed"
+    },
+    {
+      "file": "health/top-10-mood-and-hormonal-support-vitamins-and-health-supplements/index.html",
+      "title": "Top 10 Mood and Hormonal Support Vitamins and Health Supplements",
+      "source": "https://hrt.org/health/top-10-mood-and-hormonal-support-vitamins-and-health-supplements"
+    },
+    {
+      "file": "health/understanding-depression-learn-types-treatment-signs-and-causes/index.html",
+      "title": "Understanding Depression from the Inside Out — What You Wish Your Friends and Family Knew",
+      "source": "https://hrt.org/health/understanding-depression-learn-types-treatment-signs-and-causes"
+    },
+    {
+      "file": "health/undiagnosed-chest-pain-determining-the-cause/index.html",
+      "title": "Undiagnosed Chest Pain: Determining the Cause",
+      "source": "https://hrt.org/health/undiagnosed-chest-pain-determining-the-cause"
+    },
+    {
+      "file": "health/unlocking-the-mystery-of-memory-loss-the-mind-you-may-be-missing/index.html",
+      "title": "Unlocking the Mystery of Memory Loss— The Mind You May Be Missing",
+      "source": "https://hrt.org/health/unlocking-the-mystery-of-memory-loss-the-mind-you-may-be-missing"
+    },
+    {
+      "file": "health/vaginal-dryness-affects-intimacy-surviving-post-menopause/index.html",
+      "title": "When Vaginal Dryness Affects Intimacy—Surviving Post Menopause",
+      "source": "https://hrt.org/health/vaginal-dryness-affects-intimacy-surviving-post-menopause"
+    },
+    {
+      "file": "health/viagra-cialis-levitra-effective-treatment-erectile-dysfunction/index.html",
+      "title": "Viagra, Cialis, Levitra - Effective Treatment For Erectile Dysfunction",
+      "source": "https://hrt.org/health/viagra-cialis-levitra-effective-treatment-erectile-dysfunction"
+    },
+    {
+      "file": "health/virtual-floodgates-open-for-telehealth-services-is-coronavirus-changing-the-way-we-do-healthcare/index.html",
+      "title": "Virtual Floodgates Open for Telehealth Services - Is Coronavirus Changing the Way We Do Healthcare?",
+      "source": "https://hrt.org/health/virtual-floodgates-open-for-telehealth-services-is-coronavirus-changing-the-way-we-do-healthcare"
+    },
+    {
+      "file": "health/vitamin-b-complex-injections-using-lipo-b-vitamins-weight-loss/index.html",
+      "title": "Vitamin B Complex Injections—Using Lipo B Vitamins for Weight Loss",
+      "source": "https://hrt.org/health/vitamin-b-complex-injections-using-lipo-b-vitamins-weight-loss"
+    },
+    {
+      "file": "health/vitamin-d-and-the-covid-connection/index.html",
+      "title": "Vitamin D and the COVID Connection",
+      "source": "https://hrt.org/health/vitamin-d-and-the-covid-connection"
+    },
+    {
+      "file": "health/weight-loss-and-management-program-for-life-support-for-sustained-success/index.html",
+      "title": "Weight Loss and Management Program For Life—Support For Sustained Success",
+      "source": "https://hrt.org/health/weight-loss-and-management-program-for-life-support-for-sustained-success"
+    },
+    {
+      "file": "health/wellness/index.html",
+      "title": "Wellness",
+      "source": "https://hrt.org/health/wellness"
+    },
+    {
+      "file": "health/what-are-hormones-why-they-get-depleted/index.html",
+      "title": "What Are Hormones? Why They Get Depleted",
+      "source": "https://hrt.org/health/what-are-hormones-why-they-get-depleted"
+    },
+    {
+      "file": "health/what-are-some-adverse-health-effects-for-a-male-having-very-high-levels-of-free-testosterone/index.html",
+      "title": "What are some adverse health effects for a male having very high levels of free testosterone?",
+      "source": "https://hrt.org/health/what-are-some-adverse-health-effects-for-a-male-having-very-high-levels-of-free-testosterone"
+    },
+    {
+      "file": "health/what-are-some-methods-for-preventing-pregnancy/index.html",
+      "title": "What are some methods for preventing pregnancy?",
+      "source": "https://hrt.org/health/what-are-some-methods-for-preventing-pregnancy"
+    },
+    {
+      "file": "health/what-are-some-ways-to-optimize-my-natural-gh-and-testosterone-levels/index.html",
+      "title": "What are some ways to optimize my natural GH and testosterone levels?",
+      "source": "https://hrt.org/health/what-are-some-ways-to-optimize-my-natural-gh-and-testosterone-levels"
+    },
+    {
+      "file": "health/what-is-an-endocrinologist/index.html",
+      "title": "What Is An Endocrinologist?",
+      "source": "https://hrt.org/health/what-is-an-endocrinologist"
+    },
+    {
+      "file": "health/what-is-graves-disease-causes-symptoms-diagnosis-treatment/index.html",
+      "title": "What is Graves’ disease?  Causes, Symptoms,  Diagnosis, Treatment",
+      "source": "https://hrt.org/health/what-is-graves-disease-causes-symptoms-diagnosis-treatment"
+    },
+    {
+      "file": "health/what-is-hcg-uses-weight-loss-benefits-side-effects/index.html",
+      "title": "What is HCG? Physician Uses, Weight Loss, Benefits & Side Effects",
+      "source": "https://hrt.org/health/what-is-hcg-uses-weight-loss-benefits-side-effects"
+    },
+    {
+      "file": "health/what-is-progesterone-its-many-forms-and-functions/index.html",
+      "title": "What Is Progesterone?—Its Many Forms and Functions",
+      "source": "https://hrt.org/health/what-is-progesterone-its-many-forms-and-functions"
+    },
+    {
+      "file": "health/what-vitamins-or-health-supplements-should-i-take-nutritional-deficiencies-the-warning-signs-tests-treatment/index.html",
+      "title": "What Vitamins or Health Supplements Should I Take?—Nutritional Deficiencies, the Warning Signs, Tests & Treatment",
+      "source": "https://hrt.org/health/what-vitamins-or-health-supplements-should-i-take-nutritional-deficiencies-the-warning-signs-tests-treatment"
+    },
+    {
+      "file": "health/when-anxiety-strikes-whos-at-risk-hows-it-treated/index.html",
+      "title": "When Anxiety Strikes—Who’s At Risk, How’s It Treated?",
+      "source": "https://hrt.org/health/when-anxiety-strikes-whos-at-risk-hows-it-treated"
+    },
+    {
+      "file": "health/who-or-what-is-responsible-for-the-decline-of-testosterone-levels-in-men/index.html",
+      "title": "Who or what is responsible for the decline of testosterone levels in men?",
+      "source": "https://hrt.org/health/who-or-what-is-responsible-for-the-decline-of-testosterone-levels-in-men"
+    },
+    {
+      "file": "health/why-bioidentical-hormone-replacement-therapy-over-synthetic-hormone-replacement-therapy/index.html",
+      "title": "Why Bioidentical Hormone Replacement Therapy Over Synthetic Hormone Replacement Therapy?",
+      "source": "https://hrt.org/health/why-bioidentical-hormone-replacement-therapy-over-synthetic-hormone-replacement-therapy"
+    },
+    {
+      "file": "health/why-detox-may-be-beneficial-eliminating-impurities-that-make-us-sick/index.html",
+      "title": "Why Detox May Be Beneficial—Eliminating Impurities That Make Us Sick",
+      "source": "https://hrt.org/health/why-detox-may-be-beneficial-eliminating-impurities-that-make-us-sick"
+    },
+    {
+      "file": "health/womens-health-and-hormones-the-delicate-balance/index.html",
+      "title": "Women’s Health and Hormones—The Delicate Balance",
+      "source": "https://hrt.org/health/womens-health-and-hormones-the-delicate-balance"
+    },
+    {
+      "file": "health/your-bodys-need-for-estrogen-then-and-now/index.html",
+      "title": "Your Body’s Need For Estrogen—Then and Now",
+      "source": "https://hrt.org/health/your-bodys-need-for-estrogen-then-and-now"
+    },
+    {
+      "file": "health/your-health-and-hormones/index.html",
+      "title": "Your Health and Hormones",
+      "source": "https://hrt.org/health/your-health-and-hormones"
+    },
+    {
+      "file": "health/zinc-for-testosterone-how-much-we-need-how-to-get-it/index.html",
+      "title": "Zinc for Testosterone—How Much We Need, How to Get It",
+      "source": "https://hrt.org/health/zinc-for-testosterone-how-much-we-need-how-to-get-it"
+    },
+    {
+      "file": "hormone-symptom-checklist-men/index.html",
+      "title": "Men's Hormone Assessment Copy",
+      "source": "https://hrt.org/hormone-symptom-checklist-men"
+    },
+    {
+      "file": "hormone-symptom-checklist-women/index.html",
+      "title": "HORMONE SYMPTOM CHECKLIST FOR WOMEN",
+      "source": "https://hrt.org/hormone-symptom-checklist-women"
+    },
+    {
+      "file": "Lab Testing.html",
+      "title": "Lab Testing",
+      "source": "https://hrt.org/lab-testing"
+    },
+    {
+      "file": "legal/consent-to-telehealth/index.html",
+      "title": "Consent to Telehealth",
+      "source": "https://hrt.org/legal/consent-to-telehealth"
+    },
+    {
+      "file": "legal/health-information-privacy-practices/index.html",
+      "title": "Health Information Privacy Practices",
+      "source": "https://hrt.org/legal/health-information-privacy-practices"
+    },
+    {
+      "file": "legal/informed-consent-regarding-nutritional-and-herbal-supplements/index.html",
+      "title": "Informed Consent Regarding Nutritional and Herbal Supplements",
+      "source": "https://hrt.org/legal/informed-consent-regarding-nutritional-and-herbal-supplements"
+    },
+    {
+      "file": "legal/pharmacy-information/index.html",
+      "title": "Pharmacy Information",
+      "source": "https://hrt.org/legal/pharmacy-information"
+    },
+    {
+      "file": "legal/privacy-policy/index.html",
+      "title": "Privacy Policy",
+      "source": "https://hrt.org/legal/privacy-policy"
+    },
+    {
+      "file": "men/anti-aging-peptides/index.html",
+      "title": "Anti Aging Peptides Therapy for Men",
+      "source": "https://hrt.org/men/anti-aging-peptides"
+    },
+    {
+      "file": "men/erectile-dysfunction/index.html",
+      "title": "Male Erectile Dysfunction Treatments and remedies – ED Treatment",
+      "source": "https://hrt.org/men/erectile-dysfunction"
+    },
+    {
+      "file": "men/hair-loss/index.html",
+      "title": "Hair Loss Treatment & Care Solutions for Men",
+      "source": "https://hrt.org/men/hair-loss"
+    },
+    {
+      "file": "men/hormone-replacement-therapy/index.html",
+      "title": "Hormone Replacement Therapy (HRT) For Men",
+      "source": "https://hrt.org/men/hormone-replacement-therapy"
+    },
+    {
+      "file": "men/sexual-health/index.html",
+      "title": "Men's Sexual Health | Comprehensive Treatment",
+      "source": "https://hrt.org/men/sexual-health"
+    },
+    {
+      "file": "men/weight-loss-and-management/index.html",
+      "title": "Weight Loss Treatment and Management for Men",
+      "source": "https://hrt.org/men/weight-loss-and-management"
+    },
+    {
+      "file": "menopause/index.html",
+      "title": "Menopause And HRT",
+      "source": "https://hrt.org/menopause"
+    },
+    {
+      "file": "menopause-quiz/index.html",
+      "title": "Free Menopause Symptoms Quiz – Am I in Menopause?",
+      "source": "https://hrt.org/menopause-quiz"
+    },
+    {
+      "file": "Privacy Policy.html",
+      "title": "Privacy Policy",
+      "source": "https://hrt.org/privacy-policy"
+    },
+    {
+      "file": "providers/dr-clarence-lee-jr/index.html",
+      "title": "Dr. Clarence Lee Jr.",
+      "source": "https://hrt.org/providers/dr-clarence-lee-jr"
+    },
+    {
+      "file": "providers/jessica-kikla/index.html",
+      "title": "Jessica Kikla ARNP, Nurse Practitioner",
+      "source": "https://hrt.org/providers/jessica-kikla"
+    },
+    {
+      "file": "providers/medical-team/index.html",
+      "title": "Medical Team",
+      "source": "https://hrt.org/providers/medical-team"
+    },
+    {
+      "file": "Return Policy.html",
+      "title": "Return Policy",
+      "source": "https://hrt.org/return-policy"
+    },
+    {
+      "file": "symptom-checklist-for-men/index.html",
+      "title": "Multiple Symptoms for Hormone Imbalance—Men",
+      "source": "https://hrt.org/symptom-checklist-for-men"
+    },
+    {
+      "file": "symptom-checklist-for-women/index.html",
+      "title": "Multiple Symptoms for Hormone Imbalance—Women",
+      "source": "https://hrt.org/symptom-checklist-for-women"
+    },
+    {
+      "file": "Terms and Conditions.html",
+      "title": "Terms & Conditions",
+      "source": "https://hrt.org/terms-and-conditions"
+    },
+    {
+      "file": "thyroid-assessment/index.html",
+      "title": "Thyroid Assessment Signs and Symptoms - Test for Hypothyroidism and Autoimmune Disorders",
+      "source": "https://hrt.org/thyroid-assessment"
+    },
+    {
+      "file": "women/anti-aging-peptides/index.html",
+      "title": "Anti Aging Peptide Therapy for Women",
+      "source": "https://hrt.org/women/anti-aging-peptides"
+    },
+    {
+      "file": "women/hair-loss/index.html",
+      "title": "Hair Loss & Hair Growth Treatment & Care for Women",
+      "source": "https://hrt.org/women/hair-loss"
+    },
+    {
+      "file": "women/hormone-replacement-therapy/index.html",
+      "title": "Hormone Replacement Therapy for Women",
+      "source": "https://hrt.org/women/hormone-replacement-therapy"
+    },
+    {
+      "file": "women/sexual-health/index.html",
+      "title": "Women’s Sexual Health and Treatments",
+      "source": "https://hrt.org/women/sexual-health"
+    },
+    {
+      "file": "women/weight-loss-and-management/index.html",
+      "title": "Weight Loss, Management and Maintenance for Women",
+      "source": "https://hrt.org/women/weight-loss-and-management"
+    },
+    {
+      "file": "About.html",
+      "title": "Health and wellness are the keys to a full and active life, but as we age our needs for nutrition, activity and sleep change too.   Through all of life’s stages our cellular and hormone health, heart, brain and organ function, skeletal-muscular condition and mental health depend on our body’s ability to adapt to ongoing and ever-changing demands for energy.  By responding to each of our specific needs for nutrients, exercise and rest we can begin to bring the whole body into balance for optimal health and wellness.",
+      "source": "https://hrt.org/about"
+    },
+    {
+      "file": "checklist/osteoporosis-assessment/index.html",
+      "title": "FAQs about Osteoporosis Assessment Quiz and Online Tests",
+      "source": "https://hrt.org/checklist/osteoporosis-assessment"
+    },
+    {
+      "file": "checklist/thyroid-assessment/index.html",
+      "title": "Thyroid Assessment Quiz - Test Online If You Have a Thyroid Disorder",
+      "source": "https://hrt.org/checklist/thyroid-assessment"
+    },
+    {
+      "file": "health/osteoporosis-protecting-bone-health/index.html",
+      "title": "Osteoporosis – Protecting Bone Health for Life",
+      "source": "https://hrt.org/health/osteoporosis-protecting-bone-health"
+    },
+    {
+      "file": "Treatments.html",
+      "title": "Treatments",
+      "source": ""
+    },
+    {
+      "file": "Audience.html",
+      "title": "Care for women and men",
+      "source": ""
+    },
+    {
+      "file": "Resources.html",
+      "title": "Health education and journal",
+      "source": ""
+    },
+    {
+      "file": "blog-categories/advice/index.html",
+      "title": "Advice",
+      "source": "https://hrt.org/blog-categories/advice"
+    },
+    {
+      "file": "blog-categories/conditions/index.html",
+      "title": "Conditions",
+      "source": "https://hrt.org/blog-categories/conditions"
+    },
+    {
+      "file": "blog-categories/genetic-testing/index.html",
+      "title": "Genetic Testing",
+      "source": "https://hrt.org/blog-categories/genetic-testing"
+    },
+    {
+      "file": "blog-categories/health-testing/index.html",
+      "title": "Health Testing",
+      "source": "https://hrt.org/blog-categories/health-testing"
+    },
+    {
+      "file": "blog-categories/heart-health/index.html",
+      "title": "Heart Health",
+      "source": "https://hrt.org/blog-categories/heart-health"
+    },
+    {
+      "file": "blog-categories/hormones/index.html",
+      "title": "Hormones",
+      "source": "https://hrt.org/blog-categories/hormones"
+    },
+    {
+      "file": "blog-categories/mens-health/index.html",
+      "title": "Men's Health",
+      "source": "https://hrt.org/blog-categories/mens-health"
+    },
+    {
+      "file": "blog-categories/mental-health/index.html",
+      "title": "Mental Health",
+      "source": "https://hrt.org/blog-categories/mental-health"
+    },
+    {
+      "file": "blog-categories/news/index.html",
+      "title": "News",
+      "source": "https://hrt.org/blog-categories/news"
+    },
+    {
+      "file": "blog-categories/nutrition/index.html",
+      "title": "Nutrition",
+      "source": "https://hrt.org/blog-categories/nutrition"
+    },
+    {
+      "file": "blog-categories/product/index.html",
+      "title": "Product",
+      "source": "https://hrt.org/blog-categories/product"
+    },
+    {
+      "file": "blog-categories/product-reviews/index.html",
+      "title": "Product Reviews",
+      "source": "https://hrt.org/blog-categories/product-reviews"
+    },
+    {
+      "file": "blog-categories/question-and-answer/index.html",
+      "title": "Question and Answer",
+      "source": "https://hrt.org/blog-categories/question-and-answer"
+    },
+    {
+      "file": "blog-categories/symptoms/index.html",
+      "title": "Symptoms",
+      "source": "https://hrt.org/blog-categories/symptoms"
+    },
+    {
+      "file": "blog-categories/thyroid-health/index.html",
+      "title": "Thyroid Health",
+      "source": "https://hrt.org/blog-categories/thyroid-health"
+    },
+    {
+      "file": "blog-categories/trusted-brands/index.html",
+      "title": "Trusted Brands",
+      "source": "https://hrt.org/blog-categories/trusted-brands"
+    },
+    {
+      "file": "blog-categories/uncategorized/index.html",
+      "title": "Uncategorized",
+      "source": "https://hrt.org/blog-categories/uncategorized"
+    },
+    {
+      "file": "blog-categories/womens-health/index.html",
+      "title": "Women's Health",
+      "source": "https://hrt.org/blog-categories/womens-health"
+    },
+    {
+      "file": "blog-categories/heart-health/index.html",
+      "title": "Heart Health",
+      "source": "https://hrt.org/blog-categories/%20heart-health"
+    },
+    {
+      "file": "Providers.html",
+      "title": "Our medical board",
+      "source": "https://hrt.org/providers"
+    },
+    {
+      "file": "Contact.html",
+      "title": "Contact HRT.org",
+      "source": "https://hrt.org/contact"
+    },
+    {
+      "file": "Join Our Network.html",
+      "title": "Join Our Network",
+      "source": "https://hrt.org/join-our-network"
+    },
+    {
+      "file": "Consultation.html",
+      "title": "Start your consultation",
+      "source": "https://portal.hrt.org/app/symptoms-tracker"
+    },
+    {
+      "file": "Pricing.html",
+      "title": "Pricing and purchasing",
+      "source": ""
+    },
+    {
+      "file": "How It Works.html",
+      "title": "How It Works",
+      "source": ""
+    },
+    {
+      "file": "FAQ.html",
+      "title": "Frequently Asked Questions",
+      "source": ""
+    },
+    {
+      "file": "Symptom Check.html",
+      "title": "Symptom checks",
+      "source": ""
+    },
+    {
+      "file": "Product.html",
+      "title": "Treatment information",
+      "source": ""
+    },
+    {
+      "file": "Article.html",
+      "title": "Health journal",
+      "source": ""
+    },
+    {
+      "file": "HRT Landing.html",
+      "title": "Personalized care",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+/* Public portal-reference.css supplies the original layout and branding. */
+.portal-auth .password-input-wrapper input { padding-right: 48px; }
+.portal-auth .password-input-wrapper .portal-password-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  min-width: 44px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  color: inherit;
+  background: transparent;
+}
+.portal-auth .password-input-wrapper .portal-password-toggle svg {
+  position: static;
+  width: 24px;
+  height: 24px;
+  transform: none;
+  fill: currentColor;
+}
+.portal-auth :is(a, button, input):focus-visible {
+  outline: 2px solid #0e3b59;
+  outline-offset: 3px;
+}
+.portal-auth .portal-auth-status:empty { display: none; }
+.portal-auth .portal-auth-status p {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #bbd3df;
+  border-radius: 6px;
+  color: #0e3b59;
+  background: #f1f8fb;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .portal-auth *, .portal-auth *::before, .portal-auth *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

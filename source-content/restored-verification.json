@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    "audience filters",
+    "product gender switch",
+    "FAQs",
+    "membership toggle",
+    "landing audience switch",
+    "article bookmarks and TOC",
+    "six-step intake preparation",
+    "no fake submission or persistent health data",
+    "all page images loaded",
+    "390/768/1440 layouts",
+    "reduced motion"
+  ],
+  "errors": []
+}

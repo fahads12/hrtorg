@@ -1,0 +1,236 @@
+{
+  "name": "Adrenal Fatigue & Stress Typeform Assessment",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "adrenal-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -544,
+        80
+      ],
+      "id": "e38c93c2-425c-4a97-8a9e-3ac14a099e89",
+      "name": "Webhook (Adrenal Submit)",
+      "webhookId": "adrenal-typeform-2026-05"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n//  Adrenal Fatigue & Stress Assessment — Score Calculator\n//  Based on the Q008 Make.com blueprint.\n//\n//  5 questions, each with a weighted frequency scale:\n//    Never        = 0\n//    Occasionally = 2\n//    Frequently   = 5\n//    Constantly   = 8\n//  Max score: 5 × 8 = 40\n//\n//  Scoring tiers — mirroring Q008 blueprint switch exactly:\n//    score ≤ 9        → Result 1 (Minimal adrenal load)\n//    score 10–22      → Result 2 (Mild to moderate)\n//    score 23–39      → Result 3 (Moderate to severe)\n//    score 40         → Result 4 (Severe / adrenal exhaustion)\n// ============================================================\n\nconst data = $input.first().json.body || $input.first().json;\n\nconst scoreMap = {\n  'never':        0,\n  'occasionally': 2,\n  'frequently':   5,\n  'constantly':   8\n};\n\nconst fields = [\n  'q1_fatigue',\n  'q2_irritability',\n  'q3_anxious',\n  'q4_sleep',\n  'q5_energy_crashes'\n];\n\nlet totalScore = 0;\nconst scores = {};\nconst warnings = [];\n\nfor (const field of fields) {\n  const raw = data[field];\n  const key = raw ? String(raw).trim().toLowerCase() : 'never';\n  const score = scoreMap[key] !== undefined ? scoreMap[key] : 0;\n  scores[field] = { raw, key, score };\n  totalScore += score;\n  if (!raw) warnings.push(field + ' is missing');\n}\n\n// Four-tier result — matching Q008 blueprint switch exactly\nlet resultNum, resultLabel, resultContent;\nif (totalScore <= 9) {\n  resultNum = 1;\n  resultLabel = 'Minimal Adrenal Load';\n  resultContent = 'Your score suggests a low level of adrenal stress at this time. Your cortisol and adrenal function appear to be coping well with your current demands. Maintaining healthy sleep, nutrition, and stress management habits is recommended.';\n} else if (totalScore >= 10 && totalScore <= 22) {\n  resultNum = 2;\n  resultLabel = 'Mild to Moderate Adrenal Stress';\n  resultContent = 'You are experiencing some signs of adrenal stress. The early warning signs of adrenal dysfunction are present — particularly fatigue, irritability, anxiety, and disrupted sleep. A targeted adrenal hormone panel and nutritional support can make a significant difference before the condition progresses.';\n} else if (totalScore >= 23 && totalScore <= 39) {\n  resultNum = 3;\n  resultLabel = 'Moderate to Severe Adrenal Fatigue';\n  resultContent = 'Your score indicates significant adrenal dysfunction. Persistent exhaustion, emotional dysregulation, anxiety, poor sleep, and afternoon energy crashes are hallmarks of adrenal fatigue. A comprehensive hormonal assessment alongside targeted adrenal support is strongly recommended.';\n} else {\n  resultNum = 4;\n  resultLabel = 'Severe Adrenal Exhaustion';\n  resultContent = 'Your score is at the maximum level, indicating severe adrenal exhaustion. Every symptom assessed is occurring constantly. This requires immediate clinical attention. Please reach out to one of our specialists as soon as possible.';\n}\n\nreturn [{ json: {\n  patientName:    data.first_name   || '',\n  patientEmail:   data.email        || '',\n  mailingList:    data.mailing_list || '',\n  totalScore,\n  resultNum,\n  resultLabel,\n  resultContent,\n  _debug_scores:   scores,\n  _debug_warnings: warnings\n}}];\n"
+      },
+      "id": "ef117a1d-05ca-47fe-b590-cdf46ab6f1fb",
+      "name": "Calculate Scores",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -304,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "v1",
+              "leftValue": "={{ $json.patientEmail }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "291014b8-0791-4222-80c1-81ab5816e02e",
+      "name": "Has Valid Email?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -64,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\n// Escape only the dynamic name used in the HTML greeting.\nfunction escapePatientName(value) {\n  return String(value)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&#39;');\n}\nconst greeting = d.patientName ? ('Dear ' + escapePatientName(d.patientName)) : 'Hi there';\nconst year = new Date().getFullYear();\n\nconst introMap = {\n  1: `The adrenal glands are small glands that sit on top of your kidneys and produce hormones essential for life — including cortisol (your primary stress hormone), DHEA, and adrenaline. When these glands are healthy and well-supported, your body handles stress efficiently, your energy is stable, and your mood is balanced.<br/><br/>Based on your responses, your adrenal system appears to be coping well right now. This is a good position to be in — and maintaining it requires the same foundations that support all hormonal health: quality sleep, regular physical activity, balanced nutrition, and effective stress management.<br/><br/>We recommend establishing a baseline adrenal hormone panel at least once every few years, particularly as you age, so you have a reference point should symptoms develop in the future.`,\n  2: `The adrenal glands regulate your body's response to stress through the production of cortisol and DHEA. When stress is sustained over time — whether physical, emotional, or environmental — the adrenals are pushed harder and begin to show early signs of strain.<br/><br/>Based on your responses, you are experiencing some of the hallmarks of early adrenal stress: fatigue, irritability, anxiety, and disrupted sleep. These symptoms arise because elevated cortisol disrupts the sleep-wake cycle, depletes serotonin and GABA (calming neurotransmitters), and impairs cellular energy production.<br/><br/>At this stage, a targeted adrenal hormone panel, nutritional support, and lifestyle adjustments can prevent the condition from progressing. DHEA levels in particular tend to decline as cortisol demands increase — and restoring DHEA can meaningfully improve energy, mental clarity, and emotional resilience. We recommend speaking to one of our specialists to discuss your options.`,\n  3: `Adrenal fatigue is a condition in which prolonged or intense stress has overwhelmed your adrenal glands' ability to maintain normal cortisol output. This leads to a wide range of symptoms that significantly affect your daily functioning — including the persistent exhaustion, anxiety, emotional dysregulation, sleep disruption, and afternoon energy crashes you are experiencing.<br/><br/>The cascade effects of dysregulated cortisol are extensive: it disrupts thyroid function (often misdiagnosed as hypothyroidism), suppresses sex hormone production (reducing testosterone and progesterone), impairs immune function, destabilises blood sugar, and interferes with restorative sleep — creating a self-reinforcing cycle that worsens over time without intervention.<br/><br/>Recovery is absolutely possible, but it requires understanding exactly where your cortisol output stands (a 4-point salivary cortisol profile is the gold standard), combined with targeted hormonal support, adrenal-specific nutrition, and expert guidance. Our specialists are experienced in interpreting adrenal hormone results and creating personalised recovery protocols.`,\n  4: `Adrenal exhaustion — sometimes referred to as stage 3 adrenal fatigue — represents the most advanced stage of HPA axis dysregulation. At this point, the adrenal glands have been under severe and sustained demand and cortisol output has become critically depleted. The symptoms you are experiencing across every category are the direct result of this depletion.<br/><br/>The impact of severe adrenal exhaustion extends far beyond fatigue and mood. It suppresses immune function (increasing susceptibility to infection), disrupts thyroid hormone conversion (worsening fatigue and metabolic function), depletes sex hormones (reducing testosterone, progesterone, and oestrogen), impairs memory and concentration, and destabilises blood pressure and blood sugar regulation.<br/><br/>Recovery requires a carefully structured and professionally guided protocol. It is not something to manage alone, and it does take time — but with the right support, it is entirely achievable. Please reach out to our specialists as a matter of priority. They understand the complexity of adrenal exhaustion and can create a comprehensive recovery plan based on your individual hormone test results.`\n};\n\nconst introText = introMap[d.resultNum] || introMap[2];\n\nconst labTests = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTBloodSpotTestKit-9_1024x1024_2x_3025b07b-9b81-4d8f-85a4-2c9aff366530_1024x1024@2x.jpg?v=1571716034',\n    title: 'Adrenal Stress Profile — Salivary Cortisol Test',\n    desc: 'A 4-point salivary cortisol test taken at morning, noon, afternoon, and evening. The gold standard for mapping your daily cortisol curve and identifying adrenal dysfunction patterns.',\n    price: '$149.00',\n    url: 'https://store.hrt.org/products/adrenal-stress-profile-salivary-cortisol-test'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTLabBloodUrineMultiTestKit_1024x1024@2x.jpg?v=1571716011',\n    title: 'Comprehensive Adrenal & Hormone Panel',\n    desc: 'Combines 4-point salivary cortisol with DHEA-S, testosterone, progesterone, and thyroid markers. Essential for understanding the full hormonal picture behind adrenal fatigue.',\n    price: '$249.00',\n    url: 'https://store.hrt.org/products/comprehensive-adrenal-hormone-panel'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/Thyroid_Health_Essentials_1024x1024_upclose_1024x1024@2x.png?v=1579640010',\n    title: 'Elite Stress & Hormone Profile (Blood/Saliva)',\n    desc: 'Our most comprehensive adrenal assessment. Includes full cortisol curve, DHEA, sex hormones, thyroid, blood sugar markers, and key nutritional cofactors for adrenal function.',\n    price: '$319.00',\n    url: 'https://store.hrt.org/products/elite-stress-hormone-profile'\n  }\n];\n\nconst products = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Micronized_DHEA_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'DHEA (25mg) — Adrenal & Hormone Support',\n    desc: 'DHEA is the most abundant adrenal hormone and declines significantly with chronic stress. Supplementing with micronised DHEA supports energy, mood, immune function, and adrenal recovery.',\n    url: 'https://store.hrt.org/products/dhea-25mg-natural-supplement-to-help-maintain-optimal-dhea-levels'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_BioDIM_Complex_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'Adrenal Support Complex — Ashwagandha, Rhodiola & B5',\n    desc: 'A clinical-strength adaptogen and adrenal nutrient formula. Ashwagandha and rhodiola have strong evidence for reducing cortisol, improving stress resilience, and restoring energy.',\n    url: 'https://store.hrt.org/products/adrenal-support-complex'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Thyroid_Support_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'Magnesium Glycinate (400mg) — Sleep & Stress Recovery',\n    desc: 'Magnesium is rapidly depleted by chronic stress and is essential for cortisol regulation, GABA production, and restorative sleep. The glycinate form has the highest absorption and best tolerability.',\n    url: 'https://store.hrt.org/products/magnesium-glycinate-sleep-stress-recovery'\n  }\n];\n\nconst relatedContent = [\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555c39ac19e2479bac2063_Andropause%E2%80%94Symptoms-Testing-and-Treatment.jpeg',\n    title: 'Adrenal Fatigue — Symptoms, Testing and Recovery',\n    url: 'https://www.hrt.org/adrenal-fatigue-symptoms-testing-recovery/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555be813ceda6560a19756_Thyroid-Disease%E2%80%94The-Symptoms-Cures-and-Causes.jpeg',\n    title: 'Cortisol and Stress — How Your HPA Axis Works',\n    url: 'https://www.hrt.org/cortisol-stress-hpa-axis/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555b7f12c18d7342ac77ba_Thyroid-Cancer%E2%80%94Signs-Risk-Types-and-Treatments.jpg',\n    title: 'DHEA — The Forgotten Adrenal Hormone',\n    url: 'https://www.hrt.org/dhea-adrenal-hormone/'\n  }\n];\n\nfunction labRow(t) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${t.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${t.title}\" border=\"0\" class=\"w183\" src=\"${t.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${t.title}</div><div style=\"color:#000;font-weight:300;font-size:13px\">${t.desc}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;\">${t.price}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction productRow(p) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${p.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${p.title}\" border=\"0\" class=\"w183\" src=\"${p.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${p.title}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;\">${p.desc}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction blogCol(b) {\n  return `<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0 0 5px 0 rgba(0,0,0,.25);border-radius:5px;\" class=\"force-col-th\"><a href=\"${b.url}\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" style=\"padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"${b.title}\" border=\"0\" class=\"w159\" height=\"106\" src=\"${b.img}\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr><tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-transform:uppercase;\">${b.title}</div></td></tr><tr><td><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;\">HRT.org Blog</div></td></tr></table></td></tr></table></a></th>`;\n}\n\nconst ctaBlock = `<tr><td bgcolor=\"#b86b1a\" class=\"t_block\" align=\"center\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr><td valign=\"middle\" style=\"font-weight:normal;padding-right:20px;\"><div style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;\">Free Consultation</div></td><td valign=\"middle\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td bgcolor=\"#d9943a\" style=\"padding:10px 20px;\"><a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a></td></tr></table></td></tr></table></td></tr>`;\n\nconst html = `<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;\"/>\n<title></title>\n<link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap\" rel=\"stylesheet\"/>\n<style type=\"text/css\">\n#outlook a{padding:0}body{width:100%!important;margin:0;padding:0;background-color:#fff}\ntable{mso-table-lspace:0;mso-table-rspace:0}img{border:0;height:auto;line-height:100%;outline:0;text-decoration:none;-ms-interpolation-mode:bicubic}\n.a_block{display:block;text-decoration:none}.t_shadow_block{padding:15px;-webkit-box-shadow:0 0 5px 0 rgba(0,0,0,.25);border-radius:5px}\n.t_block{padding:30px 20px}.blog_box{padding:10px 5px}\n@media screen and (max-width:480px){table[class=columns]{width:100%!important}th[class=force-col-th]{display:block;width:100%!important}img[class=imagescale]{max-width:100%!important;width:100%!important;height:auto!important}img[class=w183]{max-width:120px!important;width:100%!important;height:auto!important}img[class=w159]{max-width:300px!important;width:100%!important;height:auto!important}}\n</style></head>\n<body>\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" bgcolor=\"#FFFFFF\" valign=\"top\">\n<table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns\">\n\n<tr><td style=\"padding:20px;text-align:center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"font-family:'Montserrat Black',sans-serif;font-size:32px;text-decoration:none;color:#000000;\">HRT.org</a></td></tr>\n\n<tr><td><img alt=\"\" border=\"0\" class=\"imagescale\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_p1bc9c6.jpg\" style=\"width:600px;max-width:600px;height:auto;\" width=\"600\"></td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td style=\"padding:35px 20px 0;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000\">Your Assessment Results</div></td></tr>\n<tr><td style=\"padding-bottom:10px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;\">Assessment Score: <b>${d.totalScore} / 40</b> &nbsp;|&nbsp; ${d.resultLabel}</div></td></tr>\n<tr><td style=\"padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.6\">${d.resultContent}</div></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#b86b1a\" style=\"padding:30px 20px;\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr>\n<td bgcolor=\"#d9943a\" style=\"padding:10px 20px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">BOOK A FREE CONSULTATION</a>\n</td></tr></table></td></tr>\n\n<tr><td bgcolor=\"#ffffff\" style=\"padding:35px 20px;\">\n<div align=\"left\" style=\"color:#4e525e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.7\">${greeting},<br/><br/>${introText}<br/><br/>Feel free to reach out to one of our healthcare specialists for a private consultation, or contact us with any questions about your adrenal health.<br/><br/>We look forward to supporting you.<br/><br/>Sincerely,<br/><b>The HRT.org Team</b></div>\n</td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Suggested Lab Tests</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Easy &amp; Convenient Test Kits</div></td></tr>\n</table></td></tr>\n${labTests.map(labRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Popular Related Products</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Check out some of our best products</div></td></tr>\n</table></td></tr>\n${products.map(productRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td>\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding:35px 20px 10px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000;\">Related Content</div></td></tr>\n<tr><td style=\"padding:0 20px 30px;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n${relatedContent.map((b, i) => blogCol(b) + (i < relatedContent.length - 1 ? '<th width=\"15\" valign=\"top\" style=\"font-weight:normal;\"><div style=\"line-height:20px;height:20px;\"> </div></th>' : '')).join('')}\n</tr></table></td></tr>\n<tr><td align=\"center\" style=\"padding-bottom:20px;\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"text-decoration:none;\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td bgcolor=\"#b86b1a\" style=\"padding:10px 20px;\"><div style=\"color:#ffffff;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">VIEW ALL</div></td></tr></table></a></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1d1d1d\" style=\"padding:30px 0;border-bottom:#ffffff solid 10px;\" align=\"center\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"padding:20px 20px 0;color:#8e8e8e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">\n<a href=\"tel:888-574-5524\" style=\"color:#8e8e8e;text-decoration:none;\">Call Us Toll Free: 888-574-5524</a><br/>\n<a href=\"https://www.hrt.org\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">hrt.org</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Contact Support</a> | <a href=\"https://www.hrt.org/terms-and-conditions/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Terms &amp; Conditions</a> | <a href=\"https://www.hrt.org/privacy-policy/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Privacy Policy</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;border-top:#313131 solid 1px;\"><div style=\"color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">© HRT.org ${year}</div></td></tr>\n</table></td></tr>\n\n</table></td></tr></table>\n</body></html>`;\n\nreturn [{ json: { ...d, htmlEmailBody: html, emailSubject: 'Adrenal Fatigue & Stress Assessment - Results | HRT.org' } }];\n"
+      },
+      "id": "3e5b31fa-78a9-4ccc-9947-fd6cef621cbf",
+      "name": "Build HTML Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        176,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.patientEmail }}",
+        "subject": "={{ $json.emailSubject }}",
+        "message": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        }
+      },
+      "id": "5aa4db40-7778-470d-b19b-2ddce8449515",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        416,
+        0
+      ],
+      "webhookId": "8ad0459c-ae26-40a4-b727-5b8d31fa42ca",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "W8RSrjkrLCD0dLx9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: true,\n  accepted: true,\n  emailSent: true,\n  totalScore: $('Calculate Scores').first().json.totalScore,\n  resultNum: $('Calculate Scores').first().json.resultNum,\n  resultLabel: $('Calculate Scores').first().json.resultLabel,\n  resultContent: $('Calculate Scores').first().json.resultContent,\n  message: 'Your adrenal fatigue assessment is complete. A copy has been sent to your email.'\n} }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "id": "84750096-4556-4e38-b533-2e4c3bfc5c8a",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        656,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: false, error: 'INVALID_EMAIL', message: 'Email address is missing or invalid.' } }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "b48c4e75-a894-4807-9096-ee886d4763a5",
+      "name": "Respond - Invalid Email",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        176,
+        240
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook (Adrenal Submit)": {
+      "main": [
+        [
+          {
+            "node": "Calculate Scores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Scores": {
+      "main": [
+        [
+          {
+            "node": "Has Valid Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Valid Email?": {
+      "main": [
+        [
+          {
+            "node": "Build HTML Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Invalid Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build HTML Email": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "id": "xvo5uxgedRKPqLOr",
+  "tags": []
+}

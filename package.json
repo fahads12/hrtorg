@@ -1,0 +1,35 @@
+{
+  "name": "hrt-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node serve.cjs",
+    "start": "node serve.cjs",
+    "build": "node build-site.cjs",
+    "build:vercel": "npm run build && node build-public.cjs",
+    "build:ui": "node build-glow-menu.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^14.1.0",
+    "lucide-react": "^1.55.0",
+    "next-themes": "^0.4.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@babel/standalone": "8.0.7",
+    "@tailwindcss/cli": "4.3.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.28.2",
+    "linkedom": "^0.18.13",
+    "playwright": "1.64.0",
+    "postcss": "^8.5.29",
+    "tailwindcss": "4.3.0",
+    "typescript": "^5.9.3"
+  }
+}

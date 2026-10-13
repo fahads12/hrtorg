@@ -1,0 +1,1370 @@
+{
+  "scope": "Four supplied workflow exports; no external requests, emails, CRM writes, or runtime workflow invocation.",
+  "checkedAt": "2026-10-12",
+  "reviewMethod": "Static inspection plus isolated local scoring comparison with synthetic data for every attainable total. Secrets and credential identifiers excluded.",
+  "workflows": [
+    {
+      "id": "andropause",
+      "sourceFile": "Andropause Typeform Assessment.json",
+      "exportActive": true,
+      "liveActivationVerified": false,
+      "webhook": {
+        "httpMethod": "POST",
+        "path": "andropause-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {},
+        "authenticationConfigured": false,
+        "credentialTypes": [],
+        "baseUrlIncluded": false
+      },
+      "payload": {
+        "shape": "Flat JSON object, read from $input.first().json.body || $input.first().json",
+        "contactFields": [
+          "first_name",
+          "email",
+          "mailing_list"
+        ],
+        "answerFields": [
+          "q1_falling_asleep",
+          "q2_decreased_enjoyment",
+          "q3_losing_height",
+          "q4_strength_endurance",
+          "q5_sex_drive",
+          "q6_sports_performance",
+          "q7_depressed_grumpy",
+          "q8_lack_of_energy",
+          "q9_work_performance",
+          "q10_erection_difficulty"
+        ],
+        "answerValues": [
+          {
+            "value": "Never",
+            "score": 0
+          },
+          {
+            "value": "Occasionally",
+            "score": 1
+          },
+          {
+            "value": "Frequently",
+            "score": 2
+          },
+          {
+            "value": "Constantly",
+            "score": 3
+          }
+        ],
+        "localFieldsMatch": true,
+        "missingInLocal": [],
+        "extraInLocal": [],
+        "mailingListUsedForBranch": false
+      },
+      "scoring": {
+        "scoreField": "totalScore",
+        "rawYesCount": false,
+        "max": 30,
+        "localBoundaryDefinitions": [
+          {
+            "min": 0,
+            "max": 7,
+            "label": "Low Likelihood"
+          },
+          {
+            "min": 8,
+            "max": 30,
+            "label": "Symptoms Present"
+          }
+        ],
+        "displayLabels": [
+          {
+            "category": 1,
+            "localLabel": "Low Likelihood",
+            "backendLabel": "Low Likelihood"
+          },
+          {
+            "category": 2,
+            "localLabel": "Symptoms Present",
+            "backendLabel": "Symptoms Present"
+          }
+        ],
+        "allAttainableTotalsChecked": 31,
+        "allScoresAndCategoriesMatch": true,
+        "boundaryCases": [
+          {
+            "score": 0,
+            "localScore": 0,
+            "backendScore": 0,
+            "localCategory": 1,
+            "backendCategory": 1,
+            "localLabel": "Low Likelihood",
+            "backendLabel": "Low Likelihood"
+          },
+          {
+            "score": 7,
+            "localScore": 7,
+            "backendScore": 7,
+            "localCategory": 1,
+            "backendCategory": 1,
+            "localLabel": "Low Likelihood",
+            "backendLabel": "Low Likelihood"
+          },
+          {
+            "score": 8,
+            "localScore": 8,
+            "backendScore": 8,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Symptoms Present",
+            "backendLabel": "Symptoms Present"
+          },
+          {
+            "score": 30,
+            "localScore": 30,
+            "backendScore": 30,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Symptoms Present",
+            "backendLabel": "Symptoms Present"
+          }
+        ],
+        "emptyAnswersAcceptedByCalculator": {
+          "score": 0,
+          "warnings": 10
+        },
+        "unrecognizedAnswers": {
+          "score": 0,
+          "warnings": 0
+        },
+        "normalization": "Case-insensitive trimmed strings; first array item; substring matches; numeric 0..3 allowed (numbers retain fractional values, numeric strings round); unrecognized/missing values score zero.",
+        "unreachableTier": null
+      },
+      "validation": {
+        "emailNode": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "v1",
+                "leftValue": "={{ $json.patientEmail }}",
+                "rightValue": "@",
+                "operator": {
+                  "type": "string",
+                  "operation": "contains"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "missingQuestionsOnlyWarnings": true,
+        "serverRequiredName": false,
+        "serverAnswerCompleteness": false
+      },
+      "email": {
+        "providerNodeType": "n8n-nodes-base.gmail",
+        "typeVersion": 2.2,
+        "credentialTypes": [
+          "gmailOAuth2"
+        ],
+        "credentialReferencePresent": true,
+        "credentialUsabilityVerified": false,
+        "recipientExpression": "={{ $json.patientEmail }}",
+        "subjectExpression": "={{ $json.emailSubject }}",
+        "messageExpression": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        },
+        "gatedByMailingConsent": false,
+        "greetingUsesUnescapedPatientName": true,
+        "copyIncludesProductsOrLabPromotion": true,
+        "returnsUpstreamFieldsFromHtml": true
+      },
+      "crm": {
+        "nodes": [],
+        "marketingSubscriptionNodes": [],
+        "consentPersistence": false
+      },
+      "response": {
+        "success": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: true,\n  totalScore: $json.totalScore,\n  resultLabel: $json.resultLabel,\n  resultContent: $json.resultContent,\n  landingPageUrl: $json.landingPageUrl,\n  message: 'Your andropause assessment is complete. A copy has been sent to your email.'\n} }}",
+          "options": {
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "value": "Content-Type"
+                }
+              ]
+            }
+          }
+        },
+        "invalidEmail": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+          "options": {
+            "responseCode": 400,
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ]
+            }
+          }
+        },
+        "incomingNode": "Send Email",
+        "readsCurrentItem": true,
+        "explicitCalculateScoresReference": false,
+        "syntheticGmailMetadataSerialization": {
+          "success": true,
+          "message": "Your andropause assessment is complete. A copy has been sent to your email."
+        },
+        "risk": "Score properties are read from Gmail output using $json. The workflow has no merge or explicit Calculate Scores reference. Metadata-only Gmail output drops the score properties from JSON; this simulation does not establish live provider output.",
+        "adapterMismatch": "Current frontend placeholder specifies accepted/emailSent, while the export response uses success and a message, with neither accepted nor emailSent."
+      },
+      "reliability": {
+        "errorWorkflowConfigured": false,
+        "executionTimeout": null,
+        "retryConfigured": false,
+        "continueOnFail": false,
+        "onError": null,
+        "deduplicationNodes": [],
+        "submissionIdInput": false,
+        "possibleDuplicate": "Each repeated successful POST reaches Send Email again. A client retry after email sent but response lost can send a duplicate.",
+        "cors": "Response nodes add wildcard origin; success adds POST, OPTIONS and Content-Type. No OPTIONS webhook or explicit webhook allowedOrigins setting appears in export; deployed preflight behavior must be verified."
+      },
+      "graph": {
+        "Webhook (Andropause Submit)": {
+          "main": [
+            [
+              {
+                "node": "Calculate Scores",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Calculate Scores": {
+          "main": [
+            [
+              {
+                "node": "Has Valid Email?",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Has Valid Email?": {
+          "main": [
+            [
+              {
+                "node": "Build HTML Email",
+                "type": "main",
+                "index": 0
+              }
+            ],
+            [
+              {
+                "node": "Respond - Invalid Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Build HTML Email": {
+          "main": [
+            [
+              {
+                "node": "Send Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Send Email": {
+          "main": [
+            [
+              {
+                "node": "Respond - Success",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "thyroid",
+      "sourceFile": "Thyroid Typeform Assessment.json",
+      "exportActive": true,
+      "liveActivationVerified": false,
+      "webhook": {
+        "httpMethod": "POST",
+        "path": "thyroid-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {},
+        "authenticationConfigured": false,
+        "credentialTypes": [],
+        "baseUrlIncluded": false
+      },
+      "payload": {
+        "shape": "Flat JSON object, read from $input.first().json.body || $input.first().json",
+        "contactFields": [
+          "first_name",
+          "email",
+          "mailing_list"
+        ],
+        "answerFields": [
+          "q1_thinking_slow",
+          "q2_joint_stiffness",
+          "q3_bags_under_eyes",
+          "q4_dizziness",
+          "q5_nasal_congestion",
+          "q6_yellowing",
+          "q7_depression",
+          "q8_bowel_issues",
+          "q9_bloated_face",
+          "q10_weight_difficulty",
+          "q11_miss_meal",
+          "q12_memory_issues",
+          "q13_excessive_sleep",
+          "q14_pms",
+          "q15_not_sweating",
+          "q16_frequent_infections",
+          "q17_headaches",
+          "q18_slow_movements",
+          "q19_thinning_eyebrows",
+          "q20_concentration",
+          "q21_low_sex_drive",
+          "q22_feeling_cold",
+          "q23_dry_skin_hair",
+          "q24_morning_fatigue",
+          "q25_moody_irritable",
+          "q26_puffy_eyelids",
+          "q27_cold_extremities"
+        ],
+        "answerValues": [
+          {
+            "value": "Never",
+            "score": 0
+          },
+          {
+            "value": "Occasionally",
+            "score": 1
+          },
+          {
+            "value": "Frequently",
+            "score": 2
+          },
+          {
+            "value": "Constantly",
+            "score": 3
+          }
+        ],
+        "localFieldsMatch": true,
+        "missingInLocal": [],
+        "extraInLocal": [],
+        "mailingListUsedForBranch": false
+      },
+      "scoring": {
+        "scoreField": "totalScore",
+        "rawYesCount": false,
+        "max": 81,
+        "localBoundaryDefinitions": [
+          {
+            "min": 0,
+            "max": 9,
+            "label": "Unlikely"
+          },
+          {
+            "min": 10,
+            "max": 22,
+            "label": "Possible"
+          },
+          {
+            "min": 23,
+            "max": 39,
+            "label": "Likely"
+          },
+          {
+            "min": 40,
+            "max": 100,
+            "label": "Very likely"
+          }
+        ],
+        "displayLabels": [
+          {
+            "category": 1,
+            "localLabel": "Unlikely",
+            "backendLabel": "Unlikely"
+          },
+          {
+            "category": 2,
+            "localLabel": "Possible",
+            "backendLabel": "Possible"
+          },
+          {
+            "category": 3,
+            "localLabel": "Likely",
+            "backendLabel": "Likely"
+          },
+          {
+            "category": 4,
+            "localLabel": "Very likely",
+            "backendLabel": "Very Likely"
+          }
+        ],
+        "allAttainableTotalsChecked": 82,
+        "allScoresAndCategoriesMatch": true,
+        "boundaryCases": [
+          {
+            "score": 0,
+            "localScore": 0,
+            "backendScore": 0,
+            "localCategory": 1,
+            "backendCategory": 1,
+            "localLabel": "Unlikely",
+            "backendLabel": "Unlikely"
+          },
+          {
+            "score": 9,
+            "localScore": 9,
+            "backendScore": 9,
+            "localCategory": 1,
+            "backendCategory": 1,
+            "localLabel": "Unlikely",
+            "backendLabel": "Unlikely"
+          },
+          {
+            "score": 10,
+            "localScore": 10,
+            "backendScore": 10,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Possible",
+            "backendLabel": "Possible"
+          },
+          {
+            "score": 22,
+            "localScore": 22,
+            "backendScore": 22,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Possible",
+            "backendLabel": "Possible"
+          },
+          {
+            "score": 23,
+            "localScore": 23,
+            "backendScore": 23,
+            "localCategory": 3,
+            "backendCategory": 3,
+            "localLabel": "Likely",
+            "backendLabel": "Likely"
+          },
+          {
+            "score": 39,
+            "localScore": 39,
+            "backendScore": 39,
+            "localCategory": 3,
+            "backendCategory": 3,
+            "localLabel": "Likely",
+            "backendLabel": "Likely"
+          },
+          {
+            "score": 40,
+            "localScore": 40,
+            "backendScore": 40,
+            "localCategory": 4,
+            "backendCategory": 4,
+            "localLabel": "Very likely",
+            "backendLabel": "Very Likely"
+          },
+          {
+            "score": 81,
+            "localScore": 81,
+            "backendScore": 81,
+            "localCategory": 4,
+            "backendCategory": 4,
+            "localLabel": "Very likely",
+            "backendLabel": "Very Likely"
+          }
+        ],
+        "emptyAnswersAcceptedByCalculator": {
+          "score": 0,
+          "warnings": 27
+        },
+        "unrecognizedAnswers": {
+          "score": 0,
+          "warnings": 0
+        },
+        "normalization": "Case-insensitive trimmed strings; first array item; substring matches; numeric 0..3 allowed (numbers retain fractional values, numeric strings round); unrecognized/missing values score zero.",
+        "unreachableTier": null
+      },
+      "validation": {
+        "emailNode": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "v1",
+                "leftValue": "={{ $json.patientEmail }}",
+                "rightValue": "@",
+                "operator": {
+                  "type": "string",
+                  "operation": "contains"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "missingQuestionsOnlyWarnings": true,
+        "serverRequiredName": false,
+        "serverAnswerCompleteness": false
+      },
+      "email": {
+        "providerNodeType": "n8n-nodes-base.gmail",
+        "typeVersion": 2.2,
+        "credentialTypes": [
+          "gmailOAuth2"
+        ],
+        "credentialReferencePresent": true,
+        "credentialUsabilityVerified": false,
+        "recipientExpression": "={{ $json.patientEmail }}",
+        "subjectExpression": "={{ $json.emailSubject }}",
+        "messageExpression": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        },
+        "gatedByMailingConsent": false,
+        "greetingUsesUnescapedPatientName": true,
+        "copyIncludesProductsOrLabPromotion": true,
+        "returnsUpstreamFieldsFromHtml": true
+      },
+      "crm": {
+        "nodes": [],
+        "marketingSubscriptionNodes": [],
+        "consentPersistence": false
+      },
+      "response": {
+        "success": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: true,\n  totalScore: $json.totalScore,\n  resultLabel: $json.resultLabel,\n  resultContent: $json.resultContent,\n  landingPageUrl: $json.landingPageUrl,\n  message: 'Your thyroid assessment is complete. A copy has been sent to your email.'\n} }}",
+          "options": {
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "value": "Content-Type"
+                }
+              ]
+            }
+          }
+        },
+        "invalidEmail": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+          "options": {
+            "responseCode": 400,
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ]
+            }
+          }
+        },
+        "incomingNode": "Send Email",
+        "readsCurrentItem": true,
+        "explicitCalculateScoresReference": false,
+        "syntheticGmailMetadataSerialization": {
+          "success": true,
+          "message": "Your thyroid assessment is complete. A copy has been sent to your email."
+        },
+        "risk": "Score properties are read from Gmail output using $json. The workflow has no merge or explicit Calculate Scores reference. Metadata-only Gmail output drops the score properties from JSON; this simulation does not establish live provider output.",
+        "adapterMismatch": "Current frontend placeholder specifies accepted/emailSent, while the export response uses success and a message, with neither accepted nor emailSent."
+      },
+      "reliability": {
+        "errorWorkflowConfigured": false,
+        "executionTimeout": null,
+        "retryConfigured": false,
+        "continueOnFail": false,
+        "onError": null,
+        "deduplicationNodes": [],
+        "submissionIdInput": false,
+        "possibleDuplicate": "Each repeated successful POST reaches Send Email again. A client retry after email sent but response lost can send a duplicate.",
+        "cors": "Response nodes add wildcard origin; success adds POST, OPTIONS and Content-Type. No OPTIONS webhook or explicit webhook allowedOrigins setting appears in export; deployed preflight behavior must be verified."
+      },
+      "graph": {
+        "Webhook (Thyroid Submit)": {
+          "main": [
+            [
+              {
+                "node": "Calculate Scores",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Calculate Scores": {
+          "main": [
+            [
+              {
+                "node": "Has Valid Email?",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Has Valid Email?": {
+          "main": [
+            [
+              {
+                "node": "Build HTML Email",
+                "type": "main",
+                "index": 0
+              }
+            ],
+            [
+              {
+                "node": "Respond - Invalid Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Build HTML Email": {
+          "main": [
+            [
+              {
+                "node": "Send Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Send Email": {
+          "main": [
+            [
+              {
+                "node": "Respond - Success",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "perimenopause",
+      "sourceFile": "Perimenopause Typeform Assessment.json",
+      "exportActive": true,
+      "liveActivationVerified": false,
+      "webhook": {
+        "httpMethod": "POST",
+        "path": "perimenopause-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {},
+        "authenticationConfigured": false,
+        "credentialTypes": [],
+        "baseUrlIncluded": false
+      },
+      "payload": {
+        "shape": "Flat JSON object, read from $input.first().json.body || $input.first().json",
+        "contactFields": [
+          "first_name",
+          "email",
+          "mailing_list"
+        ],
+        "answerFields": [
+          "q1_water_retention",
+          "q2_facial_hair",
+          "q3_breast_tenderness",
+          "q4_pain",
+          "q5_vaginal_dryness",
+          "q6_fatigue",
+          "q7_concentration",
+          "q8_urinary_incontinence",
+          "q9_irritability",
+          "q10_anxiety",
+          "q11_mood_swings",
+          "q12_depression",
+          "q13_acne",
+          "q14_low_libido",
+          "q15_hot_flashes",
+          "q16_sleep_disturbance",
+          "q17_heart_disease_risk",
+          "q18_osteoporosis_risk",
+          "q19_weight_gain",
+          "q20_irregular_periods"
+        ],
+        "answerValues": [
+          {
+            "value": "Yes",
+            "score": 1
+          },
+          {
+            "value": "No",
+            "score": 0
+          }
+        ],
+        "localFieldsMatch": true,
+        "missingInLocal": [],
+        "extraInLocal": [],
+        "mailingListUsedForBranch": false
+      },
+      "scoring": {
+        "scoreField": "totalScore",
+        "rawYesCount": false,
+        "max": 20,
+        "localBoundaryDefinitions": [
+          {
+            "min": 0,
+            "max": 0,
+            "label": "No Symptoms Reported"
+          },
+          {
+            "min": 1,
+            "max": 14,
+            "label": "Mild–Moderate Symptoms"
+          },
+          {
+            "min": 15,
+            "max": 20,
+            "label": "Significant Symptoms"
+          }
+        ],
+        "displayLabels": [
+          {
+            "category": 1,
+            "localLabel": "No Symptoms Reported",
+            "backendLabel": "No Symptoms Reported"
+          },
+          {
+            "category": 2,
+            "localLabel": "Mild–Moderate Symptoms",
+            "backendLabel": "Mild to Moderate Symptoms"
+          },
+          {
+            "category": 3,
+            "localLabel": "Significant Symptoms",
+            "backendLabel": "Significant Symptoms"
+          }
+        ],
+        "allAttainableTotalsChecked": 21,
+        "allScoresAndCategoriesMatch": true,
+        "boundaryCases": [
+          {
+            "score": 0,
+            "localScore": 0,
+            "backendScore": 0,
+            "localCategory": 1,
+            "backendCategory": 1,
+            "localLabel": "No Symptoms Reported",
+            "backendLabel": "No Symptoms Reported"
+          },
+          {
+            "score": 1,
+            "localScore": 1,
+            "backendScore": 1,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Mild–Moderate Symptoms",
+            "backendLabel": "Mild to Moderate Symptoms"
+          },
+          {
+            "score": 14,
+            "localScore": 14,
+            "backendScore": 14,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Mild–Moderate Symptoms",
+            "backendLabel": "Mild to Moderate Symptoms"
+          },
+          {
+            "score": 15,
+            "localScore": 15,
+            "backendScore": 15,
+            "localCategory": 3,
+            "backendCategory": 3,
+            "localLabel": "Significant Symptoms",
+            "backendLabel": "Significant Symptoms"
+          },
+          {
+            "score": 20,
+            "localScore": 20,
+            "backendScore": 20,
+            "localCategory": 3,
+            "backendCategory": 3,
+            "localLabel": "Significant Symptoms",
+            "backendLabel": "Significant Symptoms"
+          }
+        ],
+        "emptyAnswersAcceptedByCalculator": {
+          "score": 0,
+          "warnings": 20
+        },
+        "unrecognizedAnswers": {
+          "score": 0,
+          "warnings": 0
+        },
+        "normalization": "Only trimmed case-insensitive string yes counts. true and numeric 1 do not count as yes. String([yes]) also equals yes. Unrecognized/missing values score zero.",
+        "unreachableTier": null
+      },
+      "validation": {
+        "emailNode": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "v1",
+                "leftValue": "={{ $json.patientEmail }}",
+                "rightValue": "@",
+                "operator": {
+                  "type": "string",
+                  "operation": "contains"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "missingQuestionsOnlyWarnings": true,
+        "serverRequiredName": false,
+        "serverAnswerCompleteness": false
+      },
+      "email": {
+        "providerNodeType": "n8n-nodes-base.gmail",
+        "typeVersion": 2.2,
+        "credentialTypes": [
+          "gmailOAuth2"
+        ],
+        "credentialReferencePresent": true,
+        "credentialUsabilityVerified": false,
+        "recipientExpression": "={{ $json.patientEmail }}",
+        "subjectExpression": "={{ $json.emailSubject }}",
+        "messageExpression": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        },
+        "gatedByMailingConsent": false,
+        "greetingUsesUnescapedPatientName": true,
+        "copyIncludesProductsOrLabPromotion": true,
+        "returnsUpstreamFieldsFromHtml": true
+      },
+      "crm": {
+        "nodes": [],
+        "marketingSubscriptionNodes": [],
+        "consentPersistence": false
+      },
+      "response": {
+        "success": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: true,\n  totalScore: $json.totalScore,\n  resultNum: $json.resultNum,\n  resultLabel: $json.resultLabel,\n  resultContent: $json.resultContent,\n  message: 'Your perimenopause assessment is complete. A copy has been sent to your email.'\n} }}",
+          "options": {
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "value": "Content-Type"
+                }
+              ]
+            }
+          }
+        },
+        "invalidEmail": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+          "options": {
+            "responseCode": 400,
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ]
+            }
+          }
+        },
+        "incomingNode": "Send Email",
+        "readsCurrentItem": true,
+        "explicitCalculateScoresReference": false,
+        "syntheticGmailMetadataSerialization": {
+          "success": true,
+          "message": "Your perimenopause assessment is complete. A copy has been sent to your email."
+        },
+        "risk": "Score properties are read from Gmail output using $json. The workflow has no merge or explicit Calculate Scores reference. Metadata-only Gmail output drops the score properties from JSON; this simulation does not establish live provider output.",
+        "adapterMismatch": "Current frontend placeholder specifies accepted/emailSent, while the export response uses success and a message, with neither accepted nor emailSent."
+      },
+      "reliability": {
+        "errorWorkflowConfigured": false,
+        "executionTimeout": null,
+        "retryConfigured": false,
+        "continueOnFail": false,
+        "onError": null,
+        "deduplicationNodes": [],
+        "submissionIdInput": false,
+        "possibleDuplicate": "Each repeated successful POST reaches Send Email again. A client retry after email sent but response lost can send a duplicate.",
+        "cors": "Response nodes add wildcard origin; success adds POST, OPTIONS and Content-Type. No OPTIONS webhook or explicit webhook allowedOrigins setting appears in export; deployed preflight behavior must be verified."
+      },
+      "graph": {
+        "Webhook (Perimenopause Submit)": {
+          "main": [
+            [
+              {
+                "node": "Calculate Scores",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Calculate Scores": {
+          "main": [
+            [
+              {
+                "node": "Has Valid Email?",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Has Valid Email?": {
+          "main": [
+            [
+              {
+                "node": "Build HTML Email",
+                "type": "main",
+                "index": 0
+              }
+            ],
+            [
+              {
+                "node": "Respond - Invalid Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Build HTML Email": {
+          "main": [
+            [
+              {
+                "node": "Send Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Send Email": {
+          "main": [
+            [
+              {
+                "node": "Respond - Success",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "pms",
+      "sourceFile": "PMS Typeform Assessment.json",
+      "exportActive": true,
+      "liveActivationVerified": false,
+      "webhook": {
+        "httpMethod": "POST",
+        "path": "pms-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {},
+        "authenticationConfigured": false,
+        "credentialTypes": [],
+        "baseUrlIncluded": false
+      },
+      "payload": {
+        "shape": "Flat JSON object, read from $input.first().json.body || $input.first().json",
+        "contactFields": [
+          "first_name",
+          "email",
+          "mailing_list"
+        ],
+        "answerFields": [
+          "q1_fluid_retention",
+          "q2_backache",
+          "q3_breast_tenderness",
+          "q4_headache",
+          "q5_weight_gain",
+          "q6_fatigue",
+          "q7_cravings",
+          "q8_joint_swelling",
+          "q9_irritability",
+          "q10_anxiety",
+          "q11_mood_swings",
+          "q12_depression",
+          "q13_hostility",
+          "q14_emotional_crying",
+          "q15_mental_confusion"
+        ],
+        "answerValues": [
+          {
+            "value": "Yes",
+            "score": 2
+          },
+          {
+            "value": "No",
+            "score": 0
+          }
+        ],
+        "localFieldsMatch": true,
+        "missingInLocal": [],
+        "extraInLocal": [],
+        "mailingListUsedForBranch": false
+      },
+      "scoring": {
+        "scoreField": "weightedScore",
+        "rawYesCount": true,
+        "max": 30,
+        "localBoundaryDefinitions": [
+          {
+            "min": 0,
+            "max": 0,
+            "label": "No Symptoms Reported"
+          },
+          {
+            "min": 1,
+            "max": 14,
+            "label": "Mild Symptoms"
+          },
+          {
+            "min": 15,
+            "max": 30,
+            "label": "Moderate to Severe Symptoms"
+          }
+        ],
+        "displayLabels": [
+          {
+            "category": 1,
+            "localLabel": "No Symptoms Reported",
+            "backendLabel": "No Symptoms Reported"
+          },
+          {
+            "category": 2,
+            "localLabel": "Mild Symptoms",
+            "backendLabel": "Mild PMS Symptoms"
+          },
+          {
+            "category": 3,
+            "localLabel": "Moderate to Severe Symptoms",
+            "backendLabel": "Moderate to Severe PMS"
+          }
+        ],
+        "allAttainableTotalsChecked": 16,
+        "allScoresAndCategoriesMatch": true,
+        "boundaryCases": [
+          {
+            "score": 0,
+            "localScore": 0,
+            "backendScore": 0,
+            "localCategory": 1,
+            "backendCategory": 1,
+            "localLabel": "No Symptoms Reported",
+            "backendLabel": "No Symptoms Reported"
+          },
+          {
+            "score": 2,
+            "localScore": 2,
+            "backendScore": 2,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Mild Symptoms",
+            "backendLabel": "Mild PMS Symptoms"
+          },
+          {
+            "score": 14,
+            "localScore": 14,
+            "backendScore": 14,
+            "localCategory": 2,
+            "backendCategory": 2,
+            "localLabel": "Mild Symptoms",
+            "backendLabel": "Mild PMS Symptoms"
+          },
+          {
+            "score": 16,
+            "localScore": 16,
+            "backendScore": 16,
+            "localCategory": 3,
+            "backendCategory": 3,
+            "localLabel": "Moderate to Severe Symptoms",
+            "backendLabel": "Moderate to Severe PMS"
+          },
+          {
+            "score": 30,
+            "localScore": 30,
+            "backendScore": 30,
+            "localCategory": 3,
+            "backendCategory": 3,
+            "localLabel": "Moderate to Severe Symptoms",
+            "backendLabel": "Moderate to Severe PMS"
+          }
+        ],
+        "emptyAnswersAcceptedByCalculator": {
+          "score": 0,
+          "warnings": 15
+        },
+        "unrecognizedAnswers": {
+          "score": 0,
+          "warnings": 0
+        },
+        "normalization": "Only trimmed case-insensitive string yes counts. true and numeric 1 do not count as yes. String([yes]) also equals yes. Unrecognized/missing values score zero.",
+        "unreachableTier": {
+          "resultNum": 4,
+          "label": "Severe Symptoms / Possible PMDD",
+          "minimumScore": 31,
+          "maxPossibleScore": 30
+        }
+      },
+      "validation": {
+        "emailNode": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "v1",
+                "leftValue": "={{ $json.patientEmail }}",
+                "rightValue": "@",
+                "operator": {
+                  "type": "string",
+                  "operation": "contains"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "missingQuestionsOnlyWarnings": true,
+        "serverRequiredName": false,
+        "serverAnswerCompleteness": false
+      },
+      "email": {
+        "providerNodeType": "n8n-nodes-base.gmail",
+        "typeVersion": 2.2,
+        "credentialTypes": [
+          "gmailOAuth2"
+        ],
+        "credentialReferencePresent": true,
+        "credentialUsabilityVerified": false,
+        "recipientExpression": "={{ $json.patientEmail }}",
+        "subjectExpression": "={{ $json.emailSubject }}",
+        "messageExpression": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        },
+        "gatedByMailingConsent": false,
+        "greetingUsesUnescapedPatientName": true,
+        "copyIncludesProductsOrLabPromotion": true,
+        "returnsUpstreamFieldsFromHtml": true
+      },
+      "crm": {
+        "nodes": [],
+        "marketingSubscriptionNodes": [],
+        "consentPersistence": false
+      },
+      "response": {
+        "success": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: true,\n  rawYesCount: $json.rawYesCount,\n  weightedScore: $json.weightedScore,\n  resultNum: $json.resultNum,\n  resultLabel: $json.resultLabel,\n  resultContent: $json.resultContent,\n  message: 'Your PMS assessment is complete. A copy has been sent to your email.'\n} }}",
+          "options": {
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "value": "Content-Type"
+                }
+              ]
+            }
+          }
+        },
+        "invalidEmail": {
+          "respondWith": "json",
+          "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+          "options": {
+            "responseCode": 400,
+            "responseHeaders": {
+              "entries": [
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ]
+            }
+          }
+        },
+        "incomingNode": "Send Email",
+        "readsCurrentItem": true,
+        "explicitCalculateScoresReference": false,
+        "syntheticGmailMetadataSerialization": {
+          "success": true,
+          "message": "Your PMS assessment is complete. A copy has been sent to your email."
+        },
+        "risk": "Score properties are read from Gmail output using $json. The workflow has no merge or explicit Calculate Scores reference. Metadata-only Gmail output drops the score properties from JSON; this simulation does not establish live provider output.",
+        "adapterMismatch": "Current frontend placeholder specifies accepted/emailSent, while the export response uses success and a message, with neither accepted nor emailSent."
+      },
+      "reliability": {
+        "errorWorkflowConfigured": false,
+        "executionTimeout": null,
+        "retryConfigured": false,
+        "continueOnFail": false,
+        "onError": null,
+        "deduplicationNodes": [],
+        "submissionIdInput": false,
+        "possibleDuplicate": "Each repeated successful POST reaches Send Email again. A client retry after email sent but response lost can send a duplicate.",
+        "cors": "Response nodes add wildcard origin; success adds POST, OPTIONS and Content-Type. No OPTIONS webhook or explicit webhook allowedOrigins setting appears in export; deployed preflight behavior must be verified."
+      },
+      "graph": {
+        "Webhook (PMS Submit)": {
+          "main": [
+            [
+              {
+                "node": "Calculate Scores",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Calculate Scores": {
+          "main": [
+            [
+              {
+                "node": "Has Valid Email?",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Has Valid Email?": {
+          "main": [
+            [
+              {
+                "node": "Build HTML Email",
+                "type": "main",
+                "index": 0
+              }
+            ],
+            [
+              {
+                "node": "Respond - Invalid Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Build HTML Email": {
+          "main": [
+            [
+              {
+                "node": "Send Email",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Send Email": {
+          "main": [
+            [
+              {
+                "node": "Respond - Success",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "men": [
+    {
+      "key": "health/testosterone-testing-test-your-testosterone-levels",
+      "topic": "Hormone testing",
+      "summary": "Understand why testosterone tests are ordered, how samples are collected, and what to discuss when reviewing results.",
+      "image": "uploads/source/a088f1f2143215c5.webp"
+    },
+    {
+      "key": "health/testosterone-universal-hormone-function-deficiency-treatment",
+      "topic": "Testosterone & health",
+      "summary": "Explore testosterone's roles, symptoms discussed in relation to deficiency, and the treatment options and side effects covered in this article.",
+      "image": "uploads/source/944d87867a8a1ac3.webp"
+    },
+    {
+      "key": "health/the-causes-and-treatment-of-erectile-dysfunction-ed-restoring-healthy-sex-again",
+      "topic": "Sexual health",
+      "summary": "Read about possible physical and emotional causes of erectile dysfunction, clinical evaluation, and approaches to discuss with a provider.",
+      "image": "uploads/source/944d87867a8a1ac3.webp"
+    }
+  ],
+  "women": [
+    {
+      "key": "health/perimenopause-navigating-the-many-symptoms-of-pre-menopause",
+      "topic": "Perimenopause",
+      "summary": "Explore changes in cycles, sleep, mood and concentration during perimenopause, alongside care options discussed in the article.",
+      "image": "uploads/source/99904218d4faaa63.webp"
+    },
+    {
+      "key": "health/hot-flashes-menopause-causes-treatment-faqs",
+      "topic": "Menopause symptoms",
+      "summary": "Read about hot flashes, their impact on sleep and daily life, and the treatment questions covered in HRT.org's menopause guide.",
+      "image": "uploads/source/f230a4833926c33e.webp"
+    },
+    {
+      "key": "health/post-menopause-what-to-expect-after-the-change",
+      "topic": "Life after menopause",
+      "summary": "Learn which topics to discuss after menopause, including vaginal and urinary symptoms, bone health and heart health.",
+      "image": "uploads/source/f9a2a6e95249c585.webp"
+    }
+  ]
+}

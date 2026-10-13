@@ -1,0 +1,107 @@
+[
+  {
+    "name": "T4",
+    "start": 12547551,
+    "end": 12552424,
+    "length": 4873,
+    "type": "FunctionExpression"
+  },
+  {
+    "name": "c4",
+    "start": 12457440,
+    "end": 12463981,
+    "length": 6541,
+    "type": "FunctionDeclaration"
+  },
+  {
+    "name": "d4",
+    "start": 12456902,
+    "end": 12457439,
+    "length": 537,
+    "type": "FunctionExpression"
+  },
+  {
+    "name": "n4",
+    "start": 12438708,
+    "end": 12442133,
+    "length": 3425,
+    "type": "FunctionExpression"
+  },
+  {
+    "name": "i3",
+    "start": 12375738,
+    "end": 12386115,
+    "length": 10377,
+    "type": "FunctionExpression"
+  },
+  {
+    "name": "hY",
+    "start": 12163668,
+    "end": 12171064,
+    "length": 7396,
+    "type": "FunctionExpression"
+  },
+  {
+    "name": "BT",
+    "start": 11744580,
+    "end": 11747774,
+    "length": 3194,
+    "type": "FunctionExpression"
+  },
+  {
+    "name": "ku",
+    "start": 2476610,
+    "end": 2480122,
+    "length": 3512,
+    "type": "ArrowFunctionExpression"
+  },
+  {
+    "name": "ai",
+    "start": 2396482,
+    "end": 2399762,
+    "length": 3280,
+    "type": "ArrowFunctionExpression"
+  },
+  {
+    "name": "ua",
+    "start": 2346800,
+    "end": 2346888,
+    "length": 88,
+    "type": "ArrowFunctionExpression"
+  },
+  {
+    "name": "ku",
+    "start": 2196829,
+    "end": 2197395,
+    "length": 566,
+    "type": "FunctionDeclaration"
+  },
+  {
+    "name": "ai",
+    "start": 2140708,
+    "end": 2141154,
+    "length": 446,
+    "type": "FunctionDeclaration"
+  },
+  {
+    "name": "ua",
+    "start": 2099797,
+    "end": 2099802,
+    "length": 5,
+    "type": "NumericLiteral"
+  },
+  {
+    "name": "ua",
+    "start": 187613,
+    "end": 187623,
+    "length": 10,
+    "type": "StringLiteral"
+  },
+  {
+    "name": "ua",
+    "start": 138363,
+    "end": 138386,
+    "length": 23,
+    "type": "StringLiteral"
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "method": "Deterministic random answer vectors compared with original extracted scoring functions in a network-free VM. Includes first/last option for every question. All derived scores must map to a source result range.",
+  "results": [
+    {
+      "id": "pms-assessment",
+      "questionCount": 15,
+      "checks": 502,
+      "failures": []
+    },
+    {
+      "id": "thyroid-assessment",
+      "questionCount": 27,
+      "checks": 502,
+      "failures": []
+    },
+    {
+      "id": "adrenal-fatigue",
+      "questionCount": 5,
+      "checks": 502,
+      "failures": []
+    },
+    {
+      "id": "osteoporosis-assessment",
+      "questionCount": 13,
+      "checks": 502,
+      "failures": []
+    },
+    {
+      "id": "andropause-assessment",
+      "questionCount": 10,
+      "checks": 502,
+      "failures": []
+    },
+    {
+      "id": "menopause-assessment",
+      "questionCount": 18,
+      "checks": 502,
+      "failures": []
+    },
+    {
+      "id": "perimenopause-assessment",
+      "questionCount": 20,
+      "checks": 502,
+      "failures": []
+    }
+  ]
+}

@@ -1,0 +1,1668 @@
+{
+  "pms-assessment": {
+    "id": "pms-assessment",
+    "sourceUrl": "https://hrt.org/checklist/pms-assessment",
+    "sourceStatus": 200,
+    "fetchedAt": "2026-10-11T19:48:18.603Z",
+    "questions": [
+      {
+        "name": "q1_fluid_retention",
+        "text": "Fluid retention?"
+      },
+      {
+        "name": "q2_backache",
+        "text": "Backache?"
+      },
+      {
+        "name": "q3_breast_tenderness",
+        "text": "Breast tenderness or swelling?"
+      },
+      {
+        "name": "q4_headache",
+        "text": "Headache or migraine?"
+      },
+      {
+        "name": "q5_weight_gain",
+        "text": "Weight gain?"
+      },
+      {
+        "name": "q6_fatigue",
+        "text": "Fatigue or lack of energy?"
+      },
+      {
+        "name": "q7_cravings",
+        "text": "Craving carbohydrates, alcohol or sweets?"
+      },
+      {
+        "name": "q8_joint_swelling",
+        "text": "Joint swelling?"
+      },
+      {
+        "name": "q9_irritability",
+        "text": "Irritability?"
+      },
+      {
+        "name": "q10_anxiety",
+        "text": "Anxiety?"
+      },
+      {
+        "name": "q11_mood_swings",
+        "text": "Mood swings?"
+      },
+      {
+        "name": "q12_depression",
+        "text": "Depression?"
+      },
+      {
+        "name": "q13_hostility",
+        "text": "Hostility?"
+      },
+      {
+        "name": "q14_emotional_crying",
+        "text": "Emotional or crying for no apparent reason?"
+      },
+      {
+        "name": "q15_mental_confusion",
+        "text": "Mental confusion?"
+      }
+    ],
+    "options": [
+      {
+        "letter": "Y",
+        "text": "Yes",
+        "score": 2
+      },
+      {
+        "letter": "N",
+        "text": "No",
+        "score": 0
+      }
+    ],
+    "mailingOptions": [
+      {
+        "letter": "A",
+        "text": "Yes, add me to your mailing list"
+      },
+      {
+        "letter": "B",
+        "text": "No, just send me the results"
+      }
+    ],
+    "screenOrder": [
+      "questions",
+      "name",
+      "email",
+      "mailing",
+      "results"
+    ],
+    "submission": {
+      "endpoint": "https://vmi3206755.contaboserver.net/webhook/pms-typeform-submit",
+      "fields": [
+        "first_name",
+        "email",
+        "mailing_list",
+        "q1_fluid_retention",
+        "q2_backache",
+        "q3_breast_tenderness",
+        "q4_headache",
+        "q5_weight_gain",
+        "q6_fatigue",
+        "q7_cravings",
+        "q8_joint_swelling",
+        "q9_irritability",
+        "q10_anxiety",
+        "q11_mood_swings",
+        "q12_depression",
+        "q13_hostility",
+        "q14_emotional_crying",
+        "q15_mental_confusion"
+      ],
+      "format": "flat JSON, answers as original option text"
+    },
+    "scoring": {
+      "max": 30,
+      "functionSource": "function computeLocalScore() {\n    let total = 0;\n    for (let i = 0; i < QUESTIONS.length; i++) {\n      if (answers[i] === 'Yes') total += 2;\n    }\n    return total;\n  }",
+      "results": [
+        {
+          "min": 0,
+          "max": 0,
+          "label": "No Symptoms Reported",
+          "summary": "You have not reported any PMS symptoms. Your hormonal cycle appears to be well-balanced at this time.",
+          "body": "Not experiencing PMS symptoms is a good sign that your progesterone and oestrogen levels are in healthy balance during your luteal phase. Hormonal balance can be affected by stress, diet, sleep, and age, so it is worth keeping an eye on symptoms if anything changes.",
+          "steps": [
+            {
+              "title": "Maintain your healthy habits",
+              "body": "Regular exercise, a low-sugar diet, quality sleep, and stress management are the foundations of hormonal health — keep them up."
+            },
+            {
+              "title": "Know the signs",
+              "body": "PMS symptoms can develop or worsen with age, especially in your 30s and 40s as progesterone levels begin to fluctuate."
+            },
+            {
+              "title": "Annual hormone check",
+              "body": "A simple hormone panel once a year gives you a clear baseline and helps catch any imbalances before they become problematic."
+            }
+          ],
+          "className": "result-verdict none",
+          "verdict": "You have not reported any PMS symptoms. Your hormonal cycle appears to be well-balanced at this time."
+        },
+        {
+          "min": 1,
+          "max": 14,
+          "label": "Mild Symptoms",
+          "summary": "You are experiencing mild PMS symptoms. These are likely manageable but may still affect your comfort and mood in the days before your period.",
+          "body": "Mild PMS is most commonly caused by the natural drop in progesterone in the second half of your cycle. Symptoms such as fluid retention, breast tenderness, mild irritability, and fatigue are very common and often respond well to dietary adjustments, magnesium supplementation, and regular exercise. A hormone panel can confirm whether a progesterone imbalance is contributing to your symptoms.",
+          "steps": [
+            {
+              "title": "Try targeted supplementation",
+              "body": "Magnesium glycinate (300–400mg/day), vitamin B6, and evening primrose oil are evidence-based supplements shown to reduce mild PMS symptoms significantly."
+            },
+            {
+              "title": "Reduce sugar and caffeine",
+              "body": "Blood sugar swings and caffeine both amplify PMS symptoms. Reducing intake in the week before your period can make a noticeable difference."
+            },
+            {
+              "title": "Consider a hormone panel",
+              "body": "A female hormone panel measuring progesterone, oestradiol, and DHEA-S will confirm whether low progesterone in your luteal phase is driving your symptoms."
+            }
+          ],
+          "className": "result-verdict mild",
+          "verdict": "You are experiencing mild PMS symptoms. These are likely manageable but may still affect your comfort and mood in the days before your period."
+        },
+        {
+          "min": 15,
+          "max": 30,
+          "label": "Moderate to Severe Symptoms",
+          "summary": "Your symptoms are significantly impacting your quality of life. This level of PMS often indicates a hormone imbalance that would benefit from professional assessment and treatment.",
+          "body": "A score in this range suggests oestrogen dominance or progesterone deficiency — the most common hormonal drivers of moderate-to-severe PMS. You may be experiencing a combination of physical symptoms (bloating, breast pain, headaches, joint pain) alongside emotional symptoms (mood swings, anxiety, depression, irritability). These are not \"normal\" and do not need to be tolerated. Bioidentical progesterone therapy, alongside targeted nutritional support, has an excellent track record in significantly reducing symptoms at this level.",
+          "steps": [
+            {
+              "title": "Get a comprehensive hormone panel",
+              "body": "A full female hormone profile including progesterone, oestradiol, testosterone, DHEA-S, cortisol, and thyroid will identify exactly which imbalances are driving your symptoms."
+            },
+            {
+              "title": "Speak to a specialist",
+              "body": "Our healthcare specialists understand the complexity of PMS and can discuss bioidentical progesterone therapy, dietary strategies, and evidence-based supplements tailored to your results."
+            },
+            {
+              "title": "Track your cycle symptoms",
+              "body": "Keep a daily diary noting symptom severity across your cycle. This helps your clinician identify the pattern and confirm a PMS diagnosis versus other hormonal conditions."
+            }
+          ],
+          "className": "result-verdict moderate",
+          "verdict": "Your symptoms are significantly impacting your quality of life. This level of PMS often indicates a hormone imbalance that would benefit from professional assessment and treatment."
+        }
+      ],
+      "mode": "weighted-yes-no"
+    },
+    "content": {
+      "title": "PMS Assessment Quiz - Test Online If You Have Premenstrual Syndrome | HRT",
+      "intro": "PMS Self-Assessment\n\nPremenstrual Syndrome affects up to 75% of women of reproductive age. Symptoms range from mild discomfort to severe disruption of daily life.\n\nAnswer 15 yes/no questions about symptoms you experience in the days before your period to understand the severity of your PMS and what you can do about it.\n\nStart",
+      "screenHtml": "\n    <div class=\"intro-content\">\n      <div class=\"intro-image\">\n        <img src=\"https://womenshealth.gov/sites/default/files/heading-images/PremenstrualsyndromePMS.jpg\" alt=\"PMS Self-Assessment\">\n      </div>\n      <h1 class=\"intro-title\">PMS Self-Assessment</h1>\n      <p class=\"intro-description\">\n        Premenstrual Syndrome affects up to 75% of women of reproductive age. Symptoms range from mild discomfort to severe disruption of daily life.\n      </p>\n      <p class=\"intro-subtext\">\n        Answer 15 yes/no questions about symptoms you experience in the days before your period to understand the severity of your PMS and what you can do about it.\n      </p>\n      <button class=\"btn-start\" id=\"startBtn\">Start</button>\n    </div>\n  ",
+      "allScreens": [
+        {
+          "id": "screen-intro",
+          "text": "PMS Self-Assessment\n\nPremenstrual Syndrome affects up to 75% of women of reproductive age. Symptoms range from mild discomfort to severe disruption of daily life.\n\nAnswer 15 yes/no questions about symptoms you experience in the days before your period to understand the severity of your PMS and what you can do about it.\n\nStart"
+        },
+        {
+          "id": "screen-question",
+          "text": "\n    \n      \n        1\n        Question text…\n      \n      Do you experience this symptom in the days before your period?\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-name",
+          "text": "\n    \n      \n        16\n        What is your first name?\n      \n      \n        \n        Please enter your first name\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-email",
+          "text": "\n    \n      \n        17\n        We'll calculate your results in a second — if you'd like to receive a copy via email, leave your email below:\n      \n      \n        \n        Please enter a valid email address\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-mailing",
+          "text": "\n    \n      \n        18\n        Would you like to be notified of new assessments and health-related posts?\n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-submitting",
+          "text": "\n    \n      \n      Calculating your PMS assessment results…\n    \n  "
+        },
+        {
+          "id": "screen-complete",
+          "text": "\n    \n      \n        \n          \n            \n          \n        \n        Your Assessment Results\n        PMS Self-Assessment — HRT.org\n      \n\n      \n        Your Score\n        —\n        out of 15\n        \n          \n        \n        \n          0MildModerateSevere15\n        \n      \n\n      \n        \n        \n      \n\n      \n        What does this mean?\n        \n      \n\n      \n        Recommended next steps\n        \n      \n\n      \n        \n          \n          \n        \n        A copy of these results has been sent to \n      \n\n      \n        Book a Free Consultation\n        Retake Assessment\n      \n    \n  "
+        }
+      ],
+      "links": [
+        {
+          "text": "Book a Free Consultation",
+          "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+        }
+      ]
+    },
+    "title": "PMS Self-Assessment",
+    "intro": [
+      "Premenstrual Syndrome affects up to 75% of women of reproductive age. Symptoms range from mild discomfort to severe disruption of daily life.",
+      "Answer 15 yes/no questions about symptoms you experience in the days before your period to understand the severity of your PMS and what you can do about it."
+    ],
+    "notes": [
+      "Weighted score is 2 per Yes, maximum30; original >30 Severe Symptoms/Possible PMDD branch is unreachable and not made reachable. Display originally shows raw Yes count out of15."
+    ]
+  },
+  "thyroid-assessment": {
+    "id": "thyroid-assessment",
+    "sourceUrl": "https://hrt.org/checklist/thyroid-assessment",
+    "sourceStatus": 200,
+    "fetchedAt": "2026-10-11T19:48:18.663Z",
+    "questions": [
+      {
+        "name": "q1_thinking_slow",
+        "text": "Is your thinking slow?"
+      },
+      {
+        "name": "q10_weight_difficulty",
+        "text": "Are you having difficulty losing weight, even when eating less / exercising more?"
+      },
+      {
+        "name": "q13_excessive_sleep",
+        "text": "How often do you need a lot of sleep?"
+      },
+      {
+        "name": "q18_slow_movements",
+        "text": "Do you notice your movements are slow?"
+      },
+      {
+        "name": "q24_morning_fatigue",
+        "text": "Do you have low energy first thing in the morning, even after good sleep?"
+      },
+      {
+        "name": "q11_miss_meal",
+        "text": "Do you feel unwell if you miss a meal?"
+      },
+      {
+        "name": "q15_not_sweating",
+        "text": "Do you experience not sweating much, even when exercising?"
+      },
+      {
+        "name": "q22_feeling_cold",
+        "text": "Do you feel cold more than most other people?"
+      },
+      {
+        "name": "q27_cold_extremities",
+        "text": "Are your hands and feet often cold?"
+      },
+      {
+        "name": "q3_bags_under_eyes",
+        "text": "Do you have bags under the eyes?"
+      },
+      {
+        "name": "q6_yellowing",
+        "text": "Do you notice the yellowing of palms of your hands and/or soles of feet?"
+      },
+      {
+        "name": "q9_bloated_face",
+        "text": "Does your face look bloated?"
+      },
+      {
+        "name": "q19_thinning_eyebrows",
+        "text": "Are your eyebrows thinning?"
+      },
+      {
+        "name": "q23_dry_skin_hair",
+        "text": "How often do you have dry skin or hair and/or experience hair loss?"
+      },
+      {
+        "name": "q26_puffy_eyelids",
+        "text": "Are your eyelids swollen and puffy?"
+      },
+      {
+        "name": "q2_joint_stiffness",
+        "text": "Do you experience joint stiffness and pain, which sometimes gets better after movement?"
+      },
+      {
+        "name": "q4_dizziness",
+        "text": "Do you experience dizziness or poor sense of balance?"
+      },
+      {
+        "name": "q17_headaches",
+        "text": "How often do you have headaches (often worse in morning)?"
+      },
+      {
+        "name": "q5_nasal_congestion",
+        "text": "Do you suffer from nasal congestion?"
+      },
+      {
+        "name": "q8_bowel_issues",
+        "text": "Do you experience difficulties with your bowel movements, or how often do they occur less than daily?"
+      },
+      {
+        "name": "q16_frequent_infections",
+        "text": "Do you suffer from frequent infections?"
+      },
+      {
+        "name": "q7_depression",
+        "text": "How often do you feel depressed?"
+      },
+      {
+        "name": "q12_memory_issues",
+        "text": "Do you notice your memory is not as good as it used to be?"
+      },
+      {
+        "name": "q14_pms",
+        "text": "How often do you suffer from PMS?"
+      },
+      {
+        "name": "q20_concentration",
+        "text": "Do you have trouble concentrating?"
+      },
+      {
+        "name": "q25_moody_irritable",
+        "text": "How often do you feel moody or irritable?"
+      },
+      {
+        "name": "q21_low_sex_drive",
+        "text": "Do you experience a low sex drive?"
+      }
+    ],
+    "options": [
+      {
+        "letter": "A",
+        "text": "Never",
+        "score": 0
+      },
+      {
+        "letter": "B",
+        "text": "Occasionally",
+        "score": 1
+      },
+      {
+        "letter": "C",
+        "text": "Frequently",
+        "score": 2
+      },
+      {
+        "letter": "D",
+        "text": "Constantly",
+        "score": 3
+      }
+    ],
+    "mailingOptions": [
+      {
+        "letter": "A",
+        "text": "Yes, add me to your mailing list"
+      },
+      {
+        "letter": "B",
+        "text": "No, just send me the results"
+      }
+    ],
+    "screenOrder": [
+      "questions",
+      "name",
+      "email",
+      "mailing",
+      "results"
+    ],
+    "submission": {
+      "endpoint": "https://vmi3206755.contaboserver.net/webhook/thyroid-typeform-submit",
+      "fields": [
+        "first_name",
+        "email",
+        "mailing_list",
+        "q1_thinking_slow",
+        "q10_weight_difficulty",
+        "q13_excessive_sleep",
+        "q18_slow_movements",
+        "q24_morning_fatigue",
+        "q11_miss_meal",
+        "q15_not_sweating",
+        "q22_feeling_cold",
+        "q27_cold_extremities",
+        "q3_bags_under_eyes",
+        "q6_yellowing",
+        "q9_bloated_face",
+        "q19_thinning_eyebrows",
+        "q23_dry_skin_hair",
+        "q26_puffy_eyelids",
+        "q2_joint_stiffness",
+        "q4_dizziness",
+        "q17_headaches",
+        "q5_nasal_congestion",
+        "q8_bowel_issues",
+        "q16_frequent_infections",
+        "q7_depression",
+        "q12_memory_issues",
+        "q14_pms",
+        "q20_concentration",
+        "q25_moody_irritable",
+        "q21_low_sex_drive"
+      ],
+      "format": "flat JSON, answers as original option text"
+    },
+    "scoring": {
+      "max": 81,
+      "functionSource": "function computeLocalScore(){\n    var map = { never:0, occasionally:1, frequently:2, constantly:3 }, total = 0;\n    for(var i=0;i<QUESTIONS.length;i++){\n      var v = answers[i]; if(!v) continue;\n      var k = String(v).trim().toLowerCase(); if(k in map) total += map[k];\n    }\n    return total;\n  }",
+      "results": [
+        {
+          "min": 0,
+          "max": 9,
+          "className": "text-unlikely",
+          "body": "Unlikely - Low thyroid function is unlikely.",
+          "html": "Unlikely - Low thyroid function is unlikely.",
+          "label": "Unlikely",
+          "summary": "Low thyroid function is unlikely.",
+          "steps": [],
+          "verdict": "Low thyroid function is unlikely."
+        },
+        {
+          "min": 10,
+          "max": 22,
+          "className": "text-possible",
+          "body": "Possible - Low thyroid function is possible. You may consider using the Broda Barnes basal metabolic temperature test to learn more. If you are concerned, consider discussing your symptoms with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.",
+          "html": "Possible - Low thyroid function is possible. You may consider using the Broda Barnes basal metabolic temperature test to learn more. If you are concerned, consider discussing your symptoms with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.",
+          "label": "Possible",
+          "summary": "Low thyroid function is possible. You may consider using the Broda Barnes basal metabolic temperature test to learn more. If you are concerned, consider discussing your symptoms with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.",
+          "steps": [],
+          "verdict": "Low thyroid function is possible. You may consider using the Broda Barnes basal metabolic temperature test to learn more. If you are concerned, consider discussing your symptoms with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels."
+        },
+        {
+          "min": 23,
+          "max": 39,
+          "className": "text-likely",
+          "body": "Likely - Low thyroid function is likely. Consider discussing your symptoms and concerns with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.",
+          "html": "Likely - Low thyroid function is likely. Consider discussing your symptoms and concerns with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.",
+          "label": "Likely",
+          "summary": "Low thyroid function is likely. Consider discussing your symptoms and concerns with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.",
+          "steps": [],
+          "verdict": "Low thyroid function is likely. Consider discussing your symptoms and concerns with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels."
+        },
+        {
+          "min": 40,
+          "max": 100,
+          "className": "text-verylikely",
+          "body": "Very likely - Low thyroid function is very likely. Consult your healthcare provider. A blood test to measure your thyroid hormone levels is recommended.",
+          "html": "Very likely - Low thyroid function is very likely. Consult your healthcare provider. A blood test to measure your thyroid hormone levels is recommended.",
+          "label": "Very likely",
+          "summary": "Low thyroid function is very likely. Consult your healthcare provider. A blood test to measure your thyroid hormone levels is recommended.",
+          "steps": [],
+          "verdict": "Low thyroid function is very likely. Consult your healthcare provider. A blood test to measure your thyroid hormone levels is recommended."
+        }
+      ],
+      "mode": "frequency"
+    },
+    "content": {
+      "title": "Thyroid Assessment Quiz - Test Online If You Have a Thyroid Disorder | HRT",
+      "allScreens": [
+        {
+          "id": "tq-intro",
+          "text": "Thyroid Assessment Quiz\n\nCurrently, approximately 30 million Americans suffer with a thyroid disorder. As many as half, however, go undiagnosed and untreated.\n\nComplete the following questionnaire to check if you may be suffering from a thyroid disorder.\n\nStart"
+        },
+        {
+          "id": "tq-question",
+          "text": "\n    \n      \n        1\n        Question text…\n      \n      Choose the option that best describes your experience.\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "tq-name",
+          "text": "\n    \n      \n        28\n        What is your first name?\n      \n      \n        \n        Please enter your first name\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "tq-email",
+          "text": "\n    \n      \n        29\n        We'll calculate your results — leave your email to receive a copy:\n      \n      \n        \n        Please enter a valid email address\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "tq-mailing",
+          "text": "\n    \n      \n        30\n        Would you like to be notified of new assessments and health-related posts?\n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "tq-submitting",
+          "text": "\n    \n      \n      Calculating your thyroid assessment results…\n    \n  "
+        },
+        {
+          "id": "tq-complete",
+          "text": "\n    \n      \n        \n          \n        \n      \n      Assessment Complete!\n      Taking you to your results page now…\n      \n      Click here if not redirected automatically\n    \n  "
+        }
+      ],
+      "links": [],
+      "resultPage": "Men\nHormone Replacement TherapyAnti Aging PeptidesWeight Loss and Management\nSexual Health\nErectile dysfunctionSexual Health\nHair Loss\nWomen\nMenopause\nHormone Replacement Therapy for Women\nAnti Aging Peptide Therapy for Women\nWeight Loss, Management and Maintenance for Women\nWomen’s Sexual Health and Treatments\nHair Loss & Hair Growth Treatment & Care for Women\nEducation\nSymptoms\nConditions\nHormones\nMen\nWomen\nTesting\nSymptom Check\nFemale Hormone Imbalance Test\nMale Hormone Imbalance Test\nPMS Self-Assessment Test\nThyroid Assesment Test\nAdrenal Fatigue Assessment Test\nOsteoporosis Assessment Test\nAndropause Assessment Test\nMenopause Assessment Test\nPerimenopause Assessment Test\nShop\nGet Startedinfo@hrt.org\n0\nThyroid Assessment Results\nUnlikely - Low thyroid function is unlikely.\nPossible - Low thyroid function is possible. You may consider using the Broda Barnes basal metabolic temperature test to learn more. If you are concerned, consider discussing your symptoms with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.\nLikely - Low thyroid function is likely. Consider discussing your symptoms and concerns with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.\nVery likely - Low thyroid function is very likely. Consult your healthcare provider. A blood test to measure your thyroid hormone levels is recommended.\nConsider discussing your symptoms and concerns with your healthcare provider and taking a simple blood test to measure your thyroid hormone levels.\nGET A HOME TESTING KIT\nWhat does this mean?\nThe thyroid is a small butterfly-shaped gland located in front of the windpipe and responsible for the production of hormones, thyroxine (T4), triiodothyronine (T3), and calcitonin. It produces thyroid hormone (TH) that affects how the body uses energy, regulating temperature, metabolism, and heartbeat.\nBased on your thyroid assessment and symptoms, you may be suffering from a thyroid disorder.\nGET A HOME TESTING KIT\nWhat are my next steps?\nSee a healthcare practitioner to discuss symptoms and possible testing, or order tests on your own and share results with your doctor. Treatment for thyroid disorders may include:\n\nOral medications\nRadioactive iodine treatment\nSurgical removal of benign nodules or cancer\nSurgical removal of the thyroid gland\nNatural support may also include a thyroid/adrenal supplement, a diet fortified with sea vegetables, regular exercise, and cutting out refined carbohydrates.\nGET A HOME TESTING KIT\nPreferred Testing Suggestion\n\nElite Thyroid Profile Test Kit\n\nElite Thyroid Profile provides an assessment of thyroid health, including screening for hypo or hyperthyroidism, determining Free T4 and Free T3 levels, testing for autoimmune thyroid disease, and monitoring thyroid replacement dosages. Elite Thyroid Profile adds an indicator of low iodine status and total T4 production by the thyroid gland.\n\nGET THIS TEST\nMinimum Testing Suggestion\n\nEssential Thyroid Profile Test Kit\n\nEssential Thyroid Profile provides assessment of thyroid health, including screening for hypo or hyperthyroidism, determining Free T4 and Free T3 levels, testing for autoimmune thyroid disease, and monitoring thyroid replacement dosages.\n\nGET THIS TEST\nThyroid Support - Natural Supplement for Optimal Thyroid Function & Health\nThyroid Support - Natural Supplement for Optimal Thyroid Function & Health.\nGET YOURS NOW\nWhat our customers said\n\nDon’t take our word. See our testimonials\n\nZRTPurchased a Hormone and Metals test, after reviewing the results, I liked how everything was laid out and how certain areas that were low gave good insight and how it can affect the way your body functions.\n\nBrandon B.\nVerified Buyer\n\n\nMade it easy to retest my Thyroid!I like the convenience and the depth of information provided in the results. Provided some answers I had been looking for. Hopefully I can make some adjustments in my diet and lifestyle to improve some of my symptoms naturally.\n\nLaura S.\nVerified Buyer\n\nInterested in Speaking with a Practitioner to Discuss your Options?\nWe work with only the leading thyroid health practitioners in the country to bring you specialized, unmatched care. If you are interested in a free consultation to review your thyroid health contact us via the button below.\nSCHEDULE YOUR APPOINTMENT\nRelated Education\n\nReview our popular thyroid education\n\nHyperthyroidism—What Your Hormones Could Be Hiding?\nRead Now\nHypothyroidism—Self-check and Treatment\nRead Now\nThyroid Disease—The Symptoms, Cures and Causes\nRead Now\npages\nContact UsJoin Our NetworkTerms and ConditionsPrivacy PolicyDisclaimerProvidersPharmacy InfoHealth Information Privacy Policy\nTREATMENTS\nAnti Aging PeptidesHormone Replacement TherapyHair LossWeight LossSexual Health\nSocial\n@hrt_org\n@hrt_health\nYoutube\n@hrthealth\ncontact\ninfo@hrt.org\n888 574 5524\n© HRT, All Rights Reserved\n\nTelehealth services currently available in Florida and California\n\nPartner Sites: <a href=\"https://medmind.com\" target=\"_blank\">MedMind</a>",
+      "intro": "Thyroid Assessment Quiz\n\nCurrently, approximately 30 million Americans suffer with a thyroid disorder. As many as half, however, go undiagnosed and untreated.\n\nComplete the following questionnaire to check if you may be suffering from a thyroid disorder.\n\nStart",
+      "screenHtml": "\n    <div class=\"tq-intro-content\">\n      <div class=\"tq-intro-image\">\n        <img src=\"https://cdn.prod.website-files.com/632a33dda7f9eaa9ed6897ea/633b7dba2c73b112100c639c_Thyroid-Assessment-Signs-and-Symptoms%25E2%2580%2594Test-For-Hypothyroidism-Hyperthyroidism-and-Autoimmune-Disorders-1024x683.jpeg\" alt=\"Thyroid Assessment\">\n      </div>\n      <h2 class=\"tq-intro-title\">Thyroid Assessment Quiz</h2>\n      <p class=\"tq-intro-desc\">Currently, approximately 30 million Americans suffer with a thyroid disorder. As many as half, however, go undiagnosed and untreated.</p>\n      <p class=\"tq-intro-sub\">Complete the following questionnaire to check if you may be suffering from a thyroid disorder.</p>\n      <button class=\"tq-btn-start\" id=\"tq-startBtn\">Start</button>\n    </div>\n  "
+    },
+    "title": "Thyroid Assessment Quiz",
+    "intro": [
+      "Currently, approximately 30 million Americans suffer with a thyroid disorder. As many as half, however, go undiagnosed and untreated.",
+      "Complete the following questionnaire to check if you may be suffering from a thyroid disorder."
+    ],
+    "notes": [
+      "Original results redirected to /score-total?type=th&score=number. Text cutoffs0?9,10?22,23?39,40?100 differ from decorative gauge bands1?10,11?40,41?100; use text cutoffs. Maxquestion score81."
+    ]
+  },
+  "adrenal-fatigue": {
+    "id": "adrenal-fatigue",
+    "sourceUrl": "https://hrt.org/checklist/adrenal-fatigue",
+    "sourceStatus": 200,
+    "fetchedAt": "2026-10-11T19:48:18.692Z",
+    "questions": [
+      {
+        "name": "q1_fatigue",
+        "text": "Do you feel fatigued or exhausted throughout the day?"
+      },
+      {
+        "name": "q2_irritability",
+        "text": "Do you feel irritable, or unable to control your temper?"
+      },
+      {
+        "name": "q3_anxious",
+        "text": "Do you feel nervous or anxious?"
+      },
+      {
+        "name": "q4_sleep",
+        "text": "Do you have difficulty falling and staying asleep?"
+      },
+      {
+        "name": "q5_energy_crashes",
+        "text": "Do you experience energy crashes, and feel tired especially in the afternoon?"
+      }
+    ],
+    "options": [
+      {
+        "letter": "A",
+        "text": "Never",
+        "score": 0
+      },
+      {
+        "letter": "B",
+        "text": "Occasionally",
+        "score": 2
+      },
+      {
+        "letter": "C",
+        "text": "Frequently",
+        "score": 5
+      },
+      {
+        "letter": "D",
+        "text": "Constantly",
+        "score": 8
+      }
+    ],
+    "mailingOptions": [
+      {
+        "letter": "A",
+        "text": "Yes, add me to your mailing list"
+      },
+      {
+        "letter": "B",
+        "text": "No, just send me the results"
+      }
+    ],
+    "screenOrder": [
+      "questions",
+      "name",
+      "email",
+      "mailing",
+      "results"
+    ],
+    "submission": {
+      "endpoint": "https://vmi3206755.contaboserver.net/webhook/adrenal-typeform-submit",
+      "fields": [
+        "first_name",
+        "email",
+        "mailing_list",
+        "q1_fatigue",
+        "q2_irritability",
+        "q3_anxious",
+        "q4_sleep",
+        "q5_energy_crashes"
+      ],
+      "format": "flat JSON, answers as original option text"
+    },
+    "scoring": {
+      "max": 40,
+      "functionSource": "function computeLocalScore() {\n    const m = { 'never': 0, 'occasionally': 2, 'frequently': 5, 'constantly': 8 };\n    return answers.reduce((t, a) => t + (m[(a || 'never').trim().toLowerCase()] || 0), 0);\n  }",
+      "results": [
+        {
+          "min": 0,
+          "max": 9,
+          "label": "Minimal Adrenal Load",
+          "summary": "Your score suggests a low level of adrenal stress at this time. Your cortisol and adrenal function appear to be coping well with your current demands.",
+          "body": "A low score indicates that your stress response system is not significantly overloaded right now. Your adrenal glands — which produce cortisol, DHEA, and adrenaline — appear to be functioning within a healthy range. Maintaining the habits that support this is key: regular sleep, balanced nutrition, moderate exercise, and effective stress management practices. It is still worth monitoring these symptoms over time, as adrenal stress can develop gradually.",
+          "className": "result-verdict minimal",
+          "verdict": "Your score suggests a low level of adrenal stress at this time. Your cortisol and adrenal function appear to be coping well with your current demands."
+        },
+        {
+          "min": 10,
+          "max": 22,
+          "label": "Mild to Moderate Adrenal Stress",
+          "summary": "You are experiencing some signs of adrenal stress. Your body is managing, but the early warning signs of adrenal dysfunction are present — particularly fatigue, irritability, anxiety, and disrupted sleep.",
+          "body": "A score in this range suggests your HPA axis (hypothalamic-pituitary-adrenal axis) is under moderate strain. Sustained stress causes cortisol to remain elevated for extended periods, which disrupts sleep, depletes energy, increases anxiety, and eventually leads to adrenal fatigue as cortisol output begins to decline. At this stage, targeted nutritional support, lifestyle changes, and an adrenal hormone panel can make a significant difference before the condition progresses. DHEA levels in particular tend to drop as cortisol demands increase, and restoring DHEA can meaningfully improve energy, mood, and resilience.",
+          "className": "result-verdict mild",
+          "verdict": "You are experiencing some signs of adrenal stress. Your body is managing, but the early warning signs of adrenal dysfunction are present — particularly fatigue, irritability, anxiety, and disrupted sleep."
+        },
+        {
+          "min": 23,
+          "max": 39,
+          "label": "Moderate to Severe Adrenal Fatigue",
+          "summary": "Your score indicates significant adrenal dysfunction. The symptoms you are experiencing — persistent exhaustion, emotional dysregulation, anxiety, poor sleep, and afternoon energy crashes — are hallmarks of adrenal fatigue that require attention.",
+          "body": "At this level, your adrenal glands have been under prolonged stress and are likely producing abnormal cortisol patterns — either chronically elevated (early-stage) or depleted (late-stage adrenal fatigue). Both patterns produce overlapping symptoms but respond to different interventions, which is why a proper adrenal hormone panel is essential. The cascade of effects from dysregulated cortisol is wide-ranging: it disrupts thyroid function, sex hormone production (lowering testosterone and progesterone), immune function, blood sugar regulation, and sleep architecture. A comprehensive hormonal assessment alongside targeted adrenal support is strongly recommended.",
+          "className": "result-verdict moderate",
+          "verdict": "Your score indicates significant adrenal dysfunction. The symptoms you are experiencing — persistent exhaustion, emotional dysregulation, anxiety, poor sleep, and afternoon energy crashes — are hallmarks of adrenal fatigue that require attention."
+        },
+        {
+          "min": 40,
+          "max": 40,
+          "label": "Severe Adrenal Exhaustion",
+          "summary": "Your score is at the maximum level, indicating severe adrenal exhaustion. Every symptom assessed is occurring constantly. This requires immediate clinical attention.",
+          "body": "Scoring at the maximum level suggests your adrenal glands are severely depleted. Adrenal exhaustion — sometimes called stage 3 adrenal fatigue — is characterised by extremely low cortisol output, profound fatigue that does not improve with rest, intense anxiety or emotional numbness, complete inability to sleep restoratively, and crashing energy levels. Without intervention, this state can significantly impair your immune function, cardiovascular health, metabolic health, and quality of life. Recovery is possible but takes time, the right treatment, and professional guidance. Please reach out to one of our specialists as soon as possible.",
+          "className": "result-verdict severe",
+          "verdict": "Your score is at the maximum level, indicating severe adrenal exhaustion. Every symptom assessed is occurring constantly. This requires immediate clinical attention."
+        }
+      ],
+      "mode": "frequency"
+    },
+    "content": {
+      "title": "Adrenal Fatigue & Stress Assessment Quiz - Test Online If You Have Adrenal Fatigue",
+      "intro": "Adrenal Fatigue & Stress Assessment\n\nChronic stress and adrenal fatigue are among the most common and overlooked causes of persistent exhaustion, anxiety, and hormonal imbalance.\n\nAnswer 5 questions about how you feel on a day-to-day basis to assess your adrenal health and stress load — and find out what you can do about it.\n\nStart",
+      "screenHtml": "\n    <div class=\"intro-content\">\n      <div class=\"intro-image\">\n        <img src=\"https://rosewellness.com/wp-content/uploads/2022/03/adrenal-fatigue-symptoms.jpeg\" alt=\"Adrenal Fatigue &amp; Stress Assessment\">\n      </div>\n      <h1 class=\"intro-title\">Adrenal Fatigue &amp; Stress Assessment</h1>\n      <p class=\"intro-description\">Chronic stress and adrenal fatigue are among the most common and overlooked causes of persistent exhaustion, anxiety, and hormonal imbalance.</p>\n      <p class=\"intro-subtext\">Answer 5 questions about how you feel on a day-to-day basis to assess your adrenal health and stress load — and find out what you can do about it.</p>\n      <button class=\"btn-start\" id=\"startBtn\">Start</button>\n    </div>\n  ",
+      "allScreens": [
+        {
+          "id": "screen-intro",
+          "text": "Adrenal Fatigue & Stress Assessment\n\nChronic stress and adrenal fatigue are among the most common and overlooked causes of persistent exhaustion, anxiety, and hormonal imbalance.\n\nAnswer 5 questions about how you feel on a day-to-day basis to assess your adrenal health and stress load — and find out what you can do about it.\n\nStart"
+        },
+        {
+          "id": "screen-question",
+          "text": "\n    \n      \n        1\n        Question text…\n      \n      How often do you experience this?\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-name",
+          "text": "\n    \n      \n        6\n        What is your first name?\n      \n      \n        \n        Please enter your first name\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-email",
+          "text": "\n    \n      \n        7\n        We'll calculate your results in a second — if you'd like to receive a copy via email, leave your email below:\n      \n      \n        \n        Please enter a valid email address\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-mailing",
+          "text": "\n    \n      \n        8\n        Would you like to be notified of new assessments and health-related posts?\n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-submitting",
+          "text": "\n    \n      \n      Calculating your adrenal fatigue assessment results…\n    \n  "
+        },
+        {
+          "id": "screen-complete",
+          "text": "\n    \n      \n        \n          \n        \n        Your Assessment Results\n        Adrenal Fatigue & Stress Assessment — HRT.org\n      \n      \n        Your Score\n        —\n        out of 40\n        \n        0MinimalMildModerateSevere40\n      \n      \n        \n        \n      \n      \n        What does this mean?\n        \n      \n      \n        Recommended next steps\n        \n      \n      \n        \n        A copy of these results has been sent to \n      \n      \n        Book a Free Consultation\n        Retake Assessment\n      \n    \n  "
+        }
+      ],
+      "links": [
+        {
+          "text": "Book a Free Consultation",
+          "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+        }
+      ]
+    },
+    "title": "Adrenal Fatigue & Stress Assessment",
+    "intro": [
+      "Chronic stress and adrenal fatigue are among the most common and overlooked causes of persistent exhaustion, anxiety, and hormonal imbalance.",
+      "Answer 5 questions about how you feel on a day-to-day basis to assess your adrenal health and stress load — and find out what you can do about it."
+    ],
+    "notes": []
+  },
+  "osteoporosis-assessment": {
+    "id": "osteoporosis-assessment",
+    "sourceUrl": "https://hrt.org/checklist/osteoporosis-assessment",
+    "sourceStatus": 200,
+    "fetchedAt": "2026-10-11T19:48:18.723Z",
+    "questions": [
+      {
+        "name": "q1_exercise",
+        "text": "I have a regular weight-bearing exercise routine.",
+        "protective": true,
+        "flag": "Protective factor — \"Yes\" reduces your risk"
+      },
+      {
+        "name": "q2_alcohol",
+        "text": "I drink two or more glasses of alcohol a day on a regular basis.",
+        "protective": false
+      },
+      {
+        "name": "q3_inactive",
+        "text": "I am physically inactive for prolonged periods of time.",
+        "protective": false
+      },
+      {
+        "name": "q4_smoke",
+        "text": "I smoke.",
+        "protective": false
+      },
+      {
+        "name": "q5_caffeine",
+        "text": "I regularly drink more than three cups of caffeinated beverages (coffee, soda, tea) in a day.",
+        "protective": false
+      },
+      {
+        "name": "q6_medication",
+        "text": "I take steroids, anticonvulsants, or thyroid medication.",
+        "protective": false
+      },
+      {
+        "name": "q7_calcium",
+        "text": "I consume the minimum recommended daily requirement for calcium.",
+        "protective": true,
+        "flag": "Protective factor — \"Yes\" reduces your risk"
+      },
+      {
+        "name": "q8_absent_periods",
+        "text": "I have an abnormal absence of menstrual periods.",
+        "protective": false
+      },
+      {
+        "name": "q9_postmenopausal",
+        "text": "I am postmenopausal, including early menopause and/or surgically induced menopause.",
+        "protective": false
+      },
+      {
+        "name": "q10_low_testosterone",
+        "text": "I have low testosterone.",
+        "protective": false
+      },
+      {
+        "name": "q11_ethnicity",
+        "text": "I am Caucasian or Asian.",
+        "protective": false
+      },
+      {
+        "name": "q12_family_history",
+        "text": "I have a family history of osteoporosis.",
+        "protective": false
+      },
+      {
+        "name": "q13_curved_back",
+        "text": "My upper back curves forward.",
+        "protective": false
+      }
+    ],
+    "options": [
+      {
+        "letter": "Y",
+        "text": "Yes",
+        "score": 1
+      },
+      {
+        "letter": "N",
+        "text": "No",
+        "score": 0
+      }
+    ],
+    "mailingOptions": [
+      {
+        "letter": "A",
+        "text": "Yes, add me to your mailing list"
+      },
+      {
+        "letter": "B",
+        "text": "No, just send me the results"
+      }
+    ],
+    "screenOrder": [
+      "questions",
+      "name",
+      "email",
+      "mailing",
+      "results"
+    ],
+    "submission": {
+      "endpoint": "https://vmi3206755.contaboserver.net/webhook/osteoporosis-typeform-submit",
+      "fields": [
+        "first_name",
+        "email",
+        "mailing_list",
+        "q1_exercise",
+        "q2_alcohol",
+        "q3_inactive",
+        "q4_smoke",
+        "q5_caffeine",
+        "q6_medication",
+        "q7_calcium",
+        "q8_absent_periods",
+        "q9_postmenopausal",
+        "q10_low_testosterone",
+        "q11_ethnicity",
+        "q12_family_history",
+        "q13_curved_back"
+      ],
+      "format": "flat JSON, answers as original option text"
+    },
+    "scoring": {
+      "max": 13,
+      "functionSource": "function computeRiskScore() {\n    let score = 0;\n    for (let i = 0; i < QUESTIONS.length; i++) {\n      const q = QUESTIONS[i];\n      const ans = answers[i];\n      if (q.protective) {\n        if (ans === 'No') score++;\n      } else {\n        if (ans === 'Yes') score++;\n      }\n    }\n    return score;\n  }",
+      "results": [
+        {
+          "min": 0,
+          "max": 3,
+          "label": "Lower Risk Profile",
+          "summary": "You have few identified risk factors for osteoporosis. Maintaining your current protective habits and monitoring bone health periodically is recommended.",
+          "body": "Your responses suggest a lower risk profile for osteoporosis at this time. With fewer than four risk factors identified, your bone density is less likely to be significantly compromised — particularly if you are maintaining a regular exercise routine and meeting your daily calcium requirements. That said, bone loss is a gradual process that begins earlier than most people realise. Establishing your bone density baseline with a DEXA scan, especially if you are over 40, is a proactive step that gives you a clear picture of your current bone health and a reference point for the future.",
+          "steps": [
+            {
+              "title": "Maintain weight-bearing exercise",
+              "body": "Activities like walking, jogging, resistance training, and dancing stimulate bone formation. Aim for at least 30 minutes most days."
+            },
+            {
+              "title": "Optimise your calcium and vitamin D intake",
+              "body": "Calcium (1000–1200mg/day) and vitamin D3 (1000–2000 IU/day) are the foundation of bone health. Consider a bone health panel to check your current levels."
+            },
+            {
+              "title": "Consider a baseline DEXA scan",
+              "body": "A DEXA scan measures your bone mineral density and is the gold standard for detecting low bone density before fractures occur. Recommended from age 40 onwards."
+            }
+          ],
+          "className": "result-verdict low",
+          "verdict": "You have few identified risk factors for osteoporosis. Maintaining your current protective habits and monitoring bone health periodically is recommended."
+        },
+        {
+          "min": 4,
+          "max": 13,
+          "label": "Elevated Risk Profile",
+          "summary": "You have identified multiple risk factors for osteoporosis. We recommend a bone density assessment and a consultation with a specialist to discuss prevention and treatment options.",
+          "body": "Your responses indicate an elevated risk profile for osteoporosis, with four or more risk factors identified. Osteoporosis is often called the \"silent disease\" because bone loss occurs gradually and without symptoms — until a fracture happens. The good news is that with the right assessment, lifestyle changes, and treatment where needed, bone loss can be significantly slowed or even reversed. Key factors in your profile — which may include postmenopausal status, low testosterone, physical inactivity, smoking, high alcohol or caffeine intake, or a family history of osteoporosis — are all clinically recognised contributors to reduced bone mineral density. Hormone replacement therapy (HRT) has strong evidence for protecting bone density, particularly in women around menopause, as does testosterone replacement in men with low levels. A comprehensive bone health assessment including a DEXA scan and hormone panel is the recommended first step.",
+          "steps": [
+            {
+              "title": "Get a DEXA bone density scan",
+              "body": "A DEXA scan is the most accurate way to measure bone mineral density and determine your actual fracture risk. It is quick, painless, and widely available."
+            },
+            {
+              "title": "Get a hormone and bone health panel",
+              "body": "Low oestrogen, low testosterone, low vitamin D, and low calcium absorption are the key hormonal and nutritional drivers of bone loss. A comprehensive panel identifies exactly which factors apply to you."
+            },
+            {
+              "title": "Speak to a specialist about treatment",
+              "body": "Depending on your results, options may include hormone replacement therapy (HRT), bisphosphonates, calcium and vitamin D supplementation, and structured exercise programmes — all with strong evidence for protecting and rebuilding bone density."
+            }
+          ],
+          "className": "result-verdict high",
+          "verdict": "You have identified multiple risk factors for osteoporosis. We recommend a bone density assessment and a consultation with a specialist to discuss prevention and treatment options."
+        }
+      ],
+      "mode": "protective-yes-no"
+    },
+    "content": {
+      "title": "Osteoporosis Assessment Quiz - Test Your Bone Health Risk Online | HRT",
+      "intro": "Osteoporosis Self-Assessment\n\nOsteoporosis affects over 200 million people worldwide. Most people have no symptoms until a fracture occurs — making early risk assessment essential.\n\nAnswer 13 questions about your lifestyle, health history, and risk factors to understand your personal risk profile and what you can do to protect your bone health.\n\nStart",
+      "screenHtml": "\n    <div class=\"intro-content\">\n      <div class=\"intro-image\">\n        <img src=\"https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/methode/2021/10/22/a3501850-3332-11ec-8bc1-f82f86ab0ffa_image_hires_210941.jpg?itok=30X2BKP7&amp;v=1634908188\" alt=\"Osteoporosis Self-Assessment\">\n      </div>\n      <h1 class=\"intro-title\">Osteoporosis Self-Assessment</h1>\n      <p class=\"intro-description\">\n        Osteoporosis affects over 200 million people worldwide. Most people have no symptoms until a fracture occurs — making early risk assessment essential.\n      </p>\n      <p class=\"intro-subtext\">\n        Answer 13 questions about your lifestyle, health history, and risk factors to understand your personal risk profile and what you can do to protect your bone health.\n      </p>\n      <button class=\"btn-start\" id=\"startBtn\">Start</button>\n    </div>\n  ",
+      "allScreens": [
+        {
+          "id": "screen-intro",
+          "text": "Osteoporosis Self-Assessment\n\nOsteoporosis affects over 200 million people worldwide. Most people have no symptoms until a fracture occurs — making early risk assessment essential.\n\nAnswer 13 questions about your lifestyle, health history, and risk factors to understand your personal risk profile and what you can do to protect your bone health.\n\nStart"
+        },
+        {
+          "id": "screen-question",
+          "text": "\n    \n      \n        1\n        Question text…\n      \n      Select the answer that applies to you.\n      \n        \n        \n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-name",
+          "text": "\n    \n      \n        14\n        What is your first name?\n      \n      \n        \n        Please enter your first name\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-email",
+          "text": "\n    \n      \n        15\n        We'll calculate your results in a second — if you'd like to receive a copy via email, leave your email below:\n      \n      \n        \n        Please enter a valid email address\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-mailing",
+          "text": "\n    \n      \n        16\n        Would you like to be notified of new assessments and health-related posts?\n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-submitting",
+          "text": "\n    \n      \n      Calculating your osteoporosis risk assessment…\n    \n  "
+        },
+        {
+          "id": "screen-complete",
+          "text": "\n    \n      \n        \n          \n            \n          \n        \n        Your Assessment Results\n        Osteoporosis Self-Assessment — HRT.org\n      \n\n      \n        Risk Factors Identified\n        —\n        out of 13\n        \n          \n        \n        \n          0Low riskModerateHigh risk13\n        \n      \n\n      \n        \n        \n      \n\n      \n        What does this mean?\n        \n      \n\n      \n        Recommended next steps\n        \n      \n\n      \n        \n          \n          \n        \n        A copy of these results has been sent to \n      \n\n      \n        Book a Free Consultation\n        Retake Assessment\n      \n    \n  "
+        }
+      ],
+      "links": [
+        {
+          "text": "Book a Free Consultation",
+          "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+        }
+      ]
+    },
+    "title": "Osteoporosis Self-Assessment",
+    "intro": [
+      "Osteoporosis affects over 200 million people worldwide. Most people have no symptoms until a fracture occurs — making early risk assessment essential.",
+      "Answer 13 questions about your lifestyle, health history, and risk factors to understand your personal risk profile and what you can do to protect your bone health."
+    ],
+    "notes": [
+      "Protective questions q1_exercise and q7_calcium: No adds1, Yes adds0. AllotherYes adds1."
+    ]
+  },
+  "andropause-assessment": {
+    "id": "andropause-assessment",
+    "sourceUrl": "https://hrt.org/checklist/andropause-assessment",
+    "sourceStatus": 200,
+    "fetchedAt": "2026-10-11T19:48:18.751Z",
+    "questions": [
+      {
+        "name": "q1_falling_asleep",
+        "text": "How often do you fall asleep after dinner?"
+      },
+      {
+        "name": "q2_decreased_enjoyment",
+        "text": "Do you experience a decreased enjoyment of life?"
+      },
+      {
+        "name": "q3_losing_height",
+        "text": "Do you feel like you are losing height?"
+      },
+      {
+        "name": "q4_strength_endurance",
+        "text": "Have you experienced a decrease in strength and endurance?"
+      },
+      {
+        "name": "q5_sex_drive",
+        "text": "Do you have a decreased sex drive (libido)?"
+      },
+      {
+        "name": "q6_sports_performance",
+        "text": "Do you notice decreased performance in your ability to play sports?"
+      },
+      {
+        "name": "q7_depressed_grumpy",
+        "text": "How often do you feel depressed, sad or more grumpy than normal?"
+      },
+      {
+        "name": "q8_lack_of_energy",
+        "text": "Do you experience a lack of energy?"
+      },
+      {
+        "name": "q9_work_performance",
+        "text": "Have you noticed a deterioration in your work performance?"
+      },
+      {
+        "name": "q10_erection_difficulty",
+        "text": "Are you having difficulty maintaining your erection?"
+      }
+    ],
+    "options": [
+      {
+        "letter": "A",
+        "text": "Never",
+        "score": 0
+      },
+      {
+        "letter": "B",
+        "text": "Occasionally",
+        "score": 1
+      },
+      {
+        "letter": "C",
+        "text": "Frequently",
+        "score": 2
+      },
+      {
+        "letter": "D",
+        "text": "Constantly",
+        "score": 3
+      }
+    ],
+    "mailingOptions": [
+      {
+        "letter": "A",
+        "text": "Yes, add me to your mailing list"
+      },
+      {
+        "letter": "B",
+        "text": "No, just send me the results"
+      }
+    ],
+    "screenOrder": [
+      "questions",
+      "name",
+      "email",
+      "mailing",
+      "results"
+    ],
+    "submission": {
+      "endpoint": "https://vmi3206755.contaboserver.net/webhook/andropause-typeform-submit",
+      "fields": [
+        "first_name",
+        "email",
+        "mailing_list",
+        "q1_falling_asleep",
+        "q2_decreased_enjoyment",
+        "q3_losing_height",
+        "q4_strength_endurance",
+        "q5_sex_drive",
+        "q6_sports_performance",
+        "q7_depressed_grumpy",
+        "q8_lack_of_energy",
+        "q9_work_performance",
+        "q10_erection_difficulty"
+      ],
+      "format": "flat JSON, answers as original option text"
+    },
+    "scoring": {
+      "max": 30,
+      "functionSource": "function computeLocalScore() {\n    const map = { 'never': 0, 'occasionally': 1, 'frequently': 2, 'constantly': 3 };\n    let total = 0;\n    for (let i = 0; i < QUESTIONS.length; i++) {\n      const v = answers[i];\n      if (!v) continue;\n      total += map[String(v).trim().toLowerCase()] || 0;\n    }\n    return total;\n  }",
+      "results": [
+        {
+          "min": 0,
+          "max": 7,
+          "label": "Low Likelihood",
+          "summary": "Your score is low, suggesting andropause is unlikely to be significantly impacting your health right now. Testosterone levels do decline gradually with age, so it is worth monitoring.",
+          "body": "While your current score is low, testosterone naturally declines by 1–2% per year after age 30. If you notice changes in energy, mood, sexual function, or physical performance in the future, consider getting a hormone panel to establish your baseline levels.",
+          "steps": [
+            {
+              "title": "Monitor your symptoms",
+              "body": "Keep an eye on energy levels, mood, libido, and physical performance over the coming months. If you notice changes, retake this assessment."
+            },
+            {
+              "title": "Establish a baseline",
+              "body": "Even at a low score, a hormone panel is a valuable reference point. Knowing your testosterone levels now makes future comparisons meaningful."
+            },
+            {
+              "title": "Healthy habits",
+              "body": "Regular exercise, quality sleep, and a balanced diet rich in zinc and vitamin D all support healthy testosterone production as you age."
+            }
+          ],
+          "className": "result-verdict low",
+          "verdict": "Your score is low, suggesting andropause is unlikely to be significantly impacting your health right now. Testosterone levels do decline gradually with age, so it is worth monitoring."
+        },
+        {
+          "min": 8,
+          "max": 30,
+          "label": "Symptoms Present",
+          "summary": "Your score suggests andropause may be affecting your quality of life. Declining testosterone levels are the most likely cause of the symptoms you are experiencing.",
+          "body": "Many of the symptoms you reported — such as decreased energy, reduced libido, mood changes, and diminished physical performance — can be directly linked to falling testosterone levels. Low testosterone is measurable, treatable, and very common in men over 40. A simple hormone panel will confirm your levels and open the door to personalised treatment options including testosterone replacement therapy (TRT).",
+          "steps": [
+            {
+              "title": "Get a hormone panel",
+              "body": "A simple blood spot test measuring total testosterone, free testosterone, DHEA-S, and SHBG will give you a clear picture of where your levels stand."
+            },
+            {
+              "title": "Speak to a specialist",
+              "body": "Our healthcare specialists can review your results privately and discuss testosterone replacement therapy and other treatment options tailored to you."
+            },
+            {
+              "title": "Lifestyle support",
+              "body": "Regular resistance training, adequate sleep, reduced alcohol intake, and a diet rich in zinc and vitamin D can help support healthy testosterone production."
+            }
+          ],
+          "className": "result-verdict high",
+          "verdict": "Your score suggests andropause may be affecting your quality of life. Declining testosterone levels are the most likely cause of the symptoms you are experiencing."
+        }
+      ],
+      "mode": "frequency"
+    },
+    "content": {
+      "title": "Andropause Assessment Quiz - Test Online If You Have Low Testosterone | HRT",
+      "intro": "Andropause Assessment Quiz\n\nTestosterone levels in men decline by approximately 1–2% per year after age 30. As many as 40% of men over 45 may have below-normal testosterone levels.\n\nComplete the following questionnaire to check whether you may be experiencing symptoms of andropause (male hormone decline).\n\nStart",
+      "screenHtml": "\n    <div class=\"intro-content\">\n      <div class=\"intro-image\">\n        <img src=\"https://ac-cdn.azureedge.net/infusionnewssiteimages/agingcare/9c85bce0-5b9e-4960-8065-32708536f089.jpg\" alt=\"Andropause Assessment\">\n      </div>\n      <h1 class=\"intro-title\">Andropause Assessment Quiz</h1>\n      <p class=\"intro-description\">\n        Testosterone levels in men decline by approximately 1–2% per year after age 30.\n        As many as 40% of men over 45 may have below-normal testosterone levels.\n      </p>\n      <p class=\"intro-subtext\">\n        Complete the following questionnaire to check whether you may be experiencing symptoms of andropause (male hormone decline).\n      </p>\n      <button class=\"btn-start\" id=\"startBtn\">Start</button>\n    </div>\n  ",
+      "allScreens": [
+        {
+          "id": "screen-intro",
+          "text": "Andropause Assessment Quiz\n\nTestosterone levels in men decline by approximately 1–2% per year after age 30. As many as 40% of men over 45 may have below-normal testosterone levels.\n\nComplete the following questionnaire to check whether you may be experiencing symptoms of andropause (male hormone decline).\n\nStart"
+        },
+        {
+          "id": "screen-question",
+          "text": "\n    \n      \n        1\n        Question text…\n      \n      Choose the option that best describes your experience.\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-name",
+          "text": "\n    \n      \n        11\n        What is your first name?\n      \n      \n        \n        Please enter your first name\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-email",
+          "text": "\n    \n      \n        12\n        We'll calculate your results in a second — if you'd like to receive a copy via email, leave your email below:\n      \n      \n        \n        Please enter a valid email address\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-mailing",
+          "text": "\n    \n      \n        13\n        Would you like to be notified of new assessments and health-related posts?\n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-submitting",
+          "text": "\n    \n      \n      Calculating your andropause assessment results…\n    \n  "
+        },
+        {
+          "id": "screen-complete",
+          "text": "\n    \n\n      \n        \n          \n            \n          \n        \n        Your Assessment Results\n        Andropause Assessment — HRT.org\n      \n\n      \n        Your Score\n        —\n        out of 30\n        \n          \n            \n          \n          \n            0LowModerateHigh30\n          \n        \n      \n\n      \n        \n        \n      \n\n      \n        What does this mean?\n        \n      \n\n      \n        Recommended next steps\n        \n      \n\n      \n        \n          \n          \n        \n        A copy of these results has been sent to \n      \n\n      \n        Book a Free Consultation\n        Retake Assessment\n      \n\n    \n  "
+        }
+      ],
+      "links": [
+        {
+          "text": "Book a Free Consultation",
+          "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+        }
+      ]
+    },
+    "title": "Andropause Assessment Quiz",
+    "intro": [
+      "Testosterone levels in men decline by approximately 1–2% per year after age 30. As many as 40% of men over 45 may have below-normal testosterone levels.",
+      "Complete the following questionnaire to check whether you may be experiencing symptoms of andropause (male hormone decline)."
+    ],
+    "notes": []
+  },
+  "menopause-assessment": {
+    "id": "menopause-assessment",
+    "sourceUrl": "https://hrt.org/checklist/menopause-assessment",
+    "sourceStatus": 200,
+    "fetchedAt": "2026-10-11T19:48:18.776Z",
+    "questions": [
+      {
+        "name": "q1_water_retention",
+        "text": "Water retention, bloating, and weight gain?"
+      },
+      {
+        "name": "q2_facial_hair",
+        "text": "Increased facial hair?"
+      },
+      {
+        "name": "q3_breast_tenderness",
+        "text": "Breast tenderness or swelling?"
+      },
+      {
+        "name": "q4_pain",
+        "text": "Pain in the form of: headache, migraine, lower back, muscle or joint ache?"
+      },
+      {
+        "name": "q5_vaginal_dryness",
+        "text": "Vaginal dryness, pain, itching?"
+      },
+      {
+        "name": "q6_fatigue",
+        "text": "Fatigue or lack of energy?"
+      },
+      {
+        "name": "q7_concentration",
+        "text": "Decreased concentration, alertness, memory loss?"
+      },
+      {
+        "name": "q8_urinary_incontinence",
+        "text": "Urinary incontinence?"
+      },
+      {
+        "name": "q9_irritability",
+        "text": "Irritability and anger?"
+      },
+      {
+        "name": "q10_anxiety",
+        "text": "Anxiety?"
+      },
+      {
+        "name": "q11_mood_swings",
+        "text": "Mood swings?"
+      },
+      {
+        "name": "q12_depression",
+        "text": "Depression?"
+      },
+      {
+        "name": "q13_acne",
+        "text": "Acne or oily skin?"
+      },
+      {
+        "name": "q14_low_libido",
+        "text": "Lack of sex drive/libido?"
+      },
+      {
+        "name": "q15_hot_flashes",
+        "text": "Hot flashes/night sweats?"
+      },
+      {
+        "name": "q16_sleep_disturbance",
+        "text": "Sleep disturbance?"
+      },
+      {
+        "name": "q17_heart_disease_risk",
+        "text": "Personal risk factors for heart disease?"
+      },
+      {
+        "name": "q18_osteoporosis_risk",
+        "text": "Personal risk factor for osteoporosis?"
+      }
+    ],
+    "options": [
+      {
+        "letter": "Y",
+        "text": "Yes",
+        "score": 1
+      },
+      {
+        "letter": "N",
+        "text": "No",
+        "score": 0
+      }
+    ],
+    "mailingOptions": [
+      {
+        "letter": "A",
+        "text": "Yes, add me to your mailing list"
+      },
+      {
+        "letter": "B",
+        "text": "No, just send me the results"
+      }
+    ],
+    "screenOrder": [
+      "questions",
+      "name",
+      "email",
+      "mailing",
+      "results"
+    ],
+    "submission": {
+      "endpoint": "https://vmi3206755.contaboserver.net/webhook/menopause-typeform-submit",
+      "fields": [
+        "first_name",
+        "email",
+        "mailing_list",
+        "q1_water_retention",
+        "q2_facial_hair",
+        "q3_breast_tenderness",
+        "q4_pain",
+        "q5_vaginal_dryness",
+        "q6_fatigue",
+        "q7_concentration",
+        "q8_urinary_incontinence",
+        "q9_irritability",
+        "q10_anxiety",
+        "q11_mood_swings",
+        "q12_depression",
+        "q13_acne",
+        "q14_low_libido",
+        "q15_hot_flashes",
+        "q16_sleep_disturbance",
+        "q17_heart_disease_risk",
+        "q18_osteoporosis_risk"
+      ],
+      "format": "flat JSON, answers as original option text"
+    },
+    "scoring": {
+      "max": 18,
+      "functionSource": "function computeLocalScore() {\n    let total = 0;\n    for (let i = 0; i < QUESTIONS.length; i++) {\n      if (answers[i] === 'Yes') total++;\n    }\n    return total;\n  }",
+      "results": [
+        {
+          "min": 0,
+          "max": 0,
+          "label": "No Symptoms Reported",
+          "summary": "You have not reported any menopause symptoms at this time. This is a positive result — though it is worth monitoring for changes as you move through your 40s and 50s.",
+          "body": "Your responses suggest you are not currently experiencing symptoms associated with menopause. Hormonal changes during and after menopause can develop gradually, and establishing a hormone baseline now — even without symptoms — provides a valuable reference point for the future. We recommend a female hormone panel as part of your routine health assessment, alongside maintaining bone density, cardiovascular health, and hormonal wellness through regular exercise, a nutrient-rich diet, and good sleep hygiene.",
+          "steps": [
+            {
+              "title": "Establish a hormone baseline",
+              "body": "A female hormone panel measuring FSH, LH, oestradiol, and progesterone gives you a clear starting point — even before symptoms develop."
+            },
+            {
+              "title": "Protect your long-term health",
+              "body": "Declining oestrogen after menopause increases the risk of osteoporosis and cardiovascular disease. Early lifestyle investment pays dividends later."
+            },
+            {
+              "title": "Know the signs",
+              "body": "Familiarise yourself with menopause symptoms so you can act early if they arise. Hot flashes, sleep disruption, and mood changes are often the first indicators."
+            }
+          ],
+          "className": "result-verdict none",
+          "verdict": "You have not reported any menopause symptoms at this time. This is a positive result — though it is worth monitoring for changes as you move through your 40s and 50s."
+        },
+        {
+          "min": 1,
+          "max": 14,
+          "label": "Mild to Moderate Symptoms",
+          "summary": "You are experiencing a number of symptoms that may be linked to menopause. A hormone evaluation would help clarify whether declining oestrogen and progesterone levels are contributing to how you feel.",
+          "body": "Menopause causes a wide range of symptoms as oestrogen, progesterone, and testosterone levels decline — from physical changes such as hot flashes, vaginal dryness, and weight gain to emotional and cognitive changes including mood swings, anxiety, and reduced concentration. Many women normalise these symptoms or attribute them to ageing, stress, or other causes. A comprehensive hormone panel will give you and your healthcare provider a clear picture of your current hormonal status, and there are several highly effective, evidence-based treatment options available — including bioidentical hormone replacement therapy (BHRT) — that can significantly reduce or eliminate the symptoms you are experiencing.",
+          "steps": [
+            {
+              "title": "Get a comprehensive hormone panel",
+              "body": "A full female hormone profile measuring FSH, LH, oestradiol, progesterone, testosterone, DHEA-S, and thyroid will identify exactly which hormones are declining and driving your symptoms."
+            },
+            {
+              "title": "Speak to a specialist",
+              "body": "Our healthcare specialists can review your results privately and discuss options including bioidentical HRT, which closely mirrors your body's natural hormones for effective, well-tolerated symptom relief."
+            },
+            {
+              "title": "Track your symptoms",
+              "body": "Keep a diary noting which symptoms occur, their severity, and when they happen. This helps your clinician identify patterns and confirm menopause versus other hormonal conditions."
+            }
+          ],
+          "className": "result-verdict mild",
+          "verdict": "You are experiencing a number of symptoms that may be linked to menopause. A hormone evaluation would help clarify whether declining oestrogen and progesterone levels are contributing to how you feel."
+        },
+        {
+          "min": 15,
+          "max": 18,
+          "label": "Significant Symptoms",
+          "summary": "You are reporting a high number of menopause symptoms that are significantly impacting your quality of life. We strongly recommend a hormone assessment and specialist consultation as soon as possible.",
+          "body": "Scoring 15 or more symptoms indicates that menopause is having a substantial impact across multiple areas of your health and daily functioning. The wide range of symptoms you are experiencing — which may include hot flashes, severe sleep disruption, mood and cognitive changes, vaginal dryness, reduced libido, pain, and cardiovascular or bone health risk factors — are all well-documented consequences of declining oestrogen and progesterone. You do not have to manage these symptoms alone, and you do not have to simply endure them. Bioidentical hormone replacement therapy (BHRT) has decades of evidence demonstrating its effectiveness for reducing menopause symptoms and protecting long-term bone and cardiovascular health. The first step is a comprehensive hormone panel so we understand exactly where your levels stand — and then our specialists can build a personalised treatment plan around your specific results and health profile.",
+          "steps": [
+            {
+              "title": "Comprehensive hormone panel — as soon as possible",
+              "body": "A full female hormone profile including FSH, LH, oestradiol, progesterone, testosterone, DHEA-S, cortisol, and thyroid gives the clearest picture of your hormonal status and treatment needs."
+            },
+            {
+              "title": "Book a free specialist consultation",
+              "body": "Our specialists are experienced in managing complex menopause presentations and can discuss BHRT, lifestyle interventions, targeted supplementation, and bone and cardiovascular protection strategies."
+            },
+            {
+              "title": "Address bone and heart health now",
+              "body": "With risk factors for both osteoporosis and heart disease identified, early intervention is critical. Declining oestrogen directly and rapidly affects both — and BHRT has strong evidence for protecting both simultaneously."
+            }
+          ],
+          "className": "result-verdict significant",
+          "verdict": "You are reporting a high number of menopause symptoms that are significantly impacting your quality of life. We strongly recommend a hormone assessment and specialist consultation as soon as possible."
+        }
+      ],
+      "mode": "yes-no"
+    },
+    "content": {
+      "title": "Menopause Assessment Quiz - Test Online If You Are in Menopause | HRT",
+      "intro": "Menopause Self-Assessment\n\nMenopause affects every woman differently. Recognising your symptoms and understanding their hormonal causes is the first step to reclaiming your quality of life.\n\nAnswer 18 yes/no questions about symptoms you may be experiencing to assess whether menopause is affecting your health and what you can do about it.\n\nStart",
+      "screenHtml": "\n    <div class=\"intro-content\">\n      <div class=\"intro-image\">\n        <img src=\"https://i0.wp.com/www.temple-legal.co.uk/wp-content/uploads/2024/09/Menopause-scaled.jpg?fit=2560%2C1707&amp;ssl=1\" alt=\"Menopause Self-Assessment\">\n      </div>\n      <h1 class=\"intro-title\">Menopause Self-Assessment</h1>\n      <p class=\"intro-description\">\n        Menopause affects every woman differently. Recognising your symptoms and understanding their hormonal causes is the first step to reclaiming your quality of life.\n      </p>\n      <p class=\"intro-subtext\">\n        Answer 18 yes/no questions about symptoms you may be experiencing to assess whether menopause is affecting your health and what you can do about it.\n      </p>\n      <button class=\"btn-start\" id=\"startBtn\">Start</button>\n    </div>\n  ",
+      "allScreens": [
+        {
+          "id": "screen-intro",
+          "text": "Menopause Self-Assessment\n\nMenopause affects every woman differently. Recognising your symptoms and understanding their hormonal causes is the first step to reclaiming your quality of life.\n\nAnswer 18 yes/no questions about symptoms you may be experiencing to assess whether menopause is affecting your health and what you can do about it.\n\nStart"
+        },
+        {
+          "id": "screen-question",
+          "text": "\n    \n      \n        1\n        Question text…\n      \n      Are you currently experiencing this symptom?\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-name",
+          "text": "\n    \n      \n        19\n        What is your first name?\n      \n      \n        \n        Please enter your first name\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-email",
+          "text": "\n    \n      \n        20\n        We'll calculate your results in a second — if you'd like to receive a copy via email, leave your email below:\n      \n      \n        \n        Please enter a valid email address\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-mailing",
+          "text": "\n    \n      \n        21\n        Would you like to be notified of new assessments and health-related posts?\n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-submitting",
+          "text": "\n    \n      \n      Calculating your menopause assessment results…\n    \n  "
+        },
+        {
+          "id": "screen-complete",
+          "text": "\n    \n      \n        \n          \n            \n          \n        \n        Your Assessment Results\n        Menopause Self-Assessment — HRT.org\n      \n\n      \n        Your Score\n        —\n        out of 18\n        \n          \n        \n        \n          0MinimalModerateSignificant18\n        \n      \n\n      \n        \n        \n      \n\n      \n        What does this mean?\n        \n      \n\n      \n        Recommended next steps\n        \n      \n\n      \n        \n          \n          \n        \n        A copy of these results has been sent to \n      \n\n      \n        Book a Free Consultation\n        Retake Assessment\n      \n    \n  "
+        }
+      ],
+      "links": [
+        {
+          "text": "Book a Free Consultation",
+          "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+        }
+      ]
+    },
+    "title": "Menopause Self-Assessment",
+    "intro": [
+      "Menopause affects every woman differently. Recognising your symptoms and understanding their hormonal causes is the first step to reclaiming your quality of life.",
+      "Answer 18 yes/no questions about symptoms you may be experiencing to assess whether menopause is affecting your health and what you can do about it."
+    ],
+    "notes": []
+  },
+  "perimenopause-assessment": {
+    "id": "perimenopause-assessment",
+    "sourceUrl": "https://hrt.org/checklist/perimenopause-assessment",
+    "sourceStatus": 200,
+    "fetchedAt": "2026-10-11T19:48:18.802Z",
+    "questions": [
+      {
+        "name": "q1_water_retention",
+        "text": "Water retention or bloating?"
+      },
+      {
+        "name": "q2_facial_hair",
+        "text": "Increased facial hair?"
+      },
+      {
+        "name": "q3_breast_tenderness",
+        "text": "Breast tenderness or swelling?"
+      },
+      {
+        "name": "q4_pain",
+        "text": "Pain in the form of: headache, migraine, lower back, muscle or joint ache?"
+      },
+      {
+        "name": "q5_vaginal_dryness",
+        "text": "Vaginal dryness, pain, or itching?"
+      },
+      {
+        "name": "q6_fatigue",
+        "text": "Fatigue or lack of energy?"
+      },
+      {
+        "name": "q7_concentration",
+        "text": "Decreased concentration, alertness, or memory loss?"
+      },
+      {
+        "name": "q8_urinary_incontinence",
+        "text": "Urinary incontinence?"
+      },
+      {
+        "name": "q9_irritability",
+        "text": "Irritability and anger?"
+      },
+      {
+        "name": "q10_anxiety",
+        "text": "Anxiety?"
+      },
+      {
+        "name": "q11_mood_swings",
+        "text": "Mood swings?"
+      },
+      {
+        "name": "q12_depression",
+        "text": "Depression?"
+      },
+      {
+        "name": "q13_acne",
+        "text": "Acne or oily skin?"
+      },
+      {
+        "name": "q14_low_libido",
+        "text": "Lack of sex drive / libido?"
+      },
+      {
+        "name": "q15_hot_flashes",
+        "text": "Hot flashes or night sweats?"
+      },
+      {
+        "name": "q16_sleep_disturbance",
+        "text": "Sleep disturbance?"
+      },
+      {
+        "name": "q17_heart_disease_risk",
+        "text": "Personal risk factors for heart disease?"
+      },
+      {
+        "name": "q18_osteoporosis_risk",
+        "text": "Personal risk factor for osteoporosis?"
+      },
+      {
+        "name": "q19_weight_gain",
+        "text": "Unexplained weight gain or difficulty losing weight?"
+      },
+      {
+        "name": "q20_irregular_periods",
+        "text": "Irregular, heavier, or lighter periods than usual?"
+      }
+    ],
+    "options": [
+      {
+        "letter": "Y",
+        "text": "Yes",
+        "score": 1
+      },
+      {
+        "letter": "N",
+        "text": "No",
+        "score": 0
+      }
+    ],
+    "mailingOptions": [
+      {
+        "letter": "A",
+        "text": "Yes, add me to your mailing list"
+      },
+      {
+        "letter": "B",
+        "text": "No, just send me the results"
+      }
+    ],
+    "screenOrder": [
+      "questions",
+      "name",
+      "email",
+      "mailing",
+      "results"
+    ],
+    "submission": {
+      "endpoint": "https://vmi3206755.contaboserver.net/webhook/perimenopause-typeform-submit",
+      "fields": [
+        "first_name",
+        "email",
+        "mailing_list",
+        "q1_water_retention",
+        "q2_facial_hair",
+        "q3_breast_tenderness",
+        "q4_pain",
+        "q5_vaginal_dryness",
+        "q6_fatigue",
+        "q7_concentration",
+        "q8_urinary_incontinence",
+        "q9_irritability",
+        "q10_anxiety",
+        "q11_mood_swings",
+        "q12_depression",
+        "q13_acne",
+        "q14_low_libido",
+        "q15_hot_flashes",
+        "q16_sleep_disturbance",
+        "q17_heart_disease_risk",
+        "q18_osteoporosis_risk",
+        "q19_weight_gain",
+        "q20_irregular_periods"
+      ],
+      "format": "flat JSON, answers as original option text"
+    },
+    "scoring": {
+      "max": 20,
+      "functionSource": "function computeLocalScore() {\n    let total = 0;\n    for (let i = 0; i < QUESTIONS.length; i++) {\n      if (answers[i] === 'Yes') total++;\n    }\n    return total;\n  }",
+      "results": [
+        {
+          "min": 0,
+          "max": 0,
+          "label": "No Symptoms Reported",
+          "summary": "You have not reported any perimenopause symptoms at this time. This is reassuring, though symptoms can emerge gradually — it is worth revisiting this assessment if anything changes.",
+          "body": "Your score suggests you are not currently experiencing symptoms associated with perimenopause. Hormonal changes can begin subtly in your late 30s or early 40s, so it is useful to establish a hormonal baseline now through a simple hormone panel, giving you a clear point of reference for the future.",
+          "steps": [
+            {
+              "title": "Establish a hormone baseline",
+              "body": "Even without current symptoms, a female hormone panel (FSH, LH, oestradiol, progesterone) gives you a reference point as you age."
+            },
+            {
+              "title": "Know the early signs",
+              "body": "Familiarise yourself with early perimenopause symptoms — irregular periods, subtle mood changes, and sleep disruption are often the first indicators."
+            },
+            {
+              "title": "Healthy habits now",
+              "body": "Weight-bearing exercise, a calcium-rich diet, reduced alcohol intake, and quality sleep all support hormonal health in the years ahead."
+            }
+          ],
+          "className": "result-verdict none",
+          "verdict": "You have not reported any perimenopause symptoms at this time. This is reassuring, though symptoms can emerge gradually — it is worth revisiting this assessment if anything changes."
+        },
+        {
+          "min": 1,
+          "max": 14,
+          "label": "Mild–Moderate Symptoms",
+          "summary": "You are experiencing some symptoms that may be linked to perimenopause. A hormone evaluation would help clarify whether fluctuating oestrogen and progesterone levels are contributing to how you feel.",
+          "body": "Perimenopause can cause a wide range of symptoms — from mood changes and fatigue to sleep disruption and irregular periods — as oestrogen and progesterone levels begin to fluctuate. Many women find that these symptoms come and go, making them easy to dismiss. A hormone panel will give you and your healthcare provider a clear picture of where your levels currently stand, and there are several effective, evidence-based options available to relieve symptoms if needed.",
+          "steps": [
+            {
+              "title": "Get a hormone panel",
+              "body": "A blood or saliva test measuring FSH, LH, oestradiol, and progesterone will confirm whether your hormones are in the perimenopausal range."
+            },
+            {
+              "title": "Speak to a specialist",
+              "body": "Our healthcare specialists can review your hormone results privately and discuss options including bioidentical hormone replacement therapy (BHRT), lifestyle changes, and supplements."
+            },
+            {
+              "title": "Track your symptoms",
+              "body": "Keep a simple diary of symptoms, cycle changes, and mood. This helps your clinician spot patterns and tailor any treatment plan to you."
+            }
+          ],
+          "className": "result-verdict mild",
+          "verdict": "You are experiencing some symptoms that may be linked to perimenopause. A hormone evaluation would help clarify whether fluctuating oestrogen and progesterone levels are contributing to how you feel."
+        },
+        {
+          "min": 15,
+          "max": 20,
+          "label": "Significant Symptoms",
+          "summary": "Your score indicates a high number of symptoms strongly associated with perimenopause. We recommend speaking with a hormone specialist as soon as possible to discuss your options.",
+          "body": "Scoring 15 or more symptoms suggests your hormonal health is significantly impacted. The wide range of symptoms you are experiencing — which may include hot flashes, sleep disruption, mood disturbance, vaginal dryness, and cognitive changes — are all well-documented effects of declining oestrogen and progesterone. The good news is that perimenopause is very manageable. Bioidentical hormone replacement therapy (BHRT), lifestyle interventions, and targeted supplements have helped millions of women reclaim their quality of life. The first step is a hormone panel so we can understand exactly where your levels stand.",
+          "steps": [
+            {
+              "title": "Get a comprehensive hormone panel",
+              "body": "A full female hormone profile — including FSH, LH, oestradiol, progesterone, testosterone, DHEA-S, and cortisol — will give the clearest picture of what is happening hormonally."
+            },
+            {
+              "title": "Book a free consultation",
+              "body": "Our specialists can guide you through your results and discuss bioidentical hormone replacement therapy (BHRT), which is clinically shown to reduce perimenopause symptoms effectively."
+            },
+            {
+              "title": "Prioritise bone and heart health",
+              "body": "Your risk factors for osteoporosis and heart disease are worth discussing with your clinician, as declining oestrogen directly affects both. Early intervention makes a significant difference."
+            }
+          ],
+          "className": "result-verdict high",
+          "verdict": "Your score indicates a high number of symptoms strongly associated with perimenopause. We recommend speaking with a hormone specialist as soon as possible to discuss your options."
+        }
+      ],
+      "mode": "yes-no"
+    },
+    "content": {
+      "title": "Perimenopause Assessment Quiz - Test Online If You Are in Perimenopause | HRT",
+      "intro": "Perimenopause Self-Assessment\n\nPerimenopause can begin up to 10 years before menopause, often with subtle symptoms that are easy to overlook or attribute to other causes.\n\nAnswer 20 simple yes/no questions to find out whether your symptoms may be related to perimenopause and what steps you can take.\n\nStart",
+      "screenHtml": "\n    <div class=\"intro-content\">\n      <div class=\"intro-image\">\n        <img src=\"https://uabstvincents.org/wp-content/uploads/sites/10/2026/01/perimenopause.jpg\" alt=\"Perimenopause Self-Assessment\">\n      </div>\n      <h1 class=\"intro-title\">Perimenopause Self-Assessment</h1>\n      <p class=\"intro-description\">\n        Perimenopause can begin up to 10 years before menopause, often with subtle symptoms that are easy to overlook or attribute to other causes.\n      </p>\n      <p class=\"intro-subtext\">\n        Answer 20 simple yes/no questions to find out whether your symptoms may be related to perimenopause and what steps you can take.\n      </p>\n      <button class=\"btn-start\" id=\"startBtn\">Start</button>\n    </div>\n  ",
+      "allScreens": [
+        {
+          "id": "screen-intro",
+          "text": "Perimenopause Self-Assessment\n\nPerimenopause can begin up to 10 years before menopause, often with subtle symptoms that are easy to overlook or attribute to other causes.\n\nAnswer 20 simple yes/no questions to find out whether your symptoms may be related to perimenopause and what steps you can take.\n\nStart"
+        },
+        {
+          "id": "screen-question",
+          "text": "\n    \n      \n        1\n        Question text…\n      \n      Select the answer that best applies to you.\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-name",
+          "text": "\n    \n      \n        21\n        What is your first name?\n      \n      \n        \n        Please enter your first name\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-email",
+          "text": "\n    \n      \n        22\n        We'll calculate your results in a second — if you'd like to receive a copy via email, leave your email below:\n      \n      \n        \n        Please enter a valid email address\n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-mailing",
+          "text": "\n    \n      \n        23\n        Would you like to be notified of new assessments and health-related posts?\n      \n      \n      \n        OK\n        press Enter ↵\n      \n    \n  "
+        },
+        {
+          "id": "screen-submitting",
+          "text": "\n    \n      \n      Calculating your perimenopause assessment results…\n    \n  "
+        },
+        {
+          "id": "screen-complete",
+          "text": "\n    \n\n      \n        \n          \n            \n          \n        \n        Your Assessment Results\n        Perimenopause Self-Assessment — HRT.org\n      \n\n      \n        Your Score\n        —\n        out of 20\n        \n          \n        \n        \n          0LowModerateHigh20\n        \n      \n\n      \n        \n        \n      \n\n      \n        What does this mean?\n        \n      \n\n      \n        Recommended next steps\n        \n      \n\n      \n        \n          \n          \n        \n        A copy of these results has been sent to \n      \n\n      \n        Book a Free Consultation\n        Retake Assessment\n      \n\n    \n  "
+        }
+      ],
+      "links": [
+        {
+          "text": "Book a Free Consultation",
+          "href": "https://www.hrt.org/contact-us-free-confidential-consultation/"
+        }
+      ]
+    },
+    "title": "Perimenopause Self-Assessment",
+    "intro": [
+      "Perimenopause can begin up to 10 years before menopause, often with subtle symptoms that are easy to overlook or attribute to other causes.",
+      "Answer 20 simple yes/no questions to find out whether your symptoms may be related to perimenopause and what steps you can take."
+    ],
+    "notes": []
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {"path":"/portal/","title":"Sign in | HRT.org","screen":"login"},
+  {"path":"/portal/register/","title":"Create an account | HRT.org","screen":"register"},
+  {"path":"/portal/recover-password/","title":"Recover your password | HRT.org","screen":"recover-password"},
+  {"path":"/portal/app/","title":"Patient portal | HRT.org","screen":"home"},
+  {"path":"/portal/app/home/","title":"Patient portal | HRT.org","screen":"home"},
+  {"path":"/portal/app/dashboard/","title":"Patient portal | HRT.org","screen":"home"},
+  {"path":"/portal/app/symptoms-tracker/","title":"Symptoms tracker | HRT.org","screen":"symptoms-tracker"},
+  {"path":"/portal/app/appointment-scheduling/","title":"Schedule appointment | HRT.org","screen":"appointment-scheduling"},
+  {"path":"/portal/app/lab-results/","title":"Lab results | HRT.org","screen":"lab-results"},
+  {"path":"/portal/app/medical-history/","title":"Medical history | HRT.org","screen":"medical-history"},
+  {"path":"/portal/app/my-orders/","title":"Orders | HRT.org","screen":"my-orders"},
+  {"path":"/portal/app/user-kit-orders/","title":"Kit orders | HRT.org","screen":"user-kit-orders"},
+  {"path":"/portal/app/lab-tests/","title":"Lab tests | HRT.org","screen":"lab-tests"},
+  {"path":"/portal/app/tracker-history/","title":"Tracker history | HRT.org","screen":"tracker-history"},
+  {"path":"/portal/app/change-password/","title":"Change password | HRT.org","screen":"change-password"}
+]

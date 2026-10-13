@@ -1,0 +1,17 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": [
+    [
+      "weight-care",
+      "Premium editorial photograph for a medically professional weight-management website card. A fictional middle-aged woman preparing a balanced lunch at a bright home kitchen counter: colorful vegetables, lentils and a simple bowl, ordinary comfortable body and clothing, relaxed candid moment, natural skin. Focus on sustainable everyday nutrition rather than body size. Landscape 3:2 composition, person centered with head entirely visible and space around edges, soft daylight, ivory kitchen and muted navy accents. Realistic refined lifestyle photography. No scales, tape measures, before-and-after comparison, weight-loss claims, medicine or product packaging. No text, watermark, logo, labels or lettering."
+    ],
+    [
+      "intimacy-care",
+      "Premium editorial photograph for a sexual-health website card, respectful and fully clothed. Fictional couple in their early fifties sitting close on a pale sofa in a bright comfortable home, sharing a quiet warm conversation, one partner gently holding the other's hand. Ordinary natural appearance, subtle comfortable smiles, no endorsement or implied treatment outcome. Landscape 3:2, medium wide photograph showing both heads entirely and their hands, generous margins. Navy and muted plum casual clothing, ivory and sage interior, soft natural light, realistic documentary photographic finish. Nonsexual scene of emotional connection. No medication, no product, no text, watermark or logos."
+    ],
+    [
+      "hair-care",
+      "Premium realistic editorial photograph for a hair-loss treatment information website card. Fictional middle-aged man with naturally mildly thinning hair at the temples calmly looking into a bathroom mirror, one hand gently parting his hair near a temple. Candid over-shoulder three-quarter view so mirror reflection and real hand make anatomical sense; simple navy shirt, clean bright ivory bathroom, soft window daylight. Landscape 3:2 composition, entire reflected head visible with margins. Respectful ordinary appearance, medically professional visual tone. No before-and-after, no thick regrown hair, no result promise, no medicine bottles or branding. No text, labels, watermark, logo or lettering."
+    ]
+  ]
+}

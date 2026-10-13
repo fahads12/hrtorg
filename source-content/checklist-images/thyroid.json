@@ -1,0 +1,22 @@
+{
+  "id": "thyroid",
+  "alt": "A clinician gently examines an adult patient's neck during a thyroid consultation.",
+  "source": "C:\\Users\\Fahad\\.codex\\generated_images\\01a12cac-c085-7a63-b4de-dc368e21fbc2\\exec-27a189b0-e4da-4309-8df8-b173d1b9e18c.png",
+  "prompt": "Use case: photorealistic-natural. Asset: original landscape 3:2 editorial healthcare photograph for a thyroid symptom assessment on a premium health website. A medically plausible thyroid neck examination in a calm modern consulting room with soft window light and warm ivory walls. An adult woman patient in her late forties, dark shoulder-length hair and a modest navy crew-neck blouse, sits upright with chin gently raised. A middle-aged female clinician in plain muted teal clinical attire sits beside and slightly behind her, gently palpating the lower front of the patient's neck with two relaxed fingertips, assessing the thyroid area just above the collarbone without pressure or distress. Their attentive natural expressions and the careful neck examination make the thyroid-care context apparent. Waist-up three-quarter composition; faces, examining hand and neck central and completely visible, suitable for center cropping to 4:3. Natural hands with correct anatomy, realistic lighting, no excessive equipment. Coordinated warm neutral tones, subtle navy and teal, high quality natural skin and fabric textures. Do not include text, labels, badges, invented credentials, logos, watermarks, screens, diagnostic results, anatomical overlays, fabricated product packaging, nudity, explicit content, or before-and-after claims. Illustrative people, not actual staff or patients.",
+  "mode": "built-in",
+  "width": 1536,
+  "height": 1024,
+  "original": "source-content/checklist-images/generated/thyroid.png",
+  "files": [
+    {
+      "path": "uploads/checklists/thyroid-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/thyroid-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

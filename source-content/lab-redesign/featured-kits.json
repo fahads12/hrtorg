@@ -1,0 +1,41 @@
+[
+  {
+    "id": "hormone",
+    "name": "Optimal Hormone Health",
+    "subtitle": "Fundamental 5",
+    "slug": "optimal-hormone-health-fundamental-5-easy-convenient-at-home-test-kit-saliva",
+    "purpose": "A starting point for hormone conversations.",
+    "audience": "For women and men exploring sex and adrenal hormone levels.",
+    "sample": "Saliva",
+    "markers": "Estradiol (E2), progesterone (Pg), testosterone (T), DHEA-S (DS), cortisol.",
+    "includes": "At-home saliva collection kit and analysis of five hormones.",
+    "followup": "Consultation is not specified in this listing.",
+    "detail": "The listing describes profiles with cortisol collected once, twice, or four times daily. Confirm the profile and collection schedule before ordering."
+  },
+  {
+    "id": "thyroid",
+    "name": "Optimal Thyroid",
+    "subtitle": "Essentials",
+    "slug": "thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid",
+    "purpose": "Explore four markers of thyroid function.",
+    "audience": "The listing highlights adults 40+, and people experiencing cold sensitivity, fatigue, or difficulty losing weight.",
+    "sample": "Blood spot",
+    "markers": "TSH, free T3 (FT3), free T4 (FT4), thyroid peroxidase antibodies (TPOab).",
+    "includes": "Blood spot test, prepaid return label, physician review, and personalized recommendations.",
+    "followup": "Physician review is listed; a live consultation is not specified.",
+    "detail": "The product page states results and recommendations in 4–9 days, without defining the starting point. Confirm timing with the store."
+  },
+  {
+    "id": "adrenal",
+    "name": "Optimal Adrenal Health",
+    "subtitle": "DHEA-S + diurnal cortisol",
+    "slug": "optimal-adrenal-health-complete-easy-convenient-at-home-test-kit-saliva",
+    "purpose": "See how cortisol varies across the day.",
+    "audience": "The listing includes adults experiencing prolonged stress or pronounced fatigue.",
+    "sample": "Saliva · four cortisol samples",
+    "markers": "DHEA-S (DS), cortisol in the morning, afternoon, evening, and at night (Cx4).",
+    "includes": "Saliva test, prepaid return label, physician review, and personalized recommendations.",
+    "followup": "Physician review is listed; a live consultation is not specified.",
+    "detail": "The product page states results and recommendations in 4–9 days, without defining the starting point. Follow its multi-sample collection schedule."
+  }
+]

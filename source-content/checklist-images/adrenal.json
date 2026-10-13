@@ -1,0 +1,22 @@
+{
+  "id": "adrenal",
+  "alt": "A man reflects on sleep and stress while making notes in a journal at home.",
+  "source": "C:\\Users\\Fahad\\.codex\\generated_images\\01a12cac-c085-7a63-b4de-dc368e21fbc2\\exec-6391bc6c-a410-400b-af92-ea7c69de4290.png",
+  "prompt": "Use case: photorealistic-natural. Asset: original landscape 3:2 premium editorial healthcare photograph for a stress, sleep and fatigue symptom checklist. A fully clothed East Asian adult man in his early forties in a soft muted teal long-sleeved shirt sits at a small oak desk in a warm quiet home in morning window light. A contemplative side-three-quarter composition: he pauses thoughtfully with pen over an open journal, considering his sleep and daily stress. A small simple analog alarm clock and a closed laptop sit off to one side, an ivory ceramic mug nearby. He is calm and attentive with authentic slightly tired but not distressed expression, not posed smiling to camera. This is reflection and preparation to discuss symptoms, not a diagnosis or a miraculous wellness transformation. Wide horizontal composition with person, hand and journal in the central area so a 4:3 crop works; preserve visible face and realistic hands. Soft warm neutral interior, muted navy and teal accents, natural skin texture, coordinated gentle color grading. No readable notebook text, charts, interfaces, product branding, credential badges, diagnostic values, text overlays, watermarks, nudity, explicit content or medical claims. Avoid generic laptop video-call imagery.",
+  "mode": "built-in",
+  "width": 1536,
+  "height": 1024,
+  "original": "source-content/checklist-images/generated/adrenal.png",
+  "files": [
+    {
+      "path": "uploads/checklists/adrenal-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/adrenal-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

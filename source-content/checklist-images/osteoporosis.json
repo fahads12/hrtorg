@@ -1,0 +1,22 @@
+{
+  "id": "osteoporosis",
+  "prompt": "Use case: photorealistic-natural. Asset type: original editorial healthcare photograph for an osteoporosis bone-health risk checklist. Create a landscape 3:2 image in a calm modern consultation room. A mature adult woman around 62 with silver-streaked hair, wearing a plum cardigan over a cream blouse, sits attentively beside a healthcare professional in understated navy scrubs. On the light wood table between them is a small realistic educational anatomical model showing three ivory lumbar vertebrae with pale intervertebral discs on a simple base. The clinician gently points at the model with one hand, discussing bone health with the patient; both are engaged with the model rather than looking at camera. Use clinically plausible anatomy and hands. Close enough that the vertebral model clearly communicates bone care, but include both adults' attentive faces in a comfortable waist-up composition. Soft natural window light, warm neutral interior, muted navy and plum accents, realistic skin texture and premium consistent editorial color grading. Important subjects centered with breathing room suitable for a website card center crop. No x-ray or diagnostic report, no fake results, no text or writing, no certification logos, no invented credentials, no watermarks, no medications, no before-and-after, no distress, no explicit content. Illustrative people, not actual HRT staff or patients.",
+  "mode": "built-in",
+  "alt": "A healthcare professional uses a spinal model to discuss bone health with an adult woman.",
+  "width": 1536,
+  "height": 1024,
+  "source": "C:/Users/Fahad/.codex/generated_images/01a12cac-7f4d-7f12-97a5-1c9a99454cf0/exec-2b46a463-ff1e-47ae-a23c-6ff9074a5c6a.png",
+  "original": "source-content/checklist-images/generated/osteoporosis.png",
+  "files": [
+    {
+      "path": "uploads/checklists/osteoporosis-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/osteoporosis-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

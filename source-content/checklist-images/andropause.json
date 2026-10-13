@@ -1,0 +1,22 @@
+{
+  "id": "andropause",
+  "prompt": "Use case: photorealistic-natural. Asset type: original editorial photograph for an andropause symptom assessment, focusing on preparing questions about changes in sleep and energy in midlife. Landscape 3:2 photograph. A thoughtful man in his early 60s with short silver hair and medium skin, wearing a muted blue casual shirt, sits at a small wooden desk beside a bright window in his calm home. Three-quarter side view showing him attentively writing questions in an open notebook; one hand holds a pen naturally, the other rests relaxed on the paper. A closed book and simple unlit bedside-style lamp in soft background suggest an ordinary daily routine; no medical equipment, no laptop, no pills. His expression is engaged and calm rather than distressed, neither looking at camera nor posed smiling. Keep notebook page markings indistinct and no readable writing. Premium natural healthcare editorial photography, soft morning daylight, warm neutral linen and pale wood, restrained navy accents, realistic natural skin and hands, subtle depth of field. All important subjects within central two-thirds for center-safe crop. No text, watermarks, logos, credentials, medical results, diagnosis, transformation, nudity or explicit content. Image illustrates preparation for a conversation, not a real HRT patient.",
+  "mode": "built-in",
+  "alt": "A mature man writes down questions about sleep and energy before a healthcare conversation.",
+  "width": 1536,
+  "height": 1024,
+  "source": "C:/Users/Fahad/.codex/generated_images/01a12cac-7f4d-7f12-97a5-1c9a99454cf0/exec-67608800-1d4a-4712-aa70-4a6fcbc59e3c.png",
+  "original": "source-content/checklist-images/generated/andropause.png",
+  "files": [
+    {
+      "path": "uploads/checklists/andropause-480.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "path": "uploads/checklists/andropause-960.webp",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

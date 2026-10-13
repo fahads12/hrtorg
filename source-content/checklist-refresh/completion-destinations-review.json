@@ -1,0 +1,177 @@
+{
+  "checkedAt": "2026-10-11T20:51:19.572Z",
+  "method": "Read supplied workflow JSON, archived frontend scripts, and current public pages using GET only. No webhook POST or form submission.",
+  "notes": [
+    "All nine current inline assessment scripts match the archived scripts exactly.",
+    "All-zero hormone answers choose category 4 in the original source. Local site intentionally handles no selected symptoms without diagnosis or webhook submission.",
+    "Email product/consultation links are not automatic browser completion destinations.",
+    "Do not invent score-total type codes: the current page ignores type and only implements thyroid scoring."
+  ],
+  "forms": [
+    {
+      "id": "women",
+      "originalPage": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test",
+      "archivedScript": "source-content/checklist-refresh/hormone-symptom-checklist-for-women-female-hormone-imbalance-test.assessment.js",
+      "workflowExport": "Hormone Checklist Women Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": "https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test?cat1={cat1}&cat2={cat2}&cat3={cat3}&cat4={cat4}",
+      "workflowResponseHasDestination": true,
+      "emailHasViewResultsOnline": true,
+      "emailConsultationCTA": null,
+      "destinationValidation": "Current page ignores cat1/cat2/cat3/cat4 query parameters and starts the assessment again",
+      "evidence": {
+        "calculation": [
+          "const REDIRECT_BASE_URL = 'https://hrt.org/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test';",
+          "const redirectUrl = REDIRECT_BASE_URL",
+          "  + '?cat1=' + cat1 + '&cat2=' + cat2 + '&cat3=' + cat3 + '&cat4=' + cat4;"
+        ],
+        "response": [
+          "  redirectUrl: $('Build HTML Email').first().json.redirectUrl,",
+          "  landingPageUrl: $('Build HTML Email').first().json.landingPageUrl,"
+        ]
+      }
+    },
+    {
+      "id": "men",
+      "originalPage": "https://hrt.org/checklist/hormone-symptom-checklist-men",
+      "archivedScript": "source-content/checklist-refresh/hormone-symptom-checklist-men.assessment.js",
+      "workflowExport": "Hormone Checklist Men Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": "https://hrt.org/checklist/hormone-symptom-checklist-men?cat1={cat1}&cat2={cat2}&cat3={cat3}&cat4={cat4}",
+      "workflowResponseHasDestination": true,
+      "emailHasViewResultsOnline": true,
+      "emailConsultationCTA": null,
+      "destinationValidation": "Current page ignores cat1/cat2/cat3/cat4 query parameters and starts the assessment again",
+      "evidence": {
+        "calculation": [
+          "const redirectUrl = 'https://hrt.org/checklist/hormone-symptom-checklist-men'",
+          "  + '?cat1=' + cat1 + '&cat2=' + cat2 + '&cat3=' + cat3 + '&cat4=' + cat4;"
+        ],
+        "response": [
+          "  redirectUrl: $('Build HTML Email').first().json.redirectUrl,",
+          "  landingPageUrl: $('Build HTML Email').first().json.landingPageUrl,"
+        ]
+      }
+    },
+    {
+      "id": "pms",
+      "originalPage": "https://hrt.org/checklist/pms-assessment",
+      "archivedScript": "source-content/checklist-refresh/pms-assessment.assessment.js",
+      "workflowExport": "PMS Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": null,
+      "workflowResponseHasDestination": false,
+      "emailHasViewResultsOnline": false,
+      "emailConsultationCTA": "https://www.hrt.org/contact-us-free-confidential-consultation/",
+      "destinationValidation": "No result-page URL or browser redirect is supplied",
+      "evidence": {
+        "calculation": [],
+        "response": []
+      }
+    },
+    {
+      "id": "thyroid",
+      "originalPage": "https://hrt.org/checklist/thyroid-assessment",
+      "archivedScript": "source-content/checklist-refresh/thyroid-assessment.assessment.js",
+      "workflowExport": "Thyroid Typeform Assessment.json",
+      "originalBrowserCompletion": "Automatically navigates to response landingPageUrl, or score-total?type=th&score=localScore; 1200ms delay on response, immediate fallback on network error.",
+      "workflowResultDestination": "https://www.hrt.org/score-total?type=th&score={totalScore}",
+      "workflowResponseHasDestination": true,
+      "emailHasViewResultsOnline": true,
+      "emailConsultationCTA": null,
+      "destinationValidation": "Valid thyroid results page",
+      "evidence": {
+        "calculation": [
+          "const landingPageUrl = 'https://www.hrt.org/score-total?type=th&score=' + totalScore;"
+        ],
+        "response": [
+          "  landingPageUrl: $json.landingPageUrl,"
+        ]
+      }
+    },
+    {
+      "id": "adrenal",
+      "originalPage": "https://hrt.org/checklist/adrenal-fatigue",
+      "archivedScript": "source-content/checklist-refresh/adrenal-fatigue.assessment.js",
+      "workflowExport": "Adrenal Fatigue & Stress Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": null,
+      "workflowResponseHasDestination": false,
+      "emailHasViewResultsOnline": false,
+      "emailConsultationCTA": "https://www.hrt.org/contact-us-free-confidential-consultation/",
+      "destinationValidation": "No result-page URL or browser redirect is supplied",
+      "evidence": {
+        "calculation": [],
+        "response": []
+      }
+    },
+    {
+      "id": "osteoporosis",
+      "originalPage": "https://hrt.org/checklist/osteoporosis-assessment",
+      "archivedScript": "source-content/checklist-refresh/osteoporosis-assessment.assessment.js",
+      "workflowExport": "Osteoporosis Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": null,
+      "workflowResponseHasDestination": false,
+      "emailHasViewResultsOnline": false,
+      "emailConsultationCTA": "https://www.hrt.org/contact-us-free-confidential-consultation/",
+      "destinationValidation": "No result-page URL or browser redirect is supplied",
+      "evidence": {
+        "calculation": [],
+        "response": []
+      }
+    },
+    {
+      "id": "andropause",
+      "originalPage": "https://hrt.org/checklist/andropause-assessment",
+      "archivedScript": "source-content/checklist-refresh/andropause-assessment.assessment.js",
+      "workflowExport": "Andropause Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": "https://www.hrt.org/score-total?type=an&score={totalScore}",
+      "workflowResponseHasDestination": true,
+      "emailHasViewResultsOnline": true,
+      "emailConsultationCTA": null,
+      "destinationValidation": "Incorrect destination: score-total ignores type=an and displays Thyroid Assessment Results",
+      "evidence": {
+        "calculation": [
+          "const landingPageUrl = 'https://www.hrt.org/score-total?type=an&score=' + totalScore;"
+        ],
+        "response": [
+          "  landingPageUrl: $json.landingPageUrl,"
+        ]
+      }
+    },
+    {
+      "id": "menopause",
+      "originalPage": "https://hrt.org/checklist/menopause-assessment",
+      "archivedScript": "source-content/checklist-refresh/menopause-assessment.assessment.js",
+      "workflowExport": "Menopause Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": null,
+      "workflowResponseHasDestination": false,
+      "emailHasViewResultsOnline": false,
+      "emailConsultationCTA": "https://www.hrt.org/contact-us-free-confidential-consultation/",
+      "destinationValidation": "No result-page URL or browser redirect is supplied",
+      "evidence": {
+        "calculation": [],
+        "response": []
+      }
+    },
+    {
+      "id": "perimenopause",
+      "originalPage": "https://hrt.org/checklist/perimenopause-assessment",
+      "archivedScript": "source-content/checklist-refresh/perimenopause-assessment.assessment.js",
+      "workflowExport": "Perimenopause Typeform Assessment.json",
+      "originalBrowserCompletion": "Renders inline results on the same page; webhook response is only logged.",
+      "workflowResultDestination": null,
+      "workflowResponseHasDestination": false,
+      "emailHasViewResultsOnline": false,
+      "emailConsultationCTA": "https://www.hrt.org/contact-us-free-confidential-consultation/",
+      "destinationValidation": "No result-page URL or browser redirect is supplied",
+      "evidence": {
+        "calculation": [],
+        "response": []
+      }
+    }
+  ]
+}

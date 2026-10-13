@@ -1,0 +1,173 @@
+{
+  "reviewedAt": "2026-10-12",
+  "reviewMethod": "Read-only static inspection of user-supplied n8n exports and local checklist JavaScript. No workflow code was executed, no webhook was called, no email was sent, and no credentials were printed.",
+  "sources": [
+    "C:/Users/Fahad/Downloads/Osteoporosis Typeform Assessment.json",
+    "C:/Users/Fahad/Downloads/Adrenal Fatigue & Stress Typeform Assessment.json",
+    "C:/Users/Fahad/Downloads/Menopause Typeform Assessment.json",
+    "checklist-core.js",
+    "checklist-integration.js",
+    "assessment.js",
+    "assets/checklists/osteoporosis.js",
+    "assets/checklists/adrenal.js",
+    "assets/checklists/menopause.js"
+  ],
+  "common": {
+    "activeInExport": true,
+    "liveActivationVerified": false,
+    "nodeCount": 7,
+    "webhook": {
+      "method": "POST",
+      "responseMode": "responseNode",
+      "options": {},
+      "authenticationParameterPresent": false,
+      "credentialReferencePresent": false,
+      "authConclusion": "No webhook authentication is configured in the exported node. External reverse-proxy or instance protection cannot be assessed from the export.",
+      "productionHost": "Not specified in webhook parameters; confirm the n8n production URL rather than inventing a hostname."
+    },
+    "input": {
+      "expression": "$input.first().json.body || $input.first().json",
+      "acceptedEnvelope": "Question fields and contact fields must be direct properties of the HTTP JSON body.",
+      "contactFields": ["first_name", "email", "mailing_list"],
+      "contactOutputMapping": {"first_name": "patientName", "email": "patientEmail", "mailing_list": "mailingList"},
+      "contactDefault": "Each missing/falsy contact value becomes the empty string.",
+      "clientContactNormalization": "checklist-core.js trims first_name and email. The workflow copies these fields without trim or type validation.",
+      "clientMailingValues": ["Yes, add me to your mailing list", "No, just send me the results"],
+      "envelopeRisk": "The adapter is called with {assessmentId, payload}. Sending that entire object to the webhook instead of payload would make all expected fields missing."
+    },
+    "connections": [
+      "Webhook -> Calculate Scores -> Has Valid Email?",
+      "Has Valid Email? true -> Build HTML Email -> Send Email -> Respond - Success",
+      "Has Valid Email? false -> Respond - Invalid Email"
+    ],
+    "emailValidation": {
+      "node": "Has Valid Email?",
+      "expression": "$json.patientEmail",
+      "operation": "string contains",
+      "value": "@",
+      "typeValidation": "loose",
+      "finding": "Only checks for @; no structural email validation."
+    },
+    "consentAndCRM": {
+      "mailingPreferenceCopied": true,
+      "mailingPreferenceUsedDownstream": false,
+      "mailingBranch": false,
+      "crmNode": false,
+      "subscriberWriteNode": false,
+      "finding": "Every input passing the weak email check reaches Gmail regardless of mailing_list. There is no contact/CRM creation or marketing-list subscription in these exports. The results email also contains suggested lab tests and product promotions regardless of preference."
+    },
+    "gmail": {
+      "nodeType": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "credentialTypes": ["gmailOAuth2"],
+      "credentialReferencePresent": true,
+      "credentialValuesRedacted": true,
+      "sendTo": "={{ $json.patientEmail }}",
+      "subject": "={{ $json.emailSubject }}",
+      "message": "={{ $json.htmlEmailBody }}",
+      "emailBuilderPreservesInput": true,
+      "greetingEscapesUserName": false,
+      "greetingFinding": "Build HTML Email directly concatenates patientName into greeting and interpolates it into HTML; escape untrusted first_name before rendering."
+    },
+    "response": {
+      "success": {
+        "respondWith": "json",
+        "responseCodeExplicit": false,
+        "responseCodeInterpretation": "Default success status; no explicit code in export.",
+        "fixedProperties": {"success": true},
+        "dynamicProperties": ["riskScore OR totalScore", "resultNum", "resultLabel", "resultContent"],
+        "otherProperties": ["message"],
+        "headers": {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type"},
+        "source": "All dynamic fields use $json at Respond - Success, whose immediate input is Send Email.",
+        "dataFlowRisk": "There is no merge or explicit reference back to Calculate Scores/Build HTML Email after Gmail. If Gmail returns only its provider response, dynamic scoring properties are undefined and omitted from serialized JSON. Confirm node output semantics or change expressions to an explicit upstream node reference.",
+        "frontendMismatch": "assessment.js requires accepted === true and separately uses emailSent === true. The exports return neither. A delivery adapter must normalize the workflow response."
+      },
+      "invalidEmail": {
+        "respondWith": "json",
+        "responseCode": 400,
+        "body": {"success": false, "error": "INVALID_EMAIL", "message": "Email address is missing or invalid."},
+        "headers": {"Access-Control-Allow-Origin": "*"}
+      },
+      "corsLimit": "No OPTIONS trigger or preflight branch is exported. Success headers advertise OPTIONS but do not prove browser preflight succeeds. Verify live n8n/proxy behavior before direct cross-origin browser submissions."
+    },
+    "failureAndDuplicateHandling": {
+      "workflowErrorHandlerConfigured": false,
+      "continueOnFailConfigured": false,
+      "retryOnFailConfigured": false,
+      "onErrorConfigured": false,
+      "deduplicationNode": false,
+      "idempotencyFieldRead": false,
+      "submissionIdFieldRead": false,
+      "finding": "Success is reached only after Gmail succeeds. A Gmail failure has no explicit application JSON error response. If sending succeeds but the HTTP response is lost, a resubmission can send a second email because there is no idempotency record/check."
+    },
+    "frontendState": "checklist-integration.js sets enabled:false. assessment.js therefore computes local summaries without submitting. Review did not enable or alter it."
+  },
+  "workflows": [
+    {
+      "id": "osteoporosis",
+      "exportName": "Osteoporosis Typeform Assessment",
+      "webhookPath": "osteoporosis-typeform-submit",
+      "scoreOutputField": "riskScore",
+      "questionFields": ["q1_exercise", "q2_alcohol", "q3_inactive", "q4_smoke", "q5_caffeine", "q6_medication", "q7_calcium", "q8_absent_periods", "q9_postmenopausal", "q10_low_testosterone", "q11_ethnicity", "q12_family_history", "q13_curved_back"],
+      "normalInputParity": {"fields": true, "weights": true, "tiers": true, "labels": true},
+      "scoring": "13 Yes/No fields. q1_exercise and q7_calcium: No=1, Yes=0. Other fields: Yes=1, No=0. Total range 0..13.",
+      "tiers": [
+        {"min": 0, "max": 3, "resultNum": 1, "resultLabel": "Lower Risk Profile"},
+        {"min": 4, "max": 13, "resultNum": 2, "resultLabel": "Elevated Risk Profile"}
+      ],
+      "normalization": "Truthy answers are String(raw).trim().toLowerCase(); falsy/missing values default to no. Unrecognized truthy values score 0, including protective fields. Missing values append debug warnings but do not stop sending.",
+      "incompleteInputMismatch": "With no question answers, workflow riskScore is 2 because missing exercise/calcium become no; local score is 0 because missing answers are skipped. Valid complete browser inputs agree.",
+      "successMessage": "Your osteoporosis assessment is complete. A copy has been sent to your email.",
+      "emailSubject": "Osteoporosis Self-Assessment - Results | HRT.org"
+    },
+    {
+      "id": "adrenal",
+      "exportName": "Adrenal Fatigue & Stress Typeform Assessment",
+      "webhookPath": "adrenal-typeform-submit",
+      "scoreOutputField": "totalScore",
+      "questionFields": ["q1_fatigue", "q2_irritability", "q3_anxious", "q4_sleep", "q5_energy_crashes"],
+      "normalInputParity": {"fields": true, "weights": true, "tiers": true, "labels": true},
+      "scoring": "Five frequency fields: Never=0, Occasionally=2, Frequently=5, Constantly=8. Total range 0..40.",
+      "tiers": [
+        {"min": 0, "max": 9, "resultNum": 1, "resultLabel": "Minimal Adrenal Load"},
+        {"min": 10, "max": 22, "resultNum": 2, "resultLabel": "Mild to Moderate Adrenal Stress"},
+        {"min": 23, "max": 39, "resultNum": 3, "resultLabel": "Moderate to Severe Adrenal Fatigue"},
+        {"min": 40, "max": 40, "resultNum": 4, "resultLabel": "Severe Adrenal Exhaustion"}
+      ],
+      "normalization": "Truthy answers are String(raw).trim().toLowerCase(); falsy/missing values default to never. Ordinary unknown values score 0. Missing values only append debug warnings.",
+      "scoreMapValidationBug": "scoreMap is a normal object and tests scoreMap[key] !== undefined without an own-property check. A submitted value such as __proto__ or constructor resolves to an inherited object/function, so totalScore can become a string and fall into the severe-exhaustion else tier. Enforce the four allowed strings or use an own-property lookup.",
+      "nonCanonicalInputMismatch": "Workflow accepts trimmed/lowercase option text; local core only recognizes exact option.text strings. Valid UI choices agree.",
+      "successMessage": "Your adrenal fatigue assessment is complete. A copy has been sent to your email.",
+      "emailSubject": "Adrenal Fatigue & Stress Assessment - Results | HRT.org"
+    },
+    {
+      "id": "menopause",
+      "exportName": "Menopause Typeform Assessment",
+      "webhookPath": "menopause-typeform-submit",
+      "scoreOutputField": "totalScore",
+      "questionFields": ["q1_water_retention", "q2_facial_hair", "q3_breast_tenderness", "q4_pain", "q5_vaginal_dryness", "q6_fatigue", "q7_concentration", "q8_urinary_incontinence", "q9_irritability", "q10_anxiety", "q11_mood_swings", "q12_depression", "q13_acne", "q14_low_libido", "q15_hot_flashes", "q16_sleep_disturbance", "q17_heart_disease_risk", "q18_osteoporosis_risk"],
+      "normalInputParity": {"fields": true, "weights": true, "tiers": true, "labels": true},
+      "scoring": "18 Yes/No fields. Yes=1, No=0. Total range 0..18.",
+      "tiers": [
+        {"min": 0, "max": 0, "resultNum": 1, "resultLabel": "No Symptoms Reported"},
+        {"min": 1, "max": 14, "resultNum": 2, "resultLabel": "Mild to Moderate Symptoms"},
+        {"min": 15, "max": 18, "resultNum": 3, "resultLabel": "Significant Symptoms"}
+      ],
+      "normalization": "Only truthy raw values whose trimmed lowercase string equals yes score 1. Missing/falsy/unknown values score 0. Missing values only append debug warnings.",
+      "nonCanonicalInputMismatch": "Workflow accepts trimmed/lowercase yes; local core only recognizes exact Yes. Valid UI choices agree.",
+      "successMessage": "Your menopause assessment is complete. A copy has been sent to your email.",
+      "emailSubject": "Menopause Self-Assessment - Results | HRT.org"
+    }
+  ],
+  "recommendedIntegrationActions": [
+    "Use the exact flat payload fields above and select the corresponding production webhook path by assessmentId.",
+    "Keep the frontend disabled until endpoint ownership, Gmail credentials, response semantics, and production activation are verified.",
+    "Normalize workflow success to the adapter accepted/emailSent contract; distinguish provider send acceptance from final inbox delivery.",
+    "Reference Calculate Scores explicitly in success responses or merge Gmail metadata with assessment data.",
+    "Validate required contact/question fields server-side and reject incomplete/unknown inputs before scoring/sending.",
+    "Escape the name in generated HTML.",
+    "Implement a consent-aware marketing subscriber branch if mailing-list signup is intended; these exports do not contain one.",
+    "Add explicit send-failure JSON handling and idempotency before allowing retries.",
+    "Verify CORS preflight and any deployment-level authentication/rate limits using a controlled test setup."
+  ]
+}

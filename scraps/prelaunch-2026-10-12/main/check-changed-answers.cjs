@@ -1,0 +1,22 @@
+const {chromium}=require('playwright');
+const fs=require('node:fs');
+(async()=>{
+ const browser=await chromium.launch({channel:'chrome',headless:true});
+ const page=await browser.newPage({viewport:{width:390,height:900}});
+ await page.route('**/*',r=>['GET','HEAD','OPTIONS'].includes(r.request().method())?r.continue():r.abort());
+ await page.goto('http://localhost:8012/Consultation.html?g=women&p=hrt',{waitUntil:'networkidle'});
+ await page.locator('#fn').fill('Audit');await page.locator('#dob').fill('1980-01-01');await page.locator('#st').selectOption('Florida');await page.locator('#em').fill('audit@example.invalid');
+ await page.locator('.cz-continue').click();await page.locator('.cz-continue').click();
+ await page.locator('.cz-chip').first().click();await page.getByRole('button',{name:'5 out of 10',exact:true}).click();await page.locator('.cz-seg button').first().click();
+ await page.locator('.cz-back').click();await page.getByRole('button',{name:/Weight Management/}).click();await page.locator('.cz-continue').click();
+ const changedGoal={selectedSymptoms:await page.locator('.cz-chip[aria-pressed="true"]').count(),continueEnabled:await page.locator('.cz-continue').isEnabled()};
+ await page.locator('.cz-back').click();await page.locator('.cz-back').click();
+ const focusOnReturn=await page.evaluate(()=>({tag:document.activeElement.tagName,text:document.activeElement.textContent.slice(0,80)}));
+ await page.getByRole('button',{name:/A man/}).click();await page.locator('.cz-continue').click();await page.locator('.cz-continue').click();
+ const changedGender={selectedSymptoms:await page.locator('.cz-chip[aria-pressed="true"]').count(),continueEnabled:await page.locator('.cz-continue').isEnabled()};
+ const result={changedGoal,focusOnReturn,changedGender};
+ fs.writeFileSync(__dirname+'/changed-answers-'+(process.env.AUDIT_STAGE||'before')+'.json',JSON.stringify(result,null,2));
+ await page.screenshot({path:__dirname+'/changed-answers-'+(process.env.AUDIT_STAGE||'before')+'.png',fullPage:true});
+ console.log(result);await browser.close();
+ if(process.env.AUDIT_STAGE==='after'&&(changedGoal.continueEnabled||changedGender.continueEnabled||focusOnReturn.tag!=='H1'))process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});

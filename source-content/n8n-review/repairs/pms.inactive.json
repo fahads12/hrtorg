@@ -1,0 +1,236 @@
+{
+  "name": "PMS Typeform Assessment",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "pms-typeform-submit",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1040,
+        32
+      ],
+      "id": "258ba00f-289a-4627-ac7b-1f0816a5bebe",
+      "name": "Webhook (PMS Submit)",
+      "webhookId": "pms-typeform-2026-05"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n//  PMS Self-Assessment — Score Calculator\n//  Based on the Q005 Make.com blueprint.\n//\n//  15 yes/no questions. Typeform applies ×2 weight per yes,\n//  so each Yes = 2 points. Max weighted score = 30.\n//\n//  Scoring tiers — mirroring the Q005 blueprint switch exactly:\n//    weighted score = 0        → Result 1 (No symptoms)\n//    weighted score 1–14       → Result 2 (Mild–Moderate)\n//    weighted score 15–30      → Result 3 (Moderate–Severe)\n//    weighted score 31+        → Result 4 (Severe / PMDD)\n//      (Result 4 is not reachable at ×2 with 15 questions,\n//       but is kept to match the blueprint exactly.)\n// ============================================================\n\nconst data = $input.first().json.body || $input.first().json;\n\nconst fields = [\n  'q1_fluid_retention',\n  'q2_backache',\n  'q3_breast_tenderness',\n  'q4_headache',\n  'q5_weight_gain',\n  'q6_fatigue',\n  'q7_cravings',\n  'q8_joint_swelling',\n  'q9_irritability',\n  'q10_anxiety',\n  'q11_mood_swings',\n  'q12_depression',\n  'q13_hostility',\n  'q14_emotional_crying',\n  'q15_mental_confusion'\n];\n\nlet weightedScore = 0;\nlet rawYesCount = 0;\nconst scores = {};\nconst warnings = [];\n\nfor (const field of fields) {\n  const raw = data[field];\n  const isYes = raw && String(raw).trim().toLowerCase() === 'yes';\n  const score = isYes ? 2 : 0; // ×2 weight matching Typeform\n  scores[field] = { raw, score };\n  weightedScore += score;\n  if (isYes) rawYesCount++;\n  if (raw === undefined || raw === null || raw === '') {\n    warnings.push(field + ' is missing');\n  }\n}\n\n// Four-tier result — matching Q005 Make.com switch logic exactly\nlet resultNum, resultLabel, resultContent;\nif (weightedScore === 0) {\n  resultNum = 1;\n  resultLabel = 'No Symptoms Reported';\n  resultContent = 'You have not reported any PMS symptoms. Your hormonal cycle appears to be well-balanced. Maintaining a healthy lifestyle and monitoring for any future changes is all that is recommended at this time.';\n} else if (weightedScore >= 1 && weightedScore <= 14) {\n  resultNum = 2;\n  resultLabel = 'Mild PMS Symptoms';\n  resultContent = 'You are experiencing mild PMS symptoms. These may be managed with dietary changes, targeted supplementation (magnesium, B6), and regular exercise. A hormone panel can confirm whether a progesterone imbalance is contributing to your symptoms.';\n} else if (weightedScore >= 15 && weightedScore <= 30) {\n  resultNum = 3;\n  resultLabel = 'Moderate to Severe PMS';\n  resultContent = 'Your symptoms are significantly impacting your quality of life. This level of PMS commonly indicates oestrogen dominance or progesterone deficiency. We recommend a comprehensive hormone panel and a consultation with one of our specialists to discuss treatment options including bioidentical progesterone therapy.';\n} else {\n  resultNum = 4;\n  resultLabel = 'Severe Symptoms / Possible PMDD';\n  resultContent = 'Your symptom score is very high and may indicate PMDD (Premenstrual Dysphoric Disorder). This is a recognised medical condition with effective treatments available. Please speak to one of our specialists as soon as possible.';\n}\n\nreturn [{ json: {\n  patientName:    data.first_name   || '',\n  patientEmail:   data.email        || '',\n  mailingList:    data.mailing_list || '',\n  weightedScore,\n  rawYesCount,\n  resultNum,\n  resultLabel,\n  resultContent,\n  _debug_scores:   scores,\n  _debug_warnings: warnings\n}}];\n"
+      },
+      "id": "07b162a2-6400-4d12-ba85-bdcd12acb2d8",
+      "name": "Calculate Scores",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -800,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "v1",
+              "leftValue": "={{ $json.patientEmail }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "91498dc8-0b1a-46b5-9dfb-7062df7565ab",
+      "name": "Has Valid Email?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -560,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\n// Escape only the dynamic name used in the HTML greeting.\nfunction escapePatientName(value) {\n  return String(value)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&#39;');\n}\nconst greeting = d.patientName ? ('Dear ' + escapePatientName(d.patientName)) : 'Hi there';\nconst year = new Date().getFullYear();\n\nconst introMap = {\n  1: `PMS (Premenstrual Syndrome) affects up to 75% of women of reproductive age to some degree. Symptoms are caused by the natural fluctuation of oestrogen and progesterone in the second half of the menstrual cycle.<br/><br/>Based on your responses, you are not currently reporting PMS symptoms — which is a great sign. Your hormone levels appear to be well-balanced through your cycle. However, PMS can develop or worsen with age, particularly in your 30s and 40s as progesterone levels become less stable.<br/><br/>We recommend maintaining healthy lifestyle habits — regular exercise, a low-sugar diet, adequate sleep, and stress management — as these are the most powerful tools for keeping your hormones in balance over time.`,\n  2: `PMS is caused by the natural drop in progesterone in the luteal phase (the second half of the menstrual cycle). Even a mild drop can trigger symptoms like fluid retention, breast tenderness, fatigue, mild irritability, and food cravings in the days before your period.<br/><br/>Based on your responses, you are experiencing mild PMS symptoms. The good news is that mild PMS responds very well to targeted nutritional support — particularly magnesium, vitamin B6, and evening primrose oil — alongside dietary adjustments (reducing sugar and caffeine before your period) and regular exercise.<br/><br/>A hormone panel measuring your progesterone and oestradiol levels in the luteal phase can confirm whether low progesterone is driving your symptoms and open the door to more targeted treatment if needed.`,\n  3: `Moderate-to-severe PMS is one of the most common yet under-treated hormonal conditions affecting women. What you are experiencing is real, measurable, and most importantly — treatable.<br/><br/>At this level, PMS is most commonly driven by oestrogen dominance (relatively high oestrogen versus progesterone) and/or progesterone deficiency in the luteal phase. The result is a combination of physical symptoms (bloating, breast pain, headaches, joint swelling) alongside emotional and cognitive symptoms (mood swings, anxiety, depression, irritability, mental confusion) that can make the second half of your cycle feel very difficult to manage.<br/><br/>Bioidentical progesterone therapy has an excellent track record in significantly reducing moderate-to-severe PMS symptoms, with most women noticing improvement within 2–3 cycles. Combined with targeted nutritional support, dietary changes, and stress management, this approach addresses the root hormonal cause rather than just masking symptoms.`,\n  4: `The symptoms you are experiencing are at a level that may indicate PMDD (Premenstrual Dysphoric Disorder) — a more severe form of PMS characterised by debilitating emotional and physical symptoms in the luteal phase that resolve after menstruation begins.<br/><br/>PMDD is a recognised medical condition, not a personality trait or something to simply endure. The intense mood disturbances, hostility, depression, and physical symptoms you experience each cycle are driven by an abnormal sensitivity to normal hormonal fluctuations — something that can be addressed with the right treatment.<br/><br/>Effective options include bioidentical progesterone therapy, selective serotonin reuptake inhibitors (SSRIs) used specifically during the luteal phase, and comprehensive hormonal assessment to identify the specific drivers of your symptoms. Please do not suffer in silence — our specialists understand what you are going through and are here to help.`\n};\n\nconst introText = introMap[d.resultNum] || introMap[2];\n\nconst labTests = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTBloodSpotTestKit-9_1024x1024_2x_3025b07b-9b81-4d8f-85a4-2c9aff366530_1024x1024@2x.jpg?v=1571716034',\n    title: 'Female Hormone Panel — At Home Test Kit',\n    desc: 'Measures FSH, LH, oestradiol, and progesterone from a simple blood spot collected at home. Ideal for identifying the hormonal drivers of PMS and monitoring treatment.',\n    price: '$179.00',\n    url: 'https://store.hrt.org/products/female-hormone-panel-at-home-test-kit'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/ZRTLabBloodUrineMultiTestKit_1024x1024@2x.jpg?v=1571716011',\n    title: 'Comprehensive Female Hormone Profile (Blood Spot)',\n    desc: 'Full hormonal picture: oestradiol, progesterone, testosterone, DHEA-S, cortisol, and thyroid. Clinician-reviewed results. Essential for moderate-to-severe PMS.',\n    price: '$269.00',\n    url: 'https://store.hrt.org/products/comprehensive-female-hormone-profile-blood-spot'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/Thyroid_Health_Essentials_1024x1024_upclose_1024x1024@2x.png?v=1579640010',\n    title: 'Elite Female Hormone Panel (Blood Spot/Urine)',\n    desc: 'Our most comprehensive PMS profile. Includes oestrogen metabolites, adrenal hormones, and nutritional markers that directly influence PMS severity.',\n    price: '$299.00',\n    url: 'https://store.hrt.org/products/elite-female-hormone-panel'\n  }\n];\n\nconst products = [\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Micronized_DHEA_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'DHEA (25mg) — Natural Hormone Support',\n    desc: 'DHEA is a precursor to both oestrogen and testosterone. Supplementing with micronised DHEA can help support adrenal health and overall hormonal balance in women experiencing PMS.',\n    url: 'https://store.hrt.org/products/dhea-25mg-natural-supplement-to-help-maintain-optimal-dhea-levels'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_BioDIM_Complex_transparent_1024x1024@2x.png?v=1571716034',\n    title: 'BioDIM I3C Complex — Hormone Balance Support',\n    desc: 'Supports healthy oestrogen metabolism and oestrogen-to-progesterone balance — addressing one of the core drivers of moderate-to-severe PMS and oestrogen dominance.',\n    url: 'https://store.hrt.org/products/biodim-i3c-complex-natural-hormone-balance-cellular-health-support-supplement'\n  },\n  {\n    img: 'https://cdn.shopify.com/s/files/1/0150/2081/8486/products/2056x2056_product_photos_Thyroid_Support_transparent_1024x1024@2x.png?v=1571716034',\n    title: \"Women's Hormone Support — Natural Supplement\",\n    desc: 'A targeted blend of magnesium, B6, black cohosh, and evening primrose oil — nutrients with strong clinical evidence for reducing PMS symptoms including mood swings, cramps, and fluid retention.',\n    url: 'https://store.hrt.org/products/womens-hormone-support-natural-supplement'\n  }\n];\n\nconst relatedContent = [\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555c39ac19e2479bac2063_Andropause%E2%80%94Symptoms-Testing-and-Treatment.jpeg',\n    title: 'PMS — Symptoms, Causes and Treatment',\n    url: 'https://www.hrt.org/pms-symptoms-causes-treatment/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555be813ceda6560a19756_Thyroid-Disease%E2%80%94The-Symptoms-Cures-and-Causes.jpeg',\n    title: 'Oestrogen Dominance — Signs and Solutions',\n    url: 'https://www.hrt.org/oestrogen-dominance/'\n  },\n  {\n    img: 'https://assets-global.website-files.com/632a33dda7f9eaa9ed6897ea/63555b7f12c18d7342ac77ba_Thyroid-Cancer%E2%80%94Signs-Risk-Types-and-Treatments.jpg',\n    title: 'Bioidentical Progesterone for PMS and PMDD',\n    url: 'https://www.hrt.org/bioidentical-progesterone-pms-pmdd/'\n  }\n];\n\nfunction labRow(t) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${t.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${t.title}\" border=\"0\" class=\"w183\" src=\"${t.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${t.title}</div><div style=\"color:#000;font-weight:300;font-size:13px\">${t.desc}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;\">${t.price}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction productRow(p) {\n  return `<tr><td style=\"padding:10px 20px\"><table width=\"100%\" cellpadding=\"3px\" cellspacing=\"0\" style=\"min-width:100%;\"><tr><td bgcolor=\"#FFFFFF\" class=\"t_shadow_block\"><a href=\"${p.url}\" target=\"_blank\" class=\"a_block\"><table><tr><td width=\"30%\"><div style=\"height:120px;overflow:hidden\"><img alt=\"${p.title}\" border=\"0\" class=\"w183\" src=\"${p.img}\" style=\"width:120px;max-width:120px;height:auto;display:block;margin-left:auto;margin-right:auto;\" width=\"120\"></div></td><td width=\"70%\" style=\"padding-right:15px\"><div style=\"font-family:'Open Sans',sans-serif;color:#4e525e;font-size:14px;font-weight:700;\">${p.title}</div><p style=\"color:#a9a9a9;font-size:12px;font-family:'Open Sans',sans-serif;\">${p.desc}</p></td></tr></table></a></td></tr></table></td></tr>`;\n}\n\nfunction blogCol(b) {\n  return `<th bgcolor=\"#FFFFFF\" width=\"171\" valign=\"top\" style=\"vertical-align:top;font-weight:normal;padding:15px;-webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.25);border-radius:5px;\" class=\"force-col-th\"><a href=\"${b.url}\" target=\"_blank\" class=\"a_block\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" class=\"blog_box\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" style=\"padding-bottom:10px;\"><div style=\"height:106px;overflow:hidden\"><img alt=\"${b.title}\" border=\"0\" class=\"w159\" height=\"106\" src=\"${b.img}\" style=\"width:159px;max-width:159px;height:auto;\" width=\"159\"></div></td></tr><tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;text-transform:uppercase;\">${b.title}</div></td></tr><tr><td><div align=\"center\" style=\"color:#4e525e;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:300;\">HRT.org Blog</div></td></tr></table></td></tr></table></a></th>`;\n}\n\nconst ctaBlock = `<tr><td bgcolor=\"#7b4fa6\" class=\"t_block\" align=\"center\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr><td valign=\"middle\" style=\"font-weight:normal;padding-right:20px;\"><div style=\"color:#ffffff;font-size:18px;font-family:'Open Sans',sans-serif;font-weight:bold;\">Free Consultation</div></td><td valign=\"middle\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td bgcolor=\"#b89fd4\" style=\"padding:10px 20px;\"><a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">CONTACT NOW</a></td></tr></table></td></tr></table></td></tr>`;\n\nconst html = `<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;\"/>\n<title></title>\n<link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap\" rel=\"stylesheet\"/>\n<style type=\"text/css\">\n#outlook a{padding:0}body{width:100%!important;margin:0;padding:0;background-color:#fff}\ntable{mso-table-lspace:0;mso-table-rspace:0}img{border:0;height:auto;line-height:100%;outline:0;text-decoration:none;-ms-interpolation-mode:bicubic}\n.a_block{display:block;text-decoration:none}.t_shadow_block{padding:15px;-webkit-box-shadow:0 0 5px 0 rgba(0,0,0,.25);border-radius:5px}\n.t_block{padding:30px 20px}.blog_box{padding:10px 5px}\n@media screen and (max-width:480px){table[class=columns]{width:100%!important}th[class=force-col-th]{display:block;width:100%!important}img[class=imagescale]{max-width:100%!important;width:100%!important;height:auto!important}img[class=w183]{max-width:120px!important;width:100%!important;height:auto!important}img[class=w159]{max-width:300px!important;width:100%!important;height:auto!important}}\n</style></head>\n<body>\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" bgcolor=\"#FFFFFF\" valign=\"top\">\n<table width=\"600\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns\">\n\n<tr><td style=\"padding:20px;text-align:center\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"font-family:'Montserrat Black',sans-serif;font-size:32px;text-decoration:none;color:#000000;\">HRT.org</a></td></tr>\n\n<tr><td><img alt=\"\" border=\"0\" class=\"imagescale\" src=\"https://d3k81ch9hvuctc.cloudfront.net/company/KkA2XQ/images/images_p1bc9c6.jpg\" style=\"width:600px;max-width:600px;height:auto;\" width=\"600\"></td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td style=\"padding:35px 20px 0;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000\">Your Assessment Results</div></td></tr>\n<tr><td style=\"padding-bottom:10px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;\">Assessment Score: <b>${d.rawYesCount} / 15</b> &nbsp;|&nbsp; ${d.resultLabel}</div></td></tr>\n<tr><td style=\"padding-bottom:30px;\"><div align=\"center\" style=\"color:#484848;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.6\">${d.resultContent}</div></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#7b4fa6\" style=\"padding:30px 20px;\" align=\"center\">\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr>\n<td bgcolor=\"#b89fd4\" style=\"padding:10px 20px;\" align=\"center\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"font-weight:bold;text-decoration:none;color:#FFF;font-family:'Open Sans',sans-serif;font-size:18px;\">BOOK A FREE CONSULTATION</a>\n</td></tr></table></td></tr>\n\n<tr><td bgcolor=\"#ffffff\" style=\"padding:35px 20px;\">\n<div align=\"left\" style=\"color:#4e525e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.7\">${greeting},<br/><br/>${introText}<br/><br/>Feel free to reach out to one of our healthcare specialists for a private consultation, or contact us with any questions or concerns about your health.<br/><br/>We look forward to supporting you.<br/><br/>Sincerely,<br/><b>The HRT.org Team</b></div>\n</td></tr>\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Suggested Lab Tests</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Easy &amp; Convenient Test Kits</div></td></tr>\n</table></td></tr>\n${labTests.map(labRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td><table><tr><td style=\"padding:35px 20px;\">\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding-bottom:5px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000000;\">Popular Related Products</div></td></tr>\n<tr><td><div align=\"center\" style=\"color:#484848;font-size:13px;font-family:'Open Sans',sans-serif;\">Check out some of our best products</div></td></tr>\n</table></td></tr>\n${products.map(productRow).join('')}\n</table></td></tr>\n\n${ctaBlock}\n\n<tr bgcolor=\"#f8f8f8\"><td>\n<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td style=\"padding:35px 20px 10px;\"><div align=\"center\" style=\"font-size:20px;font-family:'Montserrat Black',sans-serif;color:#000;\">Related Content</div></td></tr>\n<tr><td style=\"padding:0 20px 30px;\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" class=\"columns-th\"><tr>\n${relatedContent.map((b, i) => blogCol(b) + (i < relatedContent.length - 1 ? '<th width=\"15\" valign=\"top\" style=\"font-weight:normal;\"><div style=\"line-height:20px;height:20px;\"> </div></th>' : '')).join('')}\n</tr></table></td></tr>\n<tr><td align=\"center\" style=\"padding-bottom:20px;\"><a href=\"https://www.hrt.org/\" target=\"_blank\" style=\"text-decoration:none;\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td bgcolor=\"#7b4fa6\" style=\"padding:10px 20px;\"><div style=\"color:#ffffff;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">VIEW ALL</div></td></tr></table></a></td></tr>\n</table></td></tr>\n\n<tr><td bgcolor=\"#1d1d1d\" style=\"padding:30px 0;border-bottom:#ffffff solid 10px;\" align=\"center\">\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr><td align=\"center\" style=\"padding:20px 20px 0;color:#8e8e8e;font-size:14px;font-family:'Open Sans',sans-serif;font-weight:300;\">\n<a href=\"tel:888-574-5524\" style=\"color:#8e8e8e;text-decoration:none;\">Call Us Toll Free: 888-574-5524</a><br/>\n<a href=\"https://www.hrt.org\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">hrt.org</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">\n<a href=\"https://www.hrt.org/contact-us-free-confidential-consultation/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Contact Support</a> | <a href=\"https://www.hrt.org/terms-and-conditions/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Terms &amp; Conditions</a> | <a href=\"https://www.hrt.org/privacy-policy/\" target=\"_blank\" style=\"color:#8e8e8e;text-decoration:none;\">Privacy Policy</a>\n</td></tr>\n<tr><td align=\"center\" style=\"padding:20px;border-top:#313131 solid 1px;\"><div style=\"color:#8e8e8e;font-size:12px;font-family:'Open Sans',sans-serif;\">© HRT.org ${year}</div></td></tr>\n</table></td></tr>\n\n</table></td></tr></table>\n</body></html>`;\n\nreturn [{ json: { ...d, htmlEmailBody: html, emailSubject: 'PMS Self-Assessment - Results | HRT.org' } }];\n"
+      },
+      "id": "18db1649-56a3-4b96-a573-2990c1582e41",
+      "name": "Build HTML Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -320,
+        -48
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.patientEmail }}",
+        "subject": "={{ $json.emailSubject }}",
+        "message": "={{ $json.htmlEmailBody }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "HRT.org Info"
+        }
+      },
+      "id": "ef7aecb1-aae9-46d5-b891-602848964211",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -80,
+        -48
+      ],
+      "webhookId": "4b3844d3-f6e4-4069-b797-0cd1a8da0ca8",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "W8RSrjkrLCD0dLx9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: true,\n  accepted: true,\n  emailSent: true,\n  rawYesCount: $('Calculate Scores').first().json.rawYesCount,\n  weightedScore: $('Calculate Scores').first().json.weightedScore,\n  resultNum: $('Calculate Scores').first().json.resultNum,\n  resultLabel: $('Calculate Scores').first().json.resultLabel,\n  resultContent: $('Calculate Scores').first().json.resultContent,\n  message: 'Your PMS assessment is complete. A copy has been sent to your email.'\n} }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "id": "b1e4fc14-c64b-4e6f-9a11-9bf1f567a838",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        -48
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: false,\n  error: 'INVALID_EMAIL',\n  message: 'Email address is missing or invalid. Please retry.'\n} }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "354b07a2-2a87-4bfa-9368-6c242cf310fa",
+      "name": "Respond - Invalid Email",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        192
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook (PMS Submit)": {
+      "main": [
+        [
+          {
+            "node": "Calculate Scores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Scores": {
+      "main": [
+        [
+          {
+            "node": "Has Valid Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Valid Email?": {
+      "main": [
+        [
+          {
+            "node": "Build HTML Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Invalid Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build HTML Email": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "id": "7FxyDXQprpIpZjaO",
+  "tags": []
+}

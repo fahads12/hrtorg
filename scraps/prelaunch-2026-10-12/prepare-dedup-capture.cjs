@@ -1,0 +1,12 @@
+const fs=require('node:fs');
+const base='scraps/prelaunch-2026-10-12/main';
+const routes=['Product.html'];
+for(const g of ['women','men'])for(const p of ['hrt','peptides','weight','sexual','hair','ed'])routes.push(`Product.html?p=${p}&g=${g}`);
+for(const dir of ['men','women'])for(const file of fs.readdirSync(dir,{recursive:true}).filter(f=>f.endsWith('.html')))routes.push(dir+'/'+file.replaceAll('\\','/'));
+let code=fs.readFileSync(base+'/capture.cjs','utf8');
+code=code.replace('const out=__dirname;','const out=path.join(__dirname,\'dedup\');').replace(/const routes=\[[\s\S]*?(?=const widths=)/,'const routes='+JSON.stringify(routes)+';\n').replaceAll('http://localhost:8012','http://localhost:8013');
+fs.writeFileSync(base+'/dedup-capture.cjs',code);
+const variants=[];
+for(const g of ['women','men'])for(const p of ['hrt','peptides','weight','sexual','hair','ed'])for(const width of [1440,768,390])variants.push({route:`Product.html?p=${p}&g=${g}`,width,screenshot:`sheet-Product_html_p_${p}_g_${g}-${width}.jpg`,visualReview:'reviewed-before-dedup',notes:'No clipping, overlap, missing photo, or major spacing issue observed. FAQ duplication found across all services; subsequent fix and fresh review tracked separately. Captured DOM confirms correct men/women copy.'});
+fs.writeFileSync(base+'/technical-visual-review.json',JSON.stringify({scope:'Actual full-page contact-sheet visual review of36 Chrome emulated query-variant screenshots. Review covers composition/text wrapping/layout, not clinical validation.',rows:variants},null,2));
+console.log('Prepared '+routes.length+' routes / '+routes.length*3+' screenshots.');
