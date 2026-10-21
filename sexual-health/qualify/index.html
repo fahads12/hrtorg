@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="../../"><title>Sexual Health Qualification Quiz — See If You Qualify | HRT.org</title><meta name="description" content="Clinical screening for ED, low libido, and sexual health treatments. Covers PDE5 safety (nitrates, cardiovascular), hormonal factors, and alternative therapies."><link rel="icon" href="uploads/hrt-logo.webp"><link data-local-font="" href="/assets/fonts/newsreader-normal-latin.woff2" crossorigin="" type="font/woff2" as="font" rel="preload"><link data-local-font="" href="/assets/fonts/geist-normal-latin.woff2" crossorigin="" type="font/woff2" as="font" rel="preload"><link data-local-font="" href="/assets/fonts/fonts.css" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=2a13219c8dd9"><link rel="stylesheet" href="home-styles.css?v=c7c7dc96ba52"><link rel="stylesheet" href="premium.css?v=202e39f4fcbb"><link rel="stylesheet" href="source-site.css?v=d2897e789f8c"><link rel="stylesheet" href="restored-layouts.css?v=6b026e80492d"><link rel="stylesheet" href="product-styles.css?v=d9c1bc05caf2"><link rel="stylesheet" href="inner-pages.css?v=22dc93da7df3"><link rel="stylesheet" href="care-theme.css?v=f72ff8501c9b"><script src="care-theme.js?v=a187d835afab" defer></script><link rel="stylesheet" href="care-polish.css?v=3fb72598f027"><link rel="stylesheet" href="assets/glow-menu.css?v=315b4ad0c506"><meta content="noindex, follow" name="robots">
+<style>
+.qf-root{max-width:720px;margin:48px auto;padding:0 24px}
+.qf-breadcrumb{font-size:13px;color:var(--ink-3);margin-bottom:28px}
+.qf-breadcrumb a{color:var(--ink-3)}
+.qf-progress-wrap{position:sticky;top:88px;background:var(--bg-2);padding:20px 0;z-index:5;margin-bottom:32px;border-radius:14px}
+.qf-progress-wrap-inner{max-width:720px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;font-size:12px;color:var(--ink-3);letter-spacing:1px;text-transform:uppercase}
+.qf-progress{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.qf-progress-bar{height:100%;background:var(--primary);width:0;transition:width .35s ease}
+.qf-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px 44px;box-shadow:0 20px 50px -32px rgba(13,43,75,.1)}
+.qf-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+.qf-h2{font:400 clamp(28px,3.4vw,40px)/1.2 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 14px}
+.qf-sub{font-size:15px;color:var(--ink-2);line-height:1.7;margin:0 0 28px}
+.qf-opts{display:grid;gap:12px;margin:28px 0 32px}
+.qf-opt{display:flex;align-items:center;gap:16px;padding:18px 22px;background:#fff;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;font-size:16px;color:var(--ink);text-align:left;transition:border-color .15s,background .15s;font-family:inherit;width:100%}
+.qf-opt:hover{border-color:var(--primary)}
+.qf-opt[aria-pressed=true]{border-color:var(--primary);background:#eef3f8}
+.qf-opt .mark{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);flex-shrink:0;display:grid;place-items:center;transition:border-color .15s,background .15s}
+.qf-opt[aria-pressed=true] .mark{border-color:var(--primary);background:var(--primary);color:#fff}
+.qf-opt .mark svg{width:12px;height:12px;opacity:0}
+.qf-opt[aria-pressed=true] .mark svg{opacity:1}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.qf-field{display:flex;flex-direction:column}
+.qf-field label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.qf-field input,.qf-field select{padding:14px 16px;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);width:100%;box-sizing:border-box}
+.qf-field input:focus,.qf-field select:focus{outline:none;border-color:var(--primary)}
+.qf-field .hint{font-size:12px;color:var(--ink-3);margin-top:6px;line-height:1.5}
+.qf-nav{display:flex;justify-content:space-between;align-items:center;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.qf-back{background:transparent;border:none;color:var(--ink-3);cursor:pointer;font:inherit;font-size:14px;padding:12px 16px}
+.qf-back:hover{color:var(--ink)}
+.qf-continue{background:var(--primary);color:#fff;border:none;padding:16px 32px;border-radius:999px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .15s,background .15s}
+.qf-continue:hover:not(:disabled){transform:translateY(-1px)}
+.qf-result{text-align:center;padding:24px 0}
+.qf-result-icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;margin:0 auto 24px}
+.qf-result-icon.ok{background:#e8f1ee;color:#2e7d5a}
+.qf-result-icon.warn{background:#fef3e8;color:#c17a28}
+.qf-result-icon.no{background:#fbeded;color:#b84444}
+.qf-result-icon svg{width:36px;height:36px}
+.qf-cta-primary{display:inline-flex;align-items:center;gap:10px;padding:18px 36px;background:var(--primary);color:#fff;border-radius:999px;font-weight:500;text-decoration:none;font-size:16px;margin-top:12px}
+.qf-cta-secondary{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:transparent;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;font-weight:500;text-decoration:none;font-size:14px;margin-top:14px;margin-left:12px}
+.qf-notice{margin-top:20px;padding:16px 20px;background:#fef9e9;border-left:3px solid #c17a28;border-radius:8px;font-size:13.5px;color:var(--ink-2);line-height:1.65;text-align:left}
+.qf-step{display:none}
+.qf-step.is-active{display:block;animation:qf-fade .25s ease}
+@keyframes qf-fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(max-width:620px){.qf-card{padding:28px 24px;border-radius:18px}.qf-row{grid-template-columns:1fr}}
+</style>
+<meta content="strict-origin-when-cross-origin" name="referrer"><meta content="website" property="og:type"><meta content="HRT.org" property="og:site_name"><meta content="Sexual Health Qualification Quiz — See If You Qualify | HRT.org" property="og:title"><meta content="Clinical screening for ED, low libido, and sexual health treatments. Covers PDE5 safety (nitrates, cardiovascular), hormonal factors, and alternative therapies." property="og:description"><link href="https://hrt.org/sexual-health/qualify/" rel="canonical"></head>
+<body class="restored product qualify-page"><header class="nav"><div class="wrap nav-inner"><a href="HRT Home.html" aria-label="HRT.org home"><img class="logo hrt-logo" src="uploads/hrt-logo.webp" alt="HRT.org" width="1800" height="900"></a><button class="mobile-menu" type="button" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="site-navigation" class="nav-links" aria-label="Main navigation"><div id="hrt-glow-navigation" class="hrt-ui"></div><a class="nav-link" href="Audience.html?g=women" data-glow-fallback="">For Women</a><a class="nav-link" href="Audience.html?g=men" data-glow-fallback="">For Men</a><a class="nav-link" href="/symptoms/" data-glow-fallback="">Symptoms</a><a class="nav-link" href="Lab Testing.html" data-glow-fallback="">Lab Testing</a><a class="nav-link" href="Treatments.html" data-glow-fallback="">Treatments</a><a class="nav-link" href="Resources.html" data-glow-fallback="">Resources</a><details class="source-dropdown"><summary>Symptom Check</summary><div><a href="quizzes/womens-hormones/index.html">Female Hormone Imbalance Test</a><a href="quizzes/mens-hormones/index.html">Male Hormone Imbalance Test</a><a href="quizzes/pms/index.html">PMS Self-Assessment Test</a><a href="quizzes/thyroid/index.html">Thyroid Assessment Test</a><a href="quizzes/adrenal-fatigue/index.html">Adrenal Fatigue Assessment Test</a><a href="quizzes/osteoporosis/index.html">Osteoporosis Assessment Test</a><a href="quizzes/andropause/index.html">Andropause Assessment Test</a><a href="quizzes/menopause/index.html">Menopause Assessment Test</a><a href="quizzes/perimenopause/index.html">Perimenopause Assessment Test</a></div></details><a class="nav-link" href="https://store.hrt.org/">Shop ↗</a></nav><div class="nav-actions"><a class="nav-link" href="/portal/">Sign in</a><a class="btn btn-primary" href="/portal/app/symptoms-tracker/">Get Started</a></div></div></header><noscript id="no-script-navigation"><style>.mobile-menu{display:none!important}.nav-links{display:flex!important}.no-script-notice{max-width:1180px;margin:20px auto;padding:16px 24px;color:#12304f;background:#f1f6f9;border-radius:10px;font:14px/1.7 system-ui,sans-serif}</style><p class="no-script-notice">You can read the information and follow the links on this page. Interactive tools require JavaScript. For assistance, <a href="Contact.html">contact our team</a>.</p></noscript><main id="main-content" tabindex="-1"><div class="p-page" data-screen-label="Sexual Health Qualification">
+<section class="p-hero" style="padding:60px 0 20px"><div class="wrap" style="text-align:center;max-width:720px"><div class="eyebrow">Sexual Health Qualification</div><h1 style="margin:16px 0 14px;font:400 clamp(36px,4.4vw,54px)/1.1 Newsreader,serif;letter-spacing:-.025em">See which sexual health treatment is right for you.</h1><p class="lead" style="font-size:17px;max-width:580px;margin:0 auto">Two minutes. Clinically-informed. Routes you to the right option — PDE5s, Trimix, PT-141, vaginal estrogen, or specialist referral.</p></div></section>
+<section class="qf-root">
+    <nav class="qf-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/sexual-health/">Sexual Health</a> &nbsp;/&nbsp; <span>Qualify</span></nav>
+    <div class="qf-progress-wrap" id="qfProgressWrap"><div class="qf-progress-wrap-inner"><span id="qfStepLabel">Step 1 of X</span><div class="qf-progress"><div class="qf-progress-bar" id="qfProgressBar"></div></div><span id="qfPercent">0%</span></div></div>
+    <div class="qf-card">
+    <div class="qf-step is-active" data-step="1">
+      <div class="qf-eyebrow">About You</div><h2 class="qf-h2">What's your age?</h2>
+      <p class="qf-sub">Treatments are for adults 18+.</p>
+      <div class="qf-field"><label for="qfAge">Age (years)</label><input type="number" id="qfAge" min="18" max="100" placeholder="38" inputmode="numeric"></div>
+      <div class="qf-nav"><span></span><button class="qf-continue" data-next="1">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="2">
+      <div class="qf-eyebrow">About You</div><h2 class="qf-h2">What's your sex assigned at birth?</h2>
+      <p class="qf-sub">Treatment options differ between men and women.</p>
+      <div class="qf-opts" id="qfSex">
+        <button class="qf-opt" aria-pressed="false" data-val="male"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Male</button>
+        <button class="qf-opt" aria-pressed="false" data-val="female"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Female</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="2">← Back</button><button class="qf-continue" data-next="2">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="3">
+      <div class="qf-eyebrow">Primary Concern</div><h2 class="qf-h2">What are you most hoping to address?</h2>
+      <p class="qf-sub">Select all that apply.</p>
+      <div class="qf-opts" id="qfConcern">
+        <button class="qf-opt" aria-pressed="false" data-val="ed"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Erectile changes / difficulty achieving or maintaining an erection</button>
+        <button class="qf-opt" aria-pressed="false" data-val="libido"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Reduced libido / interest in sex</button>
+        <button class="qf-opt" aria-pressed="false" data-val="arousal"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Difficulty with arousal</button>
+        <button class="qf-opt" aria-pressed="false" data-val="vaginal"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Vaginal dryness or pain with intercourse</button>
+        <button class="qf-opt" aria-pressed="false" data-val="performance"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Performance anxiety</button>
+        <button class="qf-opt" aria-pressed="false" data-val="ejaculation"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Early or delayed ejaculation</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="3">← Back</button><button class="qf-continue" data-next="3">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="4">
+      <div class="qf-eyebrow">Safety Screening</div><h2 class="qf-h2">Do you take nitrate medications (e.g., nitroglycerin)?</h2>
+      <p class="qf-sub">Nitrates combined with PDE5 inhibitors (Viagra, Cialis) can cause dangerous blood pressure drops. This is a hard safety stop.</p>
+      <div class="qf-opts" id="qfNitrates">
+        <button class="qf-opt" aria-pressed="false" data-val="no"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>No</button>
+        <button class="qf-opt" aria-pressed="false" data-val="yes"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Yes, I take nitrates</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="4">← Back</button><button class="qf-continue" data-next="4">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="5">
+      <div class="qf-eyebrow">Cardiovascular</div><h2 class="qf-h2">Any of these in your history?</h2>
+      <p class="qf-sub">Select all that apply.</p>
+      <div class="qf-opts" id="qfCv">
+        <button class="qf-opt" aria-pressed="false" data-val="mi_recent"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Heart attack or stroke within the last 6 months</button>
+        <button class="qf-opt" aria-pressed="false" data-val="hf_severe"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Severe heart failure (NYHA III-IV)</button>
+        <button class="qf-opt" aria-pressed="false" data-val="aortic"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Severe aortic stenosis</button>
+        <button class="qf-opt" aria-pressed="false" data-val="htn_uncontrolled"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Uncontrolled high blood pressure</button>
+        <button class="qf-opt" aria-pressed="false" data-val="none"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>None of these</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="5">← Back</button><button class="qf-continue" data-next="5">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="6">
+      <div class="qf-eyebrow">Experience</div><h2 class="qf-h2">Have you tried an ED medication before?</h2>
+      <p class="qf-sub">If PDE5 inhibitors didn't work for you, we have alternatives (Trimix, PT-141, TRT if indicated).</p>
+      <div class="qf-opts" id="qfPrior">
+        <button class="qf-opt" aria-pressed="false" data-val="never"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>No, never tried</button>
+        <button class="qf-opt" aria-pressed="false" data-val="worked"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Yes — worked well</button>
+        <button class="qf-opt" aria-pressed="false" data-val="partial"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Yes — partial response</button>
+        <button class="qf-opt" aria-pressed="false" data-val="failed"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5"/></svg></span>Yes — didn't work for me</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="6">← Back</button><button class="qf-continue" data-next="6">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="7">
+      <div class="qf-eyebrow">Location</div><h2 class="qf-h2">Which state do you live in?</h2>
+      <div class="qf-field"><label for="qfState">State</label><select id="qfState"><option value="">Select state…</option><option value="FL">Florida</option><option value="CA">California</option><option value="other">Another state</option></select></div>
+      <div class="qf-nav"><button class="qf-back" data-prev="7">← Back</button><button class="qf-continue" data-next="7">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="8">
+      <div class="qf-eyebrow">Last Step</div><h2 class="qf-h2">Where should we send your result?</h2>
+      <div class="qf-field"><label for="qfEmail">Email address</label><input type="email" id="qfEmail" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="qf-nav"><button class="qf-back" data-prev="8">← Back</button><button class="qf-continue" data-next="8">See my result →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="result"><div id="qfResultArea"></div></div>
+    </div>
+    </section>
+    <script>
+(function(){
+  const state={step:1,data:{age:null,sex:null,concern:[],nitrates:null,cv:[],prior:null,state:null,email:null}};
+  const TOTAL=8;
+  const $=q=>document.querySelector(q),$$=q=>document.querySelectorAll(q);
+  function show(step){$$('.qf-step').forEach(el=>el.classList.remove('is-active'));$(`.qf-step[data-step="${step}"]`)?.classList.add('is-active');const label=step==='result'?'Result':`Step ${step} of ${TOTAL}`,pct=step==='result'?100:Math.round((step/TOTAL)*100);$('#qfStepLabel').textContent=label;$('#qfProgressBar').style.width=pct+'%';$('#qfPercent').textContent=pct+'%';window.scrollTo({top:0,behavior:'smooth'});}
+  function wireMulti(c,k){$(c).addEventListener('click',e=>{const b=e.target.closest('.qf-opt');if(!b)return;const v=b.dataset.val,l=state.data[k];if(v==='none'){l.length=0;l.push('none');$$(`${c} .qf-opt`).forEach(x=>x.setAttribute('aria-pressed',x.dataset.val==='none'?'true':'false'));return;}const i=l.indexOf('none');if(i>=0)l.splice(i,1);const j=l.indexOf(v);if(j>=0)l.splice(j,1);else l.push(v);b.setAttribute('aria-pressed',l.includes(v)?'true':'false');$$(`${c} .qf-opt[data-val="none"]`).forEach(x=>x.setAttribute('aria-pressed','false'));});}
+  function wireSingle(c,k){$(c).addEventListener('click',e=>{const b=e.target.closest('.qf-opt');if(!b)return;state.data[k]=b.dataset.val;$$(`${c} .qf-opt`).forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');});}
+  wireSingle('#qfSex','sex');wireMulti('#qfConcern','concern');wireSingle('#qfNitrates','nitrates');wireMulti('#qfCv','cv');wireSingle('#qfPrior','prior');
+
+  document.addEventListener('click',e=>{
+    const n=e.target.closest('[data-next]'),p=e.target.closest('[data-prev]');
+    if(n){
+      const s=+n.dataset.next;
+      if(s===1){const a=+$('#qfAge').value;if(!a||a<18)return alert('Please enter your age (18+).');state.data.age=a;}
+      if(s===2){if(!state.data.sex)return alert('Please select an option.');}
+      if(s===3){if(state.data.concern.length===0)return alert('Please select at least one concern.');}
+      if(s===4){if(!state.data.nitrates)return alert('Please select an option.');if(state.data.nitrates==='yes')return finish('nitrates');}
+      if(s===5){const c=state.data.cv;if(c.includes('mi_recent'))return finish('cv_recent');if(c.includes('hf_severe')||c.includes('aortic'))return finish('cv_severe');}
+      if(s===6){if(!state.data.prior)return alert('Please select an option.');}
+      if(s===7){state.data.state=$('#qfState').value;if(!state.data.state)return alert('Please select your state.');if(state.data.state==='other')return finish('state');}
+      if(s===8){const e2=$('#qfEmail').value.trim();if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e2))return alert('Please enter a valid email.');state.data.email=e2;return finish('qualified');}
+      show(s+1);
+    } else if(p){show(+p.dataset.prev-1);}
+  });
+
+  function signupLink(productSlug){
+    const d=state.data;
+    const params=new URLSearchParams({product:productSlug,qualified:'true',email:d.email||'',state:d.state||'',sex:d.sex||'',concern:d.concern.join(','),prior:d.prior||''});
+    return '/sexual-health/signup/?'+params.toString();
+  }
+
+  function finish(outcome){
+    show('result');
+    const r=$('#qfResultArea');
+    const sex=state.data.sex, prior=state.data.prior, concern=state.data.concern;
+    const outcomes={
+      qualified:()=>{
+        let primary, name, desc;
+        if (sex === 'female' && concern.includes('vaginal')) {
+          primary = 'vaginal-estradiol'; name = 'Vaginal Estradiol';
+          desc = 'For dryness and pain with intercourse, local vaginal estrogen is the most effective option with minimal systemic absorption.';
+        } else if (sex === 'female' && (concern.includes('libido') || concern.includes('arousal'))) {
+          primary = 'pt-141'; name = 'PT-141 (Bremelanotide)';
+          desc = 'PT-141 acts on brain melanocortin receptors to increase arousal and desire. Appropriate for women with hypoactive sexual desire.';
+        } else if (sex === 'male' && prior === 'failed') {
+          primary = 'trimix-injections'; name = 'Trimix Injections';
+          desc = 'If PDE5 inhibitors didn\'t work, Trimix (injected directly) works mechanically regardless of vascular/neurologic status. Highly effective for PDE5 non-responders.';
+        } else if (sex === 'male' && concern.includes('ed')) {
+          primary = 'tadalafil'; name = 'Tadalafil (generic Cialis)';
+          desc = 'Long-acting PDE5 inhibitor — flexible dosing (on-demand or daily low-dose). Our most commonly prescribed first-line ED treatment.';
+        } else if (sex === 'male' && concern.includes('libido')) {
+          primary = 'pt-141'; name = 'PT-141 (Bremelanotide)';
+          desc = 'PT-141 works centrally on arousal and desire — distinct mechanism from PDE5 inhibitors. If low T is suspected, your provider may also recommend labs.';
+        } else {
+          primary = 'tadalafil'; name = 'Tadalafil';
+          desc = 'Based on your profile, your provider will match the best option during consultation.';
+        }
+        return `<div class="qf-result">
+          <div class="qf-result-icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg></div>
+          <div class="qf-eyebrow" style="color:#2e7d5a">You pre-qualify</div>
+          <h2 class="qf-h2">${name} is likely a good starting point.</h2>
+          <p class="qf-sub">${desc} Your card is pre-authorized but <strong>not charged until a licensed clinician reviews and approves</strong>.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+            <a class="qf-cta-primary" href="${signupLink(primary)}">Continue with ${name} →</a>
+          </div>
+          <div style="margin-top:12px"><a class="qf-cta-secondary" href="/sexual-health/">Explore all options</a></div>
+          <div class="qf-notice">Your provider confirms the right treatment and dose for you during consultation. Follow-up messaging is included.</div>
+        </div>`;
+      },
+      nitrates:()=>`<div class="qf-result"><div class="qf-result-icon no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div class="qf-eyebrow" style="color:#b84444">Not safe with nitrates</div><h2 class="qf-h2">PDE5 inhibitors (Viagra, Cialis) can\'t be prescribed with nitrates.</h2><p class="qf-sub">The combination can cause dangerous drops in blood pressure. Alternatives like Trimix or PT-141 don\'t have the same interaction and may be appropriate — but your cardiologist should be in the loop.</p><a class="qf-cta-primary" href="/portal/app/symptoms-tracker/?topic=sexual-health">Request specialist review →</a></div>`,
+      cv_recent:()=>`<div class="qf-result"><div class="qf-result-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/></svg></div><div class="qf-eyebrow" style="color:#c17a28">Cardiology clearance needed</div><h2 class="qf-h2">Recent heart attack or stroke needs cardiology clearance before PDE5s.</h2><p class="qf-sub">Please consult your cardiologist. If cleared, we can revisit the quiz.</p></div>`,
+      cv_severe:()=>`<div class="qf-result"><div class="qf-result-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/></svg></div><div class="qf-eyebrow" style="color:#c17a28">Specialist review needed</div><h2 class="qf-h2">Severe cardiac disease needs specialist evaluation first.</h2><p class="qf-sub">Severe heart failure and aortic stenosis complicate ED treatment. Please consult your cardiologist.</p></div>`,
+      state:()=>`<div class="qf-result"><div class="qf-result-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/></svg></div><div class="qf-eyebrow" style="color:#c17a28">Not yet in your state</div><h2 class="qf-h2">Providers are currently licensed only in Florida and California.</h2><a class="qf-cta-secondary" href="/sexual-health/">Explore the hub</a></div>`,
+    };
+    r.innerHTML=(outcomes[outcome]||outcomes.qualified)();
+  }
+  show(1);
+})();
+</script>
+</div></main><footer class="footer"><div class="wrap"><div class="footer-grid"><div class="brand-block"><a href="HRT Home.html"><img class="logo hrt-logo" src="uploads/hrt-logo.webp" alt="HRT.org" width="1800" height="900"></a><p>Personalized care for women and men.</p><p>Telehealth services available in all 50 states.</p></div><div><h4>Care</h4><ul><li><a href="Audience.html?g=women">For Women</a></li><li><a href="Audience.html?g=men">For Men</a></li><li><a href="Treatments.html">Treatments</a></li><li><a href="Lab Testing.html">Lab Testing</a></li><li><a href="https://store.hrt.org/">Shop</a></li></ul></div><div><h4>HRT.org</h4><ul><li><a href="About.html">About</a></li><li><a href="Providers.html">Medical Board</a></li><li><a href="Join Our Network.html">Join Our Network</a></li><li><a href="Resources.html">Journal</a></li><li><a href="FAQ.html">FAQs</a></li></ul></div><div><h4>Support</h4><ul><li><a href="Contact.html">Contact</a></li><li><a href="mailto:info@hrt.org">info@hrt.org</a></li><li><a href="tel:+18885745524">(888) 574-5524</a></li><li><a href="/portal/">Patient Portal</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="Privacy Policy.html">Privacy</a></li><li><a href="Terms and Conditions.html">Terms and Conditions</a></li><li><a href="Return Policy.html">Returns</a></li><li><a href="legal/consent-to-telehealth/index.html">Telehealth Consent</a></li><li><a href="legal/health-information-privacy-practices/index.html">Health Information Privacy</a></li><li><a href="legal/pharmacy-information/index.html">Pharmacy Information</a></li><li><a href="legal/informed-consent-regarding-nutritional-and-herbal-supplements/index.html">Supplement Consent</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 HRT.org. All rights reserved.</span><span><a href="https://www.instagram.com/hrt_health/">Instagram</a> · <a href="https://www.facebook.com/hrthealth">Facebook</a> · <a href="https://twitter.com/hrt_org">Twitter</a></span></div></div></footer><script src="site-interactions.js?v=17c327aa4dbf" defer></script><script src="care-motion.js?v=5039e42d2623" defer></script><script src="assets/react.production.min.js?v=d949f1c3687a" defer></script><script src="assets/react-dom.production.min.js?v=35f4f974f4b2" defer></script><script src="assets/glow-navigation.js?v=f3f3200d8ac7" defer></script><script src="assets/mega-nav.js?v=7" defer></script></body></html>

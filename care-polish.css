@@ -82,3 +82,12 @@
  .testimonial-dots button{flex:1;width:auto;max-width:44px;min-width:28px;height:44px}
 }
 @media(prefers-reduced-motion:reduce){.testimonial-slide{animation:none}.testimonial-controls button,.testimonial-dots span{transition:none}}
+/* Footer logo renders as white wordmark on the footer color — no chip. */
+.footer .brand-block .hrt-logo,.footer .hrt-logo{background:transparent!important;border-radius:0!important;filter:brightness(0) invert(1)}
+/* Shared pages (no gender theme) use the neutral charcoal wordmark; themed pages override below. */
+html:not([data-care-theme]) .hrt-logo{content:url('uploads/hrt-logo-neutral.webp')}
+html[data-care-theme="women"] .hrt-logo{content:url('uploads/hrt-logo-women.webp')}
+/* Journal card images fill a proper 4:3 tile (premium.css flattens them to a 100px strip). */
+.journal-grid .jx .img,.journal-grid .img{height:auto!important;aspect-ratio:4/3;padding:0!important;align-items:flex-end;position:relative;overflow:hidden;background:#f3f6f9}
+.journal-grid .jx .img>img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;display:block}
+.journal-grid .jx .img .tag{position:relative;z-index:1;margin:14px}

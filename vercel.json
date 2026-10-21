@@ -119,11 +119,6 @@
       "permanent": true
     },
     {
-      "source": "/conditions",
-      "destination": "/Resources.html",
-      "permanent": true
-    },
-    {
       "source": "/contact",
       "destination": "/Contact.html",
       "permanent": true
@@ -281,11 +276,6 @@
     {
       "source": "/join-our-network",
       "destination": "/Join%20Our%20Network.html",
-      "permanent": true
-    },
-    {
-      "source": "/lab-testing",
-      "destination": "/Lab%20Testing.html",
       "permanent": true
     },
     {
@@ -449,11 +439,6 @@
       "permanent": true
     },
     {
-      "source": "/symptoms",
-      "destination": "/Resources.html",
-      "permanent": true
-    },
-    {
       "source": "/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention",
       "destination": "/health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention/index.html",
       "permanent": true
@@ -586,6 +571,226 @@
     {
       "source": "/your-bodys-need-for-estrogen-then-and-now",
       "destination": "/health/your-bodys-need-for-estrogen-then-and-now/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/men/anti-aging-peptides/:path*",
+      "destination": "/mens-health/anti-aging-peptides/",
+      "permanent": true
+    },
+    {
+      "source": "/men/erectile-dysfunction/:path*",
+      "destination": "/mens-health/erectile-dysfunction/",
+      "permanent": true
+    },
+    {
+      "source": "/men/hair-loss/:path*",
+      "destination": "/mens-health/hair-loss/",
+      "permanent": true
+    },
+    {
+      "source": "/men/hormone-replacement-therapy/:path*",
+      "destination": "/mens-health/hormone-replacement-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/men/sexual-health/:path*",
+      "destination": "/mens-health/sexual-health/",
+      "permanent": true
+    },
+    {
+      "source": "/men/weight-loss-and-management/:path*",
+      "destination": "/mens-health/weight-loss-and-management/",
+      "permanent": true
+    },
+    {
+      "source": "/women/anti-aging-peptides/:path*",
+      "destination": "/womens-health/anti-aging-peptides/",
+      "permanent": true
+    },
+    {
+      "source": "/women/hair-loss/:path*",
+      "destination": "/womens-health/hair-loss/",
+      "permanent": true
+    },
+    {
+      "source": "/women/hormone-replacement-therapy/:path*",
+      "destination": "/womens-health/hormone-replacement-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/women/sexual-health/:path*",
+      "destination": "/womens-health/sexual-health/",
+      "permanent": true
+    },
+    {
+      "source": "/women/weight-loss-and-management/:path*",
+      "destination": "/womens-health/weight-loss-and-management/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/brain-fog/:path*",
+      "destination": "/symptoms/brain-fog/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/hot-flashes/:path*",
+      "destination": "/symptoms/hot-flashes/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/low-energy/:path*",
+      "destination": "/symptoms/low-energy/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/low-libido/:path*",
+      "destination": "/symptoms/low-libido/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/mood-changes/:path*",
+      "destination": "/symptoms/mood-changes/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/poor-recovery/:path*",
+      "destination": "/symptoms/poor-recovery/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/poor-sleep/:path*",
+      "destination": "/symptoms/poor-sleep/",
+      "permanent": true
+    },
+    {
+      "source": "/concerns/weight-changes/:path*",
+      "destination": "/symptoms/weight-changes/",
+      "permanent": true
+    },
+    {
+      "source": "/hrt-products/semaglutide-bioboost-injections/:path*",
+      "destination": "/glp-1/semaglutide-bioboost-injections/",
+      "permanent": true
+    },
+    {
+      "source": "/hrt-products/semaglutide-injections/:path*",
+      "destination": "/glp-1/semaglutide-injections/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test/:path*",
+      "destination": "/quizzes/womens-hormones/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/hormone-symptom-checklist-men/:path*",
+      "destination": "/quizzes/mens-hormones/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/pms-assessment/:path*",
+      "destination": "/quizzes/pms/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/thyroid-assessment/:path*",
+      "destination": "/quizzes/thyroid/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/adrenal-fatigue/:path*",
+      "destination": "/quizzes/adrenal-fatigue/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/osteoporosis-assessment/:path*",
+      "destination": "/quizzes/osteoporosis/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/andropause-assessment/:path*",
+      "destination": "/quizzes/andropause/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/menopause-assessment/:path*",
+      "destination": "/quizzes/menopause/",
+      "permanent": true
+    },
+    {
+      "source": "/checklist/perimenopause-assessment/:path*",
+      "destination": "/quizzes/perimenopause/",
+      "permanent": true
+    },
+    {
+      "source": "/How It Works.html",
+      "destination": "/how-it-works/",
+      "permanent": true
+    },
+    {
+      "source": "/How%20It%20Works.html",
+      "destination": "/how-it-works/",
+      "permanent": true
+    },
+    {
+      "source": "/men/anti-aging-peptides",
+      "destination": "/mens-health/anti-aging-peptides/",
+      "permanent": true
+    },
+    {
+      "source": "/men/erectile-dysfunction",
+      "destination": "/mens-health/erectile-dysfunction/",
+      "permanent": true
+    },
+    {
+      "source": "/men/hair-loss",
+      "destination": "/mens-health/hair-loss/",
+      "permanent": true
+    },
+    {
+      "source": "/men/hormone-replacement-therapy",
+      "destination": "/mens-health/hormone-replacement-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/men/sexual-health",
+      "destination": "/mens-health/sexual-health/",
+      "permanent": true
+    },
+    {
+      "source": "/men/weight-loss-and-management",
+      "destination": "/mens-health/weight-loss-and-management/",
+      "permanent": true
+    },
+    {
+      "source": "/women/anti-aging-peptides",
+      "destination": "/womens-health/anti-aging-peptides/",
+      "permanent": true
+    },
+    {
+      "source": "/women/hair-loss",
+      "destination": "/womens-health/hair-loss/",
+      "permanent": true
+    },
+    {
+      "source": "/women/hormone-replacement-therapy",
+      "destination": "/womens-health/hormone-replacement-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/women/sexual-health",
+      "destination": "/womens-health/sexual-health/",
+      "permanent": true
+    },
+    {
+      "source": "/women/weight-loss-and-management",
+      "destination": "/womens-health/weight-loss-and-management/",
+      "permanent": true
+    },
+    {
+      "source": "/category/health",
+      "destination": "/blog-categories/",
       "permanent": true
     }
   ]

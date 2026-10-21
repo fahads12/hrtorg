@@ -1,16 +1,18 @@
 import * as React from "react"
 import { createRoot } from "react-dom/client"
 import { ThemeProvider } from "next-themes"
-import { Venus, Mars, FlaskConical, HeartPulse, Route, BookOpen } from "lucide-react"
+import { Venus, Mars, FlaskConical, HeartPulse, BookOpen, Activity } from "lucide-react"
 import { MenuBar, type MenuItem } from "@/components/ui/glow-menu"
 
+// Gender items keep unique colors (rose = women, sky = men). Shared items use the muted slate
+// so the header reads as one calm row with the two audience chips doing the color work.
 const destinations = [
   ["For Women", "Audience.html?g=women", Venus, "text-rose-700", "152,75,120"],
   ["For Men", "Audience.html?g=men", Mars, "text-sky-700", "47,112,154"],
-  ["Lab Testing", "Lab Testing.html", FlaskConical, "text-teal-700", "49,129,145"],
-  ["Treatments", "Treatments.html", HeartPulse, "text-blue-700", "61,105,155"],
-  ["How It Works", "How It Works.html", Route, "text-indigo-700", "99,102,160"],
-  ["Resources", "Resources.html", BookOpen, "text-violet-700", "131,97,154"],
+  ["Symptoms", "/symptoms/", Activity, "text-muted-foreground", "70,90,112"],
+  ["Lab Testing", "Lab Testing.html", FlaskConical, "text-muted-foreground", "70,90,112"],
+  ["Treatments", "Treatments.html", HeartPulse, "text-muted-foreground", "70,90,112"],
+  ["Resources", "Resources.html", BookOpen, "text-muted-foreground", "70,90,112"],
 ] as const
 
 const items: MenuItem[] = destinations.map(([label, href, icon, iconColor, rgb]) => ({
@@ -25,9 +27,9 @@ function currentItem(): string | undefined {
   if (path.includes("/women/")) return "For Women"
   if (path.includes("/men/")) return "For Men"
   if (path.endsWith("/lab testing.html") || path.includes("/lab-testing/")) return "Lab Testing"
-  if (path.endsWith("/treatments.html") || path.endsWith("/product.html") || path.includes("/hrt-products/")) return "Treatments"
-  if (path.endsWith("/how it works.html")) return "How It Works"
-  if (path.endsWith("/resources.html") || path.includes("/health/") || path.includes("/blog-categories/")) return "Resources"
+  if (path.endsWith("/treatments.html") || path.endsWith("/product.html") || path.includes("/hrt-products/") || path.includes("/glp-1/") || path.includes("/menopause/") || path.includes("/low-testosterone/") || path.includes("/thyroid/") || path.includes("/sexual-health/") || path.includes("/hair-loss/") || path.includes("/peptides/") || path.includes("/weight-loss/")) return "Treatments"
+  if (path.includes("/symptoms/") || path.includes("/conditions/")) return "Symptoms"
+  if (path.endsWith("/resources.html") || path.includes("/health/") || path.includes("/blog-categories/") || path.includes("/quizzes/")) return "Resources"
   return undefined
 }
 

@@ -12,11 +12,11 @@ lucide-react/dist/esm/shared/src/utils/hasA11yProp.mjs:
 lucide-react/dist/esm/context.mjs:
 lucide-react/dist/esm/Icon.mjs:
 lucide-react/dist/esm/createLucideIcon.mjs:
+lucide-react/dist/esm/icons/activity.mjs:
 lucide-react/dist/esm/icons/book-open.mjs:
 lucide-react/dist/esm/icons/flask-conical.mjs:
 lucide-react/dist/esm/icons/heart-pulse.mjs:
 lucide-react/dist/esm/icons/mars.mjs:
-lucide-react/dist/esm/icons/route.mjs:
 lucide-react/dist/esm/icons/venus.mjs:
 lucide-react/dist/esm/lucide-react.mjs:
   /**
