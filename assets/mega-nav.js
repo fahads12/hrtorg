@@ -3,7 +3,7 @@
  * click opens it on touch devices. Click outside or press Esc to close. */
 (function () {
   if (typeof document === 'undefined') return;
-  try { console.info('[hrt-mega] script loaded v7'); } catch (_) {}
+  try { console.info('[hrt-mega] script loaded v8'); } catch (_) {}
 
   // ---------- Content ----------
   // Each panel: accent · image · col1 (list links) · col2 (pills) · aside quizCta + resources.
