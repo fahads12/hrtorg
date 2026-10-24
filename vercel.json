@@ -49,6 +49,21 @@
       "permanent": true
     },
     {
+      "source": "/how-it-works",
+      "destination": "/how-it-works/",
+      "permanent": true
+    },
+    {
+      "source": "/How It Works.html",
+      "destination": "/how-it-works/",
+      "permanent": true
+    },
+    {
+      "source": "/How%20It%20Works.html",
+      "destination": "/how-it-works/",
+      "permanent": true
+    },
+    {
       "source": "/adrenal-fatigue-how-stress-affects-hormone-levels",
       "destination": "/health/adrenal-fatigue-how-stress-affects-hormone-levels/index.html",
       "permanent": true
