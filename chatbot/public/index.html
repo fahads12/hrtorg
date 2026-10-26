@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore HRT services, at-home tests and wellness products with the HRT AI Guide.">
+  <meta name="theme-color" content="#102e4f"><title>HRT AI Guide · Your next step, made clearer</title>
+  <link rel="icon" href="/brand/hrt-logo-neutral.webp" type="image/webp"><link rel="stylesheet" href="/styles.css?v=widget-2">
+  <script type="module" src="/app.js?v=brand-2"></script>
+<link rel="preload" href="/brand/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/brand/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/website-theme.css?v=polish-2">
+<script src="/website-theme.js?v=polish-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#question">Skip to conversation</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a href="/" class="brand" aria-label="HRT AI Guide home"><span class="site-logo"><img src="/brand/hrt-logo-neutral.webp" alt="HRT.org" width="176" height="88"></span></a>
+      <button class="new-chat" data-new><span aria-hidden="true">＋</span> New conversation</button>
+      <div class="nav-label">YOUR HEALTH, YOUR WAY</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-home><span data-icon="spark"></span> Your guide <span class="nav-arrow">↗</span></button>
+        <button class="nav-item" data-action="services"><span data-icon="heart"></span> Explore services</button>
+        <button class="nav-item" data-action="tests"><span data-icon="test"></span> At-home testing</button>
+        <button class="nav-item" data-action="supplements"><span data-icon="leaf"></span> Supplements</button>
+        <button class="nav-item" data-action="compare"><span data-icon="compare"></span> Compare products</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="care-note"><div class="care-symbol" data-icon="heart"></div><h3>A guide. A starting point.</h3><p>Find your way to information, options, and the right conversation with your care team.</p><span class="care-line"></span></div>
+        <button class="nav-item" data-action="support"><span data-icon="support"></span> Contact HRT</button>
+        <button class="privacy-link" data-privacy>Privacy & your conversation <span aria-hidden="true">↗</span></button>
+      </div>
+    </aside>
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-identity"><span class="mini-brand"><span class="site-logo"><img src="/brand/hrt-logo-neutral.webp" alt="HRT.org" width="176" height="88"></span></span><span class="topbar-title">Your HRT guide<span class="guide-caption">Information. Care. Clarity.</span></span><span class="divider"></span><span class="topbar-subtitle">A clearer path to feeling better</span></div>
+        <div class="topbar-actions"><a href="https://hrt.org" target="_blank" rel="noopener noreferrer" class="website-link">Visit HRT <span aria-hidden="true">↗</span></a><button class="icon-button" data-new aria-label="Clear chat and start a new conversation" title="New conversation"><span data-icon="edit"></span></button><button type="button" class="icon-button guide-close" aria-label="Close HRT guide" title="Close guide">×</button></div>
+      </header>
+      <section class="conversation" id="conversation" aria-label="Conversation">
+        <div id="welcome" class="welcome">
+          <div class="eyebrow"><span class="status-dot"></span> A LITTLE GUIDANCE GOES A LONG WAY</div>
+          <h1>A little clarity.<br><span>A healthier next step.</span></h1>
+          <p class="intro">Explore HRT care, at-home tests and wellness products with your AI guide.</p>
+          <p class="start-label">What would you like help with?</p>
+          <div class="starter-grid">
+            <button class="starter" data-action="services"><span class="starter-icon peach" data-icon="heart"></span><span><strong>Explore HRT services</strong><small>Care that starts with understanding</small></span><span class="starter-arrow">↗</span></button>
+            <button class="starter" data-action="tests"><span class="starter-icon blue" data-icon="test"></span><span><strong>Find an at-home test</strong><small>Get to know your health better</small></span><span class="starter-arrow">↗</span></button>
+            <button class="starter" data-action="supplements"><span class="starter-icon green" data-icon="leaf"></span><span><strong>Browse supplements</strong><small>Explore the HRT Store catalog</small></span><span class="starter-arrow">↗</span></button>
+            <button class="starter" data-action="compare"><span class="starter-icon lavender" data-icon="compare"></span><span><strong>Compare your options</strong><small>The details, side by side</small></span><span class="starter-arrow">↗</span></button>
+          </div>
+          <div class="quick-questions"><button data-action="how">How does HRT work? <span>↗</span></button><button data-action="support">Talk to someone at HRT <span>↗</span></button></div>
+          <div class="welcome-foot"><span data-icon="shield"></span><span>Thoughtful guidance. Verified HRT sources. Your pace.</span></div>
+        </div>
+        <div id="messages" class="messages" aria-live="polite" aria-relevant="additions"></div>
+      </section>
+      <div class="composer-area">
+        <div id="compare-tray" class="compare-tray" hidden><span id="compare-count"></span><button id="run-compare" class="small-button">Compare selected</button><button id="clear-compare" class="text-button">Clear</button></div>
+        <label for="question" class="ask-label">Ask HRT a question</label><div class="composer-wrap">
+          <form id="chat-form" class="composer"><textarea id="question" rows="2" maxlength="2500" placeholder="Type your question here…"></textarea><button id="send" type="submit" aria-label="Send message"><span class="send-label">Send</span><span data-icon="arrow"></span></button></form>
+          <div class="composer-meta"><span id="connection-status"><span class="status-dot"></span> Connecting to HRT sources…</span><span class="desktop-hint">Enter to send <span aria-hidden="true">↵</span></span></div>
+        </div>
+        <p class="disclaimer">AI guidance, not medical advice. For medical decisions, speak with a licensed clinician. <button data-privacy>Your privacy</button></p>
+      </div>
+    </main>
+  </div>
+  <dialog id="detail-dialog" class="modal"><div class="modal-top"><span class="eyebrow">PRODUCT DETAILS</span><button class="icon-button close-dialog" aria-label="Close product details">✕</button></div><div id="detail-content"></div></dialog>
+  <dialog id="compare-dialog" class="modal compare-modal"><div class="modal-top"><div><span class="eyebrow">A CLOSER LOOK</span><h2>Your options, side by side.</h2></div><button class="icon-button close-dialog" aria-label="Close comparison">✕</button></div><div id="compare-content"></div></dialog>
+  <dialog id="privacy-dialog" class="modal privacy-modal"><div class="modal-top"><h2>Your conversation stays temporary.</h2><button class="icon-button close-dialog" aria-label="Close privacy notice">✕</button></div><p>This guide keeps the current conversation in your browser’s memory and temporary server memory for <span id="retention">30</span> minutes of inactivity. It does not save chat transcripts to files, browser storage, or analytics.</p><p>When AI chat is enabled, your messages and relevant HRT source excerpts are sent to OpenAI for processing with response storage disabled. OpenAI’s applicable provider retention still applies. HRT and store links open separate websites with their own policies.</p><p>Don’t share medical documents, identification numbers, or other sensitive information here. Clinical intake belongs in HRT’s verified care pathway. This guide is not a clinician and has not been assessed for HIPAA compliance.</p><p>“New conversation” clears this browser’s conversation and requests removal of its server session. Closing the page clears browser memory; the server session expires automatically.</p><button class="primary-button close-dialog">Got it</button></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

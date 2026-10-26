@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-10-26T15:28:13.292Z",
+  "completedAt": "2026-10-26T15:37:28.133Z",
+  "discoveredProducts": 1177,
+  "importedProducts": 1177,
+  "variants": 1576,
+  "feedPages": 6,
+  "sitemapProducts": 1177,
+  "collections": 46,
+  "missingProducts": [],
+  "catalogComplete": true,
+  "knowledgePages": 38,
+  "unavailableProducts": 833,
+  "failures": [
+    {
+      "url": "https://hrt.org/health-information-privacy-policy/",
+      "error": "HTTP 404"
+    }
+  ],
+  "complete": false,
+  "gaps": [
+    "One main-site footer privacy link returns404; corrected official notice indexed.",
+    "Portal returned JavaScript shell; authenticated accounts/results/booking not inspected.",
+    "Shipping policy page has no substantive shipping policy.",
+    "Insurance, refund, consultation inclusions, prices and result timing conflict between official pages.",
+    "All public catalog feeds reconciled; 12 product detail pages sampled, not every detail page.",
+    "Image-only labels not transcribed. Missing attributes remain unknown."
+  ],
+  "sourceAudit": {
+    "provenance": "source-audit.json",
+    "knowledge": "knowledge-sources.json",
+    "reviews": "knowledge-review.json"
+  }
+}

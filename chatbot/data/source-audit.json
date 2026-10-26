@@ -1,0 +1,1208 @@
+{
+  "reviewedAt": "2026-10-26T15:48:17.729Z",
+  "businessSources": [
+    {
+      "url": "https://www.hrt.org/",
+      "finalUrl": "https://hrt.org/",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.382Z"
+    },
+    {
+      "url": "https://hrt.org",
+      "finalUrl": "https://hrt.org/",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.436Z"
+    },
+    {
+      "url": "https://hrt.org/contact",
+      "finalUrl": "https://hrt.org/contact",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.441Z"
+    },
+    {
+      "url": "https://hrt.org/lab-testing",
+      "finalUrl": "https://hrt.org/lab-testing",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.715Z"
+    },
+    {
+      "url": "https://hrt.org/terms-and-conditions",
+      "finalUrl": "https://hrt.org/terms-and-conditions",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.740Z"
+    },
+    {
+      "url": "https://hrt.org/privacy-policy",
+      "finalUrl": "https://hrt.org/privacy-policy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.801Z"
+    },
+    {
+      "url": "https://hrt.org/return-policy",
+      "finalUrl": "https://hrt.org/return-policy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.883Z"
+    },
+    {
+      "url": "https://hrt.org/legal/consent-to-telehealth",
+      "finalUrl": "https://hrt.org/legal/consent-to-telehealth",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:15.930Z"
+    },
+    {
+      "url": "https://hrt.org/legal/health-information-privacy-practices",
+      "finalUrl": "https://hrt.org/legal/health-information-privacy-practices",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.000Z"
+    },
+    {
+      "url": "https://hrt.org/legal/informed-consent-regarding-nutritional-and-herbal-supplements",
+      "finalUrl": "https://hrt.org/legal/informed-consent-regarding-nutritional-and-herbal-supplements",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.012Z"
+    },
+    {
+      "url": "https://hrt.org/legal/pharmacy-information",
+      "finalUrl": "https://hrt.org/legal/pharmacy-information",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.100Z"
+    },
+    {
+      "url": "https://hrt.org/legal/privacy-policy",
+      "finalUrl": "https://hrt.org/legal/privacy-policy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.180Z"
+    },
+    {
+      "url": "https://hrt.org/men/anti-aging-peptides",
+      "finalUrl": "https://hrt.org/men/anti-aging-peptides",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.186Z"
+    },
+    {
+      "url": "https://hrt.org/men/erectile-dysfunction",
+      "finalUrl": "https://hrt.org/men/erectile-dysfunction",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.274Z"
+    },
+    {
+      "url": "https://hrt.org/men/hair-loss",
+      "finalUrl": "https://hrt.org/men/hair-loss",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.287Z"
+    },
+    {
+      "url": "https://hrt.org/men/hormone-replacement-therapy",
+      "finalUrl": "https://hrt.org/men/hormone-replacement-therapy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.348Z"
+    },
+    {
+      "url": "https://hrt.org/men/sexual-health",
+      "finalUrl": "https://hrt.org/men/sexual-health",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.368Z"
+    },
+    {
+      "url": "https://hrt.org/men/weight-loss-and-management",
+      "finalUrl": "https://hrt.org/men/weight-loss-and-management",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.430Z"
+    },
+    {
+      "url": "https://hrt.org/women/anti-aging-peptides",
+      "finalUrl": "https://hrt.org/women/anti-aging-peptides",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.441Z"
+    },
+    {
+      "url": "https://hrt.org/women/hair-loss",
+      "finalUrl": "https://hrt.org/women/hair-loss",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.462Z"
+    },
+    {
+      "url": "https://hrt.org/women/hormone-replacement-therapy",
+      "finalUrl": "https://hrt.org/women/hormone-replacement-therapy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.558Z"
+    },
+    {
+      "url": "https://hrt.org/women/menopause",
+      "finalUrl": "https://hrt.org/menopause",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.570Z"
+    },
+    {
+      "url": "https://hrt.org/women/sexual-health",
+      "finalUrl": "https://hrt.org/women/sexual-health",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.580Z"
+    },
+    {
+      "url": "https://hrt.org/women/weight-loss-and-management",
+      "finalUrl": "https://hrt.org/women/weight-loss-and-management",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.645Z"
+    },
+    {
+      "url": "https://store.hrt.org/policies/refund-policy",
+      "finalUrl": "https://store.hrt.org/policies/refund-policy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.666Z"
+    },
+    {
+      "url": "https://store.hrt.org/policies/shipping-policy",
+      "finalUrl": "https://store.hrt.org/policies/shipping-policy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:16.721Z"
+    },
+    {
+      "url": "https://store.hrt.org/policies/privacy-policy",
+      "finalUrl": "https://store.hrt.org/policies/privacy-policy",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.071Z"
+    },
+    {
+      "url": "https://store.hrt.org/policies/terms-of-service",
+      "finalUrl": "https://store.hrt.org/policies/terms-of-service",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.130Z"
+    },
+    {
+      "url": "https://hrt.org/providers",
+      "finalUrl": "https://hrt.org/providers",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.205Z"
+    },
+    {
+      "url": "https://hrt.org/join-our-network",
+      "finalUrl": "https://hrt.org/join-our-network",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.275Z"
+    },
+    {
+      "url": "https://store.hrt.org/pages/easy-faqs",
+      "finalUrl": "https://store.hrt.org/pages/easy-faqs",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.350Z"
+    },
+    {
+      "url": "https://store.hrt.org/pages/contact-us",
+      "finalUrl": "https://store.hrt.org/pages/contact-us",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.434Z"
+    },
+    {
+      "url": "https://portal.hrt.org/",
+      "finalUrl": "https://portal.hrt.org/",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.488Z"
+    },
+    {
+      "url": "https://portal.hrt.org/app/symptoms-tracker",
+      "finalUrl": "https://portal.hrt.org/app/symptoms-tracker",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.782Z"
+    },
+    {
+      "url": "https://store.hrt.org/account/login",
+      "finalUrl": "https://store.hrt.org/account/login",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:17.924Z"
+    },
+    {
+      "url": "https://hrt.org/providers/medical-team",
+      "finalUrl": "https://hrt.org/providers/medical-team",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:18.536Z"
+    },
+    {
+      "url": "https://hrt.org/providers/dr-clarence-lee-jr",
+      "finalUrl": "https://hrt.org/providers/dr-clarence-lee-jr",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:18.624Z"
+    },
+    {
+      "url": "https://hrt.org/providers/jessica-kikla",
+      "finalUrl": "https://hrt.org/providers/jessica-kikla",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:18.993Z"
+    },
+    {
+      "url": "https://store.hrt.org/pages/about-us",
+      "finalUrl": "https://store.hrt.org/pages/about-us",
+      "status": 200,
+      "fetchedAt": "2026-10-26T15:33:19.127Z"
+    },
+    {
+      "url": "https://hrt.org/health-information-privacy-policy/",
+      "finalUrl": "https://hrt.org/health-information-privacy-policy",
+      "status": 404,
+      "fetchedAt": "2026-10-26T15:33:19.163Z"
+    }
+  ],
+  "normalization": {
+    "at": "2026-10-26T15:42:50.734Z",
+    "documents": 38,
+    "failed": []
+  },
+  "catalogRequests": [
+    {
+      "url": "https://store.hrt.org/",
+      "retrievedAt": "2026-10-26T15:28:14.600Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/sitemap.xml",
+      "retrievedAt": "2026-10-26T15:28:15.269Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/sitemap_products_1.xml?from=2060530024502&to=4502606872687",
+      "retrievedAt": "2026-10-26T15:28:16.317Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/sitemap_products_2.xml?from=4502608085103&to=10073778815266",
+      "retrievedAt": "2026-10-26T15:28:17.048Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:28:18.266Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products.json?limit=250&page=2",
+      "retrievedAt": "2026-10-26T15:28:19.173Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products.json?limit=250&page=3",
+      "retrievedAt": "2026-10-26T15:28:20.037Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products.json?limit=250&page=4",
+      "retrievedAt": "2026-10-26T15:28:20.635Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products.json?limit=250&page=5",
+      "retrievedAt": "2026-10-26T15:28:21.505Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products.json?limit=250&page=6",
+      "retrievedAt": "2026-10-26T15:28:22.174Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/comprehensive-health-diagnostic-test.json",
+      "retrievedAt": "2026-10-26T15:28:24.315Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/comprehensive-health-diagnostic-test.js",
+      "retrievedAt": "2026-10-26T15:28:25.183Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/female-comprehensive-blood-work-lab-test.json",
+      "retrievedAt": "2026-10-26T15:28:26.002Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/female-comprehensive-blood-work-lab-test.js",
+      "retrievedAt": "2026-10-26T15:28:26.936Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/male-comprehensive-hormone-at-home-test-kit-optimal-male.json",
+      "retrievedAt": "2026-10-26T15:28:27.742Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/male-comprehensive-hormone-at-home-test-kit-optimal-male.js",
+      "retrievedAt": "2026-10-26T15:28:28.663Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/female-comprehensive-hormone-at-home-test-kit-saliva-blood-spot-optimal-female.json",
+      "retrievedAt": "2026-10-26T15:28:29.508Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/female-comprehensive-hormone-at-home-test-kit-saliva-blood-spot-optimal-female.js",
+      "retrievedAt": "2026-10-26T15:28:30.365Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/menopause-therapy.json",
+      "retrievedAt": "2026-10-26T15:28:31.145Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/menopause-therapy.js",
+      "retrievedAt": "2026-10-26T15:28:31.989Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/comprehensive-diabetes-blood-panel.json",
+      "retrievedAt": "2026-10-26T15:28:32.941Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/comprehensive-diabetes-blood-panel.js",
+      "retrievedAt": "2026-10-26T15:28:33.697Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/thyroid-comprehensive-blood-work-panel.json",
+      "retrievedAt": "2026-10-26T15:28:34.547Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/thyroid-comprehensive-blood-work-panel.js",
+      "retrievedAt": "2026-10-26T15:28:35.432Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/menopause-test-at-home-menopause-test-kit.json",
+      "retrievedAt": "2026-10-26T15:28:36.250Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/menopause-test-at-home-menopause-test-kit.js",
+      "retrievedAt": "2026-10-26T15:28:37.125Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/heart-health-test-at-home-heart-health-cardiometabolic-test-kit-comprehensive-optimal-heart.json",
+      "retrievedAt": "2026-10-26T15:28:37.971Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/heart-health-test-at-home-heart-health-cardiometabolic-test-kit-comprehensive-optimal-heart.js",
+      "retrievedAt": "2026-10-26T15:28:38.823Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid.json",
+      "retrievedAt": "2026-10-26T15:28:39.715Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid.js",
+      "retrievedAt": "2026-10-26T15:28:40.538Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/vitamin-d3-k2-spray.json",
+      "retrievedAt": "2026-10-26T15:28:41.417Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/vitamin-d3-k2-spray.js",
+      "retrievedAt": "2026-10-26T15:28:42.256Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/vitamin-a-d3-k2-60-capsules.json",
+      "retrievedAt": "2026-10-26T15:28:43.107Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/products/vitamin-a-d3-k2-60-capsules.js",
+      "retrievedAt": "2026-10-26T15:28:43.948Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/sitemap.xml",
+      "retrievedAt": "2026-10-26T15:30:46.012Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/sitemap_collections_1.xml?from=87296802870&to=650429497634",
+      "retrievedAt": "2026-10-26T15:30:47.011Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/zrt-laboratory.json",
+      "retrievedAt": "2026-10-26T15:30:47.724Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/zrt-laboratory/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:30:48.743Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/optimal-health.json",
+      "retrievedAt": "2026-10-26T15:30:49.428Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/optimal-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:30:50.378Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/designs-for-health.json",
+      "retrievedAt": "2026-10-26T15:30:51.161Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/designs-for-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:30:52.016Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/ortho-molecular-products.json",
+      "retrievedAt": "2026-10-26T15:30:52.858Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/ortho-molecular-products/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:30:53.972Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/thyroid-health.json",
+      "retrievedAt": "2026-10-26T15:30:54.628Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/thyroid-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:30:55.454Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/tests.json",
+      "retrievedAt": "2026-10-26T15:30:56.294Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/tests/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:30:57.278Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/optimal-health-nutrition.json",
+      "retrievedAt": "2026-10-26T15:30:58.037Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/optimal-health-nutrition/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:30:58.913Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/mens-health.json",
+      "retrievedAt": "2026-10-26T15:30:59.839Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/mens-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:00.599Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/womens-health.json",
+      "retrievedAt": "2026-10-26T15:31:01.559Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/womens-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:02.315Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/nutritional-supplements.json",
+      "retrievedAt": "2026-10-26T15:31:03.194Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/nutritional-supplements/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:04.115Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/heart-health.json",
+      "retrievedAt": "2026-10-26T15:31:04.873Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/heart-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:05.753Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/digestive-health.json",
+      "retrievedAt": "2026-10-26T15:31:06.721Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/digestive-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:07.546Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/brain-health.json",
+      "retrievedAt": "2026-10-26T15:31:08.311Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/brain-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:09.209Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/programs-kits.json",
+      "retrievedAt": "2026-10-26T15:31:10.041Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/programs-kits/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:10.938Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/daily-packets.json",
+      "retrievedAt": "2026-10-26T15:31:12.072Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/daily-packets/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:12.622Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/saliva-testing.json",
+      "retrievedAt": "2026-10-26T15:31:13.472Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/saliva-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:14.561Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/blood-spot-testing.json",
+      "retrievedAt": "2026-10-26T15:31:15.191Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/blood-spot-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:16.202Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/dried-urine.json",
+      "retrievedAt": "2026-10-26T15:31:16.963Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/dried-urine/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:17.836Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/combination-profiles.json",
+      "retrievedAt": "2026-10-26T15:31:18.650Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/combination-profiles/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:19.562Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/thyroid-testing.json",
+      "retrievedAt": "2026-10-26T15:31:20.405Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/thyroid-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:21.325Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/adrenals-testing.json",
+      "retrievedAt": "2026-10-26T15:31:22.104Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/adrenals-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:22.920Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/heavy-metals-essential-elements-testing.json",
+      "retrievedAt": "2026-10-26T15:31:23.817Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/heavy-metals-essential-elements-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:24.735Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/cardiometabolic-testing.json",
+      "retrievedAt": "2026-10-26T15:31:25.546Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/cardiometabolic-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:26.362Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/menopause.json",
+      "retrievedAt": "2026-10-26T15:31:27.243Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/menopause/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:28.159Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/fertility.json",
+      "retrievedAt": "2026-10-26T15:31:28.927Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/fertility/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:29.835Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/hormone-balance.json",
+      "retrievedAt": "2026-10-26T15:31:30.641Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/hormone-balance/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:31.552Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/weight-management-testing.json",
+      "retrievedAt": "2026-10-26T15:31:32.389Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/weight-management-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:33.278Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/neurotransmitter-testing.json",
+      "retrievedAt": "2026-10-26T15:31:34.219Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/neurotransmitter-testing/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:34.970Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/polar.json",
+      "retrievedAt": "2026-10-26T15:31:35.836Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/polar/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:36.726Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/new-collection.json",
+      "retrievedAt": "2026-10-26T15:31:37.550Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/new-collection/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:38.615Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/new-collection/products.json?limit=250&page=2",
+      "retrievedAt": "2026-10-26T15:31:39.610Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/new-collection/products.json?limit=250&page=3",
+      "retrievedAt": "2026-10-26T15:31:40.425Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/new-collection/products.json?limit=250&page=4",
+      "retrievedAt": "2026-10-26T15:31:41.195Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/new-collection/products.json?limit=250&page=5",
+      "retrievedAt": "2026-10-26T15:31:41.946Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/best-selling-collection.json",
+      "retrievedAt": "2026-10-26T15:31:42.668Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/best-selling-collection/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:43.827Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/best-selling-collection/products.json?limit=250&page=2",
+      "retrievedAt": "2026-10-26T15:31:44.707Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/best-selling-collection/products.json?limit=250&page=3",
+      "retrievedAt": "2026-10-26T15:31:45.457Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/best-selling-collection/products.json?limit=250&page=4",
+      "retrievedAt": "2026-10-26T15:31:46.266Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/best-selling-collection/products.json?limit=250&page=5",
+      "retrievedAt": "2026-10-26T15:31:47.246Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/labcorp.json",
+      "retrievedAt": "2026-10-26T15:31:47.845Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/labcorp/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:48.766Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/davinci-labs.json",
+      "retrievedAt": "2026-10-26T15:31:49.537Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/davinci-labs/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:50.605Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/immune-support.json",
+      "retrievedAt": "2026-10-26T15:31:51.271Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/immune-support/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:52.161Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/coronavirus-covid-19.json",
+      "retrievedAt": "2026-10-26T15:31:52.970Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/coronavirus-covid-19/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:53.846Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/sexual-health.json",
+      "retrievedAt": "2026-10-26T15:31:54.687Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/sexual-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:55.544Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/hair-loss.json",
+      "retrievedAt": "2026-10-26T15:31:56.416Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/hair-loss/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:57.395Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/vitamin-amino-acids.json",
+      "retrievedAt": "2026-10-26T15:31:58.169Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/vitamin-amino-acids/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:31:59.091Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/aesthetic-cosmetic-dermatology.json",
+      "retrievedAt": "2026-10-26T15:31:59.857Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/aesthetic-cosmetic-dermatology/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:00.730Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/lab-test-kit.json",
+      "retrievedAt": "2026-10-26T15:32:01.565Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/lab-test-kit/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:02.457Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/doctors-data.json",
+      "retrievedAt": "2026-10-26T15:32:03.284Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/doctors-data/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:04.139Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/genova-diagnostics.json",
+      "retrievedAt": "2026-10-26T15:32:04.998Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/genova-diagnostics/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:05.894Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/lab-testing-requires-blood-draw.json",
+      "retrievedAt": "2026-10-26T15:32:06.885Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/lab-testing-requires-blood-draw/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:07.618Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/hormone-metabolites-profiles.json",
+      "retrievedAt": "2026-10-26T15:32:08.444Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/hormone-metabolites-profiles/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:09.345Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/weight-metabolic-health.json",
+      "retrievedAt": "2026-10-26T15:32:10.187Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/weight-metabolic-health/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:11.192Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/sleep-health-testing-options.json",
+      "retrievedAt": "2026-10-26T15:32:11.957Z",
+      "status": "ok"
+    },
+    {
+      "url": "https://store.hrt.org/collections/sleep-health-testing-options/products.json?limit=250&page=1",
+      "retrievedAt": "2026-10-26T15:32:12.880Z",
+      "status": "ok"
+    }
+  ],
+  "detailChecks": [
+    {
+      "url": "https://store.hrt.org/products/comprehensive-health-diagnostic-test",
+      "retrievedAt": "2026-10-26T15:28:25.183Z",
+      "id": "8489891234082",
+      "name": "Comprehensive Health Diagnostic Test",
+      "jsonVariants": [
+        {
+          "id": 46173636788514,
+          "price": "549.00",
+          "currency": "USD"
+        },
+        {
+          "id": 46173636821282,
+          "price": "549.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 46173636788514,
+          "price": 54900,
+          "available": true
+        },
+        {
+          "id": 46173636821282,
+          "price": 54900,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 549,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/female-comprehensive-blood-work-lab-test",
+      "retrievedAt": "2026-10-26T15:28:26.936Z",
+      "id": "8142553579810",
+      "name": "Female Comprehensive Blood Work Lab Test",
+      "jsonVariants": [
+        {
+          "id": 44560601284898,
+          "price": "595.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 44560601284898,
+          "price": 59500,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 595,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/male-comprehensive-hormone-at-home-test-kit-optimal-male",
+      "retrievedAt": "2026-10-26T15:28:28.663Z",
+      "id": "6719675859055",
+      "name": "Male Comprehensive Hormone At Home Test Kit | Optimal Male",
+      "jsonVariants": [
+        {
+          "id": 39848638677103,
+          "price": "345.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 39848638677103,
+          "price": 34500,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 345,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/female-comprehensive-hormone-at-home-test-kit-saliva-blood-spot-optimal-female",
+      "retrievedAt": "2026-10-26T15:28:30.366Z",
+      "id": "6719674974319",
+      "name": "Female Comprehensive Hormone At Home Test Kit | Saliva+Blood Spot | Optimal Female",
+      "jsonVariants": [
+        {
+          "id": 39848620621935,
+          "price": "345.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 39848620621935,
+          "price": 34500,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 345,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/menopause-therapy",
+      "retrievedAt": "2026-10-26T15:28:31.989Z",
+      "id": "4511032770671",
+      "name": "Menopause Therapy",
+      "jsonVariants": [
+        {
+          "id": 31886766047343,
+          "price": "0.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31886766047343,
+          "price": 0,
+          "available": false
+        }
+      ],
+      "snapshotPrice": 0,
+      "snapshotAvailable": false
+    },
+    {
+      "url": "https://store.hrt.org/products/comprehensive-diabetes-blood-panel",
+      "retrievedAt": "2026-10-26T15:28:33.697Z",
+      "id": "4501334294639",
+      "name": "Comprehensive Diabetes Blood Panel",
+      "jsonVariants": [
+        {
+          "id": 31829276819567,
+          "price": "204.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31829276819567,
+          "price": 20400,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 204,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/thyroid-comprehensive-blood-work-panel",
+      "retrievedAt": "2026-10-26T15:28:35.432Z",
+      "id": "4499476414575",
+      "name": "Thyroid Comprehensive Blood Work Panel",
+      "jsonVariants": [
+        {
+          "id": 31820464586863,
+          "price": "190.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31820464586863,
+          "price": 19000,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 190,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/menopause-test-at-home-menopause-test-kit",
+      "retrievedAt": "2026-10-26T15:28:37.126Z",
+      "id": "4370695782511",
+      "name": "Menopause Test - At Home Menopause Test Kit",
+      "jsonVariants": [
+        {
+          "id": 31258056786031,
+          "price": "320.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31258056786031,
+          "price": 32000,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 320,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/heart-health-test-at-home-heart-health-cardiometabolic-test-kit-comprehensive-optimal-heart",
+      "retrievedAt": "2026-10-26T15:28:38.823Z",
+      "id": "4370682413167",
+      "name": "Heart Health Test - At Home Heart Health (CardioMetabolic) Test Kit - Comprehensive - Optimal Heart",
+      "jsonVariants": [
+        {
+          "id": 31258022936687,
+          "price": "184.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31258022936687,
+          "price": 18400,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 184,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/thyroid-test-at-home-thyroid-test-kit-essentials-optimal-thyroid",
+      "retrievedAt": "2026-10-26T15:28:40.538Z",
+      "id": "4370679038063",
+      "name": "Thyroid Test - At Home Thyroid Test Kit - Essentials - Optimal Thyroid",
+      "jsonVariants": [
+        {
+          "id": 31258017038447,
+          "price": "175.00",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31258017038447,
+          "price": 17500,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 175,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/vitamin-d3-k2-spray",
+      "retrievedAt": "2026-10-26T15:28:42.256Z",
+      "id": "4366728101999",
+      "name": "Vitamin D3, K2 Liquid Drops | 75 Servings | Optimal.Health",
+      "jsonVariants": [
+        {
+          "id": 31244182257775,
+          "price": "60.40",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31244182257775,
+          "price": 6040,
+          "available": true
+        }
+      ],
+      "snapshotPrice": 60.4,
+      "snapshotAvailable": true
+    },
+    {
+      "url": "https://store.hrt.org/products/vitamin-a-d3-k2-60-capsules",
+      "retrievedAt": "2026-10-26T15:28:43.948Z",
+      "id": "4366726004847",
+      "name": "Vitamin A, D3, K2 | 60 Capsules | Optimal.Health",
+      "jsonVariants": [
+        {
+          "id": 31244177539183,
+          "price": "28.49",
+          "currency": "USD"
+        }
+      ],
+      "jsVariants": [
+        {
+          "id": 31244177539183,
+          "price": 2849,
+          "available": false
+        }
+      ],
+      "snapshotPrice": 28.49,
+      "snapshotAvailable": false
+    }
+  ]
+}

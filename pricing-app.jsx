@@ -10,16 +10,16 @@ function PricingNav(){return null;}
 
 function PricingFooter(){return null;}
 
-function Hero({billing,setBilling}){return <section className="pr-hero"><div className="wrap pr-hero-inner"><div className="eyebrow">Pricing & membership</div><h1>Understand your <span className="accent">care options.</span></h1><p className="lead">Shop test kits through the HRT.org store and discuss treatment options through the patient portal.</p><div className="billing-toggle"><button aria-pressed={billing==='monthly'} className={billing==='monthly'?'active':''} onClick={()=>setBilling('monthly')}>Care options</button><button aria-pressed={billing==='annual'} className={billing==='annual'?'active':''} onClick={()=>setBilling('annual')}>Membership</button></div></div></section>;}
+function Hero({billing,setBilling}){return <section className="pr-hero"><div className="wrap pr-hero-inner"><div className="eyebrow">Pricing & membership</div><h1>Understand your <span className="accent">care options.</span></h1><p className="lead">Buy test kits in the HRT.org store, or use the patient portal to discuss treatment options.</p><div className="billing-toggle"><button aria-pressed={billing==='monthly'} className={billing==='monthly'?'active':''} onClick={()=>setBilling('monthly')}>Care options</button><button aria-pressed={billing==='annual'} className={billing==='annual'?'active':''} onClick={()=>setBilling('annual')}>Membership</button></div></div></section>;}
 
-function Plans({billing}){return <section className="pr-plans"><div className="wrap">{billing==='annual'?<div className="plan featured"><h2>Membership enquiries</h2><p>Contact our team to confirm current membership availability, pricing, and benefits.</p><a className="plan-cta" href="Contact.html">Contact our team</a></div>:<CareOptions/>}</div></section>;}
+function Plans({billing}){return <section className="pr-plans"><div className="wrap">{billing==='annual'?<div className="plan featured"><h2>Membership enquiries</h2><p>Ask our team about current membership availability, prices, and benefits.</p><a className="plan-cta" href="Contact.html">Contact our team</a></div>:<CareOptions/>}</div></section>;}
 
 const PR_TREATMENT_DESCRIPTIONS = {
-  'hrt': 'Explore care for hormonal changes, including perimenopause, menopause, and concerns about testosterone.',
-  'peptides': 'Learn about peptide therapies and discuss the specific treatment, its intended use, and its risks with a provider.',
-  'weight': 'Explore medical weight management, including prescription options alongside nutrition and lifestyle changes.',
+  'hrt': "Learn about care for hormonal changes during perimenopause and menopause, and for concerns about testosterone.",
+  'peptides': "Talk with a provider about the peptide therapy you’re considering, what it is used for, and its risks.",
+  'weight': "Learn about medical weight management, including prescription options used alongside changes to nutrition and daily habits.",
   'sexual': 'Talk about changes in desire, comfort, or sexual function. Physical health, medications, and emotional wellbeing can all play a part.',
-  'hair': 'Explore care for thinning hair and hair loss, including topical and oral options where appropriate.',
+  'hair': "Learn about care for thinning hair and hair loss, including topical and oral treatments when appropriate.",
 };
 function Cats(){return <section className="pr-cats"><div className="wrap"><div className="section-head"><h2>Explore care <em>by treatment.</em></h2></div><div className="pr-cat-grid">{SOURCE.treatments.map(t=><a className="pr-cat" key={t.key} href={'Treatments.html#treatment-'+t.key}><h3>{t.name}{t.accent}</h3><p>{PR_TREATMENT_DESCRIPTIONS[t.key]}</p><span className="cat-link">Explore →</span></a>)}</div></div></section>;}
 

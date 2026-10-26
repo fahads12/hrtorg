@@ -6,9 +6,11 @@
     "dev": "node serve.cjs",
     "start": "node serve.cjs",
     "build": "node build-site.cjs",
-    "build:vercel": "npm run build && node build-public.cjs",
+    "build:vercel": "node build-public.cjs",
     "build:ui": "node build-glow-menu.cjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "chatbot": "node start-chatbot.cjs",
+    "widget:sync": "node integrate-chatbot.cjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

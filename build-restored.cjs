@@ -10,7 +10,7 @@ module.exports=function buildRestored(shell,baseHead){
  for(const gender of ['women','men']) raw.services[gender+'/weight-loss-and-management'].body += '<h2>Learn about treatment options</h2><ul><li><a href="hrt-products/semaglutide-injections/index.html">Semaglutide injections</a></li><li><a href="hrt-products/semaglutide-bioboost-injections/index.html">Semaglutide + BioBoost injections</a></li></ul>';
  for(const p of raw.providers)if(p.key==='providers/jessica-kikla')p.image='uploads/generated/jessica-kikla-enhanced-1024.webp';
  for(const p of raw.providers)if(p.key==='providers/dr-clarence-lee-jr')p.image='uploads/generated/dr-lee-enhanced-1024.webp';
- const values=[{ic:'science',t:'Education',d:'Information to support informed decisions about health and wellness.'},{ic:'heart',t:'Testing',d:'At-home testing and results to help explore your care options.'},{ic:'eye',t:'Personalized care',d:'Patient management and monitoring with your healthcare provider.'}];
+ const values=[{ic:'science',t:'Education',d:"Information to help you make informed choices about your health and wellness."},{ic:'heart',t:'Testing',d:"At-home tests and results to help you understand your care options."},{ic:'eye',t:'Personalized care',d:"Care management and monitoring with your healthcare provider."}];
  const catalog=[['hrt','hormone-replacement-therapy','Hormone Therapy'],['peptides','anti-aging-peptides','Peptide Therapy'],['weight','weight-loss-and-management','Weight Management'],['sexual','sexual-health','Sexual Health'],['hair','hair-loss','Hair Loss Treatment'],['ed','erectile-dysfunction','Erectile Dysfunction']];
  const meta=raw.articles.map(({body,sections,...p})=>p);
  const products={},treatments=[];

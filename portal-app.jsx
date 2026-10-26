@@ -25,7 +25,7 @@ function PortalPreviewNote() {
   return <aside className="portal-preview-note" aria-label="About this preview">
     <div className="portal-preview-details" id="portal-preview-details" hidden={!open}>
       <strong>Patient portal UI preview</strong>
-      <p>Use sample information to explore the screens. Forms work in this browser tab only. No account, appointment, order, medical record, or email is created.</p>
+      <p>Try the screens with sample information. Forms work only in this browser tab and do not create an account, appointment, order, medical record, or email.</p>
       <p>Changes reset when you reload. Passwords are never saved or sent.</p>
       <button type="button" onClick={closeNote}>Close</button>
     </div>

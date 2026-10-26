@@ -19,7 +19,7 @@ const TONES = {
     reassure: "Takes about 10 minutes · No card required",
     saved: "Saved · resume anytime",
     aboutHelp: "A few basics so a licensed provider in your state can care for you. Everything is private and HIPAA-protected.",
-    symptomHelp: "Select everything that sounds like you — there are no wrong answers.",
+    symptomHelp: "Select everything that applies to you. There are no wrong answers.",
     submit: "Submit for provider review",
   },
   clinical: {
@@ -129,7 +129,7 @@ function StepGoal({ a, set }) {
     <div className="cz-step">
       <span className="cz-eyebrow">Step 2 · Your goal</span>
       <h1 className="cz-q">What brings you in <span className="accent">today?</span></h1>
-      <p className="cz-help">Pick what matters most right now. You can add more with your provider later.</p>
+      <p className="cz-help">Choose what matters most to you right now. You can discuss other concerns with your provider later.</p>
       <div className="cz-fieldset cz-choices cols-list">
         {GOALS.map((goal) => (
           <Choice key={goal.key} sel={a.goal === goal.key} icon={goal.icon} name={goal.name}
@@ -187,7 +187,7 @@ function StepHistory({ a, set }) {
     <div className="cz-step">
       <span className="cz-eyebrow">Step 4 · Health history</span>
       <h1 className="cz-q">Have you ever been <span className="accent">diagnosed with</span> any of these?</h1>
-      <p className="cz-help">This helps your provider prescribe safely. Be honest — nothing here disqualifies you automatically.</p>
+      <p className="cz-help">Your answers help your provider prescribe safely. Answer honestly; nothing here automatically disqualifies you.</p>
       <div className="cz-fieldset">
         <div className="cz-checklist">
           {CONDITIONS.map((c) => {
@@ -203,7 +203,7 @@ function StepHistory({ a, set }) {
         {flagged && (
           <div className="cz-note cz-anim">
             <span className="ic">{Icons.shield}</span>
-            <span className="tx"><b>Good to know — this is exactly why we ask.</b> A few of your answers are things your provider will want to review closely before prescribing. Discuss these answers with a qualified clinician before starting treatment.</span>
+            <span className="tx"><b>Good to know — this is exactly why we ask.</b> Some of your answers need a closer review before a provider prescribes treatment. Discuss them with a qualified clinician before starting treatment.</span>
           </div>
         )}
 
@@ -226,7 +226,7 @@ function StepLifestyle({ a, set }) {
     <div className="cz-step">
       <span className="cz-eyebrow">Step 5 · Lifestyle & goals</span>
       <h1 className="cz-q">A snapshot of your <span className="accent">daily life.</span></h1>
-      <p className="cz-help">Context helps your provider tailor the plan — and pick up on things labs alone might miss.</p>
+      <p className="cz-help">These details help your provider tailor your plan and understand things that lab results alone might miss.</p>
       <div className="cz-fieldset">
         {LIFESTYLE.map((q) => (
           <div className="cz-row" key={q.key}>
@@ -245,11 +245,11 @@ function StepLifestyle({ a, set }) {
   );
 }
 
-function StepVerify({a,set}){const c=a.consents||{};return <><div className="eyebrow">Before you continue</div><h1>Review your <em>next step.</em></h1><p className="cz-sub">This preparation stays on this page. Complete clinical consent and any identity verification in the HRT.org patient portal.</p><label className="cz-field"><input type="checkbox" checked={!!c.tele} onChange={e=>set({consents:{...c,tele:e.target.checked}})}/> I understand these notes have not been sent to a provider.</label><label className="cz-field"><input type="checkbox" checked={!!c.privacy} onChange={e=>set({consents:{...c,privacy:e.target.checked}})}/> I have reviewed the privacy information.</label><p><a href="Privacy Policy.html" target="_blank" rel="noopener">Read the privacy policy</a></p></>;}
+function StepVerify({a,set}){const c=a.consents||{};return <><div className="eyebrow">Before you continue</div><h1>Review your <em>next step.</em></h1><p className="cz-sub">Your preparation notes stay on this page. Use the HRT.org patient portal to complete clinical consent and any identity verification.</p><label className="cz-field"><input type="checkbox" checked={!!c.tele} onChange={e=>set({consents:{...c,tele:e.target.checked}})}/> I understand these notes have not been sent to a provider.</label><label className="cz-field"><input type="checkbox" checked={!!c.privacy} onChange={e=>set({consents:{...c,privacy:e.target.checked}})}/> I have reviewed the privacy information.</label><p><a href="Privacy Policy.html" target="_blank" rel="noopener">Read the privacy policy</a></p></>;}
 
-function Review({a,onBack,onSubmit}){return <><div className="eyebrow">Your preparation</div><h1>Review your <em>notes.</em></h1><p className="cz-sub">Nothing has been submitted. You can use these notes when completing the official patient portal intake.</p><dl>{[['Name',a.firstName],['Care interest',GOALS.find(g=>g.key===a.goal)?.name||a.goal],['Symptoms',(a.symptoms||[]).join(', ')],['Duration',a.duration],['Medical history',(a.conditions||[]).join(', ')]].map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl><div className="cz-foot"><button className="cz-back" onClick={onBack}>Back</button><button className="cz-continue" onClick={onSubmit}>Finish preparation</button></div></>;}
+function Review({a,onBack,onSubmit}){return <><div className="eyebrow">Your preparation</div><h1>Review your <em>notes.</em></h1><p className="cz-sub">Your notes have not been submitted. Keep them handy when you complete the official intake in the patient portal.</p><dl>{[['Name',a.firstName],['Care interest',GOALS.find(g=>g.key===a.goal)?.name||a.goal],['Symptoms',(a.symptoms||[]).join(', ')],['Duration',a.duration],['Medical history',(a.conditions||[]).join(', ')]].map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl><div className="cz-foot"><button className="cz-back" onClick={onBack}>Back</button><button className="cz-continue" onClick={onSubmit}>Finish preparation</button></div></>;}
 
-function Done(){return <><div className="eyebrow">Preparation complete</div><h1>Your next step: <em>the patient portal.</em></h1><p className="cz-sub">Your notes have not been sent to HRT.org. Continue in the official portal to complete your intake and request care. This page does not book or confirm a consultation.</p><a className="btn btn-primary" href="/portal/app/symptoms-tracker/">Continue to HRT.org patient portal</a><p><a href="Contact.html">Contact HRT.org for help</a></p></>;}
+function Done(){return <><div className="eyebrow">Preparation complete</div><h1>Your next step: <em>the patient portal.</em></h1><p className="cz-sub">Your notes have not been sent to HRT.org. Go to the official patient portal to complete your intake and request care. Finishing this page does not book or confirm a consultation.</p><a className="btn btn-primary" href="/portal/app/symptoms-tracker/">Continue to HRT.org patient portal</a><p><a href="Contact.html">Contact HRT.org for help</a></p></>;}
 
 function Progress({ style, step, total, name }) {
   const pct = Math.round(((step + 1) / total) * 100);
@@ -316,7 +316,7 @@ function ConsultApp() {
   const initialScreen = useRef(true);
   useEffect(() => { if(initialScreen.current){initialScreen.current=false;return;} const heading=mainRef.current?.querySelector('h1'); if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});heading.scrollIntoView({block:'start',behavior:'instant'});} }, [step, phase]);
 
-  const tone = {...TONES.warm,aboutHelp:"Prepare notes for your care conversation. The official intake and clinical consent are completed in the patient portal. HRT.org lists telehealth in Florida and California.",saved:"On this page only",reassure:"Not submitted to HRT.org"};
+  const tone = {...TONES.warm,aboutHelp:"Prepare notes for your conversation with a provider. Complete the official intake and clinical consent in the patient portal. HRT.org lists telehealth services in Florida and California.",saved:"On this page only",reassure:"Not submitted to HRT.org"};
   const ctaVar = t.ctaColor === "teal" ? "var(--teal)" : t.ctaColor === "ink" ? "var(--ink)" : "var(--primary)";
 
   // validation per step
@@ -374,7 +374,7 @@ function ConsultApp() {
       </div>
 
       <div className="cz-main" ref={mainRef}>
-        <div className="cz-center"><p className="cz-preparation-note">Optional preparation only. Answers stay in this page until you leave or refresh. <a href="/portal/app/symptoms-tracker/">Go directly to the patient portal</a> to request care.</p>
+        <div className="cz-center"><p className="cz-preparation-note">This preparation is optional. Your answers stay on this page until you leave or refresh it. <a href="/portal/app/symptoms-tracker/">Go directly to the patient portal</a> to request care.</p>
           {phase === "intake" && (
             <>
               <div key={step} className="cz-anim">{renderStep()}</div>

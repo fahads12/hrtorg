@@ -75,7 +75,7 @@ function AudSymptoms({ data, gender }) {
 
   const count = checked.size;
   const recHead=count ? 'Bring these concerns to your care team.' : 'Select the symptoms you want to discuss.';
-  const recBody='This list helps organize your concerns. Selections do not diagnose a condition or determine which treatment or test you need. They stay on this page and are not submitted.';
+  const recBody="Use this list to organize your concerns before speaking with your care team. Your selections cannot diagnose a condition or tell you which test or treatment you need. They stay on this page and are not submitted.";
   const recs=count ? [
     {ic:Icons.provider,name:'Talk to a provider',sub:'Continue to the HRT.org patient portal',href:'/portal/app/symptoms-tracker/'},
     {ic:Icons.test,name:'Explore lab testing',sub:'Learn about at-home collection',href:'Lab Testing.html'}
@@ -87,7 +87,7 @@ function AudSymptoms({ data, gender }) {
         <div className="aud-sec-head">
           <div className="eyebrow">Symptoms</div>
           <h2 style={{ marginTop: 14 }}>Which of these sound <span className="accent">familiar?</span></h2>
-          <p>Select the concerns you would like to discuss with a healthcare provider.</p>
+          <p>Choose the concerns you’d like to talk through with a healthcare provider.</p>
         </div>
         <div className="aud-symptoms-grid">
           <div className="aud-checklist">
@@ -134,7 +134,7 @@ function AudStages({ data }) {
         <div className="aud-sec-head">
           <div className="eyebrow">Life Stages</div>
           <h2 style={{ marginTop: 14 }}>Different decades, <span className="accent">different priorities.</span></h2>
-          <p>Explore health topics for different stages of life, from the HRT.org library.</p>
+          <p>Find information in the HRT.org library about health at different stages of life.</p>
         </div>
         <div className="aud-stage-grid">
           {data.stages.map((s, i) => (
@@ -163,7 +163,7 @@ function AudTreatments({ data, gender }) {
         <div className="aud-sec-head">
           <div className="eyebrow">Treatments</div>
           <h2 style={{ marginTop: 14 }}>Programs built <span className="accent">for you.</span></h2>
-          <p>Explore HRT.org’s treatment services and discuss suitability with your care team.</p>
+          <p>Learn about HRT.org’s treatments and ask your care team which may be suitable for you.</p>
         </div>
         <div className="aud-tx-grid">
           {data.treatments.map((t, i) => (

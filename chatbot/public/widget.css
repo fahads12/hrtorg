@@ -1,0 +1,6 @@
+:host{position:fixed;bottom:24px;right:24px;z-index:2147483000;font-family:Arial,sans-serif}
+button{cursor:pointer;font:600 13px Arial,sans-serif;border:0;background:#282f48;color:#fff;border-radius:50px;padding:16px 22px;box-shadow:0 6px 25px #282f4830}
+button:focus-visible{outline:3px solid #ea1f3e;outline-offset:4px}
+.panel{position:absolute;right:0;bottom:66px;width:420px;height:min(740px,calc(100dvh - 125px));border:1px solid #e3ddd6;border-radius:16px;overflow:hidden;background:#fcfaf8;box-shadow:0 12px 65px #282f4833}
+iframe{border:0;width:100%;height:100%}[hidden]{display:none!important}
+@media(max-width:480px){:host{bottom:14px;right:14px}.panel{width:calc(100vw - 28px);height:calc(100dvh - 105px)}}

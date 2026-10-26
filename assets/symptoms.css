@@ -1,0 +1,134 @@
+/* Symptoms pages share the site's type, colors, cards, and spacing.
+   Scoped to this section so other care layouts retain their own structure. */
+.symptom-page .p-page { color: var(--ink); }
+.symptom-page .p-page :is(section, article, .wrap, .symptom-grid) { min-width: 0; }
+.symptom-page .p-page .symptom-section { padding-block: 72px; }
+.symptom-page .p-page .symptom-section--signals { padding-block: 40px 24px; }
+.symptom-page .p-page .symptom-section--stats { padding-block: 24px 64px; }
+.symptom-page .p-page .symptom-section--reading { padding-block: 40px; }
+.symptom-page .p-page .symptom-section--research { padding-block: 0 64px; }
+.symptom-page .p-page .symptom-section--cta { padding-block: 24px 72px; }
+.symptom-page .p-page .symptom-reading { max-width: 820px; }
+.symptom-page .p-page .symptom-reading > h2,
+.symptom-page .p-page .symptom-section-head h2 {
+  font: 400 clamp(30px, 3.2vw, 44px)/1.15 Newsreader, Georgia, serif;
+  letter-spacing: -.025em;
+  color: var(--ink);
+  margin: 12px 0 0;
+  max-width: 28ch;
+  text-wrap: pretty;
+}
+.symptom-page .p-page .symptom-reading > h2 { font-size: clamp(28px, 2.8vw, 36px); margin: 0 0 18px; }
+.symptom-page .p-page .symptom-section-head { display: block; max-width: 820px; }
+.symptom-page .p-page .symptom-section-head > p { max-width: 65ch; margin: 18px 0 0; font-size: 16px; line-height: 1.75; }
+.symptom-page .p-page .symptom-section-head .symptom-audience-badge { margin-bottom: 8px; }
+.symptom-page .p-page .symptom-grid { display: grid; gap: 24px; margin-top: 32px; align-items: stretch; }
+.symptom-page .p-page .symptom-grid > * { min-width: 0; }
+.symptom-page .p-page .symptom-grid--hub,
+.symptom-page .p-page .symptom-grid--stats,
+.symptom-page .p-page .symptom-grid--care,
+.symptom-page .p-page .source-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.symptom-page .p-page .symptom-grid--protocol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.symptom-page .p-page .symptom-grid--related,
+.symptom-page .p-page .feat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.symptom-page .p-page .symptom-grid--signals { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.symptom-page .p-page .symptom-grid--stats { margin-top: 0; }
+.symptom-page .p-page .symptom-card {
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  min-width: 0;
+}
+.symptom-page .p-page .symptom-card h3 { font: 500 22px/1.3 Geist, Arial, sans-serif; letter-spacing: -.025em; margin: 12px 0; }
+.symptom-page .p-page .symptom-card p { font-size: 15px; line-height: 1.75; color: var(--ink-2); }
+.symptom-page .p-page .symptom-hub-card { display: flex; flex-direction: column; align-items: flex-start; }
+.symptom-page .p-page .symptom-hub-card p { flex: 1; margin: 0 0 24px; }
+.symptom-page .p-page .symptom-hub-card > a { min-height: 44px; line-height: 1.45; }
+.symptom-page .p-page .symptom-stat-label { font-size: 11px; line-height: 1.6; letter-spacing: 1.5px; overflow-wrap: break-word; }
+.symptom-page .p-page .symptom-stat-value { font: 400 clamp(42px, 4.5vw, 60px)/1.05 Newsreader, Georgia, serif; letter-spacing: -.03em; }
+.symptom-page .p-page .symptom-protocol-card { padding: 32px; }
+.symptom-page .p-page .symptom-protocol-card > p { margin: 0; }
+.symptom-page .p-page .symptom-protocol-card ul { margin-top: 24px; }
+.symptom-page .p-page .symptom-list-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(90px, .65fr); gap: 10px 20px; padding-block: 14px; align-items: start; }
+.symptom-page .p-page .symptom-list-row > span { min-width: 0; overflow-wrap: anywhere; line-height: 1.6; }
+.symptom-page .p-page .symptom-list-row > span:last-child { text-align: right; }
+/* These cards are text-first; the global .care-path grid belongs to photo cards. */
+.symptom-page .p-page .care-path {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 28px;
+  overflow: visible;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+}
+.symptom-page .p-page .care-path > * { min-width: 0; max-width: 100%; }
+.symptom-page .p-page .care-path .eyebrow { margin: 0 0 16px; }
+.symptom-page .p-page .care-path h3 { font: 500 22px/1.3 Geist, Arial, sans-serif; letter-spacing: -.025em; margin: 0 0 14px; }
+.symptom-page .p-page .care-path p { font-size: 15px; line-height: 1.75; margin: 0 0 24px; }
+.symptom-page .p-page .care-path .text-link { margin-top: auto; padding-block: 8px; font-size: 14px; line-height: 1.5; min-height: 40px; }
+.symptom-page .p-page .symptom-related-card { display: flex; align-items: center; min-height: 92px; padding: 24px; border-radius: 16px; }
+.symptom-page .p-page .symptom-related-card h3 { font: 500 18px/1.4 Geist, Arial, sans-serif; margin: 0; }
+.symptom-page .p-page .symptom-related-card:hover { border-color: var(--primary); background: var(--bg-2); }
+.symptom-page .p-page a:focus-visible,
+.symptom-page .p-page summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.symptom-page .p-page .symptom-faqs { margin-top: 32px; max-width: 900px; }
+.symptom-page .p-page .symptom-faqs details { padding: 0; border: 1px solid var(--line); border-radius: 14px; background: #fff; margin-bottom: 12px; }
+.symptom-page .p-page .symptom-faqs summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; list-style: none; padding: 22px 24px; font: 500 16px/1.5 Geist, Arial, sans-serif; cursor: pointer; }
+.symptom-page .p-page .symptom-faqs summary::-webkit-details-marker { display: none; }
+.symptom-page .p-page .symptom-faqs summary::after { content: '+'; flex: 0 0 20px; text-align: center; font-size: 24px; font-weight: 400; }
+.symptom-page .p-page .symptom-faqs details[open] summary::after { content: '\2212'; }
+.symptom-page .p-page .symptom-faqs details > p { margin: 0; padding: 0 24px 24px; font-size: 15px; line-height: 1.75; }
+.symptom-page .p-page .symptom-faq-divider { display: none; }
+.symptom-page .p-page .source-grid { display: grid; gap: 24px; margin-top: 32px; padding: 0; }
+.symptom-page .p-page .source-card { border-radius: 18px; min-width: 0; }
+.symptom-page .p-page .source-card > a { display: flex; flex-direction: column; height: 100%; }
+.symptom-page .p-page .source-card a > div { display: flex; flex-direction: column; flex: 1; padding: 24px; }
+.symptom-page .p-page .source-card h2 { font: 400 27px/1.22 Newsreader, Georgia, serif; letter-spacing: -.02em; margin: 14px 0 24px; overflow-wrap: break-word; }
+.symptom-page .p-page .source-card .text-link { margin-top: auto; font-size: 14px; line-height: 1.5; }
+.symptom-page .p-page .source-card img { display: block; width: 100%; height: 210px; object-fit: cover; flex-shrink: 0; }
+.symptom-page .p-page .mini-cta { gap: 32px; }
+.symptom-page .p-page .mini-cta h2 { max-width: 25ch; }
+.symptom-page .p-page .mini-cta .right { gap: 12px; }
+@media (max-width: 1100px) {
+  .symptom-page .p-page .symptom-grid--hub,
+  .symptom-page .p-page .symptom-grid--related,
+  .symptom-page .p-page .feat-grid,
+  .symptom-page .p-page .symptom-grid--signals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .symptom-page .p-page .symptom-grid--protocol,
+  .symptom-page .p-page .symptom-grid--care { grid-template-columns: minmax(0, 1fr); }
+  .symptom-page .p-page .symptom-card { padding: 24px; }
+  .symptom-page .p-page .mini-cta { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 640px) {
+  .symptom-page .p-page .symptom-section { padding-block: 48px; }
+  .symptom-page .p-page .symptom-section--signals { padding-block: 32px 20px; }
+  .symptom-page .p-page .symptom-section--stats { padding-block: 20px 40px; }
+  .symptom-page .p-page .symptom-section--research { padding-block: 0 40px; }
+  .symptom-page .p-page .symptom-section--reading { padding-block: 28px; }
+  .symptom-page .p-page .symptom-section--cta { padding-block: 16px 48px; }
+  .symptom-page .p-page .symptom-grid--hub,
+  .symptom-page .p-page .symptom-grid--stats,
+  .symptom-page .p-page .symptom-grid--related,
+  .symptom-page .p-page .symptom-grid--signals,
+  .symptom-page .p-page .feat-grid,
+  .symptom-page .p-page .source-grid { grid-template-columns: minmax(0, 1fr); }
+  .symptom-page .p-page .symptom-grid { gap: 16px; margin-top: 26px; }
+  .symptom-page .p-page .symptom-grid--stats { margin-top: 0; }
+  .symptom-page .p-page .symptom-section-head h2 { font-size: 32px; }
+  .symptom-page .p-page .symptom-card,
+  .symptom-page .p-page .care-path { padding: 24px; }
+  .symptom-page .p-page .symptom-list-row { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+  .symptom-page .p-page .symptom-list-row > span:last-child { text-align: left; }
+  .symptom-page .p-page .symptom-faqs summary { padding: 18px 20px; gap: 16px; }
+  .symptom-page .p-page .symptom-faqs details > p { padding: 0 20px 20px; }
+  .symptom-page .p-page .source-card h2 { font-size: 27px; }
+  .symptom-page .p-page .mini-cta .right,
+  .symptom-page .p-page .mini-cta .btn { width: 100%; }
+}

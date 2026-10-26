@@ -1,0 +1,10 @@
+node_modules/
+.npm-cache/
+.env*
+!.env.example
+data/raw/
+data/*.lock
+data/*.tmp
+test-results/
+playwright-report/
+*.log

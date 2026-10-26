@@ -1,0 +1,9 @@
+node_modules
+.npm-cache
+.env*
+.git
+test-results
+data/raw
+data/*.lock
+data/*.tmp
+*.log

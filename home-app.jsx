@@ -10,7 +10,7 @@ const TREATMENTS_HOME = [
     eyebrow: "Hormone Replacement",
     title: "Hormone Therapy",
     titleAccent: "for every chapter",
-    blurb: "Personalized HRT for women navigating perimenopause and menopause, and for men optimizing testosterone, energy, and long-term wellness.",
+    blurb: "Personalized HRT for women going through perimenopause and menopause, and for men focusing on testosterone, energy, and long-term wellness.",
     chips: ["Bioidentical Cream", "Estrogen", "Progesterone", "Testosterone"],
     featured: true,
     visualLabel: "MEN & WOMEN PORTRAIT • EDITORIAL",
@@ -20,7 +20,7 @@ const TREATMENTS_HOME = [
     eyebrow: "Performance & Longevity",
     title: "Peptide Therapy",
     titleAccent: "",
-    blurb: "Explore the peptide therapy options described by HRT.org and discuss suitability with a provider.",
+    blurb: "Learn about HRT.org’s peptide therapy options and talk with a provider about whether they’re suitable for you.",
     chips: ["BPC-157", "GHK-Cu", "Tesamorelin"],
     visualLabel: "PEPTIDE VIAL • CLOSE-UP",
   },
@@ -29,7 +29,7 @@ const TREATMENTS_HOME = [
     eyebrow: "Metabolic Health",
     title: "Weight Management",
     titleAccent: "",
-    blurb: "Explore HRT.org’s weight loss and management services and discuss your options with a provider.",
+    blurb: "Learn about HRT.org’s weight loss and management services, and talk through your options with a provider.",
     chips: ["Semaglutide", "Tirzepatide", "Lifestyle plan"],
     visualLabel: "LIFESTYLE • ACTIVE COUPLE",
   },
@@ -38,7 +38,7 @@ const TREATMENTS_HOME = [
     eyebrow: "Intimacy & Vitality",
     title: "Sexual Health",
     titleAccent: "",
-    blurb: "Discuss libido, performance, and intimacy concerns with the HRT.org care team.",
+    blurb: "Talk with the HRT.org care team about concerns with libido, performance, or intimacy.",
     chips: ["ED Therapy", "Libido Support", "Counseling"],
     visualLabel: "ABSTRACT • SOFT FORMS",
   },
@@ -47,17 +47,17 @@ const TREATMENTS_HOME = [
     eyebrow: "Confidence",
     title: "Hair Loss",
     titleAccent: "",
-    blurb: "Explore HRT.org’s oral and topical treatment options for thinning and pattern hair loss.",
+    blurb: "Learn about HRT.org’s oral and topical treatments for thinning hair and pattern hair loss.",
     chips: ["Finasteride", "Minoxidil", "Compounded topical"],
     visualLabel: "DETAIL • TEXTURE",
   },
 ];
 
 const PILLARS = [
- {n:'01',t:'Education',d:'Information to help you make informed decisions about your health and wellness.'},
- {n:'02',t:'Testing',d:'Assessment and results to help explore and monitor care options.'},
- {n:'03',t:'Self-Care',d:'Consider lifestyle, exercise, diet, and nutrition as part of your health.'},
- {n:'04',t:'Prescriptive Care',d:'Discuss individually customized treatment with your healthcare provider.'}
+ {n:'01',t:'Education',d:"Get information to help you make informed choices about your health and wellness."},
+ {n:'02',t:'Testing',d:"Use assessments and results to explore care options and monitor your care."},
+ {n:'03',t:'Self-Care',d:"Consider how your daily habits, exercise, diet, and nutrition affect your health."},
+ {n:'04',t:'Prescriptive Care',d:"Talk with your healthcare provider about treatment tailored to you."}
 ];
 
 
@@ -73,7 +73,7 @@ function HomeHero() {
   return <section className="home-hero"><div className="wrap home-hero-grid">
     <div><div className="eyebrow">Personalized hormone health</div>
       <h1 style={{marginTop:20}}>Personalized<br/>Hormone Health,<br/>Guided by Science.</h1>
-      <p className="home-hero-sub">Provider-guided hormone therapy, at-home testing, and personalized treatment options for women and men.</p>
+      <p className="home-hero-sub">Hormone therapy, at-home testing, and treatment tailored to you, with guidance from a provider. For women and men.</p>
       <div className="home-hero-ctas"><a className="btn btn-primary" href="/portal/app/symptoms-tracker/">Get Started {Icons.arrow}</a><a className="btn btn-ghost" href="Treatments.html">Explore Treatments</a></div>
       <div className="hero-assurances"><span>{Icons.shield} Private care</span><span>{Icons.provider} Licensed providers</span><span>{Icons.home} At-home testing</span></div>
     </div><div className="home-care-visual home-audience-portraits" data-care-motion role="group" aria-label="Choose your care">
@@ -128,7 +128,7 @@ function MasterYourHealth() {
         <div>
           <div className="eyebrow">Why HRT</div>
           <h2 style={{ marginTop: 14 }}>Master your health.<br/><span className="accent">Reclaim your rhythm.</span></h2>
-          <p className="master-sub">Hormones touch everything — sleep, focus, energy, intimacy, recovery. We build care around all of it, with licensed providers, advanced labs, and treatments delivered to your door.</p>
+          <p className="master-sub">Hormones affect your sleep, focus, energy, intimacy, and recovery. Our care brings together licensed providers, advanced lab testing, and treatments delivered to your door.</p>
           <div style={{ display: "flex", gap: 12 }}>
             <a className="btn btn-teal" href="/portal/app/symptoms-tracker/">Explore your care {Icons.arrow}</a>
             <a href="How It Works.html" className="btn btn-light">How it works {Icons.arrow}</a>

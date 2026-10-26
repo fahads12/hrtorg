@@ -14,12 +14,14 @@ http.createServer((req,res)=>{
  // Encoded control characters are not valid public paths. In particular, a NUL
  // would make fs.readFile throw synchronously and terminate the preview server.
  if(/[\u0000-\u001f\u007f]/.test(route)){res.writeHead(400).end();return;}
- const redirect=redirects.find(r=>r.source===route.replace(/\/$/,''));
+ // Match canonical paths before slash-tolerant aliases, avoiding a redirect
+ // from an already-canonical trailing-slash URL back to itself.
+ const redirect=redirects.find(r=>r.source===route)||redirects.find(r=>r.source===route.replace(/\/$/,'')&&(r.destination.startsWith('https:')||new URL(r.destination,'http://localhost').pathname!==route));
  if(redirect){const destination=new URL(redirect.destination,'http://localhost');const query=new URL(req.url,'http://localhost').searchParams;for(const [key,value] of query)if(!destination.searchParams.has(key))destination.searchParams.append(key,value);res.writeHead(redirect.permanent?308:307,{Location:redirect.destination.startsWith('https:')?destination.href:destination.pathname+destination.search}).end();return;}
  if(/^\/blog-categories\/(?:%20|\s)+heart-health\//i.test(route)){res.writeHead(308,{Location:'/blog-categories/heart-health/index.html'}).end();return;}
  let file=path.resolve(root,'.'+route);
  if(!file.startsWith(root+path.sep)&&file!==root){res.writeHead(403).end();return;}
- const relative=path.relative(root,file);if(/^(?:node_modules|source-content|scraps|dist|\.[^\\/]+)(?:[\\/]|$)/i.test(relative)){res.writeHead(404).end();return;}
+ const relative=path.relative(root,file);if(/^(?:node_modules|source-content|scraps|dist|chatbot|\.[^\\/]+)(?:[\\/]|$)/i.test(relative)){res.writeHead(404).end();return;}
  if(fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');
  const ext=path.extname(file);if(!mime[ext]){notFound(res);return;}
  fs.readFile(file,(err,data)=>{if(err){notFound(res);return;}res.writeHead(200,{'Content-Type':mime[ext],'Cache-Control':ext==='.html'?'no-store':'no-cache','X-Content-Type-Options':'nosniff'});res.end(req.method==='HEAD'?undefined:data);});

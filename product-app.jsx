@@ -168,7 +168,7 @@ function WhoSection({variant, anchorHref}) {
 
 function HowSection(){return <section id="how" className="feat-band"><div className="wrap"><h2>Care that meets you <em>where you are.</em></h2><div className="feat-grid">{CARE_STEPS.slice(0,4).map(s=><div className="feat-card" key={s.n}><div className="num">STEP {s.n}</div><h3>{s.title}</h3><p>{s.body}</p></div>)}</div></div></section>;}
 
-function PlansSection(){return <section id="plans"><div className="wrap"><div className="section-head"><div className="eyebrow">Your next step</div><h2>Care built around <em>your goals.</em></h2><p>See current product prices in the separate HRT.org store. Discuss treatment through the patient portal.</p></div><CareOptions/></div></section>;}
+function PlansSection(){return <section id="plans"><div className="wrap"><div className="section-head"><div className="eyebrow">Your next step</div><h2>Care built around <em>your goals.</em></h2><p>Check current product prices in the HRT.org store, and use the patient portal to discuss treatment.</p></div><CareOptions/></div></section>;}
 
 function WhySection() {
   return (

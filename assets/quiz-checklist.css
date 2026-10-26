@@ -1,0 +1,28 @@
+/* The Symptom Check menu uses the existing assessment layout and site design. */
+.quiz-checklist-page .checklist-heading-copy > .quiz-subtitle {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--checklist-ink);
+}
+.quiz-checklist-page .checklist-panel { scroll-margin-top: 110px; }
+.quiz-checklist-page .checklist-education { margin-top: 48px; }
+.quiz-checklist-page .checklist-education .source-prose { max-width: 820px; margin-inline: auto; padding-block: 16px 32px; }
+.quiz-checklist-page .checklist-education .source-prose :is(h2, h3) { font-family: Newsreader, Georgia, serif; font-weight: 400; letter-spacing: -.02em; }
+.quiz-checklist-page .checklist-education .source-prose h2 { font-size: clamp(28px, 2.6vw, 36px); }
+.quiz-checklist-page .checklist-education .source-prose :is(ul, ol) { padding-left: 24px; margin-block: 20px; }
+.quiz-checklist-page .checklist-education .source-prose li { margin-block: 10px; }
+.quiz-checklist-page .quiz-end-cta { padding-block: 56px 0; }
+.quiz-checklist-page .quiz-end-cta > .wrap { width: 100%; padding: 0; }
+.quiz-checklist-page .mini-cta { gap: 32px; }
+.quiz-checklist-page .mini-cta h2 { font: 400 clamp(28px, 3vw, 40px)/1.2 Newsreader, Georgia, serif; max-width: 26ch; }
+.quiz-checklist-page .mini-cta .right { gap: 10px; }
+@media (max-width: 900px) {
+  .quiz-checklist-page .mini-cta { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 650px) {
+  .quiz-checklist-page .checklist-education { margin-top: 32px; }
+  .quiz-checklist-page .checklist-heading-copy > .quiz-subtitle { font-size: 16px; }
+  .quiz-checklist-page .quiz-end-cta { padding-top: 32px; }
+  .quiz-checklist-page .mini-cta .right, .quiz-checklist-page .mini-cta .btn { width: 100%; }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "hrt-ai-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.19" },
+  "scripts": {
+    "dev": "node --use-system-ca --watch --env-file-if-exists=.env.local server/index.js",
+    "start": "node --use-system-ca --env-file-if-exists=.env.local server/index.js",
+    "build": "tailwindcss -i frontend/styles.css -o public/styles.css --minify",
+    "sync": "node --use-system-ca --env-file-if-exists=.env.local scripts/sync.js",
+    "models": "node --use-system-ca --env-file-if-exists=.env.local scripts/models.js",
+    "refresh": "node --use-system-ca --env-file-if-exists=.env.local scripts/refresh.js",
+    "test": "node --use-system-ca --test tests/*.test.js",
+    "test:browser": "node --use-system-ca scripts/browser-test.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "openai": "^6.0.0",
+    "robots-parser": "^3.0.1",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "@playwright/test": "^1.56.0"
+  }
+}

@@ -27,3 +27,25 @@ scraps/**/*.html
 scraps/**/*.json
 scraps/**/*.txt
 CLIENT-PREVIEW.md
+
+# Local working copies, audit captures, extracted archives, and backups.
+.chatbot-audit/
+.chatbot-design/
+.chatbot-widget/
+.humanizer-work/
+.image-repair/
+.portal-review/
+.push-preparation/
+.quiz-repair/
+.site-audit/
+.symptoms-format/
+backups/
+*.bak
+
+# Chatbot credentials are covered by .env* above; keep runtime artifacts local.
+.npm-cache/
+chatbot/data/raw/
+chatbot/data/*.lock
+chatbot/data/*.tmp
+test-results/
+playwright-report/

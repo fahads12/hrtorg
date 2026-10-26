@@ -68,3 +68,6 @@ console.log('Production homepage compiled; all generated asset URLs fingerprinte
 require('./build-portal.cjs')();
 require('./prerender-site.cjs')();
 require('./build-page-metadata.cjs')();
+
+// Keep the guide embed on regenerated pages.
+require('./integrate-chatbot.cjs')();

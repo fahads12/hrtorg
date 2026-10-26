@@ -1,0 +1,1337 @@
+{
+  "reviewedAt": "2026-10-26T15:43:49.223Z",
+  "entries": [
+    {
+      "id": "overview",
+      "type": "overview",
+      "title": "How HRT works",
+      "url": "https://hrt.org",
+      "text": "HRT presents healthcare services for men and women, including hormone replacement therapy, peptide therapy, sexual health, hair loss and weight management. It also offers at-home lab testing. Service exploration, store purchases and clinician-led care are separate steps; a store purchase does not establish eligibility for prescription treatment.",
+      "evidence": [
+        "HRT is modern healthcare for men and women",
+        "Hormone Replacement Therapy",
+        "Customized Weight Management Program"
+      ],
+      "tags": [
+        "how",
+        "works",
+        "process",
+        "HRT",
+        "services",
+        "overview",
+        "women",
+        "men",
+        "treatments"
+      ],
+      "sourceHash": "3d13a5b36d71829532b22a01939c34fe92520b127a3ab18e3871783fde2a0618",
+      "reviewedAt": "2026-10-26T15:43:49.201Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "a9661af61a28d365bf96f3ee5ccccbf01a824e97c1e531ce000f65b9ded570ca",
+      "fetchedAt": "2026-10-26T15:42:47.627Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "telehealth-geography",
+      "type": "geography",
+      "title": "Telehealth service availability",
+      "url": "https://hrt.org",
+      "text": "HRT currently publishes telehealth availability in Florida and California. Availability outside those states is not verified. Product shipping restrictions are separate from telehealth availability; confirm with HRT support if unsure.",
+      "evidence": [
+        "Telehealth services currently available in Florida and California"
+      ],
+      "tags": [
+        "geography",
+        "state",
+        "country",
+        "availability",
+        "telehealth",
+        "treatment",
+        "Florida",
+        "California"
+      ],
+      "sourceHash": "3d13a5b36d71829532b22a01939c34fe92520b127a3ab18e3871783fde2a0618",
+      "reviewedAt": "2026-10-26T15:43:49.203Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "78ce0a4aae06556c66923e216292c6b918736270996803e5b9c08d5f572f97e7",
+      "fetchedAt": "2026-10-26T15:42:47.627Z",
+      "supportedStates": [
+        "Florida",
+        "California"
+      ],
+      "additionalEvidence": []
+    },
+    {
+      "id": "care-pathway",
+      "type": "pathway",
+      "title": "HRT Get Started pathway",
+      "url": "https://hrt.org",
+      "text": "HRT links its Get Started action to its symptoms-tracker portal. This is a starting pathway, not a booked appointment or guarantee of treatment. Verify the visitor’s location against the published telehealth geography before offering it, and let HRT confirm eligibility.",
+      "evidence": [
+        "Telehealth services currently available in Florida and California"
+      ],
+      "tags": [
+        "consultation",
+        "start",
+        "appointment",
+        "portal",
+        "care",
+        "process",
+        "how",
+        "book",
+        "booking",
+        "schedule",
+        "consultation"
+      ],
+      "sourceHash": "3d13a5b36d71829532b22a01939c34fe92520b127a3ab18e3871783fde2a0618",
+      "reviewedAt": "2026-10-26T15:43:49.203Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "action": {
+        "title": "Continue to HRT’s Get Started portal",
+        "url": "https://portal.hrt.org/app/symptoms-tracker"
+      },
+      "evidenceHash": "78ce0a4aae06556c66923e216292c6b918736270996803e5b9c08d5f572f97e7",
+      "fetchedAt": "2026-10-26T15:42:47.627Z",
+      "verifiedLinks": [
+        "https://portal.hrt.org/app/symptoms-tracker"
+      ],
+      "additionalEvidence": []
+    },
+    {
+      "id": "service-hormone",
+      "type": "service",
+      "title": "Hormone replacement therapy",
+      "url": "https://hrt.org/men/hormone-replacement-therapy",
+      "text": "Explore HRT’s hormone therapy services for men and women. Hormone-related symptoms and treatment suitability need assessment by a licensed clinician.",
+      "evidence": [
+        "Hormone Replacement Therapy (HRT) For Men"
+      ],
+      "tags": [
+        "hormone",
+        "testosterone",
+        "menopause",
+        "estrogen",
+        "tired",
+        "fatigue"
+      ],
+      "sourceHash": "8832dc5109268a7f2923fa7a2ab48168f2c3235b2db104241c0ed03e43bbc56e",
+      "reviewedAt": "2026-10-26T15:43:49.204Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "links": [
+        {
+          "title": "For women",
+          "url": "https://hrt.org/women/hormone-replacement-therapy"
+        }
+      ],
+      "primaryAudience": "For men",
+      "evidenceHash": "d8bb948d6cf7a3b152f439addd2dfe2480bb7c5bc3eae013c0b317a5d9887292",
+      "fetchedAt": "2026-10-26T15:42:48.295Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "service-peptide",
+      "type": "service",
+      "title": "Peptide therapy",
+      "url": "https://hrt.org/men/anti-aging-peptides",
+      "text": "HRT publishes peptide therapy services for men and women. Ask a licensed clinician about the specific therapy, its evidence, risks and suitability; promotional claims do not guarantee benefits.",
+      "evidence": [
+        "Anti Aging Peptides Therapy for Men"
+      ],
+      "tags": [
+        "peptide",
+        "aging"
+      ],
+      "sourceHash": "3e76434bc4fe22e83fd275205f9eb7374fe44434304609cae25bc2e9f70d8e46",
+      "reviewedAt": "2026-10-26T15:43:49.204Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "links": [
+        {
+          "title": "For women",
+          "url": "https://hrt.org/women/anti-aging-peptides"
+        }
+      ],
+      "primaryAudience": "For men",
+      "evidenceHash": "60c0d3a729327f52fe276e6befd55fd8a2d5bf79e042bb65ae5a7f8547ef6708",
+      "fetchedAt": "2026-10-26T15:42:48.163Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "service-weight",
+      "type": "service",
+      "title": "Weight management",
+      "url": "https://hrt.org/men/weight-loss-and-management",
+      "text": "HRT describes a weight management program involving consultation with a physician and possible pharmaceutical support. A clinician decides whether treatment is appropriate.",
+      "evidence": [
+        "Weight Loss Treatment and Management for Men"
+      ],
+      "tags": [
+        "weight",
+        "management",
+        "loss",
+        "semaglutide"
+      ],
+      "sourceHash": "5f207913fbc6e2b85ad616767f007aed45a2538f19261c625a988fab33aec495",
+      "reviewedAt": "2026-10-26T15:43:49.204Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "links": [
+        {
+          "title": "For women",
+          "url": "https://hrt.org/women/weight-loss-and-management"
+        }
+      ],
+      "primaryAudience": "For men",
+      "evidenceHash": "d36aeea7e91702c5dde3d1e08ec08c9727eff8409ca647cb7f3ef5d5e654042d",
+      "fetchedAt": "2026-10-26T15:42:48.358Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "service-sexual",
+      "type": "service",
+      "title": "Sexual health",
+      "url": "https://hrt.org/men/sexual-health",
+      "text": "Explore HRT’s sexual health service information for men and women. Discuss symptoms, possible causes and treatment options with a licensed clinician.",
+      "evidence": [
+        "Men's Sexual Health | Comprehensive Treatment"
+      ],
+      "tags": [
+        "sexual",
+        "libido",
+        "erectile",
+        "intimacy"
+      ],
+      "sourceHash": "8d58d4b1f30f8ada4acd78dbf2099fd69c021f95d47ab849e9badf534ce23ce8",
+      "reviewedAt": "2026-10-26T15:43:49.204Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "links": [
+        {
+          "title": "For women",
+          "url": "https://hrt.org/women/sexual-health"
+        }
+      ],
+      "primaryAudience": "For men",
+      "evidenceHash": "678733d377d9782869ce56f5b5e46dd4d0fbc2ee607d30a38ac98ff48091f5ff",
+      "fetchedAt": "2026-10-26T15:42:48.342Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "service-hair",
+      "type": "service",
+      "title": "Hair loss",
+      "url": "https://hrt.org/men/hair-loss",
+      "text": "HRT publishes hair-loss service information for men and women. A clinician can assess the cause and discuss whether a treatment is suitable.",
+      "evidence": [
+        "Hair Loss Treatment & Care Solutions for Men"
+      ],
+      "tags": [
+        "hair",
+        "loss",
+        "balding"
+      ],
+      "sourceHash": "6aacfefe9ad775724c1a5bca9b724c1995857847e5bddf8b236ce167b0180161",
+      "reviewedAt": "2026-10-26T15:43:49.205Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "links": [
+        {
+          "title": "For women",
+          "url": "https://hrt.org/women/hair-loss"
+        }
+      ],
+      "primaryAudience": "For men",
+      "evidenceHash": "cfcd8ef2da7926ebeced1f4fd5befc00cc056ecc1d2921f663eae4029f56072a",
+      "fetchedAt": "2026-10-26T15:42:48.282Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "service-testing",
+      "type": "service",
+      "title": "At-home lab testing",
+      "url": "https://hrt.org/lab-testing",
+      "text": "HRT lists blood spot, dried urine, saliva and combination tests. The sample type depends on the specific kit. Compare the published biomarkers and collection information, and ask your clinician which test is appropriate.",
+      "evidence": [
+        "We offer Blood Spot Testing, Dried Urine Testing, Saliva Testing, and Combination Testing, depending on which test you choose."
+      ],
+      "tags": [
+        "test",
+        "testing",
+        "lab",
+        "blood",
+        "saliva",
+        "urine",
+        "collection",
+        "how"
+      ],
+      "sourceHash": "eb3ade11219073896f5563364367ad3f9bcc5fd0e58eaeca70aabcd160489078",
+      "reviewedAt": "2026-10-26T15:43:49.205Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "f63d2027b14e73a1eb867acc740d5001b97d1169b03997b684d00022c56a9c2f",
+      "fetchedAt": "2026-10-26T15:42:47.669Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "testing-shipping",
+      "type": "policy",
+      "title": "Test-kit shipping restrictions",
+      "url": "https://store.hrt.org/pages/easy-faqs",
+      "text": "The store FAQ says test kits cannot be shipped to New York or Maryland residents, California residents need prior authorization from a licensed healthcare professional, and PO boxes are not supported. International taxes and duties are the receiver’s responsibility, but the FAQ does not establish a full supported-country list. Confirm eligibility and delivery with HRT before ordering. These are published store rules, not legal advice.",
+      "evidence": [
+        "Test kits cannot be shipped to New York or Maryland residents.",
+        "California residents need prior authorization from a licensed healthcare professional to order testing.",
+        "Cannot ship to PO Boxes",
+        "International receivers must pay any and all sales/country taxes, import fees or duties required by customs."
+      ],
+      "tags": [
+        "shipping",
+        "restrictions",
+        "New York",
+        "Maryland",
+        "California",
+        "international",
+        "country",
+        "delivery",
+        "eligibility"
+      ],
+      "sourceHash": "9990a18a6d3b92a3862bff86e02d9fa95e67d38acf79b3de6122bab8aa68dad9",
+      "reviewedAt": "2026-10-26T15:43:49.207Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "874049a3fc4d83dd72a27358a672c2ed4cece52afc6eba4f4647e88601eac7c0",
+      "fetchedAt": "2026-10-26T15:42:49.186Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "testing-collection",
+      "type": "faq",
+      "title": "How at-home sample collection works",
+      "url": "https://store.hrt.org/pages/easy-faqs",
+      "text": "The store FAQ describes finger-prick blood collection onto a card, saliva collection in a tube, and urine collection on a card that dries before shipping. Kits include collection supplies and return packaging. The exact preparation and collection schedule depend on the kit; follow its instructions and ask your clinician about any medication-related instructions. Do not change prescribed medication based on this guide.",
+      "evidence": [
+        "Using the lancet included in the test kit, prick your finger and apply a few drops to the collection card.",
+        "Your test kit contains a collection card, which must be saturated with urine and left to dry before shipping.",
+        "All test kits include a sterile collection receptacle or card"
+      ],
+      "tags": [
+        "sample",
+        "collection",
+        "blood",
+        "saliva",
+        "urine",
+        "preparation",
+        "how",
+        "test"
+      ],
+      "sourceHash": "9990a18a6d3b92a3862bff86e02d9fa95e67d38acf79b3de6122bab8aa68dad9",
+      "reviewedAt": "2026-10-26T15:43:49.208Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "09a14751730385872cf0322f407894729b12c73829b9a48dc32657762b5c728a",
+      "fetchedAt": "2026-10-26T15:42:49.186Z",
+      "additionalEvidence": []
+    },
+    {
+      "id": "store-return-policy",
+      "type": "policy",
+      "title": "Store return and refund policy",
+      "url": "https://store.hrt.org/policies/refund-policy",
+      "text": "The store policy uses a 30-day window from purchase, requires unused items in original packaging and proof of purchase, excludes sale items from refunds, and makes refunds subject to inspection. It says test kits include prepaid return-to-lab shipping and customers pay supplement return shipping. HRT’s main-site policy instead uses 30 days from delivery for eligible unopened items. Because these terms differ, contact HRT to confirm the policy for your order before returning anything.",
+      "evidence": [
+        "Our policy lasts 30 days.",
+        "Only regular priced items may be refunded",
+        "All testing kits come with prepaid shipping back to the lab."
+      ],
+      "tags": [
+        "return",
+        "refund",
+        "policy",
+        "shipping",
+        "support",
+        "conflict"
+      ],
+      "sourceHash": "8e042bd19045c64ff79918361705b4f4d082f069925221e21affb1dab32ab2a8",
+      "reviewedAt": "2026-10-26T15:43:49.208Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "d09dc2ddcbe0e74cc6eb7c18e44c3c11440035f67682f5baccc2dfa5ec5cfe0b",
+      "fetchedAt": "2026-10-26T15:42:48.585Z",
+      "additionalEvidence": [
+        {
+          "url": "https://hrt.org/return-policy",
+          "evidence": [
+            "Unopened and unused at-home lab kits may be eligible for a return within 30 days of delivery.",
+            "Unopened supplements and non-prescription wellness products may be returned within 30 days of delivery."
+          ],
+          "evidenceHash": "2e69d2804c89536966b5b0088b0c6f9db1228435105f4593cc8bd1b6be12e14c",
+          "fetchedAt": "2026-10-26T15:42:47.947Z"
+        }
+      ]
+    },
+    {
+      "id": "main-return-policy",
+      "type": "policy",
+      "title": "HRT return policy — differences to confirm",
+      "url": "https://hrt.org/return-policy",
+      "text": "The main HRT site says unopened, unused lab kits and supplements may be eligible within 30 days of delivery, and requests should go through support@hrt.org. It says dispensed prescriptions cannot be returned or refunded and consultation fees are non-refundable after the consultation, regardless of prescription outcome. This differs from the store policy’s purchase-date window and sale-item exclusion. Ask support to confirm the terms for your order.",
+      "evidence": [
+        "Unopened and unused at-home lab kits may be eligible for a return within 30 days of delivery.",
+        "Telehealth consultation fees are non-refundable once the consultation has taken place, regardless of prescription outcome.",
+        "Prescription medications, once dispensed, cannot be returned or refunded."
+      ],
+      "tags": [
+        "return",
+        "refund",
+        "policy",
+        "consultation",
+        "prescription",
+        "conflict"
+      ],
+      "sourceHash": "2b47cbfb983b738be961a48c413d3eca30fa1d095cb7eddbfc0c0d480e6308d4",
+      "reviewedAt": "2026-10-26T15:43:49.208Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "202d85ad9eaa1def2cbf817f103669bb7ffb4e01347b283ffe45b393182b0a4f",
+      "fetchedAt": "2026-10-26T15:42:47.947Z",
+      "additionalEvidence": [
+        {
+          "url": "https://store.hrt.org/policies/refund-policy",
+          "evidence": [
+            "Our policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange.",
+            "- Any item not in its original condition, is damaged or missing parts for reasons not due to our error - Any item that is returned more than 30 days after delivery",
+            "Only regular priced items may be refunded, unfortunately sale items cannot be refunded."
+          ],
+          "evidenceHash": "c7d8ba92371c0f0a0cd39db3c8edf9133fc0d0acff2810905e994ffaee101562",
+          "fetchedAt": "2026-10-26T15:42:48.585Z"
+        }
+      ]
+    },
+    {
+      "id": "dispatch",
+      "type": "policy",
+      "title": "Dispatch and return-to-lab shipping",
+      "url": "https://store.hrt.org/policies/refund-policy",
+      "text": "The store refund page says it makes an effort to ship the same day for orders before 11am PST; the FAQ says orders generally ship within two business days. Neither is a delivery guarantee. The standalone shipping-policy page has no substantive policy text. Test sample return-to-lab postage is different from returning an unused purchase for a refund. Confirm delivery expectations and return instructions with HRT.",
+      "evidence": [
+        "We make every effort to ship same day if order is placed before 11am PST.",
+        "All testing kits come with prepaid shipping back to the lab."
+      ],
+      "tags": [
+        "shipping",
+        "dispatch",
+        "delivery",
+        "days",
+        "timing",
+        "postage"
+      ],
+      "sourceHash": "8e042bd19045c64ff79918361705b4f4d082f069925221e21affb1dab32ab2a8",
+      "reviewedAt": "2026-10-26T15:43:49.209Z",
+      "reviewScope": "Business-source editorial review; not clinical approval",
+      "evidenceHash": "a1c18a079dfe920840589a95eaae2fa8dae7e9714bee14d27f8c9bfe6ce7245c",
+      "fetchedAt": "2026-10-26T15:42:48.585Z",
+      "additionalEvidence": [
+        {
+          "url": "https://store.hrt.org/pages/easy-faqs",
+          "evidence": [
+            "Orders generally ship within 2 business days"
+          ],
+          "evidenceHash": "955b6efa78a56fe43b6b7399ee5e68bbbea101c1564d82475b447a424e874962",
+          "fetchedAt": "2026-10-26T15:42:49.186Z"
+        }
+      ]
+    },
+    {
+      "id": "insurance-coverage-conflict",
+      "type": "policy",
+      "title": "Insurance, Medicare, FSA and superbills — conflicting published information",
+      "url": "https://hrt.org/terms-and-conditions",
+      "text": "HRT’s terms explicitly describe a cash-pay service that does not bill insurers, submit claims, or generate superbills. The store FAQ separately says its partner lab can bill some insurers and describes possible reimbursement and FSA use. These statements do not establish coverage for a particular purchase. Confirm the exact test or service with HRT support and your insurer or benefits administrator before ordering; do not promise insurance coverage, HSA/FSA eligibility, reimbursement, or a superbill.",
+      "evidence": [
+        "HRT.org operates on a cash-pay basis and does not contract with, or bill, any insurance companies.",
+        "At this time, we also do not generate superbills."
+      ],
+      "tags": [
+        "insurance",
+        "Medicare",
+        "Medicaid",
+        "coverage",
+        "reimbursement",
+        "superbill",
+        "claim",
+        "FSA",
+        "HSA",
+        "payment",
+        "cash",
+        "cost",
+        "conflict"
+      ],
+      "sourceHash": "52a96aa909a09302bc492ce65a0b442c99db86abb6e4b2399615cf329dfb9c58",
+      "reviewedAt": "2026-10-26T15:43:49.213Z",
+      "fetchedAt": "2026-10-26T15:42:47.887Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "conflict": true,
+      "links": [
+        {
+          "title": "Store FAQ — different insurance language",
+          "url": "https://store.hrt.org/pages/easy-faqs"
+        },
+        {
+          "title": "Confirm with HRT support",
+          "url": "https://store.hrt.org/pages/contact-us"
+        }
+      ],
+      "evidenceHash": "f2f9b2cf4326548e4e6dff044997855954f9100768dfa622889007b926178587",
+      "additionalEvidence": [
+        {
+          "url": "https://store.hrt.org/pages/easy-faqs",
+          "evidence": [
+            "Test kits contain prepaid return labels with instructions for drop off at a UPS or USPS location. Can the laboratory bill my insurance company for the cost of testing?",
+            "As a courtesy, our partner lab can bill the following insurance companies for out-of-network testing costs. You must contact your insurance provider prior to laboratory testing to determine eligibility for up-front coverage or reimbursement options.",
+            "Original Medicare Part B",
+            "Medicare Advantage Plans",
+            "TRICARE",
+            "Yes, an FSA allows pre-tax dollars to be deposited into an account for eligible medical expenses.",
+            "While we cannot bill your insurance provider directly we will provide an itemized receipt upon request. You may use this for possible reimbursement for up-front payment of test kit and processing.",
+            "Send prepayment as necessary and request an itemized receipt. Submit the receipt to your primary insurance company for claims processing. After you receive the Explanation of Benefits (EOB), forward this to us so we can bill Medicare for you."
+          ],
+          "evidenceHash": "fe0e46595842e5bc015884262eb62388a2528578d53f373fb3b8a729deeda37a",
+          "fetchedAt": "2026-10-26T15:42:49.186Z"
+        }
+      ]
+    },
+    {
+      "id": "consultation-cost-conflict",
+      "type": "pathway",
+      "title": "Consultations, kit bundles and fees — confirm the specific offer",
+      "url": "https://hrt.org/women/hormone-replacement-therapy",
+      "text": "The men’s and women’s hormone-therapy pages describe ordering a kit, receiving results, then scheduling a virtual clinician consultation; they advertise no additional cost for that consultation. HRT’s return policy separately mentions consultation fees. The pages contain inconsistent bundled prices and reused package descriptions. Do not promise that every consultation or test purchase includes a free appointment. Ask which kit or service the visitor means, show its exact current store listing when available, and direct them to HRT to confirm appointment availability and what the price includes.",
+      "evidence": [
+        "Schedule a virtual consultation with our experienced physicians or clinician partners at no additional cost."
+      ],
+      "tags": [
+        "consultation",
+        "consult",
+        "appointment",
+        "free",
+        "included",
+        "bundle",
+        "booking",
+        "cost",
+        "price",
+        "fee",
+        "doctor",
+        "provider",
+        "conflict"
+      ],
+      "sourceHash": "d6f7c2f22dac39e5e96ed8b69657e0ba1740f927b40b383784204b8521d835c2",
+      "reviewedAt": "2026-10-26T15:43:49.213Z",
+      "fetchedAt": "2026-10-26T15:42:48.461Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "conflict": true,
+      "links": [
+        {
+          "title": "Men’s hormone therapy",
+          "url": "https://hrt.org/men/hormone-replacement-therapy"
+        },
+        {
+          "title": "Consultation refund terms",
+          "url": "https://hrt.org/return-policy"
+        },
+        {
+          "title": "Confirm consultation details",
+          "url": "https://store.hrt.org/pages/contact-us"
+        }
+      ],
+      "evidenceHash": "cab6a849a708c1ed3b9e6edd6dc854c14acdcb0737853907044dfb260a302584",
+      "additionalEvidence": [
+        {
+          "url": "https://hrt.org/return-policy",
+          "evidence": [
+            "Telehealth consultation fees are non-refundable once the consultation has taken place, regardless of prescription outcome."
+          ],
+          "evidenceHash": "329f806e29a3ba5c8a718d8a9c60c1e2b2f7cff2848c40c60b2b8f1f25ea42d9",
+          "fetchedAt": "2026-10-26T15:42:47.947Z"
+        },
+        {
+          "url": "https://hrt.org/men/hormone-replacement-therapy",
+          "evidence": [
+            "Schedule a virtual consultation with our experienced physicians or clinician partners at no additional cost. They'll review your results, discuss your health goals, and provide personalized recommendations.",
+            "Our Price $1,995",
+            "Our Price $795.00"
+          ],
+          "evidenceHash": "db43c98fa807f436310d395e6c465dcbde3e45ad1924753b21e38e1f21afbff5",
+          "fetchedAt": "2026-10-26T15:42:48.295Z"
+        }
+      ]
+    },
+    {
+      "id": "portal-navigation",
+      "type": "navigation",
+      "title": "Patient portal, login and symptom tracker",
+      "url": "https://hrt.org",
+      "text": "HRT’s published Get Started link opens https://portal.hrt.org/app/symptoms-tracker. It is the patient-portal destination for starting the HRT pathway. The portal URL returned an HTTP 200 JavaScript application shell during this review, but authenticated screens, accounts, results, booking availability and password recovery were not inspected. The guide cannot log in, retrieve a patient’s results, reset passwords or book appointments. For sign-in difficulties, use the portal’s available controls or contact HRT support; do not share passwords or medical documents in this chat. This portal is separate from the Shopify store customer account.",
+      "evidence": [
+        "HRT is modern healthcare for men and women"
+      ],
+      "tags": [
+        "portal",
+        "login",
+        "log in",
+        "sign in",
+        "password",
+        "account",
+        "patient",
+        "tracker",
+        "results",
+        "navigation"
+      ],
+      "sourceHash": "3d13a5b36d71829532b22a01939c34fe92520b127a3ab18e3871783fde2a0618",
+      "reviewedAt": "2026-10-26T15:43:49.213Z",
+      "fetchedAt": "2026-10-26T15:42:47.627Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "action": {
+        "title": "Open HRT patient portal",
+        "url": "https://portal.hrt.org/app/symptoms-tracker"
+      },
+      "links": [
+        {
+          "title": "HRT store account login",
+          "url": "https://store.hrt.org/account/login"
+        },
+        {
+          "title": "Portal support",
+          "url": "https://store.hrt.org/pages/contact-us"
+        }
+      ],
+      "verificationLimit": "Portal shell and published destination only; no authenticated workflow tested",
+      "evidenceHash": "934b1aca32e61a3983b9ce49ab3c0953cfc45563177f03dfba9c2b4be6b3f0e1",
+      "verifiedLinks": [
+        "https://portal.hrt.org/app/symptoms-tracker"
+      ],
+      "additionalEvidence": []
+    },
+    {
+      "id": "store-account-navigation",
+      "type": "navigation",
+      "title": "Store account login and order help",
+      "url": "https://store.hrt.org/account/login",
+      "text": "The HRT store has a separate customer login at https://store.hrt.org/account/login. The public page provides email/password sign-in, account creation and password-recovery controls. Use this store account for store-account navigation, not as the patient-portal login. The guide cannot view private order status or account data. For order tracking, cancellations or account problems, contact HRT support with the order information through their channel rather than posting it in this chat.",
+      "evidence": [
+        "Login"
+      ],
+      "tags": [
+        "store account",
+        "login",
+        "password",
+        "order",
+        "tracking",
+        "status",
+        "cancel",
+        "account",
+        "shop"
+      ],
+      "sourceHash": "772fbff271bc4a66f60c8a9d49c3f0497f069e0a57360de2ff11739c33cd8cfa",
+      "reviewedAt": "2026-10-26T15:43:49.213Z",
+      "fetchedAt": "2026-10-26T15:42:49.535Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "action": {
+        "title": "Open store account login",
+        "url": "https://store.hrt.org/account/login"
+      },
+      "links": [
+        {
+          "title": "Contact store support",
+          "url": "https://store.hrt.org/pages/contact-us"
+        }
+      ],
+      "evidenceHash": "21de94ffe5438f682260af5412e0a71ad817f906039593745fba43c7c5090212",
+      "additionalEvidence": []
+    },
+    {
+      "id": "provider-directory",
+      "type": "navigation",
+      "title": "HRT medical team directory",
+      "url": "https://hrt.org/providers",
+      "text": "HRT’s public medical-team page lists Dr. Clarence Lee Jr., MD, and Jessica Kikla, ARNP/nurse practitioner, with profile links. A listing does not verify that a particular clinician is currently accepting appointments, licensed for the visitor’s location, or assigned to their care. Use the directory to read published profiles and ask HRT to confirm scheduling and provider availability.",
+      "evidence": [
+        "Dr. Clarence Lee Jr.",
+        "Jessica Kikla ARNP, Nurse Practitioner"
+      ],
+      "tags": [
+        "provider",
+        "doctor",
+        "medical team",
+        "physician",
+        "clinician",
+        "Clarence",
+        "Jessica",
+        "appointment",
+        "directory"
+      ],
+      "sourceHash": "43e8e29f180950805f89849b1f86c694157197d4bf4a042fddbd8a03ea5fba57",
+      "reviewedAt": "2026-10-26T15:43:49.213Z",
+      "fetchedAt": "2026-10-26T15:42:49.115Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "action": {
+        "title": "View HRT medical team",
+        "url": "https://hrt.org/providers"
+      },
+      "evidenceHash": "9ab0836a7bbb761a08391cc7faa68d16a2400430fbb1d0e6b3d2bba748c7028e",
+      "additionalEvidence": []
+    },
+    {
+      "id": "provider-network",
+      "type": "navigation",
+      "title": "Joining HRT as a provider",
+      "url": "https://hrt.org/join-our-network",
+      "text": "Healthcare professionals can use HRT’s Join Our Network page to submit credentials and practice/contact details for consideration as a listed provider. This is a provider application, not patient registration or confirmation of approval.",
+      "evidence": [
+        "Please fill out the form below to become a listed provider on hrt.org."
+      ],
+      "tags": [
+        "provider",
+        "join",
+        "network",
+        "clinician",
+        "practice",
+        "register",
+        "application"
+      ],
+      "sourceHash": "d0f4d3f32bed218e7e41a941dd42fd84beb92b9d63f78d33e68c49220348ff06",
+      "reviewedAt": "2026-10-26T15:43:49.213Z",
+      "fetchedAt": "2026-10-26T15:42:49.129Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "action": {
+        "title": "Join HRT’s provider network",
+        "url": "https://hrt.org/join-our-network"
+      },
+      "evidenceHash": "da47ce094ff03a38a2472f46c902c6920ce129931dbebdffb6d3d394b95b1779",
+      "additionalEvidence": []
+    },
+    {
+      "id": "age-and-clinical-eligibility",
+      "type": "policy",
+      "title": "Published age limit and clinical eligibility",
+      "url": "https://hrt.org/terms-and-conditions",
+      "text": "HRT’s terms say the services are available for individuals over the age of 18. They do not provide enough verified detail to determine an individual’s medical eligibility. HRT publishes telehealth availability in Florida and California separately. A clinician determines suitability and whether any prescription is appropriate. For minors or borderline age questions, contact HRT for clarification; do not imply automatic eligibility or guaranteed prescribing.",
+      "evidence": [
+        "The Services are available for individuals over the age of 18."
+      ],
+      "tags": [
+        "age",
+        "minor",
+        "child",
+        "teen",
+        "18",
+        "eligibility",
+        "eligible",
+        "qualify",
+        "prescription",
+        "underage"
+      ],
+      "sourceHash": "52a96aa909a09302bc492ce65a0b442c99db86abb6e4b2399615cf329dfb9c58",
+      "reviewedAt": "2026-10-26T15:43:49.215Z",
+      "fetchedAt": "2026-10-26T15:42:47.887Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "links": [
+        {
+          "title": "Published service-area information",
+          "url": "https://hrt.org"
+        },
+        {
+          "title": "Confirm eligibility",
+          "url": "https://store.hrt.org/pages/contact-us"
+        }
+      ],
+      "evidenceHash": "a27a32906d587f42f0ad7b9a45666cb03dc6540a22864f10b3e54e531c962e46",
+      "additionalEvidence": []
+    },
+    {
+      "id": "appointments-cancellation",
+      "type": "policy",
+      "title": "Appointment changes and cancellation terms",
+      "url": "https://hrt.org/terms-and-conditions",
+      "text": "HRT’s terms describe a missed-appointment fee when a scheduled appointment is not cancelled at least 24 hours in advance. The guide does not have live booking access, cannot cancel an appointment, and cannot quote the fee for a specific booking. Contact HRT or use the controls provided for the actual appointment to confirm its cancellation terms and make a change. Do not treat a chat message as a cancellation.",
+      "evidence": [
+        "if you do not cancel a scheduled appointment at least 24 hours in advance."
+      ],
+      "tags": [
+        "appointment",
+        "cancel",
+        "cancellation",
+        "reschedule",
+        "missed",
+        "fee",
+        "booking",
+        "24 hours"
+      ],
+      "sourceHash": "52a96aa909a09302bc492ce65a0b442c99db86abb6e4b2399615cf329dfb9c58",
+      "reviewedAt": "2026-10-26T15:43:49.216Z",
+      "fetchedAt": "2026-10-26T15:42:47.887Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "links": [
+        {
+          "title": "Contact HRT about an appointment",
+          "url": "https://store.hrt.org/pages/contact-us"
+        }
+      ],
+      "evidenceHash": "3dc3d09dad6b8f021026271e2260ae32644334c7a5b30f4a26eadd328f5766d6",
+      "additionalEvidence": []
+    },
+    {
+      "id": "pharmacy-directory",
+      "type": "navigation",
+      "title": "Published pharmacy information",
+      "url": "https://hrt.org/legal/pharmacy-information",
+      "text": "HRT’s pharmacy-information page lists Honeybee Health, 3515 Helms Ave, Culver City, CA 90232, and (833) 466-3979. Confirm the dispensing pharmacy for your own prescription with HRT or the pharmacy named on its label; this listing alone does not establish that every HRT prescription is filled there.",
+      "evidence": [
+        "Honeybee Health",
+        "3515 Helms Ave",
+        "(833) 466-3979"
+      ],
+      "tags": [
+        "pharmacy",
+        "prescription",
+        "dispensing",
+        "Honeybee",
+        "refill"
+      ],
+      "sourceHash": "da89628ee5897354d04a2fef04515399cfdddca96b60c5615c608085f3fee590",
+      "reviewedAt": "2026-10-26T15:43:49.216Z",
+      "fetchedAt": "2026-10-26T15:42:48.150Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "action": {
+        "title": "HRT pharmacy information",
+        "url": "https://hrt.org/legal/pharmacy-information"
+      },
+      "evidenceHash": "118e52a69374dc6368e3ec46b3eef07593266d88b63168e8296ec16ed17893d8",
+      "additionalEvidence": []
+    },
+    {
+      "id": "business-contact",
+      "type": "support",
+      "title": "HRT care and store support",
+      "url": "https://store.hrt.org/pages/contact-us",
+      "text": "The store contact page publishes support@hrt.org and (888) 574-5524. The main HRT site publishes info@hrt.org with the same phone number. Use these official channels for order problems, portal access, appointment questions and unresolved service details. The main contact page also contains an Australia address inconsistent with the rest of the site; do not use it as a verified clinic or return address. Request return instructions directly from support.",
+      "evidence": [
+        "Email: support@hrt.org",
+        "Phone Number: (888) 574-5524"
+      ],
+      "tags": [
+        "contact",
+        "support",
+        "phone",
+        "email",
+        "address",
+        "location",
+        "clinic",
+        "human",
+        "team",
+        "return"
+      ],
+      "sourceHash": "1ea01ab31d193eb40d3807c023be78005097005c507877e062ba47776a6aa610",
+      "reviewedAt": "2026-10-26T15:43:49.216Z",
+      "fetchedAt": "2026-10-26T15:42:49.190Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "links": [
+        {
+          "title": "Main HRT contact page",
+          "url": "https://hrt.org/contact"
+        }
+      ],
+      "conflict": true,
+      "evidenceHash": "f2adcfd69a576af5190703f35dd0e58f91789c92907cdebe9d666487c19ff9f8",
+      "additionalEvidence": [
+        {
+          "url": "https://hrt.org/contact",
+          "evidence": [
+            "info@hrt.org",
+            "4342 Auburn Road,Hawthorn East, 3147Victoria, Australia",
+            "(888) 574-5524"
+          ],
+          "evidenceHash": "dd813480afcfd1acada8884cbb72502d9b4594461144e33fb88c18da4062b5b8",
+          "fetchedAt": "2026-10-26T15:42:47.668Z"
+        }
+      ]
+    },
+    {
+      "id": "results-timing-conflict",
+      "type": "faq",
+      "title": "Lab-result timing and access — published ranges",
+      "url": "https://store.hrt.org/pages/easy-faqs",
+      "text": "The store FAQ and main lab-testing page say test results are available through a secure access portal, generally 5–7 business days after the lab receives the sample. Hormone-therapy service pages instead describe 3–7 business days without the same timing basis. Some product pages publish other ranges. Shipping time is separate; use the instructions and current listing for the exact kit, and confirm delays with support. These are published estimates, not a guaranteed delivery date. The guide cannot retrieve or interpret private results.",
+      "evidence": [
+        "Test results are made available online through a secure access portal",
+        "within 5-7 business days of receiving the test sample."
+      ],
+      "tags": [
+        "result",
+        "results",
+        "turnaround",
+        "timing",
+        "days",
+        "wait",
+        "lab",
+        "portal",
+        "delivery",
+        "conflict"
+      ],
+      "sourceHash": "9990a18a6d3b92a3862bff86e02d9fa95e67d38acf79b3de6122bab8aa68dad9",
+      "reviewedAt": "2026-10-26T15:43:49.217Z",
+      "fetchedAt": "2026-10-26T15:42:49.186Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "conflict": true,
+      "links": [
+        {
+          "title": "Main lab-testing process",
+          "url": "https://hrt.org/lab-testing"
+        },
+        {
+          "title": "Hormone service process",
+          "url": "https://hrt.org/women/hormone-replacement-therapy"
+        }
+      ],
+      "evidenceHash": "4f4649c7eaabc8ac39c367f7e395da8cd32dc2beb74cc0cfce2de86129acc9a3",
+      "additionalEvidence": [
+        {
+          "url": "https://hrt.org/lab-testing",
+          "evidence": [
+            "You’ll get fast results within 5-7 business days of receipt, that include intuitive graphics, advanced symptom interpretation, and clinically informed comments."
+          ],
+          "evidenceHash": "b9a9122ff5e34578d2251c46a57cdbb953d422b55fb1b65fc17c20cc877a06b0",
+          "fetchedAt": "2026-10-26T15:42:47.669Z"
+        },
+        {
+          "url": "https://hrt.org/women/hormone-replacement-therapy",
+          "evidence": [
+            "In just 3 - 7 business days, you'll have your test results, providing valuable insights into your hormone profile and potential areas for optimization."
+          ],
+          "evidenceHash": "2f17b89abb2123dea2de6a0f710d4b0a50b86b5abf3317d1141b720bdb29d58f",
+          "fetchedAt": "2026-10-26T15:42:48.461Z"
+        }
+      ]
+    },
+    {
+      "id": "service-pricing-conflict",
+      "type": "policy",
+      "title": "Treatment and package prices require offer-specific confirmation",
+      "url": "https://hrt.org/men/hormone-replacement-therapy",
+      "text": "HRT service pages contain generic monthly prescription cards, hormone-optimization packages described with semaglutide, and inconsistent sale/original price presentation. These are not a verified quote for an individual’s treatment or a complete current fee schedule. Do not combine prices from different services or imply a guaranteed prescription. For products, prefer the exact current store product/variant price and state when checked. For consultations and prescription plans, ask HRT to confirm the specific offer and inclusions.",
+      "evidence": [
+        "Hormone Optimization for Men",
+        "Our Price $1,995"
+      ],
+      "tags": [
+        "price",
+        "pricing",
+        "cost",
+        "monthly",
+        "plan",
+        "package",
+        "treatment",
+        "prescription",
+        "semaglutide",
+        "consultation",
+        "conflict"
+      ],
+      "sourceHash": "8832dc5109268a7f2923fa7a2ab48168f2c3235b2db104241c0ed03e43bbc56e",
+      "reviewedAt": "2026-10-26T15:43:49.217Z",
+      "fetchedAt": "2026-10-26T15:42:48.295Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "conflict": true,
+      "links": [
+        {
+          "title": "Women’s hormone therapy — inconsistent package cards",
+          "url": "https://hrt.org/women/hormone-replacement-therapy"
+        },
+        {
+          "title": "Confirm treatment pricing",
+          "url": "https://store.hrt.org/pages/contact-us"
+        }
+      ],
+      "evidenceHash": "d9540b458f1d63ff756cfd8035ec5dcc34a7f08914766cd5f38a14b237c3bf41",
+      "additionalEvidence": [
+        {
+          "url": "https://hrt.org/women/hormone-replacement-therapy",
+          "evidence": [
+            "Our Price $1,995",
+            "Our Price $795.00"
+          ],
+          "evidenceHash": "5693e52f97e7cbf698e6431dbeeb088af10b346ff17bf6cb6312326311ee8c8e",
+          "fetchedAt": "2026-10-26T15:42:48.461Z"
+        }
+      ]
+    },
+    {
+      "id": "privacy-distinction",
+      "type": "policy",
+      "title": "Website and clinical privacy notices",
+      "url": "https://hrt.org/legal/health-information-privacy-practices",
+      "text": "HRT publishes a health-information privacy notice describing provider use and disclosure of health records for treatment, payment and healthcare operations. Website/store privacy policies are separate. Those pages do not independently verify this AI guide’s privacy or compliance. For this chat, use its own privacy notice, avoid sensitive documents and credentials, and use the verified clinical intake pathway for medical records.",
+      "evidence": [
+        "How is Patient Privacy Protected?"
+      ],
+      "tags": [
+        "privacy",
+        "HIPAA",
+        "confidential",
+        "records",
+        "data",
+        "medical documents",
+        "secure"
+      ],
+      "sourceHash": "44e80dead76eb024ddb6acec2e9fdd76f9ecb456a977a26ab1653c8eb2864864",
+      "reviewedAt": "2026-10-26T15:43:49.217Z",
+      "fetchedAt": "2026-10-26T15:42:48.010Z",
+      "reviewScope": "Business-source review; not clinical validation",
+      "links": [
+        {
+          "title": "HRT website privacy policy",
+          "url": "https://hrt.org/privacy-policy"
+        },
+        {
+          "title": "Store privacy policy",
+          "url": "https://store.hrt.org/policies/privacy-policy"
+        }
+      ],
+      "evidenceHash": "ec12d02df24d6f7efb2753ff133dc7f45e689e15896ff52a7f2bac37e6e5b540",
+      "additionalEvidence": []
+    },
+    {
+      "id": "service-hormone-women-details",
+      "type": "faq",
+      "title": "Women’s hormone therapy: published options and process",
+      "url": "https://hrt.org/women/hormone-replacement-therapy",
+      "text": "HRT’s women’s hormone-therapy page discusses estrogen therapy, combined estrogen and progesterone therapy, and bioidentical hormone replacement therapy. It links estradiol cream, progesterone cream and progesterone pills as related options. The described pathway starts with an at-home hormone kit, results and a virtual consultation with a physician or clinician partner. These are published options, not a recommendation or confirmation of current medication availability. A licensed clinician must assess suitability, risks and the treatment plan; no prescription or outcome is guaranteed.",
+      "evidence": [
+        "The most effective HRT depends on individual needs and health conditions. Common options include estrogen therapy, combined estrogen and progesterone therapy, and bioidentical hormone replacement therapy (BHRT). A healthcare provider will recommend the best option based on symptoms and medical history.",
+        "Purchase Estradiol Cream Online",
+        "Buy Progesterone Cream Online",
+        "Buy Progesterone Hormone Pills Online",
+        "Optimal Female Hormone Home Test Kit + Consultation",
+        "Schedule a virtual consultation with our experienced physicians or clinician partners at no additional cost. They'll review your results, discuss your health goals, and provide personalized recommendations."
+      ],
+      "tags": [
+        "hormone",
+        "therapy",
+        "women",
+        "female",
+        "menopause",
+        "estrogen",
+        "estradiol",
+        "progesterone",
+        "bioidentical",
+        "BHRT",
+        "cream",
+        "pills",
+        "options",
+        "forms",
+        "details",
+        "consultation"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.461Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "12c92a40aad8cf4639403dfdca6b47866c3955ca6e45f4b24c91a08e9b7ffb6b",
+      "sourceHash": "d6f7c2f22dac39e5e96ed8b69657e0ba1740f927b40b383784204b8521d835c2",
+      "reviewedAt": "2026-10-26T15:43:49.218Z"
+    },
+    {
+      "id": "service-hormone-men-details",
+      "type": "faq",
+      "title": "Men’s hormone therapy: published options and process",
+      "url": "https://hrt.org/men/hormone-replacement-therapy",
+      "text": "HRT’s men’s hormone-therapy page links testosterone cypionate, testosterone cream and clomiphene (Clomid) as related options. It describes ordering an at-home hormone test kit, receiving results, then having a virtual consultation to review results and health goals before discussing bioidentical hormone therapy. The page’s listed options do not establish that each medicine is currently available or suitable for a visitor. A licensed clinician decides on assessment and any treatment; a kit purchase does not guarantee a prescription or outcome.",
+      "evidence": [
+        "Buy Testosterone Cypionate Online",
+        "Buy Testosterone Cream for Men - Order Online",
+        "Order Clomiphene (Clomid) Pills Online",
+        "Optimal Male Hormone At Home Test Kit + Consultation",
+        "Schedule a virtual consultation with our experienced physicians or clinician partners at no additional cost. They'll review your results, discuss your health goals, and provide personalized recommendations.",
+        "Based on your consultation, you can choose to explore the benefits of bioidentical hormone therapy, a specialized approach aimed at fine-tuning your well-being and achieving hormonal balance."
+      ],
+      "tags": [
+        "hormone",
+        "therapy",
+        "men",
+        "male",
+        "testosterone",
+        "cypionate",
+        "cream",
+        "clomiphene",
+        "Clomid",
+        "bioidentical",
+        "options",
+        "forms",
+        "details",
+        "consultation"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.295Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "b4c6cc875988931fef1539eabbd22e3eb192bdc433bbe2a9fe0b337d2bc81e7f",
+      "sourceHash": "8832dc5109268a7f2923fa7a2ab48168f2c3235b2db104241c0ed03e43bbc56e",
+      "reviewedAt": "2026-10-26T15:43:49.219Z"
+    },
+    {
+      "id": "service-peptide-men-details",
+      "type": "faq",
+      "title": "Men’s peptide therapy: published consultation pathway",
+      "url": "https://hrt.org/men/anti-aging-peptides",
+      "text": "HRT’s men’s peptide page describes an at-home hormone kit, results and a virtual clinician consultation before discussing peptide therapy. Related links name PT-141 injections and semaglutide injections. Its FAQ also mentions Sermorelin, Ipamorelin and CJC-1295, but those mentions do not establish current prescribing availability, regulatory approval or suitability. Ask HRT and a licensed clinician which specific options are actually offered and appropriate; the page’s broad anti-aging claims are not verified clinical evidence or a guarantee.",
+      "evidence": [
+        "Optimal Male Hormone At Home Test Kit + Consultation",
+        "Schedule a virtual consultation with our experienced physicians or clinician partners at no additional cost. They'll review your results, discuss your health goals, and provide personalized recommendations.",
+        "Based on your consultation, you can choose to explore the benefits of peptide therapy, a specialized approach aimed at fine-tuning your well-being and achieving optimal health.",
+        "Buy PT-141 Peptides Injections Online",
+        "Buy Semaglutide Injections Online",
+        "‍Popular anti-aging peptides for men include Sermorelin, Ipamorelin, and CJC-1295, which support growth hormone production, enhance recovery, and improve skin, energy, and body composition."
+      ],
+      "tags": [
+        "peptide",
+        "peptides",
+        "men",
+        "male",
+        "PT-141",
+        "semaglutide",
+        "Sermorelin",
+        "Ipamorelin",
+        "CJC-1295",
+        "options",
+        "details",
+        "consultation"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.163Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "cfb47d9e9890b28ac8fe0e96a90c041002866f05a95cdadbb530cbdf4817b321",
+      "sourceHash": "3e76434bc4fe22e83fd275205f9eb7374fe44434304609cae25bc2e9f70d8e46",
+      "reviewedAt": "2026-10-26T15:43:49.220Z"
+    },
+    {
+      "id": "service-peptide-women-details",
+      "type": "faq",
+      "title": "Women’s peptide therapy: published consultation pathway",
+      "url": "https://hrt.org/women/anti-aging-peptides",
+      "text": "HRT’s women’s peptide page describes an at-home hormone kit, results and a virtual consultation with a physician or clinician partner before discussing peptide therapy. It links semaglutide injections among related products, but that link alone does not confirm current medication availability or that it is suitable for a visitor. The reviewed page does not establish a specific personalized peptide regimen. Confirm the actual options, risks and suitability with HRT and a licensed clinician; broad anti-aging claims are not verified clinical evidence.",
+      "evidence": [
+        "Optimal Female Hormone Home Test Kit + Consultation",
+        "Schedule a virtual consultation with our experienced physicians or clinician partners at no additional cost. They'll review your results, discuss your health goals, and provide personalized recommendations.",
+        "Based on your consultation, you can choose to explore the benefits of peptide therapy, a specialized approach aimed at fine-tuning your well-being and achieving optimal health.",
+        "Buy Semaglutide Injections Online"
+      ],
+      "tags": [
+        "peptide",
+        "peptides",
+        "women",
+        "female",
+        "semaglutide",
+        "options",
+        "details",
+        "consultation",
+        "regimen"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.372Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "d16939345d3a8eeb23cf1a25a88b56a206f2f981174f3b163f68007f571acf01",
+      "sourceHash": "a21a7caace1c882c44c4b3645b974bf9bf60c294218bd7b2123acd288aceefd8",
+      "reviewedAt": "2026-10-26T15:43:49.220Z"
+    },
+    {
+      "id": "service-weight-men-details",
+      "type": "faq",
+      "title": "Men’s weight management: published care steps",
+      "url": "https://hrt.org/men/weight-loss-and-management",
+      "text": "HRT’s men’s weight-management page describes a customized plan through its secure portal, questions about current health and medical history, and a virtual visit with a licensed physician. It describes possible pharmaceutical support and prescription delivery, and links semaglutide injections. This is a published process, not a completed appointment, an available prescription or a treatment recommendation. HRT and the clinician must confirm eligibility, the actual medication options and any prescription; outcomes are not guaranteed.",
+      "evidence": [
+        "The Customized Weight Management Plan through our Secure Online Portal",
+        "Involving Current Health and Medical History",
+        "Meet with a Licensed Physician",
+        "Via Virtual Visit to Discuss Weight Loss and Management",
+        "Compounded Prescription Medication Delivered to Your Door",
+        "Develop a treatment plan that includes pharmaceutical support",
+        "Buy Semaglutide Injections Online"
+      ],
+      "tags": [
+        "weight",
+        "management",
+        "loss",
+        "men",
+        "male",
+        "semaglutide",
+        "program",
+        "process",
+        "steps",
+        "details",
+        "physician",
+        "consultation"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.358Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "f88a83d772dbeae30c9593f02c573bf37a80977eaec47db70b61d9118ca184f3",
+      "sourceHash": "5f207913fbc6e2b85ad616767f007aed45a2538f19261c625a988fab33aec495",
+      "reviewedAt": "2026-10-26T15:43:49.221Z"
+    },
+    {
+      "id": "service-weight-women-details",
+      "type": "faq",
+      "title": "Women’s weight management: published options and consultation",
+      "url": "https://hrt.org/women/weight-loss-and-management",
+      "text": "HRT’s women’s weight-management page describes consulting a board-certified physician about health and weight-management options and developing a plan that may include pharmaceutical support. Related links name semaglutide injections, a semaglutide plus BioBoost kit, B12 plus MIC injections and metformin. These are examples linked on the site, not verified current inventory or personal recommendations. A clinician must determine suitability and actual treatment options. Confirm what the program includes with HRT rather than assuming every linked item is included or that results are guaranteed.",
+      "evidence": [
+        "Consult with a board-certified physician to discuss health and weight management options",
+        "Develop a treatment plan that includes pharmaceutical support",
+        "Buy Semaglutide Injections Online",
+        "Semaglutide + BioBoost Injections Home Delivery Kit",
+        "B12 + MIC (Methionine, Inositol and Choline) Injections",
+        "Buy Metformin (Glucophage) Online"
+      ],
+      "tags": [
+        "weight",
+        "management",
+        "loss",
+        "women",
+        "female",
+        "semaglutide",
+        "metformin",
+        "BioBoost",
+        "MIC",
+        "program",
+        "options",
+        "details",
+        "consultation"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.546Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "2e7bcaa065badb59517ac7464891747d294e3e50f3e726d6789e735d512e381d",
+      "sourceHash": "662aae58a569f81ebb83feaf431f14240f7a4dc06b762bbc355c67c4cd5e31fc",
+      "reviewedAt": "2026-10-26T15:43:49.221Z"
+    },
+    {
+      "id": "service-sexual-men-details",
+      "type": "faq",
+      "title": "Men’s sexual health: listed options and prescriber review",
+      "url": "https://hrt.org/men/sexual-health",
+      "text": "HRT’s men’s sexual-health page lists tadalafil (generic Cialis) and sildenafil (generic Viagra), with PT-141 injections among related links. Its published process involves a questionnaire, health and medical-history information, identity confirmation in the secure portal, and licensed-prescriber review before any prescription delivery. These website listings do not confirm stock, personal suitability or guaranteed prescribing. Keep medical history and identity documents in the verified portal; discuss treatment choices and risks with the licensed prescriber.",
+      "evidence": [
+        "Buy Tadalafil (Generic Cialis) Online",
+        "Buy Sildenafil (Generic Viagra) Online",
+        "Buy PT-141 Peptides Injections Online",
+        "Involving your current health and medical history. Confirm your identity via our secure portal.",
+        "Your information will be reviewed by a licensed prescriber and they will contact you with any questions.",
+        "Prescription medication delivered to your door"
+      ],
+      "tags": [
+        "sexual",
+        "health",
+        "men",
+        "male",
+        "erectile",
+        "tadalafil",
+        "sildenafil",
+        "Viagra",
+        "Cialis",
+        "PT-141",
+        "options",
+        "process",
+        "details",
+        "prescriber"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.342Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "590fc222d0018670f9ad07ddc8d6e61bc9bb330ef5cbe76b59992b87dffb4bf6",
+      "sourceHash": "8d58d4b1f30f8ada4acd78dbf2099fd69c021f95d47ab849e9badf534ce23ce8",
+      "reviewedAt": "2026-10-26T15:43:49.222Z"
+    },
+    {
+      "id": "service-sexual-women-details",
+      "type": "faq",
+      "title": "Women’s sexual health: listed options and prescriber review",
+      "url": "https://hrt.org/women/sexual-health",
+      "text": "HRT’s women’s sexual-health page links estradiol cream and progesterone pills, with progesterone cream among related options. The published process uses a questionnaire, health and medical-history information, identity confirmation in the secure portal, and licensed-prescriber review before any prescription delivery. These are website-listed options, not a recommendation, confirmed current availability or a guarantee of treatment. A clinician must assess the cause of concerns and whether any option is suitable; use the verified portal for sensitive intake information.",
+      "evidence": [
+        "Purchase Estradiol Cream Online",
+        "Buy Progesterone Hormone Pills Online",
+        "Buy Progesterone Cream Online",
+        "Involving your current health and medical history. Confirm your identity via our secure portal.",
+        "Your information will be reviewed by a licensed prescriber and they will contact you with any questions.",
+        "Prescription medication delivered to your door"
+      ],
+      "tags": [
+        "sexual",
+        "health",
+        "women",
+        "female",
+        "libido",
+        "estradiol",
+        "progesterone",
+        "cream",
+        "pills",
+        "options",
+        "process",
+        "details",
+        "prescriber"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.521Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "c67544dfb97d916b535ffbbe40a92c81466033e011a81c60fcaf5631b4a049da",
+      "sourceHash": "bc1fc03091766b51663c7ef681c24820dfb3eba85058d76893399ab7356b4163",
+      "reviewedAt": "2026-10-26T15:43:49.222Z"
+    },
+    {
+      "id": "service-hair-men-details",
+      "type": "faq",
+      "title": "Men’s hair-loss care: listed options and follow-up",
+      "url": "https://hrt.org/men/hair-loss",
+      "text": "HRT’s men’s hair-loss page links finasteride (Propecia) and minoxidil (Rogaine). It describes a secure-portal pathway, a virtual visit with a licensed healthcare practitioner to discuss options, possible prescription or over-the-counter topical delivery, and periodic practitioner follow-up. These listings do not establish current inventory, suitability or guaranteed regrowth. A clinician should assess the cause of hair loss and the appropriate treatment; a general FAQ mention of other procedures does not mean HRT provides those procedures.",
+      "evidence": [
+        "Buy Finasteride (Propecia) Online",
+        "Buy Minoxidil (Rogaine) Online",
+        "Clinically Proven Treatments through Secure Online Portal",
+        "With a Licensed Health Care Practitioner to Discuss Treatment Options",
+        "Prescription Medication and OTC Topical Treatment Delivered to Your Door",
+        "With a Licensed Healthcare Practitioner Periodically to Maintain Hair Regrowth"
+      ],
+      "tags": [
+        "hair",
+        "loss",
+        "men",
+        "male",
+        "finasteride",
+        "minoxidil",
+        "Propecia",
+        "Rogaine",
+        "options",
+        "process",
+        "details",
+        "follow-up"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.282Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "5fce16f8bc1ee2f8586e61944d711b264a533970eaa0284839cfb5bec5edb00b",
+      "sourceHash": "6aacfefe9ad775724c1a5bca9b724c1995857847e5bddf8b236ce167b0180161",
+      "reviewedAt": "2026-10-26T15:43:49.222Z"
+    },
+    {
+      "id": "service-hair-women-details",
+      "type": "faq",
+      "title": "Women’s hair-loss care: published assessment process",
+      "url": "https://hrt.org/women/hair-loss",
+      "text": "HRT’s women’s hair-loss page links minoxidil (Rogaine) and finasteride (Propecia), but a link is not an endorsement of either medicine for an individual or a confirmation of current availability. The published process asks for health and medical history and identity confirmation through a secure portal, followed by licensed-prescriber review before any prescription delivery. A clinician must assess the cause, safety and suitability of treatment; the chatbot should not select a hair-loss medicine or promise regrowth.",
+      "evidence": [
+        "Buy Finasteride (Propecia) Online",
+        "Buy Minoxidil (Rogaine) Online",
+        "Involving your current health and medical history. Confirm your identity via our secure portal.",
+        "Your information will be reviewed by a licensed prescriber and they will contact you with any questions.",
+        "Prescription medication delivered to your door."
+      ],
+      "tags": [
+        "hair",
+        "loss",
+        "women",
+        "female",
+        "finasteride",
+        "minoxidil",
+        "Propecia",
+        "Rogaine",
+        "options",
+        "process",
+        "details",
+        "prescriber"
+      ],
+      "fetchedAt": "2026-10-26T15:42:48.419Z",
+      "reviewScope": "Specific published service process and named website options only; no efficacy, dosing, current inventory or suitability claim.",
+      "evidenceHash": "6faac4aca695d397e59829c24b9479e3a0e4c847b5799b6e9f8187ea4f973c83",
+      "sourceHash": "58def7ea4ecd9e017c396d326d1d4220ab7e710720f7d4f1645fe5ae2c62df01",
+      "reviewedAt": "2026-10-26T15:43:49.223Z"
+    }
+  ]
+}

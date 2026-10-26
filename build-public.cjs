@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const publicPages = require('./public-pages.cjs');
 const root = __dirname;
+require('./integrate-chatbot.cjs')(root);
 const output = path.resolve(root,'dist');
 if (output !== path.join(root,'dist') || path.dirname(output) !== root) throw Error('Unsafe publish directory');
 fs.mkdirSync(output,{recursive:true});
@@ -36,7 +37,7 @@ function removeStale(dir) {
 }
 removeStale(output);
 for(const file of files) {
-  if(/^(?:source-content|scraps|node_modules|\.tools|\.git|\.codex|\.vercel)(?:\/|$)/i.test(file)||file.includes('..'))throw Error('Private/unsafe publish path: '+file);
+  if(/^(?:source-content|scraps|node_modules|chatbot|\.tools|\.git|\.codex|\.vercel)(?:\/|$)/i.test(file)||file.includes('..'))throw Error('Private/unsafe publish path: '+file);
   const target=path.resolve(output,file);
   if(!target.startsWith(output+path.sep))throw Error('Unsafe copy path');
   fs.mkdirSync(path.dirname(target),{recursive:true});

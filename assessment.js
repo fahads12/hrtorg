@@ -114,7 +114,7 @@
     navigationLabel(next, index < 0 ? 'Start the checklist' : index === steps.length - 1 ? (deliveryEnabled() && !noSymptoms ? 'Send and view summary' : 'View my summary') : 'Continue');
     navigationLabel(back, 'Back', 'back');
     const localNote = document.querySelector('.checklist-local-note');
-    if (localNote) localNote.textContent = deliveryEnabled() ? 'Results stay on this site. Your answers and details are sent only when you submit.' : 'Results are shown here. Nothing is sent while online delivery is unavailable.';
+    if (localNote) localNote.textContent = deliveryEnabled() ? 'Results stay on this site. Your answers and details are sent only when you submit.' : "Your results appear on this page. Nothing is sent while online delivery is unavailable.";
     setProgress();
     if (index < 0) {
       screen.append(node('span', 'assessment-kicker', 'Your symptoms. Your next conversation.'));

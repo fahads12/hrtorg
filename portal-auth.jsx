@@ -46,29 +46,29 @@
   }
 
   function LoginArtwork({ recovery }) {
-    return <div className="left_part part col-md-6"><div className="leftpart_inner np-auth-story"><span className="np-eyebrow">YOUR HEALTH. YOUR NEXT CHAPTER.</span><h2>Your care,<br/><em>connected.</em></h2><p>One place for your results, your care journey, and the little changes that matter.</p><div className="np-auth-portraits"><img src="/uploads/generated/home-men-portrait.webp" alt=""/><img src="/uploads/generated/home-women-portrait.webp" alt=""/></div><div className="np-story-note"><span className="np-note-icon" aria-hidden="true">↗</span><span>Personalized hormone health.<br/><strong>Guided by science. Built around you.</strong></span></div></div></div>;
+    return <div className="left_part part col-md-6"><div className="leftpart_inner np-auth-story"><span className="np-eyebrow">YOUR HEALTH. YOUR NEXT CHAPTER.</span><h2>Your care,<br/><em>connected.</em></h2><p>Keep your results and care information together, and follow the changes you notice over time.</p><div className="np-auth-portraits"><img src="/uploads/generated/home-men-portrait.webp" alt=""/><img src="/uploads/generated/home-women-portrait.webp" alt=""/></div><div className="np-story-note"><span className="np-note-icon" aria-hidden="true">↗</span><span>Personalized hormone health.<br/><strong>Guided by science. Built around you.</strong></span></div></div></div>;
   }
 
   function ConsultationCard() {
-    return <aside className="col-md-6 col-lg-5 np-register-aside"><span className="np-eyebrow">A MORE PERSONAL APPROACH</span><h2>A healthier chapter<br/>starts <em>with you.</em></h2><p>Bring your hormone health into focus, one step at a time.</p><div className="np-benefits">{[['01','Your health, in one place','Keep your results and care information together.'],['02','Care that fits your life','Explore appointments and your next steps.'],['03','See the bigger picture','Track the changes you notice over time.']].map(([number,title,copy])=><div key={number}><span>{number}</span><section><h3>{title}</h3><p>{copy}</p></section></div>)}</div><div className="np-aside-note">Built around your needs.<br/><strong>At every stage of your journey.</strong></div></aside>;
+    return <aside className="col-md-6 col-lg-5 np-register-aside"><span className="np-eyebrow">A MORE PERSONAL APPROACH</span><h2>A healthier chapter<br/>starts <em>with you.</em></h2><p>Take the next step in understanding your hormone health.</p><div className="np-benefits">{[['01','Your health, in one place','Keep your results and care information together.'],['02','Care that fits your life','Explore appointments and your next steps.'],['03','See the bigger picture','Track the changes you notice over time.']].map(([number,title,copy])=><div key={number}><span>{number}</span><section><h3>{title}</h3><p>{copy}</p></section></div>)}</div><div className="np-aside-note">Built around your needs.<br/><strong>At every stage of your journey.</strong></div></aside>;
   }
 
   function validation(values, view, role) {
     const errors = {};
     if (!values.email.trim()) errors.email = 'Email is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) errors.email = 'Please enter valid Email';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) errors.email = "Please enter a valid email address.";
     if (view !== 'recover-password' && !values.password) errors.password = 'Password is required';
     if (view === 'register') {
       for (const [name, label] of [['firstName', 'First'], ['lastName', 'Last']]) {
         if (!values[name].trim()) errors[name] = label + ' name is required';
         else if (!/^[A-Za-z_ ]*$/.test(values[name])) errors[name] = 'Please enter valid ' + label + ' Name';
       }
-      if (values.password && !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/.test(values.password)) errors.password = 'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character';
+      if (values.password && !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/.test(values.password)) errors.password = "Use at least 8 characters, including an uppercase letter, a lowercase letter, a number, and one of these symbols: ! @ # $ % ^ & *.";
       if (role === 'provider') {
         for (const [name, label] of [['npiNumber', 'NPI Number'], ['licenseNumber', 'License Number'], ['licenseState', 'License State'], ['organizationName', 'Organization Name'], ['phoneNumber', 'Phone Number']]) {
           if (!values[name].trim()) errors[name] = label + ' is required';
         }
-        if (values.phoneNumber && !/^[+]?[1-9][\d]{0,15}$/.test(values.phoneNumber)) errors.phoneNumber = 'Please enter valid phone number';
+        if (values.phoneNumber && !/^[+]?[1-9][\d]{0,15}$/.test(values.phoneNumber)) errors.phoneNumber = "Please enter a valid phone number.";
       }
       if (!values.checkTick) errors.checkTick = 'Please agree to the terms and conditions';
     }
@@ -108,7 +108,7 @@
         return;
       }
       if (recovery) {
-        setStatus('Demo only: no recovery email was sent. This screen previews the password recovery flow.');
+        setStatus("This is a preview of password recovery. No recovery email was sent.");
         return;
       }
       // Credentials remain only in this component's transient state. Never persist,

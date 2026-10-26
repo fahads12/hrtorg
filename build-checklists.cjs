@@ -33,7 +33,7 @@ module.exports = function () {
       spec = {id, title:titles[id], mode:'hormone', groups,
         resultLabels:Object.values(original.scoring.results).map(r=>r.label),
         steps,contactOrder:['email','first_name'],mailingOptions:original.screens.find(s=>s.id==='mailing').options,
-        introduction:'Select factors or symptoms that are present or persist over time. Use your answers to prepare for a conversation with a healthcare professional.',
+        introduction:"Select the factors or symptoms that apply to you or continue over time. Your answers can help you prepare for a conversation with a healthcare professional.",
         count:groups.reduce((n,g)=>n+g.options.length,0)+' factors and symptoms'};
     } else {
       const original = specialty[slug];
@@ -42,7 +42,7 @@ module.exports = function () {
         max:original.scoring.max,results:original.scoring.results.map(({min,max,label})=>({min,max,label})),
         steps:original.questions.map(q=>({type:'single',name:q.name,title:q.text,options:original.options})),
         contactOrder:['first_name','email'],mailingOptions:original.mailingOptions,
-        introduction:id==='pms'?'Answer the following questions about symptoms you experience in the days before your period.':id==='osteoporosis'?'Answer questions about your health history and lifestyle to help prepare for a discussion about bone health.':'Work through the questions about your symptoms and health. Your answers can help you prepare questions for a healthcare professional.',
+        introduction:id==='pms'?"Answer these questions about symptoms you notice in the days before your period.":id==='osteoporosis'?"Answer questions about your health history and daily habits to prepare for a conversation about bone health.":"Answer questions about your symptoms and health, then use your answers to prepare questions for a healthcare professional.",
         count:original.questions.length+' questions'};
     }
     fs.writeFileSync(`assets/checklists/${id}.js`,'window.HRT_ASSESSMENT='+JSON.stringify(spec)+';\n');
@@ -56,7 +56,7 @@ module.exports = function () {
         <a class="checklist-back" href="Symptom Check.html">&#8592; All symptom checklists</a>
         <header class="checklist-heading"><div class="checklist-heading-copy"><span class="eyebrow">Understand your symptoms</span><h1>${escape(spec.title)}</h1><p>${escape(spec.introduction)}</p></div><figure class="checklist-visual"><img src="uploads/checklists/${id}-480.webp" srcset="uploads/checklists/${id}-480.webp 480w, uploads/checklists/${id}-960.webp 960w" sizes="(max-width:650px) calc(100vw - 32px), (max-width:900px) 240px, 320px" width="${visual.width}" height="${visual.height}" alt="${escape(visual.alt)}" decoding="async" fetchpriority="high"></figure></header>
         <div class="checklist-workspace">
-          <aside class="checklist-aside" aria-label="Assessment progress"><span class="eyebrow">Your assessment</span><h2>${escape(spec.count)}</h2><p>Take your time. You can go back and update your answers.</p><p id="checklist-progress-text">Ready when you are</p><progress id="checklist-progress" max="100" value="0" aria-label="Checklist progress"></progress><p class="checklist-local-note">Results are shown here. Nothing is sent while online delivery is unavailable.</p></aside>
+          <aside class="checklist-aside" aria-label="Assessment progress"><span class="eyebrow">Your assessment</span><h2>${escape(spec.count)}</h2><p>Take your time. You can go back and update your answers.</p><p id="checklist-progress-text">Ready when you are</p><progress id="checklist-progress" max="100" value="0" aria-label="Checklist progress"></progress><p class="checklist-local-note">Your results appear on this page. Nothing is sent while online delivery is unavailable.</p></aside>
           <div class="checklist-panel" id="checklist-panel">
             <form id="hormone-assessment" class="checklist-form" novalidate><div id="assessment-screen"><p class="assessment-description">The interactive checklist has not loaded. Please reload the page, or <a href="Contact.html">contact the care team</a> for help.</p></div><p id="assessment-error" role="alert" hidden></p><div class="checklist-actions"><button class="btn btn-ghost" id="assessment-back" type="button" hidden>Back</button><button class="btn btn-primary" id="assessment-next" type="submit" disabled>Start the checklist</button></div></form>
             <section id="assessment-results" tabindex="-1" aria-labelledby="assessment-result-heading" hidden></section>
