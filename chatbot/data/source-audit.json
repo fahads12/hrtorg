@@ -74,8 +74,8 @@
       "fetchedAt": "2026-10-26T15:33:16.180Z"
     },
     {
-      "url": "https://hrt.org/men/anti-aging-peptides",
-      "finalUrl": "https://hrt.org/men/anti-aging-peptides",
+      "url": "https://hrt.org/men/peptides",
+      "finalUrl": "https://hrt.org/men/peptides",
       "status": 200,
       "fetchedAt": "2026-10-26T15:33:16.186Z"
     },
@@ -110,8 +110,8 @@
       "fetchedAt": "2026-10-26T15:33:16.430Z"
     },
     {
-      "url": "https://hrt.org/women/anti-aging-peptides",
-      "finalUrl": "https://hrt.org/women/anti-aging-peptides",
+      "url": "https://hrt.org/women/peptides",
+      "finalUrl": "https://hrt.org/women/peptides",
       "status": 200,
       "fetchedAt": "2026-10-26T15:33:16.441Z"
     },

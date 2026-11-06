@@ -27,7 +27,32 @@
       ]
     }
   ],
+  "rewrites": [
+    {
+      "source": "/search",
+      "destination": "/Resources.html"
+    },
+    {
+      "source": "/women/menopause",
+      "destination": "/menopause/index.html"
+    }
+  ],
   "redirects": [
+    {
+      "source": "/checkout",
+      "destination": "https://store.hrt.org/",
+      "permanent": true
+    },
+    {
+      "source": "/plans/hot-flash-support",
+      "destination": "/menopause/hot-flashes/",
+      "permanent": true
+    },
+    {
+      "source": "/plans/sexual-health",
+      "destination": "/sexual-health/",
+      "permanent": true
+    },
     {
       "source": "/Shop.html",
       "destination": "https://store.hrt.org/",
@@ -61,6 +86,16 @@
     {
       "source": "/How%20It%20Works.html",
       "destination": "/how-it-works/",
+      "permanent": true
+    },
+    {
+      "source": "/HRT Home.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/HRT%20Home.html",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -131,11 +166,6 @@
     {
       "source": "/compounding-pharmacy-customized-medication-men-women-natural-choice",
       "destination": "/health/compounding-pharmacy-customized-medication-men-women-natural-choice/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/contact",
-      "destination": "/Contact.html",
       "permanent": true
     },
     {
@@ -289,11 +319,6 @@
       "permanent": true
     },
     {
-      "source": "/join-our-network",
-      "destination": "/Join%20Our%20Network.html",
-      "permanent": true
-    },
-    {
       "source": "/low-testosterone-low-t-quiz-free-evaluation",
       "destination": "/checklist/low-testosterone-low-t-quiz-free-evaluation/index.html",
       "permanent": true
@@ -399,11 +424,6 @@
       "permanent": true
     },
     {
-      "source": "/privacy-policy",
-      "destination": "/Privacy%20Policy.html",
-      "permanent": true
-    },
-    {
       "source": "/progesterone-bioidentical-hrt-the-facts",
       "destination": "/health/progesterone-bioidentical-hrt-the-facts/index.html",
       "permanent": true
@@ -429,16 +449,6 @@
       "permanent": true
     },
     {
-      "source": "/return-policy",
-      "destination": "/Return%20Policy.html",
-      "permanent": true
-    },
-    {
-      "source": "/search",
-      "destination": "/Resources.html",
-      "permanent": true
-    },
-    {
       "source": "/sleeplessness-perimenopause-possible-causes-solutions",
       "destination": "/health/sleeplessness-perimenopause-possible-causes-solutions/index.html",
       "permanent": true
@@ -451,11 +461,6 @@
     {
       "source": "/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention",
       "destination": "/health/telomere-testing-test-telomeres-for-biological-aging-and-disease-prevention/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/terms-and-conditions",
-      "destination": "/Terms%20and%20Conditions.html",
       "permanent": true
     },
     {
@@ -569,11 +574,6 @@
       "permanent": true
     },
     {
-      "source": "/women/menopause",
-      "destination": "/menopause/index.html",
-      "permanent": true
-    },
-    {
       "source": "/womens-health-and-hormones-the-delicate-balance",
       "destination": "/health/womens-health-and-hormones-the-delicate-balance/index.html",
       "permanent": true
@@ -581,61 +581,6 @@
     {
       "source": "/your-bodys-need-for-estrogen-then-and-now",
       "destination": "/health/your-bodys-need-for-estrogen-then-and-now/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/men/anti-aging-peptides/:path*",
-      "destination": "/mens-health/anti-aging-peptides/",
-      "permanent": true
-    },
-    {
-      "source": "/men/erectile-dysfunction/:path*",
-      "destination": "/mens-health/erectile-dysfunction/",
-      "permanent": true
-    },
-    {
-      "source": "/men/hair-loss/:path*",
-      "destination": "/mens-health/hair-loss/",
-      "permanent": true
-    },
-    {
-      "source": "/men/hormone-replacement-therapy/:path*",
-      "destination": "/mens-health/hormone-replacement-therapy/",
-      "permanent": true
-    },
-    {
-      "source": "/men/sexual-health/:path*",
-      "destination": "/mens-health/sexual-health/",
-      "permanent": true
-    },
-    {
-      "source": "/men/weight-loss-and-management/:path*",
-      "destination": "/mens-health/weight-loss-and-management/",
-      "permanent": true
-    },
-    {
-      "source": "/women/anti-aging-peptides/:path*",
-      "destination": "/womens-health/anti-aging-peptides/",
-      "permanent": true
-    },
-    {
-      "source": "/women/hair-loss/:path*",
-      "destination": "/womens-health/hair-loss/",
-      "permanent": true
-    },
-    {
-      "source": "/women/hormone-replacement-therapy/:path*",
-      "destination": "/womens-health/hormone-replacement-therapy/",
-      "permanent": true
-    },
-    {
-      "source": "/women/sexual-health/:path*",
-      "destination": "/womens-health/sexual-health/",
-      "permanent": true
-    },
-    {
-      "source": "/women/weight-loss-and-management/:path*",
-      "destination": "/womens-health/weight-loss-and-management/",
       "permanent": true
     },
     {
@@ -679,61 +624,6 @@
       "permanent": true
     },
     {
-      "source": "/hrt-products/semaglutide-bioboost-injections/:path*",
-      "destination": "/glp-1/semaglutide-bioboost-injections/",
-      "permanent": true
-    },
-    {
-      "source": "/hrt-products/semaglutide-injections/:path*",
-      "destination": "/glp-1/semaglutide-injections/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/hormone-symptom-checklist-for-women-female-hormone-imbalance-test/:path*",
-      "destination": "/quizzes/womens-hormones/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/hormone-symptom-checklist-men/:path*",
-      "destination": "/quizzes/mens-hormones/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/pms-assessment/:path*",
-      "destination": "/quizzes/pms/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/thyroid-assessment/:path*",
-      "destination": "/quizzes/thyroid/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/adrenal-fatigue/:path*",
-      "destination": "/quizzes/adrenal-fatigue/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/osteoporosis-assessment/:path*",
-      "destination": "/quizzes/osteoporosis/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/andropause-assessment/:path*",
-      "destination": "/quizzes/andropause/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/menopause-assessment/:path*",
-      "destination": "/quizzes/menopause/",
-      "permanent": true
-    },
-    {
-      "source": "/checklist/perimenopause-assessment/:path*",
-      "destination": "/quizzes/perimenopause/",
-      "permanent": true
-    },
-    {
       "source": "/How It Works.html",
       "destination": "/how-it-works/",
       "permanent": true
@@ -745,62 +635,22 @@
     },
     {
       "source": "/men/anti-aging-peptides",
-      "destination": "/mens-health/anti-aging-peptides/",
+      "destination": "/men/peptides/",
       "permanent": true
     },
     {
-      "source": "/men/erectile-dysfunction",
-      "destination": "/mens-health/erectile-dysfunction/",
-      "permanent": true
-    },
-    {
-      "source": "/men/hair-loss",
-      "destination": "/mens-health/hair-loss/",
-      "permanent": true
-    },
-    {
-      "source": "/men/hormone-replacement-therapy",
-      "destination": "/mens-health/hormone-replacement-therapy/",
-      "permanent": true
-    },
-    {
-      "source": "/men/sexual-health",
-      "destination": "/mens-health/sexual-health/",
-      "permanent": true
-    },
-    {
-      "source": "/men/weight-loss-and-management",
-      "destination": "/mens-health/weight-loss-and-management/",
+      "source": "/men/anti-aging-peptides/:path*",
+      "destination": "/men/peptides/",
       "permanent": true
     },
     {
       "source": "/women/anti-aging-peptides",
-      "destination": "/womens-health/anti-aging-peptides/",
+      "destination": "/women/peptides/",
       "permanent": true
     },
     {
-      "source": "/women/hair-loss",
-      "destination": "/womens-health/hair-loss/",
-      "permanent": true
-    },
-    {
-      "source": "/women/hormone-replacement-therapy",
-      "destination": "/womens-health/hormone-replacement-therapy/",
-      "permanent": true
-    },
-    {
-      "source": "/women/sexual-health",
-      "destination": "/womens-health/sexual-health/",
-      "permanent": true
-    },
-    {
-      "source": "/women/weight-loss-and-management",
-      "destination": "/womens-health/weight-loss-and-management/",
-      "permanent": true
-    },
-    {
-      "source": "/category/health",
-      "destination": "/blog-categories/",
+      "source": "/women/anti-aging-peptides/:path*",
+      "destination": "/women/peptides/",
       "permanent": true
     }
   ]

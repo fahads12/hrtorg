@@ -1,4 +1,22 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /portal/
+Disallow: /chatbot/
+Disallow: /source-content/
+Disallow: /source-content-archive/
+Disallow: /scraps/
+Disallow: /dist/
+
+# Legacy duplicate-URL variants — canonicals point to /checklist/* for quizzes.
+# Blocking these prevents crawl waste on duplicate content.
+Disallow: /quizzes/
+Disallow: /symptom-checklist-for-men/
+Disallow: /symptom-checklist-for-women/
+Disallow: /hormone-symptom-checklist-men/
+Disallow: /hormone-symptom-checklist-women/
+Disallow: /low-testosterone-low-t-quiz-free-evaluation/
+Disallow: /pms-symptom-self-assessment/
+Disallow: /andropause-assessment/
+Disallow: /thyroid-assessment/
 
 Sitemap: https://hrt.org/sitemap.xml

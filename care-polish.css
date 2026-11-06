@@ -91,3 +91,13 @@ html[data-care-theme="women"] .hrt-logo{content:url('uploads/hrt-logo-women.webp
 .journal-grid .jx .img,.journal-grid .img{height:auto!important;aspect-ratio:4/3;padding:0!important;align-items:flex-end;position:relative;overflow:hidden;background:#f3f6f9}
 .journal-grid .jx .img>img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;display:block}
 .journal-grid .jx .img .tag{position:relative;z-index:1;margin:14px}
+
+
+/* -- mobile usability: prevent iOS Safari auto-zoom on form focus (requires >=16px font-size) -- */
+@media (max-width: 820px) {
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"],
+  input[type="password"], input[type="search"], input[type="url"], input[type="date"],
+  input:not([type]), textarea, select {
+    font-size: 16px;
+  }
+}

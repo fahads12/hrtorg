@@ -131,7 +131,7 @@
       "id": "service-peptide",
       "type": "service",
       "title": "Peptide therapy",
-      "url": "https://hrt.org/men/anti-aging-peptides",
+      "url": "https://hrt.org/men/peptides",
       "text": "HRT publishes peptide therapy services for men and women. Ask a licensed clinician about the specific therapy, its evidence, risks and suitability; promotional claims do not guarantee benefits.",
       "evidence": [
         "Anti Aging Peptides Therapy for Men"
@@ -146,7 +146,7 @@
       "links": [
         {
           "title": "For women",
-          "url": "https://hrt.org/women/anti-aging-peptides"
+          "url": "https://hrt.org/women/peptides"
         }
       ],
       "primaryAudience": "For men",
@@ -1066,7 +1066,7 @@
       "id": "service-peptide-men-details",
       "type": "faq",
       "title": "Men’s peptide therapy: published consultation pathway",
-      "url": "https://hrt.org/men/anti-aging-peptides",
+      "url": "https://hrt.org/men/peptides",
       "text": "HRT’s men’s peptide page describes an at-home hormone kit, results and a virtual clinician consultation before discussing peptide therapy. Related links name PT-141 injections and semaglutide injections. Its FAQ also mentions Sermorelin, Ipamorelin and CJC-1295, but those mentions do not establish current prescribing availability, regulatory approval or suitability. Ask HRT and a licensed clinician which specific options are actually offered and appropriate; the page’s broad anti-aging claims are not verified clinical evidence or a guarantee.",
       "evidence": [
         "Optimal Male Hormone At Home Test Kit + Consultation",
@@ -1100,7 +1100,7 @@
       "id": "service-peptide-women-details",
       "type": "faq",
       "title": "Women’s peptide therapy: published consultation pathway",
-      "url": "https://hrt.org/women/anti-aging-peptides",
+      "url": "https://hrt.org/women/peptides",
       "text": "HRT’s women’s peptide page describes an at-home hormone kit, results and a virtual consultation with a physician or clinician partner before discussing peptide therapy. It links semaglutide injections among related products, but that link alone does not confirm current medication availability or that it is suitable for a visitor. The reviewed page does not establish a specific personalized peptide regimen. Confirm the actual options, risks and suitability with HRT and a licensed clinician; broad anti-aging claims are not verified clinical evidence.",
       "evidence": [
         "Optimal Female Hormone Home Test Kit + Consultation",

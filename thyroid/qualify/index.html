@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="../../"><title>Thyroid Qualification Quiz — See If Treatment Can Help | HRT.org</title><meta name="description" content="Clinical screening for thyroid evaluation and treatment. Covers prior diagnosis, current medication, symptom pattern, and pregnancy status to point you toward lab panel, medication optimization, or specialist care."><link rel="icon" href="uploads/hrt-logo.webp"><link data-local-font="" href="/assets/fonts/newsreader-normal-latin.woff2" crossorigin="" type="font/woff2" as="font" rel="preload"><link data-local-font="" href="/assets/fonts/geist-normal-latin.woff2" crossorigin="" type="font/woff2" as="font" rel="preload"><link data-local-font="" href="/assets/fonts/fonts.css" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=2a13219c8dd9"><link rel="stylesheet" href="home-styles.css?v=c7c7dc96ba52"><link rel="stylesheet" href="premium.css?v=202e39f4fcbb"><link rel="stylesheet" href="source-site.css?v=d2897e789f8c"><link rel="stylesheet" href="restored-layouts.css?v=6b026e80492d"><link rel="stylesheet" href="product-styles.css?v=d9c1bc05caf2"><link rel="stylesheet" href="inner-pages.css?v=22dc93da7df3"><link rel="stylesheet" href="care-theme.css?v=f72ff8501c9b"><script src="care-theme.js?v=1021aud3" defer></script><link rel="stylesheet" href="care-polish.css?v=3fb72598f027"><link rel="stylesheet" href="assets/glow-menu.css?v=315b4ad0c506">
+<style>
+.qf-root{max-width:720px;margin:48px auto;padding:0 24px}
+.qf-breadcrumb{font-size:13px;color:var(--ink-3);margin-bottom:28px}
+.qf-breadcrumb a{color:var(--ink-3)}
+.qf-progress-wrap{position:sticky;top:88px;background:var(--bg-2);padding:20px 0;z-index:5;margin-bottom:32px;border-radius:14px}
+.qf-progress-wrap-inner{max-width:720px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;font-size:12px;color:var(--ink-3);letter-spacing:1px;text-transform:uppercase}
+.qf-progress{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.qf-progress-bar{height:100%;background:var(--primary);width:0;transition:width .35s ease}
+.qf-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px 44px;box-shadow:0 20px 50px -32px rgba(13,43,75,.1)}
+.qf-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+.qf-h2{font:400 clamp(28px,3.4vw,40px)/1.2 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 14px}
+.qf-sub{font-size:15px;color:var(--ink-2);line-height:1.7;margin:0 0 28px}
+.qf-opts{display:grid;gap:12px;margin:28px 0 32px}
+.qf-opt{display:flex;align-items:center;gap:16px;padding:18px 22px;background:#fff;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;font-size:16px;color:var(--ink);text-align:left;transition:border-color .15s,background .15s;font-family:inherit;width:100%}
+.qf-opt:hover{border-color:var(--primary)}
+.qf-opt[aria-pressed=true]{border-color:var(--primary);background:#eef3f8}
+.qf-opt .mark{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);flex-shrink:0;display:grid;place-items:center;transition:border-color .15s,background .15s}
+.qf-opt[aria-pressed=true] .mark{border-color:var(--primary);background:var(--primary);color:#fff}
+.qf-opt .mark svg{width:12px;height:12px;opacity:0}
+.qf-opt[aria-pressed=true] .mark svg{opacity:1}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.qf-field{display:flex;flex-direction:column}
+.qf-field label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.qf-field input,.qf-field select{padding:14px 16px;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);width:100%;box-sizing:border-box}
+.qf-field input:focus,.qf-field select:focus{outline:none;border-color:var(--primary)}
+.qf-field .hint{font-size:12px;color:var(--ink-3);margin-top:6px;line-height:1.5}
+.qf-nav{display:flex;justify-content:space-between;align-items:center;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.qf-back{background:transparent;border:none;color:var(--ink-3);cursor:pointer;font:inherit;font-size:14px;padding:12px 16px}
+.qf-back:hover{color:var(--ink)}
+.qf-continue{background:var(--primary);color:#fff;border:none;padding:16px 32px;border-radius:999px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .15s,background .15s}
+.qf-continue:hover:not(:disabled){transform:translateY(-1px)}
+.qf-result{text-align:center;padding:24px 0}
+.qf-result-icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;margin:0 auto 24px}
+.qf-result-icon.ok{background:#e8f1ee;color:#2e7d5a}
+.qf-result-icon.warn{background:#fef3e8;color:#c17a28}
+.qf-result-icon.no{background:#fbeded;color:#b84444}
+.qf-result-icon svg{width:36px;height:36px}
+.qf-cta-primary{display:inline-flex;align-items:center;gap:10px;padding:18px 36px;background:var(--primary);color:#fff;border-radius:999px;font-weight:500;text-decoration:none;font-size:16px;margin-top:12px}
+.qf-cta-secondary{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:transparent;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;font-weight:500;text-decoration:none;font-size:14px;margin-top:14px;margin-left:12px}
+.qf-notice{margin-top:20px;padding:16px 20px;background:#fef9e9;border-left:3px solid #c17a28;border-radius:8px;font-size:13.5px;color:var(--ink-2);line-height:1.65;text-align:left}
+.qf-step{display:none}
+.qf-step.is-active{display:block;animation:qf-fade .25s ease}
+@keyframes qf-fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(max-width:620px){.qf-card{padding:28px 24px;border-radius:18px}.qf-row{grid-template-columns:1fr}}
+</style>
+<meta content="strict-origin-when-cross-origin" name="referrer"><meta content="website" property="og:type"><meta content="HRT.org" property="og:site_name"><meta content="Thyroid Qualification Quiz — See If Treatment Can Help | HRT.org" property="og:title"><meta content="Clinical screening for thyroid evaluation and treatment. Covers prior diagnosis, current medication, symptom pattern, and pregnancy status to point you toward lab panel, medication optimization, or specialist care." property="og:description"><link href="https://hrt.org/thyroid/qualify/" rel="canonical"></head>
+<body class="restored product qualify-page"><header class="nav"><div class="wrap nav-inner"><a href="/" aria-label="HRT.org home"><img class="logo hrt-logo" src="uploads/hrt-logo.webp" alt="HRT.org" width="1800" height="900"></a><button class="mobile-menu" type="button" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="site-navigation" class="nav-links" aria-label="Main navigation"><div id="hrt-glow-navigation" class="hrt-ui"></div><a class="nav-link" href="Audience.html?g=women" data-glow-fallback="">For Women</a><a class="nav-link" href="Audience.html?g=men" data-glow-fallback="">For Men</a><a class="nav-link" href="/symptoms/" data-glow-fallback="">Symptoms</a><a class="nav-link" href="Lab Testing.html" data-glow-fallback="">Lab Testing</a><a class="nav-link" href="Treatments.html" data-glow-fallback="">Treatments</a><a class="nav-link" href="Resources.html" data-glow-fallback="">Resources</a><details class="source-dropdown"><summary>Symptom Check</summary><div><a href="quizzes/womens-hormones/index.html">Female Hormone Imbalance Test</a><a href="quizzes/mens-hormones/index.html">Male Hormone Imbalance Test</a><a href="quizzes/pms/index.html">PMS Self-Assessment Test</a><a href="quizzes/thyroid/index.html">Thyroid Assessment Test</a><a href="quizzes/adrenal-fatigue/index.html">Adrenal Fatigue Assessment Test</a><a href="quizzes/osteoporosis/index.html">Osteoporosis Assessment Test</a><a href="quizzes/andropause/index.html">Andropause Assessment Test</a><a href="quizzes/menopause/index.html">Menopause Assessment Test</a><a href="quizzes/perimenopause/index.html">Perimenopause Assessment Test</a></div></details><a class="nav-link" href="https://store.hrt.org/">Shop ↗</a></nav><div class="nav-actions"><a class="nav-link" href="/portal/">Sign in</a><a class="btn btn-primary" href="/portal/app/symptoms-tracker/">Get Started</a></div></div></header><noscript id="no-script-navigation"><style>.mobile-menu{display:none!important}.nav-links{display:flex!important}.no-script-notice{max-width:1180px;margin:20px auto;padding:16px 24px;color:#12304f;background:#f1f6f9;border-radius:10px;font:14px/1.7 system-ui,sans-serif}</style><p class="no-script-notice">You can read the information and follow the links on this page. Interactive tools require JavaScript. For assistance, <a href="/contact/">contact our team</a>.</p></noscript><main id="main-content" tabindex="-1"><div class="p-page" data-screen-label="Thyroid Qualification">
+<section class="p-hero" style="padding:60px 0 20px"><div class="wrap" style="text-align:center;max-width:720px"><div class="eyebrow">Thyroid Qualification</div><h1 style="margin:16px 0 14px;font:400 clamp(36px,4.4vw,54px)/1.1 Newsreader,serif;letter-spacing:-.025em">See if we can help your thyroid.</h1><p class="lead" style="font-size:17px;max-width:580px;margin:0 auto">A short clinical screening — prior diagnosis, current medication, symptom pattern — to point you toward a lab panel, dose optimization, or specialist care.</p></div></section>
+<section class="qf-root">
+    <nav class="qf-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &#160;/&#160; <a href="/thyroid/">Thyroid</a> &#160;/&#160; <span>Qualify</span></nav>
+    <div class="qf-progress-wrap" id="qfProgressWrap"><div class="qf-progress-wrap-inner"><span id="qfStepLabel">Step 1 of X</span><div class="qf-progress"><div class="qf-progress-bar" id="qfProgressBar"></div></div><span id="qfPercent">0%</span></div></div>
+    <div class="qf-card">
+    <div class="qf-step is-active" data-step="1">
+      <div class="qf-eyebrow">About You</div><h2 class="qf-h2">What's your age?</h2>
+      <p class="qf-sub">We'll ask a few short questions about your thyroid history and current symptoms to figure out the right next step.</p>
+      <div class="qf-field"><label for="qfAge">Age (years)</label><input type="number" id="qfAge" min="18" max="100" placeholder="38" inputmode="numeric"></div>
+      <div class="qf-nav"><span></span><button class="qf-continue" data-next="1">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="2">
+      <div class="qf-eyebrow">History</div><h2 class="qf-h2">Have you been diagnosed with a thyroid condition?</h2>
+      <p class="qf-sub">Prior diagnoses change the workup. Select the one that fits best.</p>
+      <div class="qf-opts" id="qfDx">
+        <button class="qf-opt" aria-pressed="false" data-val="none"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>No — never diagnosed</button>
+        <button class="qf-opt" aria-pressed="false" data-val="hypo"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Hypothyroidism (underactive thyroid)</button>
+        <button class="qf-opt" aria-pressed="false" data-val="hashimotos"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Hashimoto's thyroiditis</button>
+        <button class="qf-opt" aria-pressed="false" data-val="hyper"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Hyperthyroidism (overactive thyroid)</button>
+        <button class="qf-opt" aria-pressed="false" data-val="graves"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Graves' disease</button>
+        <button class="qf-opt" aria-pressed="false" data-val="nodules"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Thyroid nodules or goiter</button>
+        <button class="qf-opt" aria-pressed="false" data-val="cancer"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Thyroid cancer (personal history)</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="2">← Back</button><button class="qf-continue" data-next="2">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="3">
+      <div class="qf-eyebrow">Medication</div><h2 class="qf-h2">Are you currently taking any thyroid medication?</h2>
+      <p class="qf-sub">If you're already on medication, we focus on optimizing your dose rather than starting fresh.</p>
+      <div class="qf-opts" id="qfMed">
+        <button class="qf-opt" aria-pressed="false" data-val="none"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>None</button>
+        <button class="qf-opt" aria-pressed="false" data-val="levo"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Levothyroxine (Synthroid, Levoxyl, Tirosint)</button>
+        <button class="qf-opt" aria-pressed="false" data-val="ndt"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Natural desiccated thyroid (Armour, NP Thyroid)</button>
+        <button class="qf-opt" aria-pressed="false" data-val="t3"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Liothyronine T3 (Cytomel) — alone or combined</button>
+        <button class="qf-opt" aria-pressed="false" data-val="antithyroid"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Methimazole or PTU (antithyroid)</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="3">← Back</button><button class="qf-continue" data-next="3">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="4">
+      <div class="qf-eyebrow">Symptoms</div><h2 class="qf-h2">Which symptoms are you experiencing?</h2>
+      <p class="qf-sub">Select all that apply. The pattern tells us whether your thyroid is running low, high, or well-controlled.</p>
+      <div class="qf-opts" id="qfSymp">
+        <button class="qf-opt" aria-pressed="false" data-val="fatigue"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Persistent fatigue, needing more sleep</button>
+        <button class="qf-opt" aria-pressed="false" data-val="cold"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Cold intolerance, cold hands and feet</button>
+        <button class="qf-opt" aria-pressed="false" data-val="weight_gain"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Unexplained weight gain or difficulty losing weight</button>
+        <button class="qf-opt" aria-pressed="false" data-val="dry_skin_hair"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Dry skin, brittle hair, hair thinning</button>
+        <button class="qf-opt" aria-pressed="false" data-val="constipation"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Constipation, slowed digestion</button>
+        <button class="qf-opt" aria-pressed="false" data-val="brain_fog"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Brain fog, slowed thinking, low mood</button>
+        <button class="qf-opt" aria-pressed="false" data-val="palpitations"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Racing heart, palpitations, tremor</button>
+        <button class="qf-opt" aria-pressed="false" data-val="anxiety_sweating"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Anxiety, heat intolerance, excessive sweating</button>
+        <button class="qf-opt" aria-pressed="false" data-val="weight_loss"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Unintended weight loss despite normal eating</button>
+        <button class="qf-opt" aria-pressed="false" data-val="none"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>None of the above — screening only</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="4">← Back</button><button class="qf-continue" data-next="4">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="5">
+      <div class="qf-eyebrow">Pregnancy</div><h2 class="qf-h2">Are you pregnant, trying to conceive, or breastfeeding?</h2>
+      <p class="qf-sub">Thyroid dosing often needs adjustment during pregnancy. We coordinate closely with your OB.</p>
+      <div class="qf-opts" id="qfPreg">
+        <button class="qf-opt" aria-pressed="false" data-val="no"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>No / not applicable</button>
+        <button class="qf-opt" aria-pressed="false" data-val="trying"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Trying to conceive</button>
+        <button class="qf-opt" aria-pressed="false" data-val="pregnant"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Currently pregnant</button>
+        <button class="qf-opt" aria-pressed="false" data-val="breastfeeding"><span class="mark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8.5 6.5 12 13 5" /></svg></span>Currently breastfeeding</button>
+      </div>
+      <div class="qf-nav"><button class="qf-back" data-prev="5">← Back</button><button class="qf-continue" data-next="5">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="6">
+      <div class="qf-eyebrow">Location</div><h2 class="qf-h2">Which state do you live in?</h2>
+      <p class="qf-sub">HRT.org providers are licensed in all 50 states.</p>
+      <div class="qf-field"><label for="qfState">State</label><select id="qfState"><option value="">Select state…</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option></select></div>
+      <div class="qf-nav"><button class="qf-back" data-prev="6">← Back</button><button class="qf-continue" data-next="6">Continue →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="7">
+      <div class="qf-eyebrow">Last Step</div><h2 class="qf-h2">Where should we send your result?</h2>
+      <div class="qf-field"><label for="qfEmail">Email address</label><input type="email" id="qfEmail" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="qf-nav"><button class="qf-back" data-prev="7">← Back</button><button class="qf-continue" data-next="7">See my result →</button></div>
+    </div>
+
+    <div class="qf-step" data-step="result"><div id="qfResultArea"></div></div>
+    </div>
+    </section>
+    <script>
+(function(){
+  const state={step:1,data:{age:null,dx:null,med:null,symp:[],preg:null,state:null,email:null}};
+  const TOTAL=7;
+  const HYPO_SYMPS=['fatigue','cold','weight_gain','dry_skin_hair','constipation','brain_fog'];
+  const HYPER_SYMPS=['palpitations','anxiety_sweating','weight_loss'];
+  const $=q=>document.querySelector(q),$$=q=>document.querySelectorAll(q);
+  function show(step){$$('.qf-step').forEach(el=>el.classList.remove('is-active'));$(`.qf-step[data-step="${step}"]`)?.classList.add('is-active');const label=step==='result'?'Result':`Step ${step} of ${TOTAL}`,pct=step==='result'?100:Math.round((step/TOTAL)*100);$('#qfStepLabel').textContent=label;$('#qfProgressBar').style.width=pct+'%';$('#qfPercent').textContent=pct+'%';window.scrollTo({top:0,behavior:'smooth'});}
+  function wireMulti(c,k){$(c).addEventListener('click',e=>{const b=e.target.closest('.qf-opt');if(!b)return;const v=b.dataset.val,l=state.data[k];if(v==='none'){l.length=0;l.push('none');$$(`${c} .qf-opt`).forEach(x=>x.setAttribute('aria-pressed',x.dataset.val==='none'?'true':'false'));return;}const i=l.indexOf('none');if(i>=0)l.splice(i,1);const j=l.indexOf(v);if(j>=0)l.splice(j,1);else l.push(v);b.setAttribute('aria-pressed',l.includes(v)?'true':'false');$$(`${c} .qf-opt[data-val="none"]`).forEach(x=>x.setAttribute('aria-pressed','false'));});}
+  function wireSingle(c,k){$(c).addEventListener('click',e=>{const b=e.target.closest('.qf-opt');if(!b)return;state.data[k]=b.dataset.val;$$(`${c} .qf-opt`).forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');});}
+  wireSingle('#qfDx','dx');wireSingle('#qfMed','med');wireMulti('#qfSymp','symp');wireSingle('#qfPreg','preg');
+
+  document.addEventListener('click',e=>{
+    const n=e.target.closest('[data-next]'),p=e.target.closest('[data-prev]');
+    if(n){
+      const s=+n.dataset.next;
+      if(s===1){const age=+$('#qfAge').value;if(!age||age<18)return alert('Please enter your age.');state.data.age=age;}
+      if(s===2){if(!state.data.dx)return alert('Please select an option.');if(state.data.dx==='cancer')return finish('cancer');}
+      if(s===3){if(!state.data.med)return alert('Please select an option.');}
+      if(s===4){/* allow continue even if no symptoms */}
+      if(s===5){if(!state.data.preg)return alert('Please select an option.');if(state.data.preg==='pregnant')return finish('pregnant');}
+      if(s===6){state.data.state=$('#qfState').value;if(!state.data.state)return alert('Please select your state.');}
+      if(s===7){const e2=$('#qfEmail').value.trim();if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e2))return alert('Please enter a valid email.');state.data.email=e2;return routeOutcome();}
+      show(s+1);
+    } else if(p){show(+p.dataset.prev-1);}
+  });
+
+  function routeOutcome(){
+    const d=state.data;
+    const symps=d.symp.filter(v=>v!=='none');
+    const hypoCount=symps.filter(v=>HYPO_SYMPS.includes(v)).length;
+    const hyperCount=symps.filter(v=>HYPER_SYMPS.includes(v)).length;
+    // Already on antithyroid treatment — optimization
+    if(d.med==='antithyroid') return finish('hyper_optimize');
+    // Already on thyroid replacement
+    if(d.med==='levo'||d.med==='ndt'||d.med==='t3'){
+      return finish(hypoCount>=2 ? 'hypo_optimize' : 'hypo_stable');
+    }
+    // Not on med — hyper symptoms without antithyroid = refer
+    if(hyperCount>=2 || d.dx==='graves' || d.dx==='hyper') return finish('hyper_new');
+    // Not on med — hypo symptoms = qualified for lab panel
+    if(hypoCount>=2 || d.dx==='hypo' || d.dx==='hashimotos') return finish('hypo_new');
+    // Nodules without classification
+    if(d.dx==='nodules') return finish('nodules');
+    // No clear pattern
+    return finish('screening');
+  }
+
+  function signupLink(productSlug){
+    const d=state.data;
+    const params=new URLSearchParams({product:productSlug,qualified:'true',email:d.email||'',state:d.state||'',dx:d.dx||'',med:d.med||'',symptoms:d.symp.join(',')});
+    return '/thyroid/signup/?'+params.toString();
+  }
+
+  function finish(outcome){
+    show('result');
+    const r=$('#qfResultArea');
+    const outcomes={
+      hypo_new:()=>`<div class="qf-result">
+        <div class="qf-result-icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg></div>
+        <div class="qf-eyebrow" style="color:#2e7d5a">You pre-qualify</div>
+        <h2 class="qf-h2">A thyroid lab panel is the right next step.</h2>
+        <p class="qf-sub">Your symptoms and history fit a hypothyroid pattern. We'll start with a full lab panel (TSH, free T4, free T3, reverse T3, TPO + Tg antibodies) before recommending treatment. Your card is pre-authorized but <strong>not charged until a licensed clinician reviews your results</strong>.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+          <a class="qf-cta-primary" href="${signupLink('thyroid-panel-levothyroxine')}">Continue — Thyroid panel + treatment →</a>
+        </div>
+        <div style="margin-top:12px"><a class="qf-cta-secondary" href="/thyroid/">Learn more about thyroid care</a></div>
+        <div class="qf-notice">Treatment typically starts with levothyroxine. For Hashimoto's or persistent symptoms despite normal TSH, combination therapy (levo + T3) or natural desiccated thyroid may be considered.</div>
+      </div>`,
+      hypo_optimize:()=>`<div class="qf-result">
+        <div class="qf-result-icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg></div>
+        <div class="qf-eyebrow" style="color:#2e7d5a">You pre-qualify — Optimization</div>
+        <h2 class="qf-h2">Your current dose may need adjustment.</h2>
+        <p class="qf-sub">You're already on thyroid medication but still experiencing symptoms. That's a signal to re-check labs and consider a dose change, a brand switch, or adding T3 to your regimen.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+          <a class="qf-cta-primary" href="${signupLink('thyroid-optimization')}">Continue — Optimization review →</a>
+        </div>
+        <div style="margin-top:12px"><a class="qf-cta-secondary" href="/thyroid/">Compare thyroid options</a></div>
+        <div class="qf-notice">We'll ask you to upload your most recent thyroid labs, or order new ones if your last panel is more than 3 months old.</div>
+      </div>`,
+      hypo_stable:()=>`<div class="qf-result">
+        <div class="qf-result-icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg></div>
+        <div class="qf-eyebrow" style="color:#2e7d5a">Routine monitoring</div>
+        <h2 class="qf-h2">You appear well-controlled on current therapy.</h2>
+        <p class="qf-sub">Minimal symptoms on medication is the goal. We can take over refills, run periodic labs, and adjust if things change.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+          <a class="qf-cta-primary" href="${signupLink('thyroid-maintenance')}">Continue — Ongoing refill care →</a>
+        </div>
+      </div>`,
+      hyper_new:()=>`<div class="qf-result"><div class="qf-result-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/></svg></div><div class="qf-eyebrow" style="color:#c17a28">Needs urgent evaluation</div><h2 class="qf-h2">Hyperthyroid symptoms need prompt workup.</h2><p class="qf-sub">Untreated hyperthyroidism (Graves', toxic nodule, thyroiditis) can affect the heart and bones. We can order a lab panel (TSH, free T4, free T3, TRAb) and coordinate endocrinology referral — but if you're having chest pain, severe palpitations, or shortness of breath, please go to an urgent care or ER today.</p><a class="qf-cta-primary" href="/portal/app/symptoms-tracker/?topic=thyroid">Request urgent review →</a></div>`,
+      hyper_optimize:()=>`<div class="qf-result"><div class="qf-result-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/></svg></div><div class="qf-eyebrow" style="color:#c17a28">Shared care</div><h2 class="qf-h2">Antithyroid therapy is best managed alongside your prescribing specialist.</h2><p class="qf-sub">Methimazole and PTU dosing follows endocrine protocols with periodic liver and WBC monitoring. If you have an existing endocrinologist, continue with them. We can help with symptom tracking and lab reviews.</p><a class="qf-cta-primary" href="/portal/app/symptoms-tracker/?topic=thyroid">Request a consult →</a></div>`,
+      nodules:()=>`<div class="qf-result"><div class="qf-result-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/></svg></div><div class="qf-eyebrow" style="color:#c17a28">Imaging-led care</div><h2 class="qf-h2">Thyroid nodules need periodic ultrasound.</h2><p class="qf-sub">Nodule follow-up is best done through endocrinology — serial ultrasounds, biopsy if risk features emerge. We can order labs (TSH, free T4) and help coordinate referral, but imaging isn't within telehealth's reach.</p><a class="qf-cta-primary" href="/portal/app/symptoms-tracker/?topic=thyroid">Request referral →</a></div>`,
+      cancer:()=>`<div class="qf-result"><div class="qf-result-icon no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div class="qf-eyebrow" style="color:#b84444">Specialist-led care</div><h2 class="qf-h2">Thyroid cancer history is managed by endocrinology.</h2><p class="qf-sub">TSH suppression targets, Thyrogen scanning, and surveillance imaging all live in oncology-endocrine care. If you need interim refills we can help — but your primary thyroid care should stay with your specialist.</p><a class="qf-cta-secondary" href="/">Back to home</a></div>`,
+      pregnant:()=>`<div class="qf-result"><div class="qf-result-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/></svg></div><div class="qf-eyebrow" style="color:#c17a28">OB coordination needed</div><h2 class="qf-h2">Thyroid care during pregnancy is co-managed with your OB.</h2><p class="qf-sub">Pregnancy raises the thyroid hormone requirement by ~30–50% in the first trimester. If you're already on levothyroxine your dose almost certainly needs to go up. We'll work with your OB — share your current dose and most recent labs.</p><a class="qf-cta-primary" href="/portal/app/symptoms-tracker/?topic=thyroid">Request OB coordination →</a></div>`,
+      screening:()=>`<div class="qf-result"><div class="qf-result-icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 10 18 20 6"/></svg></div><div class="qf-eyebrow" style="color:#2e7d5a">Screening panel</div><h2 class="qf-h2">A baseline thyroid panel is a reasonable screen.</h2><p class="qf-sub">No clear symptom pattern, but a screening panel (TSH + free T4) gives you peace of mind, especially if there's family history. We'll order it, review it, and only follow up if something's off.</p><a class="qf-cta-primary" href="${signupLink('thyroid-screening-panel')}">Continue — Screening panel →</a></div>`,
+    };
+    r.innerHTML=(outcomes[outcome]||outcomes.screening)();
+  }
+  show(1);
+})();
+</script>
+</div></main><footer class="footer"><div class="wrap"><div class="footer-grid"><div class="brand-block"><a href="/"><img class="logo hrt-logo" src="uploads/hrt-logo.webp" alt="HRT.org" width="1800" height="900"></a><p>Personalized care for women and men.</p><p>Telehealth services available in all 50 states.</p></div><div><h4>Care</h4><ul><li><a href="Audience.html?g=women">For Women</a></li><li><a href="Audience.html?g=men">For Men</a></li><li><a href="Treatments.html">Treatments</a></li><li><a href="Lab Testing.html">Lab Testing</a></li><li><a href="https://store.hrt.org/">Shop</a></li></ul></div><div><h4>HRT.org</h4><ul><li><a href="About.html">About</a></li><li><a href="/providers/">Find a Provider</a></li><li><a href="/providers/join/">List Your Practice</a></li><li><a href="Resources.html">Journal</a></li><li><a href="FAQ.html">FAQs</a></li></ul></div><div><h4>Support</h4><ul><li><a href="/contact/">Contact</a></li><li><a href="mailto:info@hrt.org">info@hrt.org</a></li><li><a href="tel:+18885745524">(888) 574-5524</a></li><li><a href="/portal/">Patient Portal</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/privacy-policy/">Privacy</a></li><li><a href="/terms-and-conditions/">Terms and Conditions</a></li><li><a href="/return-policy/">Returns</a></li><li><a href="legal/consent-to-telehealth/index.html">Telehealth Consent</a></li><li><a href="legal/health-information-privacy-practices/index.html">Health Information Privacy</a></li><li><a href="legal/pharmacy-information/index.html">Pharmacy Information</a></li><li><a href="legal/informed-consent-regarding-nutritional-and-herbal-supplements/index.html">Supplement Consent</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 HRT.org. All rights reserved.</span><span><a href="https://www.instagram.com/hrt_health/">Instagram</a> · <a href="https://www.facebook.com/hrthealth">Facebook</a> · <a href="https://twitter.com/hrt_org">Twitter</a></span></div></div></footer><script src="site-interactions.js?v=17c327aa4dbf" defer></script><script src="care-motion.js?v=5039e42d2623" defer></script><script src="assets/react.production.min.js?v=d949f1c3687a" defer></script><script src="assets/react-dom.production.min.js?v=35f4f974f4b2" defer></script><script src="assets/glow-navigation.js?v=f3f3200d8ac7" defer></script><script src="assets/mega-nav.js?v=8" defer></script><script src="/assets/hrt-chatbot.js?v=f8ec322c2182" defer data-hrt-chatbot></script></body></html>

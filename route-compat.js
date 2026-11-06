@@ -2,7 +2,7 @@
 (() => {
  const params=new URLSearchParams(location.search),file=decodeURIComponent(location.pathname).split('/').pop();
  const gender=params.get('g')==='men'||location.hash==='#men'?'men':'women';
- const map={hrt:'hormone-replacement-therapy',peptides:'anti-aging-peptides',weight:'weight-loss-and-management',sexual:'sexual-health',hair:'hair-loss',ed:'erectile-dysfunction'};
+ const map={hrt:'hormone-replacement-therapy',peptides:'peptides',weight:'weight-loss-and-management',sexual:'sexual-health',hair:'hair-loss',ed:'erectile-dysfunction'};
  if(file==='Product.html'){location.replace(new URL(gender+'/'+(map[params.get('p')]||map.hrt)+'/index.html',document.baseURI));return;}
  if(file==='Article.html'){location.replace(new URL('Resources.html',document.baseURI));return;}
  if(file==='HRT Landing.html'){location.replace(new URL('Audience.html?g='+gender,document.baseURI));return;}
